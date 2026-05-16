@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ARD will Berliner Lobbybüro ausbauen – obwohl Millionen gespart werden sollen. Eine strukturelle Analyse.">
+<title>ARD baut Lobby-Büro aus – während gespart werden soll | Rundfunkkritik.de</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+:root{
+  --ink:#1c1c1a;--ink-2:#3d3d38;--ink-3:#6b6b62;--ink-4:#9e9e93;
+  --paper:#f8f5ef;--paper-2:#f0ece2;--paper-3:#e8e3d6;--white:#fff;
+  --rule:#cdc8b8;--rule-light:#e0dbd0;
+  --accent:#1a2533;--accent-2:#2e4a6b;--accent-3:#4a7aaa;
+  --red:#8b1f1f;--red-light:#f9eeee;--red-border:#e0b0b0;
+  --gold:#7a5c0a;--gold-light:#faf6e8;--gold-border:#e0d090;
+}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.75;max-width:780px;margin:0 auto;padding:0 2rem 6rem}
+
+nav{position:sticky;top:0;z-index:100;background:var(--accent);height:52px;display:flex;align-items:center;justify-content:space-between;margin:0 -2rem;padding:0 2rem}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#fff;text-decoration:none}
+.nav-back{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-decoration:none}
+.nav-back:hover{color:#fff}
+
+.meta-row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin:2rem 0 1.2rem}
+.kategorie{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;background:var(--accent);color:#fff;padding:0.3rem 0.7rem}
+.datum{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.08em;color:var(--ink-4)}
+.neu-badge{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;background:var(--red);color:#fff;padding:0.25rem 0.6rem;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.7}}
+
+h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.1;color:var(--ink);margin-bottom:1.2rem;letter-spacing:-0.02em}
+.deck{font-size:1.15rem;font-weight:300;color:var(--ink-2);line-height:1.65;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--rule)}
+
+.faktenbox{background:var(--accent);color:#fff;padding:1.5rem 1.8rem;margin:2.5rem 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem}
+.fakt-label{font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:0.3rem;display:block}
+.fakt-wert{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#fff;line-height:1.2;display:block}
+.fakt-sub{font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:0.2rem;display:block}
+
+h2{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--ink);margin:2.5rem 0 0.7rem;padding-bottom:0.4rem;border-bottom:1px solid var(--rule)}
+h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;font-style:italic;color:var(--ink-2);margin:1.8rem 0 0.5rem}
+p{margin-bottom:1.3rem;font-size:1rem;color:var(--ink-2);line-height:1.75}
+
+.pullquote{border-left:3px solid var(--accent);padding:0.8rem 0 0.8rem 1.5rem;margin:2rem 0;font-size:1.15rem;font-style:italic;font-weight:300;color:var(--ink-2);line-height:1.6}
+.pullquote cite{display:block;margin-top:0.5rem;font-style:normal;font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;color:var(--ink-4);text-transform:uppercase}
+
+.analyse-box{background:var(--paper-2);border:1px solid var(--rule);border-top:3px solid var(--accent-2);padding:1.5rem 1.8rem;margin:2.5rem 0}
+.analyse-box-title{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-2);margin-bottom:1rem}
+.analyse-box p{font-size:0.95rem;color:var(--ink-2)}
+.analyse-box p:last-child{margin-bottom:0}
+
+.vergleich-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:2rem 0}
+.vergleich-card{padding:1.3rem 1.5rem;border:1px solid var(--rule);background:var(--white)}
+.vergleich-card.rot{border-top:3px solid var(--red);background:var(--red-light)}
+.vergleich-card.gold{border-top:3px solid var(--gold);background:var(--gold-light)}
+.vergleich-label{font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.6rem;display:block}
+.vergleich-card.rot .vergleich-label{color:var(--red)}
+.vergleich-card.gold .vergleich-label{color:var(--gold)}
+.vergleich-card h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;margin-bottom:0.5rem;color:var(--ink)}
+.vergleich-card ul{padding-left:1.1rem;font-size:0.88rem;color:var(--ink-2);line-height:1.6}
+.vergleich-card ul li{margin-bottom:0.3rem}
+
+.einschaetzung{background:var(--gold-light);border:1px solid var(--gold-border);border-left:3px solid var(--gold);padding:1.5rem 1.8rem;margin:2.5rem 0}
+.einschaetzung-title{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem}
+.einschaetzung p{font-size:0.95rem;color:var(--ink-2)}
+.einschaetzung p:last-child{margin-bottom:0}
+
+.mechanismus-hinweis{background:var(--paper-3);border:1px solid var(--rule);padding:1.2rem 1.5rem;margin:2rem 0;display:flex;align-items:flex-start;gap:1rem}
+.mech-num-badge{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--rule);line-height:1;flex-shrink:0}
+.mech-content{}
+.mech-content strong{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--ink)}
+.mech-content p{font-size:0.88rem;color:var(--ink-3);margin:0.3rem 0 0}
+
+.tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin:3rem 0 1rem;padding-top:1.5rem;border-top:1px solid var(--rule)}
+.tag{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-3);border:1px solid var(--rule);padding:0.25rem 0.6rem;text-decoration:none}
+.tag:hover{background:var(--paper-2);color:var(--ink)}
+
+.quelle-box{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--ink-4);letter-spacing:0.05em;padding:1rem 0;border-top:1px solid var(--rule);margin-top:1.5rem;line-height:1.7}
+.quelle-box a{color:var(--ink-4);text-decoration:underline}
+
+footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer span{font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:var(--ink-4)}
+footer a{color:var(--ink-4);text-decoration:none}
+footer a:hover{color:var(--ink)}
+
+@media(max-width:580px){
+  .faktenbox{grid-template-columns:1fr}
+  .vergleich-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Rundfunkkritik.de</a>
+  <a class="nav-back" href="index.html">← Zurück</a>
+</nav>
+
+<div class="meta-row">
+  <span class="neu-badge">Neu</span>
+  <span class="kategorie">Strukturanalyse</span>
+  <span class="datum">15. Mai 2026</span>
+</div>
+
+<h1>Sparen für andere, Ausbau für sich</h1>
+
+<p class="deck">
+  ARD und ZDF sollen Hunderte Millionen Euro einsparen – Programm, Personal, Produktion.
+  Gleichzeitig plant die ARD, ihr Berliner Lobbybüro heimlich auszubauen.
+  Was wie ein Widerspruch aussieht, ist bei näherer Betrachtung systemlogisch.
+</p>
+
+<div class="faktenbox">
+  <div>
+    <span class="fakt-label">Geforderte Einsparungen</span>
+    <span class="fakt-wert">Hunderte Mio.</span>
+    <span class="fakt-sub">ARD + ZDF, Beitragsperiode 2025–2028</span>
+  </div>
+  <div>
+    <span class="fakt-label">ARD-Lobbying Brüssel</span>
+    <span class="fakt-wert">500.000 €+</span>
+    <span class="fakt-sub">Jährliche Lobbykosten, EU-Register</span>
+  </div>
+  <div>
+    <span class="fakt-label">Reaktion intern</span>
+    <span class="fakt-wert">Ärger</span>
+    <span class="fakt-sub">Laut Business Insider, Mai 2026</span>
+  </div>
+</div>
+
+<h2>Was passiert ist</h2>
+
+<p>Business Insider berichtete im Mai 2026 über interne Unstimmigkeiten bei der ARD: Während öffentlich über Sparprogramme, Stellenabbau und Programmkürzungen gesprochen wird, soll hinter den Kulissen das Berliner Verwaltungs- und Verbindungsbüro ausgebaut werden. Der Plan wurde offenbar ohne öffentliche Kommunikation vorangetrieben – was intern für Ärger sorgte.</p>
+
+<p>Die Gleichzeitigkeit ist bemerkenswert: Einerseits werden Beitragszahlern Sparmaßnahmen mit dem Verweis auf Effizienz und Kostendisziplin erklärt. Andererseits wird der politische Apparat, der den ÖRR in Berlin absichern soll, still erweitert.</p>
+
+<div class="pullquote">
+  „ARD und ZDF sollen Millionen sparen und daher beim Programm und Personal kürzen. Doch nun soll hinter den Kulissen bei der ARD die Verwaltung aufgebaut werden. Das sorgt für internen Ärger."
+  <cite>Business Insider Deutschland, Mai 2026</cite>
+</div>
+
+<h2>Lobbying ist kein Randphänomen</h2>
+
+<p>Das ARD-Engagement in der politischen Interessenvertretung ist kein neues Phänomen. Das ARD-Verbindungsbüro in Brüssel ist seit 2009 im EU-Transparenzregister eingetragen. Es beschäftigt knapp vier Vollzeit-Lobbyisten mit EU-Parlamentsakkreditierung und verzeichnet jährliche Lobbykosten von 500.000 bis 600.000 Euro – öffentlich einsehbar im europäischen Transparenzregister.</p>
+
+<p>Hinzu kommt das Berliner Verbindungsbüro, das gegenüber Bundesregierung, Bundestag und den Landesregierungen tätig ist. Dessen Ausbau ist der Kern der aktuellen Meldung.</p>
+
+<div class="analyse-box">
+  <div class="analyse-box-title">Strukturelle Einordnung</div>
+  <p>Der ÖRR ist in einer eigentümlichen Lage: Er wird durch eine Zwangsabgabe finanziert, deren Höhe formal von einer unabhängigen Kommission (KEF) empfohlen und von den Landesparlamenten beschlossen wird. Gleichzeitig betreibt er aktiv politische Interessenvertretung, um genau diesen Prozess zu beeinflussen.</p>
+  <p>Das ist keine Kritik an Lobbying als solchem – jede große Institution betreibt Interessenvertretung. Die Frage ist die strukturelle Asymmetrie: Der ÖRR kann seine eigene Finanzierungsbasis durch politischen Einfluss sichern und ausbauen, während Bürger, die strukturelle Mängel geltend machen, faktisch keine vergleichbare institutionelle Gegenmacht haben.</p>
+</div>
+
+<h2>Der Widerspruch im Detail</h2>
+
+<div class="vergleich-grid">
+  <div class="vergleich-card rot">
+    <span class="vergleich-label">Öffentliche Kommunikation</span>
+    <h4>Sparen, kürzen, effizienter werden</h4>
+    <ul>
+      <li>Stellenabbau beim Programm</li>
+      <li>Produktionskürzungen</li>
+      <li>Effizienzprogramme angekündigt</li>
+      <li>Beitragserhöhung politisch schwer durchsetzbar</li>
+      <li>Reformdruck von Länderseite</li>
+    </ul>
+  </div>
+  <div class="vergleich-card gold">
+    <span class="vergleich-label">Internes Handeln</span>
+    <h4>Verwaltung und Lobbying ausbauen</h4>
+    <ul>
+      <li>Berliner Lobbybüro wird vergrößert</li>
+      <li>Brüsseler Büro: 500.000 € Jahreskosten</li>
+      <li>Politischer Apparat wird gestärkt</li>
+      <li>BVerfG-Klage trotz zurückgezogener KEF-Empfehlung</li>
+      <li>Strukturelle Absicherung der Finanzierung</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Verbindung zur aktuellen Rechtslage</h2>
+
+<p>Der Lobbyausbau fällt zeitlich mit dem laufenden BVerfG-Verfahren zusammen. ARD und ZDF klagen in Karlsruhe auf ein Grundsatzurteil, das KEF-Empfehlungen für die Länder bindend machen soll – auch nachdem die KEF ihre eigene Erhöhungsempfehlung zurückgenommen hat. Das Verfahren läuft, die Verhandlung ist für den 23. Juni 2026 angesetzt.</p>
+
+<p>Der Ausbau des Berliner Büros fügt sich in diese Strategie ein: juristisch über Karlsruhe, politisch über Berlin, bürokratisch über die Verwaltungsstruktur. Alle drei Wege gleichzeitig.</p>
+
+<h2>Welcher Mechanismus steckt dahinter</h2>
+
+<div class="mechanismus-hinweis">
+  <div class="mech-num-badge">02</div>
+  <div class="mech-content">
+    <strong>Mechanismus 2: Publikumsverlust-Reflex / Selbsterhaltungslogik</strong>
+    <p>Der ÖRR reagiert auf externen Druck nicht mit inhaltlicher Reform, sondern mit Stärkung der eigenen institutionellen Position – politisch, juristisch, administrativ. Der Lobbyausbau bei gleichzeitigen Programmkürzungen ist ein Lehrbuchbeispiel dieser Logik.</p>
+  </div>
+</div>
+
+<div class="mechanismus-hinweis">
+  <div class="mech-num-badge">09</div>
+  <div class="mech-content">
+    <strong>Mechanismus 9 (strukturell): Gebührenfinanzierung als Anreiz zur Selbsterhaltung</strong>
+    <p>Eine Institution, deren Einnahmen nicht vom Publikum, sondern vom politischen Prozess abhängen, hat strukturell einen Anreiz, in politische Sicherung zu investieren – nicht in Publikumsnähe. Der Lobbyausbau ist die konsequente Folge dieser Anreizstruktur.</p>
+  </div>
+</div>
+
+<div class="einschaetzung">
+  <div class="einschaetzung-title">Analytische Einschätzung</div>
+  <p>Der Fall ARD-Lobbybüro ist kein Skandal im klassischen Sinne. Es gibt keine Straftat, keinen klaren Verantwortlichen, keine einfache Lösung. Es ist etwas Interessanteres: ein systemlogisches Verhalten.</p>
+  <p>Eine Institution, die durch Zwangsabgaben finanziert wird und keine Marktkonkurrenz kennt, optimiert ihre Ressourcen in Richtung politischer und juristischer Absicherung – nicht in Richtung Qualität oder Publikumsnähe. Das ist keine Bösartigkeit. Es ist strukturelle Eigenlogik. Und genau das macht es so schwer zu ändern.</p>
+  <p>Für Beitragszahler bedeutet das: Ein Teil der 18,36 Euro monatlich fließt in Lobbying, das dafür sorgt, dass die 18,36 Euro monatlich nicht abgesenkt werden können.</p>
+</div>
+
+<div class="tags">
+  <a class="tag" href="index.html#mechanismen">Selbsterhaltungslogik</a>
+  <a class="tag" href="index.html#mechanismen">Mechanismus 2</a>
+  <a class="tag" href="index.html#mechanismen">Strukturanalyse</a>
+  <a class="tag" href="index.html#urteile">BVerfG</a>
+  <a class="tag" href="#">ARD</a>
+  <a class="tag" href="#">Lobbying</a>
+  <a class="tag" href="#">Rundfunkbeitrag</a>
+</div>
+
+<div class="quelle-box">
+  Quellen: Business Insider Deutschland, Mai 2026 ·
+  EU-Transparenzregister ARD-Verbindungsbüro Brüssel:
+  <a href="https://lobbyfacts.eu/datacard/ard-verbindungsbüro-brüssel?rid=6774178922-55" target="_blank">lobbyfacts.eu</a> ·
+  Zur BVerfG-Analyse: <a href="BVerfG_Rundfunkbeitrag_Juni2026_Artikel.html">BVerfG verhandelt im Juni</a>
+</div>
+
+<footer>
+  <span>© 2026 Rundfunkkritik.de</span>
+  <span><a href="index.html">← Zur Startseite</a></span>
+</footer>
+
+</body>
+</html>

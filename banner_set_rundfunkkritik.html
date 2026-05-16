@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banner-Set – Rundfunkkritik.de</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+:root{
+  --ink:#1c1c1a;--ink-2:#3d3d38;--ink-3:#6b6b62;
+  --paper:#f8f5ef;--paper-2:#f0ece2;--white:#fff;
+  --rule:#cdc8b8;--accent:#1a2533;
+}
+body{font-family:system-ui,sans-serif;background:var(--paper);color:var(--ink);padding:2rem}
+
+.anleitung{
+  max-width:860px;margin:0 auto 3rem;
+  background:var(--white);border:1px solid var(--rule);
+  padding:2rem;
+}
+.anleitung h1{font-size:1.4rem;font-weight:700;margin-bottom:0.5rem}
+.anleitung p{font-size:0.95rem;color:var(--ink-2);line-height:1.7;margin-bottom:0.8rem}
+.anleitung ol{padding-left:1.3rem;font-size:0.95rem;color:var(--ink-2);line-height:1.7}
+.anleitung ol li{margin-bottom:0.4rem}
+.anleitung .tipp{
+  background:#faf6e8;border-left:3px solid #7a5c0a;
+  padding:0.8rem 1rem;margin:1rem 0;font-size:0.88rem;color:#3d3d38
+}
+.anleitung code{background:var(--paper-2);padding:0.15rem 0.4rem;font-family:monospace;font-size:0.85rem}
+
+.section-label{
+  max-width:860px;margin:0 auto 0.8rem;
+  font-family:monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--ink-3);padding-bottom:0.5rem;border-bottom:1px solid var(--rule);
+}
+
+.banner-wrap{
+  max-width:860px;margin:0 auto 3rem;
+  display:flex;flex-direction:column;gap:0.5rem;
+}
+
+.banner-meta{
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:monospace;font-size:0.68rem;color:var(--ink-3);
+  letter-spacing:0.06em;
+}
+.format-badge{
+  background:var(--accent);color:#fff;
+  padding:0.2rem 0.5rem;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;
+}
+.banner-container{border:1px dashed var(--rule)}
+
+/* ══════════════════════════════════════════════════════ */
+/* BANNER 1 – Quadrat 1:1                                */
+/* ══════════════════════════════════════════════════════ */
+.b1{
+  width:480px;height:480px;
+  background:#1a2533;
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:2.5rem;position:relative;overflow:hidden;
+}
+.b1::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,transparent,transparent 18px,rgba(255,255,255,0.015) 18px,rgba(255,255,255,0.015) 19px);
+}
+.b1 .kicker{
+  font-family:monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(255,255,255,0.35);margin-bottom:1.2rem;position:relative;z-index:1;
+}
+.b1 .headline{
+  font-family:Georgia,serif;font-size:2.6rem;font-weight:900;
+  color:#fff;line-height:1.05;letter-spacing:-0.02em;position:relative;z-index:1;
+}
+.b1 .headline em{font-style:italic;font-weight:400;color:rgba(255,255,255,0.5)}
+.b1 .bottom{position:relative;z-index:1}
+.b1 .rule{width:2.5rem;height:1px;background:rgba(255,255,255,0.2);margin-bottom:0.8rem}
+.b1 .domain{font-size:1.15rem;font-weight:700;color:#fff;letter-spacing:0.02em}
+.b1 .sub{font-family:monospace;font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.35);margin-top:0.3rem}
+
+/* ══════════════════════════════════════════════════════ */
+/* BANNER 2 – Querformat 16:9                            */
+/* ══════════════════════════════════════════════════════ */
+.b2{
+  width:640px;height:360px;
+  background:#1a2533;
+  display:flex;align-items:center;padding:2.5rem;
+  position:relative;overflow:hidden;
+}
+.b2::after{
+  content:'';position:absolute;right:0;top:0;bottom:0;width:40%;
+  background:rgba(255,255,255,0.03);border-left:1px solid rgba(255,255,255,0.06);
+}
+.b2 .left{position:relative;z-index:1;flex:1}
+.b2 .kicker{font-family:monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.8rem}
+.b2 .headline{font-family:Georgia,serif;font-size:1.9rem;font-weight:900;color:#fff;line-height:1.1;letter-spacing:-0.01em;max-width:300px}
+.b2 .desc{margin-top:0.8rem;font-size:0.82rem;color:rgba(255,255,255,0.5);max-width:260px;line-height:1.5}
+.b2 .right{position:absolute;right:2.5rem;top:50%;transform:translateY(-50%);text-align:right;z-index:1}
+.b2 .stats{font-family:monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:0.5rem}
+.b2 .domain-right{font-size:0.9rem;font-weight:700;color:#fff}
+
+/* ══════════════════════════════════════════════════════ */
+/* BANNER 3 – Hochformat 4:5                             */
+/* ══════════════════════════════════════════════════════ */
+.b3{
+  width:400px;height:500px;
+  background:#1a2533;
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:2rem;position:relative;overflow:hidden;
+}
+.b3::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:50%;
+  background:linear-gradient(to top,rgba(0,0,0,0.4),transparent);
+}
+.b3 .top{position:relative;z-index:1}
+.b3 .kicker{font-family:monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.8rem}
+.b3 .badge{display:inline-block;background:rgba(139,31,31,0.85);color:#fff;font-family:monospace;font-size:8px;letter-spacing:0.14em;text-transform:uppercase;padding:0.25rem 0.6rem;margin-bottom:0.8rem}
+.b3 .headline{font-family:Georgia,serif;font-size:1.7rem;font-weight:900;color:#fff;line-height:1.1;letter-spacing:-0.01em}
+.b3 .headline em{font-style:italic;font-weight:400;color:rgba(255,255,255,0.5)}
+.b3 .bottom{position:relative;z-index:1}
+.b3 .grid{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;margin-bottom:1rem}
+.b3 .stat-card{background:rgba(255,255,255,0.07);padding:0.7rem;border-left:2px solid rgba(255,255,255,0.15)}
+.b3 .stat-num{font-size:1.2rem;font-weight:700;color:#fff}
+.b3 .stat-lbl{font-family:monospace;font-size:8px;letter-spacing:0.08em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:0.2rem}
+.b3 .domain{font-family:monospace;font-size:9px;color:rgba(255,255,255,0.35);letter-spacing:0.06em}
+
+/* ══════════════════════════════════════════════════════ */
+/* BANNER 4 – Horizontal-Banner                          */
+/* ══════════════════════════════════════════════════════ */
+.b4{
+  width:640px;height:80px;
+  background:#1a2533;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 1.5rem;
+}
+.b4 .left{display:flex;align-items:center;gap:1rem}
+.b4 .line{width:2px;height:2.2rem;background:rgba(255,255,255,0.2)}
+.b4 .name{font-size:1rem;font-weight:700;color:#fff;letter-spacing:0.02em}
+.b4 .sub{font-family:monospace;font-size:9px;letter-spacing:0.1em;color:rgba(255,255,255,0.35);text-transform:uppercase;margin-top:0.2rem}
+.b4 .btn{
+  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);
+  padding:0.4rem 1rem;font-family:monospace;font-size:9px;
+  letter-spacing:0.1em;text-transform:uppercase;color:#fff;white-space:nowrap;
+}
+
+/* ══════════════════════════════════════════════════════ */
+/* BANNER 5 – Stiller Widerstand                         */
+/* ══════════════════════════════════════════════════════ */
+.b5{
+  width:480px;height:480px;
+  background:#0d0d0b;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  padding:2.5rem;text-align:center;position:relative;overflow:hidden;
+}
+.b5::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(255,255,255,0.018) 28px,rgba(255,255,255,0.018) 29px);
+}
+.b5 .inner{position:relative;z-index:1}
+.b5 .headline{font-family:Georgia,serif;font-size:3rem;font-weight:900;color:#fff;line-height:1.0;letter-spacing:-0.02em;margin-bottom:0.5rem}
+.b5 .divider{width:3rem;height:1px;background:rgba(192,57,43,0.8);margin:0.8rem auto}
+.b5 .tagline{font-family:monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:1.5rem}
+.b5 .tagline .normal{color:rgba(255,255,255,0.5)}
+.b5 .tagline .red{color:#c0392b}
+.b5 .domain{font-family:monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.25)}
+
+/* ══════════════════════════════════════════════════════ */
+/* BANNER 6 – BVerfG 23. Juni                            */
+/* ══════════════════════════════════════════════════════ */
+.b6{
+  width:640px;height:360px;
+  background:#1a2533;
+  display:flex;align-items:center;padding:2.5rem;
+  position:relative;overflow:hidden;
+}
+.b6::before{
+  content:'';position:absolute;right:0;top:0;bottom:0;width:35%;
+  background:#2e4a6b;
+  clip-path:polygon(20% 0,100% 0,100% 100%,0 100%);
+}
+.b6 .left{position:relative;z-index:1;flex:1}
+.b6 .badge{display:inline-block;background:rgba(192,57,43,0.9);color:#fff;font-family:monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;padding:0.3rem 0.7rem;margin-bottom:1rem}
+.b6 .headline{font-family:Georgia,serif;font-size:1.7rem;font-weight:900;color:#fff;line-height:1.1;max-width:280px}
+.b6 .desc{margin-top:0.7rem;font-size:0.82rem;color:rgba(255,255,255,0.5);max-width:250px;line-height:1.5}
+.b6 .right{position:absolute;right:2rem;top:50%;transform:translateY(-50%);text-align:center;z-index:1;width:160px}
+.b6 .date-big{font-family:Georgia,serif;font-size:2.8rem;font-weight:900;color:#fff;line-height:1;letter-spacing:-0.02em}
+.b6 .date-month{font-family:monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:0.3rem}
+.b6 .az{font-family:monospace;font-size:8px;letter-spacing:0.08em;color:rgba(255,255,255,0.3);margin-top:0.5rem}
+.b6 .domain{position:absolute;bottom:1.5rem;left:2.5rem;font-family:monospace;font-size:9px;letter-spacing:0.1em;color:rgba(255,255,255,0.25);text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<!-- ANLEITUNG -->
+<div class="anleitung">
+  <h1>Banner-Set – Rundfunkkritik.de</h1>
+  <p>6 fertige Banner in verschiedenen Formaten. So machen Sie Screenshots:</p>
+
+  <p style="font-weight:600;margin-top:1rem">Windows:</p>
+  <ol>
+    <li>Diese HTML-Datei im Browser öffnen (Doppelklick genügt)</li>
+    <li>Rechtsklick auf den gewünschten Banner → <code>Untersuchen</code> (F12)</li>
+    <li>Im Inspektor das Banner-Element anklicken → Rechtsklick → <code>Screenshot aufnehmen</code></li>
+    <li>Alternativ: <strong>Snipping Tool</strong> (Win + Shift + S) → Banner-Bereich markieren</li>
+  </ol>
+
+  <p style="font-weight:600;margin-top:1rem">Mac:</p>
+  <ol>
+    <li>HTML-Datei im Browser öffnen</li>
+    <li><code>Cmd + Shift + 4</code> → Bereich um den Banner markieren</li>
+    <li>Screenshot landet automatisch auf dem Desktop</li>
+  </ol>
+
+  <div class="tipp">
+    <strong>Tipp für pixel-perfekte Screenshots:</strong> Browser-Zoom auf 100% stellen (Strg/Cmd + 0), dann Screenshot machen. So stimmen die Abmessungen exakt.
+  </div>
+
+  <p style="font-weight:600;margin-top:1rem">Empfohlene Formate je Plattform:</p>
+  <ol>
+    <li><strong>Banner 1 (Quadrat)</strong> → WhatsApp-Status, Instagram-Post, Facebook</li>
+    <li><strong>Banner 2 (16:9)</strong> → Twitter/X, LinkedIn, YouTube-Thumbnail</li>
+    <li><strong>Banner 3 (4:5)</strong> → Instagram-Feed, optimal für mobil</li>
+    <li><strong>Banner 4 (Horizontal)</strong> → Forum-Signatur, E-Mail-Signatur</li>
+    <li><strong>Banner 5 (Stiller Widerstand)</strong> → alle Plattformen, Telegram</li>
+    <li><strong>Banner 6 (BVerfG 23. Juni)</strong> → Twitter/X, LinkedIn, WhatsApp</li>
+  </ol>
+
+  <div class="tipp">
+    <strong>Für E-Mail-Signatur (Banner 4):</strong> Screenshot machen → in Outlook/Thunderbird unter Einstellungen → Signatur das Bild einfügen → Link auf rundfunkkritik.de setzen.
+  </div>
+</div>
+
+<!-- BANNER 1 -->
+<div class="section-label">Banner 1 – Quadrat 1:1 · 480×480px · Social Media allgemein</div>
+<div class="banner-wrap">
+  <div class="banner-meta">
+    <span>WhatsApp · Instagram · Facebook</span>
+    <span class="format-badge">480 × 480</span>
+  </div>
+  <div class="banner-container">
+    <div class="b1">
+      <div>
+        <div class="kicker">Unabhängige Strukturanalyse</div>
+        <div class="headline">Was der ÖRR<br><em>wirklich</em> ist</div>
+      </div>
+      <div class="bottom">
+        <div class="rule"></div>
+        <div class="domain">Rundfunkkritik.de</div>
+        <div class="sub">Wissenschaftlich · Juristisch · Ohne Polemik</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BANNER 2 -->
+<div class="section-label">Banner 2 – Querformat 16:9 · 640×360px · Twitter/X · LinkedIn</div>
+<div class="banner-wrap">
+  <div class="banner-meta">
+    <span>Twitter/X · LinkedIn · YouTube-Thumbnail</span>
+    <span class="format-badge">640 × 360</span>
+  </div>
+  <div class="banner-container">
+    <div class="b2">
+      <div class="left">
+        <div class="kicker">Strukturanalyse ÖRR</div>
+        <div class="headline">Der ÖRR erfüllt seinen Auftrag strukturell nicht.</div>
+        <div class="desc">Wissenschaftlich belegbar. Juristisch belastbar. Ohne Polemik.</div>
+      </div>
+      <div class="right">
+        <div class="stats">10 Mechanismen · 31 Belege · 0€</div>
+        <div class="domain-right">Rundfunkkritik.de</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BANNER 3 -->
+<div class="section-label">Banner 3 – Hochformat 4:5 · 400×500px · Instagram-Feed</div>
+<div class="banner-wrap">
+  <div class="banner-meta">
+    <span>Instagram-Feed · optimal für mobil</span>
+    <span class="format-badge">400 × 500</span>
+  </div>
+  <div class="banner-container">
+    <div class="b3">
+      <div class="top">
+        <div class="kicker">Rundfunkkritik.de</div>
+        <div class="badge">Aktuell</div>
+        <div class="headline">8,5 Mrd. €<br>Zwangs­beitrag.<br><em>Wofür?</em></div>
+      </div>
+      <div class="bottom">
+        <div class="grid">
+          <div class="stat-card"><div class="stat-num">10</div><div class="stat-lbl">Mechanismen</div></div>
+          <div class="stat-card"><div class="stat-num">31</div><div class="stat-lbl">Belege</div></div>
+          <div class="stat-card"><div class="stat-num">~0%</div><div class="stat-lbl">Beschwerdeerfolg</div></div>
+          <div class="stat-card"><div class="stat-num">0 €</div><div class="stat-lbl">Kosten Website</div></div>
+        </div>
+        <div class="domain">www.rundfunkkritik.de</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BANNER 4 -->
+<div class="section-label">Banner 4 – Horizontal-Banner · 640×80px · Forum · E-Mail-Signatur</div>
+<div class="banner-wrap">
+  <div class="banner-meta">
+    <span>Forum-Signatur · E-Mail-Signatur · Forenpost</span>
+    <span class="format-badge">640 × 80</span>
+  </div>
+  <div class="banner-container">
+    <div class="b4">
+      <div class="left">
+        <div class="line"></div>
+        <div>
+          <div class="name">Rundfunkkritik.de</div>
+          <div class="sub">Strukturanalyse · Wissenschaftlich · Unabhängig</div>
+        </div>
+      </div>
+      <div class="btn">→ Jetzt lesen</div>
+    </div>
+  </div>
+</div>
+
+<!-- BANNER 5 -->
+<div class="section-label">Banner 5 – Stiller Widerstand · 480×480px · alle Plattformen</div>
+<div class="banner-wrap">
+  <div class="banner-meta">
+    <span>Telegram · WhatsApp · Instagram · Twitter/X</span>
+    <span class="format-badge">480 × 480</span>
+  </div>
+  <div class="banner-container">
+    <div class="b5">
+      <div class="inner">
+        <div class="headline">Stiller<br>Widerstand</div>
+        <div class="divider"></div>
+        <div class="tagline">
+          <span class="normal">Kein Zwang. </span><span class="red">Keine GEZ.</span><span class="normal"> Keine Angst.</span>
+        </div>
+        <div class="domain">Rundfunkkritik.de</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BANNER 6 -->
+<div class="section-label">Banner 6 – BVerfG 23. Juni 2026 · 640×360px · Twitter/X · LinkedIn</div>
+<div class="banner-wrap">
+  <div class="banner-meta">
+    <span>Twitter/X · LinkedIn · WhatsApp</span>
+    <span class="format-badge">640 × 360</span>
+  </div>
+  <div class="banner-container">
+    <div class="b6">
+      <div class="left">
+        <div class="badge">Aktuell – BVerfG</div>
+        <div class="headline">Verhandlung zum Rundfunkbeitrag in Karlsruhe</div>
+        <div class="desc">Worum es wirklich geht – und warum es wichtig ist. Analyse auf Rundfunkkritik.de</div>
+      </div>
+      <div class="right">
+        <div class="date-big">23.</div>
+        <div class="date-month">Juni 2026</div>
+        <div class="az">Az. 1 BvR 2524/24</div>
+      </div>
+      <div class="domain">Rundfunkkritik.de</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
