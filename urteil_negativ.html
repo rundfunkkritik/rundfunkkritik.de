@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiktives Urteil – Abweisung & Zerlegung | Rundfunkkritik.de</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+:root{
+  --ink:#1c1c1a;--ink-2:#3d3d38;--ink-3:#6b6b62;--ink-4:#9e9e93;
+  --paper:#f8f5ef;--paper-2:#f0ece2;--white:#fff;
+  --rule:#cdc8b8;--rule-light:#e0dbd0;
+  --accent:#1a2533;--accent-2:#2e4a6b;
+  --red:#8b1f1f;--red-mid:#a33030;--red-light:#f9eeee;--red-border:#e0b0b0;
+  --gold:#7a5c0a;--gold-light:#faf6e8;--gold-border:#e0d090;
+  --green:#1a5430;--green-mid:#2d7a4a;--green-light:#edf6f0;
+}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.75;max-width:780px;margin:0 auto;padding:0 2rem 6rem}
+
+nav{position:sticky;top:0;z-index:100;background:var(--accent);padding:0;height:52px;display:flex;align-items:center;justify-content:space-between;margin:0 -2rem;padding:0 2rem}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#fff;text-decoration:none}
+.nav-back{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-decoration:none}
+.nav-back:hover{color:#fff}
+
+.fiktiv-banner{background:var(--red-light);border:1px solid var(--red-border);border-left:4px solid var(--red-mid);padding:0.9rem 1.2rem;margin:2rem 0 0;display:flex;align-items:center;gap:1rem}
+.fiktiv-badge{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;background:var(--red-mid);color:#fff;padding:0.25rem 0.6rem;white-space:nowrap}
+.fiktiv-text{font-size:0.92rem;color:var(--red);line-height:1.5}
+
+.urteil-header{border-bottom:2px solid var(--ink);padding:2.5rem 0 1.5rem;margin-bottom:2rem}
+.gericht-zeile{font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:1rem;display:flex;align-items:center;gap:1rem}
+.gericht-zeile::after{content:'';flex:1;height:1px;background:var(--rule)}
+h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;line-height:1.15;color:var(--ink);margin-bottom:0.8rem}
+.tenor-badge-neg{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;background:var(--red-mid);color:#fff;padding:0.3rem 0.8rem;margin-bottom:1.2rem}
+
+.parteien{background:var(--paper-2);border:1px solid var(--rule);padding:1.2rem 1.5rem;margin:1.5rem 0;display:grid;grid-template-columns:auto 1fr;gap:0.4rem 1.5rem}
+.partei-label{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-3);padding-top:0.1rem}
+.partei-wert{font-size:0.97rem;color:var(--ink-2)}
+
+.meta-row{display:flex;gap:2rem;flex-wrap:wrap;margin:1rem 0 0;padding-top:1rem;border-top:1px solid var(--rule)}
+.meta-label{font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-4);display:block;margin-bottom:0.2rem}
+.meta-wert{font-size:0.95rem;color:var(--ink-2)}
+
+h2{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--ink);margin:2.5rem 0 0.7rem;padding-bottom:0.4rem;border-bottom:1px solid var(--rule)}
+h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;font-style:italic;color:var(--ink-2);margin:1.8rem 0 0.5rem}
+p{margin-bottom:1.2rem;font-size:1rem;color:var(--ink-2);line-height:1.75}
+
+.tenor-box-neg{background:var(--red-light);border:1px solid var(--red-border);border-left:4px solid var(--red-mid);padding:1.5rem 1.8rem;margin:2rem 0}
+.tenor-box-title{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--red-mid);margin-bottom:1rem}
+.tenor-box-neg ol{padding-left:1.5rem}
+.tenor-box-neg ol li{font-size:1rem;color:var(--ink);line-height:1.7;margin-bottom:0.6rem;font-weight:600}
+
+.begruendung-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--rule);float:left;margin-right:0.8rem;line-height:1;margin-top:0.1rem}
+
+/* ZERLEGUNG */
+.zerlegung-section{background:var(--accent);color:#fff;padding:3rem 2rem;margin:3rem -2rem 0}
+.zerlegung-inner{max-width:780px;margin:0 auto}
+.zerlegung-tag{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.8rem}
+.zerlegung-tag::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.1)}
+.zerlegung-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:#fff;margin-bottom:0.8rem}
+.zerlegung-lead{font-size:1.05rem;color:rgba(255,255,255,0.65);margin-bottom:2.5rem;line-height:1.65;max-width:600px}
+
+.fehler-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08)}
+.fehler-card{background:rgba(255,255,255,0.04);padding:1.8rem;transition:background 0.2s}
+.fehler-card:hover{background:rgba(255,255,255,0.09)}
+.fehler-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:rgba(255,255,255,0.12);line-height:1;margin-bottom:0.7rem}
+.fehler-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.5rem}
+.fehler-text{font-size:0.9rem;color:rgba(255,255,255,0.6);line-height:1.6}
+.fehler-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;background:rgba(139,31,31,0.6);color:#ffaaaa;padding:0.2rem 0.5rem;margin-bottom:0.6rem}
+
+.berufung-box{background:var(--gold-light);border:1px solid var(--gold-border);border-left:4px solid var(--gold);padding:1.5rem 1.8rem;margin:2.5rem 0}
+.berufung-title{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.berufung-box p{font-size:0.97rem;color:var(--ink-2);margin-bottom:0.7rem}
+.berufung-box p:last-child{margin-bottom:0}
+.berufung-box ul{padding-left:1.2rem;margin-top:0.5rem}
+.berufung-box ul li{font-size:0.95rem;color:var(--ink-2);margin-bottom:0.4rem;line-height:1.6}
+
+.hinweis-footer{background:var(--paper-2);border:1px solid var(--rule);padding:1.2rem 1.5rem;margin-top:3rem;font-size:0.88rem;color:var(--ink-3);font-style:italic;line-height:1.6}
+footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer span{font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:var(--ink-4);letter-spacing:0.06em}
+footer a{color:var(--ink-4);text-decoration:none}
+footer a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Rundfunkkritik.de</a>
+  <a class="nav-back" href="index.html">← Zurück</a>
+</nav>
+
+<div class="fiktiv-banner">
+  <span class="fiktiv-badge">⚠ Fiktives Musterdokument</span>
+  <span class="fiktiv-text">Dieses Urteil ist ein analytisches Muster – kein reales Gerichtsdokument. Es zeigt typische Abweisungsbegründungen – und warum sie rechtlich angreifbar sind.</span>
+</div>
+
+<div class="urteil-header">
+  <div class="gericht-zeile">Verwaltungsgericht [Musterstadt] · Fiktives Musterurteil</div>
+  <div class="tenor-badge-neg">Abweisung</div>
+  <h1>Die Klage wird abgewiesen.<br><em style="font-style:italic;font-weight:400;font-size:0.85em;color:#6b6b62">– und warum das falsch ist.</em></h1>
+
+  <div class="parteien">
+    <span class="partei-label">Kläger</span>
+    <span class="partei-wert">[Name], vertreten in Person</span>
+    <span class="partei-label">Beklagter</span>
+    <span class="partei-wert">ARD ZDF Deutschlandradio Beitragsservice</span>
+    <span class="partei-label">Gericht</span>
+    <span class="partei-wert">Verwaltungsgericht [Musterstadt] – fiktiv</span>
+  </div>
+
+  <div class="meta-row">
+    <div class="meta-item">
+      <span class="meta-label">Aktenzeichen</span>
+      <span class="meta-wert">VG XX K 000/26 (fiktiv)</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Datum</span>
+      <span class="meta-wert">[Muster] 2026</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Berufung</span>
+      <span class="meta-wert">Möglich – OVG [Land]</span>
+    </div>
+  </div>
+</div>
+
+<h2>Tenor</h2>
+
+<div class="tenor-box-neg">
+  <div class="tenor-box-title">Im Namen des Volkes wird für Recht erkannt:</div>
+  <ol>
+    <li>Die Klage wird abgewiesen.</li>
+    <li>Der Kläger trägt die Kosten des Verfahrens.</li>
+  </ol>
+</div>
+
+<h2>Begründung (typische Abweisungsformel)</h2>
+
+<h3>I. Zulässigkeit</h3>
+<p>Die Klage ist zulässig, jedoch unbegründet.</p>
+
+<h3>II. Keine konkreten Einzelverstöße benannt</h3>
+<p>
+  <span class="begruendung-num">1</span>
+  Der Kläger hat keine konkreten, auf einzelne Sendungen bezogenen Verstöße gegen den Programmauftrag benannt, die geeignet wären, eine Befreiung von der Beitragspflicht zu rechtfertigen. Allgemeine Kritik an redaktionellen Entscheidungen genügt nicht.
+</p>
+
+<h3>III. Weiter Gestaltungsspielraum</h3>
+<p>
+  <span class="begruendung-num">2</span>
+  Der öffentlich-rechtliche Rundfunk verfügt über einen weiten Gestaltungsspielraum hinsichtlich Themenauswahl, Gewichtung und Darstellungsweise. Eine gerichtliche Überprüfung redaktioneller Entscheidungen findet nur in engen Grenzen statt.
+</p>
+
+<h3>IV. Subjektive Unzufriedenheit</h3>
+<p>
+  <span class="begruendung-num">3</span>
+  Die persönliche Unzufriedenheit des Klägers mit dem Programmangebot begründet keine unzumutbare Härte im Sinne des § 4 RBStV. Die Beitragspflicht knüpft nicht an die individuelle Nutzung an.
+</p>
+
+<h3>V. Beweise nicht ausreichend</h3>
+<p>
+  <span class="begruendung-num">4</span>
+  Die vorgelegten Studien und Aussagen ehemaliger Mitarbeiter belegen keine rechtswidrige Einflussnahme auf den Redaktionsbetrieb und sind nicht geeignet, einen strukturellen Verstoß gegen den Programmauftrag zu begründen.
+</p>
+
+<!-- ZERLEGUNG -->
+<div class="zerlegung-section">
+  <div class="zerlegung-inner">
+    <div class="zerlegung-tag">Analytische Zerlegung</div>
+    <h2 class="zerlegung-title" style="color:#fff;border:none;padding:0;margin:0 0 0.8rem">Warum dieses Urteil rechtlich angreifbar ist</h2>
+    <p class="zerlegung-lead">Sechs strukturelle Fehler, die eine Berufung begründen – präzise, juristisch formuliert.</p>
+
+    <div class="fehler-grid">
+      <div class="fehler-card">
+        <div class="fehler-num">01</div>
+        <span class="fehler-tag">Rechtsfehler</span>
+        <div class="fehler-title">Falsche Prüfungsebene</div>
+        <p class="fehler-text">Das BVerfG und BVerwG prüfen ausdrücklich Gesamtprogramme und strukturelle Tendenzen – nicht einzelne Sendungen. Das Gericht argumentiert unterhalb der richtigen Prüfungsebene. Das ist ein Rechtsfehler, kein Ermessen.</p>
+      </div>
+      <div class="fehler-card">
+        <div class="fehler-num">02</div>
+        <span class="fehler-tag">Tatsachenverdrängung</span>
+        <div class="fehler-title">Beweise A–G ignoriert</div>
+        <p class="fehler-text">Der Kläger hat objektive, wissenschaftliche Evidenz in 7 Kategorien vorgelegt. Das Gericht würdigt keine einzige dieser Kategorien inhaltlich. Pauschalverwerfung ohne Subsumtion ist verfahrensrechtlich angreifbar.</p>
+      </div>
+      <div class="fehler-card">
+        <div class="fehler-num">03</div>
+        <span class="fehler-tag">Rechtsfehler</span>
+        <div class="fehler-title">Pluralitätsgebot nicht geprüft</div>
+        <p class="fehler-text">Das Pluralitätsgebot ist zentraler verfassungsrechtlicher Prüfungsmaßstab (Art. 5 GG). Das Gericht erwähnt es nicht substantiiert und wendet es nicht an. Das ist ein Rechtsfehler.</p>
+      </div>
+      <div class="fehler-card">
+        <div class="fehler-num">04</div>
+        <span class="fehler-tag">Rechtsfehler</span>
+        <div class="fehler-title">Gestaltungsfreiheit schrankenlos</div>
+        <p class="fehler-text">Der Gestaltungsspielraum des ÖRR endet dort, wo Pluralität systematisch unterlaufen wird. Das Gericht prüft diese Grenze nicht. Unbegrenzte Gestaltungsfreiheit ist verfassungsrechtlich nicht haltbar.</p>
+      </div>
+      <div class="fehler-card">
+        <div class="fehler-num">05</div>
+        <span class="fehler-tag">Fehlende Prüfung</span>
+        <div class="fehler-title">Keine Verhältnismäßigkeit</div>
+        <p class="fehler-text">Das Gericht prüft Eignung, Erforderlichkeit und Angemessenheit der Beitragspflicht angesichts der Strukturdefizite nicht. Eine vollständige Verhältnismäßigkeitsprüfung fehlt.</p>
+      </div>
+      <div class="fehler-card">
+        <div class="fehler-num">06</div>
+        <span class="fehler-tag">Verfahrensfehler</span>
+        <div class="fehler-title">Asymmetrische Regulierung ignoriert</div>
+        <p class="fehler-text">Die strukturelle Ungleichbehandlung von ÖRR und freien Medien (Art. 3 GG) wird nicht geprüft. Landesmedienanstalten dürfen freie Medien sanktionieren – der ÖRR ist faktisch immun. Das ist eine grundrechtlich relevante Asymmetrie.</p>
+      </div>
+    </div>
+
+    <div class="berufung-box" style="margin-top:2.5rem">
+      <div class="berufung-title">Konsequenzen für die Berufung</div>
+      <p>Auf Basis dieser Analyse lässt sich eine Berufung beim Oberverwaltungsgericht präzise auf folgende Rügen stützen:</p>
+      <ul>
+        <li>Falsche Rechtsanwendung: Pluralitätsgebot (Art. 5 GG, § 26 MStV) nicht geprüft</li>
+        <li>Fehlende Tatsachenwürdigung: Beweisgruppen A–G pauschal verworfen ohne Subsumtion</li>
+        <li>Fehlende Verhältnismäßigkeitsprüfung trotz vorgetragener Strukturdefizite</li>
+        <li>Prüfungsebene zu niedrig: Einzelsendungen statt Gesamtprogramm (BVerwG 6 C 5.24)</li>
+        <li>Art. 3 GG: Asymmetrische Regulierung nicht berücksichtigt</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="hinweis-footer" style="margin-top:2rem">
+  <strong>⚠ Fiktives Musterdokument:</strong> Dieses Urteil und seine Zerlegung existieren nicht. Sie sind analytische Muster – keine Rechtsberatung. Die Fehleranalyse zeigt, welche Argumente in einer Berufung theoretisch tragfähig sein könnten. Bitte anwaltliche Beratung einholen.
+</div>
+
+<footer>
+  <span>© 2026 Rundfunkkritik.de</span>
+  <span><a href="index.html">← Zur Startseite</a></span>
+</footer>
+
+</body>
+</html>
