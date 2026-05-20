@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Macht & Geld im ÖRR — rundfunkkritik.de</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #ffffff;
+    --bg2: #f5f5f3;
+    --text: #1a1a18;
+    --text2: #5f5e5a;
+    --text3: #888780;
+    --border: rgba(0,0,0,0.12);
+    --border2: rgba(0,0,0,0.22);
+    --blue-dark: #0C447C;
+    --blue-mid:  #185FA5;
+    --blue-light:#378ADD;
+    --green:     #3B6D11;
+    --red:       #A32D2D;
+    --radius: 8px;
+    --radius-lg: 12px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1c1a;
+      --bg2: #252523;
+      --text: #e8e6de;
+      --text2: #9c9a92;
+      --text3: #6b6960;
+      --border: rgba(255,255,255,0.1);
+      --border2: rgba(255,255,255,0.18);
+    }
+  }
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  header { margin: 0 0 2.5rem; }
+  header h1 { font-size: 1.6rem; font-weight: 500; margin: 0 0 0.25rem; }
+  header p  { font-size: 0.9rem; color: var(--text2); }
+  .tabs { display: flex; gap: 4px; border-bottom: 0.5px solid var(--border2); margin: 0 0 1.5rem; }
+  .tab {
+    padding: 8px 16px; font-size: 13px; cursor: pointer;
+    border-radius: var(--radius) var(--radius) 0 0;
+    border: 0.5px solid transparent; border-bottom: none;
+    color: var(--text2); background: transparent;
+    transition: all .15s;
+  }
+  .tab:hover { color: var(--text); }
+  .tab.active { background: var(--bg); border-color: var(--border2); color: var(--text); }
+  .panel { display: none; }
+  .panel.active { display: block; }
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 12px;
+    margin: 0 0 1rem; font-size: 12px; color: var(--text2);
+  }
+  .legend span { display: flex; align-items: center; gap: 5px; }
+  .swatch { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+  .note { font-size: 11px; color: var(--text3); margin: 8px 0 0; }
+  .chart-wrap { position: relative; width: 100%; }
+  .pyramid-wrap svg { display: block; width: 100%; }
+
+  /* Responsive */
+  @media (max-width: 520px) {
+    .tabs { flex-wrap: wrap; }
+    body { padding: 1rem 0.75rem; }
+    header h1 { font-size: 1.3rem; }
+  }
+
+  footer {
+    margin: 3rem 0 0;
+    padding: 1.5rem 0 0;
+    border-top: 0.5px solid var(--border);
+    font-size: 11px;
+    color: var(--text3);
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Wer Deutschland wirklich prägt</h1>
+  <p>Macht, Geld und Einfluss im öffentlich-rechtlichen Rundfunk im Vergleich zur Politik · Stand Mai 2026</p>
+</header>
+
+<div class="tabs" role="tablist">
+  <button class="tab active" role="tab" aria-selected="true"  onclick="show('gehalt',this)">Jahresgehalt</button>
+  <button class="tab"        role="tab" aria-selected="false" onclick="show('pension',this)">Pension/Jahr</button>
+  <button class="tab"        role="tab" aria-selected="false" onclick="show('lebenszeit',this)">Lebenszeit</button>
+  <button class="tab"        role="tab" aria-selected="false" onclick="show('macht',this)">Machtpyramide</button>
+</div>
+
+<!-- TAB 1: Jahresgehalt -->
+<div id="gehalt" class="panel active" role="tabpanel">
+  <div class="legend">
+    <span><span class="swatch" style="background:#185FA5"></span>ÖRR — bestätigt (ZDF-Leak 2024)</span>
+    <span><span class="swatch" style="background:#378ADD;opacity:.7"></span>ÖRR — Schätzung (ARD)</span>
+    <span><span class="swatch" style="background:#3B6D11"></span>Politik</span>
+  </div>
+  <div class="chart-wrap" style="height:400px">
+    <canvas id="c-gehalt"
+      role="img"
+      aria-label="Horizontales Balkendiagramm: Jahresgehälter von Markus Lanz 1,9 Mio bis Bundesminister 280.000 Euro">
+      Jahresgehälter: Markus Lanz (ZDF) 1,9 Mio, Horst Lichter (ZDF) 1,7 Mio, Oliver Welke (ZDF) 1,18 Mio,
+      Kai Pflaume (ARD, Schätzung) 1,25 Mio, Maybrit Illner (ZDF) 480T, Tom Buhrow Intendant WDR 413T,
+      Bundeskanzler 360T, Norbert Himmler Intendant ZDF 372T, Bundesminister 280T.
+    </canvas>
+  </div>
+  <p class="note">ZDF-Zahlen bestätigt (Welt am Sonntag-Leak 2024). ARD-Moderatoren: Schätzungen auf Basis Branchenquellen. Politische Bezüge offiziell nach BBesG.</p>
+</div>
+
+<!-- TAB 2: Pension -->
+<div id="pension" class="panel" role="tabpanel">
+  <div class="legend">
+    <span><span class="swatch" style="background:#185FA5"></span>ÖRR</span>
+    <span><span class="swatch" style="background:#3B6D11"></span>Politik</span>
+  </div>
+  <div class="chart-wrap" style="height:340px">
+    <canvas id="c-pension"
+      role="img"
+      aria-label="Balkendiagramm Jahrespensionen: Bundeskanzler bis 250.000 Euro, Intendanten bis 180.000 Euro">
+      Jahrespensionen: Bundeskanzler max. 250T, Bundesminister max. 200T, Intendanten (RBB-Maßstab) 180T,
+      Intendanten Durchschnitt 150T, Programmdirektor Schätzung 100T, Staatssekretär max. 140T,
+      Chefredakteur Schätzung 75T, Bundestagsabgeordnete 25 Jahre 84T.
+    </canvas>
+  </div>
+  <p class="note">ÖRR-Pensionen: teils nicht offengelegt. Basis: RBB-Schlesinger-Skandal, Branchenschätzungen. Politische Pensionen: gesetzlich geregelt, öffentlich.</p>
+</div>
+
+<!-- TAB 3: Lebenszeit -->
+<div id="lebenszeit" class="panel" role="tabpanel">
+  <div class="legend">
+    <span><span class="swatch" style="background:#185FA5"></span>Einkommen gesamt</span>
+    <span><span class="swatch" style="background:#A32D2D;opacity:.8"></span>Pension gesamt</span>
+  </div>
+  <div class="chart-wrap" style="height:340px">
+    <canvas id="c-leben"
+      role="img"
+      aria-label="Gestapeltes Balkendiagramm Lebenszeit-Volumen: Moderatoren ca. 30 Mio, Intendanten ca. 11 Mio, Politiker 7–10 Mio Euro">
+      Lebenszeit-Volumen: Moderatoren 20 Jahre ca. 30 Mio Euro, Intendanten 20 Jahre ca. 11 Mio,
+      Programmdirektoren 25 Jahre ca. 9 Mio, Bundeskanzler ca. 10 Mio, Chefredakteure 25 Jahre ca. 6 Mio,
+      Bundestagsabgeordnete 20 Jahre ca. 4 Mio.
+    </canvas>
+  </div>
+  <p class="note">Schätzwerte. Grundlage: typische Karrieredauern, Mittelwerte aus bekannten Gehaltsspannen, gesetzliche Pensionsformeln.</p>
+</div>
+
+<!-- TAB 4: Machtpyramide -->
+<div id="macht" class="panel" role="tabpanel">
+  <div class="pyramid-wrap">
+    <svg viewBox="0 0 680 560" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>Machtpyramide ÖRR vs. Politik</title>
+      <desc>
+        Pyramide mit fünf Ebenen. Oben: Moderatoren (narrative Macht, 1–2 Mio €/J.).
+        Darunter: Intendanten (strukturelle Macht, 350–420 T €/J.).
+        Ebene 3: Programmdirektoren und Chefredakteure (Themenmacht, 180–300 T €/J.).
+        Ebene 4: Chef vom Dienst und Redaktionsleiter (Tagesagenda, 70–150 T €/J.).
+        Unten: Politiker (formale Macht, demokratisch legitimiert, 120–360 T €/J.).
+        Eine gestrichelte Linie trennt nicht-demokratisch-gewählte Ebenen von der demokratisch-legitimen Politikebene.
+      </desc>
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+
+      <!-- Ebene 1: Moderatoren -->
+      <polygon points="278,28 402,28 462,98 218,98" fill="#0C447C" opacity=".88"/>
+      <text x="340" y="56" text-anchor="middle" font-size="13" font-weight="500" fill="#B5D4F4">Moderatoren</text>
+      <text x="340" y="74" text-anchor="middle" font-size="11" fill="#85B7EB">narrative Macht · 1–2 Mio €/J.</text>
+
+      <!-- Ebene 2: Intendanten -->
+      <polygon points="218,104 462,104 514,174 166,174" fill="#185FA5" opacity=".85"/>
+      <text x="340" y="132" text-anchor="middle" font-size="13" font-weight="500" fill="#B5D4F4">Intendanten</text>
+      <text x="340" y="150" text-anchor="middle" font-size="11" fill="#85B7EB">strukturelle Macht · 350–420 T €/J.</text>
+
+      <!-- Ebene 3: Programmdirektoren / Chefredakteure -->
+      <polygon points="166,180 514,180 558,250 122,250" fill="#378ADD" opacity=".8"/>
+      <text x="340" y="208" text-anchor="middle" font-size="12" font-weight="500" fill="#042C53">Programmdirektoren · Chefredakteure</text>
+      <text x="340" y="226" text-anchor="middle" font-size="11" fill="#042C53">Themenmacht · 180–300 T €/J.</text>
+
+      <!-- Ebene 4: Chef vom Dienst -->
+      <polygon points="122,256 558,256 598,326 82,326" fill="#85B7EB" opacity=".78"/>
+      <text x="340" y="284" text-anchor="middle" font-size="12" font-weight="500" fill="#042C53">Chef vom Dienst · Redaktionsleiter</text>
+      <text x="340" y="302" text-anchor="middle" font-size="11" fill="#042C53">Tagesagenda · 70–150 T €/J.</text>
+
+      <!-- Trennlinie demokratisch / nicht demokratisch -->
+      <line x1="55" y1="344" x2="625" y2="344" stroke="#888" stroke-width="0.75" stroke-dasharray="5 4" opacity=".6"/>
+      <text x="340" y="358" text-anchor="middle" font-size="10" fill="#888">— nicht demokratisch gewählt —</text>
+
+      <!-- Ebene 5: Politiker -->
+      <polygon points="82,370 598,370 624,440 56,440" fill="#3B6D11" opacity=".72"/>
+      <text x="340" y="398" text-anchor="middle" font-size="13" font-weight="500" fill="#EAF3DE">Politikerinnen und Politiker</text>
+      <text x="340" y="416" text-anchor="middle" font-size="11" fill="#C0DD97">formale Macht · demokratisch legitimiert · 120–360 T €/J.</text>
+
+      <!-- Kontroll-Achse rechts -->
+      <line x1="636" y1="28" x2="636" y2="440" stroke="#bbb" stroke-width="0.5" opacity=".5"
+            marker-end="url(#arr)" marker-start="url(#arr)"/>
+      <text x="649" y="145" text-anchor="middle" font-size="9" fill="#aaa"
+            transform="rotate(90 649 145)">wenig demokratische Kontrolle</text>
+      <text x="649" y="380" text-anchor="middle" font-size="9" fill="#aaa"
+            transform="rotate(90 649 380)">viel Kontrolle</text>
+
+      <!-- Ressourcen-Chips -->
+      <rect x="46" y="50" width="74" height="18" rx="4" fill="#A32D2D" opacity=".85"/>
+      <text x="83" y="62" text-anchor="middle" font-size="9" fill="#fff">Mio. Zuschauer</text>
+
+      <rect x="28" y="128" width="66" height="18" rx="4" fill="#A32D2D" opacity=".7"/>
+      <text x="61" y="140" text-anchor="middle" font-size="9" fill="#fff">Mrd. Budget</text>
+
+      <rect x="24" y="386" width="54" height="18" rx="4" fill="#3B6D11" opacity=".8"/>
+      <text x="51" y="398" text-anchor="middle" font-size="9" fill="#fff">Wahlrecht</text>
+
+      <!-- Legende unten -->
+      <rect x="60"  y="468" width="11" height="11" rx="2" fill="#185FA5"/>
+      <text x="77"  y="478" font-size="11" fill="#888">Öffentlich-rechtlicher Rundfunk</text>
+      <rect x="270" y="468" width="11" height="11" rx="2" fill="#3B6D11"/>
+      <text x="287" y="478" font-size="11" fill="#888">Politik</text>
+      <rect x="370" y="468" width="11" height="11" rx="2" fill="#A32D2D"/>
+      <text x="387" y="478" font-size="11" fill="#888">Machtressource</text>
+
+      <text x="340" y="510" text-anchor="middle" font-size="10" fill="#aaa">
+        Breite der Ebene = relative Gesellschaftsreichweite
+      </text>
+    </svg>
+  </div>
+</div>
+
+<footer>
+  <strong>Quellen:</strong>
+  ZDF-Gehälter: bestätigte geleakte Liste, Welt am Sonntag 2024.
+  ARD-Gehälter: Schätzungen auf Basis von Branchenleaks und Medienberichten (Business Insider, Focus, DWDL).
+  Intendantengehälter: offizielle Veröffentlichungen der Anstalten.
+  Pensionen ÖRR: teils RBB-Skandal-Unterlagen, teils Schätzungen.
+  Politische Bezüge und Pensionen: Bundesbesoldungsgesetz (BBesG).
+  <br><br>
+  Alle Angaben ohne Gewähr. Schätzungen sind als solche gekennzeichnet.
+  Kein Rechtsanwalt — kein Ersatz für anwaltliche Beratung.
+  rundfunkkritik.de · Stand Mai 2026.
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+const grid = dark ? 'rgba(255,255,255,.08)' : 'rgba(0,0,0,.06)';
+const tick = dark ? '#888' : '#555';
+const blue = '#185FA5', blueL = '#378ADD', green = '#3B6D11', red = '#A32D2D';
+let built = {};
+
+function show(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected','true');
+  if (!built[id]) { buildChart(id); built[id] = true; }
+}
+
+function fmtX(v) {
+  if (v >= 1000000) return '€' + Math.round(v / 1000000) + ' Mio';
+  if (v >= 1000)    return '€' + Math.round(v / 1000) + ' T';
+  return '€' + v;
+}
+
+function buildChart(id) {
+  if (id === 'gehalt') {
+    new Chart(document.getElementById('c-gehalt'), {
+      type: 'bar',
+      data: {
+        labels: [
+          'Markus Lanz (ZDF)', 'Horst Lichter (ZDF)', 'Oliver Welke (ZDF)',
+          'Kai Pflaume (ARD, Sch.)', 'Anne Will (ARD, Sch.)',
+          'Jan Böhmermann (ZDF)', 'Maybrit Illner (ZDF)',
+          'Intendant WDR (Buhrow)', 'Intendant ZDF (Himmler)',
+          'Bundeskanzler', 'Bundesminister'
+        ],
+        datasets: [{
+          data: [1900000, 1700000, 1180000, 1250000, 1250000, 682000, 480000, 413000, 372000, 360000, 280000],
+          backgroundColor: [blue,blue,blue, blueL+'bb',blueL+'bb', blue,blue,blue,blue, green,green],
+          borderRadius: 3, borderSkipped: false
+        }]
+      },
+      options: {
+        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { ticks: { color: tick, font: { size: 11 } }, grid: { display: false } },
+          x: { ticks: { color: tick, font: { size: 11 }, callback: fmtX }, grid: { color: grid } }
+        }
+      }
+    });
+  }
+
+  if (id === 'pension') {
+    new Chart(document.getElementById('c-pension'), {
+      type: 'bar',
+      data: {
+        labels: [
+          'Bundeskanzler (max.)', 'Bundesminister (max.)',
+          'Intendant — RBB-Maßstab', 'Intendant — Ø Schätzung',
+          'Staatssekretär (max.)', 'Programmdirektor (Schätz.)',
+          'Chefredakteur (Schätz.)', 'Abgeordnete 25 Jahre'
+        ],
+        datasets: [{
+          data: [250000, 200000, 180000, 150000, 140000, 100000, 75000, 84000],
+          backgroundColor: [green, green, blue, blue, green, blue, blue, green],
+          borderRadius: 3, borderSkipped: false
+        }]
+      },
+      options: {
+        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { ticks: { color: tick, font: { size: 11 } }, grid: { display: false } },
+          x: { ticks: { color: tick, font: { size: 11 }, callback: fmtX }, grid: { color: grid } }
+        }
+      }
+    });
+  }
+
+  if (id === 'lebenszeit') {
+    new Chart(document.getElementById('c-leben'), {
+      type: 'bar',
+      data: {
+        labels: [
+          'Moderatoren (20 J.)', 'Intendanten (20 J.)',
+          'Bundeskanzler (typ.)', 'Programmdirektoren (25 J.)',
+          'Chefredakteure (25 J.)', 'Bundestagsabgeordnete (20 J.)'
+        ],
+        datasets: [
+          {
+            label: 'Einkommen', data: [27500000, 7500000, 7000000, 6500000, 4500000, 2500000],
+            backgroundColor: blue, borderRadius: 3, borderSkipped: false
+          },
+          {
+            label: 'Pension', data: [3000000, 3500000, 3500000, 2500000, 1750000, 1500000],
+            backgroundColor: red + 'cc', borderRadius: 3, borderSkipped: false
+          }
+        ]
+      },
+      options: {
+        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { ticks: { color: tick, font: { size: 11 } }, grid: { display: false }, stacked: true },
+          x: { ticks: { color: tick, font: { size: 11 }, callback: fmtX }, grid: { color: grid }, stacked: true }
+        }
+      }
+    });
+  }
+}
+
+buildChart('gehalt');
+built['gehalt'] = true;
+</script>
+</body>
+</html>

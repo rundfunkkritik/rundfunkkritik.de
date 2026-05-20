@@ -1,0 +1,17 @@
+{
+  "name": "rundfunkkritik-dokumente",
+  "version": "1.0.0",
+  "description": "Dokumente, Skripte und Visualisierungen für rundfunkkritik.de",
+  "private": true,
+  "scripts": {
+    "build:klageschrift": "node scripts/klageschrift_bausteine.js",
+    "build:inhalte":      "node scripts/inhalte_rundfunkkritik.js",
+    "build:alle":         "npm run build:klageschrift && npm run build:inhalte"
+  },
+  "dependencies": {
+    "docx": "^9.6.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
