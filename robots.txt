@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /impressum.html
-Disallow: /datenschutz.html
 
 Sitemap: https://www.rundfunkkritik.de/sitemap.xml
+
+# Impressum nicht indexieren (Datenschutz)
+Disallow: /impressum
