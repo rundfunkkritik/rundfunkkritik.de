@@ -8,7 +8,7 @@
 <meta name="author" content="Rundfunkkritik.de">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.rundfunkkritik.de/">
-  <link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="/favicon-32x32.png">
@@ -25,599 +25,128 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px} 
-
+html{scroll-behavior:smooth;font-size:16px}
 :root{
-  --ink:#1c1c1a;
-  --ink-2:#3d3d38;
-  --ink-3:#6b6b62;
-  --ink-4:#9e9e93;
-  --paper:#f8f5ef;
-  --paper-2:#f0ece2;
-  --paper-3:#e8e3d6;
-  --white:#fff;
-  --rule:#cdc8b8;
-  --rule-light:#e0dbd0;
-  --accent:#1a2533;
-  --accent-2:#2e4a6b;
-  --accent-3:#4a7aaa;
-  --red:#8b1f1f;
-  --red-light:#f9eeee;
-  --gold:#7a5c0a;
-  --gold-light:#faf6e8;
-  --green:#1a5430;
-  --green-light:#edf6f0;
+  --ink:#1c1c1a;--ink-2:#3d3d38;--ink-3:#6b6b62;--ink-4:#9e9e93;
+  --paper:#f8f5ef;--paper-2:#f0ece2;--paper-3:#e8e3d6;--white:#fff;
+  --rule:#cdc8b8;--rule-light:#e0dbd0;
+  --accent:#1a2533;--accent-2:#2e4a6b;--accent-3:#4a7aaa;
+  --red:#8b1f1f;--red-light:#f9eeee;
+  --gold:#7a5c0a;--gold-light:#faf6e8;
+  --green:#1a5430;--green-light:#edf6f0;
 }
-
-body{
-  font-family:'Crimson Pro',Georgia,serif;
-  background:var(--paper);
-  color:var(--ink);
-  line-height:1.7;
-  overflow-x:hidden;
-}
-
-/* ── NAV ── */
-nav{
-  position:sticky;top:0;z-index:100;
-  background:var(--accent);
-  border-bottom:2px solid rgba(255,255,255,0.08);
-  padding:0 2rem;
-  display:flex;align-items:center;justify-content:space-between;
-  height:56px;
-}
-.nav-logo{
-  font-family:'Playfair Display',serif;
-  font-size:1.1rem;font-weight:900;
-  color:#fff;letter-spacing:0.04em;
-  text-decoration:none;
-}
-.nav-logo span{
-  font-weight:400;font-style:italic;
-  opacity:0.7;font-size:0.85rem;
-  margin-left:0.5rem;
-}
-.nav-links{
-  display:flex;gap:2rem;list-style:none;
-}
-.nav-links a{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.68rem;letter-spacing:0.12em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.65);
-  text-decoration:none;
-  transition:color 0.2s;
-}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.7;overflow-x:hidden;}
+nav{position:sticky;top:0;z-index:100;background:var(--accent);border-bottom:2px solid rgba(255,255,255,0.08);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:#fff;letter-spacing:0.04em;text-decoration:none;}
+.nav-logo span{font-weight:400;font-style:italic;opacity:0.7;font-size:0.85rem;margin-left:0.5rem;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s;}
 .nav-links a:hover{color:#fff;}
-.nav-cta{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.65rem;letter-spacing:0.1em;
-  text-transform:uppercase;
-  background:rgba(255,255,255,0.12);
-  color:#fff;
-  border:1px solid rgba(255,255,255,0.25);
-  padding:0.4rem 1rem;
-  text-decoration:none;
-  transition:background 0.2s;
-}
+.nav-cta{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.25);padding:0.4rem 1rem;text-decoration:none;transition:background 0.2s;}
 .nav-cta:hover{background:rgba(255,255,255,0.22);}
-
-/* ── HERO ── */
-.hero{
-  background:var(--accent);
-  color:#fff;
-  padding:5rem 2rem 4rem;
-  position:relative;
-  overflow:hidden;
-}
-.hero::before{
-  content:'';
-  position:absolute;inset:0;
-  background:repeating-linear-gradient(
-    0deg,
-    transparent,transparent 39px,
-    rgba(255,255,255,0.03) 39px,rgba(255,255,255,0.03) 40px
-  );
-  pointer-events:none;
-}
-.hero-inner{
-  max-width:860px;margin:0 auto;
-  position:relative;
-}
-.hero-kicker{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.7rem;letter-spacing:0.18em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.45);
-  margin-bottom:1.5rem;
-  display:flex;align-items:center;gap:1rem;
-}
-.hero-kicker::before{
-  content:'';display:block;
-  width:2rem;height:1px;
-  background:rgba(255,255,255,0.3);
-}
-.hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2.8rem,6vw,5rem);
-  font-weight:900;line-height:1.05;
-  letter-spacing:-0.02em;
-  margin-bottom:1.5rem;
-}
-.hero h1 em{
-  font-style:italic;font-weight:400;
-  color:rgba(255,255,255,0.6);
-}
-.hero-lead{
-  font-size:1.2rem;font-weight:300;
-  color:rgba(255,255,255,0.72);
-  line-height:1.65;
-  max-width:620px;
-  margin-bottom:2.5rem;
-}
-.hero-actions{
-  display:flex;gap:1rem;flex-wrap:wrap;
-}
-.btn-primary{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.72rem;letter-spacing:0.1em;
-  text-transform:uppercase;
-  background:#fff;color:var(--accent);
-  padding:0.75rem 1.8rem;
-  text-decoration:none;
-  font-weight:500;
-  transition:opacity 0.2s;
-  display:inline-block;
-}
+.hero{background:var(--accent);color:#fff;padding:5rem 2rem 4rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,0.03) 39px,rgba(255,255,255,0.03) 40px);pointer-events:none;}
+.hero-inner{max-width:860px;margin:0 auto;position:relative;}
+.hero-kicker{font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;}
+.hero-kicker::before{content:'';display:block;width:2rem;height:1px;background:rgba(255,255,255,0.3);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:900;line-height:1.05;letter-spacing:-0.02em;margin-bottom:1.5rem;}
+.hero h1 em{font-style:italic;font-weight:400;color:rgba(255,255,255,0.6);}
+.hero-lead{font-size:1.2rem;font-weight:300;color:rgba(255,255,255,0.72);line-height:1.65;max-width:620px;margin-bottom:2.5rem;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-primary{font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;background:#fff;color:var(--accent);padding:0.75rem 1.8rem;text-decoration:none;font-weight:500;transition:opacity 0.2s;display:inline-block;}
 .btn-primary:hover{opacity:0.88;}
-.btn-secondary{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.72rem;letter-spacing:0.1em;
-  text-transform:uppercase;
-  background:transparent;color:#fff;
-  padding:0.75rem 1.8rem;
-  border:1px solid rgba(255,255,255,0.35);
-  text-decoration:none;
-  transition:border-color 0.2s,background 0.2s;
-  display:inline-block;
-}
+.btn-secondary{font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;background:transparent;color:#fff;padding:0.75rem 1.8rem;border:1px solid rgba(255,255,255,0.35);text-decoration:none;transition:border-color 0.2s,background 0.2s;display:inline-block;}
 .btn-secondary:hover{border-color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.07);}
-
-/* ── STATS BAR ── */
-.stats-bar{
-  background:var(--paper-2);
-  border-bottom:1px solid var(--rule);
-  padding:1.2rem 2rem;
-  display:flex;justify-content:center;gap:4rem;
-  flex-wrap:wrap;
-}
+.btn-kofi{font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;background:transparent;color:#fff;padding:0.75rem 1.8rem;border:1px solid rgba(255,255,255,0.35);text-decoration:none;transition:border-color 0.2s,background 0.2s;display:inline-block;}
+.btn-kofi:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.6);}
+.stats-bar{background:var(--paper-2);border-bottom:1px solid var(--rule);padding:1.2rem 2rem;display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;}
 .stat{text-align:center;}
-.stat-num{
-  font-family:'Playfair Display',serif;
-  font-size:1.8rem;font-weight:700;
-  color:var(--accent);display:block;
-  line-height:1;
-}
-.stat-label{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.62rem;letter-spacing:0.12em;
-  text-transform:uppercase;
-  color:var(--ink-3);margin-top:0.25rem;display:block;
-}
-
-/* ── SECTIONS ── */
+.stat-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--accent);display:block;line-height:1;}
+.stat-label{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-3);margin-top:0.25rem;display:block;}
 section{padding:5rem 2rem;}
 .section-inner{max-width:860px;margin:0 auto;}
-
-.section-tag{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.65rem;letter-spacing:0.18em;
-  text-transform:uppercase;
-  color:var(--ink-4);
-  margin-bottom:0.8rem;
-  display:flex;align-items:center;gap:0.8rem;
-}
-.section-tag::after{
-  content:'';flex:1;height:1px;
-  background:var(--rule-light);
-}
-
-h2.section-title{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(1.8rem,3.5vw,2.6rem);
-  font-weight:700;line-height:1.2;
-  color:var(--ink);
-  margin-bottom:1.2rem;
-}
-.section-lead{
-  font-size:1.1rem;font-weight:300;
-  color:var(--ink-2);line-height:1.7;
-  max-width:640px;margin-bottom:3rem;
-}
-
-/* ── AKTUELL / NEWS ── */
+.section-tag{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-4);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.8rem;}
+.section-tag::after{content:'';flex:1;height:1px;background:var(--rule-light);}
+h2.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;line-height:1.2;color:var(--ink);margin-bottom:1.2rem;}
+.section-lead{font-size:1.1rem;font-weight:300;color:var(--ink-2);line-height:1.7;max-width:640px;margin-bottom:3rem;}
 #aktuell{background:var(--white);border-top:1px solid var(--rule);}
-
-.news-featured{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:0;
-  border:1px solid var(--rule);
-  margin-bottom:2rem;
-  opacity:0;transform:translateY(20px);
-  animation:fadeUp 0.6s ease forwards 0.1s;
-}
-.news-featured-image{
-  background:var(--accent);
-  padding:3rem;
-  display:flex;flex-direction:column;justify-content:flex-end;
-  min-height:280px;
-  position:relative;overflow:hidden;
-}
-.news-featured-image::before{
-  content:'';position:absolute;inset:0;
-  background:repeating-linear-gradient(
-    45deg,
-    transparent,transparent 10px,
-    rgba(255,255,255,0.02) 10px,rgba(255,255,255,0.02) 11px
-  );
-}
-.breaking{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.62rem;letter-spacing:0.16em;
-  text-transform:uppercase;
-  background:var(--red);color:#fff;
-  padding:0.25rem 0.6rem;
-  display:inline-block;margin-bottom:1rem;
-  animation:pulse 2s ease-in-out infinite;
-  position:relative;z-index:1;
-}
+.news-featured{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);margin-bottom:2rem;opacity:0;transform:translateY(20px);animation:fadeUp 0.6s ease forwards 0.1s;}
+.news-featured-image{background:var(--accent);padding:3rem;display:flex;flex-direction:column;justify-content:flex-end;min-height:280px;position:relative;overflow:hidden;}
+.news-featured-image::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(255,255,255,0.02) 10px,rgba(255,255,255,0.02) 11px);}
+.breaking{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;background:var(--red);color:#fff;padding:0.25rem 0.6rem;display:inline-block;margin-bottom:1rem;animation:pulse 2s ease-in-out infinite;position:relative;z-index:1;}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.7}}
-.news-featured-image h3{
-  font-family:'Playfair Display',serif;
-  font-size:1.5rem;font-weight:700;
-  color:#fff;line-height:1.25;
-  position:relative;z-index:1;
-}
-.news-featured-body{
-  padding:2rem 2.5rem;
-  display:flex;flex-direction:column;justify-content:center;
-  background:var(--paper-2);
-}
-.news-date{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.65rem;letter-spacing:0.1em;
-  color:var(--ink-4);text-transform:uppercase;
-  margin-bottom:0.8rem;
-}
-.news-featured-body p{
-  font-size:1rem;color:var(--ink-2);
-  line-height:1.65;margin-bottom:1.5rem;
-}
-.news-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:1.5rem;
-}
-.news-card{
-  border:1px solid var(--rule);
-  padding:1.5rem;
-  background:var(--white);
-  transition:border-color 0.2s,transform 0.2s;
-  opacity:0;transform:translateY(16px);
-  text-decoration:none;color:inherit;
-  display:block;
-}
+.news-featured-image h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#fff;line-height:1.25;position:relative;z-index:1;}
+.news-featured-body{padding:2rem 2.5rem;display:flex;flex-direction:column;justify-content:center;background:var(--paper-2);}
+.news-date{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;color:var(--ink-4);text-transform:uppercase;margin-bottom:0.8rem;}
+.news-featured-body p{font-size:1rem;color:var(--ink-2);line-height:1.65;margin-bottom:1.5rem;}
+.news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;}
+.news-card{border:1px solid var(--rule);padding:1.5rem;background:var(--white);transition:border-color 0.2s,transform 0.2s;opacity:0;transform:translateY(16px);text-decoration:none;color:inherit;display:block;}
 .news-card:hover{border-color:var(--accent-2);transform:translateY(-2px);}
-.news-card-tag{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.6rem;letter-spacing:0.14em;
-  text-transform:uppercase;
-  color:var(--accent-2);margin-bottom:0.6rem;display:block;
-}
-.news-card h4{
-  font-family:'Playfair Display',serif;
-  font-size:1.05rem;font-weight:700;
-  color:var(--ink);line-height:1.3;
-  margin-bottom:0.5rem;
-}
-.news-card p{
-  font-size:0.9rem;color:var(--ink-3);
-  line-height:1.55;
-}
-
-/* ── MECHANISMEN ── */
+.news-card-tag{font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-2);margin-bottom:0.6rem;display:block;}
+.news-card h4{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:0.5rem;}
+.news-card p{font-size:0.9rem;color:var(--ink-3);line-height:1.55;}
 #mechanismen{background:var(--paper);}
-
-.mech-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:1px;
-  background:var(--rule);
-  border:1px solid var(--rule);
-  margin-top:2rem;
-}
-.mech-card{
-  background:var(--white);
-  padding:1.8rem;
-  transition:background 0.2s;
-  cursor:default;
-}
+.mech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:2rem;}
+.mech-card{background:var(--white);padding:1.8rem;transition:background 0.2s;cursor:default;}
 .mech-card:hover{background:var(--paper-2);}
-.mech-num{
-  font-family:'Playfair Display',serif;
-  font-size:2rem;font-weight:900;
-  color:var(--paper-3);
-  line-height:1;margin-bottom:0.8rem;
-  letter-spacing:-0.03em;
-}
-.mech-title{
-  font-family:'Playfair Display',serif;
-  font-size:1rem;font-weight:700;
-  color:var(--ink);margin-bottom:0.3rem;
-}
-.mech-sub{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.62rem;letter-spacing:0.1em;
-  text-transform:uppercase;
-  color:var(--accent-3);margin-bottom:0.7rem;
-}
-.mech-text{
-  font-size:0.9rem;color:var(--ink-3);
-  line-height:1.6;
-}
-
-/* ── BEWEISE ── */
+.mech-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--paper-3);line-height:1;margin-bottom:0.8rem;letter-spacing:-0.03em;}
+.mech-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:0.3rem;}
+.mech-sub{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-3);margin-bottom:0.7rem;}
+.mech-text{font-size:0.9rem;color:var(--ink-3);line-height:1.6;}
 #beweise{background:var(--accent);color:#fff;}
 #beweise .section-tag{color:rgba(255,255,255,0.35);}
 #beweise .section-tag::after{background:rgba(255,255,255,0.1);}
 #beweise h2.section-title{color:#fff;}
 #beweise .section-lead{color:rgba(255,255,255,0.65);}
-
-.beweise-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:1px;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.08);
-}
-.beweis-card{
-  background:rgba(255,255,255,0.04);
-  padding:1.8rem 1.5rem;
-  transition:background 0.2s;
-}
+.beweise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);}
+.beweis-card{background:rgba(255,255,255,0.04);padding:1.8rem 1.5rem;transition:background 0.2s;}
 .beweis-card:hover{background:rgba(255,255,255,0.09);}
-.beweis-letter{
-  font-family:'Playfair Display',serif;
-  font-size:2.5rem;font-weight:900;
-  color:rgba(255,255,255,0.15);
-  line-height:1;margin-bottom:0.8rem;
-}
-.beweis-title{
-  font-family:'Playfair Display',serif;
-  font-size:0.95rem;font-weight:700;
-  color:#fff;margin-bottom:0.5rem;
-}
-.beweis-count{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.62rem;letter-spacing:0.1em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.4);
-  margin-bottom:0.6rem;display:block;
-}
-.beweis-text{
-  font-size:0.88rem;
-  color:rgba(255,255,255,0.55);
-  line-height:1.6;
-}
-
-/* ── URTEILE ── */
+.beweis-letter{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:rgba(255,255,255,0.15);line-height:1;margin-bottom:0.8rem;}
+.beweis-title{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:0.5rem;}
+.beweis-count{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.6rem;display:block;}
+.beweis-text{font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.6;}
 #urteile{background:var(--paper-2);border-top:1px solid var(--rule);}
-
-.urteile-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:1.5rem;
-  margin-bottom:2rem;
-}
-.urteil-card{
-  border:1px solid var(--rule);
-  padding:1.8rem;
-  background:var(--white);
-}
+.urteile-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem;}
+.urteil-card{border:1px solid var(--rule);padding:1.8rem;background:var(--white);}
 .urteil-card.positiv{border-top:3px solid var(--green);}
 .urteil-card.negativ{border-top:3px solid var(--red);}
-.urteil-card.aktuell{
-  border:1px solid var(--accent-2);
-  border-top:3px solid var(--accent);
-  grid-column:1/-1;
-  background:var(--paper-2);
-}
-.urteil-label{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.62rem;letter-spacing:0.14em;
-  text-transform:uppercase;
-  margin-bottom:0.7rem;display:block;
-}
+.urteil-card.aktuell{border:1px solid var(--accent-2);border-top:3px solid var(--accent);grid-column:1/-1;background:var(--paper-2);}
+.urteil-label{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.7rem;display:block;}
 .urteil-card.positiv .urteil-label{color:var(--green);}
 .urteil-card.negativ .urteil-label{color:var(--red);}
 .urteil-card.aktuell .urteil-label{color:var(--accent-2);}
-.urteil-card h3{
-  font-family:'Playfair Display',serif;
-  font-size:1.1rem;font-weight:700;
-  color:var(--ink);margin-bottom:0.6rem;
-}
-.urteil-card p{
-  font-size:0.9rem;color:var(--ink-3);
-  line-height:1.6;margin-bottom:1rem;
-}
-.urteil-meta{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.62rem;letter-spacing:0.08em;
-  color:var(--ink-4);
-}
-
-/* ── ÜBER ── */
+.urteil-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:0.6rem;}
+.urteil-card p{font-size:0.9rem;color:var(--ink-3);line-height:1.6;margin-bottom:1rem;}
+.urteil-meta{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.08em;color:var(--ink-4);}
 #ueber{background:var(--white);border-top:1px solid var(--rule);}
-
-.ueber-grid{
-  display:grid;
-  grid-template-columns:2fr 1fr;
-  gap:4rem;
-  align-items:start;
-}
-.ueber-text h3{
-  font-family:'Playfair Display',serif;
-  font-size:1.3rem;font-weight:700;
-  color:var(--ink);margin:2rem 0 0.5rem;
-}
+.ueber-grid{display:grid;grid-template-columns:2fr 1fr;gap:4rem;align-items:start;}
+.ueber-text h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--ink);margin:2rem 0 0.5rem;}
 .ueber-text h3:first-child{margin-top:0;}
-.ueber-text p{
-  font-size:1rem;color:var(--ink-2);
-  line-height:1.7;margin-bottom:1rem;
-}
-.ueber-aside{
-  position:sticky;top:72px;
-}
-.aside-card{
-  background:var(--paper-2);
-  border:1px solid var(--rule);
-  padding:1.5rem;
-  margin-bottom:1.2rem;
-}
-.aside-card-title{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.65rem;letter-spacing:0.14em;
-  text-transform:uppercase;
-  color:var(--ink-3);margin-bottom:0.8rem;
-}
-.aside-card p{
-  font-size:0.88rem;color:var(--ink-2);
-  line-height:1.6;
-}
-.aside-card a{
-  display:block;margin-top:1rem;
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.68rem;letter-spacing:0.1em;
-  text-transform:uppercase;
-  color:var(--accent-2);text-decoration:none;
-  border-top:1px solid var(--rule);
-  padding-top:0.8rem;
-}
+.ueber-text p{font-size:1rem;color:var(--ink-2);line-height:1.7;margin-bottom:1rem;}
+.ueber-aside{position:sticky;top:72px;}
+.aside-card{background:var(--paper-2);border:1px solid var(--rule);padding:1.5rem;margin-bottom:1.2rem;}
+.aside-card-title{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:0.8rem;}
+.aside-card p{font-size:0.88rem;color:var(--ink-2);line-height:1.6;}
+.aside-card a{display:block;margin-top:1rem;font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-2);text-decoration:none;border-top:1px solid var(--rule);padding-top:0.8rem;}
 .aside-card a:hover{color:var(--accent);}
-
-/* ── NEWSLETTER ── */
-#newsletter{
-  background:var(--accent);
-  padding:4rem 2rem;
-  text-align:center;
-}
-#newsletter .section-inner{max-width:560px;}
-#newsletter h2{
-  font-family:'Playfair Display',serif;
-  font-size:2rem;font-weight:700;
-  color:#fff;margin-bottom:0.8rem;
-}
-#newsletter p{
-  color:rgba(255,255,255,0.65);
-  margin-bottom:2rem;
-  font-size:1.05rem;
-}
-.newsletter-form{
-  display:flex;gap:0;
-  border:1px solid rgba(255,255,255,0.25);
-}
-.newsletter-form input{
-  flex:1;
-  padding:0.85rem 1.2rem;
-  background:rgba(255,255,255,0.08);
-  border:none;outline:none;
-  color:#fff;
-  font-family:'Crimson Pro',serif;
-  font-size:1rem;
-}
-.newsletter-form input::placeholder{color:rgba(255,255,255,0.35);}
-.newsletter-form button{
-  padding:0.85rem 1.5rem;
-  background:#fff;color:var(--accent);
-  border:none;cursor:pointer;
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.68rem;letter-spacing:0.1em;
-  text-transform:uppercase;font-weight:500;
-  transition:opacity 0.2s;
-  white-space:nowrap;
-}
-.newsletter-form button:hover{opacity:0.88;}
-.newsletter-note{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.62rem;letter-spacing:0.06em;
-  color:rgba(255,255,255,0.3);
-  margin-top:1rem;
-}
-
-/* ── FOOTER ── */
-footer{
-  background:var(--ink);
-  color:rgba(255,255,255,0.5);
-  padding:3rem 2rem;
-}
-.footer-inner{
-  max-width:860px;margin:0 auto;
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  gap:3rem;
-}
-.footer-brand{
-  font-family:'Playfair Display',serif;
-  font-size:1.2rem;font-weight:900;
-  color:#fff;margin-bottom:0.8rem;
-}
-.footer-tagline{
-  font-size:0.9rem;line-height:1.6;
-  color:rgba(255,255,255,0.4);
-}
-.footer-col h4{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.65rem;letter-spacing:0.14em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.4);
-  margin-bottom:1rem;
-}
+footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
+.footer-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;}
+.footer-brand{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;color:#fff;margin-bottom:0.8rem;}
+.footer-tagline{font-size:0.9rem;line-height:1.6;color:rgba(255,255,255,0.4);}
+.footer-col h4{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1rem;}
 .footer-col ul{list-style:none;}
 .footer-col ul li{margin-bottom:0.5rem;}
-.footer-col ul a{
-  color:rgba(255,255,255,0.5);
-  text-decoration:none;font-size:0.9rem;
-  transition:color 0.2s;
-}
+.footer-col ul a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
 .footer-col ul a:hover{color:#fff;}
-.footer-bottom{
-  max-width:860px;margin:2rem auto 0;
-  padding-top:1.5rem;
-  border-top:1px solid rgba(255,255,255,0.08);
-  display:flex;justify-content:space-between;
-  align-items:center;flex-wrap:wrap;gap:1rem;
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.62rem;letter-spacing:0.08em;
-  color:rgba(255,255,255,0.25);
-}
+.footer-bottom{max-width:860px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.08em;color:rgba(255,255,255,0.25);}
 .footer-bottom a{color:rgba(255,255,255,0.35);text-decoration:none;}
 .footer-bottom a:hover{color:rgba(255,255,255,0.6);}
-
-/* ── ANIMATIONS ── */
-@keyframes fadeUp{
-  to{opacity:1;transform:translateY(0);}
-}
-.fade-up{
-  opacity:0;transform:translateY(20px);
-  animation:fadeUp 0.6s ease forwards;
-}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+.fade-up{opacity:0;transform:translateY(20px);animation:fadeUp 0.6s ease forwards;}
 .delay-1{animation-delay:0.15s;}
 .delay-2{animation-delay:0.25s;}
 .delay-3{animation-delay:0.35s;}
 .delay-4{animation-delay:0.45s;}
-
-/* ── RESPONSIVE ── */
 @media(max-width:700px){
   nav{padding:0 1rem;}
   .nav-links{display:none;}
@@ -629,18 +158,12 @@ footer{
   .footer-inner{grid-template-columns:1fr;}
   .stats-bar{gap:2rem;}
 }
-
-/* ── SCROLL REVEAL ── */
-.reveal{
-  opacity:0;transform:translateY(24px);
-  transition:opacity 0.6s ease,transform 0.6s ease;
-}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
 .reveal.visible{opacity:1;transform:none;}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a class="nav-logo" href="#top">Rundfunkkritik<span>.de</span></a>
   <ul class="nav-links">
@@ -654,7 +177,6 @@ footer{
   <a class="nav-cta" href="widerstand.html">Stiller Widerstand</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-inner">
     <div class="hero-kicker">Unabhängige Strukturanalyse</div>
@@ -667,36 +189,22 @@ footer{
     <div class="hero-actions">
       <a class="btn-primary" href="#mechanismen">Die 10 Mechanismen</a>
       <a class="btn-secondary" href="#urteile">Urteile &amp; Analysen</a>
+      <a class="btn-kofi" href="https://ko-fi.com/rundfunkkritikde" target="_blank" rel="noopener">☕ Projekt unterstützen</a>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
 <div class="stats-bar">
-  <div class="stat">
-    <span class="stat-num">10</span>
-    <span class="stat-label">Systemische Mechanismen</span>
-  </div>
-  <div class="stat">
-    <span class="stat-num">31</span>
-    <span class="stat-label">Dokumentierte Belege</span>
-  </div>
-  <div class="stat">
-    <span class="stat-num">8,5 Mrd.</span>
-    <span class="stat-label">Euro Zwangsbeiträge / Jahr</span>
-  </div>
-  <div class="stat">
-    <span class="stat-num">~0%</span>
-    <span class="stat-label">Erfolgsquote Bürgerbeschwerden</span>
-  </div>
+  <div class="stat"><span class="stat-num">10</span><span class="stat-label">Systemische Mechanismen</span></div>
+  <div class="stat"><span class="stat-num">31</span><span class="stat-label">Dokumentierte Belege</span></div>
+  <div class="stat"><span class="stat-num">8,5 Mrd.</span><span class="stat-label">Euro Zwangsbeiträge / Jahr</span></div>
+  <div class="stat"><span class="stat-num">~0%</span><span class="stat-label">Erfolgsquote Bürgerbeschwerden</span></div>
 </div>
 
-<!-- AKTUELL -->
 <section id="aktuell">
   <div class="section-inner">
     <div class="section-tag">Aktuell</div>
     <h2 class="section-title">Neueste Analysen</h2>
-
     <div class="news-featured reveal">
       <div class="news-featured-image">
         <span class="breaking">Aktuell – 15. Mai 2026</span>
@@ -704,184 +212,77 @@ footer{
       </div>
       <div class="news-featured-body">
         <div class="news-date">Bundesverfassungsgericht · 15.05.2026</div>
-        <p>
-          Das BVerfG verhandelt am 23. Juni über den Rundfunkbeitrag – obwohl die KEF ihre
-          Erhöhungsempfehlung zurückgenommen hat. ARD und ZDF wollen ein strukturelles
-          Grundsatzurteil erzwingen, das KEF-Empfehlungen künftig bindend macht.
-          Eine Analyse der Asymmetrie.
-        </p>
+        <p>Das BVerfG verhandelt am 23. Juni über den Rundfunkbeitrag – obwohl die KEF ihre Erhöhungsempfehlung zurückgenommen hat. ARD und ZDF wollen ein strukturelles Grundsatzurteil erzwingen, das KEF-Empfehlungen künftig bindend macht. Eine Analyse der Asymmetrie.</p>
         <a class="btn-primary" href="BVerfG_Rundfunkbeitrag_Juni2026_Artikel.html">Vollständige Analyse lesen</a>
       </div>
     </div>
-
     <div class="news-grid">
       <a class="news-card reveal delay-1" href="#urteile">
         <span class="news-card-tag">VGH Mannheim · 21.04.2026</span>
         <h4>VGH weist Bürgerklagen ab – prüft aber zu oberflächlich</h4>
-        <p>Der VGH Baden-Württemberg erklärt den ÖRR für „ausgewogen genug", ohne die vom BVerwG geforderte Tiefenprüfung vorzunehmen.</p>
+        <p>Der VGH Baden-Württemberg erklärt den ÖRR für „ausgewogen genug“, ohne die vom BVerwG geforderte Tiefenprüfung vorzunehmen.</p>
       </a>
       <a class="news-card reveal delay-2" href="#beweise">
         <span class="news-card-tag">Beweisdossier</span>
         <h4>31 Belege in 7 Kategorien – vollständiges Dossier</h4>
         <p>Von wissenschaftlichen Inhaltsanalysen bis zu ÖRR-eigenen Eigeneingeständnissen: Das strukturierte Beweispaket für Gerichte und Öffentlichkeit.</p>
       </a>
-      <a class="news-card reveal delay-3" href="ard_lobbybüro_2026.html">
+      <a class="news-card reveal delay-3" href="ard_lobbübüro_2026.html">
         <span class="news-card-tag">Strukturanalyse · 15.05.2026</span>
-        <h4>ARD baut Lobbybüro aus – während gespart werden soll</h4>
+        <h4>ARD baut Lobbübüro aus – während gespart werden soll</h4>
         <p>Hunderte Millionen Euro Sparauftrag, gleichzeitig heimliche Erweiterung des Berliner Verwaltungsapparats. Ein Lehrbuchbeispiel der Selbsterhaltungslogik.</p>
+      </a>
+      <a class="news-card reveal delay-4" href="https://x.com/OERRBlog" target="_blank" rel="noopener">
+        <span class="news-card-tag">Externe Quelle · Laufend aktualisiert</span>
+        <h4>ÖRR Blog auf X – tagesaktuelle Dokumentation</h4>
+        <p>Der @OERRBlog dokumentiert laufend ÖRR-Verfehlungen, Programmfehler und strukturelle Misstände – eine der umfangreichsten öffentlichen Sammlungen.</p>
       </a>
     </div>
   </div>
 </section>
-Ein Lehrbuchbeispiel der Selbsterhaltungslogik.</p>
-      </a>
 
-      <a class="news-card reveal delay-4" href="https://x.com/OERRBlog" target="_blank" rel="noopener">
-        <span class="news-card-tag">Externe Quelle · Laufend aktualisiert</span>
-        <h4>ÖRR Blog auf X – tagesaktuelle Dokumentation</h4>
-        <p>Der @OERRBlog dokumentiert laufend ÖRR-Verfehlungen, Programmfehler und strukturelle Missstände.</p>
-      </a>
-<!-- MECHANISMEN -->
 <section id="mechanismen">
   <div class="section-inner">
     <div class="section-tag">Analyse</div>
     <h2 class="section-title">Die 10 systemischen Mechanismen</h2>
-    <p class="section-lead">
-      Kein Befehl, keine Zensur, keine Verschwörung. Die Pluralitätsminderung
-      entsteht durch strukturelle Eigenlogik – beschreibbar, belegbar, juristisch relevant.
-    </p>
-
+    <p class="section-lead">Kein Befehl, keine Zensur, keine Verschwörung. Die Pluralitätsminderung entsteht durch strukturelle Eigenlogik – beschreibbar, belegbar, juristisch relevant.</p>
     <div class="mech-grid">
-      <div class="mech-card reveal">
-        <div class="mech-num">01</div>
-        <div class="mech-title">Dauerkrisenmodus</div>
-        <div class="mech-sub">Crisis-Framing</div>
-        <p class="mech-text">Seit 2014 kommuniziert der ÖRR dauerhaft im Krisenmodus. Krisenkommunikation zentralisiert Botschaften und marginalisiert Gegenpositionen strukturell.</p>
-      </div>
-      <div class="mech-card reveal delay-1">
-        <div class="mech-num">02</div>
-        <div class="mech-title">Publikumsverlust-Reflex</div>
-        <div class="mech-sub">Publizistischer Selbstschutz</div>
-        <p class="mech-text">Auf sinkende Reichweiten reagiert der ÖRR nicht mit mehr Vielfalt, sondern mit mehr Haltung – was Pluralität weiter einschränkt.</p>
-      </div>
-      <div class="mech-card reveal delay-2">
-        <div class="mech-num">03</div>
-        <div class="mech-title">Gatekeeping</div>
-        <div class="mech-sub">Redaktionelle Filterlogik</div>
-        <p class="mech-text">Die mittlere Redaktionsebene entscheidet, was sendefähig ist – ohne formale Vorgabe, aber mit systemischer Wirkung (Lewin 1947).</p>
-      </div>
-      <div class="mech-card reveal">
-        <div class="mech-num">04</div>
-        <div class="mech-title">Agenda-Synchronisation</div>
-        <div class="mech-sub">Themen­homogenität</div>
-        <p class="mech-text">Über 90% der Meldungen basieren auf dpa/Reuters/AP. Identische Themen in identischer Reihenfolge – über alle Sender und Formate.</p>
-      </div>
-      <div class="mech-card reveal delay-1">
-        <div class="mech-num">05</div>
-        <div class="mech-title">Expertenkartell</div>
-        <div class="mech-sub">Quellenkonzentration</div>
-        <p class="mech-text">Dieselben 20–30 Experten rotieren durch alle Formate. Strukturelle Schließung gegenüber alternativen Fachpositionen ohne böse Absicht.</p>
-      </div>
-      <div class="mech-card reveal delay-2">
-        <div class="mech-num">06</div>
-        <div class="mech-title">Ritualisierte Kritik</div>
-        <div class="mech-sub">Symbolische Opposition</div>
-        <p class="mech-text">Kritische Elemente existieren – als Ritual. Symbolisch, folgenlos, pluralitätsneutral. Der Eindruck kritischer Auseinandersetzung ohne strukturelle Wirkung.</p>
-      </div>
-      <div class="mech-card reveal">
-        <div class="mech-num">07</div>
-        <div class="mech-title">Externalisierung</div>
-        <div class="mech-sub">Moralische Selbstvergewisserung</div>
-        <p class="mech-text">Eigene Probleme werden durch Vergleiche mit anderen Staaten unsichtbar gemacht. Innenpolitische Fehlentwicklungen verschwinden im internationalen Kontext.</p>
-      </div>
-      <div class="mech-card reveal delay-1">
-        <div class="mech-num">08</div>
-        <div class="mech-title">Soft Ostracism</div>
-        <div class="mech-sub">Informelle Sanktionen</div>
-        <p class="mech-text">Interne Kritiker werden marginalisiert: kein Auftrag, keine Sichtbarkeit – ohne formale Sanktion. Herles, Tilgner, Krone-Schmalz berichten übereinstimmend.</p>
-      </div>
-      <div class="mech-card reveal delay-2">
-        <div class="mech-num">09</div>
-        <div class="mech-title">Selbstzensur</div>
-        <div class="mech-sub">Karriere­logik</div>
-        <p class="mech-text">Karrierewege belohnen Konformität, bestrafen Abweichung. Das System reguliert sich selbst ohne externe Eingriffe durch Selbstselektion.</p>
-      </div>
-      <div class="mech-card reveal">
-        <div class="mech-num">10</div>
-        <div class="mech-title">Normative Verdichtung</div>
-        <div class="mech-sub">Geringe Ambiguitätstoleranz</div>
-        <p class="mech-text">Komplexität wird auf Dichotomien reduziert. Ambiguität gilt als Gefahr, nicht als journalistische Tugend. Widerspruch wird moralisiert.</p>
-      </div>
+      <div class="mech-card reveal"><div class="mech-num">01</div><div class="mech-title">Dauerkrisenmodus</div><div class="mech-sub">Crisis-Framing</div><p class="mech-text">Seit 2014 kommuniziert der ÖRR dauerhaft im Krisenmodus. Krisenkommunikation zentralisiert Botschaften und marginalisiert Gegenpositionen strukturell.</p></div>
+      <div class="mech-card reveal delay-1"><div class="mech-num">02</div><div class="mech-title">Publikumsverlust-Reflex</div><div class="mech-sub">Publizistischer Selbstschutz</div><p class="mech-text">Auf sinkende Reichweiten reagiert der ÖRR nicht mit mehr Vielfalt, sondern mit mehr Haltung – was Pluralität weiter einschränkt.</p></div>
+      <div class="mech-card reveal delay-2"><div class="mech-num">03</div><div class="mech-title">Gatekeeping</div><div class="mech-sub">Redaktionelle Filterlogik</div><p class="mech-text">Die mittlere Redaktionsebene entscheidet, was sendefähig ist – ohne formale Vorgabe, aber mit systemischer Wirkung (Lewin 1947).</p></div>
+      <div class="mech-card reveal"><div class="mech-num">04</div><div class="mech-title">Agenda-Synchronisation</div><div class="mech-sub">Themen­homogenität</div><p class="mech-text">Über 90% der Meldungen basieren auf dpa/Reuters/AP. Identische Themen in identischer Reihenfolge – über alle Sender und Formate.</p></div>
+      <div class="mech-card reveal delay-1"><div class="mech-num">05</div><div class="mech-title">Expertenkartell</div><div class="mech-sub">Quellenkonzentration</div><p class="mech-text">Dieselben 20–30 Experten rotieren durch alle Formate. Strukturelle Schließung gegenüber alternativen Fachpositionen ohne böse Absicht.</p></div>
+      <div class="mech-card reveal delay-2"><div class="mech-num">06</div><div class="mech-title">Ritualisierte Kritik</div><div class="mech-sub">Symbolische Opposition</div><p class="mech-text">Kritische Elemente existieren – als Ritual. Symbolisch, folgenlos, pluralitätsneutral. Der Eindruck kritischer Auseinandersetzung ohne strukturelle Wirkung.</p></div>
+      <div class="mech-card reveal"><div class="mech-num">07</div><div class="mech-title">Externalisierung</div><div class="mech-sub">Moralische Selbstvergewisserung</div><p class="mech-text">Eigene Probleme werden durch Vergleiche mit anderen Staaten unsichtbar gemacht. Innenpolitische Fehlentwicklungen verschwinden im internationalen Kontext.</p></div>
+      <div class="mech-card reveal delay-1"><div class="mech-num">08</div><div class="mech-title">Soft Ostracism</div><div class="mech-sub">Informelle Sanktionen</div><p class="mech-text">Interne Kritiker werden marginalisiert: kein Auftrag, keine Sichtbarkeit – ohne formale Sanktion. Herles, Tilgner, Krone-Schmalz berichten übereinstimmend.</p></div>
+      <div class="mech-card reveal delay-2"><div class="mech-num">09</div><div class="mech-title">Selbstzensur</div><div class="mech-sub">Karriere­logik</div><p class="mech-text">Karrierewege belohnen Konformität, bestrafen Abweichung. Das System reguliert sich selbst ohne externe Eingriffe durch Selbstselektion.</p></div>
+      <div class="mech-card reveal"><div class="mech-num">10</div><div class="mech-title">Normative Verdichtung</div><div class="mech-sub">Geringe Ambiguitätstoleranz</div><p class="mech-text">Komplexität wird auf Dichotomien reduziert. Ambiguität gilt als Gefahr, nicht als journalistische Tugend. Widerspruch wird moralisiert.</p></div>
     </div>
   </div>
 </section>
 
-<!-- BEWEISE -->
 <section id="beweise">
   <div class="section-inner">
     <div class="section-tag">Dokumentation</div>
     <h2 class="section-title">Beweisgruppen A – G</h2>
-    <p class="section-lead">
-      31 nummerierte Einzelbelege. Wissenschaftlich, juristisch verwertbar,
-      öffentlich nachprüfbar. Kein Einzelfall – strukturelle Regelmäßigkeit.
-    </p>
-
+    <p class="section-lead">31 nummerierte Einzelbelege. Wissenschaftlich, juristisch verwertbar, öffentlich nachprüfbar. Kein Einzelfall – strukturelle Regelmäßigkeit.</p>
     <div class="beweise-grid">
-      <div class="beweis-card reveal">
-        <div class="beweis-letter">A</div>
-        <div class="beweis-title">Wissenschaftliche Inhaltsanalysen</div>
-        <span class="beweis-count">4 Studien</span>
-        <p class="beweis-text">Media Tenor, Uni Mainz, Uni Hamburg, Otto-Brenner-Stiftung: Themen- und Deutungshomogenität quantitativ belegt.</p>
-      </div>
-      <div class="beweis-card reveal delay-1">
-        <div class="beweis-letter">B</div>
-        <div class="beweis-title">Kommunikationswissenschaft</div>
-        <span class="beweis-count">6 Quellen</span>
-        <p class="beweis-text">Gatekeeping (Lewin), Indexing (Bennett), Konformitätsdruck (Asch), Chilling Effect – wissenschaftlicher Konsens seit Jahrzehnten.</p>
-      </div>
-      <div class="beweis-card reveal delay-2">
-        <div class="beweis-letter">C</div>
-        <div class="beweis-title">Ex-ÖRR-Journalisten</div>
-        <span class="beweis-count">6 Personen</span>
-        <p class="beweis-text">Herles, Tilgner, Krone-Schmalz, Pohlmann, Hahne, Bräutigam/Klinkhammer – übereinstimmende Berichte aus verschiedenen politischen Spektren.</p>
-      </div>
-      <div class="beweis-card reveal">
-        <div class="beweis-letter">D</div>
-        <div class="beweis-title">Programmbeschwerden</div>
-        <span class="beweis-count">200+ Beschwerden</span>
-        <p class="beweis-text">Systematisch eingereicht, systematisch ignoriert. Erfolgsquote: faktisch null. Belegt die strukturelle Unwirksamkeit der Aufsicht.</p>
-      </div>
-      <div class="beweis-card reveal delay-1">
-        <div class="beweis-letter">E</div>
-        <div class="beweis-title">ÖRR-eigene Dokumente</div>
-        <span class="beweis-count">5 Quellen</span>
-        <p class="beweis-text">WDR-Entschuldigung, ZDF-Fehleingeständnisse, Rechnungshofberichte, Ombudsmann-Stellungnahmen – die Sender belegen ihre eigenen Defizite.</p>
-      </div>
-      <div class="beweis-card reveal delay-2">
-        <div class="beweis-letter">F</div>
-        <div class="beweis-title">Vertrauensdaten</div>
-        <span class="beweis-count">3 Studien</span>
-        <p class="beweis-text">ARD/ZDF-Medienforschung, Reuters Institute, Infratest dimap: Anhaltender Vertrauens- und Reichweitenverlust in eigenen Daten.</p>
-      </div>
-      <div class="beweis-card reveal">
-        <div class="beweis-letter">G</div>
-        <div class="beweis-title">Externe Analysen</div>
-        <span class="beweis-count">4 Quellen</span>
-        <p class="beweis-text">Media Tenor Freiheitsindex, Prof. Meyen (LMU), Medienpluralismus-Monitor der EU: Asymmetrische Regulierung im internationalen Vergleich.</p>
-      </div>
+      <div class="beweis-card reveal"><div class="beweis-letter">A</div><div class="beweis-title">Wissenschaftliche Inhaltsanalysen</div><span class="beweis-count">4 Studien</span><p class="beweis-text">Media Tenor, Uni Mainz, Uni Hamburg, Otto-Brenner-Stiftung: Themen- und Deutungshomogenität quantitativ belegt.</p></div>
+      <div class="beweis-card reveal delay-1"><div class="beweis-letter">B</div><div class="beweis-title">Kommunikationswissenschaft</div><span class="beweis-count">6 Quellen</span><p class="beweis-text">Gatekeeping (Lewin), Indexing (Bennett), Konformitätsdruck (Asch), Chilling Effect – wissenschaftlicher Konsens seit Jahrzehnten.</p></div>
+      <div class="beweis-card reveal delay-2"><div class="beweis-letter">C</div><div class="beweis-title">Ex-ÖRR-Journalisten</div><span class="beweis-count">6 Personen</span><p class="beweis-text">Herles, Tilgner, Krone-Schmalz, Pohlmann, Hahne, Bräutigam/Klinkhammer – übereinstimmende Berichte aus verschiedenen politischen Spektren.</p></div>
+      <div class="beweis-card reveal"><div class="beweis-letter">D</div><div class="beweis-title">Programmbeschwerden</div><span class="beweis-count">200+ Beschwerden</span><p class="beweis-text">Systematisch eingereicht, systematisch ignoriert. Erfolgsquote: faktisch null. Belegt die strukturelle Unwirksamkeit der Aufsicht.</p></div>
+      <div class="beweis-card reveal delay-1"><div class="beweis-letter">E</div><div class="beweis-title">ÖRR-eigene Dokumente</div><span class="beweis-count">5 Quellen</span><p class="beweis-text">WDR-Entschuldigung, ZDF-Fehleingeständnisse, Rechnungshofberichte, Ombudsmann-Stellungnahmen – die Sender belegen ihre eigenen Defizite.</p></div>
+      <div class="beweis-card reveal delay-2"><div class="beweis-letter">F</div><div class="beweis-title">Vertrauensdaten</div><span class="beweis-count">3 Studien</span><p class="beweis-text">ARD/ZDF-Medienforschung, Reuters Institute, Infratest dimap: Anhaltender Vertrauens- und Reichweitenverlust in eigenen Daten.</p></div>
+      <div class="beweis-card reveal"><div class="beweis-letter">G</div><div class="beweis-title">Externe Analysen</div><span class="beweis-count">4 Quellen</span><p class="beweis-text">Media Tenor Freiheitsindex, Prof. Meyen (LMU), Medienpluralismus-Monitor der EU: Asymmetrische Regulierung im internationalen Vergleich.</p></div>
     </div>
   </div>
 </section>
 
-<!-- URTEILE -->
 <section id="urteile">
   <div class="section-inner">
     <div class="section-tag">Rechtsprechung</div>
     <h2 class="section-title">Urteile &amp; Einordnungen</h2>
-    <p class="section-lead">
-      Was Gerichte entschieden haben – und was sie hätten prüfen müssen.
-    </p>
-
+    <p class="section-lead">Was Gerichte entschieden haben – und was sie hätten prüfen müssen.</p>
     <div class="urteile-grid">
       <div class="urteil-card aktuell reveal">
         <span class="urteil-label">Ausstehend · Az. 1 BvR 2524/24 und 2525/24</span>
@@ -889,14 +290,12 @@ Ein Lehrbuchbeispiel der Selbsterhaltungslogik.</p>
         <p>ARD und ZDF klagen auf ein Grundsatzurteil, das KEF-Empfehlungen für die Länder bindend macht – auch nachdem die KEF ihre Erhöhungsempfehlung selbst zurückgenommen hat. Der 1. Senat unter Präsident Harbarth entscheidet. Urteil: Herbst 2026 erwartet.</p>
         <span class="urteil-meta">Quelle: LTO, 15.05.2026 · Vollständige Analyse verfügbar</span>
       </div>
-
       <div class="urteil-card negativ reveal delay-1">
         <span class="urteil-label">Negativ für Kläger · VGH Mannheim, 21.04.2026</span>
         <h3>VGH Baden-Württemberg weist Bürgerklagen ab</h3>
-        <p>Urteil: ÖRR sei „ausgewogen genug". Kritik: Das Gericht prüfte erheblich oberflächlicher als vom BVerwG 2025 verlangt. Fehlende Tatsachenwürdigung und keine Verhältnismäßigkeitsprüfung.</p>
+        <p>Urteil: ÖRR sei „ausgewogen genug“. Kritik: Das Gericht prüfte erheblich oberflächlicher als vom BVerwG 2025 verlangt. Fehlende Tatsachenwürdigung und keine Verhältnismäßigkeitsprüfung.</p>
         <span class="urteil-meta">Az. 2 S 2523/25 · Berufung möglich</span>
       </div>
-
       <div class="urteil-card positiv reveal delay-2">
         <span class="urteil-label">Richtungsweisend · BVerwG, 15.10.2025</span>
         <h3>Bundesverwaltungsgericht: Strukturelle Defizite relevant</h3>
@@ -907,53 +306,29 @@ Ein Lehrbuchbeispiel der Selbsterhaltungslogik.</p>
   </div>
 </section>
 
-<!-- ÜBER -->
 <section id="ueber">
   <div class="section-inner">
     <div class="section-tag">Über das Projekt</div>
     <h2 class="section-title">Was Rundfunkkritik.de ist</h2>
-
     <div class="ueber-grid">
       <div class="ueber-text reveal">
         <h3>Ziel</h3>
-        <p>
-          Rundfunkkritik.de dokumentiert strukturelle Mechanismen, die die Programmrealität
-          des öffentlich-rechtlichen Rundfunks prägen. Im Fokus steht nicht die Frage,
-          ob einzelne Journalisten böse sind – sondern warum ein System ohne zentrale
-          Steuerung systematisch gleichartige Ergebnisse produziert.
-        </p>
-
+        <p>Rundfunkkritik.de dokumentiert strukturelle Mechanismen, die die Programmrealität des öffentlich-rechtlichen Rundfunks prägen. Im Fokus steht nicht die Frage, ob einzelne Journalisten böse sind – sondern warum ein System ohne zentrale Steuerung systematisch gleichartige Ergebnisse produziert.</p>
         <h3>Methode</h3>
-        <p>
-          Alle Analysen sind wissenschaftlich anschlussfähig, juristisch belastbar und
-          empirisch nachprüfbar. Quellen werden vollständig angegeben. Die verwendeten
-          Konzepte stammen aus der etablierten Kommunikations- und Sozialpsychologie –
-          kein Sonderwissen, keine Spekulation.
-        </p>
-
+        <p>Alle Analysen sind wissenschaftlich anschlussfähig, juristisch belastbar und empirisch nachprüfbar. Quellen werden vollständig angegeben. Die verwendeten Konzepte stammen aus der etablierten Kommunikations- und Sozialpsychologie – kein Sonderwissen, keine Spekulation.</p>
         <h3>Abgrenzung</h3>
-        <p>
-          Rundfunkkritik.de ist keine politische Kampagnenseite. Die Analysen vermeiden
-          Polemik, Personalisierung und politische Etikettierung. Wer den ÖRR mit anderen
-          Begriffen angreifen möchte, ist hier falsch. Wer strukturelle Argumente
-          versteht und weiterdenken will, ist richtig.
-        </p>
-
+        <p>Rundfunkkritik.de ist keine politische Kampagnenseite. Die Analysen vermeiden Polemik, Personalisierung und politische Etikettierung. Wer den ÖRR mit anderen Begriffen angreifen möchte, ist hier falsch. Wer strukturelle Argumente versteht und weiterdenken will, ist richtig.</p>
         <h3>Rechtlicher Hinweis</h3>
-        <p>
-          Die Klageschrift und alle Dokumente auf dieser Seite sind Formulierungsvorschläge.
-          Sie ersetzen keine Rechtsberatung. Vor einer Einreichung bitte anwaltliche
-          Prüfung durch einen Medien- oder Verwaltungsrechtler einholen.
-        </p>
+        <p>Die Klageschrift und alle Dokumente auf dieser Seite sind Formulierungsvorschläge. Sie ersetzen keine Rechtsberatung. Vor einer Einreichung bitte anwaltliche Prüfung durch einen Medien- oder Verwaltungsrechtler einholen.</p>
       </div>
-
       <div class="ueber-aside reveal delay-1">
         <div class="aside-card">
           <div class="aside-card-title">Downloads</div>
-          <p>Alle Dokumente kostenlos als PDF und Word-Datei.</p>
-          
-          
-          <a href="Beweisdossier_Anlagen_A-G.pdf">→ Beweisdossier (PDF)</a>
+          <p>Alle Dokumente kostenlos als PDF.</p>
+          <a href="Beweisdossier_Anlagen_A-G.pdf">→ Beweisdossier A–G (PDF)</a>
+          <a href="Fallbericht_5_Jahre_Widerstand_rundfunkkritik.pdf">→ Fallbericht: 5 Jahre Widerstand</a>
+          <a href="Klageschrift_Rundfunk_Bausteine_Mai2026.pdf">→ Klageschrift: Modulare Bausteine</a>
+          <a href="Macht_Geld_OeRR_rundfunkkritik.pdf">→ Analyse: Macht &amp; Geld im ÖRR</a>
         </div>
         <div class="aside-card">
           <div class="aside-card-title">Externe Quellen</div>
@@ -961,18 +336,24 @@ Ein Lehrbuchbeispiel der Selbsterhaltungslogik.</p>
           <a href="https://mediatenor.com" target="_blank">→ Media Tenor</a>
           <a href="https://reutersinstitute.politics.ox.ac.uk" target="_blank">→ Reuters Institute</a>
           <a href="https://oeffentlich-rechtlicher-rundfunk-kritik.de" target="_blank">→ ÖRR-Kritik (Bräutigam)</a>
-        </div><a href="https://x.com/OERRBlog" target="_blank">→ ÖRR Blog (@OERRBlog) auf X</a>
+          <a href="https://x.com/OERRBlog" target="_blank">→ ÖRR Blog (@OERRBlog) auf X</a>
+          <a href="https://x.com/hori_____zont" target="_blank">→ _horizont_ (@hori_____zont) auf X</a>
+        </div>
         <div class="aside-card">
           <div class="aside-card-title">Kontakt</div>
           <p>Hinweise, Korrekturen, Ergänzungen willkommen.</p>
           <a href="mailto:kontakt@rundfunkkritik.de">→ kontakt@rundfunkkritik.de</a>
+        </div>
+        <div class="aside-card" style="border-color:var(--gold);border-left:3px solid var(--gold);">
+          <div class="aside-card-title" style="color:var(--gold);">Projekt unterstützen</div>
+          <p>Rundfunkkritik.de ist kostenlos und unabhängig. Wer die Arbeit schätzt, kann sie über Ko-fi unterstützen.</p>
+          <a href="https://ko-fi.com/rundfunkkritikde" target="_blank" rel="noopener" style="color:var(--gold);border-top-color:var(--gold);">☕ Ko-fi – Kaffee spendieren</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- KONTAKT CTA -->
 <section id="kontakt" style="background:var(--accent);padding:4rem 2rem;text-align:center">
   <div style="max-width:560px;margin:0 auto">
     <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.8rem">Kontakt</p>
@@ -983,7 +364,6 @@ Ein Lehrbuchbeispiel der Selbsterhaltungslogik.</p>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div>
@@ -1006,17 +386,19 @@ Ein Lehrbuchbeispiel der Selbsterhaltungslogik.</p>
       <ul>
         <li><a href="Beweisdossier_Anlagen_A-G.pdf">Beweisdossier (PDF)</a></li>
         <li><a href="BVerfG_Rundfunkbeitrag_Juni2026_Artikel.html">BVerfG-Analyse</a></li>
-        <li><a href="ard_lobbybüro_2026.html">ARD Lobbybüro</a></li>
+        <li><a href="ard_lobbübüro_2026.html">ARD Lobbübüro</a></li>
         <li><a href="urteil_positiv.html">Fiktiv: Stattgabe</a></li>
-        <li><a href="urteil_negativ.html">Fiktiv: Abweisung</a></li><li><a href="Fallbericht_5_Jahre_Widerstand_rundfunkkritik.pdf">Fallbericht: 5 Jahre Widerstand</a></li>
-<li><a href="Klageschrift_Rundfunk_Bausteine_Mai2026.pdf">Klageschrift: Modulare Bausteine</a></li>
-<li><a href="Macht_Geld_OeRR_rundfunkkritik.pdf">Analyse: Macht & Geld im ÖRR</a></li>
+        <li><a href="urteil_negativ.html">Fiktiv: Abweisung</a></li>
+        <li><a href="Fallbericht_5_Jahre_Widerstand_rundfunkkritik.pdf">Fallbericht: 5 Jahre Widerstand</a></li>
+        <li><a href="Klageschrift_Rundfunk_Bausteine_Mai2026.pdf">Klageschrift: Modulare Bausteine</a></li>
+        <li><a href="Macht_Geld_OeRR_rundfunkkritik.pdf">Analyse: Macht &amp; Geld im ÖRR</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <span>© 2026 Rundfunkkritik.de · Alle Inhalte zur freien Verwendung mit Quellenangabe</span>
     <span>
+      <a href="https://ko-fi.com/rundfunkkritikde" target="_blank" rel="noopener" style="border:1px solid rgba(255,255,255,0.2);padding:0.2rem 0.6rem;">☕ Ko-fi</a> ·
       <a href="impressum.html">Impressum</a> ·
       <a href="datenschutz.html">Datenschutz</a> ·
       <a href="mailto:kontakt@rundfunkkritik.de">Kontakt</a>
@@ -1027,15 +409,10 @@ Ein Lehrbuchbeispiel der Selbsterhaltungslogik.</p>
 <script>
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
-    if(e.isIntersecting){
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
+    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}
   });
 }, {threshold: 0.08});
-
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
 document.querySelectorAll('.news-card').forEach((card, i) => {
   card.style.animationDelay = (0.1 + i * 0.1) + 's';
   card.classList.add('visible');
