@@ -198,6 +198,12 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
       .share-btn{justify-content:center;}
       .share-box{padding:1.4rem 1.2rem;}
     }
+  
+    a.news-featured{display:flex;text-decoration:none;color:inherit;cursor:pointer;}
+    a.news-featured:hover .news-featured-image h3{text-decoration:underline;text-decoration-color:var(--accent-2);}
+    .btn-primary-inline{display:inline-block;margin-top:1rem;font-size:0.82rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-2);border-bottom:1px solid var(--accent-2);padding-bottom:2px;}
+    a.urteil-card{display:block;text-decoration:none;color:inherit;cursor:pointer;}
+    a.urteil-card:hover{border-color:var(--accent-2) !important;transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.07);}
   </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HF9W1DLQLL"></script>
@@ -218,7 +224,8 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
     <li><a href="#beweise">Beweise</a></li>
     <li><a href="#urteile">Urteile</a></li>
     <li><a href="#ueber">Über</a></li>
-    <li><a href="widerstand.html">Widerstand</a></li>
+    <li><a href="dsgvo_anfrage_beitragsservice.html">DSGVO-Anfrage Beitragsservice</a></li>
+                <li><a href="widerstand.html">Widerstand</a></li>
  
     <li><a href="#videos">Videos</a></li> </ul>
   <a class="nav-cta" href="widerstand.html">Stiller Widerstand</a>
@@ -252,7 +259,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
   <div class="section-inner">
     <div class="section-tag">Aktuell</div>
     <h2 class="section-title">Neueste Analysen</h2>
-    <div class="news-featured reveal">
+    <a class="news-featured reveal" href="BVerfG_Rundfunkbeitrag_Juni2026_Artikel.html">
       <div class="news-featured-image">
         <span class="breaking">Aktuell – 15. Mai 2026</span>
         <h3>BVerfG verhandelt im Juni: Worum es wirklich geht</h3>
@@ -260,9 +267,9 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
       <div class="news-featured-body">
         <div class="news-date">Bundesverfassungsgericht · 15.05.2026</div>
         <p>Das BVerfG verhandelt am 23. Juni über den Rundfunkbeitrag – obwohl die KEF ihre Erhöhungsempfehlung zurückgenommen hat. ARD und ZDF wollen ein strukturelles Grundsatzurteil erzwingen, das KEF-Empfehlungen künftig bindend macht. Eine Analyse der Asymmetrie.</p>
-        <a class="btn-primary" href="BVerfG_Rundfunkbeitrag_Juni2026_Artikel.html">Vollständige Analyse lesen</a>
+        <span class="btn-primary-inline">Vollständige Analyse lesen →</span>
       </div>
-    </div>
+    </a>
     <div class="news-grid">
       <a class="news-card reveal delay-1" href="#urteile">
         <span class="news-card-tag">VGH Mannheim · 21.04.2026</span>
@@ -337,12 +344,12 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
     <h2 class="section-title">Urteile &amp; Einordnungen</h2>
     <p class="section-lead">Was Gerichte entschieden haben – und was sie hätten prüfen müssen.</p>
     <div class="urteile-grid">
-      <div class="urteil-card aktuell reveal">
+      <a class="urteil-card aktuell reveal" href="BVerfG_Rundfunkbeitrag_Juni2026_Artikel.html">
         <span class="urteil-label">Ausstehend · Az. 1 BvR 2524/24 und 2525/24</span>
         <h3>BVerfG – Verhandlung 23. Juni 2026</h3>
         <p>ARD und ZDF klagen auf ein Grundsatzurteil, das KEF-Empfehlungen für die Länder bindend macht – auch nachdem die KEF ihre Erhöhungsempfehlung selbst zurückgenommen hat. Der 1. Senat unter Präsident Harbarth entscheidet. Urteil: Herbst 2026 erwartet.</p>
         <span class="urteil-meta">Quelle: LTO, 15.05.2026 · Vollständige Analyse verfügbar</span>
-      </div>
+      </a>
       <div class="urteil-card negativ reveal delay-1">
         <span class="urteil-label">Negativ für Kläger · VGH Mannheim, 21.04.2026</span>
         <h3>VGH Baden-Württemberg weist Bürgerklagen ab</h3>
