@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Rundfunkkritik.de – Strukturelle Medienanalyse des öffentlich-rechtlichen Rundfunks. Wissenschaftlich belegbar, juristisch belastbar, ohne Polemik.">
-<meta name="keywords" content="Rundfunkbeitrag, ARD, ZDF, ÖRR, Medienkritik, Strukturanalyse, GEZ, Rundfunkkritik, Medienanalyse, Pluralität, Programmauftrag">
+<meta name="description" content="Rundfunkkritik.de â Strukturelle Medienanalyse des Ã¶ffentlich-rechtlichen Rundfunks. Wissenschaftlich belegbar, juristisch belastbar, ohne Polemik.">
+<meta name="keywords" content="Rundfunkbeitrag, ARD, ZDF, ÃRR, Medienkritik, Strukturanalyse, GEZ, Rundfunkkritik, Medienanalyse, PluralitÃ¤t, Programmauftrag">
 <meta name="author" content="Rundfunkkritik.de">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.rundfunkkritik.de/">
@@ -12,15 +12,15 @@
 <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">h
 <link rel="apple-touch-icon" href="/favicon-32x32.png">
-<meta property="og:title" content="Rundfunkkritik.de – Strukturelle Medienanalyse">
-<meta property="og:description" content="Unabhängige Analyse des öffentlich-rechtlichen Rundfunks. Wissenschaftlich belegbar, juristisch belastbar, ohne Polemik.">
+<meta property="og:title" content="Rundfunkkritik.de â Strukturelle Medienanalyse">
+<meta property="og:description" content="UnabhÃ¤ngige Analyse des Ã¶ffentlich-rechtlichen Rundfunks. Wissenschaftlich belegbar, juristisch belastbar, ohne Polemik.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.rundfunkkritik.de/">
 <meta property="og:locale" content="de_DE">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rundfunkkritik.de – Strukturelle Medienanalyse">
-<meta name="twitter:description" content="Unabhängige Analyse des öffentlich-rechtlichen Rundfunks. Wissenschaftlich belegbar, juristisch belastbar, ohne Polemik.">
-<title>Rundfunkkritik – Strukturelle Medienanalyse</title>
+<meta name="twitter:title" content="Rundfunkkritik.de â Strukturelle Medienanalyse">
+<meta name="twitter:description" content="UnabhÃ¤ngige Analyse des Ã¶ffentlich-rechtlichen Rundfunks. Wissenschaftlich belegbar, juristisch belastbar, ohne Polemik.">
+<title>Rundfunkkritik â Strukturelle Medienanalyse</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -160,7 +160,45 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
 }
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
 .reveal.visible{opacity:1;transform:none;}
-</style>
+
+    /* ===== VIDEO SECTION ===== */
+    .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.8rem;margin-top:2rem;}
+    .video-card{border:1px solid var(--rule);background:var(--white);transition:border-color 0.2s,transform 0.2s;overflow:hidden;}
+    .video-card:hover{border-color:var(--accent-2);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.08);}
+    .video-thumb-link{display:block;text-decoration:none;color:inherit;}
+    .video-thumb-wrap{position:relative;width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,var(--ink-5) 0%,var(--rule) 100%);overflow:hidden;display:flex;align-items:center;justify-content:center;}
+    .video-play-btn{width:64px;height:64px;background:rgba(180,0,0,0.88);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;padding-left:5px;transition:background 0.2s,transform 0.2s;}
+    .video-card:hover .video-play-btn{background:rgba(180,0,0,1);transform:scale(1.12);}
+    .video-thumb-label{position:absolute;bottom:0.8rem;left:0;right:0;text-align:center;font-family:'Playfair Display',serif;font-size:0.85rem;color:var(--ink-2);padding:0 0.5rem;}
+    .video-card-body{padding:1.2rem 1.4rem 1.4rem;}
+    .video-card-tag{font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-1);margin-bottom:0.5rem;}
+    .video-card-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--ink-1);margin-bottom:0.5rem;line-height:1.35;}
+    .video-card-desc{font-size:0.88rem;color:var(--ink-2);line-height:1.6;margin-bottom:0.8rem;}
+    .video-card-cta{font-size:0.8rem;font-weight:600;color:var(--accent-2);letter-spacing:0.04em;}
+    .section-intro{font-size:1rem;color:var(--ink-2);line-height:1.7;max-width:640px;margin-bottom:0.5rem;}
+    /* ===== SHARE SECTION ===== */
+    .section-inner--narrow{max-width:720px;}
+    .share-box{border:1px solid var(--rule);padding:2rem 2.4rem;background:var(--white);}
+    .share-box-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--ink-1);margin-bottom:0.6rem;}
+    .share-box-desc{font-size:0.92rem;color:var(--ink-2);line-height:1.65;margin-bottom:1.4rem;}
+    .share-buttons{display:flex;flex-wrap:wrap;gap:0.75rem;}
+    .share-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1.1rem;border:1px solid var(--rule);font-size:0.85rem;font-weight:600;text-decoration:none;transition:background 0.15s,color 0.15s,border-color 0.15s;white-space:nowrap;}
+    .share-btn svg{width:18px;height:18px;flex-shrink:0;}
+    .share-btn--whatsapp{color:#128c7e;border-color:#128c7e;}
+    .share-btn--whatsapp:hover{background:#128c7e;color:#fff;}
+    .share-btn--telegram{color:#0088cc;border-color:#0088cc;}
+    .share-btn--telegram:hover{background:#0088cc;color:#fff;}
+    .share-btn--twitter{color:var(--ink-1);border-color:var(--rule);}
+    .share-btn--twitter:hover{background:var(--ink-1);color:#fff;}
+    .share-btn--email{color:var(--accent-1);border-color:var(--accent-1);}
+    .share-btn--email:hover{background:var(--accent-1);color:#fff;}
+    @media(max-width:600px){
+      .video-grid{grid-template-columns:1fr;}
+      .share-buttons{flex-direction:column;}
+      .share-btn{justify-content:center;}
+      .share-box{padding:1.4rem 1.2rem;}
+    }
+  </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HF9W1DLQLL"></script>
 <script>
@@ -179,25 +217,26 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
     <li><a href="#mechanismen">Mechanismen</a></li>
     <li><a href="#beweise">Beweise</a></li>
     <li><a href="#urteile">Urteile</a></li>
-    <li><a href="#ueber">Über</a></li>
+    <li><a href="#ueber">Ãber</a></li>
     <li><a href="widerstand.html">Widerstand</a></li>
-  </ul>
+ 
+    <li><a href="#videos">Videos</a></li> </ul>
   <a class="nav-cta" href="widerstand.html">Stiller Widerstand</a>
 </nav>
 
 <section class="hero" id="top">
   <div class="hero-inner">
-    <div class="hero-kicker">Unabhängige Strukturanalyse</div>
-    <h1>Was der ÖRR<br><em>wirklich</em> ist</h1>
+    <div class="hero-kicker">UnabhÃ¤ngige Strukturanalyse</div>
+    <h1>Was der ÃRR<br><em>wirklich</em> ist</h1>
     <p class="hero-lead">
-      Der öffentlich-rechtliche Rundfunk erfüllt seinen Verfassungsauftrag strukturell nicht.
-      Keine Polemik. Keine Verschwörungstheorie. Belegt durch Wissenschaft, Rechtsprechung
+      Der Ã¶ffentlich-rechtliche Rundfunk erfÃ¼llt seinen Verfassungsauftrag strukturell nicht.
+      Keine Polemik. Keine VerschwÃ¶rungstheorie. Belegt durch Wissenschaft, Rechtsprechung
       und die eigenen Dokumente der Sender.
     </p>
     <div class="hero-actions">
       <a class="btn-primary" href="#mechanismen">Die 10 Mechanismen</a>
       <a class="btn-secondary" href="#urteile">Urteile &amp; Analysen</a>
-      <a class="btn-kofi" href="https://ko-fi.com/rundfunkkritikde" target="_blank" rel="noopener">☕ Projekt unterstützen</a>
+      <a class="btn-kofi" href="https://ko-fi.com/rundfunkkritikde" target="_blank" rel="noopener">â Projekt unterstÃ¼tzen</a>
     </div>
   </div>
 </section>
@@ -205,8 +244,8 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
 <div class="stats-bar">
   <div class="stat"><span class="stat-num">10</span><span class="stat-label">Systemische Mechanismen</span></div>
   <div class="stat"><span class="stat-num">31</span><span class="stat-label">Dokumentierte Belege</span></div>
-  <div class="stat"><span class="stat-num">8,5 Mrd.</span><span class="stat-label">Euro Zwangsbeiträge / Jahr</span></div>
-  <div class="stat"><span class="stat-num">~0%</span><span class="stat-label">Erfolgsquote Bürgerbeschwerden</span></div>
+  <div class="stat"><span class="stat-num">8,5 Mrd.</span><span class="stat-label">Euro ZwangsbeitrÃ¤ge / Jahr</span></div>
+  <div class="stat"><span class="stat-num">~0%</span><span class="stat-label">Erfolgsquote BÃ¼rgerbeschwerden</span></div>
 </div>
 
 <section id="aktuell">
@@ -215,55 +254,55 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
     <h2 class="section-title">Neueste Analysen</h2>
     <div class="news-featured reveal">
       <div class="news-featured-image">
-        <span class="breaking">Aktuell – 15. Mai 2026</span>
+        <span class="breaking">Aktuell â 15. Mai 2026</span>
         <h3>BVerfG verhandelt im Juni: Worum es wirklich geht</h3>
       </div>
       <div class="news-featured-body">
-        <div class="news-date">Bundesverfassungsgericht · 15.05.2026</div>
-        <p>Das BVerfG verhandelt am 23. Juni über den Rundfunkbeitrag – obwohl die KEF ihre Erhöhungsempfehlung zurückgenommen hat. ARD und ZDF wollen ein strukturelles Grundsatzurteil erzwingen, das KEF-Empfehlungen künftig bindend macht. Eine Analyse der Asymmetrie.</p>
-        <a class="btn-primary" href="BVerfG_Rundfunkbeitrag_Juni2026_Artikel.html">Vollständige Analyse lesen</a>
+        <div class="news-date">Bundesverfassungsgericht Â· 15.05.2026</div>
+        <p>Das BVerfG verhandelt am 23. Juni Ã¼ber den Rundfunkbeitrag â obwohl die KEF ihre ErhÃ¶hungsempfehlung zurÃ¼ckgenommen hat. ARD und ZDF wollen ein strukturelles Grundsatzurteil erzwingen, das KEF-Empfehlungen kÃ¼nftig bindend macht. Eine Analyse der Asymmetrie.</p>
+        <a class="btn-primary" href="BVerfG_Rundfunkbeitrag_Juni2026_Artikel.html">VollstÃ¤ndige Analyse lesen</a>
       </div>
     </div>
     <div class="news-grid">
       <a class="news-card reveal delay-1" href="#urteile">
-        <span class="news-card-tag">VGH Mannheim · 21.04.2026</span>
-        <h4>VGH weist Bürgerklagen ab – prüft aber zu oberflächlich</h4>
-        <p>Der VGH Baden-Württemberg erklärt den ÖRR für „ausgewogen genug“, ohne die vom BVerwG geforderte Tiefenprüfung vorzunehmen.</p>
+        <span class="news-card-tag">VGH Mannheim Â· 21.04.2026</span>
+        <h4>VGH weist BÃ¼rgerklagen ab â prÃ¼ft aber zu oberflÃ¤chlich</h4>
+        <p>Der VGH Baden-WÃ¼rttemberg erklÃ¤rt den ÃRR fÃ¼r âausgewogen genugâ, ohne die vom BVerwG geforderte TiefenprÃ¼fung vorzunehmen.</p>
       </a>
       <a class="news-card reveal delay-2" href="#beweise">
         <span class="news-card-tag">Beweisdossier</span>
-        <h4>31 Belege in 7 Kategorien – vollständiges Dossier</h4>
-        <p>Von wissenschaftlichen Inhaltsanalysen bis zu ÖRR-eigenen Eigeneingeständnissen: Das strukturierte Beweispaket für Gerichte und Öffentlichkeit.</p>
+        <h4>31 Belege in 7 Kategorien â vollstÃ¤ndiges Dossier</h4>
+        <p>Von wissenschaftlichen Inhaltsanalysen bis zu ÃRR-eigenen EigeneingestÃ¤ndnissen: Das strukturierte Beweispaket fÃ¼r Gerichte und Ãffentlichkeit.</p>
       </a>
-      <a class="news-card reveal delay-3" href="ard_lobbybüro_2026.html">
-        <span class="news-card-tag">Strukturanalyse · 15.05.2026</span>
-        <h4>ARD baut Lobbybüro aus – während gespart werden soll</h4>
+      <a class="news-card reveal delay-3" href="ard_lobbybÃ¼ro_2026.html">
+        <span class="news-card-tag">Strukturanalyse Â· 15.05.2026</span>
+        <h4>ARD baut LobbybÃ¼ro aus â wÃ¤hrend gespart werden soll</h4>
         <p>Hunderte Millionen Euro Sparauftrag, gleichzeitig heimliche Erweiterung des Berliner Verwaltungsapparats. Ein Lehrbuchbeispiel der Selbsterhaltungslogik.</p>
       </a>
       <a class="news-card reveal delay-4" href="https://x.com/OERRBlog" target="_blank" rel="noopener">
-        <span class="news-card-tag">Externe Quelle · Laufend aktualisiert</span>
-        <h4>ÖRR Blog auf X – tagesaktuelle Dokumentation</h4>
-        <p>Der @OERRBlog dokumentiert laufend ÖRR-Verfehlungen, Programmfehler und strukturelle Misstände – eine der umfangreichsten öffentlichen Sammlungen.</p>
+        <span class="news-card-tag">Externe Quelle Â· Laufend aktualisiert</span>
+        <h4>ÃRR Blog auf X â tagesaktuelle Dokumentation</h4>
+        <p>Der @OERRBlog dokumentiert laufend ÃRR-Verfehlungen, Programmfehler und strukturelle MisstÃ¤nde â eine der umfangreichsten Ã¶ffentlichen Sammlungen.</p>
       </a>
       <a class="news-card reveal delay-5" href="macht_geld_oerr.html">
         <span class="news-card-tag">Visualisierung</span>
-        <h4>Macht &amp; Geld im ÖRR</h4>
-        <p>Interaktive Visualisierung der finanziellen und personellen Verflechtungen im öffentlich-rechtlichen Rundfunk.</p>
+        <h4>Macht &amp; Geld im ÃRR</h4>
+        <p>Interaktive Visualisierung der finanziellen und personellen Verflechtungen im Ã¶ffentlich-rechtlichen Rundfunk.</p>
       </a>
       <a class="news-card reveal delay-6" href="rundfunkbeitrag_relevanz_2026.html">
         <span class="news-card-tag">Analyse &middot; Finanzierung</span>
-        <h4>18,36 Euro für alle – aber für wen?</h4>
-        <p>Der Rundfunkbeitrag wirkt wie eine Steuer – aber wer rechtfertigt ihn noch, wenn Relevanz und Vertrauen schwinden?</p>
+        <h4>18,36 Euro fÃ¼r alle â aber fÃ¼r wen?</h4>
+        <p>Der Rundfunkbeitrag wirkt wie eine Steuer â aber wer rechtfertigt ihn noch, wenn Relevanz und Vertrauen schwinden?</p>
       </a>
       <a class="news-card reveal delay-7" href="pluralitaetspflicht_oerr_2026.html">
         <span class="news-card-tag">Analyse &middot; Recht</span>
-        <h4>Alle müssen zu Wort kommen – aber wer entscheidet, wer das ist?</h4>
-        <p>Pluralitätspflicht als Verfassungsgebot, strukturelles Selektionsproblem als Realität.</p>
+        <h4>Alle mÃ¼ssen zu Wort kommen â aber wer entscheidet, wer das ist?</h4>
+        <p>PluralitÃ¤tspflicht als Verfassungsgebot, strukturelles Selektionsproblem als RealitÃ¤t.</p>
       </a>
       <a class="news-card reveal delay-8" href="oerr_verleger_strukturkonflikt_2026.html">
         <span class="news-card-tag">Analyse &middot; Medienstruktur</span>
         <h4>Wenn der Staat Zeitung macht</h4>
-        <p>ARD und ZDF expandieren ins Digitale – und verdrängen dabei private Verleger. Der ungeklärte Strukturkonflikt.</p>
+        <p>ARD und ZDF expandieren ins Digitale â und verdrÃ¤ngen dabei private Verleger. Der ungeklÃ¤rte Strukturkonflikt.</p>
       </a>
      
     </div>
@@ -274,18 +313,18 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
   <div class="section-inner">
     <div class="section-tag">Analyse</div>
     <h2 class="section-title">Die 10 systemischen Mechanismen</h2>
-    <p class="section-lead">Kein Befehl, keine Zensur, keine Verschwörung. Die Pluralitätsminderung entsteht durch strukturelle Eigenlogik – beschreibbar, belegbar, juristisch relevant.</p>
+    <p class="section-lead">Kein Befehl, keine Zensur, keine VerschwÃ¶rung. Die PluralitÃ¤tsminderung entsteht durch strukturelle Eigenlogik â beschreibbar, belegbar, juristisch relevant.</p>
     <div class="mech-grid">
-      <div class="mech-card reveal"><div class="mech-num">01</div><div class="mech-title">Dauerkrisenmodus</div><div class="mech-sub">Crisis-Framing</div><p class="mech-text">Seit 2014 kommuniziert der ÖRR dauerhaft im Krisenmodus. Krisenkommunikation zentralisiert Botschaften und marginalisiert Gegenpositionen strukturell.</p></div>
-      <div class="mech-card reveal delay-1"><div class="mech-num">02</div><div class="mech-title">Publikumsverlust-Reflex</div><div class="mech-sub">Publizistischer Selbstschutz</div><p class="mech-text">Auf sinkende Reichweiten reagiert der ÖRR nicht mit mehr Vielfalt, sondern mit mehr Haltung – was Pluralität weiter einschränkt.</p></div>
-      <div class="mech-card reveal delay-2"><div class="mech-num">03</div><div class="mech-title">Gatekeeping</div><div class="mech-sub">Redaktionelle Filterlogik</div><p class="mech-text">Die mittlere Redaktionsebene entscheidet, was sendefähig ist – ohne formale Vorgabe, aber mit systemischer Wirkung (Lewin 1947).</p></div>
-      <div class="mech-card reveal"><div class="mech-num">04</div><div class="mech-title">Agenda-Synchronisation</div><div class="mech-sub">Themen­homogenität</div><p class="mech-text">Über 90% der Meldungen basieren auf dpa/Reuters/AP. Identische Themen in identischer Reihenfolge – über alle Sender und Formate.</p></div>
-      <div class="mech-card reveal delay-1"><div class="mech-num">05</div><div class="mech-title">Expertenkartell</div><div class="mech-sub">Quellenkonzentration</div><p class="mech-text">Dieselben 20–30 Experten rotieren durch alle Formate. Strukturelle Schließung gegenüber alternativen Fachpositionen ohne böse Absicht.</p></div>
-      <div class="mech-card reveal delay-2"><div class="mech-num">06</div><div class="mech-title">Ritualisierte Kritik</div><div class="mech-sub">Symbolische Opposition</div><p class="mech-text">Kritische Elemente existieren – als Ritual. Symbolisch, folgenlos, pluralitätsneutral. Der Eindruck kritischer Auseinandersetzung ohne strukturelle Wirkung.</p></div>
+      <div class="mech-card reveal"><div class="mech-num">01</div><div class="mech-title">Dauerkrisenmodus</div><div class="mech-sub">Crisis-Framing</div><p class="mech-text">Seit 2014 kommuniziert der ÃRR dauerhaft im Krisenmodus. Krisenkommunikation zentralisiert Botschaften und marginalisiert Gegenpositionen strukturell.</p></div>
+      <div class="mech-card reveal delay-1"><div class="mech-num">02</div><div class="mech-title">Publikumsverlust-Reflex</div><div class="mech-sub">Publizistischer Selbstschutz</div><p class="mech-text">Auf sinkende Reichweiten reagiert der ÃRR nicht mit mehr Vielfalt, sondern mit mehr Haltung â was PluralitÃ¤t weiter einschrÃ¤nkt.</p></div>
+      <div class="mech-card reveal delay-2"><div class="mech-num">03</div><div class="mech-title">Gatekeeping</div><div class="mech-sub">Redaktionelle Filterlogik</div><p class="mech-text">Die mittlere Redaktionsebene entscheidet, was sendefÃ¤hig ist â ohne formale Vorgabe, aber mit systemischer Wirkung (Lewin 1947).</p></div>
+      <div class="mech-card reveal"><div class="mech-num">04</div><div class="mech-title">Agenda-Synchronisation</div><div class="mech-sub">ThemenÂ­homogenitÃ¤t</div><p class="mech-text">Ãber 90% der Meldungen basieren auf dpa/Reuters/AP. Identische Themen in identischer Reihenfolge â Ã¼ber alle Sender und Formate.</p></div>
+      <div class="mech-card reveal delay-1"><div class="mech-num">05</div><div class="mech-title">Expertenkartell</div><div class="mech-sub">Quellenkonzentration</div><p class="mech-text">Dieselben 20â30 Experten rotieren durch alle Formate. Strukturelle SchlieÃung gegenÃ¼ber alternativen Fachpositionen ohne bÃ¶se Absicht.</p></div>
+      <div class="mech-card reveal delay-2"><div class="mech-num">06</div><div class="mech-title">Ritualisierte Kritik</div><div class="mech-sub">Symbolische Opposition</div><p class="mech-text">Kritische Elemente existieren â als Ritual. Symbolisch, folgenlos, pluralitÃ¤tsneutral. Der Eindruck kritischer Auseinandersetzung ohne strukturelle Wirkung.</p></div>
       <div class="mech-card reveal"><div class="mech-num">07</div><div class="mech-title">Externalisierung</div><div class="mech-sub">Moralische Selbstvergewisserung</div><p class="mech-text">Eigene Probleme werden durch Vergleiche mit anderen Staaten unsichtbar gemacht. Innenpolitische Fehlentwicklungen verschwinden im internationalen Kontext.</p></div>
-      <div class="mech-card reveal delay-1"><div class="mech-num">08</div><div class="mech-title">Soft Ostracism</div><div class="mech-sub">Informelle Sanktionen</div><p class="mech-text">Interne Kritiker werden marginalisiert: kein Auftrag, keine Sichtbarkeit – ohne formale Sanktion. Herles, Tilgner, Krone-Schmalz berichten übereinstimmend.</p></div>
-      <div class="mech-card reveal delay-2"><div class="mech-num">09</div><div class="mech-title">Selbstzensur</div><div class="mech-sub">Karriere­logik</div><p class="mech-text">Karrierewege belohnen Konformität, bestrafen Abweichung. Das System reguliert sich selbst ohne externe Eingriffe durch Selbstselektion.</p></div>
-      <div class="mech-card reveal"><div class="mech-num">10</div><div class="mech-title">Normative Verdichtung</div><div class="mech-sub">Geringe Ambiguitätstoleranz</div><p class="mech-text">Komplexität wird auf Dichotomien reduziert. Ambiguität gilt als Gefahr, nicht als journalistische Tugend. Widerspruch wird moralisiert.</p></div>
+      <div class="mech-card reveal delay-1"><div class="mech-num">08</div><div class="mech-title">Soft Ostracism</div><div class="mech-sub">Informelle Sanktionen</div><p class="mech-text">Interne Kritiker werden marginalisiert: kein Auftrag, keine Sichtbarkeit â ohne formale Sanktion. Herles, Tilgner, Krone-Schmalz berichten Ã¼bereinstimmend.</p></div>
+      <div class="mech-card reveal delay-2"><div class="mech-num">09</div><div class="mech-title">Selbstzensur</div><div class="mech-sub">KarriereÂ­logik</div><p class="mech-text">Karrierewege belohnen KonformitÃ¤t, bestrafen Abweichung. Das System reguliert sich selbst ohne externe Eingriffe durch Selbstselektion.</p></div>
+      <div class="mech-card reveal"><div class="mech-num">10</div><div class="mech-title">Normative Verdichtung</div><div class="mech-sub">Geringe AmbiguitÃ¤tstoleranz</div><p class="mech-text">KomplexitÃ¤t wird auf Dichotomien reduziert. AmbiguitÃ¤t gilt als Gefahr, nicht als journalistische Tugend. Widerspruch wird moralisiert.</p></div>
     </div>
   </div>
 </section>
@@ -293,14 +332,14 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
 <section id="beweise">
   <div class="section-inner">
     <div class="section-tag">Dokumentation</div>
-    <h2 class="section-title">Beweisgruppen A – G</h2>
-    <p class="section-lead">31 nummerierte Einzelbelege. Wissenschaftlich, juristisch verwertbar, öffentlich nachprüfbar. Kein Einzelfall – strukturelle Regelmäßigkeit.</p>
+    <h2 class="section-title">Beweisgruppen A â G</h2>
+    <p class="section-lead">31 nummerierte Einzelbelege. Wissenschaftlich, juristisch verwertbar, Ã¶ffentlich nachprÃ¼fbar. Kein Einzelfall â strukturelle RegelmÃ¤Ãigkeit.</p>
     <div class="beweise-grid">
-      <div class="beweis-card reveal"><div class="beweis-letter">A</div><div class="beweis-title">Wissenschaftliche Inhaltsanalysen</div><span class="beweis-count">4 Studien</span><p class="beweis-text">Media Tenor, Uni Mainz, Uni Hamburg, Otto-Brenner-Stiftung: Themen- und Deutungshomogenität quantitativ belegt.</p></div>
-      <div class="beweis-card reveal delay-1"><div class="beweis-letter">B</div><div class="beweis-title">Kommunikationswissenschaft</div><span class="beweis-count">6 Quellen</span><p class="beweis-text">Gatekeeping (Lewin), Indexing (Bennett), Konformitätsdruck (Asch), Chilling Effect – wissenschaftlicher Konsens seit Jahrzehnten.</p></div>
-      <div class="beweis-card reveal delay-2"><div class="beweis-letter">C</div><div class="beweis-title">Ex-ÖRR-Journalisten</div><span class="beweis-count">6 Personen</span><p class="beweis-text">Herles, Tilgner, Krone-Schmalz, Pohlmann, Hahne, Bräutigam/Klinkhammer – übereinstimmende Berichte aus verschiedenen politischen Spektren.</p></div>
+      <div class="beweis-card reveal"><div class="beweis-letter">A</div><div class="beweis-title">Wissenschaftliche Inhaltsanalysen</div><span class="beweis-count">4 Studien</span><p class="beweis-text">Media Tenor, Uni Mainz, Uni Hamburg, Otto-Brenner-Stiftung: Themen- und DeutungshomogenitÃ¤t quantitativ belegt.</p></div>
+      <div class="beweis-card reveal delay-1"><div class="beweis-letter">B</div><div class="beweis-title">Kommunikationswissenschaft</div><span class="beweis-count">6 Quellen</span><p class="beweis-text">Gatekeeping (Lewin), Indexing (Bennett), KonformitÃ¤tsdruck (Asch), Chilling Effect â wissenschaftlicher Konsens seit Jahrzehnten.</p></div>
+      <div class="beweis-card reveal delay-2"><div class="beweis-letter">C</div><div class="beweis-title">Ex-ÃRR-Journalisten</div><span class="beweis-count">6 Personen</span><p class="beweis-text">Herles, Tilgner, Krone-Schmalz, Pohlmann, Hahne, BrÃ¤utigam/Klinkhammer â Ã¼bereinstimmende Berichte aus verschiedenen politischen Spektren.</p></div>
       <div class="beweis-card reveal"><div class="beweis-letter">D</div><div class="beweis-title">Programmbeschwerden</div><span class="beweis-count">200+ Beschwerden</span><p class="beweis-text">Systematisch eingereicht, systematisch ignoriert. Erfolgsquote: faktisch null. Belegt die strukturelle Unwirksamkeit der Aufsicht.</p></div>
-      <div class="beweis-card reveal delay-1"><div class="beweis-letter">E</div><div class="beweis-title">ÖRR-eigene Dokumente</div><span class="beweis-count">5 Quellen</span><p class="beweis-text">WDR-Entschuldigung, ZDF-Fehleingeständnisse, Rechnungshofberichte, Ombudsmann-Stellungnahmen – die Sender belegen ihre eigenen Defizite.</p></div>
+      <div class="beweis-card reveal delay-1"><div class="beweis-letter">E</div><div class="beweis-title">ÃRR-eigene Dokumente</div><span class="beweis-count">5 Quellen</span><p class="beweis-text">WDR-Entschuldigung, ZDF-FehleingestÃ¤ndnisse, Rechnungshofberichte, Ombudsmann-Stellungnahmen â die Sender belegen ihre eigenen Defizite.</p></div>
       <div class="beweis-card reveal delay-2"><div class="beweis-letter">F</div><div class="beweis-title">Vertrauensdaten</div><span class="beweis-count">3 Studien</span><p class="beweis-text">ARD/ZDF-Medienforschung, Reuters Institute, Infratest dimap: Anhaltender Vertrauens- und Reichweitenverlust in eigenen Daten.</p></div>
       <div class="beweis-card reveal"><div class="beweis-letter">G</div><div class="beweis-title">Externe Analysen</div><span class="beweis-count">4 Quellen</span><p class="beweis-text">Media Tenor Freiheitsindex, Prof. Meyen (LMU), Medienpluralismus-Monitor der EU: Asymmetrische Regulierung im internationalen Vergleich.</p></div>
     </div>
@@ -311,25 +350,25 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
   <div class="section-inner">
     <div class="section-tag">Rechtsprechung</div>
     <h2 class="section-title">Urteile &amp; Einordnungen</h2>
-    <p class="section-lead">Was Gerichte entschieden haben – und was sie hätten prüfen müssen.</p>
+    <p class="section-lead">Was Gerichte entschieden haben â und was sie hÃ¤tten prÃ¼fen mÃ¼ssen.</p>
     <div class="urteile-grid">
       <div class="urteil-card aktuell reveal">
-        <span class="urteil-label">Ausstehend · Az. 1 BvR 2524/24 und 2525/24</span>
-        <h3>BVerfG – Verhandlung 23. Juni 2026</h3>
-        <p>ARD und ZDF klagen auf ein Grundsatzurteil, das KEF-Empfehlungen für die Länder bindend macht – auch nachdem die KEF ihre Erhöhungsempfehlung selbst zurückgenommen hat. Der 1. Senat unter Präsident Harbarth entscheidet. Urteil: Herbst 2026 erwartet.</p>
-        <span class="urteil-meta">Quelle: LTO, 15.05.2026 · Vollständige Analyse verfügbar</span>
+        <span class="urteil-label">Ausstehend Â· Az. 1 BvR 2524/24 und 2525/24</span>
+        <h3>BVerfG â Verhandlung 23. Juni 2026</h3>
+        <p>ARD und ZDF klagen auf ein Grundsatzurteil, das KEF-Empfehlungen fÃ¼r die LÃ¤nder bindend macht â auch nachdem die KEF ihre ErhÃ¶hungsempfehlung selbst zurÃ¼ckgenommen hat. Der 1. Senat unter PrÃ¤sident Harbarth entscheidet. Urteil: Herbst 2026 erwartet.</p>
+        <span class="urteil-meta">Quelle: LTO, 15.05.2026 Â· VollstÃ¤ndige Analyse verfÃ¼gbar</span>
       </div>
       <div class="urteil-card negativ reveal delay-1">
-        <span class="urteil-label">Negativ für Kläger · VGH Mannheim, 21.04.2026</span>
-        <h3>VGH Baden-Württemberg weist Bürgerklagen ab</h3>
-        <p>Urteil: ÖRR sei „ausgewogen genug“. Kritik: Das Gericht prüfte erheblich oberflächlicher als vom BVerwG 2025 verlangt. Fehlende Tatsachenwürdigung und keine Verhältnismäßigkeitsprüfung.</p>
-        <span class="urteil-meta">Az. 2 S 2523/25 · Berufung möglich</span>
+        <span class="urteil-label">Negativ fÃ¼r KlÃ¤ger Â· VGH Mannheim, 21.04.2026</span>
+        <h3>VGH Baden-WÃ¼rttemberg weist BÃ¼rgerklagen ab</h3>
+        <p>Urteil: ÃRR sei âausgewogen genugâ. Kritik: Das Gericht prÃ¼fte erheblich oberflÃ¤chlicher als vom BVerwG 2025 verlangt. Fehlende TatsachenwÃ¼rdigung und keine VerhÃ¤ltnismÃ¤ÃigkeitsprÃ¼fung.</p>
+        <span class="urteil-meta">Az. 2 S 2523/25 Â· Berufung mÃ¶glich</span>
       </div>
       <div class="urteil-card positiv reveal delay-2">
-        <span class="urteil-label">Richtungsweisend · BVerwG, 15.10.2025</span>
+        <span class="urteil-label">Richtungsweisend Â· BVerwG, 15.10.2025</span>
         <h3>Bundesverwaltungsgericht: Strukturelle Defizite relevant</h3>
-        <p>Grundsatzurteil: Beitragspflicht entfällt, wenn das Gesamtprogramm über längeren Zeitraum evidente Defizite bei Vielfalt und Ausgewogenheit aufweist. Repräsentative Belege ausreichend.</p>
-        <span class="urteil-meta">Az. 6 C 5.24 · Basis aller Bürgerklagen</span>
+        <p>Grundsatzurteil: Beitragspflicht entfÃ¤llt, wenn das Gesamtprogramm Ã¼ber lÃ¤ngeren Zeitraum evidente Defizite bei Vielfalt und Ausgewogenheit aufweist. ReprÃ¤sentative Belege ausreichend.</p>
+        <span class="urteil-meta">Az. 6 C 5.24 Â· Basis aller BÃ¼rgerklagen</span>
       </div>
     </div>
   </div>
@@ -337,47 +376,115 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
 
 <section id="ueber">
   <div class="section-inner">
-    <div class="section-tag">Über das Projekt</div>
+    <div class="section-tag">Ãber das Projekt</div>
     <h2 class="section-title">Was Rundfunkkritik.de ist</h2>
     <div class="ueber-grid">
       <div class="ueber-text reveal">
         <h3>Ziel</h3>
-        <p>Rundfunkkritik.de dokumentiert strukturelle Mechanismen, die die Programmrealität des öffentlich-rechtlichen Rundfunks prägen. Im Fokus steht nicht die Frage, ob einzelne Journalisten böse sind – sondern warum ein System ohne zentrale Steuerung systematisch gleichartige Ergebnisse produziert.</p>
+        <p>Rundfunkkritik.de dokumentiert strukturelle Mechanismen, die die ProgrammrealitÃ¤t des Ã¶ffentlich-rechtlichen Rundfunks prÃ¤gen. Im Fokus steht nicht die Frage, ob einzelne Journalisten bÃ¶se sind â sondern warum ein System ohne zentrale Steuerung systematisch gleichartige Ergebnisse produziert.</p>
         <h3>Methode</h3>
-        <p>Alle Analysen sind wissenschaftlich anschlussfähig, juristisch belastbar und empirisch nachprüfbar. Quellen werden vollständig angegeben. Die verwendeten Konzepte stammen aus der etablierten Kommunikations- und Sozialpsychologie – kein Sonderwissen, keine Spekulation.</p>
+        <p>Alle Analysen sind wissenschaftlich anschlussfÃ¤hig, juristisch belastbar und empirisch nachprÃ¼fbar. Quellen werden vollstÃ¤ndig angegeben. Die verwendeten Konzepte stammen aus der etablierten Kommunikations- und Sozialpsychologie â kein Sonderwissen, keine Spekulation.</p>
         <h3>Abgrenzung</h3>
-        <p>Rundfunkkritik.de ist keine politische Kampagnenseite. Die Analysen vermeiden Polemik, Personalisierung und politische Etikettierung. Wer den ÖRR mit anderen Begriffen angreifen möchte, ist hier falsch. Wer strukturelle Argumente versteht und weiterdenken will, ist richtig.</p>
+        <p>Rundfunkkritik.de ist keine politische Kampagnenseite. Die Analysen vermeiden Polemik, Personalisierung und politische Etikettierung. Wer den ÃRR mit anderen Begriffen angreifen mÃ¶chte, ist hier falsch. Wer strukturelle Argumente versteht und weiterdenken will, ist richtig.</p>
         <h3>Rechtlicher Hinweis</h3>
-        <p>Die Klageschrift und alle Dokumente auf dieser Seite sind Formulierungsvorschläge. Sie ersetzen keine Rechtsberatung. Vor einer Einreichung bitte anwaltliche Prüfung durch einen Medien- oder Verwaltungsrechtler einholen.</p>
+        <p>Die Klageschrift und alle Dokumente auf dieser Seite sind FormulierungsvorschlÃ¤ge. Sie ersetzen keine Rechtsberatung. Vor einer Einreichung bitte anwaltliche PrÃ¼fung durch einen Medien- oder Verwaltungsrechtler einholen.</p>
       </div>
       <div class="ueber-aside reveal delay-1">
         <div class="aside-card">
           <div class="aside-card-title">Downloads</div>
           <p>Alle Dokumente kostenlos als PDF.</p>
-          <a href="Beweisdossier_Anlagen_A-G.pdf">→ Beweisdossier A–G (PDF)</a>
-          <a href="Fallbericht_5_Jahre_Widerstand_rundfunkkritik.pdf">→ Fallbericht: 5 Jahre Widerstand</a>
-          <a href="Klageschrift_Rundfunk_Bausteine_Mai2026.pdf">→ Klageschrift: Modulare Bausteine</a>
-          <a href="Macht_Geld_OeRR_rundfunkkritik.pdf">→ Analyse: Macht &amp; Geld im ÖRR</a>
+          <a href="Beweisdossier_Anlagen_A-G.pdf">â Beweisdossier AâG (PDF)</a>
+          <a href="Fallbericht_5_Jahre_Widerstand_rundfunkkritik.pdf">â Fallbericht: 5 Jahre Widerstand</a>
+          <a href="Klageschrift_Rundfunk_Bausteine_Mai2026.pdf">â Klageschrift: Modulare Bausteine</a>
+          <a href="Macht_Geld_OeRR_rundfunkkritik.pdf">â Analyse: Macht &amp; Geld im ÃRR</a>
         </div>
         <div class="aside-card">
           <div class="aside-card-title">Externe Quellen</div>
-          <p>Weiterführende Ressourcen und Referenzen.</p>
-          <a href="https://mediatenor.com" target="_blank">→ Media Tenor</a>
-          <a href="https://reutersinstitute.politics.ox.ac.uk" target="_blank">→ Reuters Institute</a>
-          <a href="https://oeffentlich-rechtlicher-rundfunk-kritik.de" target="_blank">→ ÖRR-Kritik (Bräutigam)</a>
-          <a href="https://x.com/OERRBlog" target="_blank">→ ÖRR Blog (@OERRBlog) auf X</a>
-          <a href="https://x.com/hori_____zont" target="_blank">→ _horizont_ (@hori_____zont) auf X</a>
+          <p>WeiterfÃ¼hrende Ressourcen und Referenzen.</p>
+          <a href="https://mediatenor.com" target="_blank">â Media Tenor</a>
+          <a href="https://reutersinstitute.politics.ox.ac.uk" target="_blank">â Reuters Institute</a>
+          <a href="https://oeffentlich-rechtlicher-rundfunk-kritik.de" target="_blank">â ÃRR-Kritik (BrÃ¤utigam)</a>
+          <a href="https://x.com/OERRBlog" target="_blank">â ÃRR Blog (@OERRBlog) auf X</a>
+          <a href="https://x.com/hori_____zont" target="_blank">â _horizont_ (@hori_____zont) auf X</a>
         </div>
         <div class="aside-card">
           <div class="aside-card-title">Kontakt</div>
-          <p>Hinweise, Korrekturen, Ergänzungen willkommen.</p>
-          <a href="mailto:kontakt@rundfunkkritik.de">→ kontakt@rundfunkkritik.de</a>
+          <p>Hinweise, Korrekturen, ErgÃ¤nzungen willkommen.</p>
+          <a href="mailto:kontakt@rundfunkkritik.de">â kontakt@rundfunkkritik.de</a>
         </div>
         <div class="aside-card" style="border-color:var(--gold);border-left:3px solid var(--gold);">
-          <div class="aside-card-title" style="color:var(--gold);">Projekt unterstützen</div>
-          <p>Rundfunkkritik.de ist kostenlos und unabhängig. Wer die Arbeit schätzt, kann sie über Ko-fi unterstützen.</p>
-          <a href="https://ko-fi.com/rundfunkkritikde" target="_blank" rel="noopener" style="color:var(--gold);border-top-color:var(--gold);">☕ Ko-fi – Kaffee spendieren</a>
+          <div class="aside-card-title" style="color:var(--gold);">Projekt unterstÃ¼tzen</div>
+          <p>Rundfunkkritik.de ist kostenlos und unabhÃ¤ngig. Wer die Arbeit schÃ¤tzt, kann sie Ã¼ber Ko-fi unterstÃ¼tzen.</p>
+          <a href="https://ko-fi.com/rundfunkkritikde" target="_blank" rel="noopener" style="color:var(--gold);border-top-color:var(--gold);">â Ko-fi â Kaffee spendieren</a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="videos">
+  <div class="section-inner">
+    <div class="section-tag">Externe Quellen</div>
+    <h2 class="section-title">Videobeiträge zur Debatte</h2>
+    <p class="section-intro">Ausgewählte YouTube-Playlists mit wissenschaftlichen und analytischen Beiträgen zum öffentlich-rechtlichen Rundfunk.</p>
+    <div class="video-grid">
+
+      <div class="video-card">
+        <a class="video-thumb-link" href="https://www.youtube.com/playlist?list=PLrlTHNl9A1KsJnUL-yTcFHaWwRgpMdgv-" target="_blank" rel="noopener">
+          <div class="video-thumb-wrap video-thumb-fallback">
+            <div class="video-thumb-label">Allgemeine Playlist</div>
+            <div class="video-play-btn" aria-label="Playlist öffnen">&#9654;</div>
+          </div>
+          <div class="video-card-body">
+            <div class="video-card-tag">Playlist · Allgemein</div>
+            <h3 class="video-card-title">Rundfunkkritik – Allgemeine Beiträge</h3>
+            <p class="video-card-desc">Grundlegende Analysen, Berichte und Kommentare zur Finanzierung und Struktur des öffentlich-rechtlichen Rundfunks.</p>
+            <span class="video-card-cta">Zur Playlist auf YouTube &#8599;</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="video-card">
+        <a class="video-thumb-link" href="https://www.youtube.com/playlist?list=PLrlTHNl9A1KtMA37BSBEGIwhjEHflfdYC" target="_blank" rel="noopener">
+          <div class="video-thumb-wrap video-thumb-fallback">
+            <div class="video-thumb-label">Prof. Michael Meyen</div>
+            <div class="video-play-btn" aria-label="Playlist öffnen">&#9654;</div>
+          </div>
+          <div class="video-card-body">
+            <div class="video-card-tag">Playlist · Prof. Meyen</div>
+            <h3 class="video-card-title">Prof. Michael Meyen – Medienkritik</h3>
+            <p class="video-card-desc">Der Münchner Kommunikationswissenschaftler Prof. Michael Meyen analysiert Strukturen, Narrative und Abhängigkeiten im öffentlich-rechtlichen System.</p>
+            <span class="video-card-cta">Zur Playlist auf YouTube &#8599;</span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="teilen">
+  <div class="section-inner section-inner--narrow">
+    <div class="share-box">
+      <div class="share-box-title">Diese Seite weiterempfehlen</div>
+      <p class="share-box-desc">Rundfunkkritik.de lebt von Weiterempfehlungen. Teilen Sie diese Seite mit Freunden, Familie oder in sozialen Netzwerken.</p>
+      <div class="share-buttons">
+        <a class="share-btn share-btn--whatsapp" href="https://wa.me/?text=Rundfunkkritik.de%20%E2%80%93%20Kritische%20Analyse%20des%20%C3%B6ffentlich-rechtlichen%20Rundfunks%3A%20https%3A%2F%2Fwww.rundfunkkritik.de" target="_blank" rel="noopener" aria-label="Via WhatsApp teilen">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a class="share-btn share-btn--telegram" href="https://t.me/share/url?url=https%3A%2F%2Fwww.rundfunkkritik.de&text=Rundfunkkritik.de%20%E2%80%93%20Kritische%20Analyse%20des%20%C3%B6ffentlich-rechtlichen%20Rundfunks" target="_blank" rel="noopener" aria-label="Via Telegram teilen">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Telegram
+        </a>
+        <a class="share-btn share-btn--twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.rundfunkkritik.de&text=Rundfunkkritik.de%20%E2%80%93%20Kritische%20Analyse%20des%20%C3%B6ffentlich-rechtlichen%20Rundfunks" target="_blank" rel="noopener" aria-label="Via X/Twitter teilen">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X / Twitter
+        </a>
+        <a class="share-btn share-btn--email" href="mailto:?subject=Rundfunkkritik.de%20%E2%80%93%20Lesenswert&body=Ich%20m%C3%B6chte%20Ihnen%20diese%20Seite%20empfehlen%3A%20https%3A%2F%2Fwww.rundfunkkritik.de%0A%0ARundfunkkritik.de%20bietet%20kritische%20Analysen%20des%20%C3%B6ffentlich-rechtlichen%20Rundfunks." aria-label="Via E-Mail empfehlen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          E-Mail
+        </a>
       </div>
     </div>
   </div>
@@ -386,8 +493,8 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
 <section id="kontakt" style="background:var(--accent);padding:4rem 2rem;text-align:center">
   <div style="max-width:560px;margin:0 auto">
     <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.8rem">Kontakt</p>
-    <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:0.8rem">Hinweise · Kritik · Ergänzungen</h2>
-    <p style="color:rgba(255,255,255,0.6);margin-bottom:2rem;font-size:1.05rem;line-height:1.65">Neue Urteile, Belege oder Korrekturen? Schreiben Sie uns – jede fundierte Ergänzung wird geprüft und ggf. eingebaut.</p>
+    <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:0.8rem">Hinweise Â· Kritik Â· ErgÃ¤nzungen</h2>
+    <p style="color:rgba(255,255,255,0.6);margin-bottom:2rem;font-size:1.05rem;line-height:1.65">Neue Urteile, Belege oder Korrekturen? Schreiben Sie uns â jede fundierte ErgÃ¤nzung wird geprÃ¼ft und ggf. eingebaut.</p>
     <a href="mailto:kontakt@rundfunkkritik.de" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;background:#fff;color:var(--accent);padding:0.75rem 1.8rem;text-decoration:none">kontakt@rundfunkkritik.de</a>
     <p style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.06em;color:rgba(255,255,255,0.25);margin-top:1rem">Antwort innerhalb von 48 Stunden</p>
   </div>
@@ -404,10 +511,10 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
       <ul>
         <li><a href="#aktuell">Aktuell</a></li>
         <li><a href="#mechanismen">10 Mechanismen</a></li>
-        <li><a href="#beweise">Beweise A–G</a></li>
+        <li><a href="#beweise">Beweise AâG</a></li>
         <li><a href="#urteile">Urteile</a></li>
         <li><a href="widerstand.html">Stiller Widerstand</a></li>
-        <li><a href="#ueber">Über das Projekt</a></li>
+        <li><a href="#ueber">Ãber das Projekt</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -415,22 +522,22 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
       <ul>
         <li><a href="Beweisdossier_Anlagen_A-G.pdf">Beweisdossier (PDF)</a></li>
         <li><a href="BVerfG_Rundfunkbeitrag_Juni2026_Artikel.html">BVerfG-Analyse</a></li>
-        <li><a href="macht_geld_oerr.html">Macht &amp; Geld ÖRR</a></li>
-        <li><a href="ard_lobbybüro_2026.html">ARD Lobbybüro</a></li>
+        <li><a href="macht_geld_oerr.html">Macht &amp; Geld ÃRR</a></li>
+        <li><a href="ard_lobbybÃ¼ro_2026.html">ARD LobbybÃ¼ro</a></li>
         <li><a href="urteil_positiv.html">Fiktiv: Stattgabe</a></li>
         <li><a href="urteil_negativ.html">Fiktiv: Abweisung</a></li>
         <li><a href="Fallbericht_5_Jahre_Widerstand_rundfunkkritik.pdf">Fallbericht: 5 Jahre Widerstand</a></li>
         <li><a href="Klageschrift_Rundfunk_Bausteine_Mai2026.pdf">Klageschrift: Modulare Bausteine</a></li>
-        <li><a href="Macht_Geld_OeRR_rundfunkkritik.pdf">Analyse: Macht &amp; Geld im ÖRR</a></li>
+        <li><a href="Macht_Geld_OeRR_rundfunkkritik.pdf">Analyse: Macht &amp; Geld im ÃRR</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Rundfunkkritik.de · Alle Inhalte zur freien Verwendung mit Quellenangabe</span>
+    <span>Â© 2026 Rundfunkkritik.de Â· Alle Inhalte zur freien Verwendung mit Quellenangabe</span>
     <span>
-      <a href="https://ko-fi.com/rundfunkkritikde" target="_blank" rel="noopener" style="border:1px solid rgba(255,255,255,0.2);padding:0.2rem 0.6rem;">☕ Ko-fi</a> ·
-      <a href="impressum.html">Impressum</a> ·
-      <a href="datenschutz.html">Datenschutz</a> ·
+      <a href="https://ko-fi.com/rundfunkkritikde" target="_blank" rel="noopener" style="border:1px solid rgba(255,255,255,0.2);padding:0.2rem 0.6rem;">â Ko-fi</a> Â·
+      <a href="impressum.html">Impressum</a> Â·
+      <a href="datenschutz.html">Datenschutz</a> Â·
       <a href="mailto:kontakt@rundfunkkritik.de">Kontakt</a>
     </span>
   </div>
