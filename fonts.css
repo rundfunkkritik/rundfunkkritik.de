@@ -1,0 +1,142 @@
+/* =================================================
+   fonts.css – Lokale Schriften (DSGVO-konform)
+      Keine externen Verbindungen zu Google Fonts.
+         ================================================= */
+
+/* ---- Playfair Display ---- */
+
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/PlayfairDisplay-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/PlayfairDisplay-Italic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/PlayfairDisplay-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/PlayfairDisplay-BoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('/fonts/PlayfairDisplay-Black.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: italic;
+    font-weight: 900;
+    font-display: swap;
+    src: url('/fonts/PlayfairDisplay-BlackItalic.woff2') format('woff2');
+}
+
+/* ---- Crimson Pro ---- */
+
+@font-face {
+    font-family: 'Crimson Pro';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('/fonts/CrimsonPro-Light.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Crimson Pro';
+    font-style: italic;
+    font-weight: 300;
+    font-display: swap;
+    src: url('/fonts/CrimsonPro-LightItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Crimson Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/CrimsonPro-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Crimson Pro';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/CrimsonPro-Italic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Crimson Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/CrimsonPro-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Crimson Pro';
+    font-style: italic;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/CrimsonPro-SemiBoldItalic.woff2') format('woff2');
+}
+
+/* ---- JetBrains Mono ---- */
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/JetBrainsMono-Medium.woff2') format('woff2');
+}
+
+/*
+  HINWEIS: Die .woff2-Dateien muessen im Ordner /fonts/ abgelegt werden.
+    Benoetigt werden:
+        PlayfairDisplay-Regular.woff2
+            PlayfairDisplay-Italic.woff2
+                PlayfairDisplay-Bold.woff2
+                    PlayfairDisplay-BoldItalic.woff2
+                        PlayfairDisplay-Black.woff2
+                            PlayfairDisplay-BlackItalic.woff2
+                                CrimsonPro-Light.woff2
+                                    CrimsonPro-LightItalic.woff2
+                                        CrimsonPro-Regular.woff2
+                                            CrimsonPro-Italic.woff2
+                                                CrimsonPro-SemiBold.woff2
+                                                    CrimsonPro-SemiBoldItalic.woff2
+                                                        JetBrainsMono-Regular.woff2
+                                                            JetBrainsMono-Medium.woff2
+                                                              Download: https://fonts.google.com (Playfair Display, Crimson Pro, JetBrains Mono)
+                                                              */
