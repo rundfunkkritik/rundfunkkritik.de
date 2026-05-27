@@ -10,7 +10,7 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('/fonts/PlayfairDisplay-Regular.woff2') format('woff2');
+    src: url('/fonts/PlayfairDisplay-VF.woff2') format('woff2');
 }
 
 @font-face {
@@ -18,7 +18,7 @@
     font-style: italic;
     font-weight: 400;
     font-display: swap;
-    src: url('/fonts/PlayfairDisplay-Italic.woff2') format('woff2');
+    src: url('/fonts/PlayfairDisplay-VF-Italic.woff2') format('woff2');
 }
 
 @font-face {
@@ -26,7 +26,7 @@
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('/fonts/PlayfairDisplay-Bold.woff2') format('woff2');
+    src: url('/fonts/PlayfairDisplay-VF.woff2') format('woff2');
 }
 
 @font-face {
@@ -34,7 +34,7 @@
     font-style: italic;
     font-weight: 700;
     font-display: swap;
-    src: url('/fonts/PlayfairDisplay-BoldItalic.woff2') format('woff2');
+    src: url('/fonts/PlayfairDisplay-VF-Italic.woff2') format('woff2');
 }
 
 @font-face {
@@ -42,7 +42,7 @@
     font-style: normal;
     font-weight: 900;
     font-display: swap;
-    src: url('/fonts/PlayfairDisplay-Black.woff2') format('woff2');
+    src: url('/fonts/PlayfairDisplay-VF.woff2') format('woff2');
 }
 
 @font-face {
@@ -50,7 +50,7 @@
     font-style: italic;
     font-weight: 900;
     font-display: swap;
-    src: url('/fonts/PlayfairDisplay-BlackItalic.woff2') format('woff2');
+    src: url('/fonts/PlayfairDisplay-VF-Italic.woff2') format('woff2');
 }
 
 /* ---- Crimson Pro ---- */
@@ -124,12 +124,12 @@
 /*
   HINWEIS: Die .woff2-Dateien muessen im Ordner /fonts/ abgelegt werden.
     Benoetigt werden:
-        PlayfairDisplay-Regular.woff2
-            PlayfairDisplay-Italic.woff2
-                PlayfairDisplay-Bold.woff2
-                    PlayfairDisplay-BoldItalic.woff2
-                        PlayfairDisplay-Black.woff2
-                            PlayfairDisplay-BlackItalic.woff2
+        PlayfairDisplay-VF.woff2
+            PlayfairDisplay-VF-Italic.woff2
+                PlayfairDisplay-VF.woff2
+                    PlayfairDisplay-VF-Italic.woff2
+                        PlayfairDisplay-VF.woff2
+                            PlayfairDisplay-VF-Italic.woff2
                                 CrimsonPro-Light.woff2
                                     CrimsonPro-LightItalic.woff2
                                         CrimsonPro-Regular.woff2
