@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Medienaufsicht &amp; Macht – Serie auf rundfunkkritik.de</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300&display=swap" rel="stylesheet">
+
+<style>
+
+*, ::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:    #181210;
+  --paper:  #f4efe5;
+  --red:    #b52a1c;
+  --gold:   #9a7320;
+  --blue:   #1a3a5c;
+  --mid:    #4a3322;
+  --light:  #e5ddd0;
+  --border: #8a6a4a;
+  --white:  #ffffff;
+  --max:    880px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.2rem; }
+
+.masthead {
+  background: var(--ink);
+  color: var(--white);
+  text-align: center;
+  padding: 2.5rem 1rem 2rem;
+  border-bottom: 4px solid var(--red);
+}
+.masthead .site-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #ccc;
+  margin-bottom: 0.3rem;
+}
+.masthead .serie-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--white);
+}
+.masthead .serie-title em { color: var(--red); font-style: normal; }
+.masthead .serie-sub {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 0.6rem;
+  font-style: italic;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.masthead .serie-date {
+  margin-top: 1rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.serie-intro {
+  background: var(--white);
+  border-bottom: 1px solid var(--light);
+  padding: 2.5rem 1.2rem;
+}
+.serie-intro .wrap {
+  display: grid;
+  grid-template-columns: 3px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+.serie-intro .accent-line {
+  background: var(--red);
+  height: 100%;
+  min-height: 80px;
+}
+.serie-intro-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+.serie-intro-text p {
+  font-size: 0.88rem;
+  color: var(--mid);
+  line-height: 1.75;
+  max-width: 720px;
+}
+.serie-intro-text p + p { margin-top: 0.6rem; }
+
+.toc-bar {
+  background: var(--ink);
+  padding: 0.7rem 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid var(--red);
+}
+.toc-bar ul {
+  max-width: var(--max);
+  margin: 0 auto;
+  list-style: none;
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+}
+.toc-bar li { border-right: 1px solid #333; }
+.toc-bar li:last-child { border-right: none; }
+.toc-bar a {
+  display: block;
+  padding: 0.3rem 1rem;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.15s;
+}
+.toc-bar a:hover { color: var(--white); }
+.toc-bar a span { color: var(--red); font-weight: 700; margin-right: 0.3rem; }
+
+.article {
+  padding: 4rem 0 3rem;
+  border-bottom: 3px double var(--border);
+}
+.article:last-of-type { border-bottom: none; }
+
+.art-head {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--light);
+}
+.art-num {
+  display: inline-block;
+  background: var(--red);
+  color: var(--white);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  margin-bottom: 0.7rem;
+}
+.art-head h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+}
+.art-head .deck {
+  font-size: 1rem;
+  color: var(--mid);
+  font-style: italic;
+  max-width: 620px;
+  margin: 0 auto 0.8rem;
+  line-height: 1.55;
+}
+.art-head .byline {
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--border);
+}
+
+.art-body { max-width: 680px; margin: 0 auto; }
+.art-body p {
+  margin-bottom: 1.1rem;
+  font-size: 0.97rem;
+  color: var(--mid);
+  line-height: 1.8;
+}
+.art-body p:first-of-type::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  font-weight: 900;
+  line-height: 0.85;
+  float: left;
+  margin-right: 0.1rem;
+  margin-top: 0.15rem;
+  color: var(--ink);
+}
+.art-body h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 2rem 0 0.6rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--light);
+}
+.art-body strong { color: var(--ink); font-weight: 600; }
+
+.pq {
+  border-left: 4px solid var(--red);
+  padding: 0.8rem 1.3rem;
+  background: var(--white);
+  margin: 1.8rem 0;
+}
+.pq p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--ink);
+  margin-bottom: 0 !important;
+}
+.pq p::first-letter { all: unset; }
+.pq cite {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--border);
+  margin-top: 0.4rem;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.sources {
+  margin-top: 2rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--light);
+  font-size: 0.68rem;
+  color: var(--border);
+  font-style: italic;
+}
+
+.infographic {
+  background: var(--paper);
+  border: 1px solid var(--light);
+  padding: 2rem 1.5rem;
+  margin: 2.5rem 0;
+  max-width: 100%;
+}
+.infographic-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: var(--ink);
+}
+.infographic-sub {
+  font-size: 0.73rem;
+  color: var(--border);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+.sec-lbl {
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--border);
+  border-bottom: 1px solid var(--light);
+  padding-bottom: 0.3rem;
+  margin: 2rem 0 1rem;
+}
+.sec-lbl:first-child { margin-top: 0; }
+
+.bar-grid { display: flex; flex-direction: column; gap: 0.85rem; }
+.bar-row {
+  display: grid;
+  grid-template-columns: 190px 1fr 64px;
+  align-items: center;
+  gap: 0.7rem;
+}
+.bar-row .lbl { font-size: 0.76rem; color: var(--mid); text-align: right; line-height: 1.3; }
+.bar-outer { background: var(--light); height: 20px; border-radius: 2px; overflow: hidden; }
+.bar-inner { height: 100%; border-radius: 2px; }
+.c-red  { background: var(--red); }
+.c-gold { background: var(--gold); }
+.c-mid  { background: var(--mid); }
+.c-grey { background: #aaa; }
+.bar-val { font-size: 0.75rem; font-weight: 600; color: var(--ink); white-space: nowrap; }
+
+.org-chart { display: flex; flex-direction: column; align-items: center; }
+.org-box {
+  border: 1.5px solid var(--ink);
+  padding: 0.6rem 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  min-width: 210px;
+  background: var(--white);
+}
+.org-box.ob-top  { background: var(--ink); color: var(--white); }
+.org-box.ob-red  { background: var(--red); color: var(--white); }
+.org-box.ob-light { background: var(--light); }
+.org-conn { width: 2px; height: 26px; background: var(--border); }
+.org-row  { display: flex; gap: 1rem; justify-content: center; width: 100%; position: relative; }
+.org-hline { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 55%; height: 2px; background: var(--border); }
+.org-col  { display: flex; flex-direction: column; align-items: center; }
+
+.tasks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.9rem;
+}
+.task-card {
+  border: 1px solid var(--border);
+  padding: 0.9rem;
+  background: var(--white);
+}
+.task-card::before { content: attr(data-icon); font-size: 1.3rem; display: block; margin-bottom: 0.3rem; }
+.task-card h4 { font-family: 'Playfair Display', serif; font-size: 0.88rem; font-weight: 700; margin-bottom: 0.25rem; }
+.task-card p  { font-size: 0.72rem; color: var(--mid); line-height: 1.5; }
+.task-card.warn { border-color: var(--red); background: #fdf5f4; }
+.task-card.warn h4 { color: var(--red); }
+
+.kritik-list { display: flex; flex-direction: column; gap: 0.8rem; }
+.kritik-item {
+  display: grid;
+  grid-template-columns: 2.8rem 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  border-bottom: 1px solid var(--light);
+  padding-bottom: 0.8rem;
+}
+.kritik-item:last-child { border-bottom: none; }
+.kritik-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--light);
+  line-height: 1;
+  border: 1px solid var(--light);
+  text-align: center;
+}
+.kritik-text h5 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--red); margin-bottom: 0.15rem; }
+.kritik-text p  { font-size: 0.76rem; color: var(--mid); line-height: 1.55; }
+
+.anstalt-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
+.anstalt-table thead tr { background: var(--ink); color: var(--white); }
+.anstalt-table th { padding: 0.45rem 0.65rem; text-align: left; font-size: 0.65rem; letter-spacing: 0.05em; text-transform: uppercase; }
+.anstalt-table td { padding: 0.4rem 0.65rem; border-bottom: 1px solid var(--light); color: var(--mid); }
+.anstalt-table tr:nth-child(even) td { background: #faf7f2; }
+.anstalt-table .td-name { font-weight: 700; color: var(--ink); }
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--light);
+  border: 1px solid var(--light);
+}
+.cmp-col { background: var(--white); padding: 1rem; }
+.cmp-col h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 2px solid;
+}
+.cmp-col.cmp-hist h4 { border-color: var(--mid); color: var(--mid); }
+.cmp-col.cmp-now  h4 { border-color: var(--red); color: var(--red); }
+.cmp-item {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+  font-size: 0.76rem;
+  color: var(--mid);
+  line-height: 1.5;
+}
+.cmp-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  margin-top: 0.3rem;
+  flex-shrink: 0;
+}
+.cmp-dot.d-hist { background: var(--mid); }
+.cmp-dot.d-now  { background: var(--red); }
+
+.wallasch-tl { position: relative; padding-left: 1.5rem; }
+.wallasch-tl::before {
+  content: '';
+  position: absolute;
+  left: 0.35rem;
+  top: 0.4rem; bottom: 0.4rem;
+  width: 2px;
+  background: var(--border);
+}
+.wtl-item {
+  position: relative;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px dashed var(--light);
+}
+.wtl-item:last-child { border-bottom: none; margin-bottom: 0; }
+.wtl-item::before {
+  content: '';
+  position: absolute;
+  left: -1.18rem; top: 0.3rem;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--red);
+  border: 2px solid var(--paper);
+  box-shadow: 0 0 0 1px var(--red);
+}
+.wtl-date { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); margin-bottom: 0.15rem; }
+.wtl-text { font-size: 0.76rem; color: var(--mid); line-height: 1.55; }
+.wtl-text strong { color: var(--ink); }
+
+.presserat-box {
+  background: var(--ink);
+  color: var(--white);
+  padding: 1rem 1.2rem;
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+.presserat-box h4 { font-family: 'Playfair Display', serif; font-size: 0.92rem; font-weight: 700; margin-bottom: 0.3rem; }
+.presserat-box p  { font-size: 0.73rem; color: #bbb; line-height: 1.5; }
+.presserat-stat .big { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: var(--red); line-height: 1; display: block; }
+.presserat-stat .sml { font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: #888; }
+
+.macht-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--light);
+  border: 1px solid var(--light);
+}
+.macht-cell { background: var(--white); padding: 0.85rem 0.85rem 0.75rem; }
+.macht-cell .ico { font-size: 1.2rem; margin-bottom: 0.25rem; display: block; }
+.macht-cell h4 { font-family: 'Playfair Display', serif; font-size: 0.78rem; font-weight: 700; margin-bottom: 0.2rem; }
+.macht-cell p  { font-size: 0.69rem; color: var(--mid); line-height: 1.5; }
+.macht-cell.mwarn { background: #fdf5f4; }
+.macht-cell.mwarn h4 { color: var(--red); }
+
+.money-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--light);
+  border: 1px solid var(--light);
+  margin-bottom: 0.4rem;
+}
+.money-cell { background: var(--white); padding: 0.85rem 0.95rem; }
+.money-cell .sender { font-size: 0.67rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--mid); margin-bottom: 0.25rem; }
+.money-cell .amount { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; line-height: 1; color: var(--ink); }
+.money-cell .amount span { font-size: 0.7rem; font-weight: 400; font-family: 'Source Serif 4', serif; color: var(--mid); display: block; margin-top: 0.12rem; }
+.money-cell .vorsitz { margin-top: 0.45rem; font-size: 0.69rem; color: var(--border); border-top: 1px dashed var(--light); padding-top: 0.35rem; }
+.money-cell .vorsitz strong { color: var(--red); }
+.money-cell.mc-red  { background: #fdf3f2; border-left: 3px solid var(--red); }
+.money-cell.mc-gold { background: #fdf8f0; border-left: 3px solid var(--gold); }
+.money-cell.mc-wide { grid-column: span 2; background: #f5f0e8; }
+
+.voigt-box {
+  background: var(--ink);
+  color: var(--white);
+  padding: 1.1rem 1.3rem;
+  margin: 0.8rem 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+.voigt-box h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.35rem; }
+.voigt-box p  { font-size: 0.73rem; color: #bbb; line-height: 1.5; }
+.vnum .big { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900; color: var(--red); line-height: 1; display: block; }
+.vnum .sml { font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: #888; }
+
+.besetzung-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.besetzung-card { border: 1px solid var(--border); background: var(--white); padding: 0.9rem; }
+.besetzung-card h4 { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.75rem; padding-bottom: 0.45rem; border-bottom: 1px solid var(--light); }
+.bseg-wrap { display: flex; flex-direction: column; gap: 0.45rem; }
+.bseg-row { display: grid; grid-template-columns: 120px 1fr 40px; align-items: center; gap: 0.45rem; font-size: 0.7rem; }
+.bseg-lbl { color: var(--mid); line-height: 1.3; }
+.bseg-outer { height: 13px; background: var(--light); border-radius: 1px; overflow: hidden; }
+.bseg-inner { height: 100%; border-radius: 1px; }
+.bseg-val { font-weight: 700; font-size: 0.69rem; text-align: right; }
+.ldot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 3px; vertical-align: middle; }
+
+.timeline { position: relative; padding-left: 1.5rem; }
+.timeline::before { content: ''; position: absolute; left: 0.35rem; top: 0.4rem; bottom: 0.4rem; width: 2px; background: var(--border); }
+.tl-item { position: relative; margin-bottom: 0.9rem; padding-bottom: 0.9rem; border-bottom: 1px dashed var(--light); }
+.tl-item:last-child { border-bottom: none; margin-bottom: 0; }
+.tl-item::before { content: ''; position: absolute; left: -1.18rem; top: 0.3rem; width: 9px; height: 9px; border-radius: 50%; background: var(--red); border: 2px solid var(--paper); box-shadow: 0 0 0 1px var(--red); }
+.tl-date { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); margin-bottom: 0.15rem; }
+.tl-text { font-size: 0.76rem; color: var(--mid); line-height: 1.55; }
+.tl-text strong { color: var(--ink); }
+
+.falle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.fall-card { border: 1px solid var(--border); background: var(--white); }
+.fall-card-head { background: var(--ink); color: var(--white); padding: 0.65rem 0.9rem; }
+.fall-card-head .fdat { font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: #aaa; margin-bottom: 0.18rem; }
+.fall-card-head h4 { font-family: 'Playfair Display', serif; font-size: 0.88rem; font-weight: 700; line-height: 1.3; }
+.fall-card-body { padding: 0.8rem 0.9rem; }
+.fall-card-body p { font-size: 0.72rem; color: var(--mid); line-height: 1.55; }
+.fall-tag { display: inline-block; background: var(--red); color: var(--white); font-size: 0.57rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.12rem 0.4rem; margin-top: 0.5rem; font-weight: 700; }
+
+.info-note { font-size: 0.67rem; color: var(--border); margin-top: 0.4rem; font-style: italic; }
+
+.site-footer {
+  background: var(--ink);
+  color: #666;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.7rem;
+  line-height: 1.7;
+}
+.site-footer strong { color: #999; }
+
+@media (max-width: 620px) {
+  .bar-row          { grid-template-columns: 100px 1fr 52px; }
+  .compare-grid,
+  .falle-grid,
+  .besetzung-wrap,
+  .money-grid,
+  .macht-grid       { grid-template-columns: 1fr; }
+  .money-cell.mc-wide { grid-column: span 1; }
+  .org-box          { min-width: 130px; font-size: 0.72rem; padding: 0.45rem 0.6rem; }
+  .org-row          { gap: 0.5rem; }
+  .voigt-box        { grid-template-columns: 1fr; }
+  .presserat-box    { grid-template-columns: 1fr; }
+  .bseg-row         { grid-template-columns: 90px 1fr 36px; }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="masthead">
+  <div class="site-name">rundfunkkritik.de</div>
+  <h1 class="serie-title">Medienaufsicht &amp; <em>Macht</em></h1>
+  <p class="serie-sub">Eine dreiteilige Analyse: Wer die Medien in Deutschland kontrolliert — und wer die Kontrolleure kontrolliert</p>
+  <div class="serie-date">Serie · Mai 2026</div>
+</header>
+
+<nav class="toc-bar">
+  <ul>
+    <li><a href="#teil1"><span>I</span> Landesmedienanstalten</a></li>
+    <li><a href="#teil2"><span>II</span> Zensur &amp; Schriftleitergesetz</a></li>
+    <li><a href="#teil3"><span>III</span> Rundfunkräte</a></li>
+  </ul>
+</nav>
+
+<section class="serie-intro">
+  <div class="wrap">
+    <div class="accent-line"></div>
+    <div class="serie-intro-text">
+      <h2>Zur Serie</h2>
+      <p>Deutschland besitzt eine der komplexesten und teuersten Medienaufsichtsarchitekturen der Welt. 14 Landesmedienanstalten regulieren den privaten Rundfunk und — seit 2020 — nahezu alle digitalen Angebote. Dutzende Rundfunkräte beaufsichtigen den öffentlich-rechtlichen Sektor. Hunderte Gremienmitglieder kassieren Aufwandsentschädigungen aus dem Rundfunkbeitrag.</p>
+      <p>Was diese Strukturen bezwecken, ist bekannt: Staatsfreiheit, Meinungsvielfalt, Kontrolle der Kontrolleure. Was sie tatsächlich leisten, ist Gegenstand dieser Serie. Drei Artikel, drei Perspektiven — sachlich belegt, ohne Polemik, dafür mit unbequemen Fakten.</p>
+      <p>Ausgangspunkt war der Fall Wallasch: ein freier Journalist, der Post von einer Landesmedienanstalt bekommt und aufgefordert wird, 3.000 eigene Artikel zu prüfen oder zu löschen. Wer diesen Fall versteht, versteht das System.</p>
+    </div>
+  </div>
+</section>
+
+<article id="teil1" class="article">
+<div class="wrap">
+
+  <header class="art-head">
+    <div class="art-num">Teil I</div>
+    <h2>14 Anstalten, eine Macht</h2>
+    <p class="deck">Struktur, Finanzierung und die demokratischen Risiken der Landesmedienanstalten</p>
+    <div class="byline">rundfunkkritik.de · Mai 2026</div>
+  </header>
+
+  <div class="art-body">
+
+    <p>Formal sind sie das: staatsunabhängige Einrichtungen des öffentlichen Rechts, zuständig für die Aufsicht über privaten Rundfunk und — seit dem Medienstaatsvertrag von 2020 — über nahezu alle digitalen Medienangebote in Deutschland. Entsprechend der grundgesetzlich verankerten Rundfunkzuständigkeit der Länder hat jedes Bundesland eine Landesmedienanstalt errichtet; Berlin und Brandenburg sowie Hamburg und Schleswig-Holstein haben gemeinsame Anstalten — insgesamt sind es 14.</p>
+
+    <p>Klingt überschaubar. Ist es aber nicht.</p>
+
+    <h3>Finanzierung: ~105 Millionen aus dem Zwangsbeitrag — automatisch</h3>
+
+    <p>Die Landesmedienanstalten sind keine Landesbehörden, sondern als juristische Personen des öffentlichen Rechts staatsfern organisiert und finanziert. Zur Finanzierung stehen ihnen gemäß § 10 des Rundfunkfinanzierungsstaatsvertrages 1,8989 Prozent der durch den Rundfunkbeitrag erzielten Einnahmen zu. Davon wird zunächst ein Sockelbetrag von 511.290 Euro an jede der 14 Anstalten gezahlt. Nach der letzten Beitragserhöhung liegt der Anteil der Landesmedienanstalten bei 0,35 Euro je Monat und Zahler.</p>
+
+    <p>Das ergibt zusammen rund 105 Millionen Euro jährlich — für Behörden, die den privaten Sektor beaufsichtigen sollen, aber aus dem Beitrag für den öffentlichen Rundfunk finanziert werden. Noch kurioser: Eine eigenständige Bedarfsanmeldung der Landesmedienanstalten wird im Länderkreis nicht diskutiert — anders als bei ARD und ZDF gibt es kein unabhängiges Prüfverfahren für ihre Ausgaben. Das Geld fließt automatisch. Von der Konferenz der Rechnungshöfe wurde bereits 2017 kritisiert, dass der Anteil der Landesmedienanstalten am Rundfunkbeitragsaufkommen „zum Teil zu erheblicher struktureller Überfinanzierung“ führe. Geändert hat sich seither nichts.</p>
+
+    <h3>Struktur: Gremien, die niemand wählt</h3>
+
+    <p>Jede der 14 Anstalten hat ein Exekutivorgan — Direktor oder Präsident — und ein gesellschaftliches Gremium: Medienrat, Versammlung oder Medienkommission. In den Gremien sind die maßgeblichen gesellschaftlichen Kräfte des jeweiligen Bundeslandes vertreten. Das klingt nach Pluralismus. In der Praxis bedeutet es: Gewerkschaften, Kirchen, Verbände — und parteinahe Akteure. Die Verfassungsmäßigkeit verschiedener Modelle wurde im Hinblick auf die Staatsfreiheit des Rundfunks wiederholt in Frage gestellt.</p>
+
+    <p>Ein besonders drastisches Beispiel liefert NRW: Dieses Bundesland hat sogar ein Gesetz geändert, um die Wiederwahl eines politisch nicht genehmen Anstaltsdirektors zu verhindern. Die „pro-forma-Staatsferne“, wie das Zentrum Liberale Moderne es formuliert, reicht nicht aus, um diese Sorge unbegründet erscheinen zu lassen.</p>
+
+    <h3>Die Mission kriecht: Von der Frequenz zum Inhalt</h3>
+
+    <p>Gegründet wurden die Landesmedienanstalten in den 1980er Jahren, um eine praktische Aufgabe zu erfüllen: Lizenzen vergeben, Frequenzen zuweisen, Sendezeiten koordinieren. Damit war die Aufgabe klar begrenzt. Mit dem Medienstaatsvertrag 2020 hat sich das grundlegend verändert. Die Landesmedienanstalten sollen nun Internetmedien regulieren und sicherstellen, dass diese journalistische Sorgfaltspflichten beachten. Sie können Beiträge beanstanden, Untersagungen aussprechen und Zwangsgelder verhängen — ohne vorheriges Gerichtsverfahren.</p>
+
+    <p>Was die Entscheidungsprozesse angeht: In dokumentierten Fällen wurde ein Beschluss von einer Prüfkommission aus sieben Landesmedienanstalten einstimmig vorgeschlagen, dann erhielten sämtliche Direktoren im Umlauf eine Beschlussvorlage und stimmten ohne Beratung oder eigene Begründung per E-Mail ab. Per Akklamation — über die Reputation eines Mediums entschieden.</p>
+
+    <h3>Desinformation: Wer definiert die Wahrheit?</h3>
+
+    <p>Das Kernproblem liegt im Begriff selbst. Wer definiert „Desinformation“? Wer entscheidet, wann journalistische Standards verletzt sind? Und wie staatsfern kann eine Institution tatsächlich sein, deren Finanzierung aus Zwangsbeiträgen erfolgt und deren Gremien überwiegend parteipolitisch besetzt werden? Die Anstalten beantworten das mit dem Verweis auf den Medienstaatsvertrag und den Digital Services Act der EU. Doch die Frage bleibt offen: Wer prüft die Prüfer?</p>
+
+    <p>Dazu kommt ein strukturelles Ungleichgewicht: Das Vorgehen der Landesmedienanstalten trifft Online-Medien, die sich nicht freiwillig dem Presserat angeschlossen haben. Wer sich dem Presserat unterwirft, genießt faktischen Schutz. Wer es nicht tut — meist kleinere, ressourcenschwache Anbieter — steht ungeschützt da.</p>
+
+    <div class="pq">
+      <p>„Wer definiert ‘Desinformation’? Wer entscheidet, wann journalistische Standards verletzt sind? Und wie staatsfern kann eine Institution tatsächlich sein, deren Finanzierung aus Zwangsbeiträgen erfolgt und deren Gremien überwiegend parteipolitisch besetzt werden?“</p>
+      <cite>Tichys Einblick, Mai 2025 — exemplarisch für eine breite Kritik von links bis rechts</cite>
+    </div>
+
+    <h3>#fürunseredemokratie — oder für den Machterhalt?</h3>
+
+    <p>Die Landesmedienanstalten operieren in einem Spannungsfeld, das sie selbst nicht auflösen können: konstruiert, um Vielfalt zu sichern — aber mit Gremien, die bestehende Machtverhältnisse abbilden. Staatsfern dem Namen nach — aber finanziert aus staatlich erhobenen Beiträgen und mit politisch umkämpften Führungspositionen. Beauftragt, Desinformation zu bekämpfen — aber selbst definierend, was Desinformation ist.</p>
+
+    <p>Ein System, das automatisch finanziert wird, dessen Gremien nicht direkt demokratisch legitimiert sind, das Inhalte beurteilt ohne klar definierte Maßstäbe und das kleine Anbieter asymmetrisch trifft — ein solches System konserviert bestehende Diskursgrenzen. Es schützt nicht Vielfalt. Es verwaltet sie.</p>
+
+  </div>
+
+  <div class="infographic">
+    <div class="infographic-title">Infografik: 14 Anstalten, eine Macht</div>
+    <div class="infographic-sub">Finanzierung, Struktur, Aufgaben und strukturelle Kritikpunkte der Landesmedienanstalten</div>
+
+    <div class="sec-lbl">§ Finanzierung aus dem Rundfunkbeitrag (Auswahl, Mio. €/Jahr)</div>
+    <div class="bar-grid">
+      <div class="bar-row"><div class="lbl">LA Medien NRW</div><div class="bar-outer"><div class="bar-inner c-red" style="width:100%"></div></div><div class="bar-val">18,2 Mio.</div></div>
+      <div class="bar-row"><div class="lbl">Bayerische LZ (BLM)</div><div class="bar-outer"><div class="bar-inner c-gold" style="width:82%"></div></div><div class="bar-val">~15 Mio.</div></div>
+      <div class="bar-row"><div class="lbl">mabb (Berlin-Brandenburg)</div><div class="bar-outer"><div class="bar-inner c-mid" style="width:51%"></div></div><div class="bar-val">9,3 Mio.</div></div>
+      <div class="bar-row"><div class="lbl">MA HSH (Hamburg/SH)</div><div class="bar-outer"><div class="bar-inner c-mid" style="width:38%"></div></div><div class="bar-val">~7 Mio.</div></div>
+      <div class="bar-row"><div class="lbl">Kleine Anstalten (Ø)</div><div class="bar-outer"><div class="bar-inner c-grey" style="width:18%"></div></div><div class="bar-val">~3–4 Mio.</div></div>
+      <div class="bar-row"><div class="lbl" style="color:var(--red);font-weight:700">Gesamt 14 Anstalten</div><div class="bar-outer" style="background:#fde8e6"><div class="bar-inner c-red" style="width:65%"></div></div><div class="bar-val" style="color:var(--red)">~105 Mio.</div></div>
+    </div>
+    <div class="info-note">§ 10 RFinStV — 1,8989 % des Rundfunkbeitragaufkommens + Sockelbetrag 511.290 € je Anstalt · Beitragsanteil: 0,35 € / Monat</div>
+
+    <div class="sec-lbl">§ Organisationsstruktur (vereinfacht)</div>
+    <div class="org-chart">
+      <div class="org-box ob-top">Medienstaatsvertrag (MStV) der 16 Länder</div>
+      <div class="org-conn"></div>
+      <div class="org-box ob-red">14 Landesmedienanstalten</div>
+      <div class="org-conn"></div>
+      <div class="org-row">
+        <div class="org-hline"></div>
+        <div class="org-col"><div style="height:26px;width:2px;background:var(--border)"></div><div class="org-box ob-light">Direktor / Präsident<br><small style="font-weight:400">(Exekutive)</small></div></div>
+        <div class="org-col"><div style="height:26px;width:2px;background:var(--border)"></div><div class="org-box ob-light">Medienrat / Versammlung<br><small style="font-weight:400">(Parteien, Verbände)</small></div></div>
+        <div class="org-col"><div style="height:26px;width:2px;background:var(--border)"></div><div class="org-box ob-light">ZAK / GVK / DLM<br><small style="font-weight:400">(Länderübergreifend)</small></div></div>
+      </div>
+      <div class="org-conn"></div>
+      <div class="org-box" style="background:var(--white);min-width:280px">Regulierung: privater Rundfunk + Telemedien + Online</div>
+    </div>
+
+    <div class="sec-lbl">§ Aufgaben — offiziell und faktisch</div>
+    <div class="tasks-grid">
+      <div class="task-card" data-icon="📡"><h4>Lizenzvergabe</h4><p>Zulassung privater Radio- und TV-Veranstalter. Kontrolle über Marktzugang.</p></div>
+      <div class="task-card" data-icon="🔍"><h4>Programmaufsicht</h4><p>Überwachung auf Einhaltung von Vielfalt, Jugendschutz, Werbegrenzen.</p></div>
+      <div class="task-card" data-icon="📣"><h4>Frequenzvergabe</h4><p>Zuweisung drahtloser Übertragungskapazitäten — mächtiges infrastrukturelles Instrument.</p></div>
+      <div class="task-card warn" data-icon="⚠️"><h4>Telemedienaufsicht</h4><p>Seit MStV 2020: Blogs, Podcasts, Social Media — inkl. Beanstandung, Untersagung, Zwangsgeld.</p></div>
+      <div class="task-card warn" data-icon="⚠️"><h4>Desinformations­bekämpfung</h4><p>Prüfung journalistischer Sorgfaltspflichten. Keine gesetzlich klare Definition von „Desinformation“.</p></div>
+      <div class="task-card warn" data-icon="⚠️"><h4>KI-gestützte Überwachung</h4><p>KI-Tools (KIVI, RUBIN u.a.) zur automatisierten Prüfung digitaler Medieninhalte.</p></div>
+    </div>
+
+    <div class="sec-lbl">§ Sechs strukturelle Kritikpunkte</div>
+    <div class="kritik-list">
+      <div class="kritik-item"><div class="kritik-num">1</div><div class="kritik-text"><h5>Parteiliche Gremiensetzung</h5><p>Medienräte werden de facto nach Parteienproporz besetzt. NRW änderte sogar ein Gesetz, um einen unliebsamen Direktor zu verhindern.</p></div></div>
+      <div class="kritik-item"><div class="kritik-num">2</div><div class="kritik-text"><h5>Intransparente Entscheidungen</h5><p>Die ZAK entscheidet über Online-Medien per E-Mail-Akklamation ohne öffentliche Beratung oder Begründung.</p></div></div>
+      <div class="kritik-item"><div class="kritik-num">3</div><div class="kritik-text"><h5>Selbstfinanzierung aus Zwangsbeiträgen</h5><p>~105 Mio. € fließen automatisch — ohne eigenständiges Bedarfsermittlungsverfahren. Rechnungshöfe kritisierten 2017 „strukturelle Überfinanzierung“.</p></div></div>
+      <div class="kritik-item"><div class="kritik-num">4</div><div class="kritik-text"><h5>Mission Creep: Von Frequenz zu Content</h5><p>Ursprünglich Lizenz- und Frequenzverwaltung, heute Inhaltskontrolle und Löschungsanordnungen ohne Gerichtsverfahren.</p></div></div>
+      <div class="kritik-item"><div class="kritik-num">5</div><div class="kritik-text"><h5>Föderale Fragmentierung</h5><p>14 Anstalten, 14 Rechtskulturen — bei gleichzeitiger nationaler Koordination durch ZAK/DLM ohne demokratische Wahl-Legitimation.</p></div></div>
+      <div class="kritik-item"><div class="kritik-num">6</div><div class="kritik-text"><h5>Asymmetrische Durchsetzung</h5><p>Presserat-Mitglieder sind de facto geschützt. Kleine Anbieter, Blogger, Podcaster tragen das gesamte Beanstandungsrisiko.</p></div></div>
+    </div>
+
+    <div class="sec-lbl">§ Alle 14 Landesmedienanstalten</div>
+    <table class="anstalt-table">
+      <thead><tr><th>Kürzel</th><th>Bundesland(/-länder)</th><th>Entscheidungsorgan</th></tr></thead>
+      <tbody>
+        <tr><td class="td-name">LFK</td><td>Baden-Württemberg</td><td>Medienrat</td></tr>
+        <tr><td class="td-name">BLM</td><td>Bayern</td><td>Medienrat</td></tr>
+        <tr><td class="td-name">mabb</td><td>Berlin &amp; Brandenburg</td><td>Medienrat</td></tr>
+        <tr><td class="td-name">brema</td><td>Bremen</td><td>Versammlung</td></tr>
+        <tr><td class="td-name">MA HSH</td><td>Hamburg &amp; Schleswig-Holstein</td><td>Medienausschuss</td></tr>
+        <tr><td class="td-name">LPR</td><td>Hessen</td><td>Versammlung</td></tr>
+        <tr><td class="td-name">MMV</td><td>Mecklenburg-Vorpommern</td><td>Medienrat</td></tr>
+        <tr><td class="td-name">NLM</td><td>Niedersachsen</td><td>Versammlung</td></tr>
+        <tr><td class="td-name">LfM NRW</td><td>Nordrhein-Westfalen</td><td>Medienkommission</td></tr>
+        <tr><td class="td-name">LMK</td><td>Rheinland-Pfalz</td><td>Versammlung</td></tr>
+        <tr><td class="td-name">LMS</td><td>Saarland</td><td>Versammlung</td></tr>
+        <tr><td class="td-name">SLM</td><td>Sachsen</td><td>Versammlung</td></tr>
+        <tr><td class="td-name">MSA</td><td>Sachsen-Anhalt</td><td>Medienrat</td></tr>
+        <tr><td class="td-name">TLM</td><td>Thüringen</td><td>Versammlung</td></tr>
+      </tbody>
+    </table>
+    <div class="info-note">Quellen: die-medienanstalten.de, DWDL.de, epd medien, journalistikon.de, Wikipedia · Mai 2026</div>
+  </div>
+
+  <div class="sources">Quellen: die-medienanstalten.de, DWDL.de (Juni 2024), epd medien (Feb. 2024), journalistikon.de, libmod.de, Reporter ohne Grenzen (Juli 2025), multipolar-magazin.de, Wikipedia</div>
+
+</div>
+</article>
+
+<article id="teil2" class="article">
+<div class="wrap">
+
+  <header class="art-head">
+    <div class="art-num">Teil II</div>
+    <h2>Die Lizenz zum Schweigen</h2>
+    <p class="deck">Vom Fall Wallasch zum Schriftleitergesetz — wie Landesmedienanstalten Publizisten unter Druck setzen</p>
+    <div class="byline">rundfunkkritik.de · Mai 2026</div>
+  </header>
+
+  <div class="art-body">
+
+    <p>Es begann mit einem Brief. Sieben Seiten, behördlich formuliert, mit einer Frist bis zum 10. März 2025. Der Journalist Alexander Wallasch wurde von der Niedersächsischen Landesmedienanstalt aufgefordert, mehr als 3.000 Artikel auf seiner Website vollständig durchzusehen, zu zensieren oder zu löschen. Andernfalls werde die Einleitung kostenpflichtiger förmlicher Verfahren angedroht. Im Schlusssatz, fast freundlich: Die Behörde setze auf die „Kooperationsbereitschaft der Anbieter“.</p>
+
+    <p>3.000 Artikel. In drei Wochen. Für einen einzelnen freien Journalisten ohne Redaktionsstab. Wallasch kommentierte: „Was ist das Ziel der Zensoren ohne valide Rechtsgrundlage?“ Eine berechtigte Frage — die weit über seinen Fall hinausgeht.</p>
+
+    <h3>Der Fall Wallasch: Chronologie einer Eskalation</h3>
+
+    <p>Als Beispiele für angebliche Verletzungen der Sorgfaltspflicht nannte die NLM vier Artikel — über Gewalt von Migranten und Nebenwirkungen der Corona-Impfungen. Themen, über die in den Folgejahren auch Leitmedien und Gerichte ausgiebig berichteten. Ob die Artikel journalistisch fehlerhaft waren, blieb in dem siebensei­tigen Schreiben unbewiesen — es genügte der Vorwurf.</p>
+
+    <p>Wallasch suchte den einzigen institutionellen Ausweg: Im Sommer 2025 gab er beim Presserat eine Selbstverpflichtungserklärung ab. Bei Annahme wären die Landesmedienanstalten nicht mehr zuständig gewesen. Der Presserat lehnte ab. Von insgesamt zehn Anträgen auf Selbstverpflichtung im Jahr 2025 wurde nur einer angenommen. Am 21. Oktober 2025 erließ die NLM einen förmlichen Bescheid, der drei Artikel beanstandete und deren weitere Verbreitung untersagte. Zusätzlich: eine vierstellige Gebühr. Wallasch klagte — und löste damit den zweiten bekannten Fall einer Klage gegen eine Landesmedienanstalt aus.</p>
+
+    <h3>Der Fall Nius: Wenn die Behörde von Verboten spricht</h3>
+
+    <p>Der erste Fall war Nius. Die Medienanstalt Berlin-Brandenburg beanstandete einen Nius-Beitrag von 2023 formell und erhob eine Verwaltungsgebühr von 5.000 Euro. Bei dem Artikel handelte es sich um ein Interview, in dem mehrere Bewohner einer Flüchtlingsunterkunft über ihre Zahnbehandlungen in Deutschland befragt worden waren. Nius klagte und rügte unter anderem die fehlende Ermächtigungsgrundlage und Verletzungen des rechtlichen Gehörs.</p>
+
+    <p>Was den Fall über eine Fachrechtsdebatte hinaushebt, ist eine Äußerung der MABB-Direktorin Eva Flecken. Sie stellte in einem Podcast öffentlich ein Verbot ganzer Medien in den Raum: „Als absolute Ultima Ratio sieht auch das Medienrecht vor, ein ganzes Angebot zu verbieten.“ Juristen widersprachen sofort: § 109 des Medienstaatsvertrags schreibt ausdrücklich vor, dass Untersagungen zeitlich und inhaltlich so weit wie möglich zu beschränken sind. Fleckens Aussage ging über jede gesetzliche Grundlage hinaus. Eine Behördenchefin, die öffentlich mit Medienverboten droht, für die es keine Rechtsgrundlage gibt — das ist kein Ausrutscher. Das ist Machtdemonstration.</p>
+
+    <h3>Das Presserat-Schlupfloch: Eine Zweiklassen-Presselandschaft</h3>
+
+    <p>Das System hat eine Sollbruchstelle, die kaum diskutiert wird. Wer Mitglied des Deutschen Presserats ist, unterliegt dessen Selbstkontrolle — und ist damit de facto aus dem Zuständigkeitsbereich der Landesmedienanstalten herausgelöst. Das klingt nach einem vernünftigen Korrektiv. Es ist aber ein Türsteher-Mechanismus. Der Presserat entscheidet selbst, wen er aufnimmt. Von zehn Aufnahmeanträgen 2025 wurde nur einer angenommen. Wer abgelehnt wird, hat keinen Schutz und keinen Rechtsanspruch auf Aufnahme.</p>
+
+    <p>So entsteht strukturell eine Zweiklassen-Presselandschaft: etablierte Medien mit Presserat-Mitgliedschaft auf der einen Seite — geschützt, unangreifbar. Blogger, freie Journalisten, neue digitale Angebote auf der anderen — exponiert, überwachbar, sanktionierbar. Dabei bestimmt nicht ein Gericht, wer in welche Klasse gehört. Es bestimmt eine halbprivate Institution, die ihre Entscheidungskriterien nicht offenlegt.</p>
+
+    <h3>1933 und heute: Ein Strukturvergleich, der trägt</h3>
+
+    <p>Hier kommt das Schriftleitergesetz ins Spiel — und es ist kein abwegiger Vergleich, wenn man ihn präzise führt. Das Schriftleitergesetz vom 4. Oktober 1933 war das entscheidende Instrument nationalsozialistischer Medienkontrolle. Es arbeitete nicht mit offenem Verbot, sondern mit einem Zulassungssystem: Pflichtmitgliedschaft in der Reichspressekammer, die nur erhielt, wer sich politisch fügsam zeigte. Mit Inkrafttreten des Gesetzes verloren etwa 1.300 Journalisten ihre Arbeit. Viele liberale Zeitungen mussten daraufhin ihr Erscheinen einstellen.</p>
+
+    <p>Die Neue Zürcher Zeitung schrieb damals hellsichtig: „Die Aufgabe der Presse wird von Grund aus verändert. Sie besteht wesentlich darin, nicht mehr zu diskutieren, sondern zu interpretieren.“ Der Vergleich zu heute liegt <strong>nicht</strong> in der Ideologie, nicht in den Ausschlusskriterien, nicht im Ausmaß der Repression. Er liegt im <strong>Mechanismus</strong>: Nicht das offene Verbot, sondern das Zulassungssystem schafft Konformität. Wer auf der richtigen Liste steht — der Presserat-Mitgliedschaft — ist geschützt. Wer nicht darauf steht oder nicht aufgenommen wird, ist schutzlos.</p>
+
+    <p>Das ist kein Totalitarismus. Es ist etwas Subtileres und in einer Demokratie deshalb Gefährlicheres: ein System, das Wohlverhalten belohnt und Unbotmäßigkeit sanktioniert — mit rechtsstaatlichen Formen. Eine direkte Nachwirkung des Schriftleitergesetzes war übrigens, dass der Zugang zum Journalistenberuf in der Bundesrepublik bewusst nicht reguliert wurde — „Journalist“ darf in Deutschland jeder sein. Diese Lehre aus der Geschichte wird durch den Medienstaatsvertrag von der inhaltlichen Seite her ausgehöhlt.</p>
+
+    <div class="pq">
+      <p>„Seit Inkrafttreten des Medienstaatsvertrags 2020 haben die Landesmedienanstalten bis November 2025 insgesamt 94 Hinweisschreiben verschickt. Die meisten Betroffenen werden nicht klagen — aus Kostengründen, aus Erschöpfung, aus Kalkül.“</p>
+      <cite>Multipolar / eigene Auswertung, Dezember 2025</cite>
+    </div>
+
+  </div>
+
+  <div class="infographic">
+    <div class="infographic-title">Infografik: Die Lizenz zum Schweigen</div>
+    <div class="infographic-sub">Fallchronologie Wallasch / NLM · Strukturvergleich 1933 / heute · Das Presserat-Schlupfloch</div>
+
+    <div class="sec-lbl">§ Chronologie: Der Fall Wallasch</div>
+    <div class="wallasch-tl">
+      <div class="wtl-item"><div class="wtl-date">Februar 2025</div><div class="wtl-text"><strong>Siebensei­tiges Schreiben der NLM:</strong> Wallasch soll 3.000+ Artikel bis 10. März 2025 prüfen, anpassen oder löschen. Andernfalls drohen kostenpflichtige förmliche Verfahren. Als Beispiele werden vier Artikel benannt — über Migrantengewalt und Corona-Impfnebenwirkungen.</div></div>
+      <div class="wtl-item"><div class="wtl-date">Sommer 2025</div><div class="wtl-text"><strong>Presserat-Antrag:</strong> Wallasch beantragt Selbstverpflichtung beim Presserat — was ihn aus der Zuständigkeit der Landesmedienanstalten herauslösen würde. Der Presserat lehnt ab. Von 10 Anträgen 2025 wurde nur 1 angenommen.</div></div>
+      <div class="wtl-item"><div class="wtl-date">21. Oktober 2025</div><div class="wtl-text"><strong>Förmlicher NLM-Bescheid:</strong> Drei Artikel werden beanstandet, deren weitere Verbreitung untersagt. Zusätzlich: vierstellige Verwaltungsgebühr. Die NLM setzt dabei das KI-Tool KIVI zur Inhaltsüberwachung ein.</div></div>
+      <div class="wtl-item"><div class="wtl-date">Dezember 2025</div><div class="wtl-text"><strong>Klage:</strong> Wallasch und Anwalt Dirk Schmitz erheben Klage gegen die NLM. Argument: Das Verfahren sei verfassungswidrig. Es ist der zweite bekannte Fall einer Klage gegen eine Landesmedienanstalt — nach Nius vs. mabb (2024).</div></div>
+    </div>
+
+    <div class="presserat-box">
+      <div>
+        <h4>Das Presserat-Schlupfloch</h4>
+        <p>Wer Mitglied des Deutschen Presserats ist, unterliegt dessen Selbstkontrolle — und ist damit de facto immun gegenüber den Landesmedienanstalten. Der Presserat entscheidet selbst, wen er aufnimmt. 2025: nur 1 von 10 Anträgen angenommen. Kein Rechtsanspruch auf Aufnahme.</p>
+      </div>
+      <div class="presserat-stat">
+        <span class="big">1/10</span>
+        <span class="sml">Aufnahmen<br>2025</span>
+      </div>
+    </div>
+
+    <div class="sec-lbl">§ Strukturvergleich: Schriftleitergesetz 1933 — Medienstaatsvertrag 2020</div>
+    <div class="compare-grid">
+      <div class="cmp-col cmp-hist">
+        <h4>Schriftleitergesetz 1933</h4>
+        <div class="cmp-item"><div class="cmp-dot d-hist"></div><div>Pflichtmitgliedschaft in der Reichspressekammer als Zulassungsvoraussetzung</div></div>
+        <div class="cmp-item"><div class="cmp-dot d-hist"></div><div>Aufnahme nur für politisch „fügsame“ — kein Rechtsanspruch</div></div>
+        <div class="cmp-item"><div class="cmp-dot d-hist"></div><div>~1.300 Journalisten verloren sofort ihre Arbeit</div></div>
+        <div class="cmp-item"><div class="cmp-dot d-hist"></div><div>Kein offenes Verbot — Kontrolle durch Ausschluss aus der Zulassungsliste</div></div>
+        <div class="cmp-item"><div class="cmp-dot d-hist"></div><div>Staat definiert, was „zulässige Berichterstattung“ ist</div></div>
+      </div>
+      <div class="cmp-col cmp-now">
+        <h4>Medienstaatsvertrag 2020</h4>
+        <div class="cmp-item"><div class="cmp-dot d-now"></div><div>Presserat-Mitgliedschaft als faktischer Schutzschild — kein Rechtsanspruch auf Aufnahme</div></div>
+        <div class="cmp-item"><div class="cmp-dot d-now"></div><div>Aufnahme nach nicht-öffentlichen Kriterien des Presserats</div></div>
+        <div class="cmp-item"><div class="cmp-dot d-now"></div><div>94 Hinweisschreiben seit 2020 — viele Betroffene löschen stillschweigend</div></div>
+        <div class="cmp-item"><div class="cmp-dot d-now"></div><div>Kein offenes Berufsverbot — Kontrolle durch Beanstandung, Untersagung, Gebühren</div></div>
+        <div class="cmp-item"><div class="cmp-dot d-now"></div><div>Landesmedienanstalt definiert, was „journalistische Sorgfaltspflicht“ erfüllt</div></div>
+      </div>
+    </div>
+    <div class="info-note">Hinweis: Der Vergleich gilt als Strukturvergleich der Kontrollmechanismen — nicht als Gleichsetzung der politischen Systeme.</div>
+    <div class="info-note" style="margin-top:0.3rem">Quellen: multipolar-magazin.de (Dez. 2025), freilich-magazin.com (Feb. 2025), übermedien.de (Sept. 2024), bpb.de, hausderpressefreiheit.de</div>
+  </div>
+
+  <div class="sources">Quellen: multipolar-magazin.de (Dez. 2025), freilich-magazin.com (Feb. 2025), übermedien.de (Sept. 2024), epd medien (Sept. 2024), apollo-news.net (Jan. 2026), nius.de, bpb.de, hausderpressefreiheit.de, rundschau-hd.de</div>
+
+</div>
+</article>
+
+<article id="teil3" class="article">
+<div class="wrap">
+
+  <header class="art-head">
+    <div class="art-num">Teil III</div>
+    <h2>Kontrolleure ohne Kontrolle</h2>
+    <p class="deck">Rundfunkräte: Macht, Besetzung, Kosten — und wie sie Journalisten einschüchtern</p>
+    <div class="byline">rundfunkkritik.de · Mai 2026</div>
+  </header>
+
+  <div class="art-body">
+
+    <p>Die Idee ist nicht schlecht: Eine Versammlung aus Gesellschaft, Verbänden und Bürgergruppen beaufsichtigt den öffentlich-rechtlichen Rundfunk, wählt die Intendanten, prüft die Haushalte und sorgt dafür, dass kein Staat und keine Partei die Sender dominiert. So steht es sinngemäß seit dem ersten Rundfunkurteil des Bundesverfassungsgerichts von 1961.</p>
+
+    <p>Die Wirklichkeit in den Gremien sieht anders aus.</p>
+
+    <h3>Wer wirklich drin sitzt</h3>
+
+    <p>Der Media Ownership Monitor Germany 2024 stellt eine auffällige Verbindung des ZDF-Fernsehrats in die Politik fest. Im ZDF-Fernsehrat sitzen aktuell eine aktive Bundesministerin, zwei aktive Landesminister, neun aktive Staatssekretäre, ein Mitglied des Bundestages sowie eine Regierungssprecherin. Das sind keine historischen Ausnahmen — das ist der Normalzustand.</p>
+
+    <p>Formal eingehalten wird das Bundesverfassungsgerichtsurteil von 2014, das den Staatsanteil auf maximal ein Drittel begrenzte. Doch der Trick ist einfach: Wo früher Regierungsvertreter direkt entsandt wurden, sitzen heute parteinahe Funktionäre aus Verbänden, Kirchen und Organisationen, die ebenfalls dem Parteienproporz folgen. Eine Studie untersuchte alle 542 Mitglieder der Rundfunkräte und kam zu dem Ergebnis, dass die Räte weder ihrem Anspruch, die Vielfalt der Gesellschaft zu repräsentieren, gerecht werden, noch benachteiligte Gruppen ausreichend vertreten sind.</p>
+
+    <h3>Was die Sitze kosten — und einbringen</h3>
+
+    <p>Für Gotteslohn sitzt niemand in diesen Gremien. An der Spitze steht die Vorsitzende des WDR-Rundfunkrats mit einer Aufwandsentschädigung von 3.015 Euro pro Monat — dem absoluten Spitzenwert in Gremien-Deutschland. Ein normales WDR-Mitglied bekommt 1.035 Euro monatlich. Beim MDR erhalten die 43 Mitglieder 852 Euro monatlich, beim BR 50 Mitglieder je 700 Euro — plus Sitzungsgelder. Die Gesamtkosten für alle Rundfunkräte der ARD-Sender, des ZDF und des Deutschlandradios bewegen sich im hohen zweistelligen Millionenbereich jährlich — alles finanziert aus dem Rundfunkbeitrag.</p>
+
+    <h3>Der Fall Voigt: Kassieren ohne Erscheinen</h3>
+
+    <p>Das Muster zeigt sich am deutlichsten im Fall des thüringischen Ministerpräsidenten Mario Voigt. Seit März 2024 hat der CDU-Politiker an keiner Sitzung des MDR-Rundfunkrats teilgenommen. Das belegen die veröffentlichten Sitzungsprotokolle. Dennoch floss die monatliche Aufwandsentschädigung von 834,23 Euro — insgesamt rund 18.000 Euro. Im Thüringer Landtag wich Voigt der Frage aus und verwies auf angeblich hybride Sitzungen. Die Staatskanzlei widersprach: solche Sitzungen gab es in diesem Zeitraum schlicht nicht.</p>
+
+    <p>Der Rundfunkrat tagt vierteljährlich — vier Termine im Jahr, zwölf Sitzungen insgesamt: kein einziges Erscheinen. Ein solches Gremium ist kein Debattierklub, sondern ein Kontrollorgan. Es soll über Programmgrundsätze wachen, über Staatsfreiheit, über die Einhaltung gesetzlicher Vorgaben. Auch der sächsische SPD-Wirtschaftsminister Dirk Panter blieb nach seiner Ernennung im MDR-Rundfunkrat. Beide Fälle sind rechtlich zulässig — der MDR-Staatsvertrag sieht kein automatisches Ausscheiden bei Rollenwechsel vor. Das ist das eigentliche Problem.</p>
+
+    <h3>Der Fall Kraus: Wenn ein Rundfunkrat zurückschlägt</h3>
+
+    <p>Am 5. März 2026 bekam das eine sehr konkrete Gestalt. An jenem Morgen klingelten zwei Polizeibeamte an der Tür des Publizisten und ehemaligen Präsidenten des Deutschen Lehrerverbandes, Josef Kraus. Der Grund: ein Artikel bei Tichys Einblick vom 24. September 2025, in dem Kraus kritisch die Rolle des BR-Rundfunkrats Hamado Dipama beleuchtete — einen abgelehnten, später geduldeten Asylbewerber, der seit 2017 im 50-köpfigen Rundfunkrat des Bayerischen Rundfunks sitzt und dort Lobbyarbeit zu Migrations- und Asylthemen betreibt.</p>
+
+    <p>Dipama hatte Anzeige erstattet. Die Beamten nannten weder einen konkreten Straftatbestand noch eine beanstandete Passage. Die Staatsanwaltschaft Landshut bestätigte: Es wird wegen des Anfangsverdachts der Verleumdung ermittelt. Der eigentliche Effekt ist nicht das Verfahren selbst — Verleumdung setzt das bewusste Verbreiten nachweislich unwahrer Tatsachen voraus, ein sehr hoher Maßstab. Der Effekt ist die Botschaft: Wer über Rundfunkratsmitglieder schreibt, bekommt morgens die Polizei an die Tür.</p>
+
+    <div class="pq">
+      <p>„Ein Mitglied des BR-Rundfunkrats, das eigentlich zur Neutralität verpflichtet wäre, instrumentalisiert Polizei und Staatsanwaltschaft, um kritische Berichterstattung über seine eigene Person zu unterbinden.“</p>
+      <cite>Sinngemäße Einordnung mehrerer Medien, März 2026</cite>
+    </div>
+
+    <h3>Das Systemversagen dahinter</h3>
+
+    <p>Die beiden Fälle — Voigt und Kraus — beschreiben zwei Seiten desselben Systems. Auf der einen Seite: Rundfunkräte als Posten, die Parteipolitiker und parteinahe Funktionäre belegen, Entschädigungen einstreichen und deren Kontrollfunktion sie nicht ernstnehmen müssen — weil es keine Sanktionen gibt. Auf der anderen: Ein Rundfunkratsmitglied, das die institutionelle Nähe zur Staatsmacht nutzt, um kritische Berichterstattung über seine Person zu unterbinden — mit dem Strafrecht als Hebel.</p>
+
+    <p>Die ZDF-Fernsehratsvorsitzende Gerda Hasselfeldt wies im März 2025 Kritik an parteipolitischer Einflussnahme entschieden zurück: Parteizugehörigkeit und Engagement im Rundfunkgremium zeige Engagement für die Gemeinschaft. Diese Aussage fasst das Problem besser zusammen als jede Kritik: Die Kontrollierten sehen ihren Parteistatus als Qualifikation — nicht als Befangenheit. Ein Gremium, das sich selbst für integer hält, weil es formell existiert, ist kein Kontrollorgan. Es ist eine Legitimationsmaschine.</p>
+
+  </div>
+
+  <div class="infographic">
+    <div class="infographic-title">Infografik: Kontrolleure ohne Kontrolle</div>
+    <div class="infographic-sub">Aufgaben, Vergütungen, Besetzung und Fallbeispiele der Rundfunkräte</div>
+
+    <div class="sec-lbl">§ Formelle Aufgaben und reale Machtprobleme</div>
+    <div class="macht-grid">
+      <div class="macht-cell"><span class="ico">📺</span><h4>Intendantenwahl</h4><p>Der Rundfunkrat wählt den Intendanten — die mächtigste Personalentscheidung im ÖRR.</p></div>
+      <div class="macht-cell"><span class="ico">📋</span><h4>Programmaufsicht</h4><p>Überwacht Einhaltung der Programmgrundsätze und Rundfunkstaatsvertragsregeln.</p></div>
+      <div class="macht-cell"><span class="ico">💰</span><h4>Haushaltskontrolle</h4><p>Genehmigt den Wirtschaftsplan — in der Praxis oft: Durchwinken statt Prüfen.</p></div>
+      <div class="macht-cell mwarn"><span class="ico">⚠️</span><h4>Politische Besetzung</h4><p>Max. 1/3 staatsnah laut BVerfG 2014 — faktisch durch parteinahe Verbandssitze unterlaufen.</p></div>
+      <div class="macht-cell mwarn"><span class="ico">⚠️</span><h4>Selbstkontrolle</h4><p>Bürger können Programmbeschwerden einreichen — die Räte entscheiden selbst darüber.</p></div>
+      <div class="macht-cell mwarn"><span class="ico">⚠️</span><h4>Keine Abwahlmöglichkeit</h4><p>Mandat bleibt auch bei dauerhafter Abwesenheit. Kein Ausscheiden bei Rollenwechsel (z. B. Minister).</p></div>
+    </div>
+
+    <div class="sec-lbl">§ Aufwandsentschädigungen (pro Monat · aus Rundfunkbeitrag)</div>
+    <div class="money-grid">
+      <div class="money-cell mc-red"><div class="sender">WDR – Rundfunkrat (60 Mitgl.)</div><div class="amount">1.035 €<span>pro Mitglied / Monat</span></div><div class="vorsitz">Vorsitz: <strong>3.015 € / Monat</strong> — Spitzenwert bundesweit</div></div>
+      <div class="money-cell mc-gold"><div class="sender">MDR – Rundfunkrat (43 Mitgl.)</div><div class="amount">852 €<span>pro Mitglied / Monat</span></div><div class="vorsitz">Vorsitz: <strong>1.232 € / Monat</strong> + 71 € Sitzungsgeld/Tag</div></div>
+      <div class="money-cell"><div class="sender">BR – Rundfunkrat (50 Mitgl.)</div><div class="amount">700 €<span>pro Mitglied / Monat</span></div><div class="vorsitz">+ 100 € Sitzungsgeld pro Sitzungstag</div></div>
+      <div class="money-cell"><div class="sender">RBB – Rundfunkrat (28 Mitgl.)</div><div class="amount">275 €<span>pro Mitglied / Monat (ab 2025)</span></div><div class="vorsitz">Vorsitz: <strong>1.500 € / Monat</strong> — mehr als verdoppelt 2025</div></div>
+      <div class="money-cell mc-wide"><div class="sender">ZDF – Fernsehrat (60 Mitgl.)</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-top:0.3rem;"><div><div class="amount" style="font-size:1.1rem">~600–800 €<span>pro Mitglied / Monat</span></div></div><div style="font-size:0.7rem;color:var(--mid)">Laut Media Ownership Monitor 2024: im Fernsehrat sitzen <strong style="color:var(--red)">1 aktive Bundesministerin · 2 Landesminister · 9 Staatssekretäre · 1 MdB · 1 Regierungssprecherin</strong></div></div></div>
+    </div>
+    <div class="info-note">Quellen: kress.de, tagesspiegel.de, epd medien, mdr.de — alle Zahlen aus öffentlich zugänglichen Satzungen</div>
+
+    <div class="sec-lbl">§ Fallbeispiel: Mario Voigt (CDU) — MDR-Rundfunkrat</div>
+    <div class="voigt-box">
+      <div>
+        <h4>Thüringens Ministerpräsident: 12 Sitzungen gesänzt — Entschädigung kassiert</h4>
+        <p>Seit März 2024 fehlt Mario Voigt auf jeder Anwesenheitsliste des MDR-Rundfunkrats. Im Landtag behauptete er, hybrid teilgenommen zu haben. Die Staatskanzlei widersprach: hybride Sitzungen gab es in diesem Zeitraum nicht. Die monatliche Aufwandsentschädigung von 834,23 € floss trotzdem — automatisch, ohne Anwesenheitspflicht.</p>
+      </div>
+      <div class="vnum"><span class="big">~18.000</span><span class="sml">Euro kassiert<br>0 Sitzungen</span></div>
+    </div>
+
+    <div class="sec-lbl">§ Gremienbesetzung: Wer sitzt wirklich drin?</div>
+    <div class="besetzung-wrap">
+      <div class="besetzung-card">
+        <h4>ZDF-Fernsehrat (60 Sitze)</h4>
+        <div class="bseg-wrap">
+          <div class="bseg-row"><div class="bseg-lbl"><span class="ldot" style="background:#b52a1c"></span>Parteizuordenbar (mind.)</div><div class="bseg-outer"><div class="bseg-inner" style="width:47%;background:#b52a1c"></div></div><div class="bseg-val">28+</div></div>
+          <div class="bseg-row"><div class="bseg-lbl"><span class="ldot" style="background:#1a3a5c"></span>Gesellschaftl. Gruppen</div><div class="bseg-outer"><div class="bseg-inner" style="width:53%;background:#1a3a5c"></div></div><div class="bseg-val">32</div></div>
+          <div class="bseg-row"><div class="bseg-lbl"><span class="ldot" style="background:#9a7320"></span>Davon aktive Politiker</div><div class="bseg-outer"><div class="bseg-inner" style="width:23%;background:#9a7320"></div></div><div class="bseg-val">14+</div></div>
+        </div>
+        <p style="font-size:0.65rem;color:var(--border);margin-top:0.7rem;">Media Ownership Monitor Deutschland 2024 / Wikipedia März 2026</p>
+      </div>
+      <div class="besetzung-card">
+        <h4>BR-Rundfunkrat (50 Sitze)</h4>
+        <div class="bseg-wrap">
+          <div class="bseg-row"><div class="bseg-lbl"><span class="ldot" style="background:#b52a1c"></span>Staatsnah / Parteien</div><div class="bseg-outer"><div class="bseg-inner" style="width:33%;background:#b52a1c"></div></div><div class="bseg-val">≤33%</div></div>
+          <div class="bseg-row"><div class="bseg-lbl"><span class="ldot" style="background:#1a3a5c"></span>Verbände / Kirchen</div><div class="bseg-outer"><div class="bseg-inner" style="width:44%;background:#1a3a5c"></div></div><div class="bseg-val">~22</div></div>
+          <div class="bseg-row"><div class="bseg-lbl"><span class="ldot" style="background:#4a7a4a"></span>Sonstige Gesellschaft</div><div class="bseg-outer"><div class="bseg-inner" style="width:23%;background:#4a7a4a"></div></div><div class="bseg-val">~11</div></div>
+        </div>
+        <p style="font-size:0.65rem;color:var(--border);margin-top:0.7rem;">BVerfG 2014: max. 1/3 staatsnah — formal eingehalten, faktisch durch parteinahe Verbandssitze unterlaufen.</p>
+      </div>
+    </div>
+
+    <div class="sec-lbl">§ Fall Josef Kraus / BR-Rundfunkrat: Chronologie</div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-date">September 2025</div><div class="tl-text">Publizist <strong>Josef Kraus</strong> veröffentlicht bei Tichys Einblick einen Artikel über den BR-Rundfunkrat <strong>Hamado Dipama</strong>, der seit 2017 im Rundfunkrat sitzt und Lobbyarbeit zu Migrations- und Asylthemen betreibt.</div></div>
+      <div class="tl-item"><div class="tl-date">Okt. / Nov. 2025</div><div class="tl-text">Dipama stellt <strong>Strafanzeige</strong> wegen Verleumdung und Diskriminierung gegen Kraus. Auf Facebook bezeichnet er Journalisten, die über ihn berichten, als „Rechte und Neofaschisten“.</div></div>
+      <div class="tl-item"><div class="tl-date">5. März 2026, 9:15 Uhr</div><div class="tl-text"><strong>Zwei Polizeibeamte erscheinen an Kraus’ Privatwohnung.</strong> Sie prüfen seine Identität und fragen nach der Autorschaft des Artikels — ohne konkrete Straftatbestände oder beanstandete Passagen zu nennen.</div></div>
+      <div class="tl-item"><div class="tl-date">März 2026</div><div class="tl-text">Staatsanwaltschaft Landshut bestätigt Ermittlungen wegen <strong>Anfangsverdacht der Verleumdung</strong>. Josef Kraus ist ehemaliger Schulleiter und langjähriger Präsident des Deutschen Lehrerverbandes.</div></div>
+    </div>
+
+    <div class="sec-lbl">§ Zwei Muster im Vergleich</div>
+    <div class="falle-grid">
+      <div class="fall-card">
+        <div class="fall-card-head"><div class="fdat">BR-Rundfunkrat · 2025/26</div><h4>Rundfunkrat als Angreifer:<br>Der Fall Dipama / Kraus</h4></div>
+        <div class="fall-card-body"><p>Ein Kontrolleur des ÖRR nutzt das Strafrecht als Abwehrmittel gegen kritische Berichterstattung über seine eigene Person. Ergebnis: Polizeibesuch beim Journalisten, Ermittlungsverfahren — ohne dass eine einzige fehlerhafte Aussage benannt wurde.</p><span class="fall-tag">Einschüchterung durch Strafrecht</span></div>
+      </div>
+      <div class="fall-card">
+        <div class="fall-card-head"><div class="fdat">MDR-Rundfunkrat · 2024–2026</div><h4>Rundfunkrat als Pfünde:<br>Der Fall Voigt / MDR</h4></div>
+        <div class="fall-card-body"><p>Ein Ministerpräsident behält seinen Rundfunkratssitz trotz vollständiger Abwesenheit über fast zwei Jahre. Kein Ausscheiden, keine Konsequenz — nur monatliche Entschädigung. Das Kontrollgremium kontrolliert niemanden, nicht einmal sich selbst.</p><span class="fall-tag">Selbstbedienung ohne Sanktion</span></div>
+      </div>
+    </div>
+    <div class="info-note" style="margin-top:0.8rem">Quellen: kress.de, tagesspiegel.de, epd medien, junge freiheit, apollo-news.net, philosophia-perennis.com, tichyseinblick.de, wikipedia.de, mdr.de · Mai 2026</div>
+  </div>
+
+  <div class="sources">Quellen: kress.de, tagesspiegel.de, epd medien (Mai 2025), junge freiheit (März 2026), philosophia-perennis.com (Feb. 2026), apollo-news.net (Feb. 2026), tichyseinblick.de (März 2026), Media Ownership Monitor Deutschland 2024, Wikipedia</div>
+
+</div>
+</article>
+
+<footer class="site-footer">
+  <strong>rundfunkkritik.de</strong><br>
+  Serie „Medienaufsicht &amp; Macht“ · Mai 2026<br><br>
+  Impressum: Manfred Seeböck c/o POSTFLEX PFX-345-697 · Emsdettener Straße 10 · 48268 Greven
+</footer>
+
+</body>
+</html>
