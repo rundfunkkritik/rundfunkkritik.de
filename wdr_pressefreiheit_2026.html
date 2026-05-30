@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Der WDR und die Grenzen der Pressefreiheit · Rundfunkkritik.de</title>
+<meta name="description" content="Ein einziger Sender zeigt auf drei Ebenen, wie der öffentlich-rechtliche Rundfunk die Pressefreiheit unter Druck setzt: nach innen, nach außen und über das Gesetz. Strukturelle Analyse mit Quellen.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Der WDR und die Grenzen der Pressefreiheit">
+<meta property="og:description" content="Drei Ebenen, ein Sender: Konformitätsdruck nach innen, Marktverdrängung nach außen, regulatorische Steuerung über den Digitale-Medien-Staatsvertrag.">
+<meta property="og:url" content="https://www.rundfunkkritik.de/wdr_pressefreiheit_2026.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a2238;          /* Navy */
+    --ink-soft:#33405e;
+    --paper:#f4efe4;        /* Pergament */
+    --paper-2:#efe8da;
+    --card:#fbf8f1;
+    --accent:#9e2b25;       /* Rot */
+    --accent-2:#9e2b25;
+    --accent-deep:#7a1f1b;
+    --rule-light:rgba(26,34,56,.14);
+    --rule-strong:rgba(26,34,56,.30);
+    --muted:#5c6577;
+    --serif:'Crimson Pro',Georgia,serif;
+    --display:'Playfair Display',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--serif);
+    font-size:20px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  /* ── Navigation ── */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(244,239,228,.92);
+    backdrop-filter:saturate(140%) blur(8px);
+    border-bottom:1px solid var(--rule-light);
+  }
+  .nav-inner{
+    max-width:1080px;margin:0 auto;padding:14px 22px;
+    display:flex;align-items:center;justify-content:space-between;gap:18px;
+  }
+  .brand{
+    font-family:var(--display);font-weight:800;font-size:20px;
+    letter-spacing:.2px;color:var(--ink);text-decoration:none;
+  }
+  .brand span{color:var(--accent)}
+  .nav-links{display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+  .nav-links a{
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.5px;
+    text-transform:uppercase;color:var(--ink-soft);text-decoration:none;
+    padding-bottom:2px;border-bottom:1px solid transparent;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--accent);border-color:var(--accent)}
+  @media(max-width:720px){.nav-links{display:none}}
+
+  /* ── Header ── */
+  .art-header{
+    max-width:var(--maxw);margin:0 auto;padding:64px 22px 30px;
+  }
+  .eyebrow{
+    font-family:var(--mono);font-size:12.5px;letter-spacing:2px;
+    text-transform:uppercase;color:var(--accent);margin-bottom:20px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--accent)}
+  h1{
+    font-family:var(--display);font-weight:800;line-height:1.08;
+    font-size:clamp(34px,6vw,52px);letter-spacing:-.5px;color:var(--ink);
+    margin-bottom:22px;
+  }
+  .standfirst{
+    font-size:22px;color:var(--ink-soft);font-weight:400;line-height:1.5;
+    max-width:640px;
+  }
+  .art-meta{
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.4px;
+    color:var(--muted);margin-top:26px;padding-top:18px;
+    border-top:1px solid var(--rule-light);
+  }
+
+  /* ── Article body ── */
+  .art-body{max-width:var(--maxw);margin:0 auto;padding:14px 22px 40px}
+  .art-body p{margin:0 0 22px}
+  .lead{font-size:23px;line-height:1.55;color:var(--ink)}
+  .lead .drop{
+    float:left;font-family:var(--display);font-weight:800;
+    font-size:74px;line-height:.78;margin:8px 12px 0 0;color:var(--accent);
+  }
+
+  .level{margin:50px 0 0;scroll-margin-top:90px}
+  .level-tag{
+    font-family:var(--mono);font-size:12px;letter-spacing:1.5px;
+    text-transform:uppercase;color:#fff;background:var(--accent);
+    display:inline-block;padding:5px 11px;border-radius:2px;margin-bottom:14px;
+  }
+  h2{
+    font-family:var(--display);font-weight:700;font-size:clamp(26px,4vw,33px);
+    line-height:1.15;color:var(--ink);margin:0 0 8px;letter-spacing:-.3px;
+  }
+  .who{
+    font-family:var(--mono);font-size:13px;color:var(--muted);
+    margin-bottom:18px;letter-spacing:.3px;
+  }
+  h3{
+    font-family:var(--display);font-weight:600;font-size:22px;
+    color:var(--ink);margin:30px 0 8px;
+  }
+  a.inline{
+    color:var(--accent);text-decoration:none;
+    border-bottom:1px solid var(--rule-strong);transition:.15s;
+  }
+  a.inline:hover{border-color:var(--accent);background:rgba(158,43,37,.06)}
+  strong{font-weight:600;color:var(--ink)}
+
+  /* Pull-quote */
+  blockquote{
+    margin:34px 0;padding:6px 0 6px 26px;
+    border-left:3px solid var(--accent);
+    font-family:var(--display);font-style:italic;font-weight:500;
+    font-size:26px;line-height:1.35;color:var(--ink);
+  }
+  blockquote cite{
+    display:block;margin-top:12px;font-family:var(--mono);font-style:normal;
+    font-size:12.5px;letter-spacing:.4px;color:var(--muted);
+  }
+
+  /* Callout */
+  .callout{
+    background:var(--card);border:1px solid var(--rule-light);
+    border-radius:4px;padding:26px 28px;margin:36px 0;
+    box-shadow:0 1px 0 rgba(26,34,56,.04);
+  }
+  .callout p{margin:0;font-size:20px;color:var(--ink-soft)}
+  .callout p strong{color:var(--ink)}
+
+  /* CTA links to other series */
+  .cta-link{
+    display:block;text-decoration:none;color:inherit;
+    border:1px solid var(--rule-light);border-left:4px solid var(--accent);
+    border-radius:4px;padding:20px 24px;margin:18px 0;
+    background:var(--card);transition:.18s;
+  }
+  .cta-link:hover{transform:translateX(3px);border-left-color:var(--accent-deep);box-shadow:0 4px 18px rgba(26,34,56,.07)}
+  .cta-link .k{font-family:var(--mono);font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent)}
+  .cta-link h4{font-family:var(--display);font-weight:700;font-size:21px;color:var(--ink);margin:6px 0 6px}
+  .cta-link p{font-size:17px;color:var(--muted);margin:0;line-height:1.45}
+
+  /* Sources box */
+  .box{
+    background:var(--paper-2);border:1px solid var(--rule-light);
+    border-radius:4px;padding:26px 28px;margin:44px 0 0;
+  }
+  .box h4{
+    font-family:var(--mono);font-size:13px;letter-spacing:1.2px;
+    text-transform:uppercase;color:var(--accent);margin-bottom:16px;
+  }
+  .box ul{list-style:none;font-size:16.5px;line-height:1.5}
+  .box li{padding:8px 0;border-top:1px solid var(--rule-light);color:var(--ink-soft)}
+  .box li:first-child{border-top:0;padding-top:0}
+  .box a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--rule-light);word-break:break-word}
+  .box a:hover{border-color:var(--accent)}
+  .box .src-note{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:14px;line-height:1.5}
+
+  /* Substack newsletter block */
+  .newsletter{
+    margin:48px 0 0;padding:34px 28px;border-radius:6px;
+    background:var(--ink);color:#f2eee4;text-align:center;
+  }
+  .newsletter .k{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:#d8a39c}
+  .newsletter h3{font-family:var(--display);color:#fff;font-size:27px;margin:10px 0 8px}
+  .newsletter p{color:#cdd2dd;font-size:17px;max-width:460px;margin:0 auto 20px;line-height:1.5}
+  .newsletter iframe{width:100%;max-width:480px;height:150px;border:0;background:transparent}
+  .newsletter .alt{font-family:var(--mono);font-size:12px;color:#9aa3b4;margin-top:6px}
+  .newsletter .alt a{color:#d8a39c;text-decoration:none;border-bottom:1px solid rgba(216,163,156,.4)}
+
+  /* ── Footer ── */
+  footer{margin-top:64px;background:var(--ink);color:#cdd2dd}
+  .footer-inner{
+    max-width:1080px;margin:0 auto;padding:48px 22px 24px;
+    display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:36px;
+  }
+  .footer-brand{font-family:var(--display);font-weight:800;font-size:22px;color:#fff}
+  .footer-brand span{color:var(--accent)}
+  .footer-tagline{font-size:16px;color:#9aa3b4;margin-top:12px;line-height:1.5}
+  .footer-col h4{font-family:var(--mono);font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:#d8a39c;margin-bottom:14px}
+  .footer-col ul{list-style:none}
+  .footer-col li{margin-bottom:9px}
+  .footer-col a{color:#cdd2dd;text-decoration:none;font-size:16px;transition:.15s}
+  .footer-col a:hover{color:#fff}
+  .footer-bottom{
+    max-width:1080px;margin:0 auto;padding:18px 22px 40px;
+    border-top:1px solid rgba(255,255,255,.1);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-family:var(--mono);font-size:12px;color:#8089a0;
+  }
+  .footer-bottom a{color:#8089a0;text-decoration:none}
+  .footer-bottom a:hover{color:#fff}
+  @media(max-width:720px){.footer-inner{grid-template-columns:1fr;gap:28px}}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">Rundfunkkritik<span>.de</span></a>
+    <div class="nav-links">
+      <a href="index.html#aktuell">Aktuell</a>
+      <a href="index.html#mechanismen">10 Mechanismen</a>
+      <a href="medienaufsicht_macht_serie_2026.html">Serie I</a>
+      <a href="serie2_meinungsmache_2026.html">Serie II</a>
+      <a href="widerstand.html">Stiller Widerstand</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HEADER ── -->
+<header class="art-header">
+  <div class="eyebrow">Analyse · Pressefreiheit</div>
+  <h1>Der WDR und die Grenzen der Pressefreiheit</h1>
+  <p class="standfirst">Ein einziger Sender zeigt auf drei Ebenen, unter welchen Druck der öffentlich-rechtliche Rundfunk die Pressefreiheit setzt — nach innen, nach außen und über das Gesetz.</p>
+  <div class="art-meta">Rundfunkkritik.de · Analyse · Mai 2026 · Lesezeit ca. 8 Minuten</div>
+</header>
+
+<!-- ── ARTICLE ── -->
+<article class="art-body">
+
+  <p class="lead"><span class="drop">P</span>ressefreiheit wird selten durch eine einzelne dramatische Tat eingeschränkt. Sie gerät unter Druck, wenn an mehreren Stellschrauben zugleich gedreht wird — meist mit guten Absichten und in geordneten Bahnen. Der Westdeutsche Rundfunk eignet sich als Fallstudie, weil sich an ihm drei dieser Schrauben gleichzeitig beobachten lassen. Keine davon ist eine Verschwörung. Jede folgt aus Etat, Auftrag oder Gesetz. Genau das macht den Fall zur konkreten Illustration der abstrakten <a class="inline" href="index.html#mechanismen">10 Mechanismen</a> dieser Seite.</p>
+
+  <!-- EBENE 1 -->
+  <section class="level reveal">
+    <span class="level-tag">Ebene 1 — Nach innen</span>
+    <h2>Kontrolle der eigenen Stimmen</h2>
+    <div class="who">Konformitätsdruck im eigenen Haus</div>
+    <p>Schon 2022 wollte der WDR Richtlinien einführen, die das Verhalten seiner Journalistinnen und Journalisten auf deren <strong>privaten</strong> Social-Media-Konten regeln — politische Neutralität also nicht nur im Programm, sondern auch im persönlichen Profil. Der Medienrechtsanwalt Christian Solmecke (WBS.legal) ordnete das Vorhaben juristisch ein.</p>
+    <p>Der Konflikt liegt offen zutage: Wo endet das berechtigte Interesse des Senders an einem neutralen Auftritt, und wo beginnt die persönliche Meinungsfreiheit des Einzelnen aus Artikel 5 Grundgesetz? Greift ein Sender bis ins Privatprofil seiner Mitarbeiter, erzeugt er Anpassungsdruck in den eigenen Reihen — der erste Mechanismus, lange bevor irgendjemand eine Anweisung erteilen müsste.</p>
+  </section>
+
+  <!-- EBENE 2 -->
+  <section class="level reveal">
+    <span class="level-tag">Ebene 2 — Nach außen</span>
+    <h2>Verdrängung der freien Presse</h2>
+    <div class="who">Marktverdrängung durch Zwangsfinanzierung</div>
+    <p>Der WDR ist ein Koloss: rund <strong>1,70 Milliarden Euro</strong> Etat im laufenden Jahr, über <strong>3 700 fest Beschäftigte</strong> und zahlreiche freie Mitarbeiter. Intendantin Katrin Vernau kündigte an, die regionale Berichterstattung deutlich auszubauen — der Sender wolle gerade dort präsent sein, wo sich die „Tech-Giganten" für Orte wie Wachtendonk oder Tecklenburg nicht interessierten.</p>
+    <p>Nur findet der Wettbewerb genau dort nicht gegen Meta oder Alphabet statt. Über Wachtendonk berichten die <em>Niederrhein Nachrichten</em>, über Tecklenburg die <em>Westfälischen Nachrichten</em> — selbstfinanzierte Lokalverlage, die um Anzeigenkunden und Abonnenten kämpfen und nicht auf einen Beitrag zurückgreifen können. Wenn ein zwangsfinanzierter Sender hyperlokal ausbaut, tritt er, so der Ruhrbarone-Herausgeber Stefan Laurin, nicht gegen die Tech-Konzerne an, sondern gegen die freie, unabhängige Presse vor Ort.</p>
+    <blockquote>„Der WDR schwächt damit die Pressefreiheit."
+      <cite>Stefan Laurin, Ruhrbarone, 30. Mai 2026</cite>
+    </blockquote>
+    <p>Der zweite Mechanismus ist damit benannt: nicht Zensur, sondern Verdrängung. Je dünner die Luft für private Medien wird, desto stärker verengt sich die Vielfalt — paradoxerweise im Namen der Vielfalt.</p>
+  </section>
+
+  <!-- EBENE 3 -->
+  <section class="level reveal">
+    <span class="level-tag">Ebene 3 — Regulatorisch</span>
+    <h2>Der Staat greift in die Algorithmen</h2>
+    <div class="who">Regulatorische Steuerung über den Digitale-Medien-Staatsvertrag</div>
+    <p>Die dritte Schraube läuft nicht über den WDR allein, sondern über die Struktur, die ihn trägt: die Landesmedienanstalten und den geplanten <strong>Digitale-Medien-Staatsvertrag (DMStV)</strong>. Schon heute sorgt das Public-Value-Prinzip (§ 84 Medienstaatsvertrag, seit 2020) dafür, dass „demokratiestärkende" Angebote auf Benutzeroberflächen leicht auffindbar sein müssen. Für die nächste Stufe haben die Länder für <strong>Sommer 2026</strong> einen ersten DMStV-Entwurf angekündigt.</p>
+    <p>Thorsten Schmiege, Präsident der Bayerischen Landeszentrale für neue Medien und Vorsitzender der Direktorenkonferenz der Landesmedienanstalten, benannte das Ziel: <a class="inline" href="https://tkp.at/2026/05/28/deutsche-behoerden-wollen-in-in-algorithmen-von-x-facebook-und-co-eingereifen/" target="_blank" rel="noopener">„verlässliche Informationen stärker in den Feed"</a> zu bringen. Entscheidend ist die Anschlussfrage: Wer gilt als „verlässlich"? Nicht die Nutzerinnen und Nutzer entscheiden das, sondern die Landesmedienanstalten. Und das Prinzip soll ausgeweitet werden — von ganzen Angeboten (Apps) auf <strong>einzelne Inhalte</strong>: Artikel, Videos, Posts.</p>
+    <p>Die Aufsicht begründet das mit der Sicherung von Vielfalt: Ohne Auffindbarkeit keine Nutzung, ohne Nutzung keine Refinanzierung — verlässliche Information dürfe man nicht der reinen Plattformlogik überlassen. Das ist das stärkste Argument der Gegenseite, und es gehört in jede ehrliche Analyse. Auch ein Sprecher der Bundesregierung mahnte zuletzt, man solle die Pressefreiheit hochhalten und nicht in „Geraune" verfallen.</p>
+    <p>Die kritische Lesart bleibt dennoch unbequem: Wenn eine staatsnahe Behörde festlegt, welche <strong>einzelnen Beiträge</strong> in den Feeds algorithmisch bevorzugt werden, ist das der Punkt, an dem aus Auffindbarkeit Steuerung wird. Es ist, in der Formulierung Norbert Härings, der „Wahrheitskomplex" — diesmal als Gesetzentwurf.</p>
+  </section>
+
+  <!-- HISTORISCHER SPIEGEL -->
+  <section class="level reveal">
+    <span class="level-tag">Der historische Spiegel</span>
+    <h2>Wer den Maßstab setzt, wird an ihm gemessen</h2>
+    <p>Dieselbe ARD, dasselbe Haus: Im Jahr 2023 kritisierte das WDR-Magazin <em>Monitor</em> die AfD scharf dafür, kritischen Journalismus zu bekämpfen und die Pressefreiheit ins Visier zu nehmen. Die Sorge war berechtigt. Drei Jahre später greift derselbe Sender selbst — nach innen, nach außen und regulatorisch — strukturell in eben jene Pressefreiheit ein.</p>
+    <p>Es geht hier nicht um die Gleichsetzung von Motiven, sondern um einen Maßstab: Eine Institution, die Gefahren für die Pressefreiheit benennt, muss sich an demselben Maßstab messen lassen, wenn das eigene Handeln dieselbe Freiheit berührt.</p>
+  </section>
+
+  <!-- CALLOUT -->
+  <div class="callout reveal">
+    <p>Keine der drei Ebenen verlangt eine Verschwörung. Die erste folgt aus dem Bedürfnis nach Außenwirkung, die zweite aus Etat und Programmauftrag, die dritte aus dem Gesetz. <strong>Steuerung ohne zentralen Befehl</strong> — genau das ist die strukturelle These dieser Seite.</p>
+  </div>
+
+  <!-- VERBINDUNG ZUR SEITE -->
+  <section class="level reveal">
+    <span class="level-tag">Einordnung</span>
+    <h2>Was das mit den 10 Mechanismen zu tun hat</h2>
+    <p>Die drei Ebenen sind keine isolierten Einzelfälle, sondern die anschauliche Form der abstrakten Mechanismen auf der <a class="inline" href="index.html#mechanismen">Startseite</a>: <strong>Konformitätsdruck</strong> (Ebene 1), <strong>Marktverdrängung</strong> (Ebene 2) und <strong>regulatorische Steuerung</strong> (Ebene 3). Wer verstehen will, wie diese Mechanismen psychologisch und institutionell zusammenwirken, findet die Vertiefung in den beiden Serien.</p>
+
+    <a class="cta-link" href="serie2_meinungsmache_2026.html">
+      <span class="k">Weiterlesen · Serie II</span>
+      <h4>Wie Meinung gemacht wird →</h4>
+      <p>Jonas Tögel (psychologisch) und Norbert Häring (institutionell): Zustimmung entsteht durch Auswahl, Wiederholung und Leitplanken — nicht durch Befehl.</p>
+    </a>
+
+    <a class="cta-link" href="medienaufsicht_macht_serie_2026.html">
+      <span class="k">Grundlage · Serie I</span>
+      <h4>Medienaufsicht &amp; Macht →</h4>
+      <p>Landesmedienanstalten, Rundfunkräte, Aufsicht: Wer die Kontrolleure kontrolliert — und warum Ebene 3 hier ihren Ursprung hat.</p>
+    </a>
+  </section>
+
+  <!-- QUELLEN -->
+  <div class="box reveal">
+    <h4>Quellen &amp; Belege</h4>
+    <ul>
+      <li><strong>Ebene 1:</strong> WBS.legal / Prof. Christian Solmecke, 09.02.2022 — <a href="https://www.wbs.legal/medienrecht/social-media-wdr-will-private-mitarbeiter-accounts-regulieren-59070/" target="_blank" rel="noopener">WDR will private Mitarbeiter-Accounts regulieren</a></li>
+      <li><strong>Ebene 2:</strong> Stefan Laurin, Ruhrbarone, 30.05.2026 — <a href="https://www.ruhrbarone.de/der-wdr-greift-die-freie-presse-an/260160/" target="_blank" rel="noopener">Der WDR greift die freie Presse an</a></li>
+      <li><strong>Ebene 3:</strong> Digitale-Medien-Staatsvertrag (DMStV); Public-Value gemäß § 84 MStV — <a href="https://www.die-medienanstalten.de/aufgaben/vielfaltssicherung/public-value/" target="_blank" rel="noopener">die-medienanstalten.de</a>; Medienrechtsjahr 2026 — <a href="https://www.cbh.de/news/verwaltung-wirtschaft/das-bringt-das-medienrechtsjahr-2026/" target="_blank" rel="noopener">CBH Rechtsanwälte</a>; Aussage T. Schmiege (Münchner Merkur), Sekundärberichte u.&nbsp;a. Telepolis (24.10.2025), taz (08.11.2025), NIUS (gesperrt)</li>
+      <li><strong>Historischer Spiegel:</strong> WDR / Monitor, 2023 — <a href="https://www1.wdr.de/daserste/monitor/sendungen/pressefreiheit-im-visier-wie-die-afd-kritischen-journalismus-bekaempft-100.html" target="_blank" rel="noopener">Pressefreiheit im Visier</a></li>
+      <li>Norbert Häring: „Der Wahrheitskomplex", Westend Verlag 2026 — <a href="https://norberthaering.de" target="_blank" rel="noopener">norberthaering.de</a></li>
+    </ul>
+    <p class="src-note">Strukturelle Analyse, keine Tatsachenbehauptung über Einzelpersonen. Zitate wörtlich aus den verlinkten Quellen; Einordnung und Bewertung sind Meinungsäußerung im Sinne von Art.&nbsp;5 GG.</p>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter reveal">
+    <span class="k">Newsletter</span>
+    <h3>Kurs VERNUNFT</h3>
+    <p>Strukturelle Medienanalyse, juristisch belastbar und ohne Polemik — neue Beiträge direkt ins Postfach.</p>
+    <iframe src="https://manfredsolo.substack.com/embed" title="Kurs VERNUNFT — Newsletter abonnieren" scrolling="no"></iframe>
+    <p class="alt">Kein Konto nötig. Abmeldung jederzeit. Betrieben über <a href="https://manfredsolo.substack.com" target="_blank" rel="noopener">Substack</a>.</p>
+  </div>
+
+</article>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Rundfunkkritik<span>.de</span></div>
+      <p class="footer-tagline">Strukturelle Medienanalyse.<br>Juristisch belastbar. Empirisch belegbar.<br>Ohne Polemik.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Inhalt</h4>
+      <ul>
+        <li><a href="index.html#aktuell">Aktuell</a></li>
+        <li><a href="index.html#mechanismen">10 Mechanismen</a></li>
+        <li><a href="medienaufsicht_macht_serie_2026.html">Serie I</a></li>
+        <li><a href="serie2_meinungsmache_2026.html">Serie II</a></li>
+        <li><a href="widerstand.html">Stiller Widerstand</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Zum Thema</h4>
+      <ul>
+        <li><a href="bverfg_kampagne_juni2026.html">Countdown 23.06.</a></li>
+        <li><a href="macht_geld_oerr.html">Macht &amp; Geld ÖRR</a></li>
+        <li><a href="https://manfredsolo.substack.com" target="_blank" rel="noopener">Kurs VERNUNFT (Substack)</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Rundfunkkritik.de · Alle Inhalte zur freien Verwendung mit Quellenangabe</span>
+    <span>
+      <a href="impressum.html">Impressum</a> ·
+      <a href="datenschutz.html">Datenschutz</a> ·
+      <a href="mailto:kontakt@rundfunkkritik.de">Kontakt</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  // Reveal-Animation (wie auf der Startseite)
+  (function(){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
+      });
+    }, {threshold:0.08});
+    document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+  })();
+</script>
+</body>
+</html>

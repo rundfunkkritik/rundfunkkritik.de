@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Was der ÖRR über sich selbst herausfindet — und was er nicht fragt · Rundfunkkritik.de</title>
+<meta name="description" content="Ein vom BR beauftragtes Gutachten bescheinigt dem öffentlich-rechtlichen Rundfunk hohe Vielfalt. Die eigenen Befunde erzählen eine differenziertere Geschichte als die Pressemitteilung. Strukturelle Analyse.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Was der ÖRR über sich selbst herausfindet — und was er nicht fragt">
+<meta property="og:description" content="Das BR-Gutachten zu Vielfalt und Ausgewogenheit: Was die Wissenschaft sagt, was die PR daraus macht — und welche Frage niemand stellt.">
+<meta property="og:url" content="https://www.rundfunkkritik.de/gutachten_vielfalt_oerr_2026.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a2238;--ink-soft:#33405e;--paper:#f4efe4;--paper-2:#efe8da;
+    --card:#fbf8f1;--accent:#9e2b25;--accent-2:#9e2b25;--accent-deep:#7a1f1b;
+    --rule-light:rgba(26,34,56,.14);--rule-strong:rgba(26,34,56,.30);
+    --muted:#5c6577;--serif:'Crimson Pro',Georgia,serif;
+    --display:'Playfair Display',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;--maxw:760px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:20px;line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  .nav{position:sticky;top:0;z-index:50;background:rgba(244,239,228,.92);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--rule-light)}
+  .nav-inner{max-width:1080px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .brand{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:.2px;color:var(--ink);text-decoration:none}
+  .brand span{color:var(--accent)}
+  .nav-links{display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+  .nav-links a{font-family:var(--mono);font-size:12.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;padding-bottom:2px;border-bottom:1px solid transparent;transition:.2s}
+  .nav-links a:hover{color:var(--accent);border-color:var(--accent)}
+  @media(max-width:720px){.nav-links{display:none}}
+  .art-header{max-width:var(--maxw);margin:0 auto;padding:64px 22px 30px}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--accent)}
+  h1{font-family:var(--display);font-weight:800;line-height:1.08;font-size:clamp(32px,5.5vw,48px);letter-spacing:-.5px;color:var(--ink);margin-bottom:22px}
+  .standfirst{font-size:22px;color:var(--ink-soft);font-weight:400;line-height:1.5;max-width:640px}
+  .art-meta{font-family:var(--mono);font-size:12.5px;letter-spacing:.4px;color:var(--muted);margin-top:26px;padding-top:18px;border-top:1px solid var(--rule-light)}
+  .art-body{max-width:var(--maxw);margin:0 auto;padding:14px 22px 40px}
+  .art-body p{margin:0 0 22px}
+  .lead{font-size:23px;line-height:1.55;color:var(--ink)}
+  .lead .drop{float:left;font-family:var(--display);font-weight:800;font-size:74px;line-height:.78;margin:8px 12px 0 0;color:var(--accent)}
+  .level{margin:50px 0 0;scroll-margin-top:90px}
+  .level-tag{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:var(--accent);display:inline-block;padding:5px 11px;border-radius:2px;margin-bottom:14px}
+  h2{font-family:var(--display);font-weight:700;font-size:clamp(26px,4vw,33px);line-height:1.15;color:var(--ink);margin:0 0 8px;letter-spacing:-.3px}
+  .who{font-family:var(--mono);font-size:13px;color:var(--muted);margin-bottom:18px;letter-spacing:.3px}
+  h3{font-family:var(--display);font-weight:600;font-size:22px;color:var(--ink);margin:30px 0 8px}
+  a.inline{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--rule-strong);transition:.15s}
+  a.inline:hover{border-color:var(--accent);background:rgba(158,43,37,.06)}
+  strong{font-weight:600;color:var(--ink)}
+  blockquote{margin:34px 0;padding:6px 0 6px 26px;border-left:3px solid var(--accent);font-family:var(--display);font-style:italic;font-weight:500;font-size:26px;line-height:1.35;color:var(--ink)}
+  blockquote cite{display:block;margin-top:12px;font-family:var(--mono);font-style:normal;font-size:12.5px;letter-spacing:.4px;color:var(--muted)}
+  .callout{background:var(--card);border:1px solid var(--rule-light);border-radius:4px;padding:26px 28px;margin:36px 0;box-shadow:0 1px 0 rgba(26,34,56,.04)}
+  .callout p{margin:0;font-size:20px;color:var(--ink-soft)}
+  .callout p strong{color:var(--ink)}
+
+  /* Comparison table */
+  .compare{margin:36px 0;border:1px solid var(--rule-light);border-radius:4px;overflow:hidden}
+  .compare-row{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .compare-row+.compare-row{border-top:1px solid var(--rule-light)}
+  .compare-head{font-family:var(--mono);font-size:12px;letter-spacing:1.2px;text-transform:uppercase;padding:14px 18px;font-weight:500}
+  .compare-head.pr{background:var(--ink);color:#d8a39c}
+  .compare-head.gt{background:var(--accent);color:#fff}
+  .compare-cell{padding:16px 18px;font-size:17px;line-height:1.45}
+  .compare-cell.pr{background:var(--card);color:var(--ink-soft)}
+  .compare-cell.gt{background:var(--paper-2);color:var(--ink)}
+  @media(max-width:600px){.compare-row{grid-template-columns:1fr}.compare-cell,.compare-head{display:block}}
+
+  .cta-link{display:block;text-decoration:none;color:inherit;border:1px solid var(--rule-light);border-left:4px solid var(--accent);border-radius:4px;padding:20px 24px;margin:18px 0;background:var(--card);transition:.18s}
+  .cta-link:hover{transform:translateX(3px);border-left-color:var(--accent-deep);box-shadow:0 4px 18px rgba(26,34,56,.07)}
+  .cta-link .k{font-family:var(--mono);font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent)}
+  .cta-link h4{font-family:var(--display);font-weight:700;font-size:21px;color:var(--ink);margin:6px 0 6px}
+  .cta-link p{font-size:17px;color:var(--muted);margin:0;line-height:1.45}
+  .box{background:var(--paper-2);border:1px solid var(--rule-light);border-radius:4px;padding:26px 28px;margin:44px 0 0}
+  .box h4{font-family:var(--mono);font-size:13px;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+  .box ul{list-style:none;font-size:16.5px;line-height:1.5}
+  .box li{padding:8px 0;border-top:1px solid var(--rule-light);color:var(--ink-soft)}
+  .box li:first-child{border-top:0;padding-top:0}
+  .box a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--rule-light);word-break:break-word}
+  .box a:hover{border-color:var(--accent)}
+  .box .src-note{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:14px;line-height:1.5}
+  .newsletter{margin:48px 0 0;padding:34px 28px;border-radius:6px;background:var(--ink);color:#f2eee4;text-align:center}
+  .newsletter .k{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:#d8a39c}
+  .newsletter h3{font-family:var(--display);color:#fff;font-size:27px;margin:10px 0 8px}
+  .newsletter p{color:#cdd2dd;font-size:17px;max-width:460px;margin:0 auto 20px;line-height:1.5}
+  .newsletter iframe{width:100%;max-width:480px;height:150px;border:0;background:transparent}
+  .newsletter .alt{font-family:var(--mono);font-size:12px;color:#9aa3b4;margin-top:6px}
+  .newsletter .alt a{color:#d8a39c;text-decoration:none;border-bottom:1px solid rgba(216,163,156,.4)}
+  footer{margin-top:64px;background:var(--ink);color:#cdd2dd}
+  .footer-inner{max-width:1080px;margin:0 auto;padding:48px 22px 24px;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:36px}
+  .footer-brand{font-family:var(--display);font-weight:800;font-size:22px;color:#fff}
+  .footer-brand span{color:var(--accent)}
+  .footer-tagline{font-size:16px;color:#9aa3b4;margin-top:12px;line-height:1.5}
+  .footer-col h4{font-family:var(--mono);font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:#d8a39c;margin-bottom:14px}
+  .footer-col ul{list-style:none}
+  .footer-col li{margin-bottom:9px}
+  .footer-col a{color:#cdd2dd;text-decoration:none;font-size:16px;transition:.15s}
+  .footer-col a:hover{color:#fff}
+  .footer-bottom{max-width:1080px;margin:0 auto;padding:18px 22px 40px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:12px;color:#8089a0}
+  .footer-bottom a{color:#8089a0;text-decoration:none}
+  .footer-bottom a:hover{color:#fff}
+  @media(max-width:720px){.footer-inner{grid-template-columns:1fr;gap:28px}}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">Rundfunkkritik<span>.de</span></a>
+    <div class="nav-links">
+      <a href="index.html#aktuell">Aktuell</a>
+      <a href="index.html#mechanismen">10 Mechanismen</a>
+      <a href="medienaufsicht_macht_serie_2026.html">Serie I</a>
+      <a href="serie2_meinungsmache_2026.html">Serie II</a>
+      <a href="widerstand.html">Stiller Widerstand</a>
+    </div>
+  </div>
+</nav>
+
+<header class="art-header">
+  <div class="eyebrow">Analyse · Gutachten</div>
+  <h1>Was der ÖRR über sich selbst herausfindet — und was er nicht fragt</h1>
+  <p class="standfirst">Ein vom Bayerischen Rundfunk beauftragtes Gutachten bescheinigt den öffentlich-rechtlichen Nachrichten hohe Vielfalt. Die eigenen Befunde erzählen eine differenziertere Geschichte als die Pressemitteilung.</p>
+  <div class="art-meta">Rundfunkkritik.de · Analyse · Mai 2026 · Lesezeit ca. 10 Minuten</div>
+</header>
+
+<article class="art-body">
+
+  <p class="lead"><span class="drop">I</span>m Mai 2026 veröffentlichte der Bayerische Rundfunk ein Gutachten unter dem Titel „Vielfalt und Ausgewogenheit als Maßstab von Medienqualität". Verfasst haben es vier Kommunikationswissenschaftler der Universitäten Mainz und München — Birgit Stark, Marcus Maurer, Daniel Stegmann und Carsten Reinemann. 97 Seiten, 49 ausgewertete Studien, drei Module. Die BR-Pressemitteilung trug die Überschrift: <strong>„Wissenschaft statt Bauchgefühl."</strong></p>
+
+  <p>Das klingt, als sei die Debatte damit beendet. Ist sie nicht. Denn wer das Gutachten tatsächlich liest — nicht die Pressemitteilung, sondern die Befunde, die Einschränkungen und die offenen Fragen —, findet eine deutlich vielschichtigere Erzählung. Diese Seite nimmt das Gutachten beim Wort und hält seine eigenen Ergebnisse gegen die PR-Lesart der Sender.</p>
+
+  <!-- SECTION 1 -->
+  <section class="level reveal">
+    <span class="level-tag">1 — Was das Gutachten ist</span>
+    <h2>Methode, Auftraggeber, Reichweite</h2>
+    <p>Das Gutachten besteht aus drei Modulen: einer theoretischen Konzeption von Vielfalt und Ausgewogenheit (Modul 1), einem systematischen Literaturüberblick über 49 quantitative Studien aus den Jahren 2020–2025 (Modul 2) und praktischen Schlussfolgerungen für ein Monitoring-System (Modul 3). Die Autoren sind renommiert, die Methodik — ein systematischer Review mit Datenbankrecherche, händischer Vollerhebung und Volltextscreening — ist handwerklich sauber.</p>
+    <p>Der <strong>Auftraggeber</strong> ist der Bayerische Rundfunk, der das Gutachten „für die ARD" in Auftrag gegeben hat. Das macht die Ergebnisse nicht ungültig. Aber es gehört zur Einordnung, weil der Rahmen — was geprüft wird, welche Maßstäbe als angemessen gelten, welche Fragen gestellt und welche nicht gestellt werden — immer auch vom Auftraggeber mitbestimmt wird. Die Autoren arbeiten seriös innerhalb dieses Rahmens. Die Frage ist, ob der Rahmen selbst weit genug ist.</p>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="level reveal">
+    <span class="level-tag">2 — Pressemitteilung vs. Befund</span>
+    <h2>Was die PR sagt — und was im Text steht</h2>
+    <p>Die offizielle Darstellung des BR betont, pauschale Vorwürfe einer einseitigen Berichterstattung seien auf Basis der Forschung nicht haltbar. Das stimmt — als Gesamtaussage. Aber das Gutachten enthält eine Reihe von Befunden, die in der Pressemitteilung keine Rolle spielen. Hier die Gegenüberstellung:</p>
+
+    <div class="compare reveal">
+      <div class="compare-row">
+        <div class="compare-head pr">Die PR-Version</div>
+        <div class="compare-head gt">Was im Gutachten steht</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell pr">Hohes Maß an Themen- und Akteursvielfalt.</div>
+        <div class="compare-cell gt">Stimmt — aber die Akteursvielfalt zeigt eine <strong>systematische Fokussierung auf die Exekutive</strong>. Zivilgesellschaft, Bürgerinnen und Bürger, Frauen und ältere Menschen sind unterrepräsentiert. Dieser Befund ist über mehrere Studien hinweg stabil.</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell pr">Pauschale Einseitigkeitsvorwürfe nicht haltbar.</div>
+        <div class="compare-cell gt">Die neun untersuchten ÖRR-Formate positionieren sich entlang gesellschaftlicher Konfliktlinien <strong>ausnahmslos links der Mitte</strong> — sowohl sozialstaatlich als auch liberal-progressiv. Das Gutachten relativiert: das gelte auch für die Mehrheit der privaten Medien. Aber die Feststellung steht.</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell pr">Wissenschaftliche Grundlage statt Bauchgefühl.</div>
+        <div class="compare-cell gt">Die Autoren selbst konstatieren: Das Forschungsfeld ist <strong>„stark fragmentiert"</strong>, einheitliche Standards fehlen, automatisierte Verfahren sind kaum im Einsatz. Die Studienlage kann das gesamte Informationsangebot <strong>„bei weitem nicht umfassend empirisch ausleuchten"</strong>.</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell pr">Der ÖRR kommt seinem Auftrag eher nach, als ihn zu verfehlen.</div>
+        <div class="compare-cell gt">In Krisenzeiten (Corona, Flüchtlingskrise) nähert sich die ÖRR-Berichterstattung den <strong>Regierungspositionen</strong> an. Die Tagesschau hat ihre Darstellung von Geflüchteten zwischen 2015 und 2020 laut einer zitierten Studie „nahezu ins Gegenteil verkehrt" — von fast nur positiv zu einer der negativsten Darstellungen.</div>
+      </div>
+    </div>
+
+    <p>Die Pressemitteilung ist nicht falsch. Aber sie erzählt nur die eine Hälfte der Geschichte. Und ein Gutachten, das „Wissenschaft statt Bauchgefühl" verspricht, sollte auch die andere Hälfte in die Öffentlichkeit tragen.</p>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="level reveal">
+    <span class="level-tag">3 — Das Maßstab-Problem</span>
+    <h2>Die Antwort hängt von der Frage ab</h2>
+    <p>Der aufschlussreichste Abschnitt des Gutachtens betrifft die Frage, was „ausgewogen" eigentlich bedeutet. Die Autoren unterscheiden zwei Möglichkeiten: Gleichverteilung (alle Positionen kommen gleich häufig vor) und realitätsgerechtes Abbild (Positionen kommen so häufig vor, wie sie gesellschaftlich verbreitet sind).</p>
+    <p>Das Gutachten zeigt an einer konkreten Studie (Jandura &amp; Spatz 2023), dass der Vorwurf einer Linksverzerrung der Tagesschau <strong>nur dann</strong> haltbar ist, wenn man Gleichverteilung als Maßstab anlegt. Zieht man andere Benchmarks heran — abgestufte Chancengleichheit, Parteienproporz —, verschwindet der Befund oder kehrt sich sogar um.</p>
+    <p>Die Autoren favorisieren die proportionalen Maßstäbe. Aber sie räumen selbst ein, dass diese Entscheidung <strong>normativ</strong> ist — also keine Frage der Wissenschaft, sondern der Wertung. Wer definiert, was der richtige Maßstab ist, definiert auch das Ergebnis. Das ist nicht Betrug, aber es ist eine Vorentscheidung, die transparent gemacht werden muss. Das Gutachten tut das intern. Die Pressemitteilung nicht.</p>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section class="level reveal">
+    <span class="level-tag">4 — Die fehlende Frage</span>
+    <h2>Wer prüft den Prüfer?</h2>
+    <p>Das Gutachten wurde vom Bayerischen Rundfunk bestellt, bezahlt und mit einer Pressemitteilung versehen, deren Überschrift das Ergebnis vorwegnimmt. Die Autoren arbeiten wissenschaftlich unabhängig — daran besteht kein Zweifel. Aber die Struktur ist und bleibt eine Selbstbeauftragung: Der Geprüfte wählt die Prüfer, formuliert den Auftrag und kontrolliert die Veröffentlichung.</p>
+    <p>Bemerkenswert ist, dass die Autoren selbst die Lösung benennen: Deutschland brauche ein <strong>unabhängiges, kontinuierliches Qualitätsmonitoring</strong>, wie es die Schweiz seit 2010 mit dem fög-Jahrbuch betreibt — extern institutionalisiert, nicht vom Sender beauftragt. Sie empfehlen öffentlich zugängliche Dashboards, jährliche Vielfaltsberichte und eine Anbindung an den neu gegründeten Medienrat.</p>
+    <p>Solange das nicht existiert, bleibt das Gutachten das, was es ist: eine gute wissenschaftliche Arbeit innerhalb eines Rahmens, den der Geprüfte selbst gesetzt hat. Nicht mehr, nicht weniger.</p>
+  </section>
+
+  <!-- SECTION 5 -->
+  <section class="level reveal">
+    <span class="level-tag">5 — Blinde Flecken</span>
+    <h2>Was das Gutachten nicht untersucht</h2>
+    <p>Die Autoren benennen ihre Lücken ehrlich — auch das ein Qualitätsmerkmal. Die wichtigsten:</p>
+    <p><strong>Digitale und Social-Media-Angebote</strong> sind kaum untersucht. Der Forschungsschwerpunkt liegt auf den Flaggschiff-Nachrichtensendungen (Tagesschau, heute). Gerade dort, wo jüngere Zielgruppen den ÖRR wahrnehmen — TikTok, Instagram, funk —, fehlen Daten fast vollständig.</p>
+    <p><strong>Radio</strong> wird in der Forschung praktisch ignoriert.</p>
+    <p><strong>Personelle Vielfalt</strong> (die politischen Einstellungen der Redaktionen) wird bewusst von inhaltlicher Vielfalt getrennt. Das ist methodisch korrekt — aber die Autoren räumen ein, dass die Volontärsstudie der ARD, nach der rund 90 Prozent der Volontäre Parteien links der Mitte nahestehen, zumindest als Kontextfaktor relevant ist.</p>
+    <p><strong>Formatübergreifende Analyse:</strong> Ob die Vielfalt im „Gesamtprogramm" tatsächlich beim einzelnen Zuschauer ankommt, hängt davon ab, wie viele verschiedene Formate jemand nutzt. Die Forschung zeigt: die wenigsten nutzen genug, um das Gesamtbild zu sehen. Auch das steht im Gutachten.</p>
+  </section>
+
+  <!-- SECTION 6 -->
+  <section class="level reveal">
+    <span class="level-tag">6 — Einordnung</span>
+    <h2>Was das für die Debatte bedeutet</h2>
+    <p>Das Gutachten ist kein Freispruch und keine Anklage. Es ist eine differenzierte wissenschaftliche Arbeit, die zeigt, dass der ÖRR seinen Auftrag im Großen und Ganzen erfüllt — mit realen Defiziten bei Akteursvielfalt, bei der Meinungsverteilung entlang gesellschaftlicher Konfliktlinien und in Krisenzeiten. Wer das Gutachten als Freispruch liest, ignoriert die Hälfte der Befunde. Wer es als Bestätigung einer Systemkrise liest, ignoriert die andere Hälfte.</p>
+    <p>Für diese Seite ist ein anderer Punkt entscheidend: Das Gutachten illustriert einen der <a class="inline" href="index.html#mechanismen">10 Mechanismen</a> — die Selbstreferenz des Systems. Ein Sender, der seine eigene Qualität prüfen lässt und das Ergebnis als „Wissenschaft statt Bauchgefühl" vermarktet, übt Deutungshoheit über die Frage aus, was als gute Berichterstattung gilt. Das ist kein böser Wille, sondern Struktur. Und genau das macht es zur Aufgabe unabhängiger Kritik, die Befunde beim Wort zu nehmen — einschließlich der Befunde, die der Auftraggeber leise hält.</p>
+  </section>
+
+  <!-- CALLOUT -->
+  <div class="callout reveal">
+    <p>Die Stärke des Gutachtens ist, dass es seine eigenen Grenzen benennt. Die Schwäche des Systems ist, dass die Pressemitteilung diese Grenzen verschweigt. <strong>Genau dazwischen liegt der Raum, in dem strukturelle Medienkritik arbeitet.</strong></p>
+  </div>
+
+  <!-- LINKS -->
+  <section class="level reveal">
+    <a class="cta-link" href="wdr_pressefreiheit_2026.html">
+      <span class="k">Zum Thema</span>
+      <h4>Der WDR und die Grenzen der Pressefreiheit →</h4>
+      <p>Konformitätsdruck, Marktverdrängung, regulatorische Steuerung: Drei Ebenen, an denen der ÖRR die Pressefreiheit berührt.</p>
+    </a>
+    <a class="cta-link" href="serie2_meinungsmache_2026.html">
+      <span class="k">Serie II</span>
+      <h4>Wie Meinung gemacht wird →</h4>
+      <p>Tögel (psychologisch) und Häring (institutionell): Wie Zustimmung entsteht — ohne Befehl, durch Struktur.</p>
+    </a>
+  </section>
+
+  <!-- SOURCES -->
+  <div class="box reveal">
+    <h4>Quellen &amp; Belege</h4>
+    <ul>
+      <li><strong>Gutachten:</strong> Stark, Maurer, Stegmann &amp; Reinemann: „Vielfalt und Ausgewogenheit als Maßstab von Medienqualität", Gutachten für den Bayerischen Rundfunk, Mai 2026 — <a href="https://openscience.ub.uni-mainz.de/handle/20.500.12030/15139" target="_blank" rel="noopener">Open Access (JGU Mainz)</a></li>
+      <li><strong>BR-Pressemitteilung:</strong> „Wissenschaft statt Bauchgefühl", 20.05.2026 — <a href="https://www.presseportal.de/pm/7560/6278624" target="_blank" rel="noopener">presseportal.de</a></li>
+      <li><strong>Kritische Einordnung:</strong> Telepolis, 22.05.2026 — <a href="https://www.telepolis.de/article/Oeffentlich-rechtlicher-Rundfunk-Wer-bestimmt-was-ausgewogen-ist-11302656.html" target="_blank" rel="noopener">„Wer bestimmt, was ‚ausgewogen' ist?"</a></li>
+      <li><strong>Schlüsselstudie (Linksverzerrung):</strong> Jandura &amp; Spatz (2023): „Berichtet die Tagesschau linksverzerrt?", UFITA 87(2), 192–216</li>
+      <li><strong>Schlüsselstudie (Perspektivenvielfalt):</strong> Maurer, Kruschinski &amp; Jost (2024): „Fehlt da was?", Stiftung Mercator</li>
+      <li><strong>Schweizer Referenzmodell:</strong> fög – Jahrbuch Qualität der Medien — <a href="https://www.foeg.uzh.ch/de/research/projects/jahrbuch-qdm.html" target="_blank" rel="noopener">foeg.uzh.ch</a></li>
+    </ul>
+    <p class="src-note">Alle Seitenangaben beziehen sich auf das Gutachten (DOI: 10.25358/openscience-15118). Wörtliche Übernahmen sind als Zitate gekennzeichnet. Einordnung und Bewertung sind Meinungsäußerung im Sinne von Art.&nbsp;5 GG.</p>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter reveal">
+    <span class="k">Newsletter</span>
+    <h3>Kurs VERNUNFT</h3>
+    <p>Strukturelle Medienanalyse, juristisch belastbar und ohne Polemik — neue Beiträge direkt ins Postfach.</p>
+    <iframe src="https://manfredsolo.substack.com/embed" title="Kurs VERNUNFT — Newsletter abonnieren" scrolling="no"></iframe>
+    <p class="alt">Kein Konto nötig. Abmeldung jederzeit. Betrieben über <a href="https://manfredsolo.substack.com" target="_blank" rel="noopener">Substack</a>.</p>
+  </div>
+
+</article>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Rundfunkkritik<span>.de</span></div>
+      <p class="footer-tagline">Strukturelle Medienanalyse.<br>Juristisch belastbar. Empirisch belegbar.<br>Ohne Polemik.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Inhalt</h4>
+      <ul>
+        <li><a href="index.html#aktuell">Aktuell</a></li>
+        <li><a href="index.html#mechanismen">10 Mechanismen</a></li>
+        <li><a href="medienaufsicht_macht_serie_2026.html">Serie I</a></li>
+        <li><a href="serie2_meinungsmache_2026.html">Serie II</a></li>
+        <li><a href="widerstand.html">Stiller Widerstand</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Zum Thema</h4>
+      <ul>
+        <li><a href="bverfg_kampagne_juni2026.html">Countdown 23.06.</a></li>
+        <li><a href="wdr_pressefreiheit_2026.html">WDR &amp; Pressefreiheit</a></li>
+        <li><a href="macht_geld_oerr.html">Macht &amp; Geld ÖRR</a></li>
+        <li><a href="https://manfredsolo.substack.com" target="_blank" rel="noopener">Kurs VERNUNFT (Substack)</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Rundfunkkritik.de · Alle Inhalte zur freien Verwendung mit Quellenangabe</span>
+    <span>
+      <a href="impressum.html">Impressum</a> ·
+      <a href="datenschutz.html">Datenschutz</a> ·
+      <a href="mailto:kontakt@rundfunkkritik.de">Kontakt</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
+      });
+    }, {threshold:0.08});
+    document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+  })();
+</script>
+</body>
+</html>
