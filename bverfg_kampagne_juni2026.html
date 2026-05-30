@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BVerfG verhandelt am 23. Juni 2026 über die Rundfunkfinanzierung. Live-Countdown, Hintergründe und Analyse – was ARD und ZDF wirklich wollen.">
+<link rel="canonical" href="https://www.rundfunkkritik.de/bverfg_kampagne_juni2026.html">
+<title>BVerfG 23. Juni 2026 – Countdown &amp; Analyse | Rundfunkkritik.de</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+:root{
+  --ink:#1c1c1a;--ink-2:#3d3d38;--ink-3:#6b6b62;--ink-4:#9e9e93;
+  --paper:#f8f5ef;--paper-2:#f0ece2;--paper-3:#e8e3d6;--white:#fff;
+  --rule:#cdc8b8;--rule-light:#e0dbd0;
+  --accent:#1a2533;--accent-2:#2e4a6b;--accent-3:#4a7aaa;
+  --red:#8b1f1f;--gold:#7a5c0a;--green:#1a5430;
+}
+body{font-family:'Crimson Pro',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.7;overflow-x:hidden;}
+nav{position:sticky;top:0;z-index:100;background:var(--accent);border-bottom:2px solid rgba(255,255,255,0.08);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:#fff;letter-spacing:0.04em;text-decoration:none;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:#fff;}
+.nav-cta{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.25);padding:0.4rem 1rem;text-decoration:none;transition:background 0.2s;}
+.nav-cta:hover{background:rgba(255,255,255,0.22);}
+.hero{background:var(--accent);color:#fff;padding:5rem 2rem 4rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,0.03) 39px,rgba(255,255,255,0.03) 40px);pointer-events:none;}
+.hero-inner{max-width:860px;margin:0 auto;position:relative;}
+.hero-kicker{font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;}
+.hero-kicker::before{content:'';display:block;width:2rem;height:1px;background:rgba(255,255,255,0.3);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;margin-bottom:1.5rem;}
+.hero-lead{font-size:1.15rem;font-weight:300;color:rgba(255,255,255,0.72);line-height:1.65;max-width:620px;margin-bottom:2.5rem;}
+.countdown-box{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);padding:2rem;max-width:500px;margin-bottom:2.5rem;}
+.countdown-label{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1rem;}
+.countdown-digits{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.countdown-unit{text-align:center;}
+.countdown-num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:#fff;line-height:1;display:block;}
+.countdown-unit-label{font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:0.3rem;display:block;}
+.countdown-over{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#fff;}
+section{padding:4rem 2rem;}
+.section-inner{max-width:860px;margin:0 auto;}
+.section-tag{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-4);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.8rem;}
+.section-tag::after{content:'';flex:1;height:1px;background:var(--rule-light);}
+h2.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:700;line-height:1.2;color:var(--ink);margin-bottom:1.2rem;}
+.section-lead{font-size:1.05rem;color:var(--ink-2);line-height:1.75;margin-bottom:2rem;}
+.fact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:2.5rem;}
+.fact-card{background:var(--white);padding:1.6rem;}
+.fact-label{font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-3);margin-bottom:0.5rem;display:block;}
+.fact-value{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--accent);line-height:1.2;margin-bottom:0.3rem;}
+.fact-desc{font-size:0.88rem;color:var(--ink-3);line-height:1.55;}
+.analysis-block{border-left:3px solid var(--accent-2);padding:1.5rem 1.5rem 1.5rem 2rem;margin:2rem 0;background:var(--paper-2);}
+.analysis-block h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:0.6rem;}
+.analysis-block p{font-size:0.95rem;color:var(--ink-2);line-height:1.7;}
+.btn-back{font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-2);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:2rem;}
+.btn-back:hover{color:var(--accent);}
+footer{background:var(--ink);color:rgba(255,255,255,0.55);padding:2rem;text-align:center;font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;}
+footer a{color:rgba(255,255,255,0.55);text-decoration:none;}
+footer a:hover{color:#fff;}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">Rundfunkkritik<span>.de</span></a>
+  <ul class="nav-links">
+    <li><a href="/#aktuell">Aktuell</a></li>
+    <li><a href="/#mechanismen">Mechanismen</a></li>
+    <li><a href="/#beweise">Beweise</a></li>
+    <li><a href="/#urteile">Urteile</a></li>
+  </ul>
+  <a class="nav-cta" href="widerstand.html">Stiller Widerstand</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">Bundesverfassungsgericht · 23. Juni 2026 · 10:00 Uhr</div>
+    <h1>Verhandlung<br><em>Rundfunkfinanzierung II</em></h1>
+    <p class="hero-lead">ARD und ZDF klagen beim Bundesverfassungsgericht – nicht für eine sofortige Beitragserhöhung, sondern für ein strukturelles Grundsatzurteil, das KEF-Empfehlungen künftig bindend machen soll. Eine Analyse der Hintergründe.</p>
+    <div class="countdown-box">
+      <div class="countdown-label">Countdown bis zur Verhandlung</div>
+      <div class="countdown-digits" id="countdown-display">
+        <div class="countdown-unit"><span class="countdown-num" id="cd-days">--</span><span class="countdown-unit-label">Tage</span></div>
+        <div class="countdown-unit"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-unit-label">Stunden</span></div>
+        <div class="countdown-unit"><span class="countdown-num" id="cd-min">--</span><span class="countdown-unit-label">Minuten</span></div>
+        <div class="countdown-unit"><span class="countdown-num" id="cd-sec">--</span><span class="countdown-unit-label">Sekunden</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--paper-2);border-bottom:1px solid var(--rule);">
+  <div class="section-inner">
+    <a class="btn-back" href="/">← Zurück zur Übersicht</a>
+    <div class="section-tag">Verfahrensdaten</div>
+    <h2 class="section-title">Was verhandelt wird</h2>
+    <div class="fact-grid">
+      <div class="fact-card">
+        <span class="fact-label">Verfahren</span>
+        <div class="fact-value">Rundfunkfinanzierung II</div>
+        <p class="fact-desc">Az. 1 BvR 2524/24 und 2525/24 · Erster Senat unter Präsident Harbarth</p>
+      </div>
+      <div class="fact-card">
+        <span class="fact-label">Kläger</span>
+        <div class="fact-value">ZDF + 9 ARD-Anstalten</div>
+        <p class="fact-desc">Klage wegen unterlassener Erhöhung des Rundfunkbeitrags von 18,36 € auf 18,94 € (KEF 24. Bericht)</p>
+      </div>
+      <div class="fact-card">
+        <span class="fact-label">Rechtliche Rüge</span>
+        <div class="fact-value">Art. 5 Abs. 1 S. 2 GG</div>
+        <p class="fact-desc">Rundfunkfreiheit – Kläger sehen strukturelle Unterfinanzierung als Verfassungsverstoß</p>
+      </div>
+      <div class="fact-card">
+        <span class="fact-label">KEF 25. Bericht (Feb. 2026)</span>
+        <div class="fact-value">18,64 € ab 2027</div>
+        <p class="fact-desc">Die KEF hat ihre ursprüngliche Empfehlung von 18,94 € zurückgenommen und auf 18,64 € korrigiert</p>
+      </div>
+      <div class="fact-card">
+        <span class="fact-label">Urteilstermin</span>
+        <div class="fact-value">Herbst 2026</div>
+        <p class="fact-desc">Verhandlung am 23.06.2026, Urteilsverkündung voraussichtlich Herbst 2026 erwartet</p>
+      </div>
+      <div class="fact-card">
+        <span class="fact-label">PM-Quelle</span>
+        <div class="fact-value">PM 29/2026</div>
+        <p class="fact-desc">Pressemitteilung des BVerfG vom 13. Mai 2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="section-tag">Analyse</div>
+    <h2 class="section-title">Was ARD und ZDF wirklich wollen</h2>
+    <p class="section-lead">Auf den ersten Blick geht es um 58 Cent mehr pro Monat. Auf den zweiten Blick geht es um eine grundlegende Neuordnung der Beitragsstruktur – mit dauerhaften Folgen für Millionen Beitragszahler.</p>
+
+    <div class="analysis-block">
+      <h3>Das eigentliche Ziel: Bindende KEF-Empfehlungen</h3>
+      <p>ARD und ZDF wollen kein Urteil, das einmalig eine Beitragserhöhung anordnet. Sie wollen ein strukturelles Grundsatzurteil, das KEF-Empfehlungen für die Länderparlamente bindend macht. Damit würde die demokratische Kontrolle über die Beitragshöhe faktisch entfallen – kein Landtag könnte mehr „Nein" sagen.</p>
+    </div>
+
+    <div class="analysis-block">
+      <h3>Die Asymmetrie: KEF korrigiert sich selbst</h3>
+      <p>Paradoxerweise hat die KEF im 25. Bericht (Februar 2026) ihre eigene Empfehlung von 18,94 € auf 18,64 € gesenkt. Das Verfahren läuft dennoch – weil es nie primär um den konkreten Betrag ging, sondern um das Präzedenzprinzip: Wer hat das letzte Wort bei der Beitragsfestsetzung?</p>
+    </div>
+
+    <div class="analysis-block">
+      <h3>Was ein Grundsatzurteil bedeuten würde</h3>
+      <p>Würde der Erste Senat den Sendern folgen, verlören die Länderparlamente ihr zentrales Kontrollinstrument über den ÖRR. Künftige Beitragserhöhungen wären automatisch, solange die KEF sie empfiehlt – unabhängig von politischen Mehrheiten, Spardebatten oder öffentlicher Meinung. Das widerspricht dem demokratischen Prinzip der parlamentarischen Haushaltskontrolle.</p>
+    </div>
+
+    <div class="analysis-block">
+      <h3>Einordnung: Was Bürger jetzt wissen müssen</h3>
+      <p>Bürger, die den Rundfunkbeitrag anfechten oder aussetzen lassen wollen, sollten das BVerfG-Verfahren genau verfolgen. Markus Bönig und die Freiheitskanzlei/Beitragsstopper erarbeiten derzeit ein multidisziplinäres Hauptgutachten, das auf dem Vorgutachten aufbaut und die neue Rechtslage einschließt. Mehr dazu: <a href="boenig_rechtsstrategie_2026.html" style="color:var(--accent-2);">Die neue Rechtsstrategie (Bönig-Analyse)</a>.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Rundfunkkritik.de · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+</footer>
+
+<script>
+// Countdown bis 23.06.2026 10:00 Uhr (MEZ = UTC+2)
+const target = new Date('2026-06-23T10:00:00+02:00').getTime();
+function updateCountdown() {
+  const now = Date.now();
+  const diff = target - now;
+  if (diff <= 0) {
+    document.getElementById('countdown-display').innerHTML = '<span class="countdown-over">Die Verhandlung hat begonnen.</span>';
+    return;
+  }
+  const days = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
+  const min = Math.floor((diff % 3600000) / 60000);
+  const sec = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-days').textContent = String(days).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+  document.getElementById('cd-min').textContent = String(min).padStart(2,'0');
+  document.getElementById('cd-sec').textContent = String(sec).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>
