@@ -4,7 +4,7 @@
   <!-- Startseite -->
   <url>
     <loc>https://www.rundfunkkritik.de/</loc>
-    <lastmod>2026-05-23</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -66,6 +66,27 @@
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.rundfunkkritik.de/wdr_pressefreiheit_2026.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.rundfunkkritik.de/gutachten_vielfalt_oerr_2026.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.rundfunkkritik.de/agenda_cutting_oerr_2026.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
