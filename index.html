@@ -229,7 +229,18 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
     .cd-unit .cd-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--accent);line-height:1;display:block;}
     .cd-unit .cd-label{font-family:'JetBrains Mono',monospace;font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-4);display:block;margin-top:2px;}
     @media(max-width:600px){.news-card--countdown{grid-template-columns:1fr;}.cd-ticker{justify-content:center;}}
-  </style>
+  
+/* Newsletter */
+.newsletter-section{background:var(--ink);color:#f2eee4;padding:48px 2rem;text-align:center}
+.newsletter-section .k{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:#d8a39c;display:block;margin-bottom:8px}
+.newsletter-section h3{font-family:var(--display);color:#fff;font-size:27px;margin:10px 0 8px}
+.newsletter-section p{color:#cdd2dd;font-size:17px;max-width:460px;margin:0 auto 20px;line-height:1.5}
+.nl-subscribe-btn{display:inline-block;font-family:var(--mono);font-size:13px;letter-spacing:1px;text-transform:uppercase;background:var(--accent);color:var(--ink);padding:12px 28px;border-radius:3px;text-decoration:none;transition:background .2s}
+.nl-subscribe-btn:hover{background:var(--accent-deep)}
+.newsletter-section .alt{font-family:var(--mono);font-size:12px;color:#9aa3b4;margin-top:12px}
+.newsletter-section .alt a{color:#d8a39c;text-decoration:none;border-bottom:1px solid rgba(216,163,156,.4)}
+
+</style>
 <!-- Google Analytics: nur mit Einwilligung laden. Aktivierung via Consent-Manager erforderlich (DSGVO).
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HF9W1DLQLL"></script>
   <script>
@@ -300,22 +311,27 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
           <div class="cd-unit"><span class="cd-num" id="cd-s">--</span><span class="cd-label">Sek</span></div>
         </div>
       </div>
-      <a class="news-card reveal delay-1a" href="wdr_pressefreiheit_2026.html">
+      <a class="news-card reveal delay-1a" href="der_cut_oerr_2026.html">
+        <span class="news-card-tag">Analyse · Neu · Mai 2026</span>
+        <h4>Der Cut – Wie der ÖRR sein Meinungsspektrum eliminierte</h4>
+        <p>Monitor links, Löwenthal rechts – der ÖRR hatte ein Meinungsspektrum. Die Anstalt, Wodarg, Bhakdi: geehrt und gesendet. Dann kam der Cut.</p>
+      </a>
+            <a class="news-card reveal delay-1b" href="wdr_pressefreiheit_2026.html">
         <span class="news-card-tag" style="color:var(--red);">Analyse · Neu · Mai 2026</span>
         <h4>WDR und Pressefreiheit: Meinungskontrolle, Marktverdrängung, Algorithmen</h4>
         <p>Drei Ebenen der Kontrolle: Meinungslenkung durch den WDR, Verdrängung privater Verleger und algorithmische Steuerung über den DMStV. Quellen: Ruhrbarone, WBS.legal, BLM, Monitor.</p>
       </a>
-      <a class="news-card reveal delay-1b" href="gutachten_vielfalt_oerr_2026.html">
+      <a class="news-card reveal delay-1c" href="gutachten_vielfalt_oerr_2026.html">
         <span class="news-card-tag" style="color:var(--red);">Gutachten-Analyse · Neu · Mai 2026</span>
         <h4>BR-Gutachten: PR-Lesart vs. tatsächliche Befunde</h4>
         <p>Stark, Maurer, Stegmann, Reinemann: Vergleichstabelle der offiziellen Darstellung und der echten Ergebnisse, Benchmark-Problem und fehlende unabhängige Kontrolle.</p>
       </a>
-      <a class="news-card reveal delay-1c" href="agenda_cutting_oerr_2026.html">
+      <a class="news-card reveal delay-1d" href="agenda_cutting_oerr_2026.html">
         <span class="news-card-tag" style="color:var(--red);">Analyse · Neu · Mai 2026</span>
         <h4>Agenda-Cutting: Was der ÖRR nicht berichtet</h4>
         <p>Vergessene Nachrichten (INA), Agenda-Cutting-Theorie (Haarkötter), Gutachten-Lücken und der Fall RBB/Schlesinger. Mit DSGVO-konformem Newsletter-Widget.</p>
       </a>
-      <a class="news-card reveal delay-1d" href="boenig_vollversion_2026.html">
+      <a class="news-card reveal delay-1e" href="boenig_vollversion_2026.html">
         <span class="news-card-tag" style="color:var(--red);">Vollversion · Neu · ~15 Min.</span>
         <h4>Bönig: 22 Verfahren, Beweisbausteine A–G, Doppelstrategie</h4>
         <p>Die vollständige Rechtsstrategie: alle laufenden Verfahren, die Beweisarchitektur und warum die Kombination BVerwG + BGH eine neue Prozessrealität schafft.</p>
@@ -367,6 +383,15 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
       </a>
     </div>
   </div>
+</section>
+
+<!-- NEWSLETTER (DSGVO-konform, kein Iframe) -->
+<section class="newsletter-section">
+  <span class="k">Newsletter</span>
+  <h3>Kurs VERNUNFT</h3>
+  <p>Strukturelle Medienanalyse, juristisch belastbar und ohne Polemik – neue Beiträge direkt ins Postfach.</p>
+  <a class="nl-subscribe-btn" href="https://manfredsolo.substack.com/subscribe" target="_blank" rel="noopener">Kostenlos abonnieren →</a>
+  <p class="alt">Kein Konto nötig. Abmeldung jederzeit. Betrieben über <a href="https://manfredsolo.substack.com" target="_blank" rel="noopener">Substack</a>. <a href="datenschutz.html">Datenschutz</a></p>
 </section>
 
 <section id="toegel-videos">
