@@ -205,8 +205,30 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
     a.urteil-card{display:block;text-decoration:none;color:inherit;cursor:pointer;}
     a.urteil-card:hover{border-color:var(--accent-2) !important;transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.07);}
   
-    .aside-card--highlight{border-left:2px solid var(--accent-2);background:var(--paper-2);}
+    .aside-card--highlight{background:var(--paper-2);}
     .aside-card--highlight .aside-card-title{color:var(--accent-2);}
+    /* Video-Rubrik */
+    #toegel-videos{background:var(--paper-2);border-top:1px solid var(--rule);}
+    .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.4rem;margin-top:2rem;}
+    .video-card{background:var(--white);border:1px solid var(--rule);padding:0;overflow:hidden;transition:border-color 0.2s,transform 0.2s;}
+    .video-card:hover{border-color:var(--accent-2);transform:translateY(-2px);}
+    .video-thumb{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--ink);}
+    .video-thumb-link{display:block;position:relative;}
+    .video-play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;background:rgba(255,255,255,0.92);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+    .video-play-icon svg{margin-left:4px;}
+    .video-info{padding:1rem;}
+    .video-tag{font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-2);margin-bottom:0.5rem;display:block;}
+    .video-info h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:0.4rem;}
+    .video-info p{font-size:0.85rem;color:var(--ink-3);line-height:1.5;}
+    .video-playlist-link{display:inline-block;margin-top:1.5rem;font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-2);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;}
+    .video-playlist-link:hover{color:var(--accent);border-color:var(--accent);}
+    /* Countdown card full-width */
+    .news-card--countdown{grid-column:1/-1;display:grid;grid-template-columns:1fr auto;align-items:start;gap:1.5rem;}
+    .cd-ticker{display:flex;gap:0.8rem;flex-wrap:wrap;}
+    .cd-unit{text-align:center;min-width:52px;}
+    .cd-unit .cd-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--accent);line-height:1;display:block;}
+    .cd-unit .cd-label{font-family:'JetBrains Mono',monospace;font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-4);display:block;margin-top:2px;}
+    @media(max-width:600px){.news-card--countdown{grid-template-columns:1fr;}.cd-ticker{justify-content:center;}}
   </style>
 <!-- Google Analytics: nur mit Einwilligung laden. Aktivierung via Consent-Manager erforderlich (DSGVO).
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HF9W1DLQLL"></script>
@@ -266,28 +288,17 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
     
     <div class="news-grid">
       <div class="news-card news-card--countdown reveal delay-1">
-        <span class="news-card-tag">Countdown · 23. Juni 2026 · 10:00 Uhr</span>
-        <h4><a href="bverfg_kampagne_juni2026.html" style="color:inherit;text-decoration:none;">BVerfG 23. Juni: Countdown &amp; Hintergrund</a></h4>
-        <div class="countdown-inline" id="cd-inline" style="display:flex;gap:1rem;margin:0.8rem 0;flex-wrap:wrap;">
-          <div style="text-align:center;min-width:2.5rem;">
-            <span id="cd-d" style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--accent);display:block;line-height:1;">--</span>
-            <span style="font-family:'JetBrains Mono',monospace;font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-4);">Tage</span>
-          </div>
-          <div style="text-align:center;min-width:2.5rem;">
-            <span id="cd-h" style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--accent);display:block;line-height:1;">--</span>
-            <span style="font-family:'JetBrains Mono',monospace;font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-4);">Std</span>
-          </div>
-          <div style="text-align:center;min-width:2.5rem;">
-            <span id="cd-m" style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--accent);display:block;line-height:1;">--</span>
-            <span style="font-family:'JetBrains Mono',monospace;font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-4);">Min</span>
-          </div>
-          <div style="text-align:center;min-width:2.5rem;">
-            <span id="cd-s" style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--accent);display:block;line-height:1;">--</span>
-            <span style="font-family:'JetBrains Mono',monospace;font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-4);">Sek</span>
-          </div>
+        <div>
+          <span class="news-card-tag">Countdown · 23. Juni 2026 · 10:00 Uhr · Karlsruhe</span>
+          <h4><a href="bverfg_kampagne_juni2026.html" style="color:inherit;text-decoration:none;">BVerfG 23. Juni: Countdown &amp; Hintergrund</a></h4>
+          <p style="font-size:0.88rem;color:var(--ink-3);margin-top:0.4rem;">Rundfunkfinanzierung II · Az. 1 BvR 2524/24 · Erster Senat</p>
         </div>
-        <p style="font-size:0.88rem;color:var(--ink-3);line-height:1.55;">Was ARD &amp; ZDF wirklich wollen – und warum das Verfahren alle angeht.</p>
-        <a href="bverfg_kampagne_juni2026.html" style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-2);text-decoration:none;display:inline-block;margin-top:0.6rem;">Vollständige Analyse →</a>
+        <div class="cd-ticker" aria-label="Countdown zur Verhandlung">
+          <div class="cd-unit"><span class="cd-num" id="cd-d">--</span><span class="cd-label">Tage</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cd-h">--</span><span class="cd-label">Std</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cd-m">--</span><span class="cd-label">Min</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cd-s">--</span><span class="cd-label">Sek</span></div>
+        </div>
       </div>
       <a class="news-card reveal delay-1b" href="boenig_vollversion_2026.html">
         <span class="news-card-tag" style="color:var(--red);">Vollversion · Neu · ~15 Min.</span>
@@ -340,6 +351,28 @@ footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:3rem 2rem;}
         <p>Interaktive Visualisierung der finanziellen und personellen Verflechtungen im öffentlich-rechtlichen Rundfunk.</p>
       </a>
     </div>
+  </div>
+</section>
+
+<section id="toegel-videos">
+  <div class="section-inner">
+    <div class="section-tag">Video-Rubrik</div>
+    <h2 class="section-title">Dr. Jonas Tögel – Kognitive Kriegsführung</h2>
+    <p class="section-lead">Medienpsychologische Analyse: Wie Narrativ-Management und kognitive Beeinflussung in westlichen Medien funktionieren – systematisch erklärt von Dr. Jonas Tögel.</p>
+    <div class="video-grid">
+      <div class="video-card reveal delay-1">
+        <a class="video-thumb-link" href="https://www.youtube.com/watch?v=frol6BS3cy0&amp;list=PLrlTHNl9A1Kut0G0803YKWHmV8MIja709" target="_blank" rel="noopener" aria-label="Dr. Jonas Tögel: Kognitive Kriegsführung – Playlist auf YouTube">
+          <img class="video-thumb" src="https://img.youtube.com/vi/frol6BS3cy0/hqdefault.jpg" alt="Dr. Jonas Tögel – Kognitive Kriegsführung (YouTube)" loading="lazy">
+          <div class="video-play-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="var(--accent)"/></svg></div>
+        </a>
+        <div class="video-info">
+          <span class="video-tag">Playlist · Dr. Jonas Tögel</span>
+          <h4>Kognitive Kriegsführung – die komplette Playlist</h4>
+          <p>Systematische Einführung in Techniken der medialen Meinungssteuerung, Propaganda-Anatomie und kognitive Kriegsführung im 21. Jahrhundert.</p>
+        </div>
+      </div>
+    </div>
+    <a class="video-playlist-link reveal delay-2" href="https://www.youtube.com/watch?v=frol6BS3cy0&amp;list=PLrlTHNl9A1Kut0G0803YKWHmV8MIja709" target="_blank" rel="noopener">→ Gesamte Playlist auf YouTube ansehen</a>
   </div>
 </section>
 
