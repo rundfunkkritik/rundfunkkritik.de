@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Der Cut — Wie der ÖRR sein Meinungsspektrum eliminierte · Rundfunkkritik.de</title>
+<meta name="description" content="Monitor links, Löwenthal rechts — der ÖRR hatte einmal ein Meinungsspektrum. Die Anstalt entlarvte 2014 transatlantische Netzwerke, Wodarg deckte 2009 den Schweinegrippe-Skandal auf, Bhakdi erhielt den Verdienstorden. Dann kam der Cut.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Der Cut — Wie der ÖRR sein Meinungsspektrum eliminierte">
+<meta property="og:description" content="Vorher/Nachher: Wie Stimmen, die der ÖRR einst ehrte und sendete, vom selben System delegitimiert wurden. Strukturelle Analyse mit Quellen.">
+<meta property="og:url" content="https://www.rundfunkkritik.de/der_cut_oerr_2026.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a2238;
+    --ink-soft:#33405e;
+    --paper:#f4efe4;
+    --paper-2:#efe8da;
+    --card:#fbf8f1;
+    --accent:#9e2b25;
+    --accent-2:#9e2b25;
+    --accent-deep:#7a1f1b;
+    --rule-light:rgba(26,34,56,.14);
+    --rule-strong:rgba(26,34,56,.30);
+    --muted:#5c6577;
+    --serif:'Crimson Pro',Georgia,serif;
+    --display:'Playfair Display',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--serif);
+    font-size:20px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  /* ── Navigation ── */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(244,239,228,.92);
+    backdrop-filter:saturate(140%) blur(8px);
+    border-bottom:1px solid var(--rule-light);
+  }
+  .nav-inner{
+    max-width:1080px;margin:0 auto;padding:14px 22px;
+    display:flex;align-items:center;justify-content:space-between;gap:18px;
+  }
+  .brand{
+    font-family:var(--display);font-weight:800;font-size:20px;
+    letter-spacing:.2px;color:var(--ink);text-decoration:none;
+  }
+  .brand span{color:var(--accent)}
+  .nav-links{display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+  .nav-links a{
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.5px;
+    text-transform:uppercase;color:var(--ink-soft);text-decoration:none;
+    padding-bottom:2px;border-bottom:1px solid transparent;transition:.2s;
+  }
+  .nav-links a:hover{color:var(--accent);border-color:var(--accent)}
+  @media(max-width:720px){.nav-links{display:none}}
+
+  /* ── Header ── */
+  .art-header{
+    max-width:var(--maxw);margin:0 auto;padding:64px 22px 30px;
+  }
+  .eyebrow{
+    font-family:var(--mono);font-size:12.5px;letter-spacing:2px;
+    text-transform:uppercase;color:var(--accent);margin-bottom:20px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--accent)}
+  h1{
+    font-family:var(--display);font-weight:800;line-height:1.08;
+    font-size:clamp(34px,6vw,52px);letter-spacing:-.5px;color:var(--ink);
+    margin-bottom:22px;
+  }
+  .standfirst{
+    font-size:22px;color:var(--ink-soft);font-weight:400;line-height:1.5;
+    max-width:640px;
+  }
+  .art-meta{
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.4px;
+    color:var(--muted);margin-top:26px;padding-top:18px;
+    border-top:1px solid var(--rule-light);
+  }
+
+  /* ── Article body ── */
+  .art-body{max-width:var(--maxw);margin:0 auto;padding:14px 22px 40px}
+  .art-body p{margin:0 0 22px}
+  .lead{font-size:23px;line-height:1.55;color:var(--ink)}
+  .lead .drop{
+    float:left;font-family:var(--display);font-weight:800;
+    font-size:74px;line-height:.78;margin:8px 12px 0 0;color:var(--accent);
+  }
+
+  .level{margin:50px 0 0;scroll-margin-top:90px}
+  .level-tag{
+    font-family:var(--mono);font-size:12px;letter-spacing:1.5px;
+    text-transform:uppercase;color:#fff;background:var(--accent);
+    display:inline-block;padding:5px 11px;border-radius:2px;margin-bottom:14px;
+  }
+  h2{
+    font-family:var(--display);font-weight:700;font-size:clamp(26px,4vw,33px);
+    line-height:1.15;color:var(--ink);margin:0 0 8px;letter-spacing:-.3px;
+  }
+  .who{
+    font-family:var(--mono);font-size:13px;color:var(--muted);
+    margin-bottom:18px;letter-spacing:.3px;
+  }
+  h3{
+    font-family:var(--display);font-weight:600;font-size:22px;
+    color:var(--ink);margin:30px 0 8px;
+  }
+  a.inline{
+    color:var(--accent);text-decoration:none;
+    border-bottom:1px solid var(--rule-strong);transition:.15s;
+  }
+  a.inline:hover{border-color:var(--accent);background:rgba(158,43,37,.06)}
+  strong{font-weight:600;color:var(--ink)}
+
+  /* Pull-quote */
+  blockquote{
+    margin:34px 0;padding:6px 0 6px 26px;
+    border-left:3px solid var(--accent);
+    font-family:var(--display);font-style:italic;font-weight:500;
+    font-size:26px;line-height:1.35;color:var(--ink);
+  }
+  blockquote cite{
+    display:block;margin-top:12px;font-family:var(--mono);font-style:normal;
+    font-size:12.5px;letter-spacing:.4px;color:var(--muted);
+  }
+
+  /* Callout */
+  .callout{
+    background:var(--card);border:1px solid var(--rule-light);
+    border-radius:4px;padding:26px 28px;margin:36px 0;
+    box-shadow:0 1px 0 rgba(26,34,56,.04);
+  }
+  .callout p{margin:0;font-size:20px;color:var(--ink-soft)}
+  .callout p strong{color:var(--ink)}
+
+  /* Comparison table */
+  .compare{width:100%;border-collapse:collapse;margin:30px 0;font-size:17px}
+  .compare th{
+    font-family:var(--mono);font-size:12px;letter-spacing:1.2px;
+    text-transform:uppercase;color:var(--accent);padding:12px 16px;
+    text-align:left;border-bottom:2px solid var(--accent);
+  }
+  .compare td{
+    padding:14px 16px;border-bottom:1px solid var(--rule-light);
+    vertical-align:top;color:var(--ink-soft);line-height:1.5;
+  }
+  .compare tr td:first-child{font-weight:600;color:var(--ink);width:25%}
+  .compare .col-before{background:rgba(26,84,48,.04)}
+  .compare .col-after{background:rgba(158,43,37,.04)}
+
+  /* CTA links */
+  .cta-link{
+    display:block;text-decoration:none;color:inherit;
+    border:1px solid var(--rule-light);border-left:4px solid var(--accent);
+    border-radius:4px;padding:20px 24px;margin:18px 0;
+    background:var(--card);transition:.18s;
+  }
+  .cta-link:hover{transform:translateX(3px);border-left-color:var(--accent-deep);box-shadow:0 4px 18px rgba(26,34,56,.07)}
+  .cta-link .k{font-family:var(--mono);font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent)}
+  .cta-link h4{font-family:var(--display);font-weight:700;font-size:21px;color:var(--ink);margin:6px 0 6px}
+  .cta-link p{font-size:17px;color:var(--muted);margin:0;line-height:1.45}
+
+  /* Sources box */
+  .box{
+    background:var(--paper-2);border:1px solid var(--rule-light);
+    border-radius:4px;padding:26px 28px;margin:44px 0 0;
+  }
+  .box h4{
+    font-family:var(--mono);font-size:13px;letter-spacing:1.2px;
+    text-transform:uppercase;color:var(--accent);margin-bottom:16px;
+  }
+  .box ul{list-style:none;font-size:16.5px;line-height:1.5}
+  .box li{padding:8px 0;border-top:1px solid var(--rule-light);color:var(--ink-soft)}
+  .box li:first-child{border-top:0;padding-top:0}
+  .box a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--rule-light);word-break:break-word}
+  .box a:hover{border-color:var(--accent)}
+  .box .src-note{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:14px;line-height:1.5}
+
+  /* Newsletter */
+  .newsletter{
+    margin:48px 0 0;padding:34px 28px;border-radius:6px;
+    background:var(--ink);color:#f2eee4;text-align:center;
+  }
+  .newsletter .k{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:#d8a39c}
+  .newsletter h3{font-family:var(--display);color:#fff;font-size:27px;margin:10px 0 8px}
+  .newsletter p{color:#cdd2dd;font-size:17px;max-width:460px;margin:0 auto 20px;line-height:1.5}
+  .newsletter .alt{font-family:var(--mono);font-size:12px;color:#9aa3b4;margin-top:6px}
+  .newsletter .alt a{color:#d8a39c;text-decoration:none;border-bottom:1px solid rgba(216,163,156,.4)}
+  .nl-subscribe-btn{display:inline-block;font-family:var(--mono);font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#fff;background:var(--accent);border:none;border-radius:3px;padding:14px 32px;text-decoration:none;transition:background .2s}
+  .nl-subscribe-btn:hover{background:var(--accent-deep)}
+
+  /* Footer */
+  footer{margin-top:64px;background:var(--ink);color:#cdd2dd}
+  .footer-inner{
+    max-width:1080px;margin:0 auto;padding:48px 22px 24px;
+    display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:36px;
+  }
+  .footer-brand{font-family:var(--display);font-weight:800;font-size:22px;color:#fff}
+  .footer-brand span{color:var(--accent)}
+  .footer-tagline{font-size:16px;color:#9aa3b4;margin-top:12px;line-height:1.5}
+  .footer-col h4{font-family:var(--mono);font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:#d8a39c;margin-bottom:14px}
+  .footer-col ul{list-style:none}
+  .footer-col li{margin-bottom:9px}
+  .footer-col a{color:#cdd2dd;text-decoration:none;font-size:16px;transition:.15s}
+  .footer-col a:hover{color:#fff}
+  .footer-bottom{
+    max-width:1080px;margin:0 auto;padding:18px 22px 40px;
+    border-top:1px solid rgba(255,255,255,.1);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-family:var(--mono);font-size:12px;color:#8089a0;
+  }
+  .footer-bottom a{color:#8089a0;text-decoration:none}
+  .footer-bottom a:hover{color:#fff}
+  @media(max-width:720px){.footer-inner{grid-template-columns:1fr;gap:28px}}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">Rundfunkkritik<span>.de</span></a>
+    <div class="nav-links">
+      <a href="index.html#aktuell">Aktuell</a>
+      <a href="index.html#mechanismen">10 Mechanismen</a>
+      <a href="medienaufsicht_macht_serie_2026.html">Serie I</a>
+      <a href="serie2_meinungsmache_2026.html">Serie II</a>
+      <a href="widerstand.html">Stiller Widerstand</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HEADER ── -->
+<header class="art-header">
+  <div class="eyebrow">Analyse · Meinungsspektrum</div>
+  <h1>Der Cut — Wie der ÖRR sein eigenes Meinungsspektrum eliminierte</h1>
+  <p class="standfirst">Monitor links, Löwenthal rechts, Die Anstalt deckte transatlantische Netzwerke auf, Wodarg entlarvte den Schweinegrippe-Skandal, Bhakdi erhielt den Verdienstorden. Dann kam der Cut — und dieselben Stimmen galten plötzlich als unsendbar.</p>
+  <div class="art-meta">Rundfunkkritik.de · Analyse · Mai 2026 · Lesezeit ca.&nbsp;10 Minuten</div>
+</header>
+
+<!-- ── ARTICLE ── -->
+<article class="art-body">
+
+  <p class="lead"><span class="drop">E</span>s gab eine Zeit, in der der öffentlich-rechtliche Rundfunk Meinungspluralität nicht nur zuließ, sondern bewusst organisierte. Gerhard Löwenthal moderierte das ZDF-Magazin als dezidiert konservativer Gegenpol zu Monitor. Die Anstalt entlarvte 2014 live im ZDF die transatlantischen Verflechtungen deutscher Leitmedien. Wolfgang Wodarg wurde 2009 als Europarat-Aufklärer gefeiert. Sucharit Bhakdi erhielt 2005 den Verdienstorden seines Bundeslandes. Keine dieser Stimmen war am Rand — sie waren im Zentrum des Systems. Und dann waren sie es nicht mehr.</p>
+
+  <!-- TEIL 1 -->
+  <section class="level reveal">
+    <span class="level-tag">Teil 1 — Das alte Modell</span>
+    <h2>Pluralität durch Gegenpole</h2>
+    <div class="who">Löwenthal, Monitor und das verschwundene Spektrum</div>
+    <p>Von 1969 bis 1987 moderierte Gerhard Löwenthal das <strong>ZDF-Magazin</strong> — ein dezidiert konservatives, teils erzkonservatives Politmagazin, das sich als Gegenstimme zu den linksliberalen ARD-Formaten wie Monitor und Panorama verstand. Löwenthal war Antikommunist, Menschenrechtsaktivist und überlebender des KZ Sachsenhausen. Sein Magazin war einseitig — aber es war gewollt so, als Teil eines Systems, das Pluralität durch organisierte Gegenpole herstellte.</p>
+    <p>Das Prinzip war einfach: Wer Monitor sah, hörte die linke Perspektive. Wer das ZDF-Magazin sah, hörte die rechte. Beide waren im System, beide wurden gesendet, beide hatten Sendeplätze zur besten Zeit. Der Zuschauer konnte vergleichen. Genau das war der Auftrag.</p>
+
+    <blockquote>Während in den Zeiten davor noch erzkonservative Moderatoren wie Gerhard Löwenthal und Sendungen wie Monitor über die Bildschirme flackerten, sind derartige Meinungen seit 2020 nicht mehr gesellschaftskonform.
+      <cite>— Diplomatic Council, Analyse zur Neutralität von ARD und ZDF</cite>
+    </blockquote>
+
+    <p>Heute existiert kein vergleichbares Format mehr. Kein Politmagazin im ÖRR vertritt eine dezidiert konservative Gegenposition. Das Spektrum hat sich nicht verschoben — es wurde <strong>amputiert</strong>. Was übrig blieb, ist programmatische Homogenität, die sich selbst für die Mitte hält.</p>
+  </section>
+
+  <!-- TEIL 2 -->
+  <section class="level reveal">
+    <span class="level-tag">Teil 2 — Die Anstalt</span>
+    <h2>Aufklärung und Rückzug</h2>
+    <div class="who">2014: Transatlantische Netzwerke · 2022: Putin-Witze</div>
+
+    <h3>29. April 2014: Die historische Sendung</h3>
+    <p>Max Uthoff und Claus von Wagner zeigten in der ZDF-Sendung <strong>Die Anstalt</strong> auf einem Whiteboard die Verflechtungen führender deutscher Journalisten mit transatlantischen Think Tanks — NATO-nahe Organisationen, in denen Militärs, Wirtschaftsbosse und Politiker Außenpolitik koordinieren. Namentlich benannt wurden Josef Joffe und Jochen Bittner von der <em>Zeit</em>, die daraufhin einstweilige Verfügungen beim LG Hamburg erwirkten. Die Sendung wurde zeitweise aus der ZDF-Mediathek entfernt.</p>
+    <p>Am Ende verloren Joffe und Bittner in dritter Instanz. Die Anstalt hatte die Wahrheit gesendet. Und sie hatte für diese Sendung den Kommunikationswissenschaftler Uwe Krüger als Berater konsultiert — wissenschaftlich fundierte Satire im besten Sinne des Programmauftrags.</p>
+
+    <div class="callout">
+      <p><strong>Zur Einordnung:</strong> In derselben Periode (2014) kritisierte Die Anstalt die Ukraine-Berichterstattung der Tagesschau als einseitig, zitierte die ehemalige ARD-Korrespondentin Gabriele Krone-Schmalz und dokumentierte, wie das EU-Assoziierungsabkommen die militärische Dimension der Ukraine-Krise verschleierte. Alles sendbar, alles im ZDF.</p>
+    </div>
+
+    <h3>8. März 2022: Der Bruch</h3>
+    <p>Acht Jahre später sendete Die Anstalt eine Ausgabe zum Ukraine-Krieg, die das Gegenteil dessen tat, was das Format einst auszeichnete. Statt struktureller Analyse kamen Dämonisierungen, statt Netzwerk-Recherche kamen billige Witze. Die NachDenkSeiten dokumentierten die Reaktionen langjähriger Zuschauer, die das Format live besucht hatten und fassungslos waren.</p>
+    <p>Der Kontrast ist dokumentiert: 2014 entlarvte Die Anstalt die Propaganda der Tagesschau — 2022 reproduzierte sie dieselbe Propaganda. Derselbe Sendeplatz, derselbe Sender, dieselben Moderatoren. Nur die Richtung hatte sich um 180 Grad gedreht.</p>
+  </section>
+
+  <!-- TEIL 3 -->
+  <section class="level reveal">
+    <span class="level-tag">Teil 3 — Personenbeispiele</span>
+    <h2>Vom Held zum Schwurbler</h2>
+    <div class="who">Wodarg und Bhakdi: zwei Karrieren, ein Muster</div>
+
+    <h3>Wolfgang Wodarg — Der Europarat-Aufklärer</h3>
+    <p>Wolfgang Wodarg (SPD), Arzt und Epidemiologe, war Chef des Unterausschusses für Gesundheit der Parlamentarischen Versammlung des Europarats. Im Dezember 2009 initiierte er eine Dringlichkeitsdebatte und einen Untersuchungsausschuss zum Thema „Gesundheitsgefahr durch gefälschte Pandemien". Sein Antrag wurde <strong>einstimmig</strong> beschlossen.</p>
+    <p>Wodarg argumentierte, die WHO habe unter dem Einfluss der Pharmaindustrie die höchste Pandemiestufe für eine Grippewelle ausgerufen, die harmloser war als alle Vorjahre. Britische Journalisten vom Bureau of Investigative Journalism und vom <em>British Medical Journal</em> bestätigten später seinen Verdacht: Die WHO-Berater, die zur Pandemie-Erklärung rieten, hatten finanzielle Verbindungen zur Pharmaindustrie.</p>
+    <p>Im Tagesspiegel hieß es 2009 neutral-respektvoll: Wodarg halte den Umgang mit der Schweinegrippe für „einen der größten Medizinskandale des Jahrhunderts". Er wurde als seriöser institutioneller Akteur behandelt — was er war.</p>
+    <p>Ab 2020 machte Wodarg strukturell dieselbe Argumentation: Pandemie-Definition der WHO, Einfluss der Pharmaindustrie, mangelhaft getestete Impfstoffe unter Notzulassung. Die mediale Bewertung drehte sich um 180 Grad. Dieselben Medien, die 2009 seine Europarat-Untersuchung zitierten, klassifizierten ihn nun als Verschwörungstheoretiker. Er trat aus der SPD aus.</p>
+
+    <h3>Sucharit Bhakdi — Vom Verdienstorden zum Goldenen Brett</h3>
+    <p>Sucharit Bhakdi leitete 22 Jahre lang das Institut für Medizinische Mikrobiologie und Hygiene an der Johannes Gutenberg-Universität Mainz. Er veröffentlichte über 300 Artikel in internationalen Fachzeitschriften und gehört zu den meistzitierten Medizinforschern Deutschlands. 2001 erhielt er den Aronson-Preis für wegweisende Arbeiten zum Komplementsystem und zu bakteriellen Toxinen. 2005 verlieh ihm das Land Rheinland-Pfalz den Verdienstorden. 2009 erhielt er die Rudolf-Schönheimer-Medaille für Verdienste in der Atheroskleroseforschung.</p>
+    <p>Ab 2020 wurde derselbe Mann — seit 2012 im Ruhestand, über 70 Jahre alt, ohne Coronaviren-Forschung in seiner Publikationsliste — als gefährlicher Desinformant klassifiziert. Ende 2020 erhielt er das „Goldene Brett vorm Kopf". 2022 wollte dasselbe Bundesland, das ihm 2005 den Verdienstorden verliehen hatte, ihm den Professorentitel aberkennen.</p>
+
+    <div class="callout">
+      <p><strong>Der strukturelle Befund:</strong> In beiden Fällen änderten sich nicht die Personen — sondern die Bewertungsmaßstäbe des Systems. Wodarg argumentierte 2020 identisch wie 2009. Bhakdis wissenschaftliche Karriere war 2020 dieselbe wie 2005. Was sich änderte, war nicht die Qualität ihrer Argumente, sondern die Toleranz des Systems für abweichende Positionen.</p>
+    </div>
+  </section>
+
+  <!-- TEIL 4 -->
+  <section class="level reveal">
+    <span class="level-tag">Teil 4 — Der Befund</span>
+    <h2>Was der Cut strukturell bedeutet</h2>
+    <div class="who">Vier Muster, ein Ergebnis</div>
+
+    <p>Die Einzelfälle fügen sich zu einem strukturellen Bild:</p>
+
+    <p><strong>1. Amputation des Spektrums:</strong> Der ÖRR hatte einmal organisierte Gegenpole (Löwenthal vs. Monitor). Heute fehlt ein einziges konservatives Politmagazin im gesamten öffentlich-rechtlichen Programm.</p>
+
+    <p><strong>2. Selbstzensur der eigenen Formate:</strong> Die Anstalt konnte 2014 transatlantische Netzwerke benennen und die Tagesschau kritisieren. 2022 war das undenkbar geworden — nicht durch Verbot, sondern durch Anpassung.</p>
+
+    <p><strong>3. Delegitimierung ehemaliger Autoritäten:</strong> Personen, die das System selbst ehrte (Verdienstorden, Europarat-Vorsitz), wurden vom selben System als unseriös klassifiziert — ohne dass sich ihre Qualifikation oder Methodik geändert hätte.</p>
+
+    <p><strong>4. Zeitliche Korrelation:</strong> Die Verengung korreliert mit der Flüchtlingskrise 2015, der zunehmenden Bedeutung sozialer Medien und der COVID-19-Pandemie. Es gab keinen einzelnen Befehl, keine einzelne Anweisung — aber einen sukzessiven Schwund an tolerierten Abweichungen.</p>
+
+    <p>Das Ergebnis ist messbar: Von den <a class="inline" href="index.html#mechanismen">10 Mechanismen</a> auf der Startseite wirken hier besonders Mechanismus 2 (Publikumsverlust-Reflex), 8 (Soft Ostracism) und 9 (Selbstzensur durch Karrierelogik).</p>
+  </section>
+
+  <!-- VERGLEICHSTABELLE -->
+  <section class="level reveal">
+    <h2>Vorher / Nachher — im Überblick</h2>
+    <table class="compare">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="col-before">Vorher</th>
+          <th class="col-after">Nachher</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Meinungs&shy;spektrum</td>
+          <td class="col-before">Monitor (links) + ZDF-Magazin/Löwenthal (rechts) als gewollte Gegenpole</td>
+          <td class="col-after">Keine konservative Gegenstimme mehr im ÖRR-Programm</td>
+        </tr>
+        <tr>
+          <td>Die Anstalt</td>
+          <td class="col-before">2014: Transatlantische Netzwerke benannt, Tagesschau-Propaganda entlarvt, Krone-Schmalz zitiert</td>
+          <td class="col-after">2022: Dämonisierung, Putin-Witze, Distanzierung von eigenen früheren Positionen</td>
+        </tr>
+        <tr>
+          <td>Wolfgang Wodarg</td>
+          <td class="col-before">2009: Europarat-Vorsitzender, einstimmiger Antrag, Tagesspiegel-Interview, Aufklärer</td>
+          <td class="col-after">2020: Verschwörungstheoretiker, SPD-Austritt, mediale Ächtung — bei identischer Argumentation</td>
+        </tr>
+        <tr>
+          <td>Sucharit Bhakdi</td>
+          <td class="col-before">300+ Publikationen, Aronson-Preis 2001, Verdienstorden 2005, Schönheimer-Medaille 2009</td>
+          <td class="col-after">Goldenes Brett 2020, Titelaberkennung angedroht — vom selben Bundesland, das den Orden verlieh</td>
+        </tr>
+        <tr>
+          <td>Systemlogik</td>
+          <td class="col-before">Pluralität durch Gegengewichte; Abweichung als Teil des Auftrags</td>
+          <td class="col-after">Homogenität als Normalzustand; Abweichung als Desinformation</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- QUELLEN -->
+  <div class="box reveal">
+    <h4>Quellen</h4>
+    <ul>
+      <li><strong>Löwenthal / ZDF-Magazin:</strong> Wikipedia — <a href="https://de.wikipedia.org/wiki/ZDF-Magazin" target="_blank" rel="noopener">ZDF-Magazin</a>; Diplomatic Council — <a href="https://www.diplomatic-council.org/de/node/688" target="_blank" rel="noopener">Wie neutral sind ARD und ZDF?</a></li>
+      <li><strong>Die Anstalt 2014 / transatlantische Netzwerke:</strong> Wikipedia — <a href="https://de.wikipedia.org/wiki/Die_Anstalt" target="_blank" rel="noopener">Die Anstalt</a>; Cicero — <a href="https://www.cicero.de/kultur/zeit-gegen-zdf-journalismus-aus-der-anstalt/58042" target="_blank" rel="noopener">Zeit vs. ZDF – Journalismus aus der Anstalt</a> (07.08.2014)</li>
+      <li><strong>Die Anstalt 2022 / Kurswechsel:</strong> NachDenkSeiten — <a href="https://www.nachdenkseiten.de/?p=81788" target="_blank" rel="noopener">Leserbriefe zu „Als Die Anstalt noch Die Anstalt war"</a>; WSWS — <a href="https://www.wsws.org/de/articles/2022/03/15/anst-m15.html" target="_blank" rel="noopener">Die Anstalt und der Ukrainekrieg</a> (15.03.2022)</li>
+      <li><strong>Wolfgang Wodarg / Schweinegrippe:</strong> Tagesspiegel — <a href="https://www.tagesspiegel.de/politik/gesundheit-schweinerei-mit-der-grippe/1649052.html" target="_blank" rel="noopener">Schweinerei mit der Grippe</a> (16.12.2009); Wikipedia — <a href="https://de.wikipedia.org/wiki/Wolfgang_Wodarg" target="_blank" rel="noopener">Wolfgang Wodarg</a></li>
+      <li><strong>Sucharit Bhakdi / wissenschaftliche Karriere:</strong> Wikipedia — <a href="https://de.wikipedia.org/wiki/Sucharit_Bhakdi" target="_blank" rel="noopener">Sucharit Bhakdi</a>; t-online — <a href="https://www.t-online.de/nachrichten/deutschland/gesellschaft/id_92200080/corona-krise-sucharit-bhakdi-soll-titel-verlieren-als-professor-unwuerdig-.html" target="_blank" rel="noopener">Bhakdi soll Titel verlieren</a> (23.05.2022); Laborjournal — <a href="https://www.laborjournal.de/rubric/hintergrund/hg/hg_25_05_02.php" target="_blank" rel="noopener">Impfgegner instrumentalisieren Wissenschaft</a> (2025)</li>
+      <li><strong>Berliner Zeitung / Vielfaltsstudie:</strong> <a href="https://www.berliner-zeitung.de/article/studie-zur-ausgewogenheit-von-ard-und-zdf-ist-doch-alles-super-hier-10038587" target="_blank" rel="noopener">Studie zur politischen Ausgewogenheit</a> (29.05.2026)</li>
+    </ul>
+    <p class="src-note">Strukturelle Analyse. Keine Bewertung der inhaltlichen Positionen von Wodarg oder Bhakdi zu COVID-19. Die Darstellung dokumentiert den Wandel der institutionellen Bewertung, nicht die medizinische Debatte. Zitate wörtlich aus den verlinkten Quellen; Einordnung und Bewertung sind Meinungsäußerung im Sinne von Art.&nbsp;5 GG.</p>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter reveal">
+    <span class="k">Newsletter</span>
+    <h3>Kurs VERNUNFT</h3>
+    <p>Strukturelle Medienanalyse, juristisch belastbar und ohne Polemik — neue Beiträge direkt ins Postfach.</p>
+    <a class="nl-subscribe-btn" href="https://manfredsolo.substack.com/subscribe" target="_blank" rel="noopener">Kostenlos abonnieren →</a>
+    <p class="alt">Kein Konto nötig. Abmeldung jederzeit. Betrieben über <a href="https://manfredsolo.substack.com" target="_blank" rel="noopener">Substack</a>. <a href="datenschutz.html">Datenschutz</a></p>
+  </div>
+
+</article>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Rundfunkkritik<span>.de</span></div>
+      <p class="footer-tagline">Strukturelle Medienanalyse.<br>Juristisch belastbar. Empirisch belegbar.<br>Ohne Polemik.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Inhalt</h4>
+      <ul>
+        <li><a href="index.html#aktuell">Aktuell</a></li>
+        <li><a href="index.html#mechanismen">10 Mechanismen</a></li>
+        <li><a href="medienaufsicht_macht_serie_2026.html">Serie I</a></li>
+        <li><a href="serie2_meinungsmache_2026.html">Serie II</a></li>
+        <li><a href="widerstand.html">Stiller Widerstand</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Zum Thema</h4>
+      <ul>
+        <li><a href="bverfg_kampagne_juni2026.html">Countdown 23.06.</a></li>
+        <li><a href="macht_geld_oerr.html">Macht &amp; Geld ÖRR</a></li>
+        <li><a href="https://manfredsolo.substack.com" target="_blank" rel="noopener">Kurs VERNUNFT (Substack)</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Rundfunkkritik.de · Alle Inhalte zur freien Verwendung mit Quellenangabe</span>
+    <span>
+      <a href="impressum.html">Impressum</a> ·
+      <a href="datenschutz.html">Datenschutz</a> ·
+      <a href="mailto:kontakt@rundfunkkritik.de">Kontakt</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
+      });
+    }, {threshold:0.08});
+    document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+  })();
+</script>
+</body>
+</html>
