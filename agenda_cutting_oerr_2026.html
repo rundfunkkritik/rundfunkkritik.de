@@ -61,10 +61,8 @@
   .newsletter .k{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:#d8a39c}
   .newsletter h3{font-family:var(--display);color:#fff;font-size:27px;margin:10px 0 8px}
   .newsletter p{color:#cdd2dd;font-size:17px;max-width:460px;margin:0 auto 20px;line-height:1.5}
-  .nl-consent-btn{display:inline-block;font-family:var(--mono);font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#fff;background:var(--accent);border:none;border-radius:3px;padding:12px 28px;cursor:pointer;transition:background .2s}
-  .nl-consent-btn:hover{background:var(--accent-deep)}
-  .nl-hint{font-family:var(--mono);font-size:11.5px;color:#8089a0;margin-top:12px;line-height:1.5}
-  .nl-hint a{color:#d8a39c;text-decoration:none;border-bottom:1px solid rgba(216,163,156,.3)}
+  .nl-subscribe-btn{display:inline-block;font-family:var(--mono);font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#fff;background:var(--accent);border:none;border-radius:3px;padding:14px 32px;text-decoration:none;transition:background .2s}
+  .nl-subscribe-btn:hover{background:var(--accent-deep)}
   .newsletter .alt{font-family:var(--mono);font-size:12px;color:#9aa3b4;margin-top:6px}
   .newsletter .alt a{color:#d8a39c;text-decoration:none;border-bottom:1px solid rgba(216,163,156,.4)}
   footer{margin-top:64px;background:var(--ink);color:#cdd2dd}
@@ -211,19 +209,13 @@
     <p class="src-note">Strukturelle Analyse auf Grundlage öffentlich zugänglicher Quellen. Einordnung und Bewertung sind Meinungsäußerung im Sinne von Art.&nbsp;5 GG.</p>
   </div>
 
-  <!-- NEWSLETTER (DSGVO-konform, Click-to-Load) -->
-  <div class="newsletter reveal" id="nl-block">
+  <!-- NEWSLETTER (DSGVO-konform, kein Iframe) -->
+  <div class="newsletter reveal">
     <span class="k">Newsletter</span>
     <h3>Kurs VERNUNFT</h3>
     <p>Strukturelle Medienanalyse, juristisch belastbar und ohne Polemik — neue Beiträge direkt ins Postfach.</p>
-    <div id="nl-gate">
-      <button class="nl-consent-btn" onclick="loadSubstack()">Newsletter anzeigen</button>
-      <p class="nl-hint">Klick lädt das Anmeldeformular von <a href="https://substack.com/privacy" target="_blank" rel="noopener">Substack</a> (USA). <a href="datenschutz.html">Datenschutz</a></p>
-    </div>
-    <div id="nl-loaded" style="display:none">
-      <div id="nl-frame"></div>
-      <p class="alt">Kein Konto nötig. Abmeldung jederzeit. Betrieben über <a href="https://manfredsolo.substack.com" target="_blank" rel="noopener">Substack</a>.</p>
-    </div>
+    <a class="nl-subscribe-btn" href="https://manfredsolo.substack.com/subscribe" target="_blank" rel="noopener">Kostenlos abonnieren →</a>
+    <p class="alt">Kein Konto nötig. Abmeldung jederzeit. Betrieben über <a href="https://manfredsolo.substack.com" target="_blank" rel="noopener">Substack</a>. <a href="datenschutz.html">Datenschutz</a></p>
   </div>
 
 </article>
@@ -266,12 +258,6 @@
 </footer>
 
 <script>
-function loadSubstack(){
-  var g=document.getElementById('nl-gate'),l=document.getElementById('nl-loaded'),f=document.getElementById('nl-frame');
-  var i=document.createElement('iframe');i.src='https://manfredsolo.substack.com/embed';i.title='Kurs VERNUNFT';i.scrolling='no';
-  i.style.cssText='width:100%;max-width:480px;height:150px;border:0;background:transparent';
-  f.appendChild(i);g.style.display='none';l.style.display='block';
-}
 (function(){
   var obs=new IntersectionObserver(function(entries){
     entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
