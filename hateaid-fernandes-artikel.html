@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Die orchestrierte Kampagne – HateAid, Fernandes und das ZDF | rundfunkkritik.de</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2744;
+    --pergament: #f5f0e8;
+    --rot: #c0392b;
+    --gold: #c9a84c;
+    --ocean: #1a5276;
+    --text-dark: #1c1c1c;
+    --text-mid: #3a3a3a;
+    --text-light: #6b6b6b;
+    --border: #d4c9b0;
+    --bg-warm: #faf7f2;
+    --warn-bg: #fdf6ec;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 18px; scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg-warm);
+    color: var(--text-dark);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-weight: 300;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── HEADER ─── */
+  .site-header {
+    background: var(--navy);
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .site-header a {
+    color: var(--pergament);
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    opacity: 0.85;
+  }
+  .site-header a:hover { opacity: 1; }
+  .site-header span { color: var(--gold); opacity: 0.5; }
+
+  /* ─── HERO ─── */
+  .article-hero {
+    background: var(--navy);
+    padding: 4rem 2rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .article-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 40px,
+      rgba(201,168,76,0.04) 40px,
+      rgba(201,168,76,0.04) 41px
+    );
+  }
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .rubrik {
+    display: inline-block;
+    background: var(--rot);
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .article-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    color: var(--pergament);
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.01em;
+  }
+  .article-hero h1 em {
+    color: var(--gold);
+    font-style: italic;
+  }
+  .article-hero .deck {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.2rem;
+    color: rgba(245,240,232,0.78);
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-bottom: 2rem;
+  }
+  .meta-bar {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: rgba(245,240,232,0.45);
+    text-transform: uppercase;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(201,168,76,0.25);
+  }
+  .meta-bar strong { color: var(--gold); }
+
+  /* ─── MAIN LAYOUT ─── */
+  .article-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem 5rem;
+  }
+
+  /* ─── DISCLAIMER BOX ─── */
+  .disclaimer {
+    background: var(--warn-bg);
+    border-left: 4px solid var(--gold);
+    padding: 1.4rem 1.75rem;
+    margin-bottom: 3rem;
+    font-size: 0.92rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+  }
+  .disclaimer strong {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ─── TYPOGRAPHY ─── */
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 3rem 0 1rem;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  h2::before {
+    content: '§ ';
+    color: var(--gold);
+    font-style: italic;
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--ocean);
+    margin: 2rem 0 0.75rem;
+    font-style: italic;
+  }
+
+  p {
+    margin-bottom: 1.3rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+  }
+
+  a { color: var(--ocean); text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: var(--rot); }
+
+  strong { font-weight: 600; color: var(--text-dark); }
+
+  /* ─── FAKTENTABELLE ─── */
+  .timeline {
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    background: white;
+  }
+  .timeline-header {
+    background: var(--navy);
+    padding: 0.75rem 1.25rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-date {
+    background: var(--pergament);
+    padding: 0.85rem 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--navy);
+    font-weight: 500;
+    display: flex;
+    align-items: flex-start;
+    border-right: 1px solid var(--border);
+    line-height: 1.4;
+  }
+  .timeline-text {
+    padding: 0.85rem 1.25rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--text-mid);
+  }
+  .timeline-text strong { color: var(--navy); }
+
+  /* ─── FINANZ-KASTEN ─── */
+  .finanz-box {
+    background: var(--navy);
+    color: var(--pergament);
+    padding: 2rem 2rem;
+    margin: 2.5rem 0;
+  }
+  .finanz-box .fb-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+  .finanz-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.92rem;
+    gap: 1rem;
+  }
+  .finanz-row:last-child { border-bottom: none; }
+  .finanz-row .label { color: rgba(245,240,232,0.7); flex: 1; }
+  .finanz-row .value { color: var(--gold); font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; white-space: nowrap; }
+  .finanz-row .value.red { color: #e67e73; }
+
+  /* ─── NAMEN-KASTEN ─── */
+  .namen-kasten {
+    background: var(--pergament);
+    border: 1px solid var(--border);
+    padding: 1.5rem 1.75rem;
+    margin: 2.5rem 0;
+  }
+  .namen-kasten .nk-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+  .namen-entry {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem 2rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.92rem;
+    align-items: baseline;
+  }
+  .namen-entry:last-child { border-bottom: none; }
+  .namen-entry .original { font-weight: 600; color: var(--navy); }
+  .namen-entry .uebersetzung { color: var(--text-mid); font-style: italic; }
+  .namen-entry .anmerkung {
+    grid-column: 1 / -1;
+    font-size: 0.82rem;
+    color: var(--text-light);
+    margin-top: 0.1rem;
+  }
+
+  /* ─── NICHT-BEHAUPTUNG ─── */
+  .nicht-box {
+    background: #f0f4f8;
+    border-left: 4px solid var(--rot);
+    padding: 1.5rem 1.75rem;
+    margin: 3rem 0;
+  }
+  .nicht-box .nb-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rot);
+    margin-bottom: 0.85rem;
+  }
+  .nicht-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  .nicht-box ul li {
+    font-size: 0.92rem;
+    color: var(--text-mid);
+    padding: 0.3rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.55;
+  }
+  .nicht-box ul li::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: var(--rot);
+    font-size: 0.75rem;
+    top: 0.4rem;
+  }
+
+  /* ─── QUELLENVERZEICHNIS ─── */
+  .quellen {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border);
+  }
+  .quellen h2 { font-size: 1.2rem; }
+  .quellen ol {
+    padding-left: 1.4rem;
+    margin-top: 1rem;
+  }
+  .quellen ol li {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .quellen ol li a {
+    color: var(--ocean);
+    word-break: break-all;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy);
+    padding: 2rem;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: rgba(245,240,232,0.35);
+    text-transform: uppercase;
+  }
+
+  /* ─── REVEAL ANIMATION ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ─── PULL QUOTE ─── */
+  blockquote {
+    margin: 2.5rem 0;
+    padding: 1.5rem 2rem;
+    border-left: 3px solid var(--gold);
+    background: rgba(201,168,76,0.06);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--navy);
+    line-height: 1.55;
+  }
+  blockquote cite {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    font-style: normal;
+  }
+
+  @media (max-width: 600px) {
+    .timeline-item { grid-template-columns: 1fr; }
+    .timeline-date { border-right: none; border-bottom: 1px solid var(--border); }
+    .namen-entry { grid-template-columns: 1fr; }
+    .artikel-hero h1 { font-size: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/">rundfunkkritik.de</a>
+  <span>›</span>
+  <a href="/strukturanalyse">Strukturanalyse</a>
+</header>
+
+<div class="article-hero">
+  <div class="hero-inner">
+    <div class="rubrik">Strukturanalyse · Interessenkonflikte</div>
+    <h1>Die <em>orchestrierte</em> Kampagne:<br>HateAid, Fernandes und das ZDF</h1>
+    <p class="deck">
+      Wie eine staatlich mitfinanzierte NGO, ein öffentlich-rechtlicher Sender und ein Justizministerium
+      einen Einzelfall zum Gesetzgebungsmoment verdichten — und wer dabei finanziell profitiert.
+    </p>
+    <div class="meta-bar">
+      <div><strong>Veröffentlicht:</strong> Juni 2026</div>
+      <div><strong>Kategorie:</strong> Interessenkonflikt · NGO · Gesetzgebung</div>
+      <div><strong>Beleglage:</strong> Lobbyregister, Bundeshaushalt, verifizierte Berichte</div>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+
+  <div class="disclaimer reveal">
+    <strong>Redaktioneller Hinweis</strong>
+    Dieser Artikel analysiert strukturelle Verflechtungen auf Basis öffentlich zugänglicher Quellen:
+    Lobbyregister des Bundestags, Bundeshaushaltsplan, Transparenzberichte von HateAid und verifizierte
+    Medienberichte. Er trifft keine strafrechtlichen Wertungen über Personen, deren Schuld oder Unschuld
+    gerichtlich nicht festgestellt ist. Der Fall Fernandes/Ulmen dient ausschließlich als dokumentiertes
+    Fallbeispiel zur Illustration einer strukturellen Dynamik.
+  </div>
+
+  <!-- ─── ABSCHNITT 1 ─── -->
+  <h2 class="reveal">Was ist HateAid — und was ist es wirklich?</h2>
+
+  <p class="reveal">
+    Der Name klingt nach einer schlichten Hilfsorganisation. <em>HateAid</em> — auf Deutsch: <strong>„Hasshilfe"</strong>
+    oder wörtlich „Hass-Beistand" — wurde 2018 in Berlin gegründet, um Betroffene von Online-Hasskommentaren
+    juristisch und psychologisch zu beraten. Das Selbstbild: unabhängige Menschenrechtsorganisation.
+    Die Realität ist komplexer.
+  </p>
+
+  <p class="reveal">
+    Die Organisation ist eine <strong>gemeinnützige GmbH</strong> — ein Rechtsrahmen, der Gemeinnützigkeit
+    und unternehmerische Struktur verbindet. Geführt wird sie von zwei Geschäftsführerinnen:
+    <strong>Anna-Lena von Hodenberg</strong>, Gründerin, und <strong>Josephine Ballon</strong>,
+    Rechtsanwältin und Co-Chefin seit September 2023.
+  </p>
+
+  <div class="namen-kasten reveal">
+    <div class="nk-title">Glossar · Beteiligte Personen &amp; Begriffe</div>
+
+    <div class="namen-entry">
+      <span class="original">HateAid</span>
+      <span class="uebersetzung">„Hasshilfe" / Hass-Beistand</span>
+      <span class="anmerkung">Englisch: hate = Hass, aid = Hilfe, Beistand, Beihilfe</span>
+    </div>
+    <div class="namen-entry">
+      <span class="original">Anna-Lena von Hodenberg</span>
+      <span class="uebersetzung">Gründerin &amp; Geschäftsführerin</span>
+      <span class="anmerkung">Erhielt Oktober 2025 das Bundesverdienstkreuz. Trat im Fall Fernandes öffentlich bei RTL auf — obwohl sie den Fall nach eigenen Angaben „erst seit einigen Monaten" kannte.</span>
+    </div>
+    <div class="namen-entry">
+      <span class="original">Josephine Ballon</span>
+      <span class="uebersetzung">Co-Geschäftsführerin. Ballon (frz.): Luftballon</span>
+      <span class="anmerkung">Rechtsanwältin, seit 2019 bei HateAid. Hielt auf der Demo vom 22.03.2026 die Hauptrede. Im Lobbyregister des Bundestags als „unmittelbare Interessenvertreterin" eingetragen.</span>
+    </div>
+    <div class="namen-entry">
+      <span class="original">Collien Fernandes</span>
+      <span class="uebersetzung">Schauspielerin, ARD/ZDF-Testimonial</span>
+      <span class="anmerkung">Arbeitete seit 2023 mit HateAid zusammen. Ihr Privatfall wurde zum öffentlichen Kampagnenanlass — während Ermittlungen gegen ihren Ex-Mann eingestellt wurden.</span>
+    </div>
+  </div>
+
+  <p class="reveal">
+    Die Finanzierung von HateAid offenbart ein strukturelles Problem, das bei der Bewertung der
+    Organisation immer mitgedacht werden muss: Ein erheblicher Teil des Budgets stammt direkt aus
+    Bundesministerien — also aus Steuermitteln. Wer staatliches Geld empfängt und gleichzeitig an
+    der Gesetzgebung des selben Staates mitschreibt, unterliegt einem Interessenkonflikt,
+    der transparent gemacht werden muss.
+  </p>
+
+  <div class="finanz-box reveal">
+    <div class="fb-title">HateAid — Finanzübersicht 2024 (Gesamteinnahmen: ca. 5,8 Mio. €)</div>
+    <div class="finanz-row">
+      <span class="label">Private Förderung (Alfred Landecker Foundation u.a.)</span>
+      <span class="value">52,4 %</span>
+    </div>
+    <div class="finanz-row">
+      <span class="label">Öffentliche Gelder — Bundesjustiz- und Bundesfamilienministerium</span>
+      <span class="value red">22,1 %</span>
+    </div>
+    <div class="finanz-row">
+      <span class="label">Freie Spenden</span>
+      <span class="value">21,8 %</span>
+    </div>
+    <div class="finanz-row">
+      <span class="label">Sonstige (u.a. Einnahmen aus Prozessführung)</span>
+      <span class="value">3,7 %</span>
+    </div>
+    <div class="finanz-row">
+      <span class="label">Mitarbeitende (Stand 30.06.2025)</span>
+      <span class="value">54 Personen</span>
+    </div>
+  </div>
+
+  <p class="reveal">
+    Entscheidend ist der folgende Zusammenhang: 2024 mischte HateAid bei <strong>25 Gesetzgebungsverfahren</strong>
+    mit — darunter Initiativen, die der Organisation selbst eine „längerfristige Förderung" sichern
+    sollen. Josephine Ballon und fünf weitere HateAid-Mitarbeitende sind im
+    <strong>Lobbyregister des Bundestags</strong> als „unmittelbare Interessenvertreter" eingetragen.
+    Die Organisation, die Steuermittel empfängt, schreibt an den Gesetzen mit,
+    die ihre weitere Finanzierung sicherstellen.
+  </p>
+
+  <!-- ─── ABSCHNITT 2 ─── -->
+  <h2 class="reveal">Der Fall Fernandes — Chronologie einer Kampagne</h2>
+
+  <p class="reveal">
+    Der Privatfall der Schauspielerin Collien Fernandes gegen ihren Ex-Mann Christian Ulmen
+    ist nicht Gegenstand dieses Artikels — über Schuld und Unschuld urteilen Gerichte,
+    nicht Redaktionen. Was dokumentiert werden kann und muss, ist das
+    <strong>koordinierte Timing</strong> zwischen dem privaten Fall, HateAids Lobbyarbeit,
+    dem ZDF und dem Bundesjustizministerium.
+  </p>
+
+  <div class="timeline reveal">
+    <div class="timeline-header">Chronologie der dokumentierten Ereignisse</div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Oktober 2023</div>
+      <div class="timeline-text">
+        Collien Fernandes übergibt gemeinsam mit Josephine Ballon (HateAid)
+        eine <strong>Petition gegen Deepfake-Pornos</strong> an damaligen Digitalminister Volker Wissing.
+        Beginn der dokumentierten Zusammenarbeit zwischen Fernandes und HateAid.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">2024 (ganzes Jahr)</div>
+      <div class="timeline-text">
+        HateAid versendet im August 2024 einen <strong>Forderungskatalog</strong> an Ministerien und
+        Fraktionen: u.a. „Schaffung eines eigenständigen Straftatbestandes für Deepfake-Pornografie".
+        HateAid mischt bei 25 Gesetzgebungsverfahren mit. Parallel: Dreharbeiten zum
+        ZDF-Thriller <em>„Eine bessere Welt"</em>, in dessen Abspann später für HateAid geworben wird.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Dez. 2024</div>
+      <div class="timeline-text">
+        ZDF sendet 90-minütige Dokumentation: <em>„Wer steckt hinter den Deepfake-Pornos?
+        Collien Fernandes macht sich auf die Spur nach den Tätern"</em>.
+        Fernandes erfährt laut eigenem Bericht am 1. Weihnachtstag 2024, dass ihr Ex-Mann
+        Ulmen hinter den Fake-Profilen stecken soll.
+        <strong>Anzeige erfolgt jedoch erst Ende 2025.</strong>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">März 2026</div>
+      <div class="timeline-text">
+        <strong>Spiegel-Artikel</strong> veröffentlicht Vorwürfe gegen Ulmen.
+        In derselben Ausgabe: Interview mit Justizministerin <strong>Stefanie Hubig (SPD)</strong>,
+        die strengere Deepfake-Gesetze fordert — das Gleiche, wofür HateAid seit 2024 lobbyiert.
+        Ulmens Anwalt Christian Schertz nennt die Konstellation
+        „eklatant rechtsstaatswidrig" und spricht von einem „Fernsehgericht".
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">13.03.2026</div>
+      <div class="timeline-text">
+        Fernandes berichtet beim <strong>WDR-„Kölner Treff"</strong> von ihrem Fall
+        (ohne Namen zu nennen) und fordert Identifikationspflicht im Internet.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">14.03.2026</div>
+      <div class="timeline-text">
+        ZDF-Thriller <em>„Eine bessere Welt"</em> erscheint in der Mediathek.
+        Im Film und im Abspann: <strong>Werbung für HateAid</strong>.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">22.03.2026</div>
+      <div class="timeline-text">
+        <strong>Demo in Berlin</strong> gegen sexualisierte digitale Gewalt.
+        Josephine Ballon (HateAid) hält die Hauptrede.
+        Fernandes wirbt öffentlich für die Veranstaltung.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">23.03.2026</div>
+      <div class="timeline-text">
+        <strong>Erstausstrahlung</strong> des Films <em>„Eine bessere Welt"</em> im ZDF.
+        Geplant war außerdem ein gemeinsamer Auftritt von Fernandes und
+        Justizministerin Hubig bei <em>Caren Miosga</em>.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">März 2026</div>
+      <div class="timeline-text">
+        <strong>Ermittlungen eingestellt.</strong> Das Verfahren gegen Christian Ulmen
+        wird von den zuständigen Behörden eingestellt. Kritiker verwiesen auf die
+        jahrelange Verzögerung: Kenntnis des Sachverhalts 2024, Anzeige erst Ende 2025.
+      </div>
+    </div>
+  </div>
+
+  <blockquote class="reveal">
+    „Die Vorwürfe kommen für all diejenigen zur richtigen Zeit, die sich für strengere Regeln im Netz
+    einsetzen. Auffallend ist, wie kampagnenartig Medien, Aktivisten und Politiker reagieren."
+    <cite>— Tichys Einblick, 23.03.2026</cite>
+  </blockquote>
+
+  <!-- ─── ABSCHNITT 3 ─── -->
+  <h2 class="reveal">Die strukturelle Verflechtung: ZDF, HateAid und das Ministerium</h2>
+
+  <p class="reveal">
+    Was das Timing so bemerkenswert macht, ist nicht der Einzelfall — sondern seine
+    <strong>systemische Einbettung</strong>. Drei Akteure bewegen sich auf dasselbe Ziel zu:
+    neue Gesetze gegen „digitale Gewalt" mit schärferen Überwachungs- und Identifikationspflichten.
+  </p>
+
+  <h3 class="reveal">Der öffentlich-rechtliche Rundfunk als Verstärker</h3>
+
+  <p class="reveal">
+    Das ZDF produziert 2024 gleichzeitig eine Dokumentation mit Fernandes als Protagonistin
+    <em>und</em> einen Spielfilm, in dem für HateAid geworben wird. Die Dreharbeiten beider Produktionen
+    finden im selben Jahr statt — während HateAid bereits ihren Forderungskatalog an Ministerien
+    versendet hat. Der öffentlich-rechtliche Sender agiert damit nicht als unabhängiger Berichterstatter,
+    sondern als <strong>medialer Verstärker einer Lobbykampagne</strong>.
+  </p>
+
+  <p class="reveal">
+    Bereits 2023 hatte das ZDF Fernandes eine 90-minütige Hauptrolle in einer Dokumentation gegeben —
+    zu einem Zeitpunkt, an dem ihr Privatfall der Öffentlichkeit noch vollständig unbekannt war.
+    Wer wusste wann was — und wer hat wann mit wem koordiniert?
+  </p>
+
+  <h3 class="reveal">Das Justizministerium als politischer Arm</h3>
+
+  <p class="reveal">
+    Justizministerin Hubig (SPD) erscheint am selben Tag wie der Spiegel-Artikel
+    mit einem eigenen Interview — mit denselben Forderungen wie HateAid.
+    Ihr Gesetzesvorhaben entspricht punktgenau dem, was HateAid seit August 2024
+    in Forderungskatalogen an Ministerien verschickt hat. Einen gemeinsamen
+    Fernsehauftritt mit Fernandes bei <em>Caren Miosga</em> verhinderte erst
+    der Widerspruch von Ulmens Anwalt.
+  </p>
+
+  <h3 class="reveal">HateAid: Opferhilfe oder Interessenpolitik?</h3>
+
+  <p class="reveal">
+    Die entscheidende Frage ist nicht, ob HateAid Gutes tut. Die Frage ist,
+    ob eine Organisation, die Steuermittel empfängt, gleichzeitig an den
+    Gesetzen mitschreiben darf, die ihre eigene Förderung sicherstellen —
+    und ob der ÖRR dabei zum unbezahlten Werbeträger wird.
+  </p>
+
+  <p class="reveal">
+    Der Apollo-News-Rechercheur fasste die Verflechtung so zusammen:
+    HateAid lobbyiert für Gesetze, von denen die Organisation selbst profitiert —
+    <strong>und das ZDF hilft dabei, die öffentliche Stimmung in diese Richtung zu lenken.</strong>
+    Die Verbindung zu Fernandes ist seit 2023 dokumentiert. Die zeitliche Koinzidenz
+    zwischen Spiegel-Artikel, Ministerinnen-Interview, ZDF-Film und Demo
+    ist kein Zufall — sie ist <strong>koordinierte Kommunikationsstrategie.</strong>
+  </p>
+
+  <!-- ─── ABSCHNITT 4 ─── -->
+  <h2 class="reveal">Einordnung: Was die Namen sagen</h2>
+
+  <p class="reveal">
+    Es gehört zur Methode dieses Portals, Begriffe und Namen so zu übersetzen,
+    dass ihr politischer Gehalt sichtbar wird. <em>HateAid</em> — auf Deutsch
+    <strong>„Hasshilfe"</strong> oder „Hass-Beistand" — klingt nach reaktiver Notfallhilfe.
+    Tatsächlich handelt es sich um eine gut vernetzte, staatlich mitfinanzierte
+    <strong>Lobbymaschinerie</strong>, die aktiv an der Ausweitung eigener
+    Kompetenzen und Fördermittel arbeitet.
+  </p>
+
+  <p class="reveal">
+    Josephine Ballon — ihr Nachname bedeutet auf Französisch
+    schlicht <strong>„Luftballon"</strong> — tritt im Lobbyregister des Bundestags als
+    Interessenvertreterin auf, hält auf politischen Demonstrationen Reden,
+    wirkt in Bundestagsausschüssen als Sachverständige und
+    verhandelt gleichzeitig Gesetze, von denen ihre Organisation profitiert.
+    Das ist keine Kritik an ihrer Person — es ist eine strukturelle Beobachtung.
+  </p>
+
+  <p class="reveal">
+    Wer von „Hasshilfe" spricht, während er Gesetze mitschreibt, die Meinungsäußerungen
+    unter strafrechtliche Risiken stellen, benutzt die Opferperspektive als politisches Werkzeug.
+    Das ist die eigentliche Kritik.
+  </p>
+
+  <!-- ─── NICHT-BEHAUPTUNGEN ─── -->
+  <div class="nicht-box reveal">
+    <div class="nb-title">Was wir ausdrücklich nicht behaupten</div>
+    <ul>
+      <li>Dass HateAid keine legitimen Beratungsleistungen für Betroffene digitaler Gewalt erbringt.</li>
+      <li>Dass die Vorwürfe von Collien Fernandes gegen Christian Ulmen falsch sind — dies ist eine laufende rechtliche Angelegenheit.</li>
+      <li>Dass zwischen ZDF, HateAid und dem Justizministerium illegale Absprachen stattgefunden haben.</li>
+      <li>Dass die beschriebenen Personen persönlich unlauter gehandelt haben — wir analysieren Strukturen, nicht Absichten.</li>
+      <li>Dass staatliche Förderung von NGOs grundsätzlich problematisch ist.</li>
+    </ul>
+  </div>
+
+  <p class="reveal">
+    Was wir behaupten: Das dokumentierte Timing zwischen ZDF-Inhalten,
+    Ministerinnen-Auftritten und HateAid-Lobbyarbeit erfordert eine kritische
+    öffentliche Debatte über die Unabhängigkeit des öffentlich-rechtlichen
+    Rundfunks und die Transparenz von NGO-Finanzierung aus Steuermitteln.
+    Diese Debatte findet im Mainstream nicht statt — das ist der Befund.
+  </p>
+
+  <!-- ─── QUELLEN ─── -->
+  <div class="quellen reveal">
+    <h2>Quellen &amp; Belege</h2>
+    <ol>
+      <li>HateAid Transparenzbericht 2024 — <a href="https://hateaid.org/transparenzbericht/" target="_blank" rel="noopener">hateaid.org/transparenzbericht/</a></li>
+      <li>Lobbyregister des Deutschen Bundestags — Einträge HateAid / Josephine Ballon et al.</li>
+      <li>Tichys Einblick: „Wie eng HateAid mit Politik und Staat verflochten ist", 19.04.2026 — <a href="https://www.tichyseinblick.de/gastbeitrag/hateaid-eng-mit-politik-verflochten/" target="_blank" rel="noopener">tichyseinblick.de</a></li>
+      <li>Apollo News: „Von HateAid bis zum SPD-Ministerium: Die merkwürdigen Allianzen im Fall Ulmen-Fernandes", 25.03.2026 — <a href="https://apollo-news.net/von-hateaid-bis-zum-spd-ministerium-die-merkwrdigen-allianzen-im-fall-ulmen-fernandes/" target="_blank" rel="noopener">apollo-news.net</a></li>
+      <li>Apollo News: „HateAid lobbyiert für Gesetze, von denen sie selbst profitiert", 25.03.2026 — <a href="https://apollo-news.net/kampagne-mit-langem-vorlauf-schon-2024-lobbyierte-hateaid-fuer-die-heutigen-forderungen-und-fuer-mehr-staatsgeld/" target="_blank" rel="noopener">apollo-news.net</a></li>
+      <li>Junge Freiheit: „Ermittlungen im Fall Collien Fernandes eingestellt", 24.03.2026 — <a href="https://jungefreiheit.de/politik/deutschland/2026/ermittlungen-im-fall-collien-fernandes-eingestellt/" target="_blank" rel="noopener">jungefreiheit.de</a></li>
+      <li>Wikipedia: Anna-Lena von Hodenberg — US-Einreiseverbot, Dez. 2025 — <a href="https://de.wikipedia.org/wiki/Anna-Lena_von_Hodenberg" target="_blank" rel="noopener">de.wikipedia.org</a></li>
+      <li>HateAid Vita: Josephine Ballon — <a href="https://hateaid.org/presse-downloads/josephine-ballon/" target="_blank" rel="noopener">hateaid.org/presse-downloads/josephine-ballon/</a></li>
+      <li>Apollo News: Triumvirat-Artikel (Fernandes/HateAid/Hirschhausen/ARD-Doku, Mai 2026) — <a href="https://apollo-news.net/collien-fernandes-hateaid-eckart-von-hirschhausen-das-triumvirat-gegen-deepfakes-ist-in-einer-neuen-ard-doku-aktiv/" target="_blank" rel="noopener">apollo-news.net</a></li>
+      <li>Bundeshaushaltsplan 2025 — Einzelplan 07, Bundesministerium der Justiz (HateAid-Förderung)</li>
+    </ol>
+  </div>
+
+</main>
+
+<footer>
+  rundfunkkritik.de · Strukturelle Medienanalyse · Juristisch belastbar · Empirisch belegbar<br>
+  Manfred Seeböck c/o POSTFLEX PFX-345-697, Emsdettener Straße 10, 48268 Greven
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

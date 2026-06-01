@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>45 Millionen Euro im Jahr – für wen? | rundfunkkritik.de</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2744;
+    --pergament: #f5f0e8;
+    --rot: #c0392b;
+    --gold: #b8860b;
+    --ozean: #1a5276;
+    --text: #2c2c2c;
+    --grau: #6b6b6b;
+    --hellgrau: #e8e4dc;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--pergament);
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.75;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: var(--navy);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-header .logo {
+    color: var(--pergament);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    opacity: 0.9;
+  }
+  .site-header .logo span { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    padding: 4rem 2rem 3rem;
+    border-bottom: 4px solid var(--rot);
+  }
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .rubrik {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rot);
+    margin-bottom: 1.2rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 900;
+    color: var(--pergament);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .hero h1 .akzent { color: var(--gold); }
+  .hero .lead {
+    font-size: 1.25rem;
+    color: #b0bec5;
+    max-width: 700px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  .meta-zeile {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: #607d8b;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-top: 1px solid #2c3e5a;
+    padding-top: 1rem;
+  }
+
+  /* FAKTEN-BANNER */
+  .fakten-banner {
+    background: var(--rot);
+    padding: 1.5rem 2rem;
+  }
+  .fakten-banner-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+  }
+  .fakt {
+    text-align: center;
+  }
+  .fakt .zahl {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: white;
+    display: block;
+  }
+  .fakt .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+  }
+
+  /* INHALT */
+  .artikel {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 3rem 0 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--hellgrau);
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--ozean);
+    margin: 2rem 0 0.6rem;
+  }
+  p { margin-bottom: 1.2rem; }
+
+  /* ZITAT-BLOCK */
+  .zitat {
+    background: white;
+    border-left: 4px solid var(--gold);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--navy);
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.06);
+  }
+  .zitat .quelle {
+    display: block;
+    margin-top: 0.8rem;
+    font-style: normal;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--grau);
+    letter-spacing: 0.08em;
+  }
+
+  /* KONTRASTBOX */
+  .kontrast-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 2.5rem 0;
+    border: 1px solid var(--hellgrau);
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  }
+  @media (max-width: 600px) {
+    .kontrast-box { grid-template-columns: 1fr; }
+  }
+  .kontrast-links {
+    background: var(--navy);
+    padding: 2rem;
+    color: var(--pergament);
+  }
+  .kontrast-rechts {
+    background: white;
+    padding: 2rem;
+    color: var(--text);
+  }
+  .kontrast-titel {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .kontrast-links .kontrast-titel { color: var(--rot); }
+  .kontrast-rechts .kontrast-titel { color: var(--ozean); }
+  .kontrast-links ul, .kontrast-rechts ul {
+    list-style: none;
+    padding: 0;
+  }
+  .kontrast-links li, .kontrast-rechts li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .kontrast-rechts li { border-bottom-color: var(--hellgrau); }
+
+  /* SKANDAL-KARTE */
+  .skandal-karte {
+    background: white;
+    border-top: 3px solid var(--rot);
+    padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  }
+  .skandal-karte .sk-datum {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--rot);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .skandal-karte h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+  }
+  .skandal-karte p {
+    font-size: 0.98rem;
+    margin: 0;
+    color: var(--text);
+  }
+
+  /* QUELLEN */
+  .quellen-block {
+    background: var(--hellgrau);
+    padding: 2rem;
+    margin-top: 3rem;
+    font-size: 0.88rem;
+  }
+  .quellen-block h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 1rem;
+  }
+  .quellen-block ol {
+    padding-left: 1.5rem;
+    color: var(--grau);
+    line-height: 1.8;
+  }
+  .quellen-block a { color: var(--ozean); }
+
+  /* NICHT-BEHAUPTUNG */
+  .nicht-behauptung {
+    background: #fff8f0;
+    border: 1px solid #e8d8c0;
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+    font-size: 0.95rem;
+  }
+  .nicht-behauptung strong {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+  .nicht-behauptung ul {
+    padding-left: 1.5rem;
+    color: var(--grau);
+  }
+
+  /* REVEAL ANIMATION */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* TRENNLINIE */
+  .trenn {
+    border: none;
+    border-top: 1px solid var(--hellgrau);
+    margin: 3rem 0;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">rundfunk<span>kritik</span>.de</a>
+  <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#607d8b;letter-spacing:0.1em;">STRUKTURELLE MEDIENANALYSE</span>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="rubrik">ÖRR-Analyse · funk · ARD/ZDF · Bildungsauftrag</div>
+    <h1>45 Millionen Euro im Jahr –<br><span class="akzent">für wen eigentlich?</span></h1>
+    <p class="lead">Das ARD/ZDF-Jugendnetzwerk funk kostet seit 2016 rund 420 Millionen Euro Rundfunkbeitrag. Gleichzeitig wird das einzige echte Bildungsfernsehen Deutschlands zum Jahresende 2026 abgeschaltet. Eine Bilanz.</p>
+    <div class="meta-zeile">
+      <span>Juni 2026</span>
+      <span>rundfunkkritik.de</span>
+      <span>Lesedauer ca. 10 Min.</span>
+    </div>
+  </div>
+</section>
+
+<!-- FAKTEN-BANNER -->
+<div class="fakten-banner">
+  <div class="fakten-banner-inner">
+    <div class="fakt">
+      <span class="zahl">45,8 Mio. €</span>
+      <span class="label">funk-Budget 2024 (jährlich)</span>
+    </div>
+    <div class="fakt">
+      <span class="zahl">~420 Mio. €</span>
+      <span class="label">Gesamtkosten seit 2016</span>
+    </div>
+    <div class="fakt">
+      <span class="zahl">97 %</span>
+      <span class="label">Beiträge mit subjektiver Tendenz (OBS-Studie)</span>
+    </div>
+    <div class="fakt">
+      <span class="zahl">31.12.2026</span>
+      <span class="label">Abschaltung ARD alpha (Bildungsfernsehen)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ARTIKEL -->
+<main class="artikel">
+
+  <p class="reveal" style="font-size:1.2rem;color:var(--navy);font-style:italic;">
+    Seit Oktober 2016 betreiben ARD und ZDF unter dem Namen <strong>funk</strong> ein digitales Jugendnetzwerk auf YouTube, Instagram, TikTok und Snapchat. Das Jahresbudget: rund 45,8 Millionen Euro, finanziert ausschließlich aus dem Rundfunkbeitrag. Fast zeitgleich wird mit ARD alpha das letzte ernstzunehmende Bildungsfernsehen im deutschsprachigen Raum zum 31. Dezember 2026 eingestellt.
+  </p>
+
+  <h2 class="reveal">Was ist funk?</h2>
+
+  <p class="reveal">funk ist kein Fernsehsender, sondern ein dezentrales Content-Netzwerk: Die Zentrale in Mainz (Federführung SWR) steuert das Gesamtportfolio strategisch, während die eigentlichen Inhalte in Redaktionen aller ARD-Landesrundfunkanstalten, des ZDF sowie bei beauftragten Produktionsfirmen entstehen. Rechtlich tragen ARD (zwei Drittel) und ZDF (ein Drittel) gemeinsam die Verantwortung.</p>
+
+  <p class="reveal">Gestartet wurde funk durch Umschichtung: Als Gegenleistung wurden EinsPlus (ARD) und ZDFkultur eingestellt. Die offizielle Zielgruppe sind 14- bis 29-Jährige.</p>
+
+  <div class="zitat reveal">
+    „Bei funk hatten wir in den letzten neun Jahren noch nie einen Teuerungsausgleich. Das heißt, wir verlieren permanent Kaufkraft."
+    <span class="quelle">— Philipp Schild, funk-Programmgeschäftsführer, re:publica 2025</span>
+  </div>
+
+  <p class="reveal">Das Budget beträgt seit Gründung konstant rund 45 Millionen Euro jährlich. Kumuliert ergibt sich für 2016–2025 eine Schätzung von rund 405–420 Millionen Euro Rundfunkbeitrag. Eine offiziell ausgewiesene Gesamtsumme existiert nicht.</p>
+
+  <h2 class="reveal">Was sagt die Wissenschaft?</h2>
+
+  <p class="reveal">Die Otto-Brenner-Stiftung (OBS) veröffentlichte im Mai 2023 eine Langzeitstudie von Prof. Dr. Janis Brinkmann (Hochschule Mittweida). Untersucht wurden 1.155 Beiträge aus fünf funk-Reportageformaten über einen Zeitraum von sechs Jahren.</p>
+
+  <div class="skandal-karte reveal">
+    <div class="sk-datum">OBS-Studie · Mai 2023 · Peer-reviewed</div>
+    <h4>„Radikal subjektive Perspektive"</h4>
+    <p>In mehr als 97 % aller untersuchten Beiträge war eine subjektive Tendenz erkennbar. Objektive Thematisierung: unter 3 %. Die Studie bescheinigte den Formaten eine „radikal subjektive Perspektive" und thematische Verengung: Ostdeutschland (ohne Berlin) kam in weniger als 5 % der Beiträge als Fokusregion vor.</p>
+  </div>
+
+  <p class="reveal">Eine Folgestudie der Universitäten Mainz und München (Mai 2026) bestätigte die Tendenz und sprach von „sozialer Homogenität akademischer Filterblasen" in den Redaktionen: Junge, urbane Medienschaffende halten progressive Wertorientierungen intuitiv für die „normale Realität" — konservativere Lebensrealitäten im ländlichen Raum werden kaum wahrgenommen.</p>
+
+  <h2 class="reveal">Drei Formate unter der Lupe</h2>
+
+  <div class="skandal-karte reveal">
+    <div class="sk-datum">Format: „Auf Klo" · WDR/funk</div>
+    <h4>Pubertätsblocker als Lifestyle</h4>
+    <p>Das Format thematisierte Transidentität und Geschlechtsangleichungen bei Jugendlichen. Medizinische Risiken von Hormontherapien und Operationen wurden über Jahre ausgeblendet. Berichte von Detransitionern — Menschen, die ihre Transition bereuen — fanden faktisch nicht statt. Erst nach anhaltender Kritik aus der Fachwelt wurden einzelne Beschreibungen nachträglich angepasst.</p>
+  </div>
+
+  <div class="skandal-karte reveal">
+    <div class="sk-datum">Format: „Die da oben!" · funk · Juni 2023</div>
+    <h4>CDU/CSU neben AfD: Entschuldigung nach zwei Stunden</h4>
+    <p>Eine Instagram-Story stellte Björn Höcke und Alice Weidel gemeinsam mit Friedrich Merz und Markus Söder als „rechts" dar — optisch auf einer Ebene. Nach massiver politischer Kritik (CDU-Generalsekretär Mario Czaja: „Verleumdung") wurde die Story nach rund zwei Stunden gelöscht. Programmchef Philipp Schild entschuldigte sich „aufrichtig". ZDF-Intendant Norbert Himmler kündigte verstärkte Qualitätskontrolle an.</p>
+  </div>
+
+  <div class="skandal-karte reveal">
+    <div class="sk-datum">Format: funk-Instagram · Klimainhalt</div>
+    <h4>„Keine Kinder kriegen" als Klimaschutz</h4>
+    <p>Auf den Instagram-Kanälen des Netzwerks wurden wiederholt Beiträge ausgespielt, die den bewussten Verzicht auf Kinder als wirksame Maßnahme gegen den Klimawandel darstellten. Technologieoffene Lösungsansätze oder demografische Gegenargumente wurden nicht gleichwertig behandelt.</p>
+  </div>
+
+  <h2 class="reveal">Reichweite: Was funk wirklich erreicht</h2>
+
+  <p class="reveal">Zum Stichtag 30. September 2024 verzeichneten alle funk-Formate zusammen rund 17,1 Millionen YouTube-Abonnements, 8,1 Millionen Instagram-Follower und 7,8 Millionen TikTok-Abonnenten. Die Bekanntheit in der Zielgruppe (14–29 Jahre) lag laut einer Kantar-Studie bei 88 Prozent, die Nutzung bei 78 Prozent.</p>
+
+  <p class="reveal">Was diese Zahlen nicht zeigen: Mehrere der reichweitenstärksten Formate haben funk verlassen — freiwillig. Kurzgesagt, Simplicissimus, Leeroy Matata, maiLab (zu ZDF). Die Begründungen ähneln sich: kreative Einschränkung durch ÖRR-Regelwerk, und schlicht — ohne funk lässt sich über Werbung, Shops und Sponsoring bei großer Reichweite mehr verdienen.</p>
+
+  <div class="kontrast-box reveal">
+    <div class="kontrast-links">
+      <div class="kontrast-titel">funk — mit 45 Mio. €/Jahr</div>
+      <ul>
+        <li>Birthstrike-Content für Teenager</li>
+        <li>Pubertätsblocker ohne Risikoaufklärung</li>
+        <li>CDU/CSU neben AfD gestellt</li>
+        <li>97 % subjektive Tendenz (OBS)</li>
+        <li>Erfolgreiche Creator verlassen Netzwerk</li>
+        <li>Läuft weiter nach Reformstaatsvertrag</li>
+      </ul>
+    </div>
+    <div class="kontrast-rechts">
+      <div class="kontrast-titel">ARD alpha — abgeschaltet 31.12.2026</div>
+      <ul>
+        <li>Bildungsfernsehen seit 7. Januar 1998</li>
+        <li>Telekolleg, Sprachkurse, Wissenschaft</li>
+        <li>Philosophie, Geschichte, Kultur</li>
+        <li>Niedrigschwellig ohne Algorithmusdruck</li>
+        <li>29 Jahre Programm — gelöscht</li>
+        <li>Inhalte im Fusionsbrei aufgelöst</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="reveal">ARD alpha: 29 Jahre — dann Reformopfer</h2>
+
+  <p class="reveal">Am 7. Januar 1998 startete BR-alpha als 24-Stunden-Bildungskanal. Seit 2014 unter dem Namen ARD alpha. Das Programm: Telekolleg, Sprachkurse, Universitätsvorlesungen, Wissenschaftsmagazine, Philosophie, Kunstgeschichte. Keine Werbung. Kein Algorithmus. Kein Quotendruck.</p>
+
+  <p class="reveal">Am 4. März 2026 teilten ARD und ZDF mit: ARD alpha wird zum 31. Dezember 2026 eingestellt — gemeinsam mit tagesschau24 und One. Grundlage ist der Reformstaatsvertrag, den alle 16 Landtage im November 2025 ratifiziert hatten. Die Inhalte sollen auf neue Fusionssender verteilt werden.</p>
+
+  <div class="zitat reveal">
+    Diese Entscheidung ist keine rechtliche Notwendigkeit. Es ist eine politische Prioritätensetzung: Bildung wird geopfert, während das aktivistische Jugendnetzwerk funk unangetastet bleibt.
+    <span class="quelle">— Einordnung rundfunkkritik.de</span>
+  </div>
+
+  <p class="reveal">Was mit dem digitalen Zeitalter möglich wäre — Universitätsvorlesungen aller deutschen Hochschulen frei zugänglich, aktualisiertes Telekolleg, Sprachkurse auf Weltniveau, Wissenschaftskommunikation ohne Aktivismus-Einschlag — bleibt ungenutzt. Stattdessen: Fusion im Spartensenderbrei.</p>
+
+  <h2 class="reveal">Einordnung: Auftrag vs. Wirklichkeit</h2>
+
+  <p class="reveal">Der Rundfunkstaatsvertrag verpflichtet den ÖRR zur Meinungsvielfalt und — explizit — zum Bildungsauftrag. Das Bundesverwaltungsgericht urteilte im Oktober 2025 (Az. BVerwG 6 C 5.24), dass Verwaltungsgerichte Klagen wegen mangelnder Ausgewogenheit inhaltlich prüfen müssen — eine tektonische Verschiebung nach jahrzehntelangem Klage-Blockieren.</p>
+
+  <p class="reveal">Gleichzeitig verschärfte das ZDF im Februar 2026 seine Beschwerdeordnung: Neun formale Kriterien müssen erfüllt sein, damit eine Programmbeschwerde überhaupt bearbeitet wird. Wer die Kriterien nicht exakt juristisch ausformuliert, dessen Beschwerde wird ungelesen aussortiert.</p>
+
+  <p class="reveal">Die Frage stellt sich daher nicht nur inhaltlich, sondern strukturell: Wenn 45 Millionen Euro jährlich für Formate ausgegeben werden, die eine Wissenschaftsstudie als zu 97 Prozent subjektiv bewertet — und gleichzeitig das einzige echte Bildungsfernsehen abgeschaltet wird — dann hat der ÖRR seinen Auftrag neu definiert. Stillschweigend. Ohne Volksabstimmung.</p>
+
+  <hr class="trenn">
+
+  <div class="nicht-behauptung reveal">
+    <strong>Was wir ausdrücklich nicht behaupten</strong>
+    <ul>
+      <li>Dass alle funk-Formate journalistisch wertlos sind — preisgekrönte Produktionen wie STRG_F und Y-Kollektiv existieren.</li>
+      <li>Dass hinter funk eine koordinierte politische Steuerung steckt — die OBS-Studie spricht von Filterblasen, nicht von Direktiven.</li>
+      <li>Dass ARD alpha ausschließlich wegen inhaltlicher Qualität abgeschaltet wird — der Reformstaatsvertrag nennt Sparmaßnahmen als Grund.</li>
+      <li>Dass die genannten Budgetzahlen (405–420 Mio. €) offizielle Gesamtkosten darstellen — es handelt sich um eine Schätzung auf Basis veröffentlichter Jahreswerte und KEF-Berichte.</li>
+    </ul>
+  </div>
+
+  <!-- QUELLEN -->
+  <div class="quellen-block reveal">
+    <h3>Quellen &amp; Belege</h3>
+    <ol>
+      <li>Otto-Brenner-Stiftung: „Journalistische Grenzgänger" (OBS-Arbeitsheft 111, Prof. Dr. Janis Brinkmann, Mai 2023)</li>
+      <li>KEF 22. Bericht, Tz. 70 — Planbudget funk 2021–2024 (∅ 45,9 Mio. €/Jahr)</li>
+      <li>MDR-Auskunft via FragDenStaat.de: Geld für funk-Kanäle</li>
+      <li>epd medien: ARD und ZDF 2024-Einnahmen (~8,32 Mrd. €)</li>
+      <li>ZDF-Presseportal, 30.09.2024: funk-Reichweitenzahlen (Kantar-Studie)</li>
+      <li>Deutschlandfunk, 28.06.2023: „Nach Kritik an Berichterstattung über rechte Parteien: funk entschuldigt sich"</li>
+      <li>DWDL.de, 04.03.2026: „ARD &amp; ZDF einigen sich – Tagesschau24, One und ARD alpha werden Ende 2026 eingestellt"</li>
+      <li>Wikipedia: ARD alpha — Einstellung zum 31.12.2026, Reformstaatsvertrag</li>
+      <li>BR-Presse, Mai 2026: Gutachten der Unis Mainz/München zu Vielfalt und Ausgewogenheit im Journalismus</li>
+      <li>Verfassungsblog: BVerwG 6 C 5.24 — „Ein rundfunkrechtliches Solange?" (Oktober 2025)</li>
+      <li>ver.di M – Menschen Machen Medien: „Wie weiter mit der Finanzierung für funk?" (2024/2025)</li>
+      <li>ZDF-Kommunikation, Februar 2026: Neue Regeln für Programmbeschwerden</li>
+    </ol>
+  </div>
+
+</main>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
