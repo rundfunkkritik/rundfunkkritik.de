@@ -1,101 +1,171 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wasserwerfer und Wortwahl – Wie der ÖRR die Corona-Proteste rahmte</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="CgjTiQaabf7NOIDLZXlZ43E7gcLQw8KPPF9J5r5BcSA">
+<title>Wasserwerfer und Wortwahl – Wie der ÖRR die Corona-Proteste rahmte · Rundfunkkritik.de</title>
 <meta name="description" content="Über das Framing der Corona-Proteste, den umstrittenen Wasserwerfer-Einsatz vom 18. November 2020 – und einen Todesfall, bei dem Faktentreue wichtiger ist als die eigene Pointe.">
-<!-- SLUG: wasserwerfer-wortwahl-oerr-corona-proteste-framing -->
-<!-- TAGS: ÖRR, Corona, Querdenken, Demonstration, Wasserwerfer, Framing, Polizei, Verhältnismäßigkeit, Rundfunkkritik, Berichterstattung -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/fonts.css">
 <style>
   :root{
-    --ozean:#0d2b3a;--ozean-hell:#1d4a5f;--gold:#9a7b2e;--gold-hell:#b89544;
-    --papier:#fbfaf7;--text:#1c1d1f;--grau:#5a5c5e;--linie:#e3ddd2;
+    --ink:#1a2238;--ink-soft:#33405e;--paper:#f4efe4;--paper-2:#efe8da;
+    --accent:#9e2b25;--rule-light:rgba(26,34,56,.14);--rule-strong:rgba(26,34,56,.30);
+    --muted:#5c6577;--serif:'Crimson Pro',Georgia,serif;
+    --display:'Playfair Display',serif;--mono:'JetBrains Mono',monospace;
   }
-  *{box-sizing:border-box;}
-  body{margin:0;background:var(--papier);color:var(--text);
-    font-family:"Source Serif 4",Georgia,serif;font-size:19px;line-height:1.65;
-    -webkit-font-smoothing:antialiased;}
-  .wrap{max-width:720px;margin:0 auto;padding:64px 24px 96px;}
-  .kicker{font-family:"Lora",serif;text-transform:uppercase;letter-spacing:.18em;
-    font-size:.72rem;color:var(--gold);font-weight:600;margin:0 0 18px;}
-  h1{font-family:"Lora",serif;font-weight:600;font-size:2.5rem;line-height:1.12;
-    color:var(--ozean);margin:0 0 18px;letter-spacing:-.01em;}
-  .untertitel{font-size:1.2rem;color:var(--grau);line-height:1.5;margin:0 0 28px;font-style:italic;}
-  .meta{border-top:1px solid var(--linie);border-bottom:1px solid var(--linie);
-    padding:14px 0;margin:0 0 40px;font-family:"Lora",serif;font-size:.82rem;color:var(--grau);}
-  .meta b{color:var(--ozean);font-weight:600;}
-  h2{font-family:"Lora",serif;font-weight:600;font-size:1.5rem;color:var(--ozean);
-    margin:46px 0 14px;line-height:1.2;}
-  h2::before{content:"";display:block;width:46px;height:3px;background:var(--gold);margin-bottom:16px;}
-  p{margin:0 0 22px;}
-  strong{font-weight:600;color:var(--ozean);}
-  .hinweis{background:#f3efe6;border:1px solid var(--linie);border-left:3px solid var(--gold);
-    padding:18px 22px;margin:30px 0;font-size:.95rem;line-height:1.55;}
-  .hinweis b{color:var(--ozean);}
-  blockquote{margin:30px 0;padding:6px 0 6px 24px;border-left:3px solid var(--gold);
-    font-family:"Lora",serif;font-style:italic;font-size:1.22rem;color:var(--ozean);line-height:1.4;}
-  .quellen{margin-top:54px;padding-top:26px;border-top:2px solid var(--ozean);
-    font-size:.86rem;line-height:1.5;color:var(--grau);}
-  .quellen h2{font-size:1rem;margin:0 0 14px;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{font-size:16px;scroll-behavior:smooth;}
+  body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:1.1rem;line-height:1.78;-webkit-font-smoothing:antialiased;}
+  .nav{position:sticky;top:0;z-index:50;background:rgba(244,239,228,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule-light);}
+  .nav-inner{max-width:1080px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px;}
+  .brand{font-family:var(--display);font-weight:800;font-size:20px;color:var(--ink);text-decoration:none;}
+  .brand span{color:var(--accent);}
+  .nav-links{display:flex;gap:22px;flex-wrap:wrap;align-items:center;}
+  .nav-links a{font-family:var(--mono);font-size:12.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;transition:.2s;}
+  .nav-links a:hover{color:var(--accent);border-color:var(--accent);}
+  .art-wrap{max-width:740px;margin:0 auto;padding:3rem 1.5rem 5rem;}
+  .kicker{font-family:var(--mono);text-transform:uppercase;letter-spacing:.15em;font-size:.72rem;color:var(--accent);font-weight:500;margin:0 0 1.2rem;}
+  h1{font-family:var(--display);font-weight:700;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.15;color:var(--ink);margin:0 0 1.2rem;}
+  .deck{font-size:1.1rem;color:var(--muted);line-height:1.6;margin:0 0 1.8rem;font-style:italic;}
+  .meta-bar{border-top:1px solid var(--rule-light);border-bottom:1px solid var(--rule-light);padding:14px 0;margin:0 0 2.5rem;font-family:var(--mono);font-size:.78rem;color:var(--muted);}
+  .meta-bar b{color:var(--ink);font-weight:600;}
+  h2{font-family:var(--display);font-weight:700;font-size:1.5rem;color:var(--ink);margin:2.5rem 0 .8rem;}
+  h2::before{content:"";display:block;width:46px;height:3px;background:var(--accent);margin-bottom:14px;}
+  p{margin:0 0 1.4rem;}
+  strong{font-weight:600;color:var(--ink);}
+  .hinweis{background:#f3efe6;border:1px solid var(--rule-light);border-left:3px solid var(--accent);padding:18px 22px;margin:30px 0;font-size:.95rem;line-height:1.55;}
+  .hinweis b{color:var(--ink);}
+  blockquote{margin:1.8rem 0;padding:6px 0 6px 22px;border-left:3px solid var(--accent);font-style:italic;font-size:1.15rem;color:var(--ink);}
+  .quellen{margin-top:3rem;padding-top:1.5rem;border-top:2px solid var(--ink);font-size:.88rem;color:var(--muted);}
+  .quellen h2{font-size:1rem;margin:0 0 1rem;}
   .quellen h2::before{display:none;}
   .quellen ul{margin:0;padding:0;list-style:none;}
-  .quellen li{margin:0 0 9px;padding-left:18px;position:relative;}
-  .quellen li::before{content:"›";position:absolute;left:0;color:var(--gold);font-weight:700;}
-  .quellen a{color:var(--ozean-hell);word-break:break-word;}
-  .fuss{margin-top:40px;font-size:.78rem;color:var(--grau);font-style:italic;text-align:center;}
+  .quellen li{margin:0 0 .6rem;padding-left:18px;position:relative;}
+  .quellen li::before{content:"›";position:absolute;left:0;color:var(--accent);font-weight:700;}
+  .quellen a{color:var(--ink);}
+  .quellen a:hover{color:var(--accent);}
+  .tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:2.5rem 0 1rem;padding-top:1.5rem;border-top:1px solid var(--rule-light);}
+  .tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--rule-light);padding:.25rem .6rem;text-decoration:none;transition:.15s;}
+  .tag:hover{background:var(--paper-2);color:var(--ink);}
+  .art-footer{margin-top:2rem;font-size:.78rem;color:var(--muted);font-style:italic;text-align:center;}
+  footer{background:var(--paper-2);border-top:1px solid var(--rule-strong);padding:3rem 1.5rem;}
+  .footer-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;}
+  .footer-brand{font-family:var(--display);font-weight:800;font-size:1.2rem;color:var(--ink);margin-bottom:.5rem;}
+  .footer-brand span{color:var(--accent);}
+  .footer-tagline{font-size:.88rem;color:var(--muted);line-height:1.6;}
+  .footer-col h4{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.8rem;}
+  .footer-col ul{list-style:none;padding:0;}
+  .footer-col li{margin-bottom:.4rem;}
+  .footer-col a{font-size:.88rem;color:var(--muted);text-decoration:none;}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-copy{max-width:1080px;margin:1.5rem auto 0;font-family:var(--mono);font-size:.7rem;color:var(--muted);display:flex;gap:1.5rem;flex-wrap:wrap;padding-top:1rem;border-top:1px solid var(--rule-light);}
+  .footer-copy a{color:var(--muted);text-decoration:none;}
+  @media(max-width:640px){.nav-links{display:none;}.footer-inner{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
-<article class="wrap">
 
-  <p class="kicker">Berichterstattung · Analyse</p>
-  <h1>Wasserwerfer und Wortwahl: Wie der ÖRR die Corona-Proteste rahmte</h1>
-  <p class="untertitel">Ein Begriff entscheidet oft mehr als ein Bild. Bei den Protesten gegen die Corona-Politik stand das Etikett meist vor der Frage – auch dort, wo selbst die Polizei intern an der Verhältnismäßigkeit zweifelte. Eine Analyse, die zugleich zeigt, welche Behauptung seriöse Kritik nicht erheben darf.</p>
-
-  <div class="meta">
-    <b>Slug:</b> wasserwerfer-wortwahl-oerr-corona-proteste-framing &nbsp;·&nbsp;
-    <b>Tags:</b> ÖRR, Corona, Querdenken, Wasserwerfer, Framing, Polizei, Verhältnismäßigkeit
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">Rundfunkkritik<span>.de</span></a>
+    <div class="nav-links">
+      <a href="index.html#aktuell">Aktuell</a>
+      <a href="index.html#mechanismen">10 Mechanismen</a>
+      <a href="medienaufsicht_macht_serie_2026.html">Serie I</a>
+      <a href="serie2_meinungsmache_2026.html">Serie II</a>
+      <a href="widerstand.html">Stiller Widerstand</a>
+    </div>
   </div>
+</nav>
 
-  <p>Wer über eine Demonstration berichtet, trifft zwei Entscheidungen, lange bevor er die erste Zahl nennt: Welches Wort stellt er voran – und welches Bild lässt er weg. Bei den Protesten gegen die Corona-Maßnahmen lässt sich beides gut studieren.</p>
+<div class="art-wrap">
 
-  <h2>Das Etikett vor der Frage</h2>
-  <p>In der Berichterstattung über die Proteste der Jahre 2020 und 2021 stand fast durchgängig dasselbe Begriffstrio: <strong>Coronaleugner, Rechtsextreme, Verschwörungstheoretiker</strong>. Und es wäre unredlich zu bestreiten, dass diese Etiketten einen realen Kern hatten. Auf den Demonstrationen liefen tatsächlich Reichsflaggen, es gab eine sichtbare rechtsextreme Präsenz, und die „Querdenken"-Bewegung verbreitete handfeste Verschwörungserzählungen. Das gehört in jede ehrliche Darstellung.</p>
-  <p>Das Problem ist nicht, dass diese Gruppen benannt wurden. Das Problem ist, dass das Etikett zur <strong>Gesamtcharakterisierung</strong> wurde – und damit alle übrigen Teilnehmer mit einschloss: Menschen mit ernsthaften Grundrechts- und Verhältnismäßigkeitsbedenken, die sich plötzlich in derselben Schublade wiederfanden wie der Verschwörungsflügel. Wo die Einordnung die Differenzierung ersetzt, leistet sie nicht mehr Aufklärung, sondern Vorsortierung.</p>
+<p class="kicker">Berichterstattung · Analyse</p>
+<h1>Wasserwerfer und Wortwahl: Wie der ÖRR die Corona-Proteste rahmte</h1>
+<p class="deck">Ein Begriff entscheidet oft mehr als ein Bild. Bei den Protesten gegen die Corona-Politik stand das Etikett meist vor der Frage – auch dort, wo selbst die Polizei intern an der Verhältnismäßigkeit zweifelte.</p>
 
-  <h2>Der Wasserwerfer, den selbst die Polizei hinterfragte</h2>
-  <p>Am <strong>18. November 2020</strong>, dem Tag, an dem der Bundestag die Novelle des Infektionsschutzgesetzes beschloss, demonstrierten in Berlin Tausende. Die Polizei löste die Versammlung am Brandenburger Tor auf und setzte <strong>Wasserwerfer</strong> ein. Beide Seiten der Geschichte gehören erzählt: Aus dem Protest heraus flogen nach Polizeiangaben Flaschen, Steine und Pyrotechnik, es wurde Pfefferspray eingesetzt, mehrere Beamte wurden verletzt, es gab Hunderte Festnahmen. Eine Demo ist kein Wohlfühlraum, und die Polizei stand unter Druck.</p>
-  <p>Aber es gibt die andere Hälfte – und die fand in der öffentlich-rechtlichen Hauptberichterstattung deutlich weniger Raum: Wasserwerfer werden in Berlin <strong>äußerst selten</strong> eingesetzt, zuvor zuletzt 2013. Und in der Berliner Polizei selbst wurden anschließend Zweifel laut, ob der Einsatz angemessen war – er widersprach der eigenen Deeskalationslinie. Das berichtete der <em>Tagesspiegel</em> unter Berufung auf Polizeikreise. Wenn schon intern über die Verhältnismäßigkeit gestritten wird, ist das ein Vorgang, der journalistische Nachfrage verdient – nicht nur die Bebilderung „aggressiver Coronaleugner".</p>
-  <p>Genau diese Asymmetrie ist der Kern: Bei Protesten aus dem linken oder ökologischen Spektrum gehörte die Frage nach „unverhältnismäßiger Polizeigewalt" über Jahre zum festen Repertoire. Bei den Corona-Protesten verschob sich der Fokus auf die Gewalt der Demonstranten – beides real, aber eben sehr ungleich gewichtet.</p>
+<div class="meta-bar">
+  <b>Kategorie:</b> Berichterstattung · Framing &nbsp;·&nbsp; <b>Datum:</b> Juni 2026
+</div>
 
-  <h2>Und jetzt der Teil, der über Glaubwürdigkeit entscheidet</h2>
-  <div class="hinweis">
-    <p style="margin:0 0 12px;"><b>Was hier ausdrücklich NICHT behauptet wird.</b> In der Protestszene kursiert bis heute die Erzählung, die Polizei habe einen Demonstranten „getötet". Diese Behauptung ist durch die Faktenlage nicht gedeckt – und seriöse Rundfunkkritik darf sie nicht übernehmen.</p>
-    <p style="margin:0;">Am 1. August 2021 starb in Berlin ein 48-jähriger Teilnehmer nach einer vorläufigen Festnahme. Die Obduktion an der Charité ergab als Ursache einen <b>Herzinfarkt</b>; laut Generalstaatsanwaltschaft lagen „Hinweise auf todesursächliche äußere Gewalteinwirkung im Rahmen der Festnahme" nicht vor. Der Mann hatte zuvor eine Polizeikette durchbrochen und einen Beamten verletzt. Selbst seine eigene Partei – „Die Basis" – und seine Familie baten darum, den Tod nicht zu instrumentalisieren.</p>
+<p>Wer über eine Demonstration berichtet, trifft zwei Entscheidungen, lange bevor er die erste Zahl nennt: Welches Wort stellt er voran – und welches Bild lässt er weg. Bei den Protesten gegen die Corona-Maßnahmen lässt sich beides gut studieren.</p>
+
+<h2>Das Etikett vor der Frage</h2>
+<p>In der Berichterstattung über die Proteste der Jahre 2020 und 2021 stand fast durchgängig dasselbe Begriffstrio: <strong>Coronaleugner, Rechtsextreme, Verschwörungstheoretiker</strong>. Und es wäre unredlich zu bestreiten, dass diese Etiketten einen realen Kern hatten. Auf den Demonstrationen liefen tatsächlich Reichsflaggen, es gab eine sichtbare rechtsextreme Präsenz, und die „Querdenken"-Bewegung verbreitete handfeste Verschwörungserzählungen.</p>
+<p>Das Problem ist nicht, dass diese Gruppen benannt wurden. Das Problem ist, dass das Etikett zur <strong>Gesamtcharakterisierung</strong> wurde – und damit alle übrigen Teilnehmer mit einschloss: Menschen mit ernsthaften Grundrechts- und Verhältnismäßigkeitsbedenken, die sich plötzlich in derselben Schublade wiederfanden. Wo die Einordnung die Differenzierung ersetzt, leistet sie nicht mehr Aufklärung, sondern Vorsortierung.</p>
+
+<h2>Der Wasserwerfer, den selbst die Polizei hinterfragte</h2>
+<p>Am <strong>18. November 2020</strong>, dem Tag, an dem der Bundestag die Novelle des Infektionsschutzgesetzes beschloss, demonstrierten in Berlin Tausende. Die Polizei löste die Versammlung am Brandenburger Tor auf und setzte <strong>Wasserwerfer</strong> ein. Aus dem Protest heraus flogen nach Polizeiangaben Flaschen, Steine und Pyrotechnik, mehrere Beamte wurden verletzt, es gab Hunderte Festnahmen.</p>
+<p>Aber es gibt die andere Hälfte: Wasserwerfer werden in Berlin <strong>äußerst selten</strong> eingesetzt, zuvor zuletzt 2013. Und in der Berliner Polizei selbst wurden anschließend Zweifel laut, ob der Einsatz angemessen war – er widersprach der eigenen Deeskalationslinie. Das berichtete der <em>Tagesspiegel</em> unter Berufung auf Polizeikreise. Wenn schon intern über die Verhältnismäßigkeit gestritten wird, ist das ein Vorgang, der journalistische Nachfrage verdient.</p>
+<p>Genau diese Asymmetrie ist der Kern: Bei Protesten aus dem linken oder ökologischen Spektrum gehörte die Frage nach „unverhältnismäßiger Polizeigewalt" über Jahre zum festen Repertoire. Bei den Corona-Protesten verschob sich der Fokus auf die Gewalt der Demonstranten – beides real, aber eben sehr ungleich gewichtet.</p>
+
+<h2>Und jetzt der Teil, der über Glaubwürdigkeit entscheidet</h2>
+<div class="hinweis">
+  <p style="margin:0 0 12px;"><b>Was hier ausdrücklich NICHT behauptet wird.</b> In der Protestszene kursiert bis heute die Erzählung, die Polizei habe einen Demonstranten „getötet". Diese Behauptung ist durch die Faktenlage nicht gedeckt.</p>
+  <p style="margin:0;">Am 1. August 2021 starb in Berlin ein 48-jähriger Teilnehmer nach einer vorläufigen Festnahme. Die Obduktion an der Charité ergab als Ursache einen <b>Herzinfarkt</b>; laut Generalstaatsanwaltschaft lagen „Hinweise auf todesursächliche äußere Gewalteinwirkung im Rahmen der Festnahme" nicht vor. Selbst seine eigene Partei – „Die Basis" – und seine Familie baten darum, den Tod nicht zu instrumentalisieren.</p>
+</div>
+<p>Wer dem ÖRR Einseitigkeit vorwirft, muss selbst der Versuchung widerstehen, eine tragische, aber medizinisch erklärte Todesursache in einen Polizeimord umzudeuten. Die starke Kritik braucht den falschen Vorwurf nicht – sie wird durch ihn nur schwächer.</p>
+
+<h2>Fazit</h2>
+<p>Der Vorwurf an die öffentlich-rechtliche Corona-Berichterstattung lautet nicht „Lüge". Er lautet: <strong>Schieflage in der Gewichtung</strong>. Das vorangestellte Etikett ersetzte zu oft die Differenzierung. Und die Verhältnismäßigkeitsfrage – die anderswo Standard war und die hier sogar in der Polizei selbst gestellt wurde – blieb am Rand.</p>
+
+<div class="tags">
+  <a class="tag" href="index.html#mechanismen">Corona · Framing</a>
+  <a class="tag" href="der_cut_oerr_2026.html">Meinungsspektrum</a>
+  <a class="tag" href="toleranzfenster.html">Toleranzfenster ÖRR</a>
+  <a class="tag" href="index.html#aktuell">Berichterstattung</a>
+</div>
+
+<section class="quellen">
+  <h2>Weiterführende Quellen</h2>
+  <ul>
+    <li>Tagesspiegel – Zweifel in der Berliner Polizei am Wasserwerfer-Einsatz: <a href="https://www.tagesspiegel.de/berlin/in-der-berliner-polizei-gibt-es-zweifel-am-wasserwerfer-einsatz-5974201.html" target="_blank" rel="noopener">tagesspiegel.de</a></li>
+    <li>Tagesspiegel – Demo-Tag 18.11.2020, verletzte Polizisten, Festnahmen: <a href="https://www.tagesspiegel.de/berlin/proteste-gegen-corona-politik-in-berlin-tritt-gegen-kopf-arm-ausgekugelt-hand-gebrochen-drei-polizisten-schwer-verletzt/26633970.html" target="_blank" rel="noopener">tagesspiegel.de</a></li>
+    <li>Cicero – „Wasser marsch!" (Einordnung des Einsatzes): <a href="https://www.cicero.de/innenpolitik/corona-demonstration-berlin-bundestag-infektionsschutzgesetz-polizei-querdenker-fake-news" target="_blank" rel="noopener">cicero.de</a></li>
+    <li>t-online – Obduktionsbericht: Herzinfarkt (2.8.2021): <a href="https://berlin.t-online.de/region/berlin/id_90553856/berlin-mann-stirbt-bei-querdenker-demo-obduktionsbericht-klaert-ueber-todesursache-auf.html" target="_blank" rel="noopener">t-online.de</a></li>
+    <li>Tagesspiegel – „Die Basis" und Familie bitten, den Tod nicht zu instrumentalisieren: <a href="https://www.t-online.de/nachrichten/deutschland/gesellschaft/id_90558976/partei-die-basis-kaempft-fuer-wuerde-von-verstorbenem-demo-teilnehmer.html" target="_blank" rel="noopener">t-online.de</a></li>
+  </ul>
+</section>
+
+<p class="art-footer">Rundfunkkritik.de · Strukturelle Medienanalyse · Juristisch belastbar · Empirisch belegbar</p>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Rundfunkkritik<span>.de</span></div>
+      <p class="footer-tagline">Strukturelle Medienanalyse.<br>Juristisch belastbar. Empirisch belegbar.<br>Ohne Polemik.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Inhalt</h4>
+      <ul>
+        <li><a href="index.html#aktuell">Aktuell</a></li>
+        <li><a href="index.html#mechanismen">10 Mechanismen</a></li>
+        <li><a href="medienaufsicht_macht_serie_2026.html">Serie I</a></li>
+        <li><a href="serie2_meinungsmache_2026.html">Serie II</a></li>
+        <li><a href="widerstand.html">Stiller Widerstand</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Zum Thema</h4>
+      <ul>
+        <li><a href="boehmermann-nazis-keulen.html">Böhmermann &amp; Satire</a></li>
+        <li><a href="der_cut_oerr_2026.html">Der Cut</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
   </div>
-  <p>Warum dieser Einschub mitten im Text? Weil er den Unterschied markiert, an dem sich Kritik bewährt. Wer dem ÖRR Einseitigkeit vorwirft, muss selbst der Versuchung widerstehen, eine tragische, aber medizinisch erklärte Todesursache in einen Polizeimord umzudeuten. Tut er es doch, liefert er den Sendern die bequemste aller Ausreden: dass jede Kritik ohnehin „Desinformation" sei. Die starke Kritik braucht den falschen Vorwurf nicht – sie wird durch ihn nur schwächer.</p>
+  <div class="footer-copy">
+    <span>© 2026 Rundfunkkritik.de · Alle Inhalte zur freien Verwendung mit Quellenangabe</span>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
 
-  <h2>Fazit</h2>
-  <p>Der Vorwurf an die öffentlich-rechtliche Corona-Berichterstattung lautet nicht „Lüge", und schon gar nicht „verschwiegener Polizeimord". Er lautet: <strong>Schieflage in der Gewichtung</strong>. Das vorangestellte Etikett ersetzte zu oft die Differenzierung. Und die Verhältnismäßigkeitsfrage, die anderswo Standard war – und die hier sogar in der Polizei selbst gestellt wurde –, blieb am Rand. Das ist kein Skandal mit einem Toten. Es ist etwas Unauffälligeres und darum Wirksameres: eine Routine, die mitentscheidet, wer als Bürger mit Bedenken und wer als Fall für den Wasserwerfer erscheint.</p>
-
-  <section class="quellen">
-    <h2>Weiterführende Quellen</h2>
-    <ul>
-      <li>Tagesspiegel – Zweifel in der Berliner Polizei am Wasserwerfer-Einsatz (Deeskalationslinie, zuletzt 2013): <a href="https://www.tagesspiegel.de/berlin/in-der-berliner-polizei-gibt-es-zweifel-am-wasserwerfer-einsatz-5974201.html">tagesspiegel.de</a></li>
-      <li>Tagesspiegel – Demo-Tag 18.11.2020, verletzte Polizisten, Festnahmen, Verteidigung des Einsatzes: <a href="https://www.tagesspiegel.de/berlin/proteste-gegen-corona-politik-in-berlin-tritt-gegen-kopf-arm-ausgekugelt-hand-gebrochen-drei-polizisten-schwer-verletzt/26633970.html">tagesspiegel.de</a></li>
-      <li>Cicero – „Wasser marsch!" (Einordnung des Einsatzes, 18.11.2020): <a href="https://www.cicero.de/innenpolitik/corona-demonstration-berlin-bundestag-infektionsschutzgesetz-polizei-querdenker-fake-news">cicero.de</a></li>
-      <li>t-online – Obduktionsbericht zum Todesfall: Herzinfarkt (2.8.2021): <a href="https://berlin.t-online.de/region/berlin/id_90553856/berlin-mann-stirbt-bei-querdenker-demo-obduktionsbericht-klaert-ueber-todesursache-auf.html">t-online.de</a></li>
-      <li>Tagesspiegel – „Demo-Teilnehmer an Herzinfarkt gestorben", Obduktionsergebnis der Generalstaatsanwaltschaft: <a href="https://www.tagesspiegel.de/berlin/verbotene-querdenken-proteste-in-berlin-48-jaehriger-teilnehmer-nach-festnahme-an-herzinfarkt-gestorben/27471282.html">tagesspiegel.de</a></li>
-      <li>t-online – „Die Basis" und Familie bitten, den Tod nicht zu instrumentalisieren (3.8.2021): <a href="https://www.t-online.de/nachrichten/deutschland/gesellschaft/id_90558976/partei-die-basis-kaempft-fuer-wuerde-von-verstorbenem-demo-teilnehmer.html">t-online.de</a></li>
-    </ul>
-  </section>
-
-  <p class="fuss">rundfunkkritik.de · Recherche: Juni 2026 · Reine HTML-Ausgabe</p>
-
-</article>
 </body>
 </html>
