@@ -1,109 +1,168 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Von Eva Herman zu Ulrike Herrmann – Das asymmetrische Toleranzfenster des ÖRR</title>
-<meta name="description" content="2007 wurde Eva Herman binnen Tagen aus dem ÖRR entfernt. Heute ist Ulrike Herrmann mit ihrer Forderung nach einer ‚ökologischen Kriegswirtschaft‘ Dauergast. Über die Richtung des Reflexes.">
-<!-- SLUG: toleranzfenster-eva-herman-ulrike-herrmann-oerr -->
-<!-- TAGS: ÖRR, Talkshow, Eva Herman, Ulrike Herrmann, Meinungsklima, Framing, taz, Kriegswirtschaft, Rundfunkkritik, Ausgewogenheit -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="CgjTiQaabf7NOIDLZXlZ43E7gcLQw8KPPF9J5r5BcSA">
+<title>Das asymmetrische Toleranzfenster des ÖRR · Rundfunkkritik.de</title>
+<meta name="description" content="2007 wurde Eva Herman binnen Tagen aus dem ÖRR entfernt. Heute ist Ulrike Herrmann mit ihrer Forderung nach einer ökologischen Kriegswirtschaft Dauergast. Über die Richtung des Reflexes.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/fonts.css">
 <style>
   :root{
-    --ozean:#0d2b3a;        /* Leitfarbe Ozean */
-    --ozean-hell:#1d4a5f;
-    --gold:#9a7b2e;          /* Leitfarbe Gold, dezent */
-    --gold-hell:#b89544;
-    --papier:#fbfaf7;
-    --text:#1c1d1f;
-    --grau:#5a5c5e;
-    --linie:#e3ddd2;
+    --ink:#1a2238;--ink-soft:#33405e;--paper:#f4efe4;--paper-2:#efe8da;
+    --accent:#9e2b25;--rule-light:rgba(26,34,56,.14);--rule-strong:rgba(26,34,56,.30);
+    --muted:#5c6577;--serif:'Crimson Pro',Georgia,serif;
+    --display:'Playfair Display',serif;--mono:'JetBrains Mono',monospace;
   }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;background:var(--papier);color:var(--text);
-    font-family:"Source Serif 4",Georgia,serif;font-size:19px;line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:720px;margin:0 auto;padding:64px 24px 96px;}
-  .kicker{font-family:"Lora",serif;text-transform:uppercase;letter-spacing:.18em;
-    font-size:.72rem;color:var(--gold);font-weight:600;margin:0 0 18px;}
-  h1{font-family:"Lora",serif;font-weight:600;font-size:2.5rem;line-height:1.12;
-    color:var(--ozean);margin:0 0 18px;letter-spacing:-.01em;}
-  .untertitel{font-size:1.2rem;color:var(--grau);line-height:1.5;margin:0 0 28px;font-style:italic;}
-  .meta{border-top:1px solid var(--linie);border-bottom:1px solid var(--linie);
-    padding:14px 0;margin:0 0 40px;font-family:"Lora",serif;font-size:.82rem;color:var(--grau);}
-  .meta b{color:var(--ozean);font-weight:600;}
-  h2{font-family:"Lora",serif;font-weight:600;font-size:1.5rem;color:var(--ozean);
-    margin:46px 0 14px;line-height:1.2;}
-  h2::before{content:"";display:block;width:46px;height:3px;background:var(--gold);margin-bottom:16px;}
-  p{margin:0 0 22px;}
-  strong{font-weight:600;color:var(--ozean);}
-  blockquote{margin:30px 0;padding:6px 0 6px 24px;border-left:3px solid var(--gold);
-    font-family:"Lora",serif;font-style:italic;font-size:1.22rem;color:var(--ozean);line-height:1.4;}
-  .quellen{margin-top:54px;padding-top:26px;border-top:2px solid var(--ozean);
-    font-size:.86rem;line-height:1.5;color:var(--grau);}
-  .quellen h2{font-size:1rem;margin:0 0 14px;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{font-size:16px;scroll-behavior:smooth;}
+  body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:1.1rem;line-height:1.78;-webkit-font-smoothing:antialiased;}
+  .nav{position:sticky;top:0;z-index:50;background:rgba(244,239,228,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule-light);}
+  .nav-inner{max-width:1080px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px;}
+  .brand{font-family:var(--display);font-weight:800;font-size:20px;color:var(--ink);text-decoration:none;}
+  .brand span{color:var(--accent);}
+  .nav-links{display:flex;gap:22px;flex-wrap:wrap;align-items:center;}
+  .nav-links a{font-family:var(--mono);font-size:12.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;transition:.2s;}
+  .nav-links a:hover{color:var(--accent);border-color:var(--accent);}
+  .art-wrap{max-width:740px;margin:0 auto;padding:3rem 1.5rem 5rem;}
+  .kicker{font-family:var(--mono);text-transform:uppercase;letter-spacing:.15em;font-size:.72rem;color:var(--accent);font-weight:500;margin:0 0 1.2rem;}
+  h1{font-family:var(--display);font-weight:700;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.15;color:var(--ink);margin:0 0 1.2rem;}
+  .deck{font-size:1.1rem;color:var(--muted);line-height:1.6;margin:0 0 1.8rem;font-style:italic;}
+  .meta-bar{border-top:1px solid var(--rule-light);border-bottom:1px solid var(--rule-light);padding:14px 0;margin:0 0 2.5rem;font-family:var(--mono);font-size:.78rem;color:var(--muted);}
+  .meta-bar b{color:var(--ink);font-weight:600;}
+  h2{font-family:var(--display);font-weight:700;font-size:1.5rem;color:var(--ink);margin:2.5rem 0 .8rem;}
+  h2::before{content:"";display:block;width:46px;height:3px;background:var(--accent);margin-bottom:14px;}
+  p{margin:0 0 1.4rem;}
+  strong{font-weight:600;color:var(--ink);}
+  blockquote{margin:1.8rem 0;padding:6px 0 6px 22px;border-left:3px solid var(--accent);font-style:italic;font-size:1.15rem;color:var(--ink);}
+  .quellen{margin-top:3rem;padding-top:1.5rem;border-top:2px solid var(--ink);font-size:.88rem;color:var(--muted);}
+  .quellen h2{font-size:1rem;margin:0 0 1rem;}
   .quellen h2::before{display:none;}
   .quellen ul{margin:0;padding:0;list-style:none;}
-  .quellen li{margin:0 0 9px;padding-left:18px;position:relative;}
-  .quellen li::before{content:"›";position:absolute;left:0;color:var(--gold);font-weight:700;}
-  .quellen a{color:var(--ozean-hell);word-break:break-word;}
-  .fuss{margin-top:40px;font-size:.78rem;color:var(--grau);font-style:italic;text-align:center;}
+  .quellen li{margin:0 0 .6rem;padding-left:18px;position:relative;}
+  .quellen li::before{content:"›";position:absolute;left:0;color:var(--accent);font-weight:700;}
+  .quellen a{color:var(--ink);}
+  .quellen a:hover{color:var(--accent);}
+  .tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:2.5rem 0 1rem;padding-top:1.5rem;border-top:1px solid var(--rule-light);}
+  .tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--rule-light);padding:.25rem .6rem;text-decoration:none;transition:.15s;}
+  .tag:hover{background:var(--paper-2);color:var(--ink);}
+  .art-footer{margin-top:2rem;font-size:.78rem;color:var(--muted);font-style:italic;text-align:center;}
+  footer{background:var(--paper-2);border-top:1px solid var(--rule-strong);padding:3rem 1.5rem;}
+  .footer-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;}
+  .footer-brand{font-family:var(--display);font-weight:800;font-size:1.2rem;color:var(--ink);margin-bottom:.5rem;}
+  .footer-brand span{color:var(--accent);}
+  .footer-tagline{font-size:.88rem;color:var(--muted);line-height:1.6;}
+  .footer-col h4{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.8rem;}
+  .footer-col ul{list-style:none;padding:0;}
+  .footer-col li{margin-bottom:.4rem;}
+  .footer-col a{font-size:.88rem;color:var(--muted);text-decoration:none;}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-copy{max-width:1080px;margin:1.5rem auto 0;font-family:var(--mono);font-size:.7rem;color:var(--muted);display:flex;gap:1.5rem;flex-wrap:wrap;padding-top:1rem;border-top:1px solid var(--rule-light);}
+  .footer-copy a{color:var(--muted);text-decoration:none;}
+  @media(max-width:640px){.nav-links{display:none;}.footer-inner{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
-<article class="wrap">
 
-  <p class="kicker">Meinungsklima · Analyse</p>
-  <h1>Von Eva Herman zu Ulrike Herrmann: das asymmetrische Toleranzfenster des ÖRR</h1>
-  <p class="untertitel">2007 verschwand eine Tagesschau-Sprecherin binnen Tagen aus dem öffentlich-rechtlichen Fernsehen. Heute ist eine Publizistin, die offen das Ende des Kapitalismus und eine „ökologische Kriegswirtschaft" fordert, gern gesehener Dauergast. Es geht nicht darum, beide gleichzusetzen – sondern um die Richtung des Reflexes.</p>
-
-  <div class="meta">
-    <b>Slug:</b> toleranzfenster-eva-herman-ulrike-herrmann-oerr &nbsp;·&nbsp;
-    <b>Tags:</b> ÖRR, Talkshow, Eva Herman, Ulrike Herrmann, Meinungsklima, Framing, Kriegswirtschaft, Ausgewogenheit
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">Rundfunkkritik<span>.de</span></a>
+    <div class="nav-links">
+      <a href="index.html#aktuell">Aktuell</a>
+      <a href="index.html#mechanismen">10 Mechanismen</a>
+      <a href="medienaufsicht_macht_serie_2026.html">Serie I</a>
+      <a href="serie2_meinungsmache_2026.html">Serie II</a>
+      <a href="widerstand.html">Stiller Widerstand</a>
+    </div>
   </div>
+</nav>
 
-  <p>Ein öffentlich-rechtlicher Rundfunk lebt von einem Versprechen: Er bilde die Breite der Gesellschaft ab, lade unterschiedliche Stimmen ein, halte das Meinungsspektrum offen. Die spannende Frage ist nicht, ob radikale Thesen vorkommen dürfen – sie dürfen. Die Frage ist, in welche Richtung der Reflex schlägt, wenn jemand die Grenze des Sagbaren berührt. Wer wird sofort hinausgebeten? Und wer bekommt das Sofa?</p>
+<div class="art-wrap">
 
-  <h2>2007: Der schnelle Fall der Eva Herman</h2>
-  <p>Eva Herman war über Jahre das Gesicht der „Tagesschau". Im Herbst 2007 äußerte sie sich in einer Weise über Familienbilder und Mutterrollen, die als positive Bezugnahme auf die NS-Zeit gelesen wurde. Die Reaktion kam in Tagen, nicht in Wochen: Am 9. September 2007 beendete der <strong>NDR</strong> die Zusammenarbeit mit sofortiger Wirkung. Wenige Wochen später, im Oktober, lud ZDF-Moderator Johannes B. Kerner sie in seine Talkshow – und warf sie nach rund fünfzig Minuten live aus der Runde, als sie sich nicht klar distanzieren wollte und eine Mitdiskutantin gehen wollte.</p>
-  <p>Bemerkenswert ist der Nachklang. Kerner räumte später selbst ein, falsch gehandelt zu haben – <strong>„Ich habe damals falsch entschieden"</strong>, sagte er der <em>Süddeutschen Zeitung</em>. Geändert hat das nichts: Herman kehrte nie in das Mainstream-Fernsehen zurück. Auch ihre arbeitsrechtliche Klage gegen die Kündigung blieb durch alle Instanzen erfolglos.</p>
-  <p>Man muss Hermans damalige Aussagen nicht verteidigen, um den Mechanismus zu sehen. Der Punkt ist nicht der Inhalt – der war im deutschen Kontext heikel wie kaum ein anderer. Der Punkt ist das Tempo und die Endgültigkeit: ein Satz, eine Woche, ein Berufsende.</p>
+<p class="kicker">Meinungsklima · Analyse</p>
+<h1>Von Eva Herman zu Ulrike Herrmann: das asymmetrische Toleranzfenster des ÖRR</h1>
+<p class="deck">2007 verschwand eine Tagesschau-Sprecherin binnen Tagen aus dem öffentlich-rechtlichen Fernsehen. Heute ist eine Publizistin, die offen das Ende des Kapitalismus und eine „ökologische Kriegswirtschaft" fordert, gern gesehener Dauergast. Es geht nicht darum, beide gleichzusetzen – sondern um die Richtung des Reflexes.</p>
 
-  <h2>Heute: Der weiche Empfang der Ulrike Herrmann</h2>
-  <p>Springen wir in die Gegenwart. <strong>Ulrike Herrmann</strong>, Wirtschaftskorrespondentin der <em>taz</em>, vertritt seit Jahren eine ökonomische These, die an Radikalität schwer zu überbieten ist. In ihrem Bestseller „Das Ende des Kapitalismus" und in zahllosen Interviews fordert sie ein „grünes Schrumpfen": Die deutsche Wirtschaftsleistung müsse um rund die Hälfte sinken, zurück auf das Niveau von 1978. Als Vorbild nennt sie ausdrücklich die <strong>britische Kriegswirtschaft ab 1939</strong> – mit staatlicher Rationierung und staatlichen Vorgaben, was private Firmen noch produzieren dürfen. „Die Automobilindustrie", so Herrmann an anderer Stelle, müsse man „eigentlich schließen".</p>
-  <p>Das ist kein Randthema einer Nischenpublizistin. Herrmann ist regelmäßiger Gast bei <strong>Markus Lanz</strong>, <strong>Maischberger</strong>, in der <strong>Phoenix-Runde</strong> und auf dem „Roten Sofa" des NDR. Wie ihr eigener Verlag freimütig notiert, wird sie „immer häufiger als Kommentatorin zu politischen Talkshows eingeladen".</p>
-  <p>Und die Kritik an ihren Thesen ist nicht etwa zaghaft. Der Schweizer Think-Tank Avenir Suisse urteilte, Herrmanns Modell bedeute die <strong>Abschaffung der Marktwirtschaft</strong> und „in letzter Konsequenz auch [die] Abschaffung demokratischer Grundwerte". Selbst aus dem grünen Lager – der Politiker Karl-Martin Hentschel – hieß es in der <em>taz</em>, ihre Rezepte seien ökonomisch nicht umsetzbar. Eine staatlich gelenkte, rationierte Planwirtschaft als Zukunftsmodell: Das ist, mit Verlaub, mindestens so erklärungsbedürftig wie vieles, was andere Gäste je den Studiosessel gekostet hat.</p>
+<div class="meta-bar">
+  <b>Kategorie:</b> Meinungsklima · Talkshows &nbsp;·&nbsp; <b>Datum:</b> Juni 2026
+</div>
 
-  <h2>Die Asymmetrie – und was sie nicht behauptet</h2>
-  <p>Hier ist Sorgfalt nötig, sonst kippt das Argument. <strong>Es geht nicht um eine Gleichsetzung.</strong> Eva Hermans Äußerungen berührten die Relativierung der NS-Zeit – in Deutschland aus guten Gründen ein einzigartig sensibles Tabu. Ulrike Herrmanns Vorschläge bewegen sich, wie radikal auch immer, innerhalb der demokratischen Wirtschaftsdebatte, und sie ist eine ausgewiesene Fachpublizistin. Wer beides in einen Topf wirft, hat das Argument schon verloren.</p>
-  <p>Worum es geht, ist die <strong>Richtung des Reflexes</strong>. Das Toleranzfenster des ÖRR scheint nicht symmetrisch zu liegen. Eine Position, die als „rechts" gelesen wird, führt im Zweifel zum sofortigen Ausschluss. Eine Position, die als „links" oder „ökologisch" gelesen wird, darf auch in ihrer radikalsten Ausprägung wiederkehren – und wird dann nicht als Zumutung, sondern als anregender Denkanstoß präsentiert.</p>
-  <p>Das Gedankenexperiment macht es deutlich: Käme ein Gast, der eine staatlich gelenkte Zwangswirtschaft mit Rationierung fordert, mit demselben Wohlwollen Woche für Woche ins Studio, wenn dieselbe Forderung „von rechts" käme? Die Antwort kennt jeder, der die Studios kennt.</p>
+<p>Ein öffentlich-rechtlicher Rundfunk lebt von einem Versprechen: Er bilde die Breite der Gesellschaft ab, lade unterschiedliche Stimmen ein, halte das Meinungsspektrum offen. Die spannende Frage ist nicht, ob radikale Thesen vorkommen dürfen – sie dürfen. Die Frage ist, in welche Richtung der Reflex schlägt, wenn jemand die Grenze des Sagbaren berührt.</p>
 
-  <h2>Die Gegenrede – fair gehört</h2>
-  <p>Zur Redlichkeit gehört der Einwand der anderen Seite: NS-Relativierung sei kategorisch etwas anderes als eine wirtschaftspolitische Utopie; Talkshows lebten von zugespitzten Thesen; und Herrmann werde sehr wohl mit Gegenfragen konfrontiert. All das stimmt. Es entkräftet aber nicht die Beobachtung, dass der Mechanismus des Aussortierens und des Einladens in eine erkennbare Richtung geneigt ist.</p>
+<h2>2007: Der schnelle Fall der Eva Herman</h2>
+<p>Eva Herman war über Jahre das Gesicht der „Tagesschau". Im Herbst 2007 äußerte sie sich in einer Weise über Familienbilder und Mutterrollen, die als positive Bezugnahme auf die NS-Zeit gelesen wurde. Die Reaktion kam in Tagen, nicht in Wochen: Am 9. September 2007 beendete der <strong>NDR</strong> die Zusammenarbeit mit sofortiger Wirkung. Wenige Wochen später lud ZDF-Moderator Johannes B. Kerner sie in seine Talkshow – und warf sie nach rund fünfzig Minuten live aus der Runde.</p>
+<p>Bemerkenswert ist der Nachklang. Kerner räumte später selbst ein, falsch gehandelt zu haben – <strong>„Ich habe damals falsch entschieden"</strong>, sagte er der <em>Süddeutschen Zeitung</em>. Geändert hat das nichts: Herman kehrte nie in das Mainstream-Fernsehen zurück.</p>
+<p>Man muss Hermans damalige Aussagen nicht verteidigen, um den Mechanismus zu sehen. Der Punkt ist das Tempo und die Endgültigkeit: ein Satz, eine Woche, ein Berufsende.</p>
 
-  <h2>Fazit</h2>
-  <p>Der Fall Herman war 2007 der frühe Prototyp: ein Tabu berührt, das Mikrofon weg, und selbst eine spätere Reue ändert nichts mehr. Der Fall Herrmann ist die Gegenprobe von heute: Auch die weitreichendste Forderung kostet keinen Studioplatz, solange sie im richtigen Lager verortet ist. Ein Rundfunk, der Vielfalt verspricht, sollte sein Toleranzfenster nicht nach politischer Himmelsrichtung ausrichten. Tut er es doch, ist nicht die Vielfalt das Ergebnis – sondern ihre Simulation.</p>
+<h2>Heute: Der weiche Empfang der Ulrike Herrmann</h2>
+<p><strong>Ulrike Herrmann</strong>, Wirtschaftskorrespondentin der <em>taz</em>, vertritt seit Jahren eine ökonomische These, die an Radikalität schwer zu überbieten ist. In ihrem Bestseller „Das Ende des Kapitalismus" fordert sie ein „grünes Schrumpfen": Die deutsche Wirtschaftsleistung müsse um rund die Hälfte sinken, zurück auf das Niveau von 1978. Als Vorbild nennt sie die <strong>britische Kriegswirtschaft ab 1939</strong> – mit staatlicher Rationierung und Vorgaben, was private Firmen produzieren dürfen.</p>
+<p>Herrmann ist regelmäßiger Gast bei <strong>Markus Lanz</strong>, <strong>Maischberger</strong>, in der <strong>Phoenix-Runde</strong> und auf dem „Roten Sofa" des NDR. Wie ihr Verlag notiert, wird sie „immer häufiger als Kommentatorin zu politischen Talkshows eingeladen".</p>
+<p>Der Schweizer Think-Tank Avenir Suisse urteilte, Herrmanns Modell bedeute die <strong>Abschaffung der Marktwirtschaft</strong> und „in letzter Konsequenz auch die Abschaffung demokratischer Grundwerte". Selbst aus dem grünen Lager – Politiker Karl-Martin Hentschel in der <em>taz</em> – hieß es, ihre Rezepte seien ökonomisch nicht umsetzbar.</p>
 
-  <section class="quellen">
-    <h2>Weiterführende Quellen</h2>
-    <ul>
-      <li>Tagesspiegel – Eva Herman verzeiht Kerner / Kerner räumt Fehler ein: <a href="https://www.tagesspiegel.de/gesellschaft/panorama/eva-herman-verzeiht-kerner-1595098.html">tagesspiegel.de</a></li>
-      <li>taz – „Talkshow-Spektakel: Kerner wirft Eva Herman raus" (10.10.2007): <a href="https://taz.de/Talkshow-Spektakel/!5193698/">taz.de</a></li>
-      <li>Wikipedia – Eva Herman (NDR-Kündigung 9.9.2007, Arbeitsgerichtsverfahren): <a href="https://de.wikipedia.org/wiki/Eva_Herman">de.wikipedia.org</a></li>
-      <li>Wikipedia – Ulrike Herrmann (Kriegswirtschaft, Kritik Avenir Suisse / Hentschel): <a href="https://de.wikipedia.org/wiki/Ulrike_Herrmann">de.wikipedia.org</a></li>
-      <li>taz – „Wir brauchen grünes Schrumpfen" (Interview, Modell britische Kriegswirtschaft): <a href="https://taz.de/Ulrike-Herrmann-ueber-Kapitalismus/!5882358/">taz.de</a></li>
-      <li>Kiepenheuer &amp; Witsch – Verlagsgespräch mit Ulrike Herrmann (Talkshow-Präsenz): <a href="https://www.kiwi-verlag.de/magazin/im-gespraech/das-ende-des-kapitalismus-ulrike-herrmann-im-interview">kiwi-verlag.de</a></li>
-      <li>fernsehserien.de – Filmografie Ulrike Herrmann (Lanz, Maischberger u.a.): <a href="https://www.fernsehserien.de/ulrike-herrmann/filmografie">fernsehserien.de</a></li>
-    </ul>
-  </section>
+<h2>Die Asymmetrie – und was sie nicht behauptet</h2>
+<p>Hier ist Sorgfalt nötig, sonst kippt das Argument. <strong>Es geht nicht um eine Gleichsetzung.</strong> Eva Hermans Äußerungen berührten die Relativierung der NS-Zeit – in Deutschland aus guten Gründen ein einzigartig sensibles Tabu. Ulrike Herrmanns Vorschläge bewegen sich, wie radikal auch immer, innerhalb der demokratischen Wirtschaftsdebatte.</p>
+<p>Worum es geht, ist die <strong>Richtung des Reflexes</strong>. Das Toleranzfenster des ÖRR scheint nicht symmetrisch zu liegen. Eine Position, die als „rechts" gelesen wird, führt im Zweifel zum sofortigen Ausschluss. Eine Position, die als „links" oder „ökologisch" gilt, darf auch in ihrer radikalsten Ausprägung wiederkehren.</p>
+<p>Das Gedankenexperiment macht es deutlich: Käme ein Gast, der eine staatlich gelenkte Zwangswirtschaft mit Rationierung fordert, mit demselben Wohlwollen Woche für Woche ins Studio, wenn dieselbe Forderung „von rechts" käme?</p>
 
-  <p class="fuss">rundfunkkritik.de · Recherche: Juni 2026 · Reine HTML-Ausgabe</p>
+<h2>Fazit</h2>
+<p>Der Fall Herman war 2007 der frühe Prototyp: ein Tabu berührt, das Mikrofon weg. Der Fall Herrmann ist die Gegenprobe von heute: Auch die weitreichendste Forderung kostet keinen Studioplatz, solange sie im richtigen Lager verortet ist. Ein Rundfunk, der Vielfalt verspricht, sollte sein Toleranzfenster nicht nach politischer Himmelsrichtung ausrichten.</p>
 
-</article>
+<div class="tags">
+  <a class="tag" href="index.html#mechanismen">Talkshow-Asymmetrie</a>
+  <a class="tag" href="der_cut_oerr_2026.html">Meinungsspektrum</a>
+  <a class="tag" href="boehmermann-nazis-keulen.html">Satire &amp; ÖRR</a>
+  <a class="tag" href="index.html#aktuell">ÖRR-Auftrag</a>
+</div>
+
+<section class="quellen">
+  <h2>Weiterführende Quellen</h2>
+  <ul>
+    <li>Tagesspiegel – Eva Herman verzeiht Kerner / Kerner räumt Fehler ein: <a href="https://www.tagesspiegel.de/gesellschaft/panorama/eva-herman-verzeiht-kerner-1595098.html" target="_blank" rel="noopener">tagesspiegel.de</a></li>
+    <li>taz – „Talkshow-Spektakel: Kerner wirft Eva Herman raus" (10.10.2007): <a href="https://taz.de/Talkshow-Spektakel/!5193698/" target="_blank" rel="noopener">taz.de</a></li>
+    <li>Wikipedia – Eva Herman (NDR-Kündigung, Arbeitsgerichtsverfahren): <a href="https://de.wikipedia.org/wiki/Eva_Herman" target="_blank" rel="noopener">de.wikipedia.org</a></li>
+    <li>Wikipedia – Ulrike Herrmann (Kriegswirtschaft, Kritik Avenir Suisse / Hentschel): <a href="https://de.wikipedia.org/wiki/Ulrike_Herrmann" target="_blank" rel="noopener">de.wikipedia.org</a></li>
+    <li>taz – „Wir brauchen grünes Schrumpfen" (Interview): <a href="https://taz.de/Ulrike-Herrmann-ueber-Kapitalismus/!5882358/" target="_blank" rel="noopener">taz.de</a></li>
+  </ul>
+</section>
+
+<p class="art-footer">Rundfunkkritik.de · Strukturelle Medienanalyse · Juristisch belastbar · Empirisch belegbar</p>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Rundfunkkritik<span>.de</span></div>
+      <p class="footer-tagline">Strukturelle Medienanalyse.<br>Juristisch belastbar. Empirisch belegbar.<br>Ohne Polemik.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Inhalt</h4>
+      <ul>
+        <li><a href="index.html#aktuell">Aktuell</a></li>
+        <li><a href="index.html#mechanismen">10 Mechanismen</a></li>
+        <li><a href="medienaufsicht_macht_serie_2026.html">Serie I</a></li>
+        <li><a href="serie2_meinungsmache_2026.html">Serie II</a></li>
+        <li><a href="widerstand.html">Stiller Widerstand</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Zum Thema</h4>
+      <ul>
+        <li><a href="boehmermann-nazis-keulen.html">Böhmermann &amp; Satire</a></li>
+        <li><a href="der_cut_oerr_2026.html">Der Cut</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-copy">
+    <span>© 2026 Rundfunkkritik.de · Alle Inhalte zur freien Verwendung mit Quellenangabe</span>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
+
 </body>
 </html>
