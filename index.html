@@ -94,16 +94,6 @@ section{padding:4rem 1.5rem}
 .fc-desc{font-size:0.95rem;color:var(--text-mid);line-height:1.6;flex:1}
 .fc-link{display:inline-block;margin-top:0.5rem;font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ocean);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:1px}
 .fc-link:hover{color:var(--rot);border-bottom-color:var(--rot)}
-  /* Ganzes blaues Feld klickbar */
-  .feature-card { position: relative; cursor: pointer; }
-  .fc-link::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-  .fc-link { position: relative; z-index: 1; }
-
 .fc-link::after{content:' →'}
 
 /* NEW badge */
@@ -766,6 +756,17 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
     });
   });
 })();
+
+  // Ganzes Feature-Card anklickbar
+  document.querySelectorAll('.feature-card').forEach(function(card) {
+    card.addEventListener('click', function(e) {
+      // Don't interfere with actual link clicks
+      if (e.target.tagName === 'A') return;
+      const link = card.querySelector('.fc-link, a');
+      if (link) window.location.href = link.href;
+    });
+    card.style.cursor = 'pointer';
+  });
 </script>
 </body>
 </html>
