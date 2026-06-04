@@ -94,6 +94,16 @@ section{padding:4rem 1.5rem}
 .fc-desc{font-size:0.95rem;color:var(--text-mid);line-height:1.6;flex:1}
 .fc-link{display:inline-block;margin-top:0.5rem;font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ocean);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:1px}
 .fc-link:hover{color:var(--rot);border-bottom-color:var(--rot)}
+  /* Ganzes blaues Feld klickbar */
+  .feature-card { position: relative; cursor: pointer; }
+  .fc-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .fc-link { position: relative; z-index: 1; }
+
 .fc-link::after{content:' →'}
 
 /* NEW badge */
@@ -226,6 +236,25 @@ footer{background:var(--navy);padding:3rem 1.5rem 2rem}
   .hero-stats{gap:1.5rem}
   nav a:not(.nav-brand){padding:0.7rem 0.4rem;font-size:0.56rem}
 }
+
+  /* SUCHE */
+  .search-wrap { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 1rem; }
+  .search-input {
+    width: 100%;
+    padding: 12px 20px 12px 44px;
+    font-family: var(--mono);
+    font-size: 13px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--ink);
+    outline: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='M21 21l-4.35-4.35'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 14px center;
+    transition: border-color .2s;
+  }
+  .search-input:focus { border-color: var(--accent); }
+  .card-hidden { display: none !important; }
 </style>
 </head>
 <body>
@@ -288,6 +317,9 @@ footer{background:var(--navy);padding:3rem 1.5rem 2rem}
       <span class="section-tag">Tiefenrecherche · Mai / Juni 2026</span>
     </div>
 
+          <div class="search-wrap">
+        <input type="search" class="search-input" id="artikel-suche" placeholder="Artikel durchsuchen…" aria-label="Artikel durchsuchen">
+      </div>
     <div class="feature-grid">
 
       <div class="feature-card reveal">
@@ -356,6 +388,50 @@ footer{background:var(--navy);padding:3rem 1.5rem 2rem}
         </div>
       </div>
 
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Satire · ÖRR-Auftrag <span class="badge-new">Neu</span></div>
+          <div class="fc-title">Mit Beitragsgeld an die Grenze: Böhmermann, das <em>„Keulen"</em> und die Frage, was Satire im ÖRR darf</div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">Im Februar 2024 verabschiedete sich Jan Böhmermann mit einem Wortspiel, das mehrere Strafanzeigen nach sich zog. Die Staatsanwaltschaft ermittelte nicht. Bleibt die Frage: Darf ein Sender, der von allen bezahlt wird, seine bezahlten Pointen so eindeutig adressieren?</p>
+          <a class="fc-link" href="boehmermann-nazis-keulen.html">Zur Analyse</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Berichterstattung · Framing <span class="badge-new">Neu</span></div>
+          <div class="fc-title">Wasserwerfer und Wortwahl: Wie der ÖRR die <em>Corona-Proteste rahmte</em></div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">Ein Begriff entscheidet oft mehr als ein Bild. Das vorangestellte Etikett ersetzte zu oft die Differenzierung – auch dort, wo selbst die Berliner Polizei intern an der Verhältnismäßigkeit zweifelte.</p>
+          <a class="fc-link" href="corona-proteste-framing.html">Zur Analyse</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Finanzierung · ÖRR-Struktur <span class="badge-new">Neu</span></div>
+          <div class="fc-title">Die <em>zweite Kasse:</em> Wie ARD und ZDF zusätzlich zum Zwangsbeitrag Millionen mit Werbung verdienen</div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">Über 10 Milliarden Euro nehmen die Sender pro Jahr ein. 85 % aus dem Rundfunkbeitrag. Trotzdem konkurrieren ARD und ZDF auf dem Werbemarkt – und verdrängten 2024 Privatsender, die ohne staatliche Absicherung wirtschaften müssen.</p>
+          <a class="fc-link" href="werbeeinnahmen.html">Zur Analyse</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">ÖRR · funk · Bildungsauftrag <span class="badge-new">Neu</span></div>
+          <div class="fc-title">45 Millionen Euro im Jahr – <em>für wen eigentlich?</em></div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">Das ARD/ZDF-Jugendnetzwerk funk kostet seit 2016 rund 420 Millionen Euro aus dem Rundfunkbeitrag. Wer profitiert, welche Inhalte entstehen und welche Fragen der Bildungsauftrag aufwirft.</p>
+          <a class="fc-link" href="funk_artikel_rundfunkkritik.html">Zur Analyse</a>
+        </div>
+      </div>
     </div>
 
     <!-- Kurzmeldungen -->
@@ -677,5 +753,19 @@ const obs=new IntersectionObserver(entries=>{
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 
+
+<script>
+(function(){
+  const inp = document.getElementById('artikel-suche');
+  if (!inp) return;
+  inp.addEventListener('input', function() {
+    const q = this.value.toLowerCase().trim();
+    document.querySelectorAll('.feature-card, .card, .aside-card').forEach(function(card) {
+      const txt = card.textContent.toLowerCase();
+      card.classList.toggle('card-hidden', q.length > 1 && !txt.includes(q));
+    });
+  });
+})();
+</script>
 </body>
 </html>
