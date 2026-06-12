@@ -6,19 +6,19 @@
 <title>Die Aufreger-Liste: 18 dokumentierte Fälle von ÖRR-Versagen</title>
 <style>
   :root {
-    --bg: #0d0d0d;
-    --bg-card: #141414;
+    --bg: #faf7f2;
+    --bg-card: #ffffff;
     --bg-card-hover: #181818;
-    --gold: #c8a84b;
+    --gold: #c9a84c;
     --gold-light: #e2c97e;
     --gold-dim: #8a7133;
     --gold-bg: #1a1608;
-    --text: #e8e4da;
-    --text-muted: #8a8680;
-    --text-dim: #4a4840;
-    --border: #222018;
-    --border-mid: #2a2820;
-    --border-gold: #3a3020;
+    --text: #1c1c1c;
+    --text-muted: #5a5a55;
+    --text-dim: #9a9a95;
+    --border: #d4c9b0;
+    --border-mid: #e0d8c8;
+    --border-gold: #d4c9b0;
     --red: #c0392b;
     --red-dim: #6a1f17;
     --cluster-1: #7a3520;
@@ -31,7 +31,7 @@
 
   body {
     background: var(--bg);
-    color: var(--text);
+    color: var(--text-dark, #1c1c1c);
     font-family: Georgia, 'Times New Roman', serif;
     font-size: 17px;
     line-height: 1.75;
@@ -56,7 +56,7 @@
     font-size: 2.2rem;
     font-weight: normal;
     line-height: 1.2;
-    color: var(--text);
+    color: var(--text-dark, #1c1c1c);
     margin-bottom: 0.75rem;
     letter-spacing: -0.01em;
   }
@@ -189,7 +189,7 @@
 
   .case-title {
     font-size: 1rem;
-    color: var(--text);
+    color: var(--text-dark, #1c1c1c);
     line-height: 1.4;
     margin-bottom: 0.3rem;
   }
@@ -209,7 +209,7 @@
   }
 
   .case-body strong {
-    color: var(--text);
+    color: var(--text-dark, #1c1c1c);
   }
 
   .case-body .highlight {
@@ -347,7 +347,31 @@
     .link-block { flex-direction: column; }
     .case-number { font-size: 0.68rem; padding: 1rem 0.6rem; }
   }
+  /* ─── HEADER ─── */
+  .site-header {
+    background: #1a2744;
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .site-header a {
+    color: #f5f0e8;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    opacity: 0.85;
+  }
+  .site-header a:hover { opacity: 1; }
+  .site-header span { color: #c9a84c; opacity: 0.5; }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -697,5 +721,26 @@
   Rundfunkkritik.de · Alle Fälle quellenbasiert dokumentiert · Die Liste wächst kontinuierlich · Stand: Juni 2026
 </div>
 
+
+  <!-- Verwandte Artikel -->
+  <section style="max-width:860px;margin:3rem auto 2rem;padding:0 2rem;">
+    <div style="border-top:2px solid #d4c9b0;padding-top:2rem;">
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#1a2744;margin-bottom:1.25rem;letter-spacing:0.02em;">Weiterführende Analysen</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;">
+        <a href="oerr_versagen_juni2026.html" style="display:block;padding:1rem 1.25rem;background:#f5f0e8;border:1px solid #d4c9b0;border-left:3px solid #c9a84c;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderLeftColor='#1a2744'" onmouseout="this.style.borderLeftColor='#c9a84c'">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:#9a9a95;margin-bottom:0.4rem;">Aktuelle Ergänzung</div>
+          <div style="font-family:'Crimson Pro',Georgia,serif;font-size:1rem;color:#1c1c1c;line-height:1.4;">ÖRR-Versagen: 6 aktuelle Fälle</div>
+        </a>
+        <a href="oerr-decoder.html" style="display:block;padding:1rem 1.25rem;background:#f5f0e8;border:1px solid #d4c9b0;border-left:3px solid #c9a84c;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderLeftColor='#1a2744'" onmouseout="this.style.borderLeftColor='#c9a84c'">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:#9a9a95;margin-bottom:0.4rem;">Werkzeug</div>
+          <div style="font-family:'Crimson Pro',Georgia,serif;font-size:1rem;color:#1c1c1c;line-height:1.4;">Der ÖRR-Decoder: Muster erkennen</div>
+        </a>
+        <a href="oerr-reform-manifest.html" style="display:block;padding:1rem 1.25rem;background:#f5f0e8;border:1px solid #d4c9b0;border-left:3px solid #c9a84c;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderLeftColor='#1a2744'" onmouseout="this.style.borderLeftColor='#c9a84c'">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:#9a9a95;margin-bottom:0.4rem;">Konsequenz</div>
+          <div style="font-family:'Crimson Pro',Georgia,serif;font-size:1rem;color:#1c1c1c;line-height:1.4;">Reform-Manifest: Was sich ändern müsste</div>
+        </a>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
