@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Die Vollstreckungsmaschinerie des Beitragsservice | Rundfunkkritik.de</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d0d0d;
+    color: #d4d4d4;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.75;
+    padding: 0 1rem 4rem;
+  }
+  .container { max-width: 820px; margin: 0 auto; }
+  header { padding: 3rem 0 2rem; border-bottom: 1px solid #222; margin-bottom: 2.5rem; }
+  .site-label {
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #c8a84b;
+    margin-bottom: 0.6rem;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.25;
+    color: #f0e8d0;
+    margin-bottom: 1rem;
+  }
+  .meta { font-size: 0.82rem; color: #666; letter-spacing: 0.04em; }
+  .standfirst {
+    font-size: 1.08rem;
+    color: #b8b0a0;
+    border-left: 3px solid #c8a84b;
+    padding-left: 1.2rem;
+    margin: 2rem 0;
+    line-height: 1.65;
+  }
+  h2 {
+    font-size: 1.25rem;
+    color: #c8a84b;
+    margin: 2.8rem 0 1rem;
+    border-bottom: 1px solid #1e1e1e;
+    padding-bottom: 0.5rem;
+  }
+  h3 { font-size: 1.02rem; color: #e0d8c8; margin: 1.6rem 0 0.5rem; }
+  p { margin-bottom: 1.1rem; }
+  a { color: #c8a84b; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Faktenzahlen */
+  .fact-row { display: flex; gap: 1rem; margin: 2rem 0; flex-wrap: wrap; }
+  .fact-box {
+    flex: 1; min-width: 160px;
+    border: 1px solid #2a2a2a; background: #111;
+    padding: 1rem 1.2rem; border-radius: 3px; text-align: center;
+  }
+  .fact-box .number { font-size: 1.75rem; color: #c8a84b; font-weight: bold; line-height: 1.1; }
+  .fact-box .label { font-size: 0.76rem; color: #777; margin-top: 0.3rem; line-height: 1.4; }
+
+  /* Fallkarten */
+  .case-card {
+    border: 1px solid #2a2a2a; border-left: 4px solid #c8a84b;
+    background: #121212; border-radius: 3px;
+    padding: 1.3rem 1.5rem; margin: 1.6rem 0;
+  }
+  .case-number { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #c8a84b; margin-bottom: 0.3rem; }
+  .case-card h3 { margin-top: 0; color: #f0e8d0; font-size: 1.02rem; }
+  .case-card p { font-size: 0.94rem; color: #c0b8a8; margin-bottom: 0.6rem; }
+  .case-card p:last-child { margin-bottom: 0; }
+  .verdict { font-size: 0.79rem; color: #888; font-style: italic; margin-top: 0.7rem; }
+
+  /* Warnung / Info */
+  .warn-box {
+    border: 1px solid #3a3020; background: #1a1508;
+    border-radius: 3px; padding: 1.1rem 1.4rem; margin: 1.8rem 0;
+    font-size: 0.91rem; color: #c0b090;
+  }
+  .warn-box strong { color: #c8a84b; }
+  .info-box {
+    border: 1px solid #1e2a1e; background: #0f1a0f;
+    border-radius: 3px; padding: 1.1rem 1.4rem; margin: 1.8rem 0;
+    font-size: 0.91rem; color: #a0b8a0;
+  }
+  .info-box strong { color: #7db87d; }
+
+  /* Eskalationsstufen */
+  .escalation { counter-reset: steps; margin: 1.8rem 0; }
+  .step {
+    display: flex; gap: 1rem; align-items: flex-start;
+    margin-bottom: 0.9rem; padding: 0.9rem 1rem;
+    border: 1px solid #1e1e1e; background: #111; border-radius: 3px;
+  }
+  .step-num {
+    flex-shrink: 0; width: 2rem; height: 2rem;
+    border-radius: 50%; background: #1a1508; border: 1px solid #c8a84b;
+    color: #c8a84b; font-size: 0.82rem; font-weight: bold;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 0.1rem;
+  }
+  .step-content { flex: 1; }
+  .step-title { font-size: 0.9rem; color: #e0d8c8; font-weight: bold; margin-bottom: 0.2rem; }
+  .step-desc { font-size: 0.86rem; color: #999; line-height: 1.5; }
+  .step.danger .step-num { background: #2a0808; border-color: #c04040; color: #c04040; }
+  .step.danger .step-title { color: #d08080; }
+
+  /* Spartipps-Tabelle */
+  .tipp-table { width: 100%; border-collapse: collapse; margin: 1.4rem 0; font-size: 0.92rem; }
+  .tipp-table th {
+    text-align: left; padding: 0.55rem 0.8rem;
+    background: #1a1a1a; color: #c8a84b;
+    font-size: 0.76rem; letter-spacing: 0.06em; text-transform: uppercase;
+    border-bottom: 1px solid #2a2a2a;
+  }
+  .tipp-table td { padding: 0.65rem 0.8rem; border-bottom: 1px solid #181818; color: #c0b8a8; vertical-align: top; }
+  .tipp-table tr:last-child td { border-bottom: none; }
+  .tag-voll { color: #5cb85c; font-size: 0.76rem; font-weight: bold; }
+  .tag-part { color: #c8a84b; font-size: 0.76rem; font-weight: bold; }
+  .tag-pend { color: #8888cc; font-size: 0.76rem; font-weight: bold; }
+
+  /* Quellen */
+  .sources { margin-top: 3.5rem; border-top: 1px solid #1e1e1e; padding-top: 1.5rem; }
+  .sources h2 { font-size: 1rem; color: #666; border: none; margin-top: 0; }
+  .sources ol { padding-left: 1.4rem; }
+  .sources li { font-size: 0.81rem; color: #555; margin-bottom: 0.4rem; line-height: 1.5; }
+  .sources a { color: #666; }
+  .sources a:hover { color: #c8a84b; }
+
+  footer {
+    margin-top: 4rem; border-top: 1px solid #1a1a1a;
+    padding-top: 1.5rem; font-size: 0.79rem; color: #444;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="site-label">Rundfunkkritik.de &mdash; Strukturelle Kritik</div>
+    <h1>Die Vollstreckungsmaschinerie des Beitragsservice: 1,28 Millionen Ersuchen, ein BGH-Beschluss und was Beitragszahler wissen sollten</h1>
+    <div class="meta">Veröffentlicht: Juni 2026 &nbsp;|&nbsp; Themencluster: Finanzielle und strukturelle Kritik</div>
+  </header>
+
+  <p class="standfirst">
+    2023 leitete der Beitragsservice 1,28 Millionen Vollstreckungsersuchen ein. Der Bundesgerichtshof erklärte im Februar 2026 einen erheblichen Teil davon für formunwirksam. Gleichzeitig läuft ein Musterverfahren zur steuerlichen Absetzbarkeit. Und in Extremfällen droht tatsächlich Erzwingungshaft &mdash; die Praxis zeigt jedoch: Die übergroße Mehrheit der Verweigerer bleibt statistisch unsichtbar. Eine Bestandsaufnahme mit konkreten Handlungsoptionen.
+  </p>
+
+  <div class="fact-row">
+    <div class="fact-box">
+      <div class="number">1,28 Mio.</div>
+      <div class="label">Vollstreckungsersuchen<br>allein 2023</div>
+    </div>
+    <div class="fact-box">
+      <div class="number">21,74 Mio.</div>
+      <div class="label">Mahnmaßnahmen<br>2023</div>
+    </div>
+    <div class="fact-box">
+      <div class="number">220,32 €</div>
+      <div class="label">Jahresbeitrag<br>pro Haushalt 2026</div>
+    </div>
+    <div class="fact-box">
+      <div class="number">1 K 67/26</div>
+      <div class="label">Musterverfahren<br>Steuer, FG MV</div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================ -->
+  <h2>I. Das Vollstreckungssystem: Wie es funktioniert</h2>
+
+  <p>
+    Der Rundfunkbeitrag ist keine privatrechtliche Forderung. Es bedarf keines Urteils &mdash; der Festsetzungsbescheid der Rundfunkanstalt genügt als Grundlage für Kontopfändung, Lohnpfändung und erzwungene Vermögensauskunft. Die Vollstreckung erfolgt im Verwaltungsvollstreckungsverfahren; die Städte und Kommunen übernehmen die Durchführung.
+  </p>
+  <p>
+    Ab 2025 wurde das Verfahren verschärft: Zahlungen gelten nur noch als korrekt, wenn die exakte Beitragsnummer im Verwendungszweck steht. Der Beitragsservice versendet zudem nur noch einmalig eine schriftliche Zahlungsaufforderung &mdash; keine weiteren Erinnerungen. Wer eine Beitragsnummer vergisst, riskiert Säumniszuschläge und Vollstreckung, auch wenn die Zahlung der Höhe nach korrekt war.
+  </p>
+
+  <h3>Eskalationsstufen im Überblick</h3>
+
+  <div class="escalation">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-title">Festsetzungsbescheid</div>
+        <div class="step-desc">Beitragsservice stellt rückständige Beträge inkl. Säumniszuschlag (mind. 8 € pro Quartal) fest. Dient direkt als Vollstreckungsgrundlage.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-title">Mahnung (einmalig ab 2025)</div>
+        <div class="step-desc">Einmalige schriftliche Zahlungsaufforderung. Ohne nachgewiesene Mahnung ist Vollstreckung unzulässig (OVG Lüneburg 8 ME 116/24).</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <div class="step-title">Vollstreckungsersuchen an die Kommune</div>
+        <div class="step-desc">Beitragsservice ersucht Vollstreckungsbehörde. Mögliche Maßnahmen: Kontopfändung, Lohnpfändung. BGH (VII ZB 29/24): Das Ersuchen muss vom tatsächlich verantwortlichen Bearbeiter signiert sein &mdash; ein bloßer Intendantennamenszug genügt nicht.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <div class="step-title">Vermögensauskunft</div>
+        <div class="step-desc">Wenn Pfändung ins Leere läuft, kann der Schuldner zur Abgabe der Vermögensauskunft vorgeladen werden (früher: eidesstattliche Versicherung). Eintragung ins Schuldnerverzeichnis möglich.</div>
+      </div>
+    </div>
+    <div class="step danger">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <div class="step-title">Erzwingungshaft &mdash; Extremfall</div>
+        <div class="step-desc">Wer die Vermögensauskunft verweigert, riskiert bis zu 6 Monate Beugehaft. Diese setzt keine Straftat voraus, sondern erzwingt die Mitwirkung. Sie kann nach zwei Jahren wiederholt werden. Zusätzlich: Bußgeld bis 1.000 € wegen Ordnungswidrigkeit bei sechsmonatigem Zahlungsverzug. Die Haftstrafe wird ins Führungszeugnis eingetragen.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="warn-box">
+    <strong>Zur Einordnung:</strong> Erzwingungshaft tritt nicht bei bloßem Nichtzahlen ein, sondern erst wenn aktiv die Mitwirkung verweigert wird &mdash; konkret: die Vermögensauskunft. Die übergroße Mehrheit der Nichtzahler bleibt in der Praxis im Bereich normaler Vollstreckungsverfahren, statistisch vergleichbar mit Insolvenzen. Bekannte Fälle dokumentieren das unterschiedliche institutionelle Ermessen der Anstalten: Georg Thiel (Borken, NRW) saß 2021 die vollen 180 Tage in der JVA Münster ab &mdash; für 651 Euro WDR-Beitragsschulden. Akten beim Verwaltungsgericht Münster belegen, dass der WDR unter Intendant Tom Buhrow eine frühere Freilassung aktiv verhinderte, obwohl die Stadt Borken die Verhältnismäßigkeit öffentlich bezweifelte. Pikant: Die ARD-Anstalten hatten intern vereinbart, auf Erzwingungshaft zu verzichten &mdash; der WDR hielt sich nicht daran. Im Kontrast dazu zog der MDR einen Haftantrag gegen eine Chemnitzer Verweigererin zurück. Das Instrument wird also selektiv und mit erkennbar unterschiedlichem institutionellen Ermessen eingesetzt.
+  </div>
+
+
+  <!-- ============================================================ -->
+  <h2>II. Rechtliche Korrekturen: Was Gerichte dem System entgegenhalten</h2>
+
+  <div class="case-card">
+    <div class="case-number">Entscheidung 1</div>
+    <h3>OVG Lüneburg: Vollstreckung ohne Mahnung unzulässig (8 ME 116/24)</h3>
+    <p>Eine Frau behauptete, keine Mahnung erhalten zu haben. Das OVG Lüneburg stoppte die Vollstreckung: Ohne nachgewiesene Mahnung fehle die Grundlage. Eine Mahnung ist kein bürokratisches Beiwerk, sondern ein rechtsstaatliches Zwischenschritt, der dem Schuldner die Möglichkeit freiwilliger Zahlung vor Zwangsmaßnahmen gibt.</p>
+    <p class="verdict">OVG Niedersachsen, 8 ME 116/24 &mdash; Vollstreckung eingestellt</p>
+  </div>
+
+  <div class="case-card">
+    <div class="case-number">Entscheidung 2 &mdash; Leitentscheidung</div>
+    <h3>BGH: Vollstreckungsersuchen des Bayerischen Rundfunks formunwirksam (VII ZB 29/24)</h3>
+    <p>
+      Der VII. Zivilsenat des Bundesgerichtshofs erklärte am 25. Februar 2026 ein Vollstreckungsersuchen des BR für formunwirksam. Grund: Für ein elektronisches Dokument im Sinne des § 130a Abs. 3 Satz 1 ZPO muss erkennbar sein, dass die genannte Person den Inhalt tatsächlich verantwortet. Der bloße Namenszug der Intendantin in einem maschinell erzeugten Massenverfahren erfüllt diese Anforderung nicht. Der signaturberechtigte Sachbearbeiter, nicht die Institutionsleitung, muss erkennbar sein.
+    </p>
+    <p>
+      Der Beschluss ist in BGHZ aufzunehmen und als Nachschlagewerk deklariert &mdash; ein Zeichen grundsätzlicher Weichenstellung. Ein Großteil der bayerischen Vollstreckungen dürfte nach aktuellem Stand rechtswidrig sein. Die Beitragspflicht selbst bleibt unberührt.
+    </p>
+    <p>
+      Wer derzeit eine Ladung zur Vermögensauskunft oder ein Vollstreckungsschreiben erhalten hat, kann prüfen, ob das zugrundeliegende Ersuchen formwirksam war. Das LG München I hatte dieselbe Linie bereits 2024 eingeschlagen; der BGH hat sie zur Grundsatzentscheidung erhoben.
+    </p>
+    <p class="verdict">BGH, Beschluss 25.02.2026, VII ZB 29/24 &mdash; in BGHZ aufgenommen</p>
+  </div>
+
+
+  <!-- ============================================================ -->
+  <h2>III. Befreiung und Ermäßigung: Wer hat Anspruch</h2>
+
+  <p>
+    Der Befreiungsanspruch gilt <strong>nicht automatisch</strong>. Er muss beantragt werden &mdash; auch wenn der Sozialleistungsbezug bereits seit Jahren läuft. Wer den Folgeantrag vergisst, zahlt &mdash; und bekommt Nachforderungen, obwohl sein Leistungsbezug lückenlos weiterging. Rückwirkend kann die Befreiung bis zu drei Jahre ab Antragstellung beantragt werden.
+  </p>
+
+  <table class="tipp-table">
+    <thead>
+      <tr>
+        <th>Voraussetzung</th>
+        <th>Entlastung</th>
+        <th>Hinweis</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Bürgergeld / Grundsicherung SGB II</td>
+        <td><span class="tag-voll">Vollbefreiung</span></td>
+        <td>Antrag + aktueller Bewilligungsbescheid. Ab 1.7.2026 Umbenennung in „Grundsicherung für erwerbsfähige Menschen" &mdash; Befreiungsanspruch bleibt erhalten (§ 4 RBStV knüpft an SGB-II-Leistung, nicht an Bezeichnung)</td>
+      </tr>
+      <tr>
+        <td>Grundsicherung im Alter / Erwerbsminderung (SGB XII)</td>
+        <td><span class="tag-voll">Vollbefreiung</span></td>
+        <td>Auch für stationäre Pflege mit Sozialhilfebezug. Verlängerung alle 2 Jahre erforderlich.</td>
+      </tr>
+      <tr>
+        <td>Sozialhilfe / Hilfe zum Lebensunterhalt</td>
+        <td><span class="tag-voll">Vollbefreiung</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>BAföG (außerhalb Elternhaus) / Berufsausbildungsbeihilfe</td>
+        <td><span class="tag-voll">Vollbefreiung</span></td>
+        <td>Aktuellen Bescheid beifügen</td>
+      </tr>
+      <tr>
+        <td>Leistungen nach Asylbewerberleistungsgesetz</td>
+        <td><span class="tag-voll">Vollbefreiung</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Sonderfürsorgeberechtigte (§ 27e BVG), Taubblinde (Merkzeichen TBl)</td>
+        <td><span class="tag-voll">Vollbefreiung</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Schwerbehinderung mit Merkzeichen RF</td>
+        <td><span class="tag-part">Ermäßigung auf 5,99 €/Monat</span></td>
+        <td>Nicht automatisch Vollbefreiung &mdash; weit verbreiteter Irrtum. Bei gleichzeitigem Bürgergeld-Bezug gilt Vollbefreiung.</td>
+      </tr>
+      <tr>
+        <td>Einkommen knapp über Sozialhilfebedarf (keine Leistung)</td>
+        <td><span class="tag-part">Härteklausel § 4 Abs. 6 RBStV</span></td>
+        <td>Befreiung möglich, wenn Einkommen den Bedarf um weniger als 18,36 € übersteigt. Musterformulierung: „Mein Einkommen überschreitet den sozialrechtlich maßgeblichen Bedarf nur geringfügig und höchstens in Höhe des Rundfunkbeitrags."</td>
+      </tr>
+      <tr>
+        <td>Zweitwohnung (wenn Hauptwohnung angemeldet)</td>
+        <td><span class="tag-part">Befreiung der Zweitwohnung</span></td>
+        <td>Antrag beim Beitragsservice, Nachweis Hauptwohnung</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="info-box">
+    <strong>Praxis-Tipp:</strong> Der Beitragsservice erhält Meldedaten automatisch von den Einwohnermeldeämtern. Wer umzieht, sollte die Befreiung am neuen Wohnort erneut beantragen &mdash; die Ummeldung allein löst keine automatische Übertragung aus. Rückwirkend können bis zu drei Jahre berücksichtigt werden, wenn die Voraussetzungen in diesem Zeitraum vorlagen.
+  </div>
+
+
+  <!-- ============================================================ -->
+  <h2>IV. Steuerliche Geltendmachung: Was gilt, was läuft</h2>
+
+  <p>
+    Nach geltender Rechtslage ist der Rundfunkbeitrag für Privatpersonen grundsätzlich <strong>nicht</strong> als Werbungskosten, Sonderausgaben oder außergewöhnliche Belastungen absetzbar. Finanzgerichte haben entsprechende Versuche in der Vergangenheit regelmäßig mit Verweis auf private Lebensführungskosten abgewiesen.
+  </p>
+
+  <h3>Ausnahmen, die heute schon gelten</h3>
+  <table class="tipp-table">
+    <thead>
+      <tr><th>Situation</th><th>Steuerliche Wirkung</th><th>Voraussetzung</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Häusliches Arbeitszimmer als Tätigkeitsmittelpunkt</td>
+        <td><span class="tag-part">Anteiliger Abzug</span></td>
+        <td>Arbeitszimmer muss den Mittelpunkt der gesamten beruflichen Tätigkeit bilden (§ 4 Abs. 5 Nr. 6b EStG). Flächenanteil berechnen, Beitrag entsprechend aufteilen.</td>
+      </tr>
+      <tr>
+        <td>Anerkannte doppelte Haushaltsführung (Zweitwohnung beruflich)</td>
+        <td><span class="tag-part">Abzug als Werbungskosten</span></td>
+        <td>Finanzamt muss die doppelte Haushaltsführung anerkannt haben. Beitrag für die Zweitwohnung separat angeben.</td>
+      </tr>
+      <tr>
+        <td>Unternehmen / Betrieb (Betriebsstätte)</td>
+        <td><span class="tag-part">Betriebsausgabe</span></td>
+        <td>Beitrag für betrieblich genutzte Räume als Betriebsausgabe absetzbar. Staffeltarife für Betriebe (ab 500 MA: 367,20 €/Jahr).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Das laufende Musterverfahren</h3>
+  <p>
+    Der Bund der Steuerzahler unterstützt seit 2026 ein Musterverfahren vor dem Finanzgericht Mecklenburg-Vorpommern (Az. 1 K 67/26). Der Kläger hatte für das Steuerjahr 2024 den Jahresbeitrag von 220,32 Euro in seiner Einkommensteuererklärung geltend gemacht. Das Finanzamt lehnte dies ab. Kernargument der Klage: Da Bürgergeldempfänger wegen des soziokulturellen Existenzminimums befreit werden, müsste der Beitrag konsequenterweise steuerlich berücksichtigt werden &mdash; auch für Bezieher mittlerer Einkommen, für die der Grundfreibetrag ihn bislang nicht einschließt. In manchen Bundesländern (z.B. Saarland) wird der Rundfunkbeitrag bereits explizit in der Beamten-Mindestalimentation berücksichtigt.
+  </p>
+
+  <div class="warn-box">
+    <strong>Einordnung zur Steuerstrategie:</strong> Fachleute bewerten die Erfolgsaussichten der Musterklage derzeit als gering &mdash; die bisherige Rechtsprechung ist eindeutig. Wer den Beitrag dennoch für das Steuerjahr 2025 geltend machen möchte, kann ihn eintragen, nach Ablehnung Einspruch einlegen und das Ruhen des Verfahrens bis zur Gerichtsentscheidung beantragen. Damit sind keine Kosten verbunden, aber auch keine gesicherten Aussichten. Der Jahresbetrag liegt bei 220,32 Euro; die steuerliche Wirkung wäre je nach Steuersatz maximal 40–50 Euro. Empfehlung: Im konkreten Fall steuerliche Beratung einholen. Rundfunkkritik.de gibt keine Steuer- oder Rechtsberatung.
+  </div>
+
+
+  <!-- ============================================================ -->
+  <h2>V. Was tatsächlich passiert, wenn man nicht zahlt &mdash; und was nicht</h2>
+
+  <p>
+    Die öffentliche Darstellung suggeriert oft, Nichtzahlen führe direkt zu Knast. Die Praxis sieht differenzierter aus.
+  </p>
+  <p>
+    Erzwingungshaft ist kein automatisches Ergebnis von Zahlungsverweigerung. Sie setzt voraus, dass aktiv die Vermögensauskunft verweigert wird. Georg Thiel (Borken, NRW) saß 2021 die maximalen 180 Tage in der JVA Münster &mdash; für 651 Euro WDR-Schulden. Der WDR unter Intendant Tom Buhrow verhinderte dabei eine frühere Freilassung aktiv, obwohl die Stadt Borken als Vollstreckungsbehörde Verhältnismäßigkeitsbedenken äußerte. Die Kosten der Haft (über 130 Euro täglich) kann der WDR zusätzlich von Thiel einfordern &mdash; die Haftdauer wird nicht mit den Beitragsschulden verrechnet. Der MDR hingegen zog im Fall einer Chemnitzer Verweigererin den Haftantrag zurück. Das Instrument wird also selektiv eingesetzt &mdash; mit teils erheblichem institutionellen Eigensinn.
+  </p>
+  <p>
+    Die Statistik ist aufschlussreich: Bei 1,28 Millionen Vollstreckungsersuchen im Jahr 2023 und einem Gesamtbeitragsertrag von 9,02 Milliarden Euro bewegen sich die bekannten Erzwingungshaft-Fälle im niedrigen zweistelligen Bereich historisch. Die Ausfallquote liegt im Bereich normaler Insolvenzen und ist für ein Masseninkassosystem nicht außergewöhnlich. Das Vollstreckungsregime ist real &mdash; aber selektiv scharf.
+  </p>
+
+  <div class="info-box">
+    <strong>Hinweis:</strong> Wer aus inhaltlicher Überzeugung nicht zahlt, trägt reale rechtliche Risiken. Kontopfändung und Säumniszuschläge sind der Regelfall &mdash; kein theoretisches Szenario. Erzwingungshaft ist der Ausnahmefall, aber kein leeres Drohmittel. Wer in eine Vollstreckungssituation gerät, sollte anwaltlichen Rat einholen, insbesondere im Licht des BGH-Beschlusses VII ZB 29/24.
+  </div>
+
+
+  <!-- ============================================================ -->
+  <h2>VI. Strukturelle Beobachtung</h2>
+
+  <p>
+    Die beschriebenen Entscheidungen zeigen kein Versagen im Einzelfall, sondern ein Systemmuster: Ein Beitragsservice, der Millionen Vollstreckungsvorgänge automatisiert abwickelt, hat offenbar über Jahre die Formvorschriften des elektronischen Rechtsverkehrs nicht eingehalten. Das OVG Lüneburg musste klarstellen, dass eine Mahnung keine Formalität ist. Der BGH musste klarstellen, dass automatisierte Massenverfahren keine Verantwortungslosigkeit rechtfertigen.
+  </p>
+  <p>
+    Dass diese Korrekturen gerichtlich erzwungen wurden &mdash; und nicht aus eigenem Antrieb der Anstalten erfolgten &mdash; ist publizistisch relevant. Eine Institution, die ihr Vollstreckungssystem fehlerhaft betreibt und die Korrektur stillschweigend hinnimmt, ohne öffentliche Rechenschaft, verhält sich nicht im Einklang mit dem Transparenzanspruch, den sie in eigenen Programmen regelmäßig formuliert.
+  </p>
+  <p>
+    Gleichzeitig gilt: Das BVerfG verhandelt am 23. Juni 2026 über die blockierte Beitragserhöhung (1 BvR 2524/24). Das Bundesverwaltungsgericht hat 2025 festgehalten, der Rundfunkbeitrag könne verfassungswidrig sein, wenn das Gesamtprogramm über längeren Zeitraum nicht ausgewogen ist (6 C 5.24). Der institutionelle Rahmen ist unter Druck &mdash; an mehreren Fronten gleichzeitig.
+  </p>
+
+  <div class="sources">
+    <h2>Quellen</h2>
+    <ol>
+      <li>ARD ZDF Deutschlandradio Beitragsservice, Jahresbericht 2023 (Statista): <a href="https://de.statista.com/statistik/daten/studie/196117/umfrage/vollstreckungsersuchen-der-gez-seit-2005" target="_blank">1,28 Mio. Vollstreckungsersuchen 2023, 21,74 Mio. Mahnmaßnahmen</a></li>
+      <li>OVG Lüneburg, 8 ME 116/24: <a href="https://www.gegen-hartz.de/urteile/gez-warnschuss-fuer-den-beitragsservice-gericht-stoppt-vollstreckung" target="_blank">Gegen-Hartz.de, 11.07.2025</a></li>
+      <li>BGH, Beschluss 25.02.2026, VII ZB 29/24 (Volltext): <a href="https://www.bundesgerichtshof.de/SharedDocs/Entscheidungen/DE/Zivilsenate/VII_ZS/2024/VII_ZB__29-24.pdf" target="_blank">bundesgerichtshof.de</a></li>
+      <li>Beck-Aktuell zur BGH-Entscheidung: <a href="https://www.beck-aktuell.de/heute-im-recht/rechtsprechung/bgh-viizb2924-vollstreckungsersuchen-rundfunkgebuehren-intendantin-namenszug-2026-03-05" target="_blank">Namenszug der Intendantin genügt nicht</a></li>
+      <li>Haufe.de: <a href="https://www.haufe.de/recht/weitere-rechtsgebiete/prozessrecht/bgh-vollstreckung-rueckstaendiger-rundfunkgebuehren-angreifbar_206_680018.html" target="_blank">Vollstreckung rückständiger Rundfunkgebühren angreifbar</a></li>
+      <li>Urteilsbesprechungen.de: <a href="https://www.urteilsbesprechungen.de/bgh-beschluss-vom-25-02-2026-vii-zb-29-24-vollstreckungsersuchen-rundfunkbeitrag/" target="_blank">Detailanalyse BGH VII ZB 29/24</a></li>
+      <li>Gegen-Hartz.de, Befreiung: <a href="https://www.gegen-hartz.de/gez-befreiung" target="_blank">GEZ-Befreiung, Beantragung und Voraussetzungen</a></li>
+      <li>Gegen-Hartz.de, Härtefall: <a href="https://www.gegen-hartz.de/news/rundfunkbeitrag-zu-wenig-einkommen-fuer-gez-musterantrag-hilft" target="_blank">Befreiung ohne Sozialleistung &mdash; Härteklausel</a></li>
+      <li>Gegen-Hartz.de, BVerfG-Verfahren: <a href="https://www.gegen-hartz.de/news/gez-rundfunkbeitrag-bverfg-entscheidet-im-juni-wer-jetzt-nichts-beantragt-zahlt-weiter" target="_blank">BVerfG entscheidet im Juni 2026</a></li>
+      <li>Bund der Steuerzahler, Musterklage: <a href="https://www.steuerzahler.de/aktuelles/detail/rundfunkbeitrag-von-der-steuer-absetzen/" target="_blank">FG Mecklenburg-Vorpommern 1 K 67/26</a></li>
+      <li>Steuertipps.de (Einordnung Musterverfahren): <a href="https://www.steuertipps.de/finanzamt-formalitaeten/rundfunkbeitrag-bei-der-steuer-absetzen" target="_blank">Geringe Erfolgsaussichten, aktuelle Rechtslage</a></li>
+      <li>Buhl/WISO Steuer: <a href="https://www.buhl.de/steuer/ratgeber/rundfunkbeitrag-steuerlich-absetzbar/" target="_blank">Arbeitszimmer und doppelte Haushaltsführung als Ausnahmen</a></li>
+      <li>Finanztip: <a href="https://www.finanztip.de/daily/rundfunkbeitrag-verweigert-ab-ins-gefaengnis/" target="_blank">Erzwingungshaft &mdash; Eskalationsstufen erklärt</a></li>
+      <li>Rechtsanwaltskanzlei Brandt, Neue Zahlungsregeln 2025: <a href="https://www.rain-brandt.de/rundfunkbeitrag-2025-neue-zahlungsregel-sorgt-fuer-unsicherheit-das-muessen-sie-jetzt-beachten/" target="_blank">Beitragsnummer im Verwendungszweck, einmalige Zahlungsaufforderung</a></li>
+      <li>Bundesverwaltungsgericht, 6 C 5.24 (15.10.2025): Rundfunkbeitrag möglicherweise verfassungswidrig bei dauerhaft nicht ausgewogenem Programm</li>
+    </ol>
+  </div>
+
+  <footer>
+    &copy; Rundfunkkritik.de &mdash; Sachliche Analyse des öffentlich-rechtlichen Rundfunks in Deutschland.<br>
+    Dieser Artikel ersetzt keine Rechts- oder Steuerberatung. Im Einzelfall ist anwaltlicher oder steuerberatlicher Rat einzuholen.
+  </footer>
+
+</div>
+</body>
+</html>

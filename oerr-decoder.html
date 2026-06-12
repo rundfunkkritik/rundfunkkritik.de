@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Der ÖRR-Decoder: So erkennen Sie Manipulation im öffentlich-rechtlichen Rundfunk</title>
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --bg-card: #141414;
+    --bg-card-hover: #1a1a1a;
+    --gold: #c8a84b;
+    --gold-light: #e2c97e;
+    --gold-dim: #8a7133;
+    --text: #e8e4da;
+    --text-muted: #8a8680;
+    --text-dim: #5a5650;
+    --border: #2a2820;
+    --border-gold: #3a3020;
+    --red: #c0392b;
+    --red-dim: #7a241a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.75;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  .kicker {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-left: 2px solid var(--gold);
+    padding-left: 0.75rem;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  h1 {
+    font-size: 2.1rem;
+    font-weight: normal;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  h1 em {
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  .intro {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 0;
+    margin: 1.5rem 0 3rem;
+    line-height: 1.7;
+  }
+
+  .section {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-gold);
+  }
+
+  .section-number {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: var(--gold-dim);
+    background: #1a1608;
+    border: 1px solid var(--border-gold);
+    padding: 0.3rem 0.6rem;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-size: 1.35rem;
+    font-weight: normal;
+    color: var(--gold-light);
+    line-height: 1.3;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  .check-question {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--gold);
+  }
+
+  .explanation {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1.25rem;
+  }
+
+  .beispiel {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--red-dim);
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.75rem;
+    font-size: 0.9rem;
+  }
+
+  .beispiel-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.5rem;
+  }
+
+  .beispiel p {
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .beispiel strong {
+    color: var(--text);
+  }
+
+  .beispiel .quelle {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    margin-top: 0.5rem;
+    font-family: 'Courier New', monospace;
+  }
+
+  .vergleich {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    margin: 0.75rem 0 1.75rem;
+    font-size: 0.88rem;
+  }
+
+  .vergleich-cell {
+    background: var(--bg-card);
+    padding: 0.875rem 1rem;
+  }
+
+  .vergleich-cell .label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .vergleich-cell.links .label { color: var(--gold-dim); }
+  .vergleich-cell.rechts .label { color: var(--red); }
+
+  .vergleich-cell .wort {
+    font-size: 1.05rem;
+    font-style: italic;
+  }
+
+  .vergleich-cell.links .wort { color: var(--gold-light); }
+  .vergleich-cell.rechts .wort { color: #e87060; }
+
+  .checkliste {
+    background: #0f0f0a;
+    border: 1px solid var(--border-gold);
+    padding: 1.5rem 1.75rem;
+    margin: 3rem 0;
+  }
+
+  .checkliste-title {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+
+  .checkliste-item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+
+  .checkliste-item:last-child { border-bottom: none; }
+
+  .checkliste-item::before {
+    content: '□';
+    color: var(--gold-dim);
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .fazit {
+    border-top: 2px solid var(--gold-dim);
+    padding-top: 2rem;
+    margin-top: 3rem;
+  }
+
+  .fazit-text {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .fazit-text strong {
+    color: var(--gold-light);
+  }
+
+  .link-block {
+    display: flex;
+    gap: 1px;
+    background: var(--border);
+    margin-top: 2.5rem;
+  }
+
+  .link-item {
+    flex: 1;
+    background: var(--bg-card);
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+
+  .link-item:hover { background: var(--bg-card-hover); }
+
+  .link-item .link-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 0.4rem;
+  }
+
+  .link-item .link-title {
+    font-size: 0.92rem;
+    color: var(--gold-light);
+    line-height: 1.4;
+  }
+
+  .meta {
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 1.5rem 1.25rem 4rem; }
+    h1 { font-size: 1.6rem; }
+    .vergleich { grid-template-columns: 1fr; }
+    .link-block { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<span class="kicker">Analyse · Medienkritik · Werkzeug</span>
+
+<h1>Der <em>ÖRR-Decoder</em>:<br>So erkennen Sie Manipulation im Ersten</h1>
+
+<div class="intro">
+  Der öffentlich-rechtliche Rundfunk behauptet, neutral zu berichten. Tatsächlich arbeitet er mit einem Werkzeugkasten subtiler Techniken: Wortwahl, Auslassung, Interviewpartner-Selektion, Betonung und Rahmung. Dieser Leitfaden zeigt, worauf Sie beim nächsten Tagesschau-Bericht achten sollten — mit konkreten Beispielen aus der Praxis.
+</div>
+
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-number">CHECK 01</span>
+    <div>
+      <div class="section-title">Die Wortwahl</div>
+      <div class="section-subtitle">Framing durch Sprache</div>
+    </div>
+  </div>
+
+  <p class="check-question">Welches Wort wurde gewählt — und warum?</p>
+  <p class="explanation">Sprache ist nie neutral. Ob ein Täter ein „Messernarr" oder ein Mörder ist; ob eine Menschenmenge „protestiert" oder „randaliert" — diese Entscheidungen treffen Redakteure bewusst oder unbewusst aus ihrer politischen Haltung heraus. Das Ergebnis: Der Leser übernimmt die Bewertung, ohne es zu merken.</p>
+
+  <div class="vergleich">
+    <div class="vergleich-cell links">
+      <div class="label">Bei George Floyd (USA)</div>
+      <div class="wort">„Protest"</div>
+    </div>
+    <div class="vergleich-cell rechts">
+      <div class="label">Bei Henry Nowak (Deutschland)</div>
+      <div class="wort">„Krawalle"</div>
+    </div>
+  </div>
+
+  <div class="beispiel">
+    <div class="beispiel-label">Dokumentiertes Beispiel</div>
+    <p>Der NDR berichtete über die lebenslange Haft für den Mörder des englischen Studenten Henry Nowak mit dem Framing: Der Täter sei ein <strong>„Messernarr"</strong> gewesen — als handle es sich um einen Tick, nicht um einen Mord. Parallel wurden Bürger, die auf die Straße gingen, als <strong>„rechte Agitatoren"</strong> bezeichnet, die die Tat politisch ausschlachteten.</p>
+    <div class="quelle">Quelle: @steffan_nethe, @OERRBlog / X — 2. Juni 2026</div>
+  </div>
+
+  <p class="check-question">Die Frage, die Sie stellen sollten:</p>
+  <p class="explanation">Würde dieselbe Redaktion dasselbe Wort verwenden, wenn Täter und Opfer andere politische Zuschreibungen hätten?</p>
+</div>
+
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-number">CHECK 02</span>
+    <div>
+      <div class="section-title">Die Anführungszeichen</div>
+      <div class="section-subtitle">Zweifel ohne Argument</div>
+    </div>
+  </div>
+
+  <p class="check-question">Wann setzt der ÖRR Anführungszeichen — und wann nicht?</p>
+  <p class="explanation">Anführungszeichen sind im Journalismus ein Distanzierungssignal. Sie suggerieren: „Das sagen andere so, wir glauben es nicht." Der ÖRR setzt sie selektiv — je nach politischer Richtung des Inhalts.</p>
+
+  <div class="vergleich">
+    <div class="vergleich-cell links">
+      <div class="label">Weiße Südafrikaner, die die USA betreten</div>
+      <div class="wort">„flüchten"</div>
+    </div>
+    <div class="vergleich-cell rechts">
+      <div class="label">Asylbewerber über sichere Drittstaaten</div>
+      <div class="wort">flüchten</div>
+    </div>
+  </div>
+
+  <div class="beispiel">
+    <div class="beispiel-label">Dokumentiertes Beispiel</div>
+    <p>Die Tagesschau setzte Anführungszeichen bei weißen Afrikanern, die in die USA einreisten — aber nicht bei Asylbewerbern, die über mehrere sichere Länder nach Deutschland kamen. Gleiches Verb, unterschiedliche Rahmung: Einer Gruppe wird die Echtheit ihrer Not abgesprochen, der anderen nicht.</p>
+    <div class="quelle">Quelle: @OERRBlog / X</div>
+  </div>
+</div>
+
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-number">CHECK 03</span>
+    <div>
+      <div class="section-title">Wer kommt zu Wort?</div>
+      <div class="section-subtitle">Die Illusion der Neutralität</div>
+    </div>
+  </div>
+
+  <p class="check-question">Welche Funktion hat der Interviewpartner wirklich?</p>
+  <p class="explanation">Der ÖRR präsentiert Gesprächspartner als neutrale Experten oder unabhängige Bürger. Tatsächlich sind viele mit Parteien, parteinahen Stiftungen oder Interessenverbänden verbunden — ohne dass dies kenntlich gemacht wird. Die TU Dortmund stellte 2024 fest, dass 41% der befragten Journalisten den Grünen nahestehen, 61% zugaben, Parteipositionen in ihre Berichterstattung einfließen zu lassen.</p>
+
+  <div class="beispiel">
+    <div class="beispiel-label">Dokumentiertes Beispiel</div>
+    <p>Im Saarländischen Rundfunk wurde ein Betriebsrat als unabhängige Stimme zum Thema ÖRR-Reform interviewt. Der Betriebsrat ist <strong>SPD-Mitglied</strong>. Diese Tatsache wurde nicht erwähnt. Seine Aussagen klingen neutral — sind aber Parteilinie.</p>
+    <div class="quelle">Quelle: @Critical__Cat / X</div>
+  </div>
+
+  <p class="check-question">Die Fragen, die Sie stellen sollten:</p>
+  <p class="explanation">Ist dieser „Experte" in einer Partei, Stiftung oder einem Verband? Gibt es eine Gegenstimme? Wie viele Gesprächspartner vertreten dieselbe Position?</p>
+</div>
+
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-number">CHECK 04</span>
+    <div>
+      <div class="section-title">Was wird weggelassen?</div>
+      <div class="section-subtitle">Das Schweigen als Botschaft</div>
+    </div>
+  </div>
+
+  <p class="check-question">Was fehlt im Bericht — und was würde sich ändern, wenn es drin wäre?</p>
+  <p class="explanation">Manipulation durch Auslassung ist schwerer zu erkennen als falsche Aussagen. Der ÖRR wählt aus, was berichtet wird — und was nicht. Was weggelassen wird, existiert für den Zuschauer nicht.</p>
+
+  <div class="beispiel">
+    <div class="beispiel-label">Dokumentiertes Beispiel</div>
+    <p>Das ZDF versteckte eine fertige Dokumentation über die UNRWA hinter einer Bezahlschranke — obwohl sie mit Beitragsgeld produziert wurde. Journalisten berichteten darüber, dass die Doku politisch unbequeme Inhalte enthielt. Das ZDF schwieg.</p>
+    <div class="quelle">Quelle: NIUS — dokumentiert in unserer Fallsammlung</div>
+  </div>
+
+  <div class="beispiel">
+    <div class="beispiel-label">Historisches Beispiel</div>
+    <p>Die Übergriffe der Kölner Silvesternacht 2015/16 — über 600 Frauen wurden Opfer sexueller Gewalt — wurden in den ersten Tagen vom ÖRR nicht oder beschönigend berichtet. Das Positionspapier der Stiftung Marktwirtschaft (2025) nennt dies explizit als Beispiel für systematisches Nicht-Berichten.</p>
+    <div class="quelle">Quelle: Stiftung Marktwirtschaft, Positionspapier Nr. 16, Sept. 2025</div>
+  </div>
+</div>
+
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-number">CHECK 05</span>
+    <div>
+      <div class="section-title">Was ist das eigentliche Thema?</div>
+      <div class="section-subtitle">Täter oder Reaktion?</div>
+    </div>
+  </div>
+
+  <p class="check-question">Wird die Tat berichtet — oder die Reaktion auf die Tat?</p>
+  <p class="explanation">Eine klassische Verschiebung: Statt über ein Verbrechen zu berichten, wird über die politische Reaktion darauf berichtet. Das Opfer verschwindet. Das eigentliche Problem wird zu einem politischen Problem umdefiniert.</p>
+
+  <div class="beispiel">
+    <div class="beispiel-label">Dokumentiertes Beispiel</div>
+    <p>Nach dem Mord an Henry Nowak lautete die Einleitung eines Tagesschau-Artikels sinngemäß: <strong>„Rechte versuchen, die Tat politisch auszuschlachten."</strong> Nicht der Täter, nicht das Versagen des Systems — sondern die Empörung der Bürger wurde zum Thema. ZDF-Journalist Mitri sprach von „Krawallen", als normale Bürger auf die Straße gingen.</p>
+    <div class="quelle">Quelle: @hori_____zont, @OERRBlog / X — Juni 2026</div>
+  </div>
+</div>
+
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-number">CHECK 06</span>
+    <div>
+      <div class="section-title">Wer hat den Beitrag gemacht?</div>
+      <div class="section-subtitle">Haltung hat Geschichte</div>
+    </div>
+  </div>
+
+  <p class="check-question">Was hat diese Redakteurin, dieser Redakteur früher geschrieben?</p>
+  <p class="explanation">Journalisten haben eine Geschichte. Wer regelmäßig in einer Richtung framt, tut dies nicht zufällig. Die Suche nach dem Autor eines Beitrags — und dessen frühere Artikel — gibt Kontext, den der Beitrag selbst nicht liefert.</p>
+
+  <div class="beispiel">
+    <div class="beispiel-label">Dokumentiertes Beispiel</div>
+    <p>Der NDR/SWR-Artikel zum Nowak-Urteil mit dem „Messernarr"-Framing stammt von SWR-Redakteurin Biesinger. X-Nutzer, die ihre frühere Berichterstattung kennen, riefen zur Beschwerde auf — wegen einer nach ihrer Einschätzung systematischen Verdrehung der Realität.</p>
+    <div class="quelle">Quelle: @Critical__Cat / X</div>
+  </div>
+</div>
+
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-number">CHECK 07</span>
+    <div>
+      <div class="section-title">Was kostet das — und wer zahlt?</div>
+      <div class="section-subtitle">Beitrag und Verantwortung</div>
+    </div>
+  </div>
+
+  <p class="check-question">Lohnt sich dieser Beitrag für 18,36 € im Monat?</p>
+  <p class="explanation">Der ÖRR ist mit rund 10 Milliarden Euro Jahresbudget das teuerste öffentlich-rechtliche Rundfunksystem der Welt — mehr als die BBC, RAI und France Télévisions zusammen. BR-Intendantin Wildermuth verdient mehr als ein Bundeskanzler. Diese Kosten werden von jedem Haushalt zwangsweise mitgetragen. Die Frage nach Qualität und Haltung ist damit keine politische — sie ist eine wirtschaftliche.</p>
+
+  <div class="beispiel">
+    <div class="beispiel-label">Zahlen</div>
+    <p>Deutschland: <strong>~10 Mrd. €</strong> Jahresbudget · BBC: ~6 Mrd. € · RAI &amp; France TV: je unter 3 Mrd. €<br>
+    Kosten pro Sendeminute ÖRR: <strong>&gt;12.000 €</strong> · Schweizer SRF: ~6.500 €<br>
+    Wildermuth (BR): <strong>347.571 € / Jahr</strong> · Bundeskanzler: ~320.000 €<br>
+    Bayern: <strong>435.000 Haushalte</strong> im Zahlungsverzug (Ende 2024)</p>
+    <div class="quelle">Quellen: Stiftung Marktwirtschaft 2025 · Abendzeitung München, Mai 2026 · Beitragsservice, Juni 2026</div>
+  </div>
+</div>
+
+
+<div class="checkliste">
+  <div class="checkliste-title">Der schnelle Check — sieben Fragen für jeden ÖRR-Beitrag</div>
+  <div class="checkliste-item">Welches Wort wurde gewählt — und würde es bei umgekehrter politischer Richtung anders lauten?</div>
+  <div class="checkliste-item">Gibt es Anführungszeichen — und werden sie konsequent oder selektiv eingesetzt?</div>
+  <div class="checkliste-item">Wer kommt zu Wort — und welche Partei, Stiftung oder Interessengruppe steht dahinter?</div>
+  <div class="checkliste-item">Was fehlt im Bericht — und was würde sich verändern, wenn es drin wäre?</div>
+  <div class="checkliste-item">Ist die Tat das Thema — oder die Reaktion darauf?</div>
+  <div class="checkliste-item">Was hat der Autor dieses Beitrags früher geschrieben?</div>
+  <div class="checkliste-item">Rechtfertigt die Qualität dieses Beitrags den Zwangsbeitrag jedes Haushalts?</div>
+</div>
+
+
+<div class="fazit">
+  <p class="fazit-text">
+    Der ÖRR manipuliert selten durch Lügen. Er manipuliert durch <strong>Auswahl, Betonung und Sprache</strong>. Diese Werkzeuge sind subtil genug, um unsichtbar zu bleiben — solange man nicht weiß, wonach man suchen soll. Dieser Decoder ist kein Aufruf zur Ablehnung aller ÖRR-Inhalte. Er ist ein Aufruf zu aktivem, kritischem Konsum. Wer die Mechanismen kennt, lässt sich nicht mehr so leicht führen.
+  </p>
+</div>
+
+<div class="link-block">
+  <a class="link-item" href="#">
+    <div class="link-label">Weiter lesen →</div>
+    <div class="link-title">Die Aufreger-Liste: 18 dokumentierte Fälle von ÖRR-Framing</div>
+  </a>
+  <a class="link-item" href="#">
+    <div class="link-label">Weiter lesen →</div>
+    <div class="link-title">Reform-Manifest: Warum 5 Euro reichen — und was damit finanziert werden sollte</div>
+  </a>
+</div>
+
+<div class="meta">
+  Rundfunkkritik.de · Alle Beispiele sind quellenbasiert dokumentiert · Letzte Aktualisierung: Juni 2026
+</div>
+
+</body>
+</html>

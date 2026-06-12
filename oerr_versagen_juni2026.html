@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ÖRR-Versagen: 6 Fälle, die Sie kennen müssen · Rundfunkkritik.de</title>
+  <meta name="description" content="Sechs aktuelle Fälle, die zeigen, warum der öffentlich-rechtliche Rundfunk seinen Verfassungsauftrag strukturell verfehlt. Dokumentiert, belegt, ohne Polemik." />
+  <meta name="author" content="Rundfunkkritik.de" />
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --surface: #141414;
+      --surface2: #1a1a1a;
+      --border: #2a2a2a;
+      --accent: #c8a84b;
+      --accent2: #e8c86b;
+      --text: #e0ddd6;
+      --muted: #7a7a72;
+      --red: #c0392b;
+      --radius: 3px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Georgia', serif;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* NAV */
+    nav {
+      background: #0a0a0a;
+      border-bottom: 1px solid var(--border);
+      padding: 0.8rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    nav a.brand {
+      font-family: 'Georgia', serif;
+      font-weight: bold;
+      font-size: 1rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    nav a:hover { color: var(--accent); }
+
+    /* HERO */
+    .hero {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 2rem 3rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .hero-label {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-family: 'Georgia', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: normal;
+      line-height: 1.2;
+      color: #f0ece4;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 620px;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .hero-meta {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    /* INTRO BOX */
+    .intro-box {
+      max-width: 860px;
+      margin: 2rem auto;
+      padding: 1.5rem 2rem;
+      background: var(--surface2);
+      border-left: 3px solid var(--accent);
+      font-size: 0.97rem;
+      color: #c8c4bc;
+      line-height: 1.7;
+    }
+
+    /* MAIN CONTENT */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    /* CASE CARDS */
+    .case {
+      margin: 2.5rem 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+    }
+    .case-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      padding: 1.5rem 1.8rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .case-number {
+      font-family: 'Georgia', serif;
+      font-size: 2.2rem;
+      color: var(--border);
+      line-height: 1;
+      min-width: 2.5rem;
+      padding-top: 0.1rem;
+    }
+    .case-meta {
+      flex: 1;
+    }
+    .case-tag {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    .case h2 {
+      font-family: 'Georgia', serif;
+      font-weight: normal;
+      font-size: 1.25rem;
+      color: #f0ece4;
+      line-height: 1.3;
+    }
+    .case-body {
+      padding: 1.2rem 1.8rem 1.5rem;
+      font-size: 0.97rem;
+      line-height: 1.75;
+      color: #c8c4bc;
+    }
+    .case-body p { margin-bottom: 0.9rem; }
+    .case-body strong { color: var(--text); }
+    .case-body .highlight {
+      background: rgba(200, 168, 75, 0.07);
+      border-left: 2px solid var(--accent);
+      padding: 0.7rem 1rem;
+      margin: 1rem 0;
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+    .case-footer {
+      padding: 0.8rem 1.8rem;
+      background: #101010;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .case-footer .source-label {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .case-footer a {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--accent);
+    }
+    .case-footer a:hover { color: var(--accent2); }
+
+    /* ASSESSMENT BOX */
+    .assessment {
+      margin: 3rem 0;
+      padding: 1.8rem 2rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+    }
+    .assessment h3 {
+      font-family: 'Georgia', serif;
+      font-weight: normal;
+      font-size: 1.15rem;
+      color: #f0ece4;
+      margin-bottom: 1rem;
+    }
+    .assessment p {
+      font-size: 0.97rem;
+      color: #c0bbb3;
+      line-height: 1.75;
+      margin-bottom: 0.9rem;
+    }
+    .assessment p:last-child { margin-bottom: 0; }
+
+    /* PATTERN LIST */
+    .pattern-list {
+      margin: 2rem 0;
+      display: grid;
+      gap: 0.6rem;
+    }
+    .pattern-item {
+      display: flex;
+      gap: 0.8rem;
+      align-items: baseline;
+      font-size: 0.95rem;
+      color: #c0bbb3;
+    }
+    .pattern-item::before {
+      content: '→';
+      color: var(--accent);
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0a0a0a;
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    footer .footer-links { margin-top: 0.5rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+
+    @media (max-width: 600px) {
+      nav { padding: 0.7rem 1rem; gap: 1rem; }
+      .hero { padding: 2.5rem 1.2rem 2rem; }
+      .container { padding: 0 1.2rem 3rem; }
+      .case-header { padding: 1.2rem 1.2rem 0.8rem; }
+      .case-body { padding: 1rem 1.2rem 1.2rem; }
+      .case-footer { padding: 0.7rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://www.rundfunkkritik.de/" class="brand">Rundfunkkritik.de</a>
+  <a href="https://www.rundfunkkritik.de/#aktuell">Aktuell</a>
+  <a href="https://www.rundfunkkritik.de/#mechanismen">Mechanismen</a>
+  <a href="https://www.rundfunkkritik.de/#beweise">Beweise</a>
+  <a href="https://www.rundfunkkritik.de/#urteile">Urteile</a>
+  <a href="https://x.com/OERRBlog" target="_blank" rel="noopener">ÖRR Blog ↗</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-label">Dokumentation · Juni 2026</div>
+  <h1>ÖRR-Versagen: <em>6 Fälle</em>, die Sie kennen müssen</h1>
+  <p class="hero-sub">
+    Menschenhandel als Reisereportage. Ein vertuschter Skandal. Ein Vergewaltigungsopfer unter Beschuss. Sechs aktuelle Vorfälle, die kein Einzelfall sind – sondern Muster.
+  </p>
+  <div class="hero-meta">
+    <span>Rundfunkkritik.de</span>
+    <span>Juni 2026</span>
+    <span>Quellen: ZDF, NIUS, Apollo News, OERRBlog, Focus</span>
+  </div>
+</div>
+
+<div class="intro-box">
+  Die hier dokumentierten Fälle stammen alle aus einem Zeitraum von weniger als zwei Wochen. Jeder einzelne wäre bereits berichtenswert. Zusammen zeigen sie, was strukturelle Medienanalyse seit Jahren beschreibt: Der ÖRR produziert nicht zufällig blinde Flecken – er produziert sie systematisch. Was weggelassen wird, wen man schützt, wen man kritisiert: Es folgt einer Logik.
+</div>
+
+<div class="container">
+
+  <!-- FALL 1 -->
+  <div class="case">
+    <div class="case-header">
+      <div class="case-number">01</div>
+      <div class="case-meta">
+        <div class="case-tag">ZDF · Agenda-Cutting · Menschenhandel</div>
+        <h2>Der „Brautmarkt": Menschenhandel als Reisereportage</h2>
+      </div>
+    </div>
+    <div class="case-body">
+      <p>
+        Das ZDF berichtete über einen sogenannten <strong>„Brautmarkt" in Bulgarien</strong>, auf dem Roma-Familien ihre Töchter verheiraten – für Beträge bis zu 50.000 Euro. Der Beitrag wurde im Stil einer Reisereportage gehalten: Bilder, Atmosphäre, folkloristische Einordnung.
+      </p>
+      <p>
+        Was fehlte: das Wort <strong>Menschenhandel</strong>. Kein einziger Hinweis darauf, dass der Verkauf von Frauen und Mädchen eine schwere Straftat darstellt, die in der EU unter Artikel 2 der Richtlinie 2011/36/EU unter Strafe steht. Keine Einordnung, keine Opferperspektive, keine Nachfrage bei Behörden.
+      </p>
+      <div class="highlight">
+        Der Beitrag behandelte den Kauf eines Menschen wie den Kauf eines Gebrauchtwagens. Das ist kein redaktioneller Fehler – das ist redaktionelle Entscheidung.
+      </div>
+      <p>
+        Kritiker auf X, darunter der Kanal <em>Critical Cat</em>, machten auf die fehlende Einordnung aufmerksam. Das ZDF reagierte nicht öffentlich.
+      </p>
+    </div>
+    <div class="case-footer">
+      <span class="source-label">Quelle</span>
+      <a href="https://x.com/Critical__Cat/status/2061541678452748552" target="_blank" rel="noopener">Critical Cat / X → Beitrag ansehen</a>
+    </div>
+  </div>
+
+  <!-- FALL 2 -->
+  <div class="case">
+    <div class="case-header">
+      <div class="case-number">02</div>
+      <div class="case-meta">
+        <div class="case-tag">ÖRR allgemein · Meinungsfreiheit · Umfrage</div>
+        <h2>44 Prozent: Lieber schweigen</h2>
+      </div>
+    </div>
+    <div class="case-body">
+      <p>
+        Eine aktuelle Umfrage zeigt: <strong>44 Prozent der Deutschen</strong> geben an, bei politischen Themen lieber vorsichtig zu sein – also ihre Meinung nicht frei zu äußern. Nur 40 Prozent fühlen sich wirklich frei, zu sagen, was sie denken.
+      </p>
+      <p>
+        Besonders bemerkenswert: Der <strong>einzige Bevölkerungsanteil, der sich mehrheitlich frei fühlt</strong>, sind Wählerinnen und Wähler der Grünen. Alle anderen Gruppen – CDU-Wähler, SPD-Wähler, parteilose Bürger – berichten von Selbstzensur.
+      </p>
+      <div class="highlight">
+        Ein Mediensystem, das Meinungsfreiheit als Grundwert propagiert, produziert gleichzeitig ein Klima, in dem fast die Hälfte der Bevölkerung lieber schweigt. Das ist kein Zufall.
+      </div>
+      <p>
+        Der Wirtschaftshistoriker und Soziologe <strong>Rainer Zitelmann</strong> kommentierte die Ergebnisse im Focus: Die Daten zeigten, dass die Meinungskorridore der etablierten Medien und des ÖRR nicht neutral sind – sie begünstigen systematisch bestimmte politische Positionen.
+      </p>
+    </div>
+    <div class="case-footer">
+      <span class="source-label">Quellen</span>
+      <a href="https://x.com/OERRBlog/status/2061375338450457035" target="_blank" rel="noopener">OERRBlog / X</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.focus.de/politik/meinung/gastbeitrag-von-rainer-zitelmann-umfrage-am-ehesten-denken-gruenen-waehler-dass-sie-frei-ihre-politische-meinung-sagen-koennen_id_260413907.html" target="_blank" rel="noopener">Focus / Zitelmann</a>
+    </div>
+  </div>
+
+  <!-- FALL 3 -->
+  <div class="case">
+    <div class="case-header">
+      <div class="case-number">03</div>
+      <div class="case-meta">
+        <div class="case-tag">ZDF · UNRWA · Dokumentarfilm · Unterdrückung</div>
+        <h2>Die verschwundene Doku: ZDF blockiert UNRWA-Film</h2>
+      </div>
+    </div>
+    <div class="case-body">
+      <p>
+        Die preisgekrönten Produzenten <strong>Reinhardt und Christian Beetz</strong> (Beetz Brothers) haben eine 75-minütige Dokumentation über die UNRWA produziert – das UN-Hilfswerk, das ausschließlich für palästinensische Flüchtlinge zuständig ist. Der Film trägt den Titel <em>„Unraveling UNRWA"</em> und lässt Palästinenser, Israelis, Europäer und Amerikaner zu Wort kommen.
+      </p>
+      <p>
+        Der Film dokumentiert u.a.: die Weitergabe des Flüchtlingsstatus von Generation zu Generation (aus 700.000 wurden 6 Millionen „Flüchtlinge"), Hasserziehung in UNRWA-Schulen, die Beteiligung von UNRWA-Mitarbeitern an den Massakern vom 7. Oktober 2023 sowie den Fluss von EU- und Bundesgeldern in dunkle Kanäle.
+      </p>
+      <div class="highlight">
+        Deutschland zahlte 2025 insgesamt 142 Millionen Euro an die UNRWA – und ein EU-Parlamentarier konnte nicht ausschließen, dass ein Teil davon bei der Hamas ankam. Das ZDF hielt diese Information nicht für sendefähig.
+      </div>
+      <p>
+        Das ZDF lehnte die Ausstrahlung ab und verwies auf ein „Überangebot" an Nahost-Dokumentationen. Auf Nachfrage von NIUS wollte der Sender keine konkreten Ablehnungsgründe nennen. <em>Bild</em> stellte den Film daraufhin kostenlos online zur Verfügung.
+      </p>
+    </div>
+    <div class="case-footer">
+      <span class="source-label">Quelle</span>
+      <a href="https://nius.de/medien/unrwa-zdf-will-tv-doku-ueber-das-palaestinenserhilfswerk-nicht-zeigen" target="_blank" rel="noopener">NIUS / Claudio Casula → Vollständiger Bericht</a>
+    </div>
+  </div>
+
+  <!-- FALL 4 -->
+  <div class="case">
+    <div class="case-header">
+      <div class="case-number">04</div>
+      <div class="case-meta">
+        <div class="case-tag">Funk (ÖRR) · Faktencheck · Opfer-Täter-Umkehr</div>
+        <h2>Funk „checkt" ein Vergewaltigungsopfer</h2>
+      </div>
+    </div>
+    <div class="case-body">
+      <p>
+        Ein junger Mann aus Berlin berichtete in einem YouTube-Interview, dass er als 13-Jähriger auf einer Schultoilette von fünf Syrern vergewaltigt wurde. Die Täter wurden laut seiner Aussage vor Gericht „freigesprochen" – trotz vorliegender Beweise.
+      </p>
+      <p>
+        Das ÖRR-Jugendformat <strong>Funk</strong> reagierte darauf mit einem „Faktencheck". Ergebnis: Der junge Mann habe ungenau gesprochen. Die Täter hätten „unterschiedliche Staatsangehörigkeiten" gehabt, nicht alle seien Syrer. Das Verfahren sei nicht „komplett eingestellt", sondern nach Jugendstrafrecht mit Auflagen beendet worden.
+      </p>
+      <div class="highlight">
+        Der Faktencheck bestätigt: Es gab eine Gruppenvergewaltigung. Es gab ein Gerichtsverfahren. Die Täter erhielten keine Haftstrafe. Was Funk daraus macht: eine Sprachkritik am Opfer.
+      </div>
+      <p>
+        Empathie für das Opfer? Nicht vorhanden. Kritische Fragen an die Justiz? Fehlanzeige. Stattdessen: Fokus auf die Frage, ob der junge Mann die Nationalitäten korrekt benannt hat. Im Netz löste der Beitrag breite Empörung aus.
+      </p>
+    </div>
+    <div class="case-footer">
+      <span class="source-label">Quelle</span>
+      <a href="https://apollo-news.net/von-migranten-auf-der-schultoilette-vergewaltigt-oerr-format-funk-kritisiert-opfer-wegen-unsensibler-sprache/" target="_blank" rel="noopener">Apollo News / Marie Rahenbrock → Vollständiger Bericht</a>
+    </div>
+  </div>
+
+  <!-- FALL 5 -->
+  <div class="case">
+    <div class="case-header">
+      <div class="case-number">05</div>
+      <div class="case-meta">
+        <div class="case-tag">ÖRR-Agenda · Genderdysphorie · Jugendliche · Studie</div>
+        <h2>+326 %: Was der ÖRR nicht hinterfragt</h2>
+      </div>
+    </div>
+    <div class="case-body">
+      <p>
+        Eine neue Studie der Unikliniken Münster und Hamburg, veröffentlicht im <em>International Journal of Transgender Health</em>, hat Daten von neun Millionen Barmer-Versicherten ausgewertet. Ergebnis: Die Diagnosen von Genderdysphorie bei Minderjährigen sind zwischen 2010 und 2021 um <strong>326 Prozent</strong> gestiegen – vor allem bei Mädchen (von 41 auf 175 pro 100.000).
+      </p>
+      <p>
+        Mehrere Jugendpsychiater, darunter <strong>Alexander Korte</strong> und <strong>Florian Zepf</strong>, verweisen auf das Phänomen des „Rapid Onset": Jugendliche, die plötzlich und ohne längere Vorgeschichte angeben, transsexuell zu sein – häufig in Verbindung mit bestehenden psychischen Problemen wie Angststörungen oder Depressionen. Soziale Medien werden als möglicher Verstärkungsfaktor diskutiert.
+      </p>
+      <div class="highlight">
+        Ein Drittel der betroffenen Minderjährigen beginnt innerhalb von zwei Jahren eine Hormontherapie – ein irreversibler Eingriff. Der ÖRR hat diesen Anstieg jahrelang unkritisch als Zeichen gesellschaftlichen Fortschritts begleitet, ohne die medizinischen Risiken ernsthaft zu beleuchten.
+      </div>
+    </div>
+    <div class="case-footer">
+      <span class="source-label">Quelle</span>
+      <a href="https://apollo-news.net/anstieg-um-326-prozent-in-elf-jahren-immer-mehr-geschlechtsidentitaetsstoerungen-bei-jugendlichen-diagnostiziert/" target="_blank" rel="noopener">Apollo News / Marie Rahenbrock → Vollständiger Bericht</a>
+    </div>
+  </div>
+
+  <!-- FALL 6 -->
+  <div class="case">
+    <div class="case-header">
+      <div class="case-number">06</div>
+      <div class="case-meta">
+        <div class="case-tag">Medienanstalten · Algorithmen · Pressefreiheit · Public Value</div>
+        <h2>Staatliche Quote für „verlässliche" Medien: Die stille Gleichschaltung</h2>
+      </div>
+    </div>
+    <div class="case-body">
+      <p>
+        Ein internes Papier der Bayerischen Landeszentrale für neue Medien (BLM) und der Landesanstalt für Medien NRW, das Apollo News vorliegt, skizziert einen Mechanismus, der die Informationsordnung in sozialen Netzwerken grundlegend verändern würde: <strong>Social-Media-Plattformen sollen künftig gesetzlich verpflichtet werden</strong>, Inhalte von staatlich zertifizierten „verlässlichen" Medien bevorzugt anzuzeigen.
+      </p>
+      <p>
+        Das Instrument heißt „Public Value". Wer diesen Stempel erhält, entscheiden die Landesmedienanstalten – also Behörden, deren Leitungen von Gremien gewählt werden, die wiederum von Landesparlamenten besetzt werden. ARD und ZDF stehen auf der Liste bereits auf Platz eins und zwei.
+      </p>
+      <div class="highlight">
+        Es ist keine klassische Zensur – unliebsame Inhalte werden nicht gelöscht. Sie werden nur nach unten gedrückt, während staatlich ausgewählte Inhalte nach oben gespült werden. Das Ergebnis ist dasselbe.
+      </div>
+      <p>
+        Schon jetzt gilt dieses Prinzip für App Stores. Demnächst – möglicherweise noch in diesem Sommer – sollen Entwürfe für den neuen Digitale-Medien-Staatsvertrag vorliegen, der die Ausweitung auf soziale Netzwerke vorsieht. Der Zeitpunkt ist kein Zufall: Alternativen Medien wächst seit Jahren das Publikum zu.
+      </p>
+    </div>
+    <div class="case-footer">
+      <span class="source-label">Quelle</span>
+      <a href="https://apollo-news.net/so-bauen-die-medienanstalten-an-einer-pflicht-zur-bevorzugung-verlaesslicher-medien-in-den-sozialen-netzwerken/" target="_blank" rel="noopener">Apollo News (Exklusiv) / Rahenbrock & Thormann → Vollständiger Bericht</a>
+    </div>
+  </div>
+
+  <!-- EINORDNUNG -->
+  <div class="assessment">
+    <h3>Einordnung: Was diese sechs Fälle gemeinsam haben</h3>
+    <p>
+      Jeder dieser Fälle könnte als Einzelfall abgetan werden: ein missglückter Beitrag, eine redaktionelle Fehlentscheidung, ein übermotivierter Faktencheck. Aber das Muster ist zu konsistent, um zufällig zu sein.
+    </p>
+    <div class="pattern-list">
+      <div class="pattern-item">Menschenhandel wird nicht beim Namen genannt, wenn die Opfer zur falschen Gruppe gehören.</div>
+      <div class="pattern-item">Eine UN-Organisation wird vor kritischer Berichterstattung geschützt, obwohl Steuermilliarden fließen.</div>
+      <div class="pattern-item">Ein Vergewaltigungsopfer wird sprachlich korrigiert, statt die Justiz zu hinterfragen.</div>
+      <div class="pattern-item">Ein medizinischer Trend mit gravierenden Folgen für Kinder wird jahrelang unkritisch begleitet.</div>
+      <div class="pattern-item">Die freie Meinungsäußerung schrumpft – und niemand im ÖRR hält das für berichtenswert.</div>
+      <div class="pattern-item">Der Zugang zur Öffentlichkeit soll gesetzlich so reguliert werden, dass der ÖRR strukturell bevorzugt wird.</div>
+    </div>
+    <p>
+      Das ist keine Verschwörung. Das ist strukturelle Eigenlogik: Ein System, das seine Finanzierung durch staatliche Legitimation sichert, wird diese Legitimation nicht durch kritische Berichterstattung gefährden. Die Analyse dazu findet sich unter <a href="https://www.rundfunkkritik.de/#mechanismen" style="color: var(--accent); text-decoration: none;">10 systemische Mechanismen</a>.
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  <div>© 2026 Rundfunkkritik.de · Strukturelle Medienanalyse · Manfred Seeböck</div>
+  <div class="footer-links">
+    <a href="https://www.rundfunkkritik.de/">Startseite</a>
+    <a href="https://www.rundfunkkritik.de/impressum.html">Impressum</a>
+    <a href="https://www.rundfunkkritik.de/datenschutz.html">Datenschutz</a>
+    <a href="https://x.com/OERRBlog" target="_blank" rel="noopener">ÖRR Blog auf X</a>
+    <a href="https://ko-fi.com/rundfunkkritikde" target="_blank" rel="noopener">☕ Unterstützen</a>
+  </div>
+</footer>
+
+</body>
+</html>

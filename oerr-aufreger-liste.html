@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Die Aufreger-Liste: 18 dokumentierte Fälle von ÖRR-Versagen</title>
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --bg-card: #141414;
+    --bg-card-hover: #181818;
+    --gold: #c8a84b;
+    --gold-light: #e2c97e;
+    --gold-dim: #8a7133;
+    --gold-bg: #1a1608;
+    --text: #e8e4da;
+    --text-muted: #8a8680;
+    --text-dim: #4a4840;
+    --border: #222018;
+    --border-mid: #2a2820;
+    --border-gold: #3a3020;
+    --red: #c0392b;
+    --red-dim: #6a1f17;
+    --cluster-1: #7a3520;
+    --cluster-2: #1a3a5c;
+    --cluster-3: #1a3a20;
+    --cluster-4: #3a2a10;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.75;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  .kicker {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-left: 2px solid var(--gold);
+    padding-left: 0.75rem;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    font-weight: normal;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  h1 em {
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  .intro {
+    font-size: 1rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-mid);
+    border-bottom: 1px solid var(--border-mid);
+    padding: 1.25rem 0;
+    margin: 1.5rem 0 0.75rem;
+    line-height: 1.7;
+  }
+
+  .stand {
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    margin-bottom: 3rem;
+    padding-top: 0.5rem;
+  }
+
+  /* Cluster-Navigation */
+  .cluster-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-bottom: 3.5rem;
+  }
+
+  .cluster-nav-item {
+    background: var(--bg-card);
+    padding: 0.875rem 1rem;
+    cursor: default;
+  }
+
+  .cluster-nav-item .cn-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 0.3rem;
+  }
+
+  .cluster-nav-item .cn-title {
+    font-size: 0.85rem;
+    color: var(--gold-light);
+    line-height: 1.35;
+  }
+
+  .cluster-nav-item .cn-cases {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    margin-top: 0.3rem;
+  }
+
+  /* Cluster-Header */
+  .cluster-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 3.5rem 0 1.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--border-gold);
+  }
+
+  .cluster-tag {
+    font-family: 'Courier New', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    background: var(--gold-bg);
+    border: 1px solid var(--border-gold);
+    color: var(--gold);
+    white-space: nowrap;
+  }
+
+  .cluster-title {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  /* Case-Cards */
+  .case {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    margin-bottom: 1.25rem;
+    transition: border-color 0.15s;
+  }
+
+  .case:hover { border-color: var(--border-gold); }
+
+  .case-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .case-number {
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    color: var(--gold-dim);
+    background: var(--gold-bg);
+    border-right: 1px solid var(--border-gold);
+    padding: 1rem 0.875rem;
+    letter-spacing: 0.1em;
+    align-self: stretch;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 1.1rem;
+    white-space: nowrap;
+  }
+
+  .case-meta {
+    flex: 1;
+    padding: 0.875rem 1.25rem 0.875rem 1.25rem;
+  }
+
+  .case-title {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+  }
+
+  .case-source {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+  }
+
+  .case-body {
+    padding: 1rem 1.25rem 1.1rem 1.25rem;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .case-body strong {
+    color: var(--text);
+  }
+
+  .case-body .highlight {
+    color: var(--gold-light);
+    font-style: italic;
+  }
+
+  /* Nowak-Komplex Sonderbehandlung */
+  .case-komplex {
+    border: 1px solid #3a2015;
+    margin-bottom: 0;
+  }
+
+  .case-komplex:first-of-type {
+    border-bottom: none;
+  }
+
+  .case-komplex + .case-komplex {
+    border-top: 1px dashed #3a2015;
+    border-bottom: none;
+  }
+
+  .case-komplex:last-of-type {
+    border-bottom: 1px solid #3a2015;
+    margin-bottom: 1.25rem;
+  }
+
+  .komplex-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #c06040;
+    margin-right: 0.5rem;
+  }
+
+  /* Zahlenblock */
+  .zahlen-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin: 0.75rem 0 0;
+  }
+
+  .zahl-cell {
+    background: var(--bg-card);
+    padding: 0.75rem 1rem;
+  }
+
+  .zahl-cell .zahl-value {
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    color: var(--gold-light);
+    font-weight: normal;
+  }
+
+  .zahl-cell .zahl-label {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    margin-top: 0.15rem;
+    line-height: 1.3;
+  }
+
+  /* Trennlinie zwischen Clustern */
+  .cluster-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 1rem 0;
+  }
+
+  /* Fazit & Links */
+  .fazit {
+    border-top: 2px solid var(--border-gold);
+    padding-top: 2rem;
+    margin-top: 3.5rem;
+  }
+
+  .fazit p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .fazit strong { color: var(--gold-light); }
+
+  .link-block {
+    display: flex;
+    gap: 1px;
+    background: var(--border);
+    margin-top: 2rem;
+  }
+
+  .link-item {
+    flex: 1;
+    background: var(--bg-card);
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+
+  .link-item:hover { background: var(--bg-card-hover); }
+
+  .link-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 0.4rem;
+  }
+
+  .link-title {
+    font-size: 0.9rem;
+    color: var(--gold-light);
+    line-height: 1.4;
+  }
+
+  .meta {
+    font-family: 'Courier New', monospace;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 640px) {
+    body { padding: 1.5rem 1.25rem 4rem; }
+    h1 { font-size: 1.65rem; }
+    .cluster-nav { grid-template-columns: 1fr 1fr; }
+    .zahlen-block { grid-template-columns: 1fr 1fr; }
+    .link-block { flex-direction: column; }
+    .case-number { font-size: 0.68rem; padding: 1rem 0.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<span class="kicker">Dokumentation · Laufende Sammlung · Stand Juni 2026</span>
+
+<h1>Die <em>Aufreger-Liste</em>:<br>18 dokumentierte Fälle</h1>
+
+<div class="intro">
+  Kein Kommentar. Keine Meinung. Nur Fälle — mit Quelle, Datum und Befund. Was der öffentlich-rechtliche Rundfunk mit 10 Milliarden Euro Pflichtbeitrag pro Jahr macht, können Sie hier nachlesen. Die Liste wächst.
+</div>
+
+<div class="stand">Stand: Juni 2026 · 18 Fälle · 4 Cluster · Quellen jeweils angegeben</div>
+
+<!-- Cluster-Navigation -->
+<div class="cluster-nav">
+  <div class="cluster-nav-item">
+    <div class="cn-label">Cluster I</div>
+    <div class="cn-title">Sprache als Waffe</div>
+    <div class="cn-cases">Fälle #12 · #13 · #14 · #17</div>
+  </div>
+  <div class="cluster-nav-item">
+    <div class="cn-label">Cluster II</div>
+    <div class="cn-title">Ideologie &amp; Haltung</div>
+    <div class="cn-cases">Fälle #1 · #2 · #4 · #5 · #18</div>
+  </div>
+  <div class="cluster-nav-item">
+    <div class="cn-label">Cluster III</div>
+    <div class="cn-title">Vertuschung &amp; Auslassung</div>
+    <div class="cn-cases">Fälle #3 · #10 · #11 · #15</div>
+  </div>
+  <div class="cluster-nav-item">
+    <div class="cn-label">Cluster IV</div>
+    <div class="cn-title">Geld &amp; Macht</div>
+    <div class="cn-cases">Fälle #6 · #7 · #8 · #9 · #16</div>
+  </div>
+</div>
+
+
+<!-- CLUSTER I -->
+<div class="cluster-header">
+  <span class="cluster-tag">Cluster I</span>
+  <span class="cluster-title">Sprache als Waffe — Framing, Verniedlichung, Doppelmoral</span>
+</div>
+
+<div class="case case-komplex">
+  <div class="case-header">
+    <div class="case-number">#12</div>
+    <div class="case-meta">
+      <div class="case-title"><span class="komplex-label">Nowak-Komplex</span> NDR: Mord wird zur „Auseinandersetzung"</div>
+      <div class="case-source">@steffan_nethe / X · NDR-Audio · 2. Juni 2026</div>
+    </div>
+  </div>
+  <div class="case-body">
+    Ein englischer Student wurde in einem Supermarkt erstochen. Der NDR titelte: Er starb <strong>„nach Auseinandersetzung im Supermarkt."</strong> @steffan_nethe: <span class="highlight">„Er wurde im Supermarkt abgestochen! Er wurde ermordet!"</span> Der OERRBlog: <span class="highlight">„Hört auf mit dieser permanenten Verniedlichung solch schwerster Morde."</span>
+  </div>
+</div>
+
+<div class="case case-komplex">
+  <div class="case-header">
+    <div class="case-number">#13</div>
+    <div class="case-meta">
+      <div class="case-title"><span class="komplex-label">Nowak-Komplex</span> ZDF nennt Trauerproteste „Krawalle"</div>
+      <div class="case-source">@OERRBlog / X · ZDF heute, 19 Uhr · Juni 2026</div>
+    </div>
+  </div>
+  <div class="case-body">
+    Nach dem Mord an Henry Nowak gingen normale Bürger auf die Straße. Das ZDF erklärte in der 19-Uhr-Sendung: Das seien <strong>„wütende Proteste"</strong> — ZDF-Journalist Mitri sprach von <strong>„Krawallen"</strong>. Die Empörung der Bevölkerung wurde zum Problem umgedeutet. Der Mörder: Randnotiz.
+  </div>
+</div>
+
+<div class="case case-komplex">
+  <div class="case-header">
+    <div class="case-number">#14</div>
+    <div class="case-meta">
+      <div class="case-title"><span class="komplex-label">Nowak-Komplex</span> NDR: Der Täter ist ein „Messernarr" — Rechte sind das Problem</div>
+      <div class="case-source">@steffan_nethe · @Critical__Cat / X · NDR/SWR-Bericht</div>
+    </div>
+  </div>
+  <div class="case-body">
+    Lebenslange Haft für den Mörder von Henry Nowak. Der NDR-Bericht nennt den Täter <strong>„Messernarr"</strong> — als wäre Messer sammeln sein Problem gewesen. Der Artikel stammt von SWR-Redakteurin Biesinger. Für den NDR sind laut X-Nutzern die <strong>rechten Agitatoren das eigentliche Problem</strong> — jene, die zur Aufklärung beitrugen.
+  </div>
+</div>
+
+<div class="case case-komplex">
+  <div class="case-header">
+    <div class="case-number">#17</div>
+    <div class="case-meta">
+      <div class="case-title"><span class="komplex-label">Nowak-Komplex</span> „Protest" vs. „Krawalle": Die Doppelmoral auf einem Tweet</div>
+      <div class="case-source">@OERRBlog / X</div>
+    </div>
+  </div>
+  <div class="case-body">
+    Der OERRBlog bringt es auf den Punkt: Bei George Floyd in den USA — <strong>„Protest."</strong> Bei Henry Nowak in Deutschland — <strong>„Krawalle."</strong> Gleiche Emotion. Gleiche Straße. Andere Wortwahl — je nach politischer Zuschreibung der Trauernden.
+  </div>
+</div>
+
+
+<!-- CLUSTER II -->
+<div class="cluster-header">
+  <span class="cluster-tag">Cluster II</span>
+  <span class="cluster-title">Ideologie &amp; Haltung — Meinungskorridore, Agenda, Parteinähe</span>
+</div>
+
+<div class="case">
+  <div class="case-header">
+    <div class="case-number">#01</div>
+    <div class="case-meta">
+      <div class="case-title">ZDF: Brautmarkt-Bericht ohne das Wort „Menschenhandel"</div>
+      <div class="case-source">@Critical__Cat / X</div>
+    </div>
+  </div>
+  <div class="case-body">
+    Das ZDF berichtete über einen sogenannten Brautmarkt. Das Wort <strong>„Menschenhandel"</strong> fiel nicht. Critical Cat dokumentierte den Beitrag und die sprachliche Verschleierung: Was in einem anderen Kontext als Menschenhandel bezeichnet würde, wurde hier als kulturelle Praxis gerahmt.
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-header">
+    <div class="case-number">#02</div>
+    <div class="case-meta">
+      <div class="case-title">Nur 44% der Deutschen sehen Meinungsfreiheit als gewährleistet</div>
+      <div class="case-source">OERRBlog · Focus · 2026</div>
+    </div>
+  </div>
+  <div class="case-body">
+    Laut einer vom OERRBlog zitierten Erhebung sehen nur noch <strong>44% der Deutschen ihre Meinungsfreiheit als gesichert</strong> an. Das Land, das den ÖRR zur Meinungsvielfalt verpflichtet, produziert das Gegenteil: Ein wachsendes Gefühl der Einschränkung.
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-header">
+    <div class="case-number">#04</div>
+    <div class="case-meta">
+      <div class="case-title">Funk kritisiert Vergewaltigungsopfer</div>
+      <div class="case-source">Apollo News</div>
+    </div>
+  </div>
+  <div class="case-body">
+    Das vom ÖRR finanzierte Jugendformat <strong>Funk</strong> veröffentlichte Inhalte, in denen ein Vergewaltigungsopfer kritisiert wurde. Das Opfer hatte sich öffentlich geäußert — die Kritik richtete sich gegen die Aussagen, nicht gegen den Täter. Apollo News dokumentierte den Fall.
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-header">
+    <div class="case-number">#05</div>
+    <div class="case-meta">
+      <div class="case-title">Geschlechtsidentitäts-Content für Jugendliche: +326%</div>
+      <div class="case-source">Apollo News</div>
+    </div>
+  </div>
+  <div class="case-body">
+    Apollo News dokumentierte einen Anstieg von <strong>326%</strong> bei Beiträgen zu Geschlechtsidentität im ÖRR-Jugendsegment innerhalb eines messbaren Zeitraums. Zum Vergleich: Beiträge zu klassischen Bildungsthemen stagnierten. Eine redaktionelle Prioritätensetzung — bezahlt mit dem Pflichtbeitrag aller Haushalte.
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-header">
+    <div class="case-number">#18</div>
+    <div class="case-meta">
+      <div class="case-title">Tagesschau-Kommentar: „Der Staat muss auch mal nehmen"</div>
+      <div class="case-source">@ben_brechtken / X</div>
+    </div>
+  </div>
+  <div class="case-body">
+    Ein Tagesschau-Kommentator formulierte als Kernthese: <span class="highlight">„Der Staat kann nicht immer nur geben, er muss auch mal nehmen."</span> @ben_brechtken kommentierte trocken: <span class="highlight">„So stelle ich mir kritischen Journalismus vor. Danke, lieber ÖRR!"</span> Staatsgläubigkeit als Haltung — ohne Gegenstimme, ohne Einordnung.
+  </div>
+</div>
+
+
+<!-- CLUSTER III -->
+<div class="cluster-header">
+  <span class="cluster-tag">Cluster III</span>
+  <span class="cluster-title">Vertuschung &amp; Auslassung — Was verschwiegen wird</span>
+</div>
+
+<div class="case">
+  <div class="case-header">
+    <div class="case-number">#03</div>
+    <div class="case-meta">
+      <div class="case-title">ZDF versteckt UNRWA-Dokumentation hinter Paywall</div>
+      <div class="case-source">NIUS</div>
+    </div>
+  </div>
+  <div class="case-body">
+    Das ZDF produzierte mit Beitragsgeld eine Dokumentation über die UNRWA — und stellte sie nicht frei zur Verfügung. NIUS berichtete, dass der Inhalt politisch unbequem war. Eine öffentlich finanzierte Produktion, die der Öffentlichkeit vorenthalten wird: Das ist kein Versehen.
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-header">
+    <div class="case-number">#10</div>
+    <div class="case-meta">
+      <div class="case-title">BR-Rundfunkrat zeigt ÖRR-Kritiker an — Verfahren eingestellt</div>
+      <div class="case-source">Apollo News · April 2026</div>
+    </div>
+  </div>
+  <div class="case-body">
+    BR-Rundfunkrat Hamado Dipama erstattete Strafanzeige gegen den X-Account <strong>ÖRR-Blog</strong> wegen angeblich rassistischer Kommentare. Das Ermittlungsverfahren wurde eingestellt. Der Versuch, einen der bekanntesten ÖRR-Kritiker juristisch zu neutralisieren, scheiterte — ist aber dokumentiert.
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-header">
+    <div class="case-number">#11</div>
+    <div class="case-meta">
+      <div class="case-title">Impfpropaganda im ÖRR: Satire zeigt, was Kritik nicht darf</div>
+      <div class="case-source">Mad in Germany · YouTube</div>
+    </div>
+  </div>
+  <div class="case-body">
+    Der YouTube-Kanal <strong>Mad in Germany</strong> macht sich satirisch über die allgegenwärtige Impfpropaganda im ÖRR lustig — vorwiegend ARD. Der Running Gag: Ohne die heilige Impfung ist das Überleben kaum möglich. Was als Satire funktioniert, offenbart ein strukturelles Muster: Jahre einseitiger Berichterstattung, die kritische Distanz systematisch vermied. Das ZDF löschte nachweislich ältere Impfbeiträge — still und ohne Erklärung.
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-header">
+    <div class="case-number">#15</div>
+    <div class="case-meta">
+      <div class="case-title">ARD kauft sich für 120.000 € eine Framing-Anleitung</div>
+      <div class="case-source">Netzpolitik.org · Die Zeit · ARD-Pressemeldung · 2019</div>
+    </div>
+  </div>
+  <div class="case-body">
+    Die ARD beauftragte Linguistin Elisabeth Wehling (Berkeley) für rund <strong>120.000 € Beitragsgeld</strong> mit einem „Framing Manual" — einer Anleitung, wie Sprache eingesetzt werden soll, um die ARD zu verteidigen. Die ARD wollte es geheim halten. Netzpolitik.org veröffentlichte es. Kernaussage des Manuals: <span class="highlight">„Denken und sprechen Sie zunächst immer über die moralischen Prämissen."</span> Das nennt sich intern Kommunikationsstrategie.
+  </div>
+</div>
+
+
+<!-- CLUSTER IV -->
+<div class="cluster-header">
+  <span class="cluster-tag">Cluster IV</span>
+  <span class="cluster-title">Geld &amp; Macht — Gehälter, Strukturversagen, Akzeptanzverlust</span>
+</div>
+
+<div class="case">
+  <div class="case-header">
+    <div class="case-number">#06</div>
+    <div class="case-meta">
+      <div class="case-title">Medienanstalten bevorzugen „verlässliche" Medien</div>
+      <div class="case-source">Apollo News</div>
+    </div>
+  </div>
+  <div class="case-body">
+    Apollo News dokumentierte, dass Medienanstalten bei der Vergabe von Sichtbarkeit und Förderung sogenannte <strong>„verlässliche" Medien</strong> bevorzugen. Das Kriterium der Verlässlichkeit ist nicht transparent definiert — trifft aber auffällig häufig Medien, die den ÖRR nicht kritisieren.
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-header">
+    <div class="case-number">#07</div>
+    <div class="case-meta">
+      <div class="case-title">BR-Intendantin verdient mehr als der Bundeskanzler</div>
+      <div class="case-source">Abendzeitung München · 30. Mai 2026</div>
+    </div>
+  </div>
+  <div class="case-body">
+    Katja Wildermuth, BR-Intendantin, verdiente 2024 laut offiziellen BR-Angaben <strong>347.571 € jährlich</strong>. Ein Bundeskanzler kommt auf rund 320.000 €. Platz zwei: Produktionsdirektorin Birgit Spanner-Ulmer mit 300.475 €. Kamerafrauen und -männer erhalten als Festangestellte mindestens 4.353 € monatlich — finanziert durch den Pflichtbeitrag jedes Haushalts.
+  </div>
+  <div class="zahlen-block">
+    <div class="zahl-cell">
+      <div class="zahl-value">347.571 €</div>
+      <div class="zahl-label">Wildermuth / Jahr</div>
+    </div>
+    <div class="zahl-cell">
+      <div class="zahl-value">320.000 €</div>
+      <div class="zahl-label">Bundeskanzler / Jahr</div>
+    </div>
+    <div class="zahl-cell">
+      <div class="zahl-value">18,36 €</div>
+      <div class="zahl-label">Ihr Beitrag / Monat</div>
+    </div>
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-header">
+    <div class="case-number">#08</div>
+    <div class="case-meta">
+      <div class="case-title">435.000 bayerische Haushalte verweigern den Beitrag</div>
+      <div class="case-source">Beitragsservice · Augsburger Allgemeine · 3. Juni 2026</div>
+    </div>
+  </div>
+  <div class="case-body">
+    Ende 2024 befanden sich rund <strong>435.000</strong> der 7,4 Millionen bayerischen Beitragskonten im Zahlungsverzug — eine Quote von 5–6%. Bundesweit liegt die Quote bei 7–8%. Bei hartnäckiger Verweigerung der Vermögensauskunft ist Erzwingungshaft möglich. Der Beitragsservice spricht von „absoluten Ausnahmefällen" — bestätigt sie aber.
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-header">
+    <div class="case-number">#09</div>
+    <div class="case-meta">
+      <div class="case-title">ÖRR-Insiderin Critical Cat: „Dieser Rundfunk muss abgeschafft werden"</div>
+      <div class="case-source">Junge Freiheit · März 2026</div>
+    </div>
+  </div>
+  <div class="case-body">
+    Katharina Schmieder, ehemalige SWR-Journalistin, bekannt als <strong>„Critical Cat"</strong>, fordert die Abschaffung des ÖRR in seiner jetzigen Form. Ihr früherer Arbeitgeber, der SWR, griff sie öffentlich an — was sie weiter bekannt machte. Wer von innen kommt und trotzdem kritisiert, wird nicht geschützt. Er wird bekämpft.
+  </div>
+</div>
+
+<div class="case">
+  <div class="case-header">
+    <div class="case-number">#16</div>
+    <div class="case-meta">
+      <div class="case-title">Wissenschaftliche Diagnose: Der ReformStV löst nichts</div>
+      <div class="case-source">Stiftung Marktwirtschaft · Positionspapier Nr. 16 · September 2025</div>
+    </div>
+  </div>
+  <div class="case-body">
+    Dr. Jörg König (Stiftung Marktwirtschaft) analysierte die aktuellen Reformstaatsverträge in einer Anhörung des Brandenburger Landtags. Befund: <strong>Nur kosmetische Anpassungen.</strong> Der ÖRR bestimmt seine Aufsicht im Wesentlichen selbst. Die geplante quasi-automatische Beitragserhöhung schwächt den Reformdruck. Das Vertrauen in den ÖRR sank laut Infratest dimap von 70% (2020) auf 55% (2025). Nur noch 67% halten ihn für unverzichtbar — 2020 waren es noch 83%.
+  </div>
+  <div class="zahlen-block">
+    <div class="zahl-cell">
+      <div class="zahl-value">~10 Mrd. €</div>
+      <div class="zahl-label">ÖRR-Budget / Jahr (weltweit teuerster)</div>
+    </div>
+    <div class="zahl-cell">
+      <div class="zahl-value">55%</div>
+      <div class="zahl-label">Vertrauen 2025 (war 70% in 2020)</div>
+    </div>
+    <div class="zahl-cell">
+      <div class="zahl-value">41%</div>
+      <div class="zahl-label">der ÖRR-Journalisten stehen den Grünen nahe (TU Dortmund 2024)</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- FAZIT -->
+<div class="fazit">
+  <p>Diese Liste ist kein Urteil. Sie ist eine <strong>Dokumentation</strong>. Jeder Fall hat eine Quelle. Jeder Fall ist überprüfbar. Zusammen zeigen sie kein Muster des Zufalls — sondern eines der <strong>Haltung</strong>.</p>
+  <p>Die Liste wächst. Wer Fälle beisteuern möchte, kann uns schreiben.</p>
+</div>
+
+<div class="link-block">
+  <a class="link-item" href="oerr-decoder.html">
+    <div class="link-label">Werkzeug →</div>
+    <div class="link-title">Der ÖRR-Decoder: So erkennen Sie Manipulation beim nächsten Bericht</div>
+  </a>
+  <a class="link-item" href="#">
+    <div class="link-label">Analyse →</div>
+    <div class="link-title">Reform-Manifest: Warum 5 Euro reichen — und was damit finanziert werden sollte</div>
+  </a>
+</div>
+
+<div class="meta">
+  Rundfunkkritik.de · Alle Fälle quellenbasiert dokumentiert · Die Liste wächst kontinuierlich · Stand: Juni 2026
+</div>
+
+</body>
+</html>

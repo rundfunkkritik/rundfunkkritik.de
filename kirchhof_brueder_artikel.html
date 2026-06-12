@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Die Kirchhof-Brüder: Wer hat den Rundfunkbeitrag erfunden – und was hat er gekostet?</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  :root {
+    --bg: #f7f5f0;
+    --ink: #1a1a18;
+    --mid: #4a4a45;
+    --muted: #888880;
+    --accent: #b8001f;
+    --accent-light: #f5e6e8;
+    --border: #d8d4cc;
+    --code-bg: #1a1a18;
+    --highlight: #fff3cd;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* HEADER */
+  .site-header {
+    border-bottom: 1px solid var(--border);
+    padding: 12px 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+  }
+  .site-header a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .site-header span { color: var(--border); }
+
+  /* ARTICLE WRAPPER */
+  .article-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 24px 100px;
+  }
+
+  /* RUBRIK */
+  .rubrik {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .rubrik::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.3;
+  }
+
+  /* HEADLINE */
+  h1 {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  /* STANDFIRST */
+  .standfirst {
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--mid);
+    font-weight: 300;
+    border-left: 3px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 36px;
+  }
+
+  /* META */
+  .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    display: flex;
+    gap: 24px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    margin: 40px 0;
+    position: relative;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+  .tl-item {
+    padding-left: 48px;
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .tl-dot {
+    position: absolute;
+    left: 8px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+  .tl-dot.filled { background: var(--accent); }
+  .tl-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+  .tl-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .tl-text {
+    font-size: 16px;
+    color: var(--mid);
+    line-height: 1.65;
+  }
+
+  /* FAKTBOX */
+  .faktbox {
+    background: var(--accent-light);
+    border-left: 4px solid var(--accent);
+    padding: 24px 28px;
+    margin: 40px 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .faktbox-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .faktbox p {
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.65;
+  }
+  .faktbox p + p { margin-top: 10px; }
+
+  /* ZITAT */
+  blockquote {
+    margin: 36px 0;
+    padding: 20px 28px;
+    background: white;
+    border-left: 4px solid var(--ink);
+    font-size: 17px;
+    font-style: italic;
+    color: var(--mid);
+    line-height: 1.7;
+  }
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: var(--highlight);
+    border: 1px solid #e0c84a;
+    padding: 20px 24px;
+    margin: 36px 0;
+    border-radius: 2px;
+  }
+  .highlight-box strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  /* BODY TEXT */
+  .article-body p {
+    margin-bottom: 24px;
+    font-size: 18px;
+    color: var(--ink);
+  }
+  .article-body h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 48px 0 20px;
+    letter-spacing: -0.01em;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* QUELLEN */
+  .quellen {
+    margin-top: 60px;
+    padding-top: 32px;
+    border-top: 2px solid var(--ink);
+  }
+  .quellen-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .quelle {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    align-items: flex-start;
+  }
+  .q-nr {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 600;
+    min-width: 24px;
+    padding-top: 2px;
+  }
+  .q-text { color: var(--mid); line-height: 1.5; }
+  .q-text a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-light); }
+  .q-text a:hover { border-color: var(--accent); }
+
+  /* VERDICT */
+  .verdict {
+    background: var(--ink);
+    color: white;
+    padding: 32px 36px;
+    margin: 48px 0;
+    border-radius: 2px;
+  }
+  .verdict-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .verdict p { font-size: 17px; line-height: 1.7; color: #e0ddd6; }
+  .verdict p + p { margin-top: 12px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .meta { flex-direction: column; gap: 6px; }
+    .article-wrap { padding: 40px 20px 80px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="https://www.rundfunkkritik.de">Rundfunkkritik.de</a>
+  <span>›</span>
+  <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mid)">Interessenkonflikte &amp; Strukturen</span>
+</header>
+
+<main class="article-wrap">
+
+  <div class="rubrik">Gutachten-Affäre · Interessenkonflikt · BVerfG</div>
+
+  <h1>Die Kirchhof-Brüder:<br>Wer hat den Rundfunkbeitrag<br><em>erfunden</em> – und was hat er gekostet?</h1>
+
+  <p class="standfirst">ARD, ZDF und Deutschlandradio bezahlten einen Gutachter, der den Rundfunkbeitrag für verfassungskonform erklärte. Sein Bruder war Vizepräsident des Gerichts, das darüber urteilen musste. Befangenheitsantrag gestellt. Befangenheitsantrag abgelehnt – vom Gericht selbst. Wie viel der Gutachter dafür bekam? Bis heute geheim.</p>
+
+  <div class="meta">
+    <span>Rundfunkkritik.de</span>
+    <span>Juni 2026</span>
+    <span>Interessenkonflikte &amp; Strukturen</span>
+    <span>Lesezeit: ca. 6 Minuten</span>
+  </div>
+
+  <div class="article-body">
+
+    <p>Es beginnt mit einer Beauftragung. April 2010: ARD, ZDF und Deutschlandradio suchen einen juristischen Rückhalt für ein neues Finanzierungsmodell. Die bisherige GEZ-Gebühr – geräteabhängig, umgehbar, zunehmend umstritten – soll durch eine Haushaltsabgabe ersetzt werden. Jeder Haushalt zahlt, egal ob er Rundfunk empfängt oder nicht. Um diesem Konstrukt verfassungsrechtlichen Halt zu geben, wenden sich die Sender an einen Experten: Prof. Dr. Paul Kirchhof, ehemaliger Bundesverfassungsrichter, renommierter Steuer- und Staatsrechtler.</p>
+
+    <p>Kirchhof liefert. In einem 85-seitigen Gutachten bejaht er die Verfassungsmäßigkeit einer geräteunabhängigen Wohnungs- und Betriebsstättenabgabe. [1] Das Gutachten wird zur Blaupause. In der Gesetzesbegründung zum Rundfunkbeitragstaatsvertrag verweisen die Gesetzgeber ausdrücklich auf dieses Dokument. [2] 2013 tritt der Rundfunkbeitrag in Kraft – gestützt wesentlich auf die Expertise eines Mannes, den die Sender selbst beauftragt und bezahlt hatten.</p>
+
+    <h2>Akt II: Der Bruder auf dem Richterstuhl</h2>
+
+    <p>Fünf Jahre später klagen Bürger. Sie halten den Rundfunkbeitrag für verfassungswidrig – zu Recht, wie viele meinen – und ziehen vor das Bundesverfassungsgericht. Der Fall landet beim Ersten Senat. Dessen Vorsitzender und Vizepräsident des Bundesverfassungsgerichts: Prof. Dr. Ferdinand Kirchhof. Der jüngere Bruder von Paul Kirchhof. [3]</p>
+
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot filled"></div>
+      <div class="tl-year">April 2010</div>
+      <div class="tl-title">Das Gutachten entsteht</div>
+      <div class="tl-text">Paul Kirchhof erstellt im Auftrag von ARD, ZDF und Deutschlandradio ein 85-seitiges Gutachten. Ergebnis: Die geplante Haushaltsabgabe ist verfassungsgemäß. Das Honorar: bis heute nicht öffentlich.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot filled"></div>
+      <div class="tl-year">2013</div>
+      <div class="tl-title">Der Rundfunkbeitrag tritt in Kraft</div>
+      <div class="tl-text">Gestützt auf das Kirchhof-Gutachten. Jeder Haushalt in Deutschland zahlt – ob er öffentlich-rechtliche Angebote nutzt oder nicht.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">2017–2018</div>
+      <div class="tl-title">Bürger klagen vor dem BVerfG</div>
+      <div class="tl-text">Mehrere Verfassungsbeschwerden werden eingereicht. Zuständig: der Erste Senat – unter Vorsitz von Ferdinand Kirchhof, Bruder des Gutachters.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">April 2018</div>
+      <div class="tl-title">Befangenheitsantrag – abgelehnt</div>
+      <div class="tl-text">Zwei Beschwerdeführer beantragen den Ausschluss Ferdinand Kirchhofs wegen Befangenheit. Der Erste Senat – Ferdinand Kirchhof selbst – weist den Antrag zurück. Begründung: „Allein Verwandtschaft begründet keine Besorgnis der Befangenheit."</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">Juli 2018</div>
+      <div class="tl-title">Urteil: Rundfunkbeitrag verfassungsgemäß</div>
+      <div class="tl-text">Ferdinand Kirchhof verliest das Urteil des Ersten Senats. Der Rundfunkbeitrag ist verfassungskonform. Nur die Belastung von Zweitwohnungen wird beanstandet.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">2016 &amp; fortlaufend</div>
+      <div class="tl-title">Paul Kirchhof – erneut beauftragt</div>
+      <div class="tl-text">Die ARD beauftragt Paul Kirchhof mit einem weiteren Gutachten: diesmal darüber, wie viel Transparenz die ARD überhaupt schuldet. Ergebnis: wenig.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">September 2024</div>
+      <div class="tl-title">IFG-Anfrage: Das Schweigen des WDR</div>
+      <div class="tl-text">Auf eine Informationsfreiheitsanfrage bestätigt der WDR: „Ja, die Kosten wurden anteilig vom WDR mitgetragen." Die genaue Höhe des Honorars: keine Angabe.</div>
+    </div>
+  </div>
+
+  <div class="article-body">
+
+    <h2>Akt III: Das Gericht urteilt über sich selbst</h2>
+
+    <p>Die Logik des Befangenheitsantrags ist simpel: Wer von einer Partei bezahlt wurde, um ein Gutachten in deren Interesse zu erstellen, ist an der Sache beteiligt. Wenn der Richter, der über diese Sache urteilt, dem Gutachter familiär nahestehend ist – dann sollte er sich zurückziehen oder zumindest durch eine unabhängige Stelle überprüft werden.</p>
+
+    <p>Das Bundesverfassungsgericht sieht das anders. In einem Beschluss vom 24. April 2018 entscheidet der Erste Senat: Ferdinand Kirchhof ist nicht befangen. Die Begründung: Verwandtschaft allein reiche nicht aus. Es fehle an „zusätzlichen Umständen". [4]</p>
+
+  </div>
+
+  <blockquote>
+    „Allein Verwandtschaft begründet keine Besorgnis der Befangenheit."
+    <cite>— Bundesverfassungsgericht, Beschluss vom 24. April 2018, Az. 1 BvR 745/17</cite>
+  </blockquote>
+
+  <div class="faktbox">
+    <div class="faktbox-label">⚠ Strukturproblem</div>
+    <p>Das Besondere an diesem Fall: Der Erste Senat urteilt über die Befangenheit seines eigenen Vorsitzenden. Es gibt keine externe Instanz, die diesen Beschluss überprüft. Das Gericht richtet über sich selbst – und spricht sich erwartungsgemäß frei.</p>
+    <p>Zum Vergleich: In der ordentlichen Gerichtsbarkeit entscheidet über einen Befangenheitsantrag ein anderes Gericht oder zumindest ein anderes Spruchkörper. Beim Bundesverfassungsgericht gilt: die anderen Richter desselben Senats beschließen darüber – unter Vorsitz des Betroffenen.</p>
+  </div>
+
+  <div class="article-body">
+
+    <h2>Was das Gutachten gekostet hat – und warum niemand es sagt</h2>
+
+    <p>Die entscheidende Frage ist jene nach dem Geld. Paul Kirchhof wurde von ARD, ZDF und Deutschlandradio beauftragt. Das Gutachten wurde – das ist belegt – mit Beitragsmitteln finanziert. Aber wie viel haben die Sender dafür bezahlt?</p>
+
+    <p>Im August 2024 stellt ein Bürger via FragDenStaat.de eine Informationsfreiheitsanfrage an den WDR. Er fragt unter anderem: War der WDR an den Kosten beteiligt? Im September 2024 antwortet der WDR – und bestätigt die Beteiligung. [5]</p>
+
+  </div>
+
+  <blockquote>
+    „Ja, die Kosten wurden anteilig vom WDR mitgetragen."
+    <cite>— WDR, Antwort auf IFG-Anfrage, 10. September 2024</cite>
+  </blockquote>
+
+  <div class="highlight-box">
+    <strong>Die konkrete Honorarsumme nennt der WDR nicht.</strong> Auf die Frage, welche Rechtsgrundlage die Finanzierung erlaubt habe, verweist der WDR auf das Ermessen des Intendanten und § 25 WDR-Gesetz. Eine Aufschlüsselung der Kosten, eine Rechnung, eine Buchungszeile – nichts davon wird herausgegeben.
+  </div>
+
+  <div class="article-body">
+    <p>Was das Gutachten gekostet hat, bleibt also Betriebsgeheimnis der Sender. Dass sie es mit Beitragsgeldern bezahlt haben – Geld also, das Bürger zwangsweise abführen müssen – steht außer Zweifel. Dass dieses Gutachten wiederum als Grundlage für die Pflicht zur Zahlung dieses Beitrags diente: ebenso.</p>
+
+    <p>Es ist ein geschlossener Kreislauf: Der Beitrag finanziert das Gutachten, das den Beitrag legitimiert, den ein Richter für verfassungsgemäß erklärt, dessen Bruder das Gutachten verfasst hat.</p>
+
+    <h2>2016: Paul Kirchhof schreibt über Transparenz</h2>
+
+    <p>Die Beziehung zwischen dem Verfassungsrechtler und den öffentlich-rechtlichen Sendern endet 2010 nicht. 2016 beauftragt die ARD Paul Kirchhof erneut – diesmal mit einem Gutachten über die Grenzen des Transparenzgebotes. Die Frage: Was muss die ARD der Öffentlichkeit preisgeben, was darf sie zurückhalten?</p>
+
+    <p>Das Ergebnis: Gehälter von Experten wie Mehmet Scholl müssen nicht veröffentlicht werden, da für öffentlich-rechtliche Sender das Kartellrecht und damit das Prinzip des Wettbewerbs gelte. [6] Die ARD lässt sich also von jemandem beraten, wie wenig sie offenlegen muss – von demselben Mann, dessen eigenes Honorar bis heute nicht bekannt ist.</p>
+  </div>
+
+  <div class="verdict">
+    <div class="verdict-label">▸ Zusammenfassung</div>
+    <p>Paul Kirchhof, ehemaliger Verfassungsrichter, erstellt 2010 im Auftrag der Sender ein Gutachten, das den Rundfunkbeitrag für zulässig erklärt. Er wird dafür bezahlt – mit Beitragsgeld. Die Höhe ist nicht bekannt.</p>
+    <p>Sein Bruder Ferdinand ist Vizepräsident des Bundesverfassungsgerichts und leitet den Senat, der über die Verfassungsmäßigkeit des Beitrags urteilen muss. Befangenheitsanträge werden gestellt. Das Gericht – Ferdinand Kirchhof selbst – weist sie zurück.</p>
+    <p>Es gibt keine externe Überprüfung. Es gibt keine Transparenz über das Honorar. Und es gibt bis heute kein öffentliches Interesse daran, das zu ändern.</p>
+  </div>
+
+  <div class="quellen">
+    <div class="quellen-title">Quellen &amp; Belege</div>
+    <div class="quelle">
+      <div class="q-nr">[1]</div>
+      <div class="q-text">Paul Kirchhof: <em>„Die Finanzierung des öffentlich-rechtlichen Rundfunks"</em>, Gutachten im Auftrag von ARD, ZDF und Deutschlandradio, April 2010. Volltext via SWR: <a href="https://www.swr.de/unternehmen/organisation/gutachten-zur-rundfunkfinanzierung-100.pdf" target="_blank">swr.de</a></div>
+    </div>
+    <div class="quelle">
+      <div class="q-nr">[2]</div>
+      <div class="q-text">Bundesverfassungsgericht, Pressemitteilung Nr. 30/2018, 3. Mai 2018: <em>„Ablehnungsgesuche gegen Vizepräsident Kirchhof zurückgewiesen"</em>. <a href="https://www.bundesverfassungsgericht.de/SharedDocs/Pressemitteilungen/DE/2018/bvg18-030.html" target="_blank">bundesverfassungsgericht.de</a></div>
+    </div>
+    <div class="quelle">
+      <div class="q-nr">[3]</div>
+      <div class="q-text">Handelsblatt, 17. April 2018: <em>„Rundfunkbeitrag vor Verfassungsgericht: Kläger lehnen Richter ab"</em>. <a href="https://www.handelsblatt.com/unternehmen/it-medien/streit-um-finanzierung-von-ard-und-zdf-gegner-der-rundfunkgebuehr-lehnen-verfassungsrichter-wegen-befangenheit-ab/21182950.html" target="_blank">handelsblatt.com</a></div>
+    </div>
+    <div class="quelle">
+      <div class="q-nr">[4]</div>
+      <div class="q-text">Legal Tribune Online, 3. Mai 2018: <em>„BVerfG: Kirchhof entscheidet zum Rundfunkbeitrag mit"</em>, Az. 1 BvR 745/17 und 1 BvR 98/17. <a href="https://www.lto.de/recht/justiz/j/bverfg-1bvr74517-1bvr98117-beschluss-rundfunkbeitrag-ferdinand-kirchhof-vizepraesident-nicht-befangen" target="_blank">lto.de</a></div>
+    </div>
+    <div class="quelle">
+      <div class="q-nr">[5]</div>
+      <div class="q-text">FragDenStaat.de, IFG-Anfrage an den WDR, eingereicht 27. August 2024, Antwort 10. September 2024: <em>„Gutachten über die Finanzierung des öffentlich-rechtlichen Rundfunks"</em>. <a href="https://fragdenstaat.de/anfrage/gutachten-ueber-die-finanzierung-des-oeffentlich-rechtlichen-rundfunks/" target="_blank">fragdenstaat.de</a></div>
+    </div>
+    <div class="quelle">
+      <div class="q-nr">[6]</div>
+      <div class="q-text">Tagesspiegel, 23. November 2016: <em>„Neues von der ARD: Transparenzgebote, Gebührenüberschüsse und eine App"</em>. <a href="https://www.tagesspiegel.de/gesellschaft/medien/transparenzgebote-gebuhrenuberschusse-und-eine-app-6311725.html" target="_blank">tagesspiegel.de</a></div>
+    </div>
+    <div class="quelle">
+      <div class="q-nr">[7]</div>
+      <div class="q-text">Tagesspiegel, 3. Mai 2018: <em>„Rundfunkbeitrag: Verfassungsrichter nicht befangen"</em>. <a href="https://www.tagesspiegel.de/gesellschaft/medien/rundfunkbeitrag-verfassungsrichter-nicht-befangen-4967632.html" target="_blank">tagesspiegel.de</a></div>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>

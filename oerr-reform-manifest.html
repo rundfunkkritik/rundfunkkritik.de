@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reform-Manifest: Warum 5 Euro reichen — und was damit finanziert werden sollte</title>
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --bg-card: #141414;
+    --bg-card-hover: #181818;
+    --gold: #c8a84b;
+    --gold-light: #e2c97e;
+    --gold-dim: #8a7133;
+    --gold-bg: #1a1608;
+    --text: #e8e4da;
+    --text-muted: #8a8680;
+    --text-dim: #4a4840;
+    --border: #222018;
+    --border-mid: #2a2820;
+    --border-gold: #3a3020;
+    --red: #c0392b;
+    --green: #2e7d4f;
+    --green-light: #4caf78;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  .kicker {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-left: 2px solid var(--gold);
+    padding-left: 0.75rem;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    font-weight: normal;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  h1 em { color: var(--gold); font-style: normal; }
+
+  .intro {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-mid);
+    border-bottom: 1px solid var(--border-mid);
+    padding: 1.25rem 0;
+    margin: 1.5rem 0 2.5rem;
+    line-height: 1.75;
+  }
+
+  /* Diagnose-Block */
+  .diagnose {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-gold);
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  p {
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  p strong { color: var(--text); }
+  p em { color: var(--gold-light); font-style: italic; }
+
+  /* Zahlen-Grid */
+  .zahlen-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin: 1.5rem 0 2rem;
+  }
+
+  .zahl-cell {
+    background: var(--bg-card);
+    padding: 1.1rem 1.25rem;
+  }
+
+  .zahl-value {
+    font-family: 'Courier New', monospace;
+    font-size: 1.15rem;
+    color: var(--gold-light);
+    margin-bottom: 0.3rem;
+  }
+
+  .zahl-label {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    line-height: 1.35;
+  }
+
+  .zahl-sub {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    margin-top: 0.2rem;
+    font-family: 'Courier New', monospace;
+  }
+
+  /* Vergleichsbalken */
+  .vergleich-visual {
+    margin: 1.75rem 0;
+  }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .bar-label {
+    width: 160px;
+    flex-shrink: 0;
+    color: var(--text-muted);
+    text-align: right;
+    font-family: 'Courier New', monospace;
+    font-size: 0.78rem;
+  }
+
+  .bar-track {
+    flex: 1;
+    height: 20px;
+    background: var(--border);
+    position: relative;
+  }
+
+  .bar-fill {
+    height: 100%;
+    background: var(--gold-dim);
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+  }
+
+  .bar-fill.highlight { background: var(--red); }
+  .bar-fill.good { background: var(--green); }
+
+  .bar-value {
+    font-family: 'Courier New', monospace;
+    font-size: 0.72rem;
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  /* Zitat-Block */
+  .zitat {
+    border-left: 3px solid var(--gold-dim);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    background: var(--gold-bg);
+  }
+
+  .zitat p {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+  }
+
+  .zitat .zitat-quelle {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+  }
+
+  /* Modell-Vergleich */
+  .modell-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    margin: 1.75rem 0;
+  }
+
+  .modell-cell {
+    background: var(--bg-card);
+    padding: 1.25rem;
+  }
+
+  .modell-cell.jetzt .modell-title {
+    font-family: 'Courier New', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.75rem;
+  }
+
+  .modell-cell.neu .modell-title {
+    font-family: 'Courier New', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 0.75rem;
+  }
+
+  .modell-item {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.45;
+  }
+
+  .modell-item:last-child { border-bottom: none; }
+  .modell-item strong { color: var(--text); }
+
+  /* Forderungen */
+  .forderung {
+    display: flex;
+    gap: 0;
+    margin-bottom: 1px;
+    background: var(--border);
+  }
+
+  .forderung-nr {
+    background: var(--gold-bg);
+    border-right: 1px solid var(--border-gold);
+    font-family: 'Courier New', monospace;
+    font-size: 0.72rem;
+    color: var(--gold-dim);
+    padding: 1rem 0.875rem;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 1.1rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .forderung-body {
+    background: var(--bg-card);
+    padding: 0.875rem 1.25rem;
+    flex: 1;
+  }
+
+  .forderung-title {
+    font-size: 0.97rem;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+  }
+
+  .forderung-text {
+    font-size: 0.87rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .forderungen-wrap {
+    margin: 1.5rem 0 2.5rem;
+  }
+
+  /* Meyen-Block */
+  .meyen-block {
+    border: 1px solid var(--border-gold);
+    background: var(--gold-bg);
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+  }
+
+  .meyen-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 0.75rem;
+  }
+
+  .meyen-text {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  .meyen-text strong { color: var(--gold-light); }
+
+  /* Fazit */
+  .fazit {
+    border-top: 2px solid var(--border-gold);
+    padding-top: 2rem;
+    margin-top: 3.5rem;
+  }
+
+  .fazit p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+  }
+
+  /* Links */
+  .link-block {
+    display: flex;
+    gap: 1px;
+    background: var(--border);
+    margin-top: 2rem;
+  }
+
+  .link-item {
+    flex: 1;
+    background: var(--bg-card);
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+
+  .link-item:hover { background: var(--bg-card-hover); }
+
+  .link-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 0.4rem;
+  }
+
+  .link-title {
+    font-size: 0.9rem;
+    color: var(--gold-light);
+    line-height: 1.4;
+  }
+
+  .meta {
+    font-family: 'Courier New', monospace;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 640px) {
+    body { padding: 1.5rem 1.25rem 4rem; }
+    h1 { font-size: 1.65rem; }
+    .zahlen-grid { grid-template-columns: 1fr 1fr; }
+    .modell-grid { grid-template-columns: 1fr; }
+    .bar-label { width: 100px; font-size: 0.7rem; }
+    .link-block { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<span class="kicker">Analyse · Reform · Meinungsbeitrag</span>
+
+<h1><em>Reform-Manifest:</em><br>Warum 5 Euro reichen —<br>und was damit finanziert werden sollte</h1>
+
+<div class="intro">
+  Deutschland leistet sich das teuerste öffentlich-rechtliche Rundfunksystem der Welt. 10 Milliarden Euro pro Jahr. Mehr als BBC, RAI und France Télévisions zusammen. Das Ergebnis: sinkende Akzeptanz, politisch eingefärbte Berichterstattung, ein System das sich selbst kontrolliert. Es gibt einen besseren Weg. Er kostet 5 Euro im Monat.
+</div>
+
+
+<!-- TEIL 1: DIAGNOSE -->
+<div class="diagnose">
+  <div class="section-label">Teil 1 — Die Diagnose</div>
+  <h2>Ein System, das sein Vertrauen verspielt hat</h2>
+
+  <p>Das Vertrauen in den ÖRR ist nicht plötzlich eingebrochen. Es erodiert seit Jahren — messbar, dokumentiert, ignoriert. Eine repräsentative Infratest-dimap-Erhebung im Auftrag des WDR selbst (Mai 2025) zeigt das Ausmaß:</p>
+
+  <div class="zahlen-grid">
+    <div class="zahl-cell">
+      <div class="zahl-value">55%</div>
+      <div class="zahl-label">Vertrauen in den ÖRR</div>
+      <div class="zahl-sub">war 70% in 2020</div>
+    </div>
+    <div class="zahl-cell">
+      <div class="zahl-value">67%</div>
+      <div class="zahl-label">halten ÖRR für unverzichtbar</div>
+      <div class="zahl-sub">war 83% in 2020</div>
+    </div>
+    <div class="zahl-cell">
+      <div class="zahl-value">10%</div>
+      <div class="zahl-label">AfD-Anhänger vertrauen dem ÖRR</div>
+      <div class="zahl-sub">Grünen-Anhänger: 92%</div>
+    </div>
+  </div>
+
+  <p>Das ist kein Randproblem. Ein Rundfunk, dem fast die Hälfte der Bevölkerung nicht vertraut, hat sein Mandat verloren — unabhängig davon, ob er rechtlich weiter zwangsfinanziert wird.</p>
+
+  <p>Die TU Dortmund befragte 2024 über 500 Journalistinnen und Journalisten zu ihrer Parteineigung. Ergebnis: <strong>41% stehen den Grünen nahe</strong>, 16% der SPD, 8% der CDU. Und: <strong>61%</strong> gaben an, die Positionen ihrer Partei in ihre Berichterstattung einfließen zu lassen — zumindest teilweise. Das ist kein Vorwurf an Einzelne. Das ist ein Strukturproblem.</p>
+
+  <div class="zitat">
+    <p>„Denken und sprechen Sie nicht primär in Form von Faktenlisten und einzelnen Details. Denken und sprechen Sie zunächst immer über die moralischen Prämissen."</p>
+    <div class="zitat-quelle">ARD-Framing-Manual, Elisabeth Wehling, 2019 — finanziert mit ca. 120.000 € Beitragsgeld</div>
+  </div>
+
+  <p>Die ARD ließ sich 2019 für rund <strong>120.000 Euro Beitragsgeld</strong> eine Kommunikationsanleitung schreiben — ein Dokument, das erklärt, wie man Sprache einsetzt, um die ARD zu verteidigen, statt wie man Journalismus betreibt. Das wollte sie geheim halten. Netzpolitik.org veröffentlichte es.</p>
+</div>
+
+
+<!-- TEIL 2: KOSTEN -->
+<div class="diagnose">
+  <div class="section-label">Teil 2 — Das Geld</div>
+  <h2>10 Milliarden Euro — und kein Vergleich hält stand</h2>
+
+  <p>Deutschland leistet sich mit rund <strong>10 Milliarden Euro Jahresbudget</strong> das teuerste öffentlich-rechtliche Rundfunksystem der Welt. Nicht pro Kopf gerechnet, nicht in Relation zur Wirtschaftsleistung — schlicht in absoluten Zahlen. Auch pro Sendeminute ist der ÖRR mit über 12.000 Euro international ohne Konkurrenz.</p>
+
+  <div class="vergleich-visual">
+    <div class="bar-row">
+      <div class="bar-label">ÖRR Deutschland</div>
+      <div class="bar-track">
+        <div class="bar-fill highlight" style="width:100%">
+          <span class="bar-value">~10 Mrd. €</span>
+        </div>
+      </div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">BBC</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:60%">
+          <span class="bar-value">~6 Mrd. €</span>
+        </div>
+      </div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">France Télévisions</div>
+      <div class="bar-track">
+        <div class="bar-fill good" style="width:28%">
+          <span class="bar-value">&lt;3 Mrd. €</span>
+        </div>
+      </div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">RAI (Italien)</div>
+      <div class="bar-track">
+        <div class="bar-fill good" style="width:26%">
+          <span class="bar-value">&lt;3 Mrd. €</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>Die Ursachen: hohe Personalkosten inklusive Pensionen, teure Sportrechte, parallele digitale Plattformen und ein <strong>„Vollanbieter"-Anspruch</strong>, der aus einer Zeit stammt, in der es drei Fernsehkanäle gab. Diese Zeit ist vorbei. Streaming, Internet und private Anbieter haben die ursprüngliche Legitimation des ÖRR — Frequenzknappheit und Informationsmonopol — vollständig aufgelöst.</p>
+
+  <p>Was bleibt: der verfassungsrechtlich geschützte Kernauftrag. <strong>Grundversorgung.</strong> Nicht Unterhaltung, nicht Sport, nicht Parallelstrukturen zu Netflix und YouTube. Information, Bildung, Kultur — das, was private Anbieter nicht in ausreichendem Maß liefern.</p>
+</div>
+
+
+<!-- TEIL 3: DAS MODELL -->
+<div class="diagnose">
+  <div class="section-label">Teil 3 — Das Modell</div>
+  <h2>5 Euro für Grundversorgung — der Rest als Abo</h2>
+
+  <p>Der Vorschlag ist einfach: <strong>Ein reduzierter Pflichtbeitrag von 5 Euro monatlich</strong> finanziert einen schlanken, klar definierten Grundversorgungsauftrag. Alles darüber hinaus — Unterhaltung, Sport, Spartenkanäle — wird über freiwillige Abonnements finanziert oder entfällt.</p>
+
+  <div class="modell-grid">
+    <div class="modell-cell jetzt">
+      <div class="modell-title">Heute — 18,36 €/Monat</div>
+      <div class="modell-item"><strong>Pflichtbeitrag</strong> für jeden Haushalt, unabhängig von Nutzung</div>
+      <div class="modell-item"><strong>Vollanbieter-Anspruch:</strong> Sport, Unterhaltung, Musik, Kino</div>
+      <div class="modell-item"><strong>Selbstkontrolle:</strong> ÖRR bestimmt seine Aufsicht selbst</div>
+      <div class="modell-item"><strong>Quasi-automatische</strong> Beitragserhöhung geplant</div>
+      <div class="modell-item"><strong>10 Mrd. €</strong> Jahresbudget ohne echte Deckelung</div>
+    </div>
+    <div class="modell-cell neu">
+      <div class="modell-title">Vorschlag — 5 €/Monat Pflicht + Abo</div>
+      <div class="modell-item"><strong>5 € Pflichtbeitrag</strong> für definierten Grundauftrag</div>
+      <div class="modell-item"><strong>Grundauftrag:</strong> Nachrichten, Regional, Bildung, Kultur</div>
+      <div class="modell-item"><strong>Unabhängige Aufsicht</strong> außerhalb des ÖRR-Systems</div>
+      <div class="modell-item"><strong>Wettbewerb:</strong> Teil der Mittel auch für private Anbieter</div>
+      <div class="modell-item"><strong>Sport, Unterhaltung</strong> als freiwilliges Abo-Angebot</div>
+    </div>
+  </div>
+
+  <p>Was würden 5 Euro finanzieren? Laut Stiftung Marktwirtschaft reicht eine fokussierte Grundversorgung mit <strong>einem starken Nachrichtenangebot</strong>, regionaler Berichterstattung, Kulturprogramm und Bildungsinhalten für deutlich weniger als die aktuellen 10 Milliarden Euro — wenn konsequent auf Doppelstrukturen, Sportrechte und massentaugliche Unterhaltung verzichtet wird.</p>
+
+  <p>Frankreich schaffte den Pflichtbeitrag 2022 vollständig ab und finanziert den öffentlichen Rundfunk über die Mehrwertsteuer. Deutschland muss nicht so weit gehen — aber der Grundgedanke stimmt: <strong>Wer Zwang einsetzt, muss Leistung definieren.</strong> Der aktuelle ÖRR tut das nicht.</p>
+</div>
+
+
+<!-- TEIL 4: FORDERUNGEN -->
+<div class="diagnose">
+  <div class="section-label">Teil 4 — Die Forderungen</div>
+  <h2>Acht Schritte, die sofort möglich wären</h2>
+
+  <p>Die Stiftung Marktwirtschaft formulierte in ihrer Anhörung vor dem Brandenburger Landtag (September 2025) acht konkrete Maßnahmen. Der aktuelle Reformstaatsvertrag setzt keine davon ernsthaft um. Hier sind sie:</p>
+
+  <div class="forderungen-wrap">
+    <div class="forderung">
+      <div class="forderung-nr">F·01</div>
+      <div class="forderung-body">
+        <div class="forderung-title">Auftrag neu definieren — weg vom Vollanbieter</div>
+        <p class="forderung-text">Der ÖRR soll sich auf Inhalte konzentrieren, die private Anbieter nicht liefern: unabhängige Information, Bildung, regionale Vielfalt, Kultur. Unterhaltung und Sport, wo private Konkurrenz existiert, gehören nicht zum Grundauftrag.</p>
+      </div>
+    </div>
+    <div class="forderung">
+      <div class="forderung-nr">F·02</div>
+      <div class="forderung-body">
+        <div class="forderung-title">Harte Deckelung der Sportrechte</div>
+        <p class="forderung-text">Derzeit erlaubt der Reformentwurf 5% des Gesamtbudgets für Sportrechte — bei 8 Mrd. € sind das immer noch 400 Mio. € jährlich. Eine echte Deckelung liegt darunter. Wo private Sender Sport zeigen können, muss der ÖRR es nicht.</p>
+      </div>
+    </div>
+    <div class="forderung">
+      <div class="forderung-nr">F·03</div>
+      <div class="forderung-body">
+        <div class="forderung-title">Vollständige Werbefreiheit</div>
+        <p class="forderung-text">Werbung und Sponsoring verzerren Themenauswahl und Berichterstattung. Sie machen nur einen kleinen Teil des Budgets aus — der Preis für ihre Abschaffung ist gering. Der Gewinn an Unabhängigkeit ist groß.</p>
+      </div>
+    </div>
+    <div class="forderung">
+      <div class="forderung-nr">F·04</div>
+      <div class="forderung-body">
+        <div class="forderung-title">Gehaltsobergrenzen verbindlich machen</div>
+        <p class="forderung-text">BR-Intendantin Wildermuth verdient mehr als der Bundeskanzler. Das Reformpapier schreibt „Orientierung an B11" vor — lässt aber Vergleiche mit Sparkassen-Vorständen zu, die weit darüber liegen. Eine verbindliche Deckelung bei B11 ist nötig.</p>
+      </div>
+    </div>
+    <div class="forderung">
+      <div class="forderung-nr">F·05</div>
+      <div class="forderung-body">
+        <div class="forderung-title">Unabhängige Aufsicht — nicht vom ÖRR selbst besetzt</div>
+        <p class="forderung-text">Im geplanten Medienrat werden vier von sechs Sachverständigen vom ÖRR selbst gewählt. Das ist Selbstkontrolle, keine Aufsicht. Die KEF oder KEK sollten die Evaluatoren bestellen — ohne Beteiligung der Anstalten.</p>
+      </div>
+    </div>
+    <div class="forderung">
+      <div class="forderung-nr">F·06</div>
+      <div class="forderung-body">
+        <div class="forderung-title">Wettbewerb um Beitragsmittel öffnen</div>
+        <p class="forderung-text">Etwa 10% des Beitragsaufkommens sollten in einem offenen Verfahren auch an private Anbieter vergeben werden können — für Inhalte, die den Grundauftrag erfüllen. Eine unabhängige Vergabekommission entscheidet anhand definierter Kriterien.</p>
+      </div>
+    </div>
+    <div class="forderung">
+      <div class="forderung-nr">F·07</div>
+      <div class="forderung-body">
+        <div class="forderung-title">Keine automatische Beitragserhöhung</div>
+        <p class="forderung-text">Der geplante Automatismus — Beitrag steigt, wenn kein Widerspruch erfolgt — entkoppelt die Finanzierung von demokratischer Kontrolle. Länderparlamente müssen aktiv zustimmen. Effizienz entsteht nur unter Spardruck.</p>
+      </div>
+    </div>
+    <div class="forderung">
+      <div class="forderung-nr">F·08</div>
+      <div class="forderung-body">
+        <div class="forderung-title">Regelmäßige externe wissenschaftliche Evaluation</div>
+        <p class="forderung-text">Unabhängige Expertengremien sollen regelmäßig prüfen, ob der Auftrag erfüllt wird und Mittel effizient eingesetzt werden. Weder vom ÖRR noch von der Politik bestellt. Transparenz schafft Disziplin.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- TEIL 5: MEYEN -->
+<div class="diagnose">
+  <div class="section-label">Teil 5 — Die größere Frage</div>
+  <h2>Ist der Journalismus noch zu retten?</h2>
+
+  <div class="meyen-block">
+    <div class="meyen-label">Prof. Michael Meyen · LMU München · Kommunikationswissenschaft · Vortrag „Die Medien-Matrix", Dezember 2021</div>
+    <p class="meyen-text">Der Münchner Kommunikationswissenschaftler Prof. Michael Meyen beschreibt eine <strong>vierte Gewalt im Koma</strong>: Leitmedien haben Deutungshoheit — nutzen sie aber nicht mehr für die Demokratie, sondern für die Absicherung bestehender Machtverhältnisse. Zensur, Verleumdung, Korruption — nicht als Ausnahme, sondern als Systemzustand. Wer unabhängigen Journalismus betreiben will, braucht laut Meyen drei Dinge: <strong>Mut, Rückgrat und Verantwortungsbewusstsein.</strong> Im aktuellen ÖRR-System werden alle drei strukturell bestraft.</p>
+  </div>
+
+  <p>Die Reform des ÖRR ist keine technische Frage. Sie ist eine demokratische. Ein Rundfunk, dem die Hälfte der Bevölkerung nicht vertraut, der seine Kritiker juristisch angreift, der sich seine Sprache für 120.000 Euro kauft und der mehr verdient als die Regierung, die er kontrollieren soll — dieser Rundfunk hat ein Problem, das kein Reformstaatsvertrag löst.</p>
+
+  <p>Es braucht <strong>Willen</strong>. Den haben wir bisher nicht gesehen.</p>
+</div>
+
+
+<!-- FAZIT -->
+<div class="fazit">
+  <p>5 Euro für Grundversorgung. Der Rest als Markt. Unabhängige Aufsicht. Verbindliche Gehaltsgrenzen. Kein Automatismus. Das sind keine radikalen Forderungen — das sind die Mindestbedingungen für einen Rundfunk, der seinen Namen verdient.</p>
+  <p>Die Fälle, die wir dokumentiert haben, sind kein Zufall. Sie sind das Ergebnis eines Systems ohne Konsequenzen. <strong>Das lässt sich ändern.</strong></p>
+</div>
+
+<div class="link-block">
+  <a class="link-item" href="oerr-aufreger-liste.html">
+    <div class="link-label">Dokumentation →</div>
+    <div class="link-title">Die Aufreger-Liste: 18 dokumentierte Fälle von ÖRR-Versagen</div>
+  </a>
+  <a class="link-item" href="oerr-decoder.html">
+    <div class="link-label">Werkzeug →</div>
+    <div class="link-title">Der ÖRR-Decoder: So erkennen Sie Manipulation beim nächsten Bericht</div>
+  </a>
+</div>
+
+<div class="meta">
+  Rundfunkkritik.de · Quellen: Stiftung Marktwirtschaft Positionspapier Nr. 16 (Sept. 2025) · Infratest dimap 2025 · TU Dortmund 2024 · ARD-Framing-Manual 2019 · Abendzeitung München Mai 2026 · Stand: Juni 2026
+</div>
+
+</body>
+</html>
