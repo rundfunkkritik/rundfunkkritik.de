@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sie versuchen es immer wieder — rundfunkkritik.de</title>
+<style>
+  :root {
+    --navy: #1a2e4a;
+    --navy-light: #2c3a52;
+    --gold: #c9a84c;
+    --gold-light: #e8d5a0;
+    --cream: #f5f1e8;
+    --text: #1c1c1c;
+    --text-muted: #5a5a5a;
+    --border: #d4cfc4;
+    --red-muted: #8b3a3a;
+    --green-muted: #2d5a3d;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 18px;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: var(--navy);
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 3px solid var(--gold);
+  }
+  .site-header .label {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .site-header .site-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 0.05em;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    color: #fff;
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 40px,
+      rgba(201,168,76,0.04) 40px,
+      rgba(201,168,76,0.04) 41px
+    );
+  }
+  .hero-eyebrow {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    line-height: 1.2;
+    font-weight: bold;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+  }
+  .hero h1 em {
+    color: var(--gold-light);
+    font-style: normal;
+  }
+  .hero-sub {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.75);
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    font-style: italic;
+  }
+
+  /* TICKER */
+  .ticker {
+    background: var(--gold);
+    padding: 0.6rem 2rem;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--navy);
+    letter-spacing: 0.05em;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  /* ARTICLE BODY */
+  .article {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+  }
+
+  .article h2 {
+    font-size: 1.4rem;
+    color: var(--navy);
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--gold);
+    line-height: 1.3;
+  }
+
+  .article p {
+    margin-bottom: 1.2rem;
+    color: var(--text);
+  }
+
+  /* ZEITSTRAHL */
+  .zeitstrahl {
+    margin: 3rem 0;
+    position: relative;
+  }
+  .zeitstrahl-title {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .zeitstrahl-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.4;
+  }
+  .zeit-item {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 0 1.5rem;
+    margin-bottom: 0;
+    position: relative;
+  }
+  .zeit-item::before {
+    content: '';
+    position: absolute;
+    left: 90px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+    transform: translateX(calc(-50% + 0.75rem));
+  }
+  .zeit-year {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--navy);
+    padding: 0.8rem 0;
+    text-align: right;
+    padding-right: 1.5rem;
+    position: relative;
+  }
+  .zeit-year::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--cream);
+    box-shadow: 0 0 0 2px var(--gold);
+  }
+  .zeit-content {
+    padding: 0.8rem 0 0.8rem 0;
+    font-size: 0.95rem;
+  }
+  .zeit-content strong {
+    display: block;
+    color: var(--navy);
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+  .zeit-content span {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+  .zeit-item.highlight .zeit-content {
+    background: rgba(201,168,76,0.1);
+    padding: 0.8rem 1rem;
+    border-left: 3px solid var(--gold);
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* KONTRAST-PANEL */
+  .kontrast {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  @media (max-width: 600px) {
+    .kontrast { grid-template-columns: 1fr; }
+  }
+  .kontrast-panel {
+    padding: 1.5rem;
+  }
+  .kontrast-panel.dann {
+    background: #f0f4f0;
+    border-right: 1px solid var(--border);
+  }
+  .kontrast-panel.jetzt {
+    background: #f4f0f0;
+  }
+  .kontrast-label {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+  .dann .kontrast-label { color: var(--green-muted); }
+  .jetzt .kontrast-label { color: var(--red-muted); }
+  .kontrast-panel blockquote {
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text);
+    border: none;
+    padding: 0;
+    margin: 0 0 0.6rem;
+  }
+  .kontrast-panel .attribution {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: normal;
+  }
+
+  /* VIDEO-KACHEL */
+  .video-kacheln {
+    margin: 2rem 0;
+  }
+  .video-kacheln-title {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.8rem;
+  }
+  .video-kachel {
+    display: flex;
+    flex-direction: column;
+    background: var(--navy);
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.15s ease;
+    border: 1px solid rgba(201,168,76,0.2);
+  }
+  .video-kachel:hover { transform: translateY(-2px); }
+  .video-thumb {
+    background: var(--navy-light);
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .play-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .play-icon::after {
+    content: '';
+    border-left: 14px solid var(--navy);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    margin-left: 3px;
+  }
+  .video-year-badge {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.65rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    padding: 0.15rem 0.4rem;
+    border-radius: 2px;
+  }
+  .video-info {
+    padding: 0.7rem 0.8rem 0.8rem;
+  }
+  .video-sender {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+  .video-titel {
+    font-size: 0.85rem;
+    color: #fff;
+    line-height: 1.35;
+  }
+
+  /* O-TON BOX */
+  .oton {
+    border-left: 4px solid var(--gold);
+    background: rgba(201,168,76,0.07);
+    padding: 1.2rem 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .oton-label {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .oton blockquote {
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--text);
+    border: none;
+    padding: 0;
+    margin: 0 0 0.5rem;
+  }
+  .oton .attribution {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* MUSTER-BOX */
+  .muster {
+    background: var(--navy);
+    color: #fff;
+    border-radius: 4px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+  }
+  .muster-title {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+  .muster-row {
+    display: grid;
+    grid-template-columns: 130px 1fr 1fr;
+    gap: 0.4rem 1rem;
+    font-size: 0.88rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    align-items: start;
+  }
+  .muster-row:last-child { border-bottom: none; }
+  .muster-row.header {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+  }
+  .muster-row .col-dann { color: rgba(255,255,255,0.7); }
+  .muster-row .col-jetzt { color: rgba(255,255,255,0.9); }
+  @media (max-width: 600px) {
+    .muster-row { grid-template-columns: 1fr; }
+    .muster-row.header .col-label::after { content: ':'; }
+  }
+
+  /* HOFFNUNG */
+  .hoffnung {
+    background: var(--navy-light);
+    border-top: 3px solid var(--gold);
+    padding: 2rem;
+    border-radius: 4px;
+    margin: 3rem 0 2rem;
+  }
+  .hoffnung-label {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+  .hoffnung p {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+  }
+  .hoffnung p:last-child { margin-bottom: 0; }
+
+  /* QUELLEN */
+  .quellen {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+  }
+  .quellen-title {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+  }
+  .quellen ul {
+    list-style: none;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+  .quellen ul li::before {
+    content: '→ ';
+    color: var(--gold);
+  }
+  .quellen a { color: var(--navy); }
+
+  .trennlinie {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+
+  .serie-hinweis {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div>
+    <div class="label">Medienanalyse</div>
+    <div class="site-name">rundfunkkritik.de</div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-eyebrow">Damals Schwurbelei — heute Akte · Medienkritik</div>
+  <h1>Sie versuchen es <em>immer wieder</em></h1>
+  <p class="hero-sub">Eine Zeitreise durch fünf Jahrzehnte Pandemie-Berichterstattung — und die Frage, warum ein ZDF-Bericht aus 2010 im Jahr 2026 viraler wird als alles, was das ZDF 2020 sendete.</p>
+</div>
+
+<div class="ticker">
+  8. Juni 2026 · Ein Archivbeitrag. 13.000 Aufrufe in wenigen Stunden. · Was sagt das über den Journalismus von heute?
+</div>
+
+<article class="article">
+
+  <h2>Der Fund</h2>
+  <p>
+    Bastian Barucker postete am 8. Juni 2026 einen achminütigen ZDF-Bericht. Kein neues Material — ein Archivstück aus dem Jahr 2010. <em>Frontal 21</em>. Kritische Fragen zur Schweinegrippe-Pandemie, zum Impfstoff-Rollout, zum Behördenversagen.
+  </p>
+  <p>
+    13.000 Aufrufe, 487 Reposts, 1.257 Likes — in wenigen Stunden. Nicht wegen des Inhalts allein. Sondern wegen dessen, was dieser Bericht über das Schweigen sagt, das danach kam.
+  </p>
+  <p>
+    Ein altes Stück Journalismus als Messlatte. Das ZDF anno 2010 als Ankläger des ZDF anno 2020 — nicht durch Anschuldigungen, sondern durch Existenz.
+  </p>
+
+  <h2>Wo es wirklich beginnt: 1976</h2>
+  <p>
+    Wer verstehen will, was 2009 geschah und 2020 eskalierte, muss weiter zurückgehen. In die USA. 1976.
+  </p>
+  <p>
+    Ein Soldat stirbt in Fort Dix. Die US-Regierung erklärt: Schweinegrippe. Präsident Ford lässt sich live im Fernsehen impfen. 46 Millionen Amerikaner folgen ihm. Die Pandemie bleibt aus. Der Impfstoff nicht.
+  </p>
+  <p>
+    4.000 Amerikaner reichten Schadensersatzklagen ein — für neurologische Schäden, für den Tod von Angehörigen. Das Programm wurde abgebrochen. Drei Jahre später sendete CBS <em>60 Minutes</em> eine Untersuchung, die heute als Referenz gilt.
+  </p>
+
+  <div class="video-kacheln">
+    <div class="video-kacheln-title">Historisches Dokument — CBS, 1979</div>
+    <div class="video-grid">
+      <a href="https://www.youtube.com/watch?v=1ufxRvAX1Yw" target="_blank" rel="noopener" class="video-kachel">
+        <div class="video-thumb">
+          <div class="video-year-badge">1979</div>
+          <div class="play-icon"></div>
+        </div>
+        <div class="video-info">
+          <div class="video-sender">CBS 60 Minutes · Mike Wallace</div>
+          <div class="video-titel">Schweinegrippe 1976 — die Nachforschung (engl.)</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="oton">
+    <span class="oton-label">O-Ton · Mike Wallace, CBS 60 Minutes, 1979</span>
+    <blockquote>
+      „46 million of us obediently took the shot, and now 4,000 Americans are claiming damages from Uncle Sam amounting to three and a half billion dollars because of what happened when they took that shot."
+    </blockquote>
+    <div class="attribution">CBS, Sendung vom 4. November 1979 — drei Jahre nach dem Impfprogramm</div>
+  </div>
+
+  <p>
+    Amerika hatte damals noch einen Begriff für das, was geschehen war. Und Journalisten, die ihn aussprachen.
+  </p>
+
+  <h2>2009: Als das ZDF noch Frontal 21 sendete</h2>
+  <p>
+    Dreißig Jahre später, gleicher Name, anderes Land. Die Schweinegrippe kehrt zurück — diesmal als H1N1, diesmal in Deutschland. Wieder ein schneller Impfstoff. Wieder offizielle Warnungen. Wieder Millionen Dosen, teuer bestellt.
+  </p>
+  <p>
+    Und wieder: ein Nachrichtenmagazin, das nachfragt. Frontal 21, ZDF, 2010. Es fragt nach den Nebenwirkungen. Nach den vernichteten Dosen. Nach dem Muster.
+  </p>
+  <p>
+    Auch in dieser Pandemie gibt es einen medial-performativen Moment, der das Klima der Zeit einfängt: Oliver Pocher demonstriert in der Harald-Schmidt-Show mit einer Maske den Schutz vor dem Virus. Er war tatsächlich infiziert — er erkrankte, genas. Die Geste war halb Unterhaltung, halb Spiegel des Zeitgeists. Und sie funktionierte, weil die Panik bereits tief in die Unterhaltungskultur eingezogen war.
+  </p>
+
+  <h2>Der junge Böhmermann — und das, was er damals noch sah</h2>
+  <p>
+    Im Jahr 2009 war Jan Böhmermann noch kein ZDF-Mann. Er war Ensemblemitglied in der <strong>Harald-Schmidt-Show der ARD</strong> — kein eigener Sendeplatz, kein Primetime-Slot. Aber er tat etwas, das dokumentiert ist und bis heute als Lehrbeispiel taugt.
+  </p>
+  <p>
+    Er gab sich gegenüber der Nachrichtenredaktion von ProSiebenSat.1 als Schweinegrippe-Patient aus. Die Redaktion berichtete — ohne Prüfung, ohne Distanz. Böhmermann deckte die Aktion auf.
+  </p>
+  <p>
+    Das war keine Pointe. Das war eine präzise Diagnose: Die Hysterie war so groß, dass Redaktionen jeden berichteten, der das richtige Stichwort lieferte. Satire als Seismograph.
+  </p>
+
+  <div class="oton">
+    <span class="oton-label">Dokumentiert · Wikipedia zu Jan Böhmermann, 2009</span>
+    <blockquote>
+      „Ab 2009 war Böhmermann Mitglied im Ensemble der Sendung von Harald Schmidt im ersten Programm der ARD. Dort gab er sich gegenüber der ProSiebenSat.1-Nachrichtenredaktion als an Schweinegrippe erkrankter Patient aus."
+    </blockquote>
+    <div class="attribution">Wikipedia: Jan Böhmermann — <a href="https://de.wikipedia.org/wiki/Jan_B%C3%B6hmermann" target="_blank" rel="noopener">Quelle</a></div>
+  </div>
+
+  <div class="video-kacheln">
+    <div class="video-kacheln-title">Böhmermann & Schweinegrippe — Suche in YouTube-Archiven</div>
+    <div class="video-grid">
+      <a href="https://www.youtube.com/results?search_query=b%C3%B6hmermann+schweinegrippe" target="_blank" rel="noopener" class="video-kachel">
+        <div class="video-thumb">
+          <div class="video-year-badge">2009</div>
+          <div class="play-icon"></div>
+        </div>
+        <div class="video-info">
+          <div class="video-sender">ARD · Harald Schmidt Show</div>
+          <div class="video-titel">Böhmermann Schweinegrippe-Satire — YouTube-Suche</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <h2>2020: Derselbe Mann. Eine andere Antwort.</h2>
+  <p>
+    Elf Jahre später, andere Pandemie. Böhmermann sendet jetzt im <em>ZDF Magazin Royale</em>, mit größerem Publikum, mehr Einfluss, eigenem Primetime-Slot im öffentlich-rechtlichen Fernsehen.
+  </p>
+  <p>
+    Und er macht das Gegenteil.
+  </p>
+  <p>
+    Kritische Stimmen werden nicht mehr satirisch begleitet. Sie werden zur Zielscheibe. Der "Goldene Coroni" — eine Auszeichnung, die Böhmermann 2020 vergibt — trifft Michael Ballweg, Organisator der Querdenken-Bewegung.
+  </p>
+
+  <div class="oton">
+    <span class="oton-label">O-Ton · ZDF Magazin Royale, 2020</span>
+    <blockquote>
+      „Querzlichen Glückwunsch, Michael Ballweg. Der goldene Coroni für den Corona-Unternehmer des Jahres 2020 geht an das Portemonnaie der Querdenken-Bewegung."
+    </blockquote>
+    <div class="attribution">ZDF Magazin Royale — <a href="https://www.youtube.com/watch?v=6MQilDqX52M" target="_blank" rel="noopener">Video ansehen</a></div>
+  </div>
+
+  <p>
+    Über Ballwegs Finanzen lässt sich tatsächlich viel sagen. Aber die Sendung bleibt nicht bei Ballweg. Sie wird zum Instrument gegen alle, die Fragen stellen.
+  </p>
+
+  <div class="kontrast">
+    <div class="kontrast-panel dann">
+      <span class="kontrast-label">Böhmermann 2009</span>
+      <blockquote>Entlarvt Medienhysterie mit einer Fake-Krankmeldung. ARD, Harald-Schmidt-Show. Kein eigener Sendeplatz — aber ein klarer Blick.</blockquote>
+      <div class="attribution">ARD · Harald Schmidt Show · 2009</div>
+    </div>
+    <div class="kontrast-panel jetzt">
+      <span class="kontrast-label">Böhmermann 2020–2021 · ZDF Hauptprogramm</span>
+      <blockquote>Verleiht Spott-Preise an Kritiker. Produziert den Oma-Song mit Kinderchor. Vergleicht Kinder mit Wirtstieren.</blockquote>
+      <div class="attribution">ZDF Magazin Royale · Primetime · Hauptprogramm</div>
+    </div>
+  </div>
+
+  <h2>Der Oma-Song und die Kinder als Wirtstiere</h2>
+  <p>
+    Zwei Momente stehen exemplarisch für das Klima, das entstand — und für Böhmermanns Rolle darin.
+  </p>
+  <p>
+    Moment eins: Der WDR-Kinderchor, der 2021 singt, dass Großeltern durch Ungeimpfte in Gefahr geraten. Böhmermann beteiligt sich. Kinder werden instrumentalisiert, um Druck zu erzeugen — in einem öffentlich-rechtlichen Format.
+  </p>
+  <p>
+    Moment zwei: Ein Vergleich, der bis heute nachwirkt. Kinder und Corona-Übertragung — Böhmermann zieht eine Parallele zu Wirtstieren. Die Formulierung: Kinder seien für Covid-19 wie Ratten für die Pest.
+  </p>
+
+  <div class="video-kacheln">
+    <div class="video-kacheln-title">ZDF Magazin Royale 2021 — Dokumente einer Epoche</div>
+    <div class="video-grid">
+      <a href="https://www.youtube.com/watch?v=kx-7PqtZmyM" target="_blank" rel="noopener" class="video-kachel">
+        <div class="video-thumb">
+          <div class="video-year-badge">2021</div>
+          <div class="play-icon"></div>
+        </div>
+        <div class="video-info">
+          <div class="video-sender">WDR / ZDF Magazin Royale</div>
+          <div class="video-titel">„Meine Oma 2.0" — Kinderchor feat. Böhmermann</div>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=w6ZIwyfoSAM" target="_blank" rel="noopener" class="video-kachel">
+        <div class="video-thumb">
+          <div class="video-year-badge">2021</div>
+          <div class="play-icon"></div>
+        </div>
+        <div class="video-info">
+          <div class="video-sender">ZDF Magazin Royale</div>
+          <div class="video-titel">„Kinder — Wirtstiere wie Ratten für die Pest"</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <h2>Die Zeitreise — fünf Jahrzehnte Muster</h2>
+
+  <div class="zeitstrahl">
+    <div class="zeitstrahl-title">Chronologie</div>
+
+    <div class="zeit-item">
+      <div class="zeit-year">1976</div>
+      <div class="zeit-content">
+        <strong>USA: Schweinegrippe-Impfprogramm</strong>
+        <span>46 Mio. Impfungen. 4.000 Schadensersatzklagen wegen neurologischer Schäden. Programm abgebrochen. CBS fragt nach — drei Jahre später.</span>
+      </div>
+    </div>
+    <div class="zeit-item">
+      <div class="zeit-year">2005</div>
+      <div class="zeit-content">
+        <strong>Vogelgrippe H5N1 — zweite Runde</strong>
+        <span>WHO warnt vor Millionen Toten. Tamiflu-Hamsterkäufe. Rümsfeld/Roche-Verflechtung dokumentiert. Die Pandemie bleibt weitgehend aus.</span>
+      </div>
+    </div>
+    <div class="zeit-item highlight">
+      <div class="zeit-year">2009</div>
+      <div class="zeit-content">
+        <strong>Schweinegrippe H1N1 — Deutschland</strong>
+        <span>Pandemrix für die Bevölkerung, Celvapan für Beamte und Politiker. Narkolepsie-Fälle bei Kindern — erst Jahre später anerkannt. Millionen Dosen vernichtet. Frontal 21 fragt nach. Böhmermann demontiert die Hysterie.</span>
+      </div>
+    </div>
+    <div class="zeit-item">
+      <div class="zeit-year">2018</div>
+      <div class="zeit-content">
+        <strong>Spiegel: „Nebenwirkung Vertrauensschwund"</strong>
+        <span>Die Schweinegrippe habe die Glaubwürdigkeit von WHO, RKI und PEI „nachhaltig erschüttert". Ein Lehrstück, schreibt der Spiegel, für das, was passiert, wenn kritische Stimmen nicht gehört werden. Zwei Jahre später beginnt Corona.</span>
+      </div>
+    </div>
+    <div class="zeit-item highlight">
+      <div class="zeit-year">2020–23</div>
+      <div class="zeit-content">
+        <strong>COVID-19 — die Wiederholung</strong>
+        <span>mRNA-Impfstoffe, bedingte Zulassung. Post-Vac-Syndrom bis heute nicht anerkannt. 974.931 Nebenwirkungsmeldungen — drei Jahre lang nicht ausgewertet. Frontal 21 fragt nicht mehr nach. Böhmermann verleiht Spott-Preise an Kritiker.</span>
+      </div>
+    </div>
+    <div class="zeit-item">
+      <div class="zeit-year">2026</div>
+      <div class="zeit-content">
+        <strong>Archivbeitrag geht viral</strong>
+        <span>Ein ZDF-Bericht aus 2010 erreicht 13.000 Aufrufe in Stunden. Das Publikum erkennt, was fehlt — weil es einmal da war.</span>
+      </div>
+    </div>
+  </div>
+
+  <h2>Das Muster, das sich wiederholt</h2>
+
+  <div class="muster">
+    <div class="muster-title">Vergleich: Schweinegrippe 2009 — COVID-19 2020</div>
+    <div class="muster-row header">
+      <span class="col-label"></span>
+      <span class="col-dann">2009 / Schweinegrippe</span>
+      <span class="col-jetzt">2020 / COVID-19</span>
+    </div>
+    <div class="muster-row">
+      <span class="col-label">Impfstoff</span>
+      <span class="col-dann">Pandemrix (mit Adjuvans) für Bevölkerung</span>
+      <span class="col-jetzt">mRNA, bedingte Zulassung</span>
+    </div>
+    <div class="muster-row">
+      <span class="col-label">Sonderimpfstoff</span>
+      <span class="col-dann">Ja — Celvapan für Beamte &amp; Politiker</span>
+      <span class="col-jetzt">Nicht dokumentiert</span>
+    </div>
+    <div class="muster-row">
+      <span class="col-label">Nebenwirkungen</span>
+      <span class="col-dann">Narkolepsie bei Kindern — erst Jahre später anerkannt</span>
+      <span class="col-jetzt">Post-Vac-Syndrom — bis heute nicht anerkannt</span>
+    </div>
+    <div class="muster-row">
+      <span class="col-label">Vernichtete Dosen</span>
+      <span class="col-dann">Millionen — teuer bestellt, teuer entsorgt</span>
+      <span class="col-jetzt">Jährlich Millionen verfallen ungenutzt</span>
+    </div>
+    <div class="muster-row">
+      <span class="col-label">ZDF</span>
+      <span class="col-dann">Frontal 21 fragt nach</span>
+      <span class="col-jetzt">Frontal 21 fragt nicht mehr nach</span>
+    </div>
+    <div class="muster-row">
+      <span class="col-label">Böhmermann</span>
+      <span class="col-dann">Demontiert die Hysterie</span>
+      <span class="col-jetzt">Trägt zur Hysterie bei</span>
+    </div>
+  </div>
+
+  <h2>Was der Archivbeitrag uns sagt</h2>
+  <p>
+    Der Frontal-21-Bericht von 2010 ist kein Beweis für irgendetwas. Er ist ein Spiegel.
+  </p>
+  <p>
+    Er zeigt, dass kritischer Journalismus über Pandemien, Impfstoffe und Behördenversagen möglich ist — weil er damals existierte. Im ZDF. Auf Sendung.
+  </p>
+  <p>
+    Dass derselbe Sender 2020 einen anderen Weg wählte, ist keine Verschwörung. Es ist eine Entscheidung. Entscheidungen lassen sich dokumentieren. Und dokumentierte Entscheidungen lassen sich vergleichen.
+  </p>
+  <p>
+    13.000 Menschen haben in wenigen Stunden verstanden, was sie sahen.
+  </p>
+
+  <div class="hoffnung">
+    <span class="hoffnung-label">Ausblick</span>
+    <p>Das Muster wird sich wiederholen. Es hat sich immer wiederholt — 1976, 1997, 2003, 2005, 2009, 2020. Was sich verändert hat, ist nicht die Maschine. Es ist die Fähigkeit des Publikums, sie zu erkennen.</p>
+    <p>Archivrecherche ist Demokratie. Jeder Klick auf einen alten Bericht ist eine Stimme für das, was Journalismus sein könnte. Und manchmal ist ein achminütiger Beitrag aus dem Jahr 2010 mächtiger als alles, was im Jahr 2020 gesendet wurde.</p>
+  </div>
+
+  <hr class="trennlinie">
+
+  <div class="quellen">
+    <div class="quellen-title">Quellen &amp; Belege</div>
+    <ul>
+      <li>X-Post @BBarucker, 8. Juni 2026 — ZDF Frontal 21-Archivbeitrag (2010)</li>
+      <li>CBS 60 Minutes, Mike Wallace, 4. November 1979 — Schweinegrippe-Impfprogramm 1976</li>
+      <li>Spiegel, „Nebenwirkung Vertrauensschwund" (2018)</li>
+      <li>ZDF Magazin Royale: „Goldener Coroni" (2020), „Meine Oma 2.0" (2021)</li>
+      <li>Paul-Ehrlich-Institut: Nebenwirkungsliste COVID-19, veröffentlicht 28. November 2024</li>
+      <li>ARD Plusminus, 25. November 2024: Corona-Impfung und Impfgeschädigte</li>
+      <li>RTL.de: Oliver Pocher nach Schweinegrippe-Infektion</li>
+    </ul>
+  </div>
+
+  <div class="serie-hinweis">
+    Dieser Artikel ist Teil der Reihe <strong>„Damals Schwurbelei — heute Akte"</strong> auf rundfunkkritik.de
+  </div>
+
+</article>
+
+</body>
+</html>

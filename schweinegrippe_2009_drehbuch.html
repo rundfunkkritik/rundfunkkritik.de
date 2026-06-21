@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schweinegrippe 2009: Das Drehbuch, das niemand mehr zeigen darf | Rundfunkkritik.de</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicon-32x32.png">
+<style>
+  @import url('/fonts.css');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink:#1a1a18;--ink-mid:#3a3a36;--ink-soft:#6b6b64;--ink-ghost:#9e9e95;
+    --paper:#faf8f3;--paper-warm:#f3f0e8;--paper-card:#ffffff;--rule:#d8d4c8;
+    --accent:#1a2533;--accent-mid:#2e4a6b;--accent-soft:#4a7aaa;
+    --red:#8b2222;--red-soft:#f5eaea;--gold:#8b6914;--gold-soft:#faf3e0;
+    --green:#1a5c2e;--green-soft:#eaf3ed;
+  }
+  html { font-size: 16px; }
+  body { font-family: 'Source Serif 4', Georgia, serif; background: var(--paper); color: var(--ink); line-height: 1.75; max-width: 780px; margin: 0 auto; padding: 0 2rem 6rem; }
+  .site-nav { background: var(--accent); margin: 0 -2rem; padding: 0 2rem; height: 52px; display: flex; align-items: center; justify-content: space-between; }
+  .site-nav-logo { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #fff; text-decoration: none; }
+  .site-nav-back { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); text-decoration: none; }
+  .site-nav-back:hover { color: #fff; }
+  .masthead { border-bottom: 2px solid var(--ink); padding: 2rem 0 1rem; margin-bottom: 3rem; display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+  .masthead-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); }
+  .masthead-section { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--rule); padding: 0.25rem 0.6rem; }
+  .meta-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; flex-wrap: wrap; }
+  .kategorie { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; background: var(--accent); color: #fff; padding: 0.3rem 0.7rem; }
+  .datum { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--ink-soft); letter-spacing: 0.06em; }
+  h1 { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 700; line-height: 1.2; color: var(--ink); margin-bottom: 1.2rem; letter-spacing: -0.01em; }
+  .deck { font-size: 1.15rem; font-weight: 300; color: var(--ink-mid); line-height: 1.6; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+  .faktenbox { background: var(--accent); color: #fff; padding: 1.5rem 1.8rem; margin: 2.5rem 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+  .fakt-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 0.3rem; }
+  .fakt-wert { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #fff; line-height: 1.2; }
+  .fakt-sub { font-family: 'Source Serif 4', serif; font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 0.2rem; }
+  p { margin-bottom: 1.4rem; }
+  h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--ink); margin: 2.5rem 0 0.8rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--rule); }
+  h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 400; font-style: italic; color: var(--ink-mid); margin: 1.8rem 0 0.6rem; }
+  .pullquote { border-left: 3px solid var(--accent); padding: 1rem 0 1rem 1.5rem; margin: 2rem 0; font-size: 1.15rem; font-style: italic; font-weight: 300; color: var(--ink-mid); line-height: 1.6; }
+  .pullquote cite { display: block; margin-top: 0.5rem; font-style: normal; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--ink-soft); text-transform: uppercase; }
+  .analyse-box { background: var(--paper-warm); border: 1px solid var(--rule); border-top: 3px solid var(--accent-mid); padding: 1.5rem 1.8rem; margin: 2.5rem 0; }
+  .analyse-box-title { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-mid); margin-bottom: 1rem; }
+  .analyse-box p { font-size: 0.95rem; color: var(--ink-mid); }
+  .analyse-box p:last-child { margin-bottom: 0; }
+  .vergleich-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 2rem 0; }
+  .vergleich-card { padding: 1.2rem 1.4rem; border: 1px solid var(--rule); }
+  .vergleich-card.damals { border-top: 3px solid var(--green); background: var(--green-soft); }
+  .vergleich-card.heute { border-top: 3px solid var(--red); background: var(--red-soft); }
+  .vergleich-card-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.7rem; }
+  .vergleich-card.damals .vergleich-card-label { color: var(--green); }
+  .vergleich-card.heute .vergleich-card-label { color: var(--red); }
+  .vergleich-card h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--ink); }
+  .vergleich-card p { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.6; margin-bottom: 0; }
+  .zweiklassen { background: var(--accent); color: #fff; padding: 1.5rem 1.8rem; margin: 2.5rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .zweiklassen-title { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.6rem; }
+  .zweiklassen-name { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
+  .zweiklassen-detail { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.5; }
+  .zweiklassen-badge { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.5rem; margin-top: 0.5rem; }
+  .zweiklassen-badge.adjuvans { background: rgba(139,34,34,0.6); color: #ffcccc; }
+  .zweiklassen-badge.ohne { background: rgba(26,92,46,0.6); color: #ccffcc; }
+  .timeline { margin: 2rem 0; position: relative; padding-left: 2.5rem; }
+  .timeline::before { content: ''; position: absolute; left: 0.7rem; top: 0.5rem; bottom: 0.5rem; width: 1px; background: var(--rule); }
+  .timeline-item { position: relative; margin-bottom: 1.4rem; }
+  .timeline-item::before { content: ''; position: absolute; left: -1.9rem; top: 0.45rem; width: 8px; height: 8px; border-radius: 50%; background: var(--ink-ghost); border: 1.5px solid var(--paper); }
+  .timeline-item.highlight::before { background: var(--accent); }
+  .timeline-item.warnung::before { background: var(--red); }
+  .timeline-date { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--ink-soft); text-transform: uppercase; margin-bottom: 0.2rem; }
+  .timeline-text { font-size: 0.95rem; color: var(--ink-mid); line-height: 1.55; }
+  .timeline-item.highlight .timeline-text { color: var(--ink); font-weight: 400; }
+  .einschaetzung { background: var(--gold-soft); border: 1px solid #e8d89a; border-left: 3px solid var(--gold); padding: 1.5rem 1.8rem; margin: 2.5rem 0; }
+  .einschaetzung-title { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+  .einschaetzung p { font-size: 0.95rem; color: var(--ink-mid); }
+  .einschaetzung p:last-child { margin-bottom: 0; }
+  .geloescht-box { border: 1px dashed var(--ink-ghost); padding: 1.5rem 1.8rem; margin: 2.5rem 0; position: relative; }
+  .geloescht-box::before { content: 'ARCHIVIERT / NICHT MEHR ABRUFBAR'; font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.14em; color: var(--ink-ghost); position: absolute; top: -0.5rem; left: 1rem; background: var(--paper); padding: 0 0.5rem; }
+  .geloescht-box p { font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 0.5rem; }
+  .geloescht-box p:last-child { margin-bottom: 0; }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 3rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--rule); padding: 0.25rem 0.6rem; text-decoration: none; }
+  .tag:hover { background: var(--paper-warm); color: var(--ink); }
+  .quellen { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+  .quellen-title { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 1rem; }
+  .quelle-item { display: flex; gap: 1rem; align-items: baseline; margin-bottom: 0.7rem; font-size: 0.85rem; color: var(--ink-mid); line-height: 1.5; }
+  .quelle-typ { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; padding: 0.15rem 0.5rem; border: 1px solid var(--rule); color: var(--ink-ghost); flex-shrink: 0; }
+  .quelle-typ.primaer { border-color: var(--green); color: var(--green); }
+  .quelle-typ.mainstream { border-color: var(--ink-ghost); color: var(--ink-ghost); }
+  .quelle-typ.archiv { border-color: var(--gold); color: var(--gold); }
+  .quelle-item a { color: var(--ink-mid); }
+  .redaktion { margin-top: 3rem; padding: 1.5rem 1.8rem; background: var(--paper-warm); border: 1px solid var(--rule); font-size: 0.88rem; color: var(--ink-soft); font-style: italic; }
+  @media (max-width: 580px) {
+    h1 { font-size: 1.9rem; }
+    .faktenbox { grid-template-columns: 1fr; }
+    .vergleich-grid { grid-template-columns: 1fr; }
+    .zweiklassen { grid-template-columns: 1fr; }
+    .masthead { flex-direction: column; gap: 0.5rem; }
+  }
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Schweinegrippe 2009: Das Drehbuch, das niemand mehr zeigen darf","description":"Ein 16 Jahre alter ZDF-Bericht geht viral. Zwei Impfstoff-Klassen, ein verschwundener Frontal-21-Bericht, Boehmermann mit Maske. Die Parallelen zu Corona sind keine Theorie. Sie sind Protokoll.","author":{"@type":"Organization","name":"Rundfunkkritik.de","url":"https://www.rundfunkkritik.de/"},"publisher":{"@type":"Organization","name":"Rundfunkkritik.de","url":"https://www.rundfunkkritik.de/"},"datePublished":"2026-06-18","dateModified":"2026-06-18","url":"https://www.rundfunkkritik.de/schweinegrippe_2009_drehbuch.html","inLanguage":"de","isPartOf":{"@type":"WebSite","name":"Rundfunkkritik.de","url":"https://www.rundfunkkritik.de/"}}
+</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="site-nav-logo" href="index.html">Rundfunkkritik.de</a>
+  <a class="site-nav-back" href="index.html">&#8592; Zurück</a>
+</nav>
+
+<header class="masthead">
+  <span class="masthead-name">Rundfunkkritik.de</span>
+  <span class="masthead-section">Medienkritik &amp; Parallelen</span>
+</header>
+
+<div class="meta-row">
+  <span class="kategorie">Schweinegrippe · ÖRR-Gedächtnis</span>
+  <span class="datum">18. Juni 2026</span>
+</div>
+
+<h1>Das Drehbuch, das niemand mehr zeigen darf</h1>
+
+<p class="deck">
+  Ein 16 Jahre alter ZDF-Bericht geht viral. Jan Böhmermann zieht mit Maske durch die Straßen — als Parodie. Die Reaktion: Gelächter. 2009 durfte man über Masken noch lachen. Elf Jahre später war dasselbe eine politische Haltung.
+</p>
+
+<div class="faktenbox">
+  <div class="fakt-item">
+    <div class="fakt-label">Sendung</div>
+    <div class="fakt-wert">Frontal 21</div>
+    <div class="fakt-sub">ZDF, 2010 — heute nicht abrufbar</div>
+  </div>
+  <div class="fakt-item">
+    <div class="fakt-label">Zwei Impfstoffe</div>
+    <div class="fakt-wert">Celvapan</div>
+    <div class="fakt-sub">für Politiker · Pandemrix für alle anderen</div>
+  </div>
+  <div class="fakt-item">
+    <div class="fakt-label">Viral gegangen</div>
+    <div class="fakt-wert">8. Juni 2026</div>
+    <div class="fakt-sub">15.000+ Aufrufe in wenigen Stunden</div>
+  </div>
+</div>
+
+<h2>Der Spiegel, der viral geht</h2>
+
+<p>Was Bastian Barucker am 8. Juni 2026 auf X geteilt hat, ist kein nostalgisches Fundstück. Es ist ein Spiegel.</p>
+
+<p>Ein Frontal-21-Bericht aus dem Jahr 2010 über die Schweinegrippe-Pandemie — über Panikmache, schnell entwickelte Impfstoffe und das Versagen von Behörden. Über 15.000 Menschen haben ihn innerhalb weniger Stunden angeschaut. Baruckers Kommentar dazu ist präzise:</p>
+
+<div class="pullquote">
+  „Das ZDF hat seit 2020 nie wieder so berichtet."
+  <cite>Bastian Barucker — @BBarucker auf X, 8. Juni 2026</cite>
+</div>
+
+<p>Er hat recht. Und das ist die eigentliche Nachricht.</p>
+
+<h2>Böhmermann mit Maske — und was das bedeutet</h2>
+
+<p>2009 war Markus Söder bayerischer Gesundheitsminister. Die Medien überschlugen sich. Und Jan Böhmermann zog mit einer Maske durch die Straßen — als Parodie auf die Hysterie.</p>
+
+<p>Die Reaktionen waren Gelächter, nicht Applaus. Böhmermann spielte den Übervorsichtigen, den Ängstlichen, den der die Panikmache mitmacht. Das war witzig. Das war Satire. Das Publikum verstand: Hier wird übertrieben.</p>
+
+<div class="vergleich-grid">
+  <div class="vergleich-card damals">
+    <div class="vergleich-card-label">2009</div>
+    <h4>Maske als Parodie</h4>
+    <p>Böhmermann trägt Maske als Satire auf Panikmache. Die Reaktion: Gelächter. Kritik an Hysterie ist im Mainstream selbstverständlich.</p>
+  </div>
+  <div class="vergleich-card heute">
+    <div class="vergleich-card-label">2020–2022</div>
+    <h4>Maske als politisches Symbol</h4>
+    <p>Dieselbe Geste ist eine politische Haltung. Wer die Maskenpflicht hinterfragt, gilt als Querdenker. Kritik an Behördenentscheidungen ist verdächtig.</p>
+  </div>
+</div>
+
+<div class="analyse-box">
+  <div class="analyse-box-title">Was sich verändert hat</div>
+  <p>Es ist nicht die Maske, die sich verändert hat. Es ist die Bereitschaft des Mediensystems, Kritik an staatlichen Maßnahmen als legitim anzuerkennen. 2009 war Frontal 21 stolz auf diesen Bericht. 2026 ist er beim ZDF nicht mehr auffindbar.</p>
+</div>
+
+<h2>Zwei Impfstoffe — eine Bevölkerung</h2>
+
+<p>Was damals kaum jemand wusste, und was der Frontal-21-Bericht thematisierte: Politiker, Beamte und Bundeswehrangehörige bekamen einen anderen Impfstoff als die breite Bevölkerung.</p>
+
+<div class="zweiklassen">
+  <div>
+    <div class="zweiklassen-title">Bevölkerung</div>
+    <div class="zweiklassen-name">Pandemrix</div>
+    <div class="zweiklassen-detail">GlaxoSmithKline · Mit Adjuvans AS03 · Später assoziiert mit erhöhtem Narkolepsie-Risiko bei Kindern und Jugendlichen</div>
+    <span class="zweiklassen-badge adjuvans">Mit Wirkverstärker</span>
+  </div>
+  <div>
+    <div class="zweiklassen-title">Politiker · Beamte · Bundeswehr</div>
+    <div class="zweiklassen-name">Celvapan</div>
+    <div class="zweiklassen-detail">Baxter · Ohne Adjuvans · Dieser Unterschied wurde erst nachträglich öffentlich bekannt</div>
+    <span class="zweiklassen-badge ohne">Ohne Wirkverstärker</span>
+  </div>
+</div>
+
+<p>GlaxoSmithKline hatte laut einem Spiegel-Bericht von 2018 Hinweise auf Nebenwirkungen gekannt und ignoriert. Nebenwirkungen, die zum Teil erst Jahre später auftraten — insbesondere Narkolepsie bei Kindern und Jugendlichen, die mit Pandemrix geimpft worden waren.</p>
+
+<h2>Hausärzte als Bremse — und warum das bei Corona anders lief</h2>
+
+<p>Bei der Schweinegrippe lief der Impfvertrieb über niedergelassene Hausärzte. Die hatten eine natürliche Bremswirkung: Aufklärungspflicht, Vertrauensverhältnis, Einzelentscheidung. Kein Durchpeitschen.</p>
+
+<p>Bei Corona wurde explizit die Bundeswehr als Logistikpartner eingesetzt — zentrale Impfzentren statt Arztpraxen. Kein Zufall: Ein Generalarzt der Bundeswehr war bereits 2009 ins Bundesgesundheitsministerium abgeordnet worden.</p>
+
+<div class="vergleich-grid">
+  <div class="vergleich-card damals">
+    <div class="vergleich-card-label">Schweinegrippe 2009</div>
+    <h4>Vertrieb über Hausärzte</h4>
+    <p>Aufklärungspflicht, Vertrauensverhältnis, individuelle Entscheidung. Natürliche Bremswirkung im System.</p>
+  </div>
+  <div class="vergleich-card heute">
+    <div class="vergleich-card-label">Corona 2021</div>
+    <h4>Zentrale Impfzentren + Bundeswehr</h4>
+    <p>Massenlogistik, Effizienz als Ziel, Bundeswehr als Koordinator. Die Bremse wurde strukturell umgangen.</p>
+  </div>
+</div>
+
+<h2>Millionen vernichtet — damals wie heute</h2>
+
+<p>Am Ende der Schweinegrippe-Welle wurden Millionen Impfdosen vernichtet. Teuer eingekauft, teuer entsorgt. Das Muster wiederholt sich mit Corona-Impfstoffen: Jedes Jahr verfallen Millionen Dosen ungenutzt — Steuergeld, das in den Müll wandert.</p>
+
+<p>Frontal 21 hat 2010 darüber berichtet. Kritisch, benannt, mit konkreten Zahlen. Das war damals Aufgabe des öffentlich-rechtlichen Rundfunks.</p>
+
+<h2>Chronologie</h2>
+
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-date">2009 — Schweinegrippe-Pandemie</div>
+    <div class="timeline-text">WHO ruft Pandemie aus. Massenimpfkampagne in Deutschland. Zwei Impfstoffe für zwei Bevölkerungsgruppen.</div>
+  </div>
+  <div class="timeline-item warnung">
+    <div class="timeline-date">2009/2010 — Zweiklassenimpfung</div>
+    <div class="timeline-text">Politiker, Beamte, Bundeswehr: Celvapan (ohne Adjuvans). Bevölkerung: Pandemrix (mit AS03). Dieser Unterschied wird erst nachträglich bekannt.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">2010 — Frontal 21, ZDF</div>
+    <div class="timeline-text">Kritischer Bericht über Panikmache, Pharmaunternehmen und Behördenversagen. Böhmermann-Parodie auf die Masken-Hysterie. Reaktion: Gelächter.</div>
+  </div>
+  <div class="timeline-item warnung">
+    <div class="timeline-date">2018 — Spiegel-Bericht</div>
+    <div class="timeline-text">GlaxoSmithKline hatte Hinweise auf Nebenwirkungen von Pandemrix gekannt — insbesondere erhöhtes Narkolepsie-Risiko bei Kindern und Jugendlichen.</div>
+  </div>
+  <div class="timeline-item highlight">
+    <div class="timeline-date">8. Juni 2026 — Viral</div>
+    <div class="timeline-text">Bastian Barucker teilt den Frontal-21-Bericht auf X. Über 15.000 Aufrufe in wenigen Stunden. Kommentar: „Das ZDF hat seit 2020 nie wieder so berichtet."</div>
+  </div>
+  <div class="timeline-item highlight">
+    <div class="timeline-date">2026 — Befund</div>
+    <div class="timeline-text">Der Frontal-21-Bericht ist beim ZDF nicht mehr auffindbar. Was 2010 Pflicht des öffentlich-rechtlichen Rundfunks war, ist heute ein Artefakt — das das Internet nicht vergisst.</div>
+  </div>
+</div>
+
+<h2>Das gelöschte Gedächtnis</h2>
+
+<div class="geloescht-box">
+  <p><strong>Frontal 21 — ZDF, 2010</strong></p>
+  <p>Kritischer Bericht über die Schweinegrippe-Kampagne: Panikmache, Pharmaunternehmen, Behördenversagen, Zweiklassenimpfung.</p>
+  <p>Beim ZDF nicht mehr auffindbar. Stand: Juni 2026.</p>
+</div>
+
+<p>Was 2010 noch Pflicht des öffentlich-rechtlichen Rundfunks war — kritische Berichterstattung über Pharmaunternehmen, WHO und Regierungsentscheidungen — ist heute ein Artefakt. Kein Archivlink, keine Erklärung, kein Redirect.</p>
+
+<p>Das Internet vergisst es nicht. Aber das ZDF tut es.</p>
+
+<div class="einschaetzung">
+  <div class="einschaetzung-title">Analytische Einschätzung</div>
+  <p>Das Verschwinden des Berichts ist kein Beweis für Absicht. Archive werden gelöscht, Lizenzen laufen aus, Systeme werden migriert. Aber ein öffentlich-rechtlicher Sender, der mit Gebührengeldern finanziert wird und dessen Kernauftrag die Dokumentation des öffentlichen Lebens ist, schuldet eine Erklärung, wenn kritische Berichte über Pharmaunternehmen und staatliches Versagen nicht mehr abrufbar sind.</p>
+  <p>Die Frage ist nicht, ob der Bericht böswillig entfernt wurde. Die Frage ist, ob seine Abwesenheit Zufall ist — und warum niemand beim ZDF dafür zuständig zu sein scheint, das zu beantworten.</p>
+</div>
+
+<div class="tags">
+  <a class="tag" href="index.html">Schweinegrippe</a>
+  <a class="tag" href="index.html">Pandemrix</a>
+  <a class="tag" href="index.html">ÖRR-Gedächtnis</a>
+  <a class="tag" href="index.html">Frontal 21</a>
+  <a class="tag" href="index.html">Medienkritik</a>
+  <a class="tag" href="index.html">Corona-Parallelen</a>
+</div>
+
+<div class="quellen">
+  <div class="quellen-title">Quellen &amp; Belege</div>
+  <div class="quelle-item">
+    <span class="quelle-typ primaer">Primär</span>
+    <span>@BBarucker auf X, 8. Juni 2026 — Thread zum Frontal-21-Bericht</span>
+  </div>
+  <div class="quelle-item">
+    <span class="quelle-typ archiv">Archiv</span>
+    <span>Frontal 21, ZDF, 2010 — Bericht zur Schweinegrippe-Kampagne (beim ZDF nicht mehr abrufbar)</span>
+  </div>
+  <div class="quelle-item">
+    <span class="quelle-typ mainstream">Mainstream</span>
+    <span>Der Spiegel, 2018 — GlaxoSmithKline und Nebenwirkungshinweise bei Pandemrix</span>
+  </div>
+  <div class="quelle-item">
+    <span class="quelle-typ mainstream">Mainstream</span>
+    <span>Diverse Berichte zur Narkolepsie-Assoziation nach Pandemrix-Impfung (Schweden, Finnland, Deutschland, 2011–2013)</span>
+  </div>
+</div>
+
+<div class="redaktion">
+  Alle Angaben basieren auf öffentlich zugänglichen Quellen. Die Einschätzungen geben die analytische Position von Rundfunkkritik.de wieder, nicht die eines Rechtsanwalts.
+</div>
+
+</body>
+</html>

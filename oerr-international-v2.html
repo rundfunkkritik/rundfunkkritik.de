@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Öffentlich-rechtlicher Rundfunk in der Krise: Ein internationaler Überblick</title>
+<style>
+  :root {
+    --bg: #faf7f2;
+    --text: #1c1c1c;
+    --gold: #c9a84c;
+    --gold-dim: #7a5f1a;
+    --gold-bg: #f5edda;
+    --border: #d4c9b0;
+    --border-mid: #e0d8c8;
+    --text-muted: #5a5a55;
+    --navy: #1a2744;
+    --highlight: #7a5200;
+    --red: #8b1a1a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, 'Times New Roman', serif;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  .site-header {
+    background: #1a2744;
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    margin: -3rem -2rem 3rem;
+  }
+  .site-header a {
+    color: #f5f0e8;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    opacity: 0.85;
+  }
+  .site-header a:hover { opacity: 1; }
+  .site-header span { color: #c9a84c; opacity: 0.5; margin: 0 0.25rem; }
+
+  .kicker {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-left: 2px solid var(--gold);
+    padding-left: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3rem;
+    font-weight: 900;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+  }
+  h1 em { font-style: italic; color: var(--highlight); }
+
+  .intro {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 3rem 0 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--highlight);
+    margin: 2rem 0 0.6rem;
+  }
+
+  p { margin-bottom: 1.1rem; }
+
+  .country-block {
+    border: 1px solid var(--border);
+    margin: 2rem 0;
+    background: #ffffff;
+  }
+  .country-header {
+    background: var(--navy);
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .country-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #f5f0e8;
+  }
+  .country-broadcaster {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .country-status {
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid;
+  }
+  .status-kritisch { color: #ffaa88; border-color: #ffaa88; }
+  .status-captured { color: #ff6666; border-color: #ff6666; }
+  .status-reform { color: #aaddaa; border-color: #aaddaa; }
+  .status-abgebaut { color: #ffddaa; border-color: #ffddaa; }
+
+  .country-body {
+    padding: 1.25rem 1.5rem;
+  }
+  .country-body p {
+    font-size: 0.97rem;
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+  }
+  .country-body p:last-child { margin-bottom: 0; }
+
+  .country-key {
+    background: var(--gold-bg);
+    border-top: 1px solid var(--border);
+    padding: 0.75rem 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--gold-dim);
+    letter-spacing: 0.05em;
+  }
+
+  .highlight-text { color: var(--highlight); font-weight: 600; }
+  .red-text { color: var(--red); font-weight: 600; }
+
+  .vergleich-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  .vergleich-cell {
+    padding: 1.25rem 1.5rem;
+    border-right: 1px solid var(--border);
+  }
+  .vergleich-cell:nth-child(even) { border-right: none; }
+  .vergleich-cell + .vergleich-cell { border-top: 1px solid var(--border); }
+  .vergleich-cell:nth-child(1), .vergleich-cell:nth-child(2) { border-top: none; }
+  .vergleich-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+  .vergleich-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+  .vergleich-text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .zitat {
+    border-left: 3px solid var(--gold);
+    padding: 1rem 1.5rem;
+    margin: 1.75rem 0;
+    background: #ffffff;
+  }
+  .zitat p {
+    font-style: italic;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+  .zitat .quelle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    font-style: normal;
+  }
+
+  .fazit-box {
+    background: var(--navy);
+    color: #f5f0e8;
+    padding: 1.75rem 2rem;
+    margin: 3rem 0 2rem;
+  }
+  .fazit-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    font-style: normal;
+  }
+  .fazit-box p {
+    font-size: 0.97rem;
+    line-height: 1.7;
+    color: #e8e0d0;
+    margin-bottom: 0.8rem;
+  }
+  .fazit-box p:last-child { margin-bottom: 0; }
+
+  .disclaimer {
+    background: #f0f4ff;
+    border: 1px solid #c0cce8;
+    border-left: 4px solid var(--navy);
+    padding: 1rem 1.25rem;
+    margin: 2.5rem 0;
+    font-size: 0.88rem;
+    color: #3a3a5a;
+    line-height: 1.6;
+  }
+  .disclaimer strong { color: var(--navy); }
+
+  .quellen-box {
+    border: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  .quellen-label {
+    background: var(--gold-bg);
+    border-bottom: 1px solid var(--border);
+    padding: 0.6rem 1.25rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+  }
+  .quellen-body {
+    padding: 1rem 1.25rem;
+  }
+  .quellen-body ul {
+    list-style: none;
+    padding: 0;
+  }
+  .quellen-body li {
+    padding: 0.3rem 0 0.3rem 1.1rem;
+    position: relative;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-mid);
+    line-height: 1.5;
+  }
+  .quellen-body li:last-child { border-bottom: none; }
+  .quellen-body li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+
+  .weiter {
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    margin-top: 3.5rem;
+  }
+  .weiter h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 1.25rem;
+    font-style: normal;
+  }
+  .weiter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+  .weiter-link {
+    display: block;
+    padding: 1rem 1.25rem;
+    background: #f5f0e8;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    text-decoration: none;
+    transition: border-color .2s;
+  }
+  .weiter-link:hover { border-left-color: var(--navy); }
+  .weiter-link .wl-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #9a9a95;
+    margin-bottom: 0.4rem;
+  }
+  .weiter-link .wl-title {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  @media (max-width: 600px) {
+    body { font-size: 16px; padding: 2rem 1.25rem 5rem; }
+    h1 { font-size: 1.75rem; }
+    .site-header { margin: -2rem -1.25rem 2rem; padding: 0.6rem 1.25rem; }
+    .vergleich-grid { grid-template-columns: 1fr; }
+    .vergleich-cell { border-right: none !important; }
+    .country-header { flex-wrap: wrap; }
+    .country-status { margin-left: 0; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="site-header">
+  <a href="index.html">rundfunkkritik.de</a>
+  <span>›</span>
+  <a href="oerr-geschichte.html">Geschichte</a>
+  <span>›</span>
+  <a href="oerr-international.html" style="opacity:1;">International</a>
+</div>
+
+<div class="kicker">Analyse · Internationaler Vergleich · Stand Juni 2026</div>
+
+<h1>Der öffentlich-rechtliche Rundfunk<br>in der Krise: <em>Ein Weltüberblick</em></h1>
+
+<div class="intro">
+  Was in Deutschland als hausgemachtes Problem diskutiert wird, ist ein globales Strukturproblem. Öffentlich-rechtliche Rundfunksysteme stehen weltweit unter Druck — aus verschiedenen Richtungen, mit verschiedenen Methoden, aber mit denselben Kernfragen: Wer kontrolliert wen? Wer zahlt — und wofür?
+</div>
+
+<div class="disclaimer">
+  <strong>Redaktioneller Hinweis:</strong> Dieser Artikel dokumentiert Strukturkritik, Reformdebatten und politische Eingriffe in öffentlich-rechtliche Rundfunksysteme. Er bewertet redaktionelle und institutionelle Maßstäbe — nicht einzelne Journalisten oder Sendungen.
+</div>
+
+<h2>Das große Bild: Drei Krisentypen</h2>
+
+<p>Die Krise öffentlich-rechtlicher Medien weltweit läuft nicht nach einem einheitlichen Muster ab. Drei strukturell unterschiedliche Typen lassen sich unterscheiden:</p>
+
+<div class="vergleich-grid">
+  <div class="vergleich-cell">
+    <div class="vergleich-label">Krisentyp I</div>
+    <div class="vergleich-title">Politische Übernahme</div>
+    <div class="vergleich-text">Regierungen nutzen öffentliche Rundfunkanstalten als Propagandainstrument. Redaktionen werden gleichgeschaltet, kritische Journalisten entlassen. Modell: Ungarn, Slowakei, zunehmend Italien.</div>
+  </div>
+  <div class="vergleich-cell">
+    <div class="vergleich-label">Krisentyp II</div>
+    <div class="vergleich-title">Finanzielle Aushöhlung</div>
+    <div class="vergleich-text">Budgets werden politisch motiviert gekürzt oder eingefroren — nicht aus Sparzwang, sondern als Druckmittel. Anstalten werden finanziell geschwächt, bis Reform oder Privatisierung als "Lösung" erscheint.</div>
+  </div>
+  <div class="vergleich-cell">
+    <div class="vergleich-label">Krisentyp III</div>
+    <div class="vergleich-title">Privatisierung durch Milliardäre</div>
+    <div class="vergleich-text">Öffentliche Medien werden abgebaut; das Vakuum füllen Privatmedien unter Kontrolle politisch aktiver Milliardäre. Klassisches Modell: USA unter Trump/Musk. Tendenz auch in Großbritannien erkennbar.</div>
+  </div>
+  <div class="vergleich-cell">
+    <div class="vergleich-label">Querschnittsproblem</div>
+    <div class="vergleich-title">Relevanz- und Vertrauensverlust</div>
+    <div class="vergleich-text">Unabhängig von politischen Eingriffen: Jüngere nutzen öffentlich-rechtliche Medien kaum noch. Eine Umfrage der Public Media Alliance (2025) zeigt: Unter-30-Jährige in Europa schauen doppelt so häufig Netflix wie öffentlich-rechtliche Angebote.</div>
+  </div>
+</div>
+
+<h2>Europa: Länder im Überblick</h2>
+
+<!-- Ungarn -->
+<div class="country-block">
+  <div class="country-header">
+    <div class="country-name">Ungarn</div>
+    <div class="country-broadcaster">MTVA · KESMA</div>
+    <div class="country-status status-captured">Captured</div>
+  </div>
+  <div class="country-body">
+    <p>Ungarn ist das europaweit am weitesten fortgeschrittene Beispiel systematischer Medienkontrolle durch eine Regierungspartei. Nach dem Wahlsieg von Viktor Orbáns Fidesz 2010 wurde das Mediengesetz vollständig umgeschrieben: <span class="highlight-text">Alle öffentlich-rechtlichen Sender wurden unter dem staatlichen Fonds MTVA zusammengefasst</span>, kritische Journalisten entlassen — nach Angaben von Human Rights Watch über 1.600 — und durch regierungstreue Mitarbeiter ersetzt.</p>
+    <p>2018 folgte der zweite Schritt: Oligarchen aus dem Orbán-Umfeld übertrugen rund 500 Privatsender und -zeitungen ohne Gegenleistung an die <span class="highlight-text">Zentraleuropäische Presse- und Medienstiftung (KESMA)</span> — ein Konglomerat, das seitdem pro-gouvernementale Narrative verbreitet. Der Wettbewerbsbehörde wurde die Prüfung der Transaktion per Regierungsdekret als "Angelegenheit nationaler strategischer Bedeutung" entzogen.</p>
+    <p>Das Ergebnis: Laut Reuters Digital News Report 2024 hat Ungarn das <span class="red-text">niedrigste Medienvertrauen in ganz Europa</span> — nur 23 Prozent der Befragten vertrauen den meisten Medien. Nach der Wahlniederlage von Fidesz im April 2026 gegen die Tisza-Partei hat die neue Regierung bereits ein umfassendes Reformgesetz zur Neustrukturierung der öffentlichen Medien eingebracht.</p>
+  </div>
+  <div class="country-key">Kernbefund: Staatliche Medienkapture als Blaupause — durch Gesetz, nicht durch Journalismus</div>
+</div>
+
+<!-- Slowakei -->
+<div class="country-block">
+  <div class="country-header">
+    <div class="country-name">Slowakei</div>
+    <div class="country-broadcaster">STVR</div>
+    <div class="country-status status-captured">Im Umbau</div>
+  </div>
+  <div class="country-body">
+    <p>Nach der Rückkehr des nationalistischen Premierministers Robert Fico an die Macht 2023 wurde der öffentlich-rechtliche Sender STVR einem weitreichenden Umbau unterzogen. Transparency International Slovakia warnte im November 2025: Der Sender <span class="highlight-text">ähnele zunehmend einem Sprachrohr der Regierung</span>. Internationale Pressefreiheitsorganisationen stufen die Entwicklung als strukturellen Rückschritt ein.</p>
+  </div>
+  <div class="country-key">Muster: Schrittweise Angleichung an das Ungarn-Modell unter EU-Radarschirm</div>
+</div>
+
+<!-- Italien -->
+<div class="country-block">
+  <div class="country-header">
+    <div class="country-name">Italien</div>
+    <div class="country-broadcaster">RAI</div>
+    <div class="country-status status-kritisch">Politisiert</div>
+  </div>
+  <div class="country-body">
+    <p>Seit Giorgia Meloni im Oktober 2022 mit einer ultrakonservativen Koalition die Regierung übernahm, dokumentieren Pressefreiheitsorganisationen eine zunehmende Politisierung der RAI. Die öffentlich-rechtliche Rundfunkanstalt steht traditionell unter starkem Einfluss der jeweiligen Regierungspartei — ein Phänomen, das in Italien als <span class="highlight-text">„Lottizzazione"</span> (Aufteilen nach Parteiproporz) bekannt ist und seit Jahrzehnten kritisiert wird.</p>
+    <p>Unter Meloni wird dieser Zustand von Beobachtern als verschärft eingestuft: Moderatoren wurden ausgetauscht, kritische Stimmen an den Rand gedrängt. Reporters Without Borders verzeichnet Italien im Pressefreiheitsindex 2025 auf Rang 46 — für eine westeuropäische Demokratie ein niedriger Wert.</p>
+  </div>
+  <div class="country-key">Kernbefund: Lottizzazione als Dauerzustand — unter Meloni strukturell verschärft</div>
+</div>
+
+<!-- Frankreich -->
+<div class="country-block">
+  <div class="country-header">
+    <div class="country-name">Frankreich</div>
+    <div class="country-broadcaster">France Télévisions · Radio France</div>
+    <div class="country-status status-kritisch">Unter Druck</div>
+  </div>
+  <div class="country-body">
+    <p>Ende November 2025 startete auf Betreiben der rechtsextremen Rassemblement National (RN) und ihrer Verbündeten ein parlamentarischer Untersuchungsausschuss zur "Neutralität, Funktionsweise und Finanzierung" des öffentlich-rechtlichen Rundfunks. Nach sechs Monaten und knapp 70 Anhörungen wurde im Dezember 2025 ein 551-seitiger Bericht veröffentlicht — der den Sender als <span class="highlight-text">„in einer finanziellen und administrativen Krise"</span> sowie losgelöst von den Erwartungen der Franzosen beschreibt.</p>
+    <p>Der Bericht wurde mit knapper Mehrheit angenommen und von mehreren Abgeordneten als inhaltlich irreführend kritisiert. RN-Chef Jordan Bardella erneuerte seine Forderung nach Privatisierung. Für 2026 sind zudem weitere Budgetkürzungen von 30 Millionen Euro geplant — bereits die zweite Kürzungsrunde in kurzer Zeit.</p>
+  </div>
+  <div class="country-key">Quelle: Inkl/RFI, Dezember 2025 · France24, Januar 2026</div>
+</div>
+
+<!-- Großbritannien -->
+<div class="country-block">
+  <div class="country-header">
+    <div class="country-name">Großbritannien</div>
+    <div class="country-broadcaster">BBC</div>
+    <div class="country-status status-kritisch">Charter-Erneuerung 2027</div>
+  </div>
+  <div class="country-body">
+    <p>Die BBC steht vor der Erneuerung ihrer Königlichen Charta im Dezember 2027 — einem regulären, aber existenziellen Prozess. Vorher erschütterte ein Skandal die Anstalt: Der Generaldirektor trat 2025 zurück, nachdem bekannt geworden war, dass ein Programm Teile einer Trump-Rede vom 6. Januar 2021 in irreführender Weise zusammengeschnitten hatte. Die BBC entschuldigte sich öffentlich.</p>
+    <p>Strukturell: Die Lizenzgebühr hat seit 2010 in realer Kaufkraft rund 30 Prozent an Wert verloren — ohne öffentliche Debatte über die Konsequenzen. Das Unterhaus diskutiert Reformmodelle; das Grundprinzip der Gebührenfinanzierung steht infrage. <span class="highlight-text">Nigel Farages Reform UK fordert die vollständige Abschaffung der Lizenzgebühr</span> — ein politisch zunehmend wirksames Argument.</p>
+    <p>Im April 2026 gab die BBC die größten Stellenstreichungen seit 2011 bekannt: <span class="highlight-text">zwischen 1.800 und 2.000 Stellen — rund jeder zehnte Mitarbeiter</span> — sollen über zwei Jahre abgebaut werden. Ziel: 500 Millionen Pfund Einsparungen. Interims-Generaldirektor Rhodri Talfan Davies verwies auf eine strukturelle Finanzierungslücke: 94 Prozent der Briten nutzen die BBC monatlich — aber weniger als 80 Prozent zahlen die 180-Pfund-Jahresgebühr. Der neue Generaldirektor Matt Brittin, ehemals Google-Europachef, übernahm am 18. Mai 2026.</p>
+  </div>
+  <div class="country-key">Quelle: Deadline / Variety, April 2026 · Hansard, Januar 2026 · Irish Times, Mai 2026</div>
+</div>
+
+<!-- Litauen -->
+<div class="country-block">
+  <div class="country-header">
+    <div class="country-name">Litauen</div>
+    <div class="country-broadcaster">LRT</div>
+    <div class="country-status status-reform">Bürgerproteste</div>
+  </div>
+  <div class="country-body">
+    <p>Anfang Dezember 2025 gingen rund <span class="highlight-text">10.000 Menschen in Vilnius auf die Straße</span> — gegen eine geplante Einfrierung des LRT-Budgets für die Jahre 2026–2028 und gegen eine Reform, die die Absetzung des Generaldirektors erleichtern sollte. Initiiert hatte die Reform die populistische Partei Morgengrauen an der Memel. Der öffentliche Druck führte zu politischen Zugeständnissen.</p>
+  </div>
+  <div class="country-key">Bemerkenswert: Zivilgesellschaftliche Mobilisierung für öffentlich-rechtliche Unabhängigkeit als Gegenmodell</div>
+</div>
+
+<h2>USA: Der Kahlschlag-Typ</h2>
+
+<div class="country-block">
+  <div class="country-header">
+    <div class="country-name">USA</div>
+    <div class="country-broadcaster">PBS · NPR · CPB</div>
+    <div class="country-status status-abgebaut">Defunding</div>
+  </div>
+  <div class="country-body">
+    <p>Die USA verfolgen das radikalste Modell: Die öffentlich-rechtlichen Sender werden nicht übernommen, sondern finanziell ausgetrocknet. Im Mai 2025 unterzeichnete Präsident Donald Trump einen Exekutivorder zur Einstellung der Bundesfinanzierung für PBS und NPR. Im Juni 2025 beantragte seine Administration beim Kongress, die bereits bewilligten <span class="highlight-text">1,1 Milliarden Dollar für die Corporation for Public Broadcasting (CPB) zurückzuziehen</span> — Teil eines 9,4-Milliarden-Sparpakets.</p>
+    <p>Das Paket war wesentlich von Elon Musks "Department of Government Efficiency" (DOGE) identifiziert worden. House Speaker Mike Johnson würdigte <span class="highlight-text">„Elon Musk und sein DOGE-Team"</span> ausdrücklich für die Identifikation dieser "Verschwendung". Der zugrunde liegende Vorwurf Trumps: NPR und PBS betrieben "linkslastige" Berichterstattung und böten kein "faires, genaues oder unvoreingenommenes" Bild aktueller Ereignisse.</p>
+    <p>Strukturell ist die Situation des US-amerikanischen öffentlichen Rundfunks ohnehin schwach: NPR gibt an, weniger als ein Prozent seines Budgets aus öffentlichen Quellen zu beziehen — der Großteil kommt aus Mitgliedsbeiträgen und Sponsoring. PBS ist abhängiger. Die Maßnahme trifft vor allem lokale Stationen in ländlichen Gebieten, die ohne CPB-Gelder nicht überlebensfähig wären.</p>
+  </div>
+  <div class="country-key">Quelle: NPR, NBC News, Deadline — Mai/Juni 2025</div>
+</div>
+
+<h2>Das USA-Paradox: Wer kauft das Vakuum?</h2>
+
+<p>Was in den USA besonders aufschlussreich ist: Der Abbau öffentlicher Medienfinanzierung geht parallel mit dem Aufstieg privater Medienimperien unter Kontrolle politisch aktiver Milliardäre. Elon Musk übernahm 2022 Twitter/X — die wichtigste globale Nachrichtenplattform für Echtzeitdiskurse — und formte sie aktiv zu einem politischen Werkzeug um. Jeff Bezos besitzt die Washington Post. Rupert Murdoch kontrolliert Fox News. <span class="highlight-text">Das Argument "Staatsfunk" wird benutzt, um öffentliche Medien zu schwächen — und privaten Milliardärsmedien das Feld zu überlassen.</span></p>
+
+<div class="zitat">
+  <p>„In Europa sind wir nicht in derselben Situation wie die USA, wo Trump seit seiner Rückkehr an die Macht im Januar 2025 die Finanzierung öffentlicher Medien abgeschnitten hat. Aber einige der Dynamiken sind dieselben."</p>
+  <div class="quelle">Rasmus Kleis Nielsen, Professor an der Universität Kopenhagen, spezialisiert auf Medien — France24, Januar 2026</div>
+</div>
+
+<h2>Die Ellison-Dynasty: Wie Milliardäre den US-Medienmarkt kaufen</h2>
+
+<p>Während Trump den öffentlichen Rundfunk finanziell aushöhlt, kaufen Milliardäre aus seinem Umfeld den privaten Markt auf. Der deutlichste Fall: die Familie Ellison. Larry Ellison, Gründer von Oracle und zeitweise reichster Mensch der Welt mit über 360 Milliarden Dollar Vermögen, baute gemeinsam mit seinem Sohn David ein Medienimperium auf, das Anfang 2026 zu den einflussreichsten in den USA zählt.</p>
+
+<p>David Ellison übernahm 2025 über seine Produktionsfirma Skydance den Medienkonzern Paramount — inklusive <span class="highlight-text">CBS, BET, Nickelodeon, Paramount+ und Channel 5 in Großbritannien</span>. Kurz nach der Übernahme wurde Stephen Colbert entlassen, CBS begann laut einem NPR-Bericht nach rechts zu rücken. Larry Ellison führt zudem die Investorengruppe, die TikToks US-Geschäft übernimmt — Oracle kontrolliert dabei nicht nur Eigentumsanteile, sondern die gesamte Dateninfrastruktur und damit den Algorithmus. Zusätzlich prüft die Familie eine Übernahme von Warner Bros. Discovery — und damit CNN.</p>
+
+<div class="zitat">
+  <p>„Die sofortige Übernahme von CNN durch David Ellison kann nicht früh genug kommen."</p>
+  <div class="quelle">US-Verteidigungsminister Pete Hegseth, Pressekonferenz 13.03.2026 — zitiert nach Nonprofit Quarterly</div>
+</div>
+
+<p>Auf der Gegenseite steht George Soros' Open Society Foundations (OSF): Seit 1984 hat Soros über 32 Milliarden Dollar in Demokratieförderung investiert, davon nach Schätzungen über 52 Millionen Dollar in Medienprojekte — Investigativjournalismus, unabhängige Medien in autoritären Staaten, Journalismusschulen. Kritiker werfen OSF vor, damit ein liberales Netzwerk aufgebaut zu haben, mit Verbindungen zu über 30 US-Mainstream-Medien. OSF selbst bezeichnet die Förderung als Beitrag zu unabhängigem Journalismus in fragilen Demokratien.</p>
+
+<p>Beide Fälle illustrieren denselben strukturellen Befund: <span class="highlight-text">Wer Milliarden hat, kann Medienlandschaften formen — ohne Wahl, ohne Transparenzpflicht, ohne demokratische Kontrolle.</span> Der Unterschied zwischen Soros und Ellison liegt nicht im Instrument, sondern in der politischen Richtung.</p>
+
+<div class="fact-box">
+  <div class="fact-label">Das Ellison-Medienimperium (Stand 2026)</div>
+  <ul>
+    <li>Paramount/CBS (über Skydance-Merger 2025) — inkl. Channel 5 UK, 28 Lokalstationen, Nickelodeon</li>
+    <li>TikTok US — Oracle-Infrastrukturkontrolle und Algorithmus (15% Eigentumsanteil)</li>
+    <li>The Free Press — Kaufgespräche für konservatives Nachrichtenportal (Wert: ca. 100 Mio. $)</li>
+    <li>Warner Bros. Discovery / CNN — erklärtes Übernahmeziel David Ellisons</li>
+    <li>1 Mrd. Dollar Investition in Elon Musks Twitter-Übernahme (2022)</li>
+  </ul>
+</div>
+
+<h2>Was amerikanische Moderatoren verdienen — und warum</h2>
+
+<p>US-Nachrichtensender sind vollständig werbefinanziert und damit quotenabhängig. Ein Moderator, der täglich Millionen Zuschauer hält, ist für den Sender wirtschaftlich mehr wert als eine mittelgroße Zeitung — und wird entsprechend bezahlt. Die Spreizung innerhalb der Branche ist extrem.</p>
+
+<div class="fact-box">
+  <div class="fact-label">US-Anchor-Gehälter 2025/2026 (Schätzwerte, nicht öffentlich bestätigt)</div>
+  <ul>
+    <li>Sean Hannity (Fox News) — ca. 45 Mio. Dollar/Jahr · Nettovermögen ca. 300 Mio.</li>
+    <li>Rachel Maddow (MSNBC) — ca. 25 Mio. Dollar/Jahr</li>
+    <li>Robin Roberts (ABC Good Morning) — ca. 25 Mio. Dollar/Jahr</li>
+    <li>Bret Baier (Fox News) — ca. 20 Mio. Dollar/Jahr</li>
+    <li>Anderson Cooper (CNN) — ca. 18 Mio. Dollar/Jahr</li>
+    <li>Stephen Colbert (CBS Late Show, eingestellt 2026) — ca. 15 Mio. Dollar/Jahr</li>
+    <li>Gayle King (CBS) — ca. 11 Mio. Dollar/Jahr</li>
+    <li>Tucker Carlson (Fox News, bis 2023) — ca. 10 Mio. Dollar/Jahr</li>
+    <li>Durchschnittlicher US-Nachrichtenanker (lokal) — ca. 60.000 Dollar/Jahr</li>
+  </ul>
+</div>
+
+<p>Der Faktor zwischen dem Bestverdiener und dem Durchschnitt liegt bei 750. Das Modell funktioniert, weil Topankerwerbewirtschaft betreiben — nicht Journalismus im klassischen Sinn. Sean Hannity produziert täglich eine politische Primetime-Show, die bei der Werbevermarktung mit dem Super Bowl konkurriert. <span class="highlight-text">Journalismus wird zur Unterhaltungsmarke; der Anchor wird zum Produkt.</span></p>
+
+<p>Der Vergleich: ORF-Spitzenverdiener Robert Kratky (Ö3) bezog laut Transparenzbericht 2025 rund 472.000 Euro brutto. ARD- und ZDF-Intendanten liegen bei 400.000–500.000 Euro — regelmäßig Gegenstand öffentlicher Kritik. In den USA ist das strukturell kein Thema: Private Sender schulden keine Gehaltstransparenz.</p>
+
+<h2>Das Ungarn-Modell als Exportartikel</h2>
+
+<p>Was Orbán in Ungarn zwischen 2010 und 2025 aufgebaut hat, wird von Medienforschern als <span class="highlight-text">systematischste Medienkapture innerhalb der EU</span> bezeichnet. Der Mechanismus ist dreistufig: erstens Kontrolle des öffentlichen Rundfunks durch Gesetz, zweitens Umleitung staatlicher Werbegelder zu regierungsfreundlichen Privatmedien, drittens koordinierter Kauf privater Medien durch Oligarchen aus dem Regierungsumfeld — finanziert mit staatlichen Mitteln über Umwege.</p>
+
+<p>Das Ergebnis: Rund 80 Prozent des ungarischen Medienmarkts stehen unter direktem oder indirektem Regierungseinfluss. Für Opposition blieben fünf Minuten Pflicht-Sendezeit vor Wahlen. Der Pressekodex und das Rundfunkrecht wurden nicht abgeschafft — sie wurden so umgeschrieben, dass sie Kontrolle ermöglichen statt verhindern.</p>
+
+<p>Beobachter sehen ähnliche Ansätze in Polen (unter PiS, inzwischen teils rückgängig gemacht), in der Slowakei und strukturell in Ansätzen auch in Italien. Das gemeinsame Muster: <span class="highlight-text">Keine direkte Zensur, sondern institutionelle Umgestaltung — langsam, legal, irreversibel.</span></p>
+
+<!-- Österreich -->
+<div class="country-block">
+  <div class="country-header">
+    <div class="country-name">Österreich</div>
+    <div class="country-broadcaster">ORF</div>
+    <div class="country-status status-kritisch">Reformstau</div>
+  </div>
+  <div class="country-body">
+    <p>Der ORF ist seit 2024 in einem Umbau, der mehr Probleme erzeugt als löst. Der Verfassungsgerichtshof hatte das alte, gerätegebundene GIS-Gebührenmodell 2022 für verfassungswidrig erklärt — es erfasse moderne Streamingnutzung nicht. Seit 2024 gilt eine <span class="highlight-text">Haushaltsabgabe von 15,30 Euro monatlich</span>, die unabhängig vom Empfang jeden Haushalt trifft. Die FPÖ nutzte den Unmut darüber im Wahlkampf 2024 intensiv und versprach Abschaffung. In den Koalitionsverhandlungen mit der ÖVP blockierte die ÖVP diesen Punkt. Das Ergebnis: Die Abgabe bleibt, wird aber bis 2029 eingefroren — was dem ORF nach eigenen Berechnungen einen Sparbedarf von rund 220 Millionen Euro beschert.</p>
+    <p>Strukturell ist das Kernproblem ungelöst: Die Gremienreform, die SPÖ-Medienminister Andreas Babler angekündigt hatte, endete laut Parlamentsprotokoll mit seinem eigenen Satz: <span class="highlight-text">„Das war's jetzt"</span> — keine weitergehende Gremienreform geplant. Gleichzeitig erhielt der ORF 2024 fast 29 Millionen Euro staatliche Inseratengelder — zusätzlich zur Haushaltsabgabe. Der ORF-Spitzenverdiener, Ö3-Moderator Robert Kratky, bezog laut Transparenzbericht 2025 rund 472.700 Euro Bruttojahresgehalt. 350 Mitarbeiter sollen per freiwilligem „Handshake"-Programm das Unternehmen verlassen. Die Opposition nennt die Reformmaßnahmen ein <span class="highlight-text">„Reförmchen"</span>.</p>
+  </div>
+  <div class="country-key">Quellen: Parlament Österreich, September 2025 · diemedien.at · finanz.at · Österreichisches Parlament, März 2025</div>
+</div>
+
+<!-- Polen -->
+<div class="country-block">
+  <div class="country-header">
+    <div class="country-name">Polen</div>
+    <div class="country-broadcaster">TVP</div>
+    <div class="country-status status-reform">Systemwechsel im Streit</div>
+  </div>
+  <div class="country-body">
+    <p>Polen ist das Lehrstück dafür, dass Medienpolitik nicht einfach rückgängig zu machen ist — auch dann nicht, wenn die falsche Seite verliert. Unter der nationalkonservativen PiS-Regierung (2015–2023) wurde TVP systematisch zum Regierungssprachrohr umgebaut: Kritische Journalisten wurden entlassen, die Nachrichtenredaktion produzierte offen parteiische Inhalte, die OSZE dokumentierte <span class="highlight-text">„verzerrte und offen parteiische Berichterstattung"</span> bei den Wahlen. Laut einem früheren TVP-Mitarbeiter wurde intern <span class="highlight-text">„schlechtere Propaganda als unter dem Kommunismus"</span> produziert.</p>
+    <p>Im Dezember 2023 übernahm Donald Tusks Koalitionsregierung — und schaltete TVP Info innerhalb einer Woche ab, entließ die Leitungen, stellte die Sender formell unter Liquidation. PiS-Politiker besetzten den Sendersitz in einer dreitägigen Sitzblockade. Präsident Duda, PiS-nahe, blockierte die Budgetbewilligung für öffentliche Medien. Das Ergebnis war monatelange Rechtsunsicherheit: TVP arbeitete in einem Zustand juristischer Schwebe, finanziert durch direkte Staatszuweisungen.</p>
+    <p>Das strukturelle Problem bleibt: TVP hat unter der neuen Führung zwar ausgeglichenere Inhalte produziert — verlor aber 70 Prozent seines Nachrichtenpublikums an TV Republika, einen PiS-nahen Privatsender. <span class="highlight-text">Wer einmal Vertrauen durch Propaganda zerstört hat, bekommt es nicht durch Richtungswechsel zurück.</span> Das Reformgesetz, das Polens Medienlandschaft dauerhaft neu ordnen soll, blieb bis Mitte 2025 unfertig.</p>
+  </div>
+  <div class="country-key">Quellen: Public Media Alliance, Februar 2024 · IPI/MFRR-Bericht 2024 · State Media Monitor 2025</div>
+</div>
+
+<h2>Schweiz: Der Ausreißer nach oben</h2>
+
+<p>Nicht überall geht der Druck auf öffentliche Medien zulasten der Anstalten. Im März 2026 stimmten <span class="highlight-text">62 Prozent der Schweizer gegen eine Initiative</span>, die die öffentlich-rechtliche Rundfunkgebühr um 40 Prozent auf 200 Franken kürzen wollte. Das Resultat wird von Medienforschern als seltener Beweis gewertet, dass populistische Angriffe auf öffentliche Medien nicht zwingend erfolgreich sein müssen — wenn Zivilgesellschaft und politische Mitte mobilisieren.</p>
+
+<div class="fazit-box">
+  <h3>Strukturbefund: Fünf gemeinsame Muster</h3>
+  <p>Trotz der unterschiedlichen nationalen Kontexte zeigen die Entwicklungen global fünf wiederkehrende Strukturmuster:</p>
+  <p>Erstens: <strong>Politische Gremienbesetzung als Einstiegspunkt.</strong> Wer die Aufsicht kontrolliert, kontrolliert langfristig die Redaktion — ohne einen einzigen journalistischen Eingriff.</p>
+  <p>Zweitens: <strong>Finanzielle Schwächung als politisches Instrument.</strong> Budgetkürzungen oder -einfrierungen treffen öffentliche Medien auch dann, wenn der Sparwille vorgeschoben ist.</p>
+  <p>Drittens: <strong>Das "Bias"-Argument als Universalwerkzeug.</strong> Der Vorwurf der Einseitigkeit ist unabhängig vom tatsächlichen Redaktionsverhalten einsetzbar — und kaum widerlegbar, weil er subjektiv ist.</p>
+  <p>Viertens: <strong>Milliardäre füllen das Vakuum.</strong> Wo öffentliche Medien geschwächt werden, übernehmen politisch aktive Privatinvestoren die Deutungshoheit.</p>
+  <p>Fünftens: <strong>Vertrauensverlust begünstigt alle Angreifer.</strong> Strukturelle Probleme — zu teuer, zu staatsnah, zu wenig relevant für Jüngere — liefern der Kritik legitime Angriffsfläche, auch wenn die Lösung (Abschaffen) das Problem verschlimmert.</p>
+</div>
+
+<div class="quellen-box">
+  <div class="quellen-label">Verwendete Quellen</div>
+  <div class="quellen-body">
+    <ul>
+      <li>France24, 19.01.2026: Public media in Europe under unprecedented strain</li>
+      <li>Irish Times, 16.05.2026: A wake-up call for every country — public service broadcasting in crisis</li>
+      <li>Inkl/RFI, Mai 2026: France's public broadcasting sector facing major 'crisis'</li>
+      <li>Balkan Insight, 05.05.2026: Tisza's Victory — Media Freedom Reform in Hungary</li>
+      <li>Heinrich Böll Stiftung, 20.01.2026: Hungary's media battlefield</li>
+      <li>Human Rights Watch, 13.02.2024: Hungary — Media Curbs Harm Rule of Law (1.600 entlassene Journalisten)</li>
+      <li>IPI Media: The rise of KESMA — How Orbán's allies bought up Hungary's media</li>
+      <li>Österreichisches Parlament (Parlamentskorrespondenz), September/März 2025: ORF-Reformen</li>
+      <li>diemedien.at: ORF-Beitrag — laufende Dokumentation</li>
+      <li>Public Media Alliance, Februar 2024: Public media in Poland struggles for a reset</li>
+      <li>IPI/MFRR Poland Report 2024: Depoliticizing Poland's Media Landscape</li>
+      <li>State Media Monitor 2025: TVP Poland — reclassified as Independent State Funded</li>
+      <li>NPR, 03.06.2025: Trump to Congress — kill funding for PBS, NPR</li>
+      <li>NBC News, 02.05.2025: Trump signs executive order to stop federal funding for NPR and PBS</li>
+      <li>CNN Business, 26.09.2025: How Larry and David Ellison reached the peak of their wealth</li>
+      <li>Nonprofit Quarterly, 17.03.2026: The Ellisons' Empire — Media Consolidation and the Threat to Democracy</li>
+      <li>FAIR.org, 22.09.2025: As Ellison Buys Out TikTok, US Moves Toward One-Party Media</li>
+      <li>Newsweek, 22.09.2025: Is Larry Ellison Building a MAGA Media Empire?</li>
+      <li>Open Society Foundations: eigene Angaben zur Medienförderung (soros.org)</li>
+      <li>TheStreet / Yahoo Finance, 2025/2026: Highest-paid US news anchors</li>
+      <li>Deadline Hollywood, 15.04.2026: BBC Plans 2000 Layoffs — Major Cost-Cutting Drive</li>
+      <li>Reuters Institute Digital News Report 2024: Trust in news — Hungary lowest in Europe (23%)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Weiterführende Analysen -->
+<div class="weiter">
+  <h3>Weiterführende Analysen</h3>
+  <div class="weiter-grid">
+    <a href="oerr-geschichte.html" class="weiter-link">
+      <div class="wl-label">Chronologie</div>
+      <div class="wl-title">Geschichte des ÖRR: Von der Nachkriegsordnung zur Dauerkrise</div>
+    </a>
+    <a href="oerr-reform-manifest.html" class="weiter-link">
+      <div class="wl-label">Strukturkritik</div>
+      <div class="wl-title">Reform-Manifest: Was sich ändern müsste</div>
+    </a>
+    <a href="oerr-aufreger-liste.html" class="weiter-link">
+      <div class="wl-label">Fallsammlung</div>
+      <div class="wl-title">18 dokumentierte Fälle von ÖRR-Versagen</div>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>

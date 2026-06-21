@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geschichte des ÖRR: Von der Nachkriegsordnung zur Dauerkrise</title>
+<style>
+  :root {
+    --bg: #faf7f2;
+    --text: #1c1c1c;
+    --gold: #c9a84c;
+    --gold-dim: #7a5f1a;
+    --gold-bg: #f5edda;
+    --border: #d4c9b0;
+    --border-mid: #e0d8c8;
+    --text-muted: #5a5a55;
+    --navy: #1a2744;
+    --highlight: #7a5200;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, 'Times New Roman', serif;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  .site-header {
+    background: #1a2744;
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    margin: -3rem -2rem 3rem;
+  }
+  .site-header a {
+    color: #f5f0e8;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    opacity: 0.85;
+  }
+  .site-header a:hover { opacity: 1; }
+  .site-header span { color: #c9a84c; opacity: 0.5; margin: 0 0.25rem; }
+
+  .kicker {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-left: 2px solid var(--gold);
+    padding-left: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 900;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+  }
+  h1 em { font-style: italic; color: var(--highlight); }
+
+  .intro {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 3rem 0 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--highlight);
+    margin: 2rem 0 0.75rem;
+  }
+
+  p { margin-bottom: 1.1rem; }
+
+  .era-block {
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--gold);
+    background: var(--gold-bg);
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+  }
+  .era-block .era-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 0.4rem;
+  }
+  .era-block .era-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .era-block p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+    line-height: 1.65;
+  }
+
+  .fact-box {
+    background: #ffffff;
+    border: 1px solid var(--border-mid);
+    border-top: 2px solid var(--navy);
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+  }
+  .fact-box .fact-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+  .fact-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  .fact-box ul li {
+    padding: 0.35rem 0;
+    padding-left: 1.1rem;
+    position: relative;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--border-mid);
+    line-height: 1.5;
+  }
+  .fact-box ul li:last-child { border-bottom: none; }
+  .fact-box ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .timeline {
+    margin: 2rem 0;
+    border-left: 2px solid var(--border);
+    padding-left: 1.5rem;
+  }
+  .timeline-item {
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.85rem;
+    top: 0.55rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--bg);
+    outline: 1px solid var(--gold);
+  }
+  .timeline-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--gold-dim);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+  .timeline-text {
+    font-size: 0.97rem;
+    line-height: 1.65;
+    color: var(--text);
+  }
+  .timeline-text strong { color: var(--highlight); font-weight: 600; }
+
+  .zitat {
+    border-left: 3px solid var(--gold);
+    padding: 1rem 1.5rem;
+    margin: 1.75rem 0;
+    background: #ffffff;
+  }
+  .zitat p {
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+  .zitat .quelle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    font-style: normal;
+  }
+
+  .highlight-text {
+    color: var(--highlight);
+    font-weight: 600;
+  }
+
+  .disclaimer {
+    background: #f0f4ff;
+    border: 1px solid #c0cce8;
+    border-left: 4px solid var(--navy);
+    padding: 1rem 1.25rem;
+    margin: 2.5rem 0;
+    font-size: 0.88rem;
+    color: #3a3a5a;
+    line-height: 1.6;
+  }
+  .disclaimer strong { color: var(--navy); }
+
+  .weiter {
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    margin-top: 3.5rem;
+  }
+  .weiter h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.02em;
+  }
+  .weiter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+  .weiter-link {
+    display: block;
+    padding: 1rem 1.25rem;
+    background: #f5f0e8;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    text-decoration: none;
+    transition: border-color .2s;
+  }
+  .weiter-link:hover { border-left-color: var(--navy); }
+  .weiter-link .wl-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #9a9a95;
+    margin-bottom: 0.4rem;
+  }
+  .weiter-link .wl-title {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  @media (max-width: 600px) {
+    body { font-size: 16px; padding: 2rem 1.25rem 5rem; }
+    h1 { font-size: 1.75rem; }
+    .site-header { margin: -2rem -1.25rem 2rem; padding: 0.6rem 1.25rem; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="site-header">
+  <a href="index.html">rundfunkkritik.de</a>
+  <span>›</span>
+  <a href="oerr-aufreger-liste.html">Aufreger-Liste</a>
+  <span>›</span>
+  <a href="oerr-geschichte.html" style="opacity:1;">Geschichte</a>
+</div>
+
+<div class="kicker">Hintergrund · Chronologie · Strukturkritik</div>
+
+<h1>Geschichte des ÖRR:<br><em>Von der Nachkriegsordnung zur Dauerkrise</em></h1>
+
+<div class="intro">
+  Der öffentlich-rechtliche Rundfunk gilt als Errungschaft der deutschen Demokratie. Doch die Institution, die heute mit über 10 Milliarden Euro Jahresetat ausgestattet ist, war von Anfang an umstritten — strukturell, politisch, redaktionell. Ein chronologischer Überblick.
+</div>
+
+<div class="disclaimer">
+  <strong>Redaktioneller Hinweis:</strong> Dieser Artikel analysiert ausschließlich institutionelle, strukturelle und medienpolitische Entwicklungen des öffentlich-rechtlichen Rundfunks. Bewertet werden redaktionelle Maßstäbe, Finanzierungsstrukturen und Kontrollmechanismen — nicht journalistische Einzelleistungen oder die Arbeit einzelner Redaktionen.
+</div>
+
+<h2>1. Gründung unter alliierter Aufsicht (1945–1950)</h2>
+
+<p>Der deutsche Rundfunk beginnt nach 1945 nicht mit einer deutschen Entscheidung, sondern mit einem alliierten Diktat. Die Nationalsozialisten hatten den Rundfunk zur zentralen Propagandawaffe gemacht — der Volksempfänger war ein Instrument staatlicher Gleichschaltung. Die Alliierten zogen die Konsequenz: <span class="highlight-text">kein zentrales Rundfunkwesen mehr</span>.</p>
+
+<p>In den westlichen Besatzungszonen entstehen ab 1945 regionale Sender unter direkter Kontrolle der jeweiligen Besatzungsmacht. Die Briten gründen den NWDR (Nordwestdeutscher Rundfunk), die Amerikaner den BR (Bayerischer Rundfunk) und den HR (Hessischer Rundfunk), die Franzosen den SWF (Südwestfunk). Das Prinzip ist bewusst föderalistisch: <span class="highlight-text">kein zentraler Staatsrundfunk</span>.</p>
+
+<div class="era-block">
+  <div class="era-label">Strukturprinzip 1945</div>
+  <div class="era-title">Föderalismus als Lehre aus der NS-Diktatur</div>
+  <p>Die dezentrale Struktur des deutschen Rundfunks ist keine historische Zufälligkeit, sondern eine bewusste Schutzarchitektur gegen politische Gleichschaltung. Dieses Prinzip bleibt bis heute formal erhalten — und wird bis heute strukturell unterlaufen.</p>
+</div>
+
+<p>In der Sowjetischen Besatzungszone entsteht parallel ein zentralisierter Rundfunk, der 1952 zum Staatlichen Rundfunkkomitee der DDR wird — und exakt das verkörpert, was im Westen verhindert werden sollte.</p>
+
+<h2>2. Gründung der ARD und erste Konflikte (1950–1960)</h2>
+
+<p>Am 5. Juni 1950 wird die <span class="highlight-text">Arbeitsgemeinschaft der öffentlich-rechtlichen Rundfunkanstalten Deutschlands (ARD)</span> gegründet — ein freiwilliger Zusammenschluss der Landesrundfunkanstalten. Erster gemeinsamer Programmbeitrag ist Das Erste, das seit 1952 täglich sendet.</p>
+
+<div class="fact-box">
+  <div class="fact-label">Gründungsanstalten der ARD 1950</div>
+  <ul>
+    <li>BR — Bayerischer Rundfunk (München)</li>
+    <li>HR — Hessischer Rundfunk (Frankfurt)</li>
+    <li>NDR/WDR aus dem aufgeteilten NWDR (Hamburg/Köln, ab 1956)</li>
+    <li>RB — Radio Bremen</li>
+    <li>SDR — Süddeutscher Rundfunk (Stuttgart)</li>
+    <li>SWF — Südwestfunk (Baden-Baden)</li>
+    <li>SR — Saarländischer Rundfunk (Saarbrücken)</li>
+  </ul>
+</div>
+
+<p>Schon in dieser Frühphase beginnt der erste große strukturelle Dauerkonflikt: <span class="highlight-text">Adenauer versucht 1960, ein bundesweites Staatsfernsehen zu gründen.</span> Die "Deutschland-Fernsehen GmbH" soll vom Bund kontrolliert werden. Das Bundesverfassungsgericht stoppt das Vorhaben im Februar 1961 in einem wegweisenden Urteil: Rundfunk ist Ländersache. Der Bund hat keine Rundfunkhoheit.</p>
+
+<div class="zitat">
+  <p>„Der Rundfunk ist in der modernen Welt ein Machtfaktor ersten Ranges geworden. Es ist daher notwendig, ihn vor dem Zugriff staatlicher Macht, aber auch vor dem Zugriff gesellschaftlicher Machtgruppen zu schützen."</p>
+  <div class="quelle">Bundesverfassungsgericht, 1. Rundfunkurteil, 28.02.1961</div>
+</div>
+
+<h2>3. Entstehung des ZDF und das duale Kontrollproblem (1961–1970)</h2>
+
+<p>Als Reaktion auf das gescheiterte Adenauer-Fernsehen einigen sich die Bundesländer auf eine zweite öffentlich-rechtliche Anstalt: Das <span class="highlight-text">Zweite Deutsche Fernsehen (ZDF)</span> nimmt am 1. April 1963 seinen Betrieb auf — als staatsvertragliche Anstalt der Länder, mit Sitz in Mainz.</p>
+
+<p>Damit entsteht ein strukturelles Problem, das bis heute ungelöst ist: <span class="highlight-text">Die Aufsichtsgremien beider Anstalten werden von politischen Parteien und staatlichen Stellen durchdrungen.</span> Der ZDF-Fernsehrat wird zur Parteienproporz-Institution. Rundfunkräte, die unabhängige gesellschaftliche Kontrolle gewährleisten sollen, entwickeln sich zu Versorgungsposten für Parteivertreter.</p>
+
+<div class="era-block">
+  <div class="era-label">Strukturproblem · Dauerhaft ungelöst</div>
+  <div class="era-title">Das Kontrollparadox: Wer überwacht die Überwacher?</div>
+  <p>Rundfunkräte sollen die Unabhängigkeit der Anstalten vom Staat sichern. Doch ihre Zusammensetzung — dominiert von Parteivertretern, Verbandsrepräsentanten und staatlich nahen Institutionen — schafft strukturelle Abhängigkeiten, die das BVerfG erst 2014 teilweise korrigiert.</p>
+</div>
+
+<p>Gleichzeitig beginnen in den 1960er Jahren die Konflikte mit den Zeitungsverlegern. Der Bundesverband Deutscher Zeitungsverleger (BDZV) klagt gegen Rundfunkwerbung und sieht im gebührenfinanzierten Rundfunk eine wettbewerbsverzerrende Konkurrenz. Ein Konflikt, der strukturell bis heute andauert — und der laut einer wissenschaftlichen Analyse von Beatrice Dernbach (2019) wesentlich als "mediale Inszenierung" zu verstehen ist, bei der eigene wirtschaftliche Interessen hinter publizistischen Argumenten verborgen werden.</p>
+
+<h2>4. Ausbau, Politisierung und SPIEGEL-Affäre (1960er–1970er)</h2>
+
+<p>Die 1960er Jahre sind die Aufbauphase: Farbfernsehen (1967), Regionalprogramme, wachsende Etats. Gleichzeitig gerät der Rundfunk in den Sog der gesellschaftlichen Polarisierung um 1968. <span class="highlight-text">Die Parteien beginnen systematisch, Einfluss auf Personalentscheidungen zu nehmen.</span></p>
+
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-year">1961</div>
+    <div class="timeline-text"><strong>BVerfG stoppt Adenauers Staatsfernsehen.</strong> Rundfunk ist Ländersache — das Grundprinzip wird verfassungsrechtlich verankert.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-year">1963</div>
+    <div class="timeline-text"><strong>ZDF nimmt Betrieb auf.</strong> Von Beginn an mit parteipolitisch besetzten Gremien — strukturelle Staatsnähe ist eingebaut, nicht Ausnahme.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-year">1971</div>
+    <div class="timeline-text"><strong>ARD-Programmdirektion einigt sich auf "Filbinger-Grundsätze".</strong> Interne Selbstverpflichtung zur politischen Ausgewogenheit — in der Praxis kaum kontrollierbar.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-year">1974</div>
+    <div class="timeline-text"><strong>Tendenzwende-Debatte.</strong> Konservative Kritiker werfen ARD und ZDF strukturelle Linkslastigkeit vor. Der Vorwurf ist seitdem wiederkehrendes Muster der ÖRR-Kritik.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-year">1976</div>
+    <div class="timeline-text"><strong>BVerfG: 3. Rundfunkurteil.</strong> Das Gericht betont erneut die Notwendigkeit "binnenpluralistische" Strukturen — die faktische Umsetzung bleibt hinter dem Anspruch zurück.</div>
+  </div>
+</div>
+
+<h2>5. Privatisierung und das duale System (1980er)</h2>
+
+<p>Die tiefgreifendste Strukturveränderung des deutschen Rundfunks findet Anfang der 1980er Jahre statt: <span class="highlight-text">Das staatliche Rundfunkmonopol wird gebrochen.</span> Sat.1 (1984) und RTL (1985) nehmen als erste private Sender ihren Betrieb auf. Deutschland bekommt ein duales Rundfunksystem.</p>
+
+<p>Die Logik dahinter: Wettbewerb soll Qualität fördern. Die Praxis zeigt das Gegenteil einer bestimmten Qualitätsdimension: Private Sender optimieren auf Reichweite und Werbeeinnahmen, der öffentlich-rechtliche Rundfunk reagiert mit Programmveränderungen in Richtung Massenattraktivität. <span class="highlight-text">Der Grundversorgungsauftrag wird zunehmend dehnbar interpretiert.</span></p>
+
+<div class="era-block">
+  <div class="era-label">Strukturbruch 1984</div>
+  <div class="era-title">Das duale System und seine ungelösten Widersprüche</div>
+  <p>Mit der Einführung privater Sender hätte der öffentlich-rechtliche Rundfunk seinen Auftrag schärfen müssen: weg von Massenunterhaltung, hin zu dem, was der Markt nicht liefert. Stattdessen wächst der ÖRR weiter — Reichweite, Etats, Personal — ohne seinen Kernauftrag neu zu definieren.</p>
+</div>
+
+<h2>6. Wiedervereinigung und Neuordnung (1989–1995)</h2>
+
+<p>Mit der deutschen Wiedervereinigung kommt das Rundfunksystem der DDR an sein Ende. <span class="highlight-text">Der Rundfunk der DDR (RDF) und das Deutsche Fernsehfunk (DFF) werden aufgelöst.</span> Die neuen Bundesländer erhalten eigene Rundfunkanstalten oder treten bestehenden ARD-Anstalten bei: MDR (1991), Ostdeutscher Rundfunk Brandenburg (ORB, später mit SFB zu rbb fusioniert).</p>
+
+<p>Gleichzeitig beginnt die Debatte über die Finanzierung. Die GEZ — Gebühreneinzugszentrale — existiert seit 1976, wird aber mit der Wiedervereinigung und dem Systemausbau zunehmend zur politischen Konfliktfläche.</p>
+
+<h2>7. Digitalisierung und die Verleger-Konflikt-Eskalation (1995–2010)</h2>
+
+<p>Das Internet verändert die Medienwelt grundlegend — und stellt die Finanzierungslogik des öffentlich-rechtlichen Rundfunks in Frage. ARD und ZDF bauen digitale Angebote auf: Tagesschau.de (1996), ZDFmediathek, ARD-Mediathek. <span class="highlight-text">Die Zeitungsverleger sehen darin eine mit Pflichtgebühren finanzierte Konkurrenz zu ihren eigenen Digitalangeboten.</span></p>
+
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-year">1996</div>
+    <div class="timeline-text"><strong>Tagesschau.de geht online.</strong> Beginn der digitalen ÖRR-Expansion — und Beginn des eskalierenden Verleger-Konflikts um "presseähnliche Angebote".</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-year">2007</div>
+    <div class="timeline-text"><strong>12. Rundfunkänderungsstaatsvertrag.</strong> Erstmals Drei-Stufen-Test für neue Angebote eingeführt — auf EU-Druck. Das Verfahren wird von Kritikern als intransparent und zu anstaltsnah bewertet.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-year">2010</div>
+    <div class="timeline-text"><strong>Tagesschau-App.</strong> Verleger klagen gegen die App als "presseähnliches" Angebot ohne Sendungsbezug. Jahrelanges Verfahren folgt.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-year">2013</div>
+    <div class="timeline-text"><strong>Rundfunkbeitrag löst GEZ-Gebühr ab.</strong> Aus dem gerätgebundenen Modell wird ein haushaltsbezogener Pflichtbeitrag — rechtlich präziser, politisch umstrittener.</div>
+  </div>
+</div>
+
+<h2>8. Die KEF, die Beitragserhöhungen und das Sachsen-Anhalt-Veto (2010–2021)</h2>
+
+<p>Die Kommission zur Ermittlung des Finanzbedarfs (KEF) empfiehlt regelmäßig Beitragserhöhungen auf Basis der gemeldeten Bedarfe der Anstalten. <span class="highlight-text">Das strukturelle Problem: Die Anstalten melden ihren Bedarf selbst. Die KEF prüft, kürzt — aber nicht grundlegend.</span></p>
+
+<p>Im Jahr 2021 scheitert die von der KEF empfohlene Erhöhung von 17,50 auf 18,36 Euro am Veto des Landtags Sachsen-Anhalt — als einziges Bundesland. Das Bundesverfassungsgericht erklärt das Veto im August 2021 für verfassungswidrig: Die politisch motivierte Blockade einer unabhängigen Kommissionsempfehlung verletze die Rundfunkfreiheit.</p>
+
+<div class="zitat">
+  <p>„Die Erhöhung des Rundfunkbeitrags scheitert nicht an fehlender Notwendigkeit, sondern an parteipolitischen Erwägungen eines einzelnen Landes. Das ist strukturell bezeichnend."</p>
+  <div class="quelle">Sinngemäße Einschätzung nach BVerfG-Urteil vom 20.07.2021, 1 BvR 2756/20 u.a.</div>
+</div>
+
+<h2>9. Strukturskandale und das rbb-Debakel (2021–2023)</h2>
+
+<p>Im Jahr 2022 wird sichtbar, was Kritiker seit Jahrzehnten als strukturelles Problem benennen: <span class="highlight-text">fehlende externe Kontrolle bei gleichzeitig üppiger Selbstbedienung.</span> Patricia Schlesinger, Intendantin des Rundfunk Berlin-Brandenburg (rbb), tritt zurück — nach Berichten über Luxusrenovierungen auf Anstaltskosten, umstrittene Beraterverträge und undurchsichtige Vergütungsstrukturen.</p>
+
+<p>Der Fall Schlesinger ist kein Einzelfall, sondern ein Symptom. Er macht sichtbar, was der strukturelle Aufbau des ÖRR systematisch ermöglicht: <span class="highlight-text">Gremien, die kontrollieren sollen, sind von denselben politisch-gesellschaftlichen Netzwerken durchdrungen wie die Leitungen, die sie beaufsichtigen.</span> Eine echte Gegenmacht ist strukturell nicht vorgesehen.</p>
+
+<div class="fact-box">
+  <div class="fact-label">Kontrollversagen — strukturelle Muster</div>
+  <ul>
+    <li>Rundfunkräte mit Parteivertretern und staatlichen Stellen besetzt — Kontrolleurin und Kontrollierte oft aus demselben Milieu</li>
+    <li>Keine externe Rechnungsprüfung durch den Bundesrechnungshof — Anstalten kontrollieren sich weitgehend selbst</li>
+    <li>KEF-Verfahren: Bedarfsmeldung durch die Anstalten selbst, keine Nullbasishaushalte</li>
+    <li>Intendantenwahl durch politisch besetzte Gremien — strukturelle Abhängigkeit von Parteigunst</li>
+    <li>BVerfG 2014: ZDF-Staatsvertrag verfassungswidrig wegen zu hohem Staatsanteil in Gremien — teilweise Korrektur, strukturelles Problem bleibt</li>
+  </ul>
+</div>
+
+<h2>10. Aktueller Stand: Reformdruck und institutionelle Beharrung (2023–2026)</h2>
+
+<p>Die Reformdebatte ist so alt wie der ÖRR selbst — und hat bislang nie zu grundlegenden Strukturveränderungen geführt. Nach dem rbb-Skandal werden Reformkommissionen eingesetzt, Strukturgutachten bestellt, Fusionen diskutiert. <span class="highlight-text">Das Ergebnis: Kosmetik.</span></p>
+
+<p>ARD und ZDF erhalten 2025 weiterhin über 10 Milliarden Euro aus dem Rundfunkbeitrag — Rekordeinnahmen, wie die FAZ im Juni 2022 für das Vorjahr mit 8,42 Milliarden Euro berichtete, eine Zahl, die seither weiter gestiegen ist. Die Mitarbeiterzahl liegt bei über 20.000 Festangestellten allein bei ARD und ZDF, hinzu kommen tausende Freie.</p>
+
+<p>Aktuelle Verfahren, Korrekturen und Fehler — darunter die ZDF-Unterlassungserklärung im Fall Musk/Belfast (Juni 2026), der MDR-Fall bezahlter Inaktivität (Bild, Juni 2026), oder das Böhmermann-Urteil (Welt, April 2026) — zeigen: <span class="highlight-text">Die strukturellen Probleme des ÖRR sind nicht historisch, sie sind gegenwärtig.</span></p>
+
+<div class="era-block">
+  <div class="era-label">Strukturbefund · 2026</div>
+  <div class="era-title">80 Jahre ÖRR: Die Grundprobleme sind dieselben</div>
+  <p>Fehlende externe Kontrolle, politische Besetzung der Aufsichtsgremien, dehnbarer Grundversorgungsauftrag, intransparente Vergütungsstrukturen — das sind keine neuen Kritikpunkte. Sie begleiten den öffentlich-rechtlichen Rundfunk von seiner Gründung an. Jede Reformdebatte endet mit demselben Ergebnis: Die Institution wächst, die Strukturen bleiben.</p>
+</div>
+
+<h2>Quellen und Belege</h2>
+
+<div class="fact-box">
+  <div class="fact-label">Verwendete Quellen</div>
+  <ul>
+    <li>Dernbach, Beatrice (2019): Die Debatte um den öffentlich-rechtlichen Rundfunk ist eine mediale Inszenierung. In: JCSW 60, S. 195–215</li>
+    <li>BVerfG, 1. Rundfunkurteil, 28.02.1961 — Az. 2 BvG 2/60</li>
+    <li>BVerfG, ZDF-Urteil 2014 — Az. 1 BvF 1/11, 1 BvF 4/11</li>
+    <li>BVerfG, Rundfunkbeitrag-Urteil, 20.07.2021 — Az. 1 BvR 2756/20 u.a.</li>
+    <li>FAZ, 14.06.2022: ARD und ZDF erlösen 8,42 Milliarden Euro aus Rundfunkbeitrag</li>
+    <li>Welt, 16.04.2026: Richter rügt Böhmermann — "bestenfalls schlampige Recherche"</li>
+    <li>Bild, 16.06.2026: ARD-Sender bezahlt Mitarbeiter fürs Nichtstun (MDR)</li>
+    <li>ZDF-Statement vom 12.06.2026: Unterlassungserklärung im Fall Musk/Belfast</li>
+    <li>Bundeszentrale für politische Bildung: Deutsche Fernsehgeschichte in Ost und West (2017)</li>
+  </ul>
+</div>
+
+<!-- Weiterführende Analysen -->
+<div class="weiter">
+  <h3>Weiterführende Analysen</h3>
+  <div class="weiter-grid">
+    <a href="oerr-aufreger-liste.html" class="weiter-link">
+      <div class="wl-label">Fallsammlung</div>
+      <div class="wl-title">18 dokumentierte Fälle von ÖRR-Versagen</div>
+    </a>
+    <a href="oerr-reform-manifest.html" class="weiter-link">
+      <div class="wl-label">Strukturkritik</div>
+      <div class="wl-title">Reform-Manifest: Was sich ändern müsste</div>
+    </a>
+    <a href="oerr-decoder.html" class="weiter-link">
+      <div class="wl-label">Werkzeug</div>
+      <div class="wl-title">Der ÖRR-Decoder: Muster erkennen</div>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Der Geist, der vollstreckt – Wer ist „Renz"? | Rundfunkkritik.de</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #faf7f2;
+    --text:      #1c1c1c;
+    --navy:      #1a2744;
+    --accent:    #c9a84c;
+    --badge-bg:  #f5edda;
+    --badge-fg:  #7a5f1a;
+    --highlight: #7a5200;
+    --muted:     #5a5040;
+    --rule:      #d9cfb8;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1.18rem;
+    line-height: 1.75;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--navy);
+    padding: 0.85rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  nav a {
+    color: #f5f0e8;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+  nav a:hover { opacity: 1; }
+  nav a.home { font-weight: 700; font-size: 0.85rem; opacity: 1; }
+
+  /* HEADER */
+  header {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--badge-fg);
+    background: var(--badge-bg);
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    margin-bottom: 1.2rem;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 5vw, 2.9rem);
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--navy);
+    margin-bottom: 1rem;
+  }
+
+  .standfirst {
+    font-size: 1.22rem;
+    color: var(--muted);
+    font-style: italic;
+    max-width: 640px;
+    margin-bottom: 1.5rem;
+  }
+
+  .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* BODY */
+  article {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 4rem;
+  }
+
+  article p { margin-bottom: 1.3rem; }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 2.5rem 0 0.9rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  strong { color: var(--highlight); font-weight: 600; }
+
+  /* FACT BOX */
+  .fact-box {
+    background: var(--badge-bg);
+    border-left: 3px solid var(--accent);
+    padding: 1.3rem 1.6rem;
+    margin: 2rem 0;
+  }
+  .fact-box .fb-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--badge-fg);
+    margin-bottom: 0.5rem;
+  }
+  .fact-box p { margin-bottom: 0.5rem; font-size: 1.05rem; }
+  .fact-box p:last-child { margin-bottom: 0; }
+
+  /* ZITAT */
+  .zitat {
+    border-left: 2px solid var(--accent);
+    margin: 2rem 0;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--muted);
+  }
+  .zitat cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    color: var(--badge-fg);
+  }
+
+  /* PHANTOM BOX – Signatur-Element */
+  .phantom {
+    text-align: center;
+    margin: 2.5rem 0;
+    padding: 2rem 1.5rem;
+    border: 1px solid var(--rule);
+    position: relative;
+  }
+  .phantom::before {
+    content: 'VOLLSTRECKUNGSERSUCHEN';
+    position: absolute;
+    top: -0.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg);
+    padding: 0 0.7rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+  .phantom .sender {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+  }
+  .phantom .sig-line {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-style: italic;
+    color: var(--navy);
+    border-bottom: 1px solid var(--text);
+    display: inline-block;
+    padding-bottom: 0.2rem;
+    min-width: 220px;
+  }
+  .phantom .sig-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+  }
+  .phantom .ghost-label {
+    margin-top: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: var(--badge-fg);
+    background: var(--badge-bg);
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+  }
+
+  /* DISCLAIMER */
+  .disclaimer {
+    font-size: 0.9rem;
+    color: var(--muted);
+    border-top: 1px solid var(--rule);
+    padding-top: 1rem;
+    margin-top: 2rem;
+    font-style: italic;
+  }
+
+  /* WEITERFUEHREND */
+  .weiterfuehrend {
+    background: var(--navy);
+    color: #f5f0e8;
+    padding: 2rem 2.5rem;
+    margin-top: 3rem;
+  }
+  .weiterfuehrend h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .weiterfuehrend ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .weiterfuehrend ul li::before {
+    content: '→ ';
+    color: var(--accent);
+  }
+  .weiterfuehrend a {
+    color: #f5f0e8;
+    text-decoration: none;
+    font-family: 'Crimson Pro', serif;
+    font-size: 1rem;
+  }
+  .weiterfuehrend a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    nav { padding: 0.7rem 1rem; gap: 1rem; }
+    header, article { padding-left: 1rem; padding-right: 1rem; }
+    .weiterfuehrend { padding: 1.5rem 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="home">Rundfunkkritik.de</a>
+  <a href="/oerr-aufreger-liste.html">Aufreger</a>
+  <a href="/oerr-reform-manifest.html">Reform</a>
+  <a href="/widerstand.html">Widerstand</a>
+</nav>
+
+<header>
+  <div class="kicker">Beitragsservice · Vollstreckung · BGH VII ZB 29/24</div>
+  <h1>Der Geist, der vollstreckt</h1>
+  <p class="standfirst">„i.A. Renz, Abteilung Operations 1" unterzeichnet Zwangsvollstreckungen für BR, MDR und SWR — gleichzeitig, massenhaft, und für eine Forderung von einer Million Euro. Eine reale Person kann das nicht sein.</p>
+  <div class="meta">Rundfunkkritik.de · Juni 2026</div>
+</header>
+
+<article>
+
+  <p>Am 25. Februar 2026 fällte der Bundesgerichtshof ein Urteil (Az. <strong>VII ZB 29/24</strong>), das die Vollstreckungspraxis des Beitragsservice grundlegend in Frage stellt: Massenweise versendete Vollstreckungsersuchen, die lediglich den Namen der jeweiligen Intendantin tragen, ohne dass eine real verantwortliche Person die Forderung inhaltlich geprüft hat, sind nicht rechtmäßig. Der BGH verlangt eine erkennbare, individuell verantwortliche Person hinter jedem Ersuchen.</p>
+
+  <p>Die Antwort des Beitragsservice auf dieses Urteil: Man erfand sie — eine Person, die überall gleichzeitig ist.</p>
+
+  <h2>Wer ist „Renz"?</h2>
+
+  <p>In Vollstreckungsersuchen, die nach dem BGH-Urteil verschickt wurden, taucht nun ein Name auf, der vorher nicht existierte: <strong>„i.A. Renz, Abteilung Operations 1"</strong>. Die Abkürzung „i.A." steht für „im Auftrag" — also Eselprokura, die niedrigste Stufe der Vollmacht. Renz zeichnet nicht in eigener Verantwortung, sondern im Auftrag einer anderen, namentlich nicht genannten Person.</p>
+
+  <div class="phantom">
+    <div class="sender">Bayerischer Rundfunk / MDR / SWR — Beitragsservice Köln</div>
+    <div class="sig-line">i.A. Renz</div>
+    <div class="sig-meta">Abteilung Operations 1</div>
+    <div class="ghost-label">BR · MDR · SWR · gleichzeitig · maschinell</div>
+  </div>
+
+  <p>Das Problem: Derselbe Name „Renz" erscheint auf Vollstreckungsersuchen des Bayerischen Rundfunks in Bayern, des MDR in Mitteldeutschland — und des SWR für eine Forderung von über <strong>1.000.000 Euro</strong>. Gleichzeitig. In verschiedenen Bundesländern. Für völlig unterschiedliche Verfahren.</p>
+
+  <div class="fact-box">
+    <div class="fb-label">Drei Fälle — eine Unterschrift</div>
+    <p><strong>Fall 1:</strong> „Renz" vollstreckt Kleinforderungen für den MDR.</p>
+    <p><strong>Fall 2:</strong> „Renz" beantragt Kontopfändungen für den BR (u.a. AG Nördlingen).</p>
+    <p><strong>Fall 3:</strong> „Renz" zeichnet im Namen des SWR für eine Forderung von über <strong>1.000.000 EUR</strong> — mit offiziellem Aktenzeichen.</p>
+  </div>
+
+  <h2>Was die Logik sagt</h2>
+
+  <p>Ein Mensch mit einem Arbeitsplatz in Köln kann nicht zeitgleich Vollstreckungsverfahren in Bayern, Sachsen und Baden-Württemberg inhaltlich prüfen. Erst recht nicht, wenn er dabei eine hochkomplexe zivilrechtliche Millionenforderung verantwortet und parallel dazu Massentausende Kleinstforderungen abzeichnet.</p>
+
+  <div class="zitat">
+    „Der Name ‚Renz' ist nichts weiter als eine rein maschinell generierte Unterschriften-Attrappe. Ein digitaler Geist, ein Textbaustein einer Software, der der Justiz eine menschliche Prüfung vorgaukelt, die niemals stattgefunden hat."
+    <cite>— Freiheitskanzlei / Beitragsstopper, Newsletter vom 19. Juni 2026</cite>
+  </div>
+
+  <p>Die Logik ist zwingend: Wenn „Renz" überall gleichzeitig unterschreibt, hat „Renz" in Wirklichkeit nirgendwo unterschrieben. Der Name ist kein Mensch, sondern ein Platzhalter — eine Reaktion auf das BGH-Urteil, die dessen Anforderungen formal erfüllen soll, inhaltlich aber genau das wiederholt, was der BGH untersagt hat.</p>
+
+  <h2>Was das rechtlich bedeutet</h2>
+
+  <p>Der BGH hatte klar gemacht: Jede Forderung muss individuell geprüft und persönlich verantwortet werden. „i.A." — im Auftrag — bedeutet: Renz verantwortet gar nichts. Die eigentlich verantwortliche Person bleibt unbenannt. Das Vollstreckungsersuchen genügt damit weiterhin nicht den Anforderungen des BGH-Urteils VII ZB 29/24.</p>
+
+  <p>Wer ein Vollstreckungsschreiben mit dem Namen „Renz" oder einem ähnlichen universellen Massen-Unterzeichner erhält, hat nach dieser Argumentation guten Grund, sofortige Beschwerde einzulegen — unter Verweis auf das BGH-Urteil und den Nachweis, dass derselbe Name gleichzeitig bundesweit für verschiedene Rundfunkanstalten zeichnet.</p>
+
+  <h2>Einordnung</h2>
+
+  <p>Die Beobachtung stammt aus dem Umfeld von Markus Bönig / Freiheitskanzlei, einem kommerziellen Anbieter von Musterschreiben gegen den Rundfunkbeitrag. Das wirtschaftliche Eigeninteresse der Quelle ist bekannt. Die dokumentierten Fälle — mehrere geschwärzte Bescheide, die alle denselben Namen tragen — sind nach Angaben der Freiheitskanzlei Gerichten bereits vorgelegt worden. Eine unabhängige Bestätigung durch Gerichtsurteile steht zum Zeitpunkt der Veröffentlichung noch aus.</p>
+
+  <p>Unabhängig davon bleibt die strukturelle Frage bestehen: Wenn der Beitragsservice auf ein höchstrichterliches Urteil zur persönlichen Verantwortung mit einem automatisierten Phantomnamen antwortet, ist das keine Lösung des Problems — sondern seine Fortsetzung mit anderen Mitteln.</p>
+
+  <p class="disclaimer">Hinweis: Dieser Artikel dokumentiert eine laufende Rechtsentwicklung. Er ersetzt keine Rechtsberatung. Betroffene sollten im Einzelfall juristischen Rat einholen.</p>
+
+  <div class="weiterfuehrend">
+    <h3>Weiterführende Analysen</h3>
+    <ul>
+      <li><a href="/vollstreckung-beitragsservice.html">Vollstreckung durch den Beitragsservice — BGH-Urteil VII ZB 29/24 im Überblick</a></li>
+      <li><a href="/oerr-versagen-juni2026.html">ÖRR-Versagen: Die Fälle des Junis 2026</a></li>
+      <li><a href="/oerr-reform-manifest.html">Reform oder Abschaffung? Das Manifest</a></li>
+    </ul>
+  </div>
+
+</article>
+
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Der pensionierte Störenfried – Enquete-Kommission, Sterz, PEI | Rundfunkkritik.de</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicon-32x32.png">
+<style>
+  @import url('/fonts.css');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink:#1a1a18;--ink-mid:#3a3a36;--ink-soft:#6b6b64;--ink-ghost:#9e9e95;
+    --paper:#faf8f3;--paper-warm:#f3f0e8;--paper-card:#ffffff;--rule:#d8d4c8;
+    --accent:#1a2533;--accent-mid:#2e4a6b;--accent-soft:#4a7aaa;
+    --red:#8b2222;--red-soft:#f5eaea;--gold:#8b6914;--gold-soft:#faf3e0;
+    --green:#1a5c2e;--green-soft:#eaf3ed;
+  }
+  html { font-size: 16px; }
+  body { font-family: 'Source Serif 4', Georgia, serif; background: var(--paper); color: var(--ink); line-height: 1.75; max-width: 780px; margin: 0 auto; padding: 0 2rem 6rem; }
+  .site-nav { background: var(--accent); margin: 0 -2rem; padding: 0 2rem; height: 52px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 0; }
+  .site-nav-logo { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #fff; text-decoration: none; }
+  .site-nav-back { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); text-decoration: none; }
+  .site-nav-back:hover { color: #fff; }
+  .masthead { border-bottom: 2px solid var(--ink); padding: 2rem 0 1rem; margin-bottom: 3rem; display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+  .masthead-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); }
+  .masthead-section { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--rule); padding: 0.25rem 0.6rem; }
+  .meta-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; flex-wrap: wrap; }
+  .kategorie { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; background: var(--accent); color: #fff; padding: 0.3rem 0.7rem; }
+  .datum { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--ink-soft); letter-spacing: 0.06em; }
+  h1 { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 700; line-height: 1.2; color: var(--ink); margin-bottom: 1.2rem; letter-spacing: -0.01em; }
+  .deck { font-size: 1.15rem; font-weight: 300; color: var(--ink-mid); line-height: 1.6; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+  .faktenbox { background: var(--accent); color: #fff; padding: 1.5rem 1.8rem; margin: 2.5rem 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+  .fakt-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 0.3rem; }
+  .fakt-wert { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #fff; line-height: 1.2; }
+  .fakt-sub { font-family: 'Source Serif 4', serif; font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 0.2rem; }
+  p { margin-bottom: 1.4rem; }
+  h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--ink); margin: 2.5rem 0 0.8rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--rule); }
+  h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 400; font-style: italic; color: var(--ink-mid); margin: 1.8rem 0 0.6rem; }
+  .pullquote { border-left: 3px solid var(--accent); padding: 1rem 0 1rem 1.5rem; margin: 2rem 0; font-size: 1.15rem; font-style: italic; font-weight: 300; color: var(--ink-mid); line-height: 1.6; }
+  .pullquote cite { display: block; margin-top: 0.5rem; font-style: normal; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--ink-soft); text-transform: uppercase; }
+  .analyse-box { background: var(--paper-warm); border: 1px solid var(--rule); border-top: 3px solid var(--accent-mid); padding: 1.5rem 1.8rem; margin: 2.5rem 0; }
+  .analyse-box-title { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-mid); margin-bottom: 1rem; }
+  .analyse-box p { font-size: 0.95rem; color: var(--ink-mid); }
+  .analyse-box p:last-child { margin-bottom: 0; }
+  .vergleich-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 2rem 0; }
+  .vergleich-card { padding: 1.2rem 1.4rem; border: 1px solid var(--rule); }
+  .vergleich-card.quelle { border-top: 3px solid var(--green); background: var(--green-soft); }
+  .vergleich-card.medien { border-top: 3px solid var(--red); background: var(--red-soft); }
+  .vergleich-card-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.7rem; }
+  .vergleich-card.quelle .vergleich-card-label { color: var(--green); }
+  .vergleich-card.medien .vergleich-card-label { color: var(--red); }
+  .vergleich-card h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--ink); }
+  .vergleich-card p { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.6; margin-bottom: 0.5rem; }
+  .vergleich-card .quelle-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--ink-ghost); letter-spacing: 0.08em; text-transform: uppercase; }
+  .timeline { margin: 2rem 0; position: relative; padding-left: 2.5rem; }
+  .timeline::before { content: ''; position: absolute; left: 0.7rem; top: 0.5rem; bottom: 0.5rem; width: 1px; background: var(--rule); }
+  .timeline-item { position: relative; margin-bottom: 1.4rem; }
+  .timeline-item::before { content: ''; position: absolute; left: -1.9rem; top: 0.45rem; width: 8px; height: 8px; border-radius: 50%; background: var(--ink-ghost); border: 1.5px solid var(--paper); }
+  .timeline-item.highlight::before { background: var(--accent); }
+  .timeline-date { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--ink-soft); text-transform: uppercase; margin-bottom: 0.2rem; }
+  .timeline-text { font-size: 0.95rem; color: var(--ink-mid); line-height: 1.55; }
+  .timeline-item.highlight .timeline-text { color: var(--ink); font-weight: 400; }
+  .einschaetzung { background: var(--gold-soft); border: 1px solid #e8d89a; border-left: 3px solid var(--gold); padding: 1.5rem 1.8rem; margin: 2.5rem 0; }
+  .einschaetzung-title { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+  .einschaetzung p { font-size: 0.95rem; color: var(--ink-mid); }
+  .einschaetzung p:last-child { margin-bottom: 0; }
+  .befund-box { background: var(--accent); color: #fff; padding: 1.5rem 1.8rem; margin: 2.5rem 0; }
+  .befund-box-title { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 0.8rem; }
+  .befund-box p { font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 0.8rem; }
+  .befund-box p:last-child { margin-bottom: 0; }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 3rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--rule); padding: 0.25rem 0.6rem; text-decoration: none; }
+  .tag:hover { background: var(--paper-warm); color: var(--ink); }
+  .quellen { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+  .quellen-title { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 1rem; }
+  .quelle-item { display: flex; gap: 1rem; align-items: baseline; margin-bottom: 0.7rem; font-size: 0.85rem; color: var(--ink-mid); line-height: 1.5; }
+  .quelle-typ { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; padding: 0.15rem 0.5rem; border: 1px solid var(--rule); color: var(--ink-ghost); flex-shrink: 0; }
+  .quelle-typ.primaer { border-color: var(--green); color: var(--green); }
+  .quelle-typ.behoerde { border-color: var(--accent-mid); color: var(--accent-mid); }
+  .quelle-typ.mainstream { border-color: var(--ink-ghost); color: var(--ink-ghost); }
+  .quelle-item a { color: var(--ink-mid); }
+  .redaktion { margin-top: 3rem; padding: 1.5rem 1.8rem; background: var(--paper-warm); border: 1px solid var(--rule); font-size: 0.88rem; color: var(--ink-soft); font-style: italic; }
+  @media (max-width: 580px) {
+    h1 { font-size: 1.9rem; }
+    .faktenbox { grid-template-columns: 1fr; }
+    .vergleich-grid { grid-template-columns: 1fr; }
+    .masthead { flex-direction: column; gap: 0.5rem; }
+  }
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Der pensionierte Stoerenfrieder","description":"Ein ehemaliger Pfizer-Toxikologe schätzt vor der Enquete-Kommission des Bundestages 20.000–60.000 impfassoziierte Todesfälle. Was er sagte, was das PEI selbst dokumentiert hat – und wie der ARD-Faktenfinder damit umging.","author":{"@type":"Organization","name":"Rundfunkkritik.de","url":"https://www.rundfunkkritik.de/"},"publisher":{"@type":"Organization","name":"Rundfunkkritik.de","url":"https://www.rundfunkkritik.de/"},"datePublished":"2026-06-18","dateModified":"2026-06-18","url":"https://www.rundfunkkritik.de/sterz_enquete_juni2026.html","inLanguage":"de","isPartOf":{"@type":"WebSite","name":"Rundfunkkritik.de","url":"https://www.rundfunkkritik.de/"}}
+</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="site-nav-logo" href="index.html">Rundfunkkritik.de</a>
+  <a class="site-nav-back" href="index.html">← Zurück</a>
+</nav>
+
+<header class="masthead">
+  <span class="masthead-name">Rundfunkkritik.de</span>
+  <span class="masthead-section">Enquete-Kommission &amp; Pharmakovigilanz</span>
+</header>
+
+<div class="meta-row">
+  <span class="kategorie">Bundestag · Impfstoffsicherheit</span>
+  <span class="datum">18. Juni 2026</span>
+</div>
+
+<h1>Der pensionierte Störenfried</h1>
+
+<p class="deck">
+  Ein ehemaliger Pfizer-Toxikologe schätzt vor der Enquete-Kommission des Bundestages 20.000 bis 60.000 impfassoziierte Todesfälle in Deutschland. Seine Methodik: das PEI selbst. Die Reaktion: sein Name, nicht sein Argument.
+</p>
+
+<div class="faktenbox">
+  <div class="fakt-item">
+    <div class="fakt-label">Datum</div>
+    <div class="fakt-wert">19. März 2026</div>
+    <div class="fakt-sub">Enquete-Kommission, Bundestag</div>
+  </div>
+  <div class="fakt-item">
+    <div class="fakt-label">Drucksache</div>
+    <div class="fakt-wert">21(27)30</div>
+    <div class="fakt-sub">Stellungnahme Sterz, öffentlich</div>
+  </div>
+  <div class="fakt-item">
+    <div class="fakt-label">Schätzspanne</div>
+    <div class="fakt-wert">20.000–60.000</div>
+    <div class="fakt-sub">mögliche Todesfälle, Deutschland</div>
+  </div>
+</div>
+
+<h2>Was er sagte</h2>
+
+<p>Es gibt Momente, in denen eine einzige Zahl eine ganze Erzählung ins Wanken bringt. Der 19. März 2026 war so ein Moment.</p>
+
+<p>Vor der Enquete-Kommission des Deutschen Bundestages saß an diesem Tag ein Mann, der nicht zum ersten Mal sprach, was er wusste. Dr. Helmut Sterz: Tiermediziner, Doktortitel in Virologie, jahrelang Leiter der Toxikologie bei Pfizer Europa — also bei jenem Unternehmen, dessen mRNA-Produkt er nun kritisch beurteilte. Er ist seit 2007 im Ruhestand. Er hat nichts zu gewinnen.</p>
+
+<p>Sterz ging von einer bekannten Grundlage aus: dem Melderegister des Paul-Ehrlich-Instituts. Dort sind rund 2.000 Todesverdachtsfälle nach Comirnaty-Impfung dokumentiert. Das PEI selbst hatte bereits 2007 festgestellt, dass Spontanmeldesysteme strukturell unter Untererfassung leiden — damals bezifferte es den Meldeanteil auf fünf bis zehn Prozent der tatsächlichen schweren Nebenwirkungen.</p>
+
+<p>Sterz wandte einen Korrekturfaktor von 30 an — konservativ, wie er betonte, da internationale Literatur Faktoren zwischen 10 und 100 für plausibel hält. Das Ergebnis: zwischen 20.000 und 60.000 mögliche Todesfälle im Zusammenhang mit der Impfung allein in Deutschland.</p>
+
+<div class="pullquote">
+  „Das PEI hat selbst dokumentiert, dass nur ein Bruchteil der Nebenwirkungen gemeldet wird. Ein Korrekturfaktor ist methodisch geboten. Zehn bis hundert ist die Bandbreite — ich nehme dreißig als konservativen Schätzwert."
+  <cite>Dr. Helmut Sterz — Bundestagsdrucksache 21(27)30, Enquete-Kommission, 19. März 2026</cite>
+</div>
+
+<p>Kein Gerichtsurteil. Keine Anschuldigung. Eine Schätzung mit transparenter Methodik — vorgetragen vor dem Parlament, dokumentiert in der Bundestagsdrucksache.</p>
+
+<h2>Was danach geschah</h2>
+
+<p>Die Reaktion lässt sich am besten durch eine Gegenüberstellung verstehen.</p>
+
+<div class="vergleich-grid">
+  <div class="vergleich-card quelle">
+    <div class="vergleich-card-label">Primärquelle</div>
+    <h4>Was Sterz sagte</h4>
+    <p>Das PEI hat selbst dokumentiert, dass nur ein Bruchteil der Nebenwirkungen gemeldet wird. Der Underreporting-Faktor ist eine anerkannte Limitation von Spontanmeldesystemen — beschrieben vom PEI, diskutiert in der Fachliteratur seit Jahrzehnten, berücksichtigt von der FDA.</p>
+    <span class="quelle-label">Bundestagsdrucksache 21(27)30 · März 2026</span>
+  </div>
+  <div class="vergleich-card medien">
+    <div class="vergleich-card-label">ARD Tagesschau Faktenfinder · April 2026</div>
+    <h4>Wie es gerahmt wurde</h4>
+    <p>„Einen wissenschaftlichen Nachweis für diesen sogenannten Underreporting-Faktor legte er nicht vor." Als Gegenposition: eine Versorgungsforscherin, die einen pauschalen Faktor 30 für Todesfälle als nicht standardgemäß bezeichnete.</p>
+    <span class="quelle-label">ARD-Tagesschau Faktenfinder · April 2026</span>
+  </div>
+</div>
+
+<div class="analyse-box">
+  <div class="analyse-box-title">Methodische Einordnung</div>
+  <p>Die Formulierung des Faktenfinders ist handwerklich präzise — und inhaltlich verzerrt. Der Underreporting-Faktor ist keine Erfindung von Sterz. Er ist eine bekannte Limitation von Spontanmeldesystemen, die das PEI selbst beschrieben hat und die die FDA in ihrer Pharmakovigilanz explizit berücksichtigt.</p>
+  <p>Die legitime Frage wäre gewesen: Ist der Faktor 30 für Todesfälle angemessen? Zu hoch? Zu niedrig? Das ist eine wissenschaftliche Debatte. Stattdessen wurde suggeriert, das Konzept selbst sei ohne Grundlage — obwohl seine Grundlage im Eigenzeugnis derselben Behörde liegt, die für die Überwachung zuständig war.</p>
+</div>
+
+<h2>Was das PEI selbst festgestellt hatte</h2>
+
+<div class="vergleich-grid">
+  <div class="vergleich-card quelle">
+    <div class="vergleich-card-label">Behörde · 2007</div>
+    <h4>PEI über eigene Meldesysteme</h4>
+    <p>„Nur etwa sechs Prozent aller UAW und fünf bis zehn Prozent der schweren UAW" werden in Spontanmeldesystemen erfasst. Strukturelle Untererfassung ist eine bekannte und dokumentierte Eigenschaft dieser Systeme.</p>
+    <span class="quelle-label">Paul-Ehrlich-Institut, Stellungnahme zu Spontanmeldesystemen · 2007</span>
+  </div>
+  <div class="vergleich-card medien">
+    <div class="vergleich-card-label">ARD Faktenfinder · 2026</div>
+    <h4>Was unerwähnt blieb</h4>
+    <p>Die eigene PEI-Dokumentation zur Untererfassung wurde im Faktenfinder-Artikel nicht erwähnt. Ebenso nicht: die Aussage der früheren PEI-Abteilungsleiterin Keller-Stanislawski, die 2023 unter Eid beschrieben hatte, warum die Erfassung 2021/22 strukturell unmöglich war.</p>
+    <span class="quelle-label">Auslassung — nicht im Faktenfinder-Artikel</span>
+  </div>
+</div>
+
+<h2>Was Pfizer 2022 bekannt war — und wann es öffentlich wurde</h2>
+
+<p>Die Frage nach der Sicherheitsprüfung ist nicht neu. Bereits 2022 lagen durch einen US-Gerichtsbeschluss Teile der internen Pfizer-Daten vor, die die FDA eigentlich für 75 Jahre unter Verschluss halten wollte. Der texanische Bundesrichter Mark Pittman hatte entschieden, dass die Behörde die Daten binnen acht Monaten veröffentlichen muss.</p>
+
+<p>Was darin stand: Die klinischen Studien hatten begrenzte toxikologische Vorarbeit. Tierstudien wurden auf das für eine Notfallzulassung erlaubte Minimum reduziert. Sterz sagte vor der Kommission, was die Dokumente zeigen: Zehn Toxizitätsstudien, die für eine vollständige Sicherheitsbewertung erforderlich wären, wurden nie durchgeführt. Keine davon wurde nachgereicht.</p>
+
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-date">Januar 2022</div>
+    <div class="timeline-text">US-Richter Pittman ordnet Veröffentlichung der Pfizer-FDA-Daten binnen 8 Monaten an — gegen den Willen der FDA, die 75 Jahre beantragt hatte.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">Oktober 2022</div>
+    <div class="timeline-text">Freigegebene Dokumente werden für die deutschsprachige Öffentlichkeit analysiert. Primärquelle: phmpt.org.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-date">1. September 2023</div>
+    <div class="timeline-text">Dr. Brigitte Keller-Stanislawski, frühere Leiterin der Impfstoffsicherheit am PEI, sagt vor dem Brandenburger Corona-Untersuchungsausschuss unter Eid aus: Zu Spitzenzeiten 5.000 Meldungen pro Tag. IT-Infrastruktur nicht ausgelegt. Mitarbeiter wurden nach Falltyp aufgeteilt. 700.000 SafeVac-Datensätze bis Oktober 2023 nicht ausgewertet.</div>
+  </div>
+  <div class="timeline-item highlight">
+    <div class="timeline-date">19. März 2026</div>
+    <div class="timeline-text">Dr. Helmut Sterz trägt vor der Enquete-Kommission des Bundestages vor: fehlende Toxizitätsstudien, strukturelles Underreporting, geschätzte 20.000–60.000 Todesfälle. Methodik: Gemeldete Fälle × Underreporting-Faktor auf Basis eigener PEI-Daten.</div>
+  </div>
+  <div class="timeline-item highlight">
+    <div class="timeline-date">April 2026</div>
+    <div class="timeline-text">ARD-Faktenfinder bezeichnet die Schätzung als ohne wissenschaftlichen Nachweis — ohne die PEI-Dokumentation zur Untererfassung oder die Aussage von Keller-Stanislawski zu erwähnen.</div>
+  </div>
+</div>
+
+<h2>Über Schubladen und Argumente</h2>
+
+<p>Es gibt eine verbreitete Reaktionsstrategie auf unbequeme Aussagen: nicht das Argument entkräften, sondern den Sprecher klassifizieren. <em>AfD-Experte. Pensioniert. Impfkritiker.</em> Jede dieser Klassifikationen kann sachlich zutreffen — und trotzdem nichts über die Richtigkeit oder Falschheit der inhaltlichen Behauptung sagen.</p>
+
+<p>Sterz wurde von der AfD-Fraktion geladen. Das ist eine politische Tatsache. Seine Karriere bei Pfizer, sein Doktortitel, seine jahrzehntelange Tätigkeit als Toxikologe — das sind ebenfalls Tatsachen. Welche davon für die Beurteilung seiner Aussagen relevant ist, sollte der Leser entscheiden dürfen.</p>
+
+<div class="befund-box">
+  <div class="befund-box-title">Befund</div>
+  <p>Das PEI attestierte 2007 sich selbst eine strukturelle Untererfassung. Die frühere Abteilungsleiterin beschrieb 2023 unter Eid, warum die Erfassung 2021 und 2022 strukturell unmöglich war. 2026 wurde ein Experte diskreditiert, der genau diese Untererfassung in seine Schätzung einrechnete — auf Basis von PEI-Daten.</p>
+  <p>Der „fehlende Nachweis" für das Underreporting liegt nicht in der Literatur. Er liegt im Ausschussprotokoll des Brandenburger Landtags und in der eigenen Dokumentation des Paul-Ehrlich-Instituts.</p>
+</div>
+
+<h2>Was das bedeutet</h2>
+
+<p>Die Enquete-Kommission tagt. Dokumente werden publik. Experten reden öffentlich, Protokolle sind online. Das System der parlamentarischen Kontrolle funktioniert — wenn auch langsam und mit Widerstand.</p>
+
+<p>Wer diese Primärquellen kennt, ist nicht auf Interpretation angewiesen. Die Stellungnahme von Sterz ist als Bundestagsdrucksache abrufbar. Das Protokoll der Keller-Stanislawski-Aussage ist beim Brandenburger Landtag zugänglich. Die Pfizer-Originaldokumente liegen bei phmpt.org.</p>
+
+<div class="einschaetzung">
+  <div class="einschaetzung-title">Analytische Einschätzung</div>
+  <p>Diese Seite behauptet nicht, dass die Zahl der Impftoten bei 60.000 liegt. Das weiß niemand — und das ist genau das Problem. Was dokumentiert ist: Die offiziellen Zahlen zu Impfnebenwirkungen sind strukturell unvollständig, nicht durch Bösartigkeit, sondern durch dokumentierten Kapazitätsmangel. Das ist eine Aussage, die durch das Eigenzeugnis der zuständigen Behörde belegt ist.</p>
+  <p>Ein Mediensystem, das diesen Befund mit Klassifizierungsstrategien statt mit Sachargumenten beantwortet, macht deutlich, was Medienkritik meint: nicht die Frage, ob Journalisten lügen, sondern die Frage, was sie weglassen.</p>
+</div>
+
+<div class="tags">
+  <a class="tag" href="index.html">Enquete-Kommission</a>
+  <a class="tag" href="index.html">PEI</a>
+  <a class="tag" href="index.html">Pharmakovigilanz</a>
+  <a class="tag" href="index.html">Faktenfinder</a>
+  <a class="tag" href="index.html">Primärquellen</a>
+  <a class="tag" href="index.html">Medienkritik</a>
+</div>
+
+<div class="quellen">
+  <div class="quellen-title">Primärquellen &amp; Belege</div>
+
+  <div class="quelle-item">
+    <span class="quelle-typ primaer">Primär</span>
+    <span>Stellungnahme Dr. Helmut Sterz, Enquete-Kommission, 19.3.2026 — <a href="https://www.bundestag.de" target="_blank" rel="noopener">bundestag.de</a> (Drucksache 21(27)30)</span>
+  </div>
+  <div class="quelle-item">
+    <span class="quelle-typ primaer">Primär</span>
+    <span>Sitzungsprotokoll Bundestag, Enquete-Kommission KW12 — <a href="https://www.bundestag.de" target="_blank" rel="noopener">bundestag.de</a></span>
+  </div>
+  <div class="quelle-item">
+    <span class="quelle-typ primaer">Primär</span>
+    <span>Einladung zur 7. Sitzung des Untersuchungsausschusses 7/3, Landtag Brandenburg, 1.9.2023 — <a href="https://www.landtag.brandenburg.de" target="_blank" rel="noopener">landtag.brandenburg.de</a></span>
+  </div>
+  <div class="quelle-item">
+    <span class="quelle-typ primaer">Primär</span>
+    <span>Pfizer/FDA-Originaldokumente (US-Gerichtsanordnung Richter Pittman) — <a href="https://phmpt.org" target="_blank" rel="noopener">phmpt.org</a></span>
+  </div>
+  <div class="quelle-item">
+    <span class="quelle-typ behoerde">Behörde</span>
+    <span>PEI: Eigene Stellungnahme zur Untererfassung in Spontanmeldesystemen, 2007 — <a href="https://www.pei.de" target="_blank" rel="noopener">pei.de</a></span>
+  </div>
+  <div class="quelle-item">
+    <span class="quelle-typ mainstream">Mainstream</span>
+    <span>ARD-Tagesschau Faktenfinder zu Sterz, April 2026 — tagesschau.de (zur Einordnung)</span>
+  </div>
+</div>
+
+<div class="redaktion">
+  Alle Angaben basieren auf öffentlich zugänglichen Quellen und Primärdokumenten. Die Einschätzungen geben die analytische Position von Rundfunkkritik.de wieder. Diese Seite ist kein medizinischer Rat. Wer gesundheitliche Fragen hat, wendet sich an einen Arzt.
+</div>
+
+</body>
+</html>
