@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wer brieft die Medien? — rundfunkkritik.de</title>
+<style>
+  :root {
+    --bg: #09090b;
+    --surface: #111113;
+    --border: #1e1e22;
+    --amber: #e8c547;
+    --amber-dim: #a8892a;
+    --text: #d4d4d8;
+    --text-dim: #71717a;
+    --text-faint: #3f3f46;
+    --red: #ef4444;
+    --green: #22c55e;
+    --blue: #60a5fa;
+    --mono: 'Courier New', Courier, monospace;
+    --serif: Georgia, 'Times New Roman', serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    line-height: 1.75;
+    padding: 2rem 1rem 5rem;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .dossier-label {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    color: var(--amber);
+    text-transform: uppercase;
+    border: 1px solid var(--amber-dim);
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    margin-bottom: 1.4rem;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 4vw, 2.1rem);
+    font-weight: normal;
+    color: #f4f4f5;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+    letter-spacing: 0.04em;
+  }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 2.2rem 0; }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  /* INTRO */
+  .intro {
+    font-size: 0.95rem;
+    border-left: 2px solid var(--amber);
+    padding-left: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: var(--text);
+  }
+
+  .intro em { color: var(--amber); font-style: normal; }
+
+  /* FALLSTUDIE */
+  .case-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.4rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .case-title {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  /* TAGES-CHRONIK */
+  .day-grid {
+    display: grid;
+    gap: 0;
+    margin-bottom: 1rem;
+  }
+
+  .day-row {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 0.8rem;
+    border-bottom: 1px solid var(--border);
+    padding: 0.6rem 0;
+    align-items: start;
+  }
+
+  .day-row:last-child { border-bottom: none; }
+
+  .day-date {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--amber-dim);
+    padding-top: 0.1rem;
+  }
+
+  .day-text {
+    font-size: 0.85rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .day-tag {
+    font-family: var(--mono);
+    font-size: 0.52rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.1rem 0.35rem;
+    border-radius: 2px;
+    display: inline-block;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+  }
+
+  .tag-us { background: #1a0f0f; color: #ef4444; }
+  .tag-media { background: #1e293b; color: #60a5fa; }
+  .tag-hersh { background: #1a1a08; color: var(--amber); }
+  .tag-verschwunden { background: #0f1a0f; color: #22c55e; }
+
+  .case-note {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    border-top: 1px solid var(--border);
+    padding-top: 0.8rem;
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+
+  /* INFRASTRUKTUR-KARTEN */
+  .infra-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 2.5rem;
+  }
+
+  .infra-card {
+    background: var(--surface);
+    padding: 1.1rem;
+  }
+
+  .infra-name {
+    font-family: var(--serif);
+    font-size: 0.9rem;
+    color: #f4f4f5;
+    margin-bottom: 0.2rem;
+  }
+
+  .infra-type {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    color: var(--amber-dim);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .infra-text {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  .infra-belegt {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    color: var(--green);
+    margin-top: 0.5rem;
+  }
+
+  /* MECHANISMUS */
+  .mech-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 2.5rem;
+  }
+
+  .mech-step {
+    display: grid;
+    grid-template-columns: 1.8rem 1fr;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+
+  .mech-step:last-child { border-bottom: none; }
+
+  .mech-num {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--amber);
+    padding-top: 0.15rem;
+  }
+
+  .mech-content { }
+
+  .mech-title {
+    font-size: 0.88rem;
+    color: #f4f4f5;
+    margin-bottom: 0.2rem;
+    font-family: var(--serif);
+  }
+
+  .mech-detail {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--text-dim);
+    line-height: 1.55;
+  }
+
+  /* ZITAT-BOX */
+  .quote-box {
+    background: var(--surface);
+    border-left: 3px solid var(--amber);
+    padding: 1rem 1.3rem;
+    margin-bottom: 2rem;
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--text);
+  }
+
+  .quote-src {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    color: var(--amber-dim);
+    font-style: normal;
+    margin-top: 0.5rem;
+    display: block;
+  }
+
+  /* BELEGT/NICHT BELEGT */
+  .status-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .status-table th {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    text-align: left;
+    padding: 0.5rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .status-table td {
+    padding: 0.65rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    font-family: var(--serif);
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .status-table tr:last-child td { border-bottom: none; }
+  .status-table tr:hover td { background: #0d0d10; }
+
+  .dot {
+    display: inline-block;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    margin-right: 0.4rem;
+    vertical-align: middle;
+  }
+  .dot-g { background: var(--green); }
+  .dot-y { background: var(--amber); }
+  .dot-r { background: var(--red); }
+
+  /* FRAGE */
+  .open-question {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    font-style: italic;
+  }
+
+  .open-question strong {
+    color: var(--amber);
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  /* PARA */
+  p.body-text {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  @media (max-width: 520px) {
+    .infra-grid { grid-template-columns: 1fr; }
+    .day-row { grid-template-columns: 4.5rem 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="dossier-label">Dossier · rundfunkkritik.de · Medienstruktur</div>
+
+<h1>Wer brieft die Medien?<br>Narrative-Infrastruktur zwischen Pentagon und Aspen</h1>
+<p class="subtitle">Stand: Juni 2026 · Quellen: Pentagon, Aspen Institute, Atlantic Council, Wikipedia, eigene Recherche</p>
+
+<hr>
+
+<div class="intro">
+  Eine Frage, die selten gestellt wird: Wie kommt ein Thema auf die Titelseite — und wie verschwindet es wieder? Journalisten recherchieren. Das stimmt. Aber sie recherchieren nicht im luftleeren Raum. Es gibt dokumentierte Strukturen, die bestimmen, welche Informationen wann verfügbar werden, welche Quellen als glaubwürdig gelten und welche Räume Journalisten und Regierungsvertreter gemeinsam betreten. <em>Das ist keine Verschwörung. Das ist Infrastruktur. Und sie ist öffentlich dokumentiert.</em>
+</div>
+
+<!-- FALLSTUDIE -->
+<p class="section-label">// Fallstudie: Eine Woche im Februar 2023</p>
+
+<div class="case-box">
+  <div class="case-title">// Chronologie · 1.–15. Februar 2023</div>
+  <div class="day-grid">
+    <div class="day-row">
+      <div class="day-date">1. Feb.</div>
+      <div class="day-text">Zivilisten sichten einen unbekannten Ballon über Montana. Fotos erscheinen in der Billings Gazette. <span class="day-tag tag-media">Lokale Presse</span></div>
+    </div>
+    <div class="day-row">
+      <div class="day-date">2. Feb.</div>
+      <div class="day-text">Pentagon und kanadisches Verteidigungsministerium bestätigen: NORAD verfolgt den Ballon seit Tagen. Offizielle Pressemitteilung. Alle Folgeberichte: Pentagon als einzige Quelle. <span class="day-tag tag-us">Pentagon-Briefing</span></div>
+    </div>
+    <div class="day-row">
+      <div class="day-date">4. Feb.</div>
+      <div class="day-text">Abschuss über South Carolina. Pentagon-Pressekonferenz. Mediale Hysterie beginnt. Rahmen gesetzt: »China-Spionage«. <span class="day-tag tag-us">Pentagon</span></div>
+    </div>
+    <div class="day-row">
+      <div class="day-date">6. Feb.</div>
+      <div class="day-text">US-Vize-Außenministerin Wendy Sherman brieft 150 Diplomaten aus 40 Ländern — koordinierte internationale Deutungshoheit. <span class="day-tag tag-us">State Dept.</span></div>
+    </div>
+    <div class="day-row">
+      <div class="day-date">8. Feb.</div>
+      <div class="day-text">Seymour Hersh veröffentlicht auf Substack: USA haben gemeinsam mit Norwegen die Nordstream-Pipelines gesprengt. Basiert auf einem anonymen Insider mit Erstverdacht Anfang 2022. Deutsche und US-Mainstreammedien: marginale bis keine Folgeberichterstattung. <span class="day-tag tag-hersh">Hersh / Substack</span></div>
+    </div>
+    <div class="day-row">
+      <div class="day-date">10. Feb.</div>
+      <div class="day-text">Zweites unbekanntes Objekt über Alaska abgeschossen. Pentagon-Briefing. Medien: Titelseiten. <span class="day-tag tag-us">Pentagon</span> <span class="day-tag tag-media">Titelseiten</span></div>
+    </div>
+    <div class="day-row">
+      <div class="day-date">11. Feb.</div>
+      <div class="day-text">Drittes Objekt über Kanada abgeschossen. Trudeau-Anordnung. <span class="day-tag tag-us">NORAD</span></div>
+    </div>
+    <div class="day-row">
+      <div class="day-date">12. Feb.</div>
+      <div class="day-text">Viertes Objekt über dem Huronsee (Michigan) abgeschossen. Pentagon: »Ursprung unbekannt.« Medien spekulieren über UFOs. <span class="day-tag tag-us">Pentagon</span> <span class="day-tag tag-media">UFO-Framing</span></div>
+    </div>
+    <div class="day-row">
+      <div class="day-date">Ab 15. Feb.</div>
+      <div class="day-text">Thema verschwindet aus den Schlagzeilen. Keine Erklärung der Objekte 2–4. Keine Konsequenzen. Kein Follow-up. Hersh-Bericht: weiterhin kein Mainstream-Aufgriff. <span class="day-tag tag-verschwunden">Aus den Medien verschwunden</span></div>
+    </div>
+  </div>
+  <div class="case-note">
+    Dokumentiert: Alle vier Abschüsse wurden ausschließlich über Pentagon- und NORAD-Pressemitteilungen kommuniziert. Redaktionen hatten keine eigene Quelle — sie hatten den Briefing-Kalender des Verteidigungsministeriums.<br>
+    Nicht belegbar: Ob die Ballon-Berichterstattung bewusst eingesetzt wurde, um Hersh zu überlagern. Belegbar: Die zeitliche Überlagerung auf den Tag genau, und das anschließende kollektive Verstummen ohne erklärten Grund.
+  </div>
+</div>
+
+<!-- STRUKTURELLE EINBETTUNG -->
+<p class="section-label">// Die Infrastruktur dahinter — dokumentierte Institutionen</p>
+
+<p class="body-text">Das Ballon-Beispiel ist kein Ausnahmefall. Es illustriert einen Normalbetrieb. Zwischen Regierung und Redaktion existieren mehrere institutionelle Schnittstellen, die bestimmen, wer wann was erfährt — und in welchem Deutungsrahmen.</p>
+
+<div class="infra-grid">
+
+  <div class="infra-card">
+    <div class="infra-name">Pentagon Press Briefing System</div>
+    <div class="infra-type">Akkreditierungs-Infrastruktur</div>
+    <div class="infra-text">Journalisten mit Pentagon Press Facility Access Credential (PFAC) erhalten Zugang zu Briefings, Pressekonferenzen und Hintergrundgesprächen. Ohne PFAC: kein Zugang. Das Pentagon kontrolliert, wer akkreditiert wird — und kann Akkreditierungen entziehen. Seit März 2026 ist der »Correspondents' Corridor« — der freie Arbeitsbereich für akkreditierte Journalisten im Pentagon — geschlossen.</div>
+    <div class="infra-belegt">✓ Dokumentiert: Pentagon-Richtlinie März 2026, DoD-Pressemitteilungen</div>
+  </div>
+
+  <div class="infra-card">
+    <div class="infra-name">Aspen Security Forum</div>
+    <div class="infra-type">Jährliche Konferenz — off-the-record + on-the-record</div>
+    <div class="infra-text">Seit 2010 jährlich in Aspen, Colorado. Teilnehmer: amtierende und ehemalige US-Regierungsvertreter, Geheimdienstchefs, Militärführung — gemeinsam mit leitenden Journalisten von NYT, Washington Post, NBC, NPR, Financial Times, Politico. Teile off-the-record. Das Aspen Strategy Group beschreibt den Rahmen selbst als »private, off-the-record discussions«, die seit der Gründung beibehalten werden.</div>
+    <div class="infra-belegt">✓ Dokumentiert: Aspen Institute Eigenpublikationen, Wikipedia, Redner-Listen öffentlich</div>
+  </div>
+
+  <div class="infra-card">
+    <div class="infra-name">Atlantic Council / DFRLab</div>
+    <div class="infra-type">Think Tank — Journalist:innen-Training</div>
+    <div class="infra-text">Das Digital Forensic Research Lab (DFRLab), gegründet 2016 am Atlantic Council, trainiert Journalisten und Zivilgesellschaft in »Desinformationsbekämpfung«. Das Programm »Digital Sherlocks« hat bis zu 1.000 Teilnehmer/Jahr. Finanzierung des Atlantic Council: u.a. US-Außenministerium, NATO, Lockheed Martin, Raytheon, Microsoft, Google. Eigene Transparenzseite vorhanden.</div>
+    <div class="infra-belegt">✓ Dokumentiert: DFRLab-Website, Atlantic Council Donor List (öffentlich)</div>
+  </div>
+
+  <div class="infra-card">
+    <div class="infra-name">Nachrichten-Agenturen als Gatekeeper</div>
+    <div class="infra-type">Strukturelle Vorfilterung</div>
+    <div class="infra-text">AP, Reuters, dpa beliefern tausende Redaktionen mit Basismaterial. Wer als Quelle in einer AP-Meldung nicht vorkommt, kommt in den meisten Folgeartikeln nicht vor. Pentagon, State Department und Geheimdienste haben eigene Pressebüros, die regelmäßig mit AP/Reuters kommunizieren — teils über autorisierte Hintergrundgespräche, teils over-the-record.</div>
+    <div class="infra-belegt">✓ Strukturell belegbar durch Vergleich von Quellen in Nachrichtenartikeln</div>
+  </div>
+
+  <div class="infra-card">
+    <div class="infra-name">»Background Briefings«</div>
+    <div class="infra-type">Nicht zitierfähige Vorabinformation</div>
+    <div class="infra-text">Regierungsstellen geben Informationen »on background« weiter: Der Journalist darf das Wissen verwenden, aber nicht die Quelle nennen. Ergebnis: Narrative, die aus dem Regierungsapparat stammen, erscheinen als eigenständige journalistische Einschätzungen. Das Pentagon nutzt dies regelmäßig — dokumentiert in Presserichtlinien und journalistischen Reflexionstexten.</div>
+    <div class="infra-belegt">✓ Dokumentiert: Journalismus-Fachliteratur, DoD Media Guidelines</div>
+  </div>
+
+  <div class="infra-card">
+    <div class="infra-name">Embedded Journalism</div>
+    <div class="infra-type">Strukturelle Perspektivbindung</div>
+    <div class="infra-text">Seit dem Irakkrieg 2003 systematisiert: Journalisten berichten von eingebetteter Position in Militäreinheiten. Sie erhalten Zugang und Schutz — im Gegenzug unterliegen sie militärischer Informationskontrolle. Auch ohne physisches Embedding wirkt das Prinzip: Wer den Zugang verliert, verliert die Story.</div>
+    <div class="infra-belegt">✓ Dokumentiert: Pentagon-Richtlinien ab 2003, journalistische Selbstreflexion</div>
+  </div>
+
+</div>
+
+<!-- MECHANISMUS -->
+<p class="section-label">// Wie ein Narrativ in die Schlagzeilen kommt — der Ablauf</p>
+
+<div class="mech-flow">
+  <div class="mech-step">
+    <div class="mech-num">01</div>
+    <div class="mech-content">
+      <div class="mech-title">Regierungsquelle definiert den Rahmen</div>
+      <div class="mech-detail">Eine Behörde — Pentagon, CIA, State Department — gibt eine Information frei. Sie entscheidet über Zeitpunkt, Formulierung und Kontext. »Chinesischer Spionageballon« ist ein Deutungsrahmen, kein neutraler Fakt.</div>
+    </div>
+  </div>
+  <div class="mech-step">
+    <div class="mech-num">02</div>
+    <div class="mech-content">
+      <div class="mech-title">Akkreditierte Medien nehmen auf</div>
+      <div class="mech-detail">PFAC-akkreditierte Journalisten erhalten die Pressemitteilung oder werden zum Briefing geladen. Nicht-akkreditierte erhalten keinen Primärzugang. Die Information fließt in AP/Reuters — und damit in tausende Redaktionen weltweit.</div>
+    </div>
+  </div>
+  <div class="mech-step">
+    <div class="mech-num">03</div>
+    <div class="mech-content">
+      <div class="mech-title">Der Rahmen reproduziert sich</div>
+      <div class="mech-detail">Folgeberichte zitieren die Erstberichte. Der Deutungsrahmen der Regierungsquelle erscheint in jeder Iteration als gesichertes Wissen — obwohl er eine Interpretation ist. Gegenerzählungen ohne akkreditierten Quellenzugang verschwinden in der Marginalität.</div>
+    </div>
+  </div>
+  <div class="mech-step">
+    <div class="mech-num">04</div>
+    <div class="mech-content">
+      <div class="mech-title">Das Thema verschwindet, wenn die Quelle aufhört zu sprechen</div>
+      <div class="mech-detail">Wenn keine neue Pentagon-Pressemitteilung kommt, gibt es keine neue »offizielle« Information. Redaktionen ohne eigene Quellen können nicht weiter berichten. Das Thema endet nicht, weil es gelöst ist — es endet, weil der Briefing-Strom versiegt.</div>
+    </div>
+  </div>
+  <div class="mech-step">
+    <div class="mech-num">05</div>
+    <div class="mech-content">
+      <div class="mech-title">Off-the-record-Räume schaffen gemeinsame Weltsicht</div>
+      <div class="mech-detail">Foren wie Aspen Security Forum bringen Journalisten und Regierungsvertreter in nicht zitierfähige Gespräche. Was dort besprochen wird, prägt Einschätzungen — ohne je als Quelle aufzutauchen. Das Aspen Strategy Group nennt dies selbst die »Grundlage unseres Erfolgs«.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ZITAT -->
+<div class="quote-box">
+  »Die Gründer einigten sich darauf, dass die Gruppe entschlossen überparteilich sein würde. Sie etablierten einen Rahmen privater, nicht zitierfähiger Diskussionen, an dem wir bis heute festhalten. Wir glauben, dass dies ein Hauptgrund für unseren Erfolg ist und warum wir weiterhin die ranghöchsten ehemaligen Regierungsbeamten beider Parteien sowie Journalisten, Geschäftsleute und Akademiker nach Aspen ziehen.«
+  <span class="quote-src">— Aspen Strategy Group, Eigenbeschreibung (öffentlich, aspeninstitute.org)</span>
+</div>
+
+<!-- TABELLE -->
+<p class="section-label">// Was ist dokumentiert — was nicht</p>
+<table class="status-table">
+  <thead>
+    <tr>
+      <th>Sachverhalt</th>
+      <th>Status</th>
+      <th>Quelle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Pentagon-Akkreditierungssystem (PFAC) kontrolliert Medienzugang</td>
+      <td><span class="dot dot-g"></span>Belegt</td>
+      <td>Pentagon-Richtlinie, März 2026</td>
+    </tr>
+    <tr>
+      <td>Alle vier Ballon-Abschüsse Feb. 2023 ausschließlich über Pentagon-Briefings kommuniziert</td>
+      <td><span class="dot dot-g"></span>Belegt</td>
+      <td>Pentagon-Pressemitteilungen, PBS, Wikipedia</td>
+    </tr>
+    <tr>
+      <td>Hersh-Bericht (8. Feb.) und Ballon-Hysterie liefen tagesgenau parallel</td>
+      <td><span class="dot dot-g"></span>Belegt</td>
+      <td>Tagesdaten öffentlich dokumentiert</td>
+    </tr>
+    <tr>
+      <td>Aspen Security Forum führt off-the-record-Gespräche zwischen Journalisten und Geheimdienstlern</td>
+      <td><span class="dot dot-g"></span>Belegt</td>
+      <td>Aspen Institute Eigenpublikation (aspeninstitute.org)</td>
+    </tr>
+    <tr>
+      <td>DFRLab / Atlantic Council wird u.a. von US-Außenministerium, Lockheed Martin, Raytheon finanziert</td>
+      <td><span class="dot dot-g"></span>Belegt</td>
+      <td>Atlantic Council Donor List (öffentlich)</td>
+    </tr>
+    <tr>
+      <td>»Background Briefings« erlauben Regierung, Narrative ohne Quellennennung zu platzieren</td>
+      <td><span class="dot dot-g"></span>Belegt</td>
+      <td>DoD Media Guidelines, journalistische Fachliteratur</td>
+    </tr>
+    <tr>
+      <td>Objekte 2–4 (10.–12. Feb.) wurden bis heute nicht offiziell identifiziert oder erklärt</td>
+      <td><span class="dot dot-y"></span>Teilbelegt</td>
+      <td>Keine offizielle Abschlusserklärung auffindbar</td>
+    </tr>
+    <tr>
+      <td>Die Ballon-Berichterstattung diente bewusst der Ablenkung vom Hersh-Bericht</td>
+      <td><span class="dot dot-r"></span>Nicht belegbar</td>
+      <td>Zeitliche Koinzidenz dokumentiert — Kausalität: offen</td>
+    </tr>
+    <tr>
+      <td>Redaktionen erhalten koordinierte Vorabanweisungen zu bestimmten Themen</td>
+      <td><span class="dot dot-r"></span>Nicht belegt</td>
+      <td>Strukturell plausibel, aber kein Primärdokument</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- OFFENE FRAGE -->
+<div class="open-question">
+  <strong>// Offene Frage</strong>
+  Eine Nachrichtenwoche, in der vier Militär-Abschüsse die Schlagzeilen dominieren und gleichzeitig ein Bericht über staatlich angeordnete Infrastruktur-Sabotage nahezu unsichtbar bleibt — und danach beide Themen gemeinsam verschwinden, ohne Ergebnis, ohne Erklärung: Ist das Zufall? Systemversagen? Oder funktioniert die Infrastruktur genau so, wie sie konstruiert ist?
+</div>
+
+</body>
+</html>
