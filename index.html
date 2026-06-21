@@ -389,6 +389,507 @@ footer{background:var(--navy);padding:3rem 1.5rem 2rem}
           <p class="fc-desc">Eine staatlich mitfinanzierte NGO, ein öffentlich-rechtlicher Sender und ein Justizministerium verdichten einen Einzelfall zum Gesetzgebungsmoment — und wer dabei finanziell profitiert. Mit Chronologie, Lobbyregister-Belegen und Namensübersetzungen.</p>
           <a class="fc-link" href="hateaid-fernandes-artikel.html">Zur Analyse</a>
         </div>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rundfunkkritik – Strukturelle Medienanalyse</title>
+<meta name="description" content="Rundfunkkritik.de – Strukturelle Medienanalyse des öffentlich-rechtlichen Rundfunks. Wissenschaftlich belegbar, juristisch belastbar, ohne Polemik.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Rundfunkkritik.de">
+<meta property="og:title" content="Rundfunkkritik.de – Strukturelle Medienanalyse">
+<meta property="og:description" content="Unabhängige Analyse des öffentlich-rechtlichen Rundfunks. Wissenschaftlich belegbar, juristisch belastbar, ohne Polemik.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.rundfunkkritik.de/">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Rundfunkkritik.de – Strukturelle Medienanalyse">
+<meta name="twitter:description" content="Unabhängige Analyse des öffentlich-rechtlichen Rundfunks. Wissenschaftlich belegbar, juristisch belastbar, ohne Polemik.">
+<link rel="canonical" href="https://www.rundfunkkritik.de/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1a2744;
+  --navy-light: #223160;
+  --pergament: #f5f0e8;
+  --rot: #c0392b;
+  --gold: #c9a84c;
+  --ocean: #1a5276;
+  --text-dark: #1c1c1c;
+  --text-mid: #3a3a3a;
+  --text-light: #6b6b6b;
+  --border: #d4c9b0;
+  --bg: #faf7f2;
+  --bg-card: #ffffff;
+  --shadow: 0 2px 12px rgba(26,39,68,0.07);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:17px;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text-dark);font-family:'Crimson Pro',Georgia,serif;font-weight:300;line-height:1.75;-webkit-font-smoothing:antialiased}
+
+/* ── NAV ── */
+nav{background:var(--navy);position:sticky;top:0;z-index:100;border-bottom:2px solid rgba(201,168,76,0.3)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;gap:0;flex-wrap:wrap}
+.nav-brand{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--pergament);text-decoration:none;padding:0.9rem 1.5rem 0.9rem 0;letter-spacing:0.02em;white-space:nowrap;border-right:1px solid rgba(255,255,255,0.1);margin-right:0.5rem}
+.nav-brand:hover{color:var(--gold)}
+nav a:not(.nav-brand){color:rgba(245,240,232,0.72);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.9rem 0.7rem;transition:color 0.2s;white-space:nowrap}
+nav a:not(.nav-brand):hover{color:var(--gold)}
+.nav-cta{background:var(--rot);color:white!important;padding:0.5rem 0.9rem!important;margin-left:auto;font-size:0.6rem!important}
+.nav-cta:hover{background:#a93226!important;color:white!important}
+
+/* ── HERO ── */
+.hero{background:var(--navy);padding:5rem 1.5rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(201,168,76,0.035) 60px,rgba(201,168,76,0.035) 61px)}
+.hero-inner{max-width:820px;margin:0 auto;position:relative;text-align:center}
+.hero-label{display:inline-block;border:1px solid rgba(201,168,76,0.4);color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.35rem 1rem;margin-bottom:2rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;color:var(--pergament);line-height:1.12;margin-bottom:1.25rem;letter-spacing:-0.01em}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero p{font-size:1.1rem;color:rgba(245,240,232,0.72);max-width:620px;margin:0 auto 2.5rem;line-height:1.65}
+.hero-stats{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;padding-top:2.5rem;border-top:1px solid rgba(201,168,76,0.2)}
+.stat{text-align:center}
+.stat-value{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--gold);display:block;line-height:1}
+.stat-label{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,240,232,0.45);display:block;margin-top:0.35rem}
+
+/* ── COUNTDOWN ── */
+.countdown-bar{background:var(--rot);padding:0.9rem 1.5rem;text-align:center}
+.countdown-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap}
+.countdown-label{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.85)}
+.countdown-timer{display:flex;gap:0.75rem;align-items:center}
+.cd-unit{text-align:center}
+.cd-num{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:white;display:block;line-height:1;min-width:2.2ch}
+.cd-sub{font-family:'JetBrains Mono',monospace;font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block}
+.cd-sep{color:rgba(255,255,255,0.4);font-size:1.4rem;line-height:1;padding-bottom:0.6rem}
+.countdown-bar a{color:white;font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,0.5);padding:0.3rem 0.8rem;white-space:nowrap}
+.countdown-bar a:hover{background:rgba(255,255,255,0.15)}
+
+/* ── SECTIONS ── */
+section{padding:4rem 1.5rem}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-header{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:2.5rem;padding-bottom:1rem;border-bottom:2px solid var(--border)}
+.section-header h2{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--navy)}
+.section-header .section-tag{font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-light)}
+
+/* ── FEATURE ARTICLES (groß, atmet) ── */
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem}
+.feature-card{background:var(--bg-card);border:1px solid var(--border);box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform 0.2s,box-shadow 0.2s}
+.feature-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(26,39,68,0.12)}
+.fc-top{background:var(--navy);padding:1.5rem 1.75rem 1.25rem}
+.fc-rubrik{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
+.fc-title{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--pergament);line-height:1.25}
+.fc-title em{color:var(--gold);font-style:italic}
+.fc-body{padding:1.5rem 1.75rem;flex:1;display:flex;flex-direction:column;gap:0.75rem}
+.fc-desc{font-size:0.95rem;color:var(--text-mid);line-height:1.6;flex:1}
+.fc-link{display:inline-block;margin-top:0.5rem;font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ocean);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:1px}
+.fc-link:hover{color:var(--rot);border-bottom-color:var(--rot)}
+.fc-link::after{content:' →'}
+
+/* NEW badge */
+.badge-new{display:inline-block;background:var(--rot);color:white;font-family:'JetBrains Mono',monospace;font-size:0.52rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.15rem 0.5rem;vertical-align:middle;margin-left:0.5rem;position:relative;top:-1px}
+
+/* ── KURZMELDUNGEN ── */
+.kurz-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+.kurz-card{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--gold);padding:1.25rem 1.5rem;transition:box-shadow 0.2s}
+.kurz-card:hover{box-shadow:var(--shadow)}
+.kurz-card.rot{border-left-color:var(--rot)}
+.kurz-card.ocean{border-left-color:var(--ocean)}
+.kc-rubrik{font-family:'JetBrains Mono',monospace;font-size:0.57rem;letter-spacing:0.13em;text-transform:uppercase;color:var(--text-light);margin-bottom:0.5rem}
+.kc-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:0.5rem}
+.kc-desc{font-size:0.88rem;color:var(--text-mid);line-height:1.55;margin-bottom:0.75rem}
+.kc-link{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ocean);text-decoration:none}
+.kc-link:hover{color:var(--rot)}
+.kc-link::after{content:' →'}
+
+/* ── MECHANISMEN ── */
+#mechanismen{background:var(--navy)}
+#mechanismen .section-header h2{color:var(--pergament)}
+#mechanismen .section-header .section-tag{color:rgba(245,240,232,0.4)}
+#mechanismen .section-header{border-bottom-color:rgba(201,168,76,0.25)}
+.mech-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;background:rgba(255,255,255,0.06)}
+.mech-item{background:var(--navy);padding:1.5rem;transition:background 0.2s}
+.mech-item:hover{background:var(--navy-light)}
+.mech-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:rgba(201,168,76,0.3);line-height:1;margin-bottom:0.5rem}
+.mech-name{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:var(--pergament);margin-bottom:0.2rem}
+.mech-sub{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);opacity:0.7;margin-bottom:0.6rem}
+.mech-desc{font-size:0.82rem;color:rgba(245,240,232,0.55);line-height:1.55}
+
+/* ── BEWEISE ── */
+#beweise{background:var(--pergament)}
+.beweis-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.25rem}
+.beweis-card{background:white;border:1px solid var(--border);padding:1.5rem}
+.bc-letter{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:var(--gold);line-height:1;margin-bottom:0.5rem}
+.bc-title{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:0.2rem}
+.bc-count{font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--rot);margin-bottom:0.6rem}
+.bc-desc{font-size:0.85rem;color:var(--text-mid);line-height:1.5}
+
+/* Dossier Download Box */
+.dossier-box{background:var(--navy);padding:2rem 2.5rem;margin-top:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.db-text{color:var(--pergament)}
+.db-text strong{display:block;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:0.25rem}
+.db-text span{font-size:0.88rem;color:rgba(245,240,232,0.6);font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.08em}
+.db-links{display:flex;flex-direction:column;gap:0.6rem}
+.db-link{display:inline-block;background:var(--gold);color:var(--navy);font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.5rem 1.1rem;text-decoration:none;font-weight:500;white-space:nowrap}
+.db-link:hover{background:#b8963e}
+.db-link.secondary{background:transparent;color:var(--gold);border:1px solid rgba(201,168,76,0.4)}
+.db-link.secondary:hover{background:rgba(201,168,76,0.1)}
+
+/* ── URTEILE ── */
+.urteil-stack{display:flex;flex-direction:column;gap:1.25rem}
+.urteil-card{background:var(--bg-card);border:1px solid var(--border);display:grid;grid-template-columns:180px 1fr;overflow:hidden}
+.uc-side{padding:1.25rem 1.5rem;display:flex;flex-direction:column;justify-content:center;gap:0.35rem;border-right:1px solid var(--border);background:var(--pergament)}
+.uc-az{font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.06em;color:var(--text-light);line-height:1.4}
+.uc-status{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.2rem 0.5rem;display:inline-block;margin-top:0.25rem}
+.uc-status.ausstehend{background:rgba(201,168,76,0.15);color:#8a6d0e}
+.uc-status.negativ{background:rgba(192,57,43,0.1);color:var(--rot)}
+.uc-status.positiv{background:rgba(26,82,118,0.1);color:var(--ocean)}
+.uc-body{padding:1.25rem 1.75rem}
+.uc-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem}
+.uc-desc{font-size:0.88rem;color:var(--text-mid);line-height:1.55}
+.uc-link{display:inline-block;margin-top:0.6rem;font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ocean);text-decoration:none}
+.uc-link:hover{color:var(--rot)}
+.uc-link::after{content:' →'}
+
+/* ── NEWSLETTER ── */
+.newsletter{background:var(--ocean);padding:3rem 1.5rem;text-align:center}
+.nl-inner{max-width:520px;margin:0 auto}
+.nl-label{font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:0.75rem}
+.nl-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:white;margin-bottom:0.75rem;font-style:italic}
+.nl-desc{font-size:0.9rem;color:rgba(255,255,255,0.7);margin-bottom:1.5rem;line-height:1.6}
+.nl-btn{display:inline-block;background:var(--gold);color:var(--navy);font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.75rem 2rem;text-decoration:none;font-weight:500}
+.nl-btn:hover{background:#b8963e}
+.nl-fine{font-family:'JetBrains Mono',monospace;font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:1rem}
+.nl-fine a{color:rgba(255,255,255,0.5);text-decoration:none}
+
+/* ── VIDEOS ── */
+#videos{background:var(--bg)}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.video-card{background:var(--bg-card);border:1px solid var(--border)}
+.vc-top{background:var(--navy);padding:1rem 1.25rem}
+.vc-label{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold)}
+.vc-title{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:var(--pergament);margin-top:0.4rem;line-height:1.25}
+.vc-body{padding:1rem 1.25rem}
+.vc-desc{font-size:0.85rem;color:var(--text-mid);line-height:1.55;margin-bottom:0.75rem}
+.vc-link{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ocean);text-decoration:none}
+.vc-link:hover{color:var(--rot)}
+.vc-link::after{content:' →'}
+
+/* ── ÜBER ── */
+#ueber{background:var(--pergament)}
+.ueber-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem}
+.ueber-block h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0.6rem}
+.ueber-block p{font-size:0.9rem;color:var(--text-mid);line-height:1.65}
+
+/* ── DOWNLOADS & EXTERN ── */
+.dl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.75rem;margin-top:1.5rem}
+.dl-item{background:var(--bg-card);border:1px solid var(--border);padding:0.85rem 1rem;text-decoration:none;display:block;transition:box-shadow 0.2s}
+.dl-item:hover{box-shadow:var(--shadow)}
+.dl-item .dl-name{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:0.2rem}
+.dl-item .dl-desc{font-size:0.8rem;color:var(--text-light)}
+
+/* ── TEILEN ── */
+.teilen-row{display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:1.5rem}
+.teilen-btn{display:inline-block;padding:0.5rem 1.1rem;font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border:1px solid var(--border);color:var(--text-mid);transition:background 0.2s,color 0.2s}
+.teilen-btn:hover{background:var(--navy);color:var(--pergament);border-color:var(--navy)}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);padding:3rem 1.5rem 2rem}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;margin-bottom:2rem}
+.footer-col h4{font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
+.footer-col a{display:block;font-size:0.85rem;color:rgba(245,240,232,0.55);text-decoration:none;margin-bottom:0.35rem;transition:color 0.2s}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,240,232,0.3)}
+.footer-bottom a{color:rgba(245,240,232,0.45);text-decoration:none}
+.footer-bottom a:hover{color:var(--gold)}
+
+/* ── REVEAL ── */
+.reveal{opacity:1;transform:translateY(0);transition:opacity 0.5s ease,transform 0.5s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:680px){
+  .urteil-card{grid-template-columns:1fr}
+  .uc-side{border-right:none;border-bottom:1px solid var(--border)}
+  .dossier-box{flex-direction:column}
+  .hero-stats{gap:1.5rem}
+  nav a:not(.nav-brand){padding:0.7rem 0.4rem;font-size:0.56rem}
+}
+
+  /* SUCHE */
+  .search-wrap { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 1rem; }
+  .search-input {
+    width: 100%;
+    padding: 12px 20px 12px 44px;
+    font-family: var(--mono);
+    font-size: 13px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-dark);
+    outline: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='M21 21l-4.35-4.35'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 14px center;
+    transition: border-color .2s;
+  }
+  .search-input:focus { border-color: var(--accent); }
+  .card-hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="top">
+  <div class="nav-inner">
+    <a class="nav-brand" href="/">Rundfunkkritik.de</a>
+    <a href="#aktuell">Aktuell</a>
+    <a href="#mechanismen">Mechanismen</a>
+    <a href="#beweise">Beweise</a>
+    <a href="#urteile">Urteile</a>
+    <a href="#ueber">Über</a>
+    <a href="dsgvo_anfrage_beitragsservice.html">DSGVO-Anfrage</a>
+    <a href="widerstand.html">Widerstand</a>
+    <a href="#videos">Videos</a>
+    <a href="https://ko-fi.com/rundfunkkritikde" class="nav-cta" target="_blank" rel="noopener">☕ Unterstützen</a>
+  </div>
+</nav>
+
+<!-- COUNTDOWN -->
+<div class="countdown-bar">
+  <div class="countdown-inner">
+    <span class="countdown-label">BVerfG · 23. Juni 2026 · 10:00 Uhr · Karlsruhe</span>
+    <div class="countdown-timer">
+      <div class="cd-unit"><span class="cd-num" id="cd-d">--</span><span class="cd-sub">Tage</span></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-unit"><span class="cd-num" id="cd-h">--</span><span class="cd-sub">Std</span></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-unit"><span class="cd-num" id="cd-m">--</span><span class="cd-sub">Min</span></div>
+      <span class="cd-sep">:</span>
+      <div class="cd-unit"><span class="cd-num" id="cd-s">--</span><span class="cd-sub">Sek</span></div>
+    </div>
+    <a href="bverfg_kampagne_juni2026.html">Analyse & Hintergrund →</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">Unabhängige Strukturanalyse</div>
+    <h1>Was der ÖRR <em>wirklich</em> ist</h1>
+    <p>Der öffentlich-rechtliche Rundfunk erfüllt seinen Verfassungsauftrag strukturell nicht. Keine Polemik. Keine Verschwörungstheorie. Belegt durch Wissenschaft, Rechtsprechung und die eigenen Dokumente der Sender.</p>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-value">10</span><span class="stat-label">Systemische Mechanismen</span></div>
+      <div class="stat"><span class="stat-value">31</span><span class="stat-label">Dokumentierte Belege</span></div>
+      <div class="stat"><span class="stat-value">8,5 Mrd.</span><span class="stat-label">Euro Zwangsbeiträge / Jahr</span></div>
+      <div class="stat"><span class="stat-value">~0%</span><span class="stat-label">Erfolgsquote Bürgerbeschwerden</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ AKTUELL ══ -->
+<section id="aktuell">
+  <div class="section-inner">
+
+    <!-- Neue Tiefenanalysen -->
+    <div class="section-header reveal">
+      <h2>Neue Analysen</h2>
+      <span class="section-tag">Tiefenrecherche · Mai / Juni 2026</span>
+    </div>
+
+          <div class="search-wrap">
+        <input type="search" class="search-input" id="artikel-suche" placeholder="Artikel durchsuchen…" aria-label="Artikel durchsuchen">
+      </div>
+    <div class="feature-grid">
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Medienskandal · ZDF <span class="badge-new">Neu</span></div>
+          <div class="fc-title">Der vergessene <em>Böhmermann-Skandal:</em> Diskreditierung einer Traumatherapeutin</div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">Im September 2023 griff Jan Böhmermann im ZDF Magazin Royale die Traumatherapeutin Michaela Huber öffentlich an. Was folgte: Staatsschutz-Ermittlungen, eine Beschwerde des Bundesrats für Psychotherapie und ein ZDF-Fernsehrat, der die Sendung stoppte.</p>
+          <a class="fc-link" href="rundfunkkritik-boehmermann-huber.html">Zur Analyse</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Vollstreckung · BGH VII ZB 29/24 <span class="badge-new">Neu</span></div>
+          <div class="fc-title">Der Geist, der vollstreckt: <em>„i.A. Renz“</em></div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">„i.A. Renz, Abteilung Operations 1“ unterzeichnet Zwangsvollstreckungen für BR, MDR und SWR — gleichzeitig, massenhaft. Wer steckt dahinter? BGH-Beschluss, DSGVO-Auskunft und eine Frage zur demokratischen Kontrolle.</p>
+          <a class="fc-link" href="renz-phantom-unterzeichner.html">Zur Analyse</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Medienanalyse · Pressefreiheit <span class="badge-new">Neu</span></div>
+          <div class="fc-title">Doppelte Selektivität: <em>Wenn ARD und ZDF über Pressefreiheit berichten</em></div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">ARD und ZDF berichten ausführlich über Pressefreiheitsverstöße weltweit — und systematisch lückenhaft über ähnliche Vorgänge im eigenen Haus. Eine Analyse der selektiven Berichterstattung.</p>
+          <a class="fc-link" href="pressefreiheit-selektivitaet.html">Zur Analyse</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Dokumentation · Juni 2026 <span class="badge-new">Neu</span></div>
+          <div class="fc-title">ÖRR-Versagen: <em>6 weitere Fälle</em> — Teil 2</div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">Sechs neue Fälle: ZDF-Unterlassungserklärung, KI-Video ohne Kennzeichnung, Merkel-Schnitt-Täuschung, Politbarometer-Struktur und mehr. Die Dokumentation wächst.</p>
+          <a class="fc-link" href="oerr_versagen_juni2026_Teil2.html">Zur Analyse</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Dossier · Medienstruktur <span class="badge-new">Neu</span></div>
+          <div class="fc-title">Wer brieft die Medien? <em>Narrative-Infrastruktur zwischen Pentagon und Aspen</em></div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">Wie kommt ein Thema auf die Titelseite — und wie verschwindet es wieder? Ein Dossier über Think Tanks, Briefing-Netzwerke und die Frage, wer die Agenda des öffentlich-rechtlichen Rundfunks setzt.</p>
+          <a class="fc-link" href="rk-dossier-medienbriefing.html">Zum Dossier</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Geschichte · Strukturanalyse <span class="badge-new">Neu</span></div>
+          <div class="fc-title">Der ÖRR von 1945 bis heute: <em>Wie ein Instrument entstand</em></div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">Von der alliierten Gründung bis zum Reformstau 2026 — eine strukturelle Geschichtsanalyse des deutschen öffentlich-rechtlichen Rundfunks. Ohne Polemik, mit Belegen.</p>
+          <a class="fc-link" href="oerr-geschichte.html">Zur Analyse</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Internationaler Vergleich · Juni 2026 <span class="badge-new">Neu</span></div>
+          <div class="fc-title">Der ÖRR in der Krise: <em>Ein Weltüberblick</em></div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">Was in Deutschland als hausgemachtes Problem gilt, ist ein globales Strukturproblem. Öffentlich-rechtliche Systeme weltweit unter Druck — Vergleich von BBC, ORF, SRG, CBC und mehr.</p>
+          <a class="fc-link" href="oerr-international-v2.html">Zur Analyse</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Pandemie-Berichterstattung · Historisch <span class="badge-new">Neu</span></div>
+          <div class="fc-title">Das Drehbuch, das niemand mehr zeigen darf: <em>Schweinegrippe 2009</em></div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">Ein ZDF-Frontal-21-Beitrag von 2010 über die Schweinegrippe-Impfkampagne ist heute nicht mehr abrufbar. Was war drin — und warum verschwand er?</p>
+          <a class="fc-link" href="schweinegrippe_2009_drehbuch.html">Zur Analyse</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Medienkritik · Pandemie <span class="badge-new">Neu</span></div>
+          <div class="fc-title">Sie versuchen es <em>immer wieder:</em> Fünf Jahrzehnte Pandemie-Berichterstattung</div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">Eine Zeitreise durch fünf Jahrzehnte — von der Spanischen Grippe bis COVID. Immer dieselbe Struktur: Panik, Expertenkonsens, Abweichler marginalisiert. Damals Schwurbelei — heute Akte.</p>
+          <a class="fc-link" href="rk_schweinegrippe_zeitreise.html">Zur Analyse</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Enquete-Kommission · Bundestag 2026 <span class="badge-new">Neu</span></div>
+          <div class="fc-title">Der pensionierte Störenfried: <em>Prof. Sterz vor der Enquete</em></div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">Prof. Sterz (Neurologe, pensioniert) nannte in der Enquete-Kommission des Bundestages 20.000–60.000 impfassoziierte Todesfälle in Deutschland. Seine Methodik: das PEI selbst. Die Reaktion: sein Name, nicht sein Argument.</p>
+          <a class="fc-link" href="sterz_enquete_juni2026.html">Zur Analyse</a>
+        </div>
+      </div>
+
+
+
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Interessenkonflikt · Verfassungsrecht <span class="badge-new">Neu</span></div>
+          <div class="fc-title">Die <em>Kirchhof-Brüder:</em> Wer hat den Rundfunkbeitrag erfunden – und was hat er gekostet?</div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">ARD/ZDF beauftragten 2010 Paul Kirchhof mit dem Verfassungsgutachten zum Rundfunkbeitrag. Bruder Ferdinand saß später als BVerfG-Vizepräsident zu Gericht. Das Honorar: bis heute geheim. Dokumentiert mit IFG-Antwort des WDR.</p>
+          <a class="fc-link" href="kirchhof_brueder_artikel.html">Zur Analyse</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Vollstreckung · Beitragsservice <span class="badge-new">Neu</span></div>
+          <div class="fc-title">Die <em>Vollstreckungsmaschinerie</em> des Beitragsservice</div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">Wie der Beitragsservice Vollstreckungsverfahren einleitet, welche Behörden beteiligt sind und welche rechtlichen Hebel Betroffene haben. Mit Checkliste und Muster-Widerspruch.</p>
+          <a class="fc-link" href="vollstreckung-beitragsservice.html">Zur Analyse</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Dokumentation · 6 Fälle <span class="badge-new">Neu</span></div>
+          <div class="fc-title">ÖRR-Versagen: <em>6 Fälle,</em> die Sie kennen müssen</div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">Sechs aktuelle Fälle, die zeigen, warum der öffentlich-rechtliche Rundfunk seinen Verfassungsauftrag strukturell verfehlt: von ZDF-Brautmarkt über 44 % Meinungsfreiheit bis zur supprimierten UNRWA-Doku.</p>
+          <a class="fc-link" href="oerr_versagen_juni2026.html">Zur Analyse</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Falldokumentation · 21 Fälle <span class="badge-new">Neu</span></div>
+          <div class="fc-title">Die <em>Aufreger-Liste:</em> 18 dokumentierte Fälle von ÖRR-Versagen</div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">Sprache, Ideologie, Vertuschung, Finanzen: 21 belegte Einzelfälle in vier thematischen Clustern. Die vollständige Falldokumentation als Referenz.</p>
+          <a class="fc-link" href="oerr-aufreger-liste.html">Zur Übersicht</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Reform · Finanzierung <span class="badge-new">Neu</span></div>
+          <div class="fc-title">Reform-Manifest: Warum <em>5 Euro reichen</em> – und was damit finanziert werden sollte</div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">Gestützt auf Stiftung Marktwirtschaft, TU Dortmund und Infratest dimap: ein konkretes Modell für einen schlanken, demokratisch legitimierten Grundversorgungsfunk.</p>
+          <a class="fc-link" href="oerr-reform-manifest.html">Zum Manifest</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Medienkompetenz · Werkzeug <span class="badge-new">Neu</span></div>
+          <div class="fc-title">Der <em>ÖRR-Decoder:</em> So erkennen Sie Manipulation im öffentlich-rechtlichen Rundfunk</div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">Sieben Fragen, mit denen Zuschauer und Leser Framing, Agenda-Setting und editoriale Schlagseite selbst erkennen können. Praxiswerkzeug für alle.</p>
+          <a class="fc-link" href="oerr-decoder.html">Zum Werkzeug</a>
+        </div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="fc-top">
+          <div class="fc-rubrik">Interessenkonflikt · NGO · Gesetzgebung</div>
+          <div class="fc-title">Die <em>orchestrierte</em> Kampagne: HateAid, Fernandes und das ZDF</div>
+        </div>
+        <div class="fc-body">
+          <p class="fc-desc">Eine staatlich mitfinanzierte NGO, ein öffentlich-rechtlicher Sender und ein Justizministerium verdichten einen Einzelfall zum Gesetzgebungsmoment — und wer dabei finanziell profitiert. Mit Chronologie, Lobbyregister-Belegen und Namensübersetzungen.</p>
+          <a class="fc-link" href="hateaid-fernandes-artikel.html">Zur Analyse</a>
+        </div>
       </div>
 
       <div class="feature-card reveal">
