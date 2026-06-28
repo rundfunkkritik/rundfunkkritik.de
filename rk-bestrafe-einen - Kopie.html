@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bestrafe einen, erziehe tausende | rundfunkkritik.de</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:ital,wght@0,400;1,400&family=JetBrains+Mono:wght@400&display=swap');
+
+  :root {
+    --navy: #1a2e4a;
+    --navy-deep: #111e30;
+    --gold: #b8963e;
+    --cream: #f4f1ea;
+    --text: #1a1a1a;
+    --muted: #5a6270;
+    --border: #d0ccc4;
+    --red-dark: #6b0f0f;
+    --red-mid: #fdf0f0;
+    --green-dark: #0a3a1a;
+    --green-mid: #f0fdf4;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.78;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: var(--navy-deep);
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--gold);
+  }
+  .site-logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--cream);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .site-logo span { color: var(--gold); }
+  .site-nav a {
+    color: #9aa5b4;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-left: 2rem;
+    transition: color 0.2s;
+  }
+  .site-nav a:hover { color: var(--gold); }
+
+  /* HERO — dunkel, fast bedrohlich */
+  .hero {
+    background: var(--navy-deep);
+    padding: 4.5rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+  }
+  .hero::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+  }
+  .series-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 0.28rem 0.85rem;
+    margin-bottom: 1.8rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.12;
+    max-width: 780px;
+    margin: 0 auto 1.2rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: #8a99aa;
+    max-width: 580px;
+    margin: 0 auto 2.2rem;
+    font-style: italic;
+  }
+  .hero-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: #4a5a6a;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* TUCHOLSKY OPENER */
+  .tucholsky {
+    background: #fff;
+    border-left: 4px solid var(--gold);
+    padding: 2rem 2.2rem;
+    margin: 3rem auto;
+    max-width: 760px;
+    position: relative;
+  }
+  .tucholsky::before {
+    content: '\201E';
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.25;
+    position: absolute;
+    top: -0.5rem;
+    left: 1rem;
+    line-height: 1;
+  }
+  .tucholsky p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.12rem;
+    font-style: italic;
+    color: #2a2a2a;
+    line-height: 1.7;
+    padding-left: 1rem;
+  }
+  .tucholsky cite {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 0.8rem;
+    padding-left: 1rem;
+    font-style: normal;
+  }
+
+  /* ARTIKEL */
+  .article-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 2rem 5rem;
+  }
+  .article-wrap p {
+    font-size: 1.06rem;
+    margin-bottom: 1.5rem;
+  }
+  .article-wrap h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 3rem 0 1.2rem;
+    padding-bottom: 0.45rem;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  /* TIMELINE: Dettmar */
+  .timeline {
+    margin: 2.5rem 0;
+    position: relative;
+    padding-left: 2rem;
+    border-left: 2px solid var(--border);
+  }
+  .timeline-item {
+    margin-bottom: 1.8rem;
+    position: relative;
+  }
+  .timeline-item::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    position: absolute;
+    left: -2.6rem;
+    top: 0.35rem;
+  }
+  .timeline-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+    display: block;
+  }
+  .timeline-item p {
+    font-size: 0.97rem;
+    margin: 0;
+    color: var(--text);
+  }
+  .timeline-item.red::before { background: #c0392b; }
+  .timeline-item.red .timeline-date { color: #c0392b; }
+
+  /* GEGENÜBERSTELLUNG */
+  .versus {
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .versus-label {
+    background: var(--navy);
+    padding: 0.55rem 1.2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-align: center;
+  }
+  .versus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 580px) {
+    .versus-grid { grid-template-columns: 1fr; }
+    .site-nav { display: none; }
+  }
+  .versus-side {
+    padding: 1.4rem 1.5rem;
+  }
+  .versus-left {
+    background: var(--red-mid);
+    border-right: 1px solid var(--border);
+  }
+  .versus-right {
+    background: var(--green-mid);
+  }
+  .versus-source {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    display: block;
+  }
+  .versus-left .versus-source { color: #c0392b; }
+  .versus-right .versus-source { color: #1a7a3f; }
+  .versus-side p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .versus-left p { color: var(--red-dark); }
+  .versus-right p { color: var(--green-dark); }
+
+  /* GG-BOX */
+  .gg-box {
+    background: var(--navy);
+    color: #fff;
+    padding: 2rem 2.2rem;
+    margin: 2.5rem 0;
+    border-left: 4px solid var(--gold);
+  }
+  .gg-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.7rem;
+    display: block;
+  }
+  .gg-box p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* DREI-SÄTZE */
+  .drei-saetze {
+    background: #fff;
+    border: 2px solid var(--gold);
+    padding: 2rem;
+    margin: 2.5rem 0;
+  }
+  .drei-saetze-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .drei-saetze p {
+    font-size: 1rem;
+    font-style: italic;
+    color: #2a3a2a;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* FACT-BOX */
+  .fact-box {
+    background: var(--navy);
+    color: #fff;
+    padding: 1.6rem 2rem;
+    margin: 2rem 0;
+    border-left: 4px solid var(--gold);
+  }
+  .fact-box .fact-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.7rem;
+    display: block;
+  }
+  .fact-box p {
+    color: #d0d8e4;
+    font-size: 0.97rem;
+    line-height: 1.65;
+    font-style: italic;
+    margin: 0;
+  }
+
+  /* SCHLUSS */
+  .closing {
+    border-top: 3px double var(--border);
+    margin-top: 3rem;
+    padding-top: 2rem;
+  }
+  .closing p { color: var(--muted); font-size: 1.03rem; }
+  .closing strong { color: var(--navy); }
+
+  /* FOOTER */
+  .site-footer {
+    background: var(--navy-deep);
+    color: #4a5a6a;
+    text-align: center;
+    padding: 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-top: 1px solid #1e2e40;
+  }
+  .site-footer a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-logo" href="/">Rundfunk<span>kritik</span></a>
+  <nav class="site-nav">
+    <a href="#">Analyse</a>
+    <a href="#">Chronik</a>
+    <a href="#">Quellen</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="series-tag">Bestrafe einen — erziehe tausende</div>
+  <h1>Der Richter, der prüfte — <em>und was aus ihm wurde</em></h1>
+  <p class="hero-sub">Über richterliche Unabhängigkeit, ein Urteil aus Weimar und die unsichtbare Botschaft, die kein Rundschreiben brauchte</p>
+  <div class="hero-meta">Juni 2026 &nbsp;·&nbsp; Art. 97 GG &nbsp;·&nbsp; Dettmar · KRiStA · BGH</div>
+</section>
+
+<div class="tucholsky">
+  <p>„Und löckt er da gegen den Stachel, so ist erfahrungsgemäß seines Bleibens in der Gruppe und im Stand nicht mehr allzulange. Oder aber, er darf bleiben: unter so entwürdigenden, seine Arbeit so erschwerenden Umständen, dass er den ungleichen Kampf aufgibt und quittiert."</p>
+  <cite>Kurt Tucholsky · Deutsche Richter · Glosse · 1927</cite>
+</div>
+
+<article class="article-wrap">
+
+  <p>Knapp hundert Jahre nach diesen Zeilen, im Frühjahr 2021, setzte ein Familienrichter aus Weimar die Maskenpflicht für Kinder an zwei Schulen aus. Er stützte sich auf Sachverständigengutachten. Er tat, was Richter tun sollen: prüfen, entscheiden, begründen.</p>
+
+  <p>2024 wurde er verurteilt. Zwei Jahre Bewährung. Berufsverbot. Rechtsbeugung.</p>
+
+  <h2>Was Christian Dettmar tat — und was daraus wurde</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <span class="timeline-date">April 2021</span>
+      <p>Familienrichter Christian Dettmar, Amtsgericht Weimar, erlässt einen Beschluss: Zwei Schulen werden von Maskenpflicht, Testpflicht und Abstandsregeln befreit. Grundlage: von ihm in Auftrag gegebene Sachverständigengutachten.</p>
+    </div>
+    <div class="timeline-item red">
+      <span class="timeline-date">April 2021 — unmittelbar danach</span>
+      <p>Hausdurchsuchung. Einleitung eines Strafverfahrens. Mediale Diskreditierung. Der Beschluss wird aufgehoben.</p>
+    </div>
+    <div class="timeline-item red">
+      <span class="timeline-date">November 2024</span>
+      <p>Bundesgerichtshof bestätigt Verurteilung: Rechtsbeugung. Zwei Jahre Bewährung, Berufsverbot. Sogar der Generalbundesanwalt hatte auf Aufhebung plädiert — der BGH ignorierte das.</p>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">Oktober 2025</span>
+      <p>Derselbe BGH (anderer Senat): Ärzte, die staatlich angeordnete Impfungen verabreichten, waren „Erfüllungsgehilfen des Hoheitsträgers" — keine eigene Haftung (BGH, III ZR 180/24).</p>
+    </div>
+  </div>
+
+  <div class="versus">
+    <div class="versus-label">Derselbe Bundesgerichtshof — zwei Maßstäbe</div>
+    <div class="versus-grid">
+      <div class="versus-side versus-left">
+        <span class="versus-source">BGH · November 2024 · Strafsenat</span>
+        <p>Richter Dettmar prüfte eigenständig, holte Gutachten ein und entschied gegen den offiziellen Konsens. Urteil: Rechtsbeugung. Zwei Jahre Bewährung, Berufsverbot.</p>
+      </div>
+      <div class="versus-side versus-right">
+        <span class="versus-source">BGH · Oktober 2025 · III ZR 180/24</span>
+        <p>Ärzte, die staatlich angeordnete Impfungen ohne eigene Prüfung verabreichten, sind „Erfüllungsgehilfen". Keine persönliche Haftung für Schäden.</p>
+      </div>
+    </div>
+  </div>
+
+  <p>Das ist kein Widerspruch. Das ist ein System: Wer dem Staat gehorcht, ist geschützt. Wer eigenständig prüft und abweicht, trägt die Konsequenzen.</p>
+
+  <h2>Die Botschaft, die kein Rundschreiben brauchte</h2>
+
+  <p>Kein Justizminister musste ein Schreiben versenden. Das Urteil gegen Dettmar war selbst die Botschaft.</p>
+
+  <p>Jeder Richter in Deutschland, der den Fall kannte — und alle kannten ihn — las dieselbe Information zwischen den Zeilen: Wer gegen den Konsens urteilt, riskiert Amt, Lebensunterhalt und Ruf. Das nennt sich in der Rechtswissenschaft Generalprävention. Im Alltag nennt es sich Einschüchterung.</p>
+
+  <p>Und sie wirkt. Landgerichte, die heute zögern, das BGH-Urteil zu Impfschäden vom März 2026 anzuwenden, tun das nicht, weil sie das Recht nicht verstehen. Jeder Volljurist versteht es sofort. Sie tun es, weil sie wissen, was mit denen passiert, die als Erste durch eine unbequeme Tür gehen.</p>
+
+  <div class="gg-box">
+    <span class="gg-label">Artikel 97 Grundgesetz</span>
+    <p>„Die Richter sind unabhängig und nur dem Gesetze unterworfen."</p>
+  </div>
+
+  <p>Was Artikel 97 nicht sagt: wie Richter mit den ungeschriebenen Regeln eines Berufsstandes umgehen, der seine Abweichler kennt — und behandelt.</p>
+
+  <h2>Was die Medien berichteten — und was nicht</h2>
+
+  <p>Acht simultane Hausdurchsuchungen an einem Dienstagmorgen — bei Dettmar, bei der Mutter der Kinder, bei ihrem Rechtsbeistand, bei einem Richterkollegen, bei einem befreundeten Ehepaar — und bei drei Universitätsprofessoren, die einem Gericht ein rechtmäßig angefordertes Gutachten geliefert hatten.</p>
+
+  <div class="versus">
+    <div class="versus-label">Drei Professorinnen und Professoren — durchsucht wegen eines Gutachtens</div>
+    <div class="versus-grid">
+      <div class="versus-side versus-left">
+        <span class="versus-source">Gutachten 2021 — inhaltlich nie gewürdigt</span>
+        <p>Prof. Dr. Ines Kappstein (Krankenhaushygiene): Masken schützen im Alltag nicht nachweisbar vor Virusübertragung. Prof. Dr. Christof Kuhbandner (Psychologie): Kinder werden durch Maskenpflicht psychisch geschädigt. Prof. Dr. Ulrike Kämmerer (Biologie): PCR-Tests sind kein verlässlicher Nachweis für Infektiosität.</p>
+      </div>
+      <div class="versus-side versus-right">
+        <span class="versus-source">Cochrane Review 2023 — größte verfügbare Studiensynthese</span>
+        <p>Masken im öffentlichen Raum haben keinen nachweisbaren Effekt auf die Übertragung von Atemwegsinfektionen. Kein Gericht hat die Gutachten je inhaltlich geprüft. Keine der betroffenen Redaktionen hat das nachträglich getan.</p>
+      </div>
+    </div>
+  </div>
+
+  <p>Kuhbandner erklärte gegenüber Telepolis: <em>„Dass man eine Hausdurchsuchung erleiden muss, nur weil man der Anfrage eines Gerichtes nach einem wissenschaftlichen Fachgutachten nachgekommen ist, das ist natürlich sehr unangenehm."</em></p>
+
+  <p>Was wäre das unter normalen Umständen? Eine Geschichte über die Einschüchterung unabhängiger Wissenschaft. Stattdessen rahmten die Berichte den Fall von Beginn an als Querdenker-Geschichte. t-online meldete die erste Hausdurchsuchung mit dem Hinweis, die Information stamme von einem Anwalt, der <em>„in der 'Querdenker'-Szene sehr gut vernetzt ist"</em> — die Quelle delegitimierte die Nachricht. Die taz titelte später: <em>„Juristischer Querdenker"</em>. Das Label saß.</p>
+
+  <div class="fact-box">
+    <span class="fact-label">Was Dettmar selbst dazu sagt — Interview 2025</span>
+    <p>„Das wurde in der Berichterstattung immer unterschlagen" — nämlich dass internationale Gesundheitsbehörden das Masketragen zwar empfahlen, aber selbst einräumten, dass es dafür keine wissenschaftliche Evidenz gebe. Das stand in Kappsteins Gutachten. Es stand in keiner Schlagzeile.</p>
+  </div>
+
+  <p>Wenn Professorinnen und Professoren künftig damit rechnen müssen, dass ihre Büros durchsucht werden, sobald ihre Gutachten dem Staat nicht passen — wer erstattet dann noch unbequeme Gutachten?</p>
+
+  <h2>Die, die trotzdem reden: KRiStA</h2>
+
+  <p>Es gibt ein Netzwerk, das man nicht leicht in eine Ecke stellen kann: KRiStA — Kritische Richter und Staatsanwälte. Juristen im aktiven Dienst oder im Ruhestand, die öffentlich benennen, was sie beobachten.</p>
+
+  <p>KRiStA rief 2024 zur Unterstützung Dettmars auf — nicht als politische Bewegung, sondern als Berufsgruppe, die ihren eigenen Stand beim Wort nimmt. Ihre Kernthese: Was mit Dettmar geschah, ist kein Einzelfall. Es ist ein Muster, das unabhängiges Denken in der Richterschaft strukturell unterbindet.</p>
+
+  <p>Tucholsky hätte es nicht anders beschrieben.</p>
+
+  <h2>Was jetzt möglich wäre — in drei Sätzen</h2>
+
+  <div class="drei-saetze">
+    <span class="drei-saetze-label">Erklärung — die noch niemand veröffentlicht hat</span>
+    <p>„Richterinnen und Richter in unserem Zuständigkeitsbereich werden nicht sanktioniert, versetzt oder anderweitig benachteiligt, wenn sie nach der Linie des Bundesgerichtshofs zugunsten von Impfgeschädigten entscheiden. Die richterliche Unabhängigkeit nach Artikel 97 Grundgesetz gilt ohne Einschränkung. Das ist eine Selbstverständlichkeit."</p>
+  </div>
+
+  <p>Drei Sätze. Keine Justizverwaltung in Deutschland hat sie bisher veröffentlicht.</p>
+
+  <p>Dass eine Selbstverständlichkeit nicht ausgesprochen wird, ist selbst eine Information.</p>
+
+  <div class="closing">
+    <p>KRiStA existiert. Es gibt Richter, die nicht schweigen. Das System hat Risse. Und es braucht nur <strong>einen einzigen Richter, der als Erster durch die offene Tür geht</strong> — damit alle anderen wissen: Man darf.</p>
+  </div>
+
+</article>
+
+<footer class="site-footer">
+  rundfunkkritik.de &nbsp;·&nbsp; <a href="#">Quellen</a> &nbsp;·&nbsp; <a href="#">Impressum</a>
+</footer>
+
+</body>
+</html>

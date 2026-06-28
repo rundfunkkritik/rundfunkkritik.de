@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Der NDR-Experte | Rundfunkkritik.de</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #faf7f2;
+    color: #1c1c1c;
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.75;
+  }
+
+  .site-header {
+    background: #1a2744;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 2rem;
+  }
+  .site-header nav {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    height: 52px;
+  }
+  .site-header a {
+    color: #f5f0e8;
+    text-decoration: none;
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+  }
+  .site-header a:hover { color: #c9a84c; }
+  .site-header .home { font-weight: 600; font-size: 1rem; }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  .article-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c9a84c;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    color: #1c1c1c;
+    margin-bottom: 0.75rem;
+  }
+
+  .article-subtitle {
+    font-size: 1.2rem;
+    color: #4a4a4a;
+    font-style: italic;
+    margin-bottom: 2rem;
+    border-left: 3px solid #c9a84c;
+    padding-left: 1rem;
+  }
+
+  .article-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #888;
+    letter-spacing: 0.05em;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e0d9cc;
+  }
+
+  .disclaimer {
+    background: #f5edda;
+    border-left: 4px solid #c9a84c;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.92rem;
+    color: #7a5f1a;
+    border-radius: 0 4px 4px 0;
+  }
+
+  p { margin-bottom: 1.4rem; }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.55rem;
+    color: #1a2744;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #e0d9cc;
+  }
+
+  .fall-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0 2.5rem;
+  }
+
+  .fall-card {
+    border: 1px solid #e0d9cc;
+    border-left: 4px solid #c9a84c;
+    background: #fff;
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .fall-card .fall-jahr {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    color: #c9a84c;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .fall-card .fall-titel {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: #1c1c1c;
+    margin-bottom: 0.5rem;
+  }
+
+  .fall-card p {
+    font-size: 1rem;
+    color: #3a3a3a;
+    margin-bottom: 0.5rem;
+  }
+
+  .fall-card .fall-quelle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: #999;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .highlight {
+    color: #7a5200;
+    font-weight: 600;
+  }
+
+  blockquote {
+    border-left: 3px solid #c9a84c;
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #4a4a4a;
+    background: #f5edda;
+  }
+  blockquote cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    font-style: normal;
+    color: #888;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .fazit-box {
+    background: #f5edda;
+    border: 1px solid #c9a84c;
+    border-radius: 6px;
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+  }
+  .fazit-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #1a2744;
+    margin-bottom: 0.75rem;
+  }
+  .fazit-box p { font-size: 1rem; margin-bottom: 0.6rem; }
+  .fazit-box p:last-child { margin-bottom: 0; }
+
+  .weiterfuehrend {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 2px solid #e0d9cc;
+  }
+  .weiterfuehrend h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c9a84c;
+    margin-bottom: 1.25rem;
+  }
+  .weiterfuehrend ul { list-style: none; }
+  .weiterfuehrend li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #e0d9cc;
+  }
+  .weiterfuehrend li:last-child { border-bottom: none; }
+  .weiterfuehrend a {
+    color: #1a2744;
+    text-decoration: none;
+    font-size: 1.05rem;
+  }
+  .weiterfuehrend a:hover { color: #c9a84c; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav>
+    <a href="index.html" class="home">Rundfunkkritik.de</a>
+    <a href="oerr-aufreger-liste.html">Aufreger-Liste</a>
+    <a href="oerr-geschichte.html">Geschichte</a>
+    <a href="oerr-international.html">International</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <div class="article-kicker">Analyse · NDR · Wissenschaftskommunikation</div>
+
+  <h1>Der NDR-Experte</h1>
+
+  <p class="article-subtitle">
+    Wie der öffentlich-rechtliche Rundfunk Christian Drosten zur einzigen Stimme der Pandemie machte — und warum das ein strukturelles Redaktionsversagen war.
+  </p>
+
+  <div class="article-meta">
+    Rundfunkkritik.de &nbsp;·&nbsp; Juni 2026 &nbsp;·&nbsp; Thema: Vertuschung &amp; Täuschung
+  </div>
+
+  <div class="disclaimer">
+    <strong>Redaktioneller Hinweis:</strong> Dieser Artikel bewertet keine wissenschaftlichen Aussagen inhaltlich und nimmt keine epidemiologische Einordnung vor. Dokumentiert wird ausschließlich das redaktionelle Verhalten des NDR und anderer ÖRR-Sender: die Auswahl eines einzigen Experten als privilegierte Stimme, das Fehlen journalistischer Gegenpositionen und der Umgang mit dokumentierten Korrekturen.
+  </div>
+
+  <p>
+    Ab dem 26. Februar 2020 sendete NDR Info nahezu täglich einen Podcast mit dem Charité-Virologen Christian Drosten. Das Format „Das Coronavirus-Update" wurde zum meistgehörten deutschen Podcast des Jahres. Was als Wissenschaftskommunikation in einer Ausnahmesituation begann, entwickelte sich zu einem strukturellen Problem: Der öffentlich-rechtliche Rundfunk hatte sich auf einen einzigen Experten festgelegt — und hielt an dieser Entscheidung auch dann fest, als Aussagen korrigiert werden mussten.
+  </p>
+
+  <p>
+    Drosten war kein Unbekannter. Er war bereits vor der Pandemie in ARD und ZDF präsent, hatte 2003 bei der Entdeckung des SARS-Coronavirus mitgewirkt und war während der Schweinegrippe 2009 als Experte aufgetreten. <span class="highlight">Die Geschichte seiner öffentlichen Auftritte ist eine Geschichte selektiver Sichtbarkeit — und selektiver Verantwortung.</span>
+  </p>
+
+  <h2>Die Chronik: Von Schweinegrippe bis Enquete-Kommission</h2>
+
+  <div class="fall-grid">
+
+
+
+    <div class="fall-card">
+      <div class="fall-jahr">2009 / 2010</div>
+      <div class="fall-titel">Schweinegrippe: Impfempfehlung und ihre Folgen</div>
+      <p>Drosten ruft öffentlich zur Impfung mit Pandemrix auf. Die Schweinegrippe verläuft glimpflich: 255 bestätigte Todesfälle in Deutschland statt der prognostizierten Massenwelle. Der Impfstoff Pandemrix verursacht nachweislich Narkolepsie. GlaxoSmithKline räumte 2013 ein, dass europaweit 795 Menschen nach der Impfung eine Narkolepsie entwickelt hatten. Deutschland hatte 700 Millionen Euro für Pandemrix ausgegeben. Eine öffentliche Auseinandersetzung Drostens mit diesen Fällen ist nicht dokumentiert.</p>
+      <div class="fall-quelle">Quelle: Wirtschaftswoche, Dezember 2020; Spiegel, 13.05.2016; Bundestag Drucksache 18/5819</div>
+    </div>
+
+    <div class="fall-card">
+      <div class="fall-jahr">Ab Februar 2020</div>
+      <div class="fall-titel">NDR-Podcast: Eine Stimme für Deutschland</div>
+      <p>Der NDR etabliert Drosten als alleinige virologische Referenz. Andere Wissenschaftler mit abweichenden Einschätzungen — darunter Hendrik Streeck oder der Epidemiologe John Ioannidis — erhalten im NDR-Format keinen vergleichbaren Raum. Im ÖRR-Talkshow-Ranking führt Melanie Brinkmann mit 8 Auftritten, Kekulé mit 7, Streeck mit 6 — Drosten tritt in Talkshows bewusst seltener auf und konzentriert sich auf das von ihm kontrollierbare Podcast-Format.</p>
+      <div class="fall-quelle">Quelle: NDR Info; Planet Interview, Talkshow-Analyse 2020</div>
+    </div>
+
+    <div class="fall-card">
+      <div class="fall-jahr">29. September 2020</div>
+      <div class="fall-titel">„Faktor 16" — und keine Korrektur</div>
+      <p>Im NDR-Podcast erklärt Drosten, Covid-19 sei 16-mal tödlicher als die saisonale Grippe. MDR und BR übernehmen diesen „Faktor 16" in eigene Faktenchecks. Als spätere Metastudien erheblich niedrigere Werte ermitteln, erfolgt keine redaktionelle Korrektur durch den NDR. Drosten bestätigt den Faktor 2025 gegenüber dem österreichischen ORF erneut mit „16 bis 20 Mal" — ohne Einordnung der zwischenzeitlich veröffentlichten Gegenstudien.</p>
+      <div class="fall-quelle">Quelle: Cicero, 11. August 2025 (Christian Felber)</div>
+    </div>
+
+    <div class="fall-card">
+      <div class="fall-jahr">Februar 2020 ff.</div>
+      <div class="fall-titel">Labortheorie: Unterdrückung im ÖRR</div>
+      <p>Drosten unterzeichnet den Lancet-Brief, der den Laborursprung als „Verschwörungstheorie" brandmarkt. Der WDR erklärt in einem „Faktencheck", die Labortheorie sei falsch — und muss diesen Beitrag später korrigieren. Dass der BND bereits 2020 unter dem Codenamen „Saaremaa" einen Laborursprung für wahrscheinlich hielt, wird erst 2025 öffentlich. Drosten behauptet rückwirkend, die Labortheorie „nie ausgeschlossen" zu haben — eine Aussage, die mit seinen damaligen öffentlichen Äußerungen schwer vereinbar ist.</p>
+      <div class="fall-quelle">Quelle: Cicero, 09.02.2022; SZ/Zeit/NZZ, März 2025; Wikipedia, COVID-19-Laborunfallhypothese</div>
+    </div>
+
+    <div class="fall-card">
+      <div class="fall-jahr">August 2024</div>
+      <div class="fall-titel">„Die Wissenschaft war etwas arrogant"</div>
+      <p>Drosten räumt im Gespräch mit Journalist Georg Mascolo ein, dass die Wissenschaft in der Pandemie „etwas arrogant" gewesen sei. Er mahnt zugleich, Deutschland verpasse die Aufarbeitung aus Angst, damit den Falschen in die Hände zu spielen. Eine redaktionelle Auseinandersetzung des NDR mit den eigenen Podcast-Inhalten bleibt aus.</p>
+      <div class="fall-quelle">Quelle: Süddeutsche Zeitung / Georg Mascolo, August 2024</div>
+    </div>
+
+    <div class="fall-card">
+      <div class="fall-jahr">April 2025</div>
+      <div class="fall-titel">Lanz-Einladung — abgesagt</div>
+      <p>Zum fünfjährigen Jahrestag der Pandemie lädt Markus Lanz alle zentralen Akteure ein: Lauterbach, Streeck, Kekulé, Schmidt-Chanasit, Ethikrats-Chefin Buyx. Drosten sagt ab. Er erscheint weiterhin im NDR Talk Show — einem Format, das ihm seit Jahren unkritischen Raum bietet.</p>
+      <div class="fall-quelle">Quelle: Deutsches Ärzteblatt, 11. April 2025</div>
+    </div>
+
+    <div class="fall-card">
+      <div class="fall-jahr">Dezember 2025</div>
+      <div class="fall-titel">Enquete-Kommission: Zentrale Fragen unbeantwortet</div>
+      <p>Bei der Bundestagsanhörung zur Corona-Aufarbeitung lässt Drosten zentrale Fragen unbeantwortet. Er erklärt, die verbleibende Zeit reiche für Antworten nicht aus, und bezeichnet Fragen als „irreführend". Auf die Frage nach dem Begriff „an und mit Corona verstorben" behauptet er, dieser sei „in den Medien entstanden" — obwohl die Formulierung nachweislich vom RKI selbst als statistische Klassifikation eingeführt wurde. Der Tagesspiegel titelt: „Drosten lässt bei Befragung in Enquete-Kommission zentrale Fragen unbeantwortet."</p>
+      <div class="fall-quelle">Quelle: Tagesspiegel Background, 03.12.2025; Deutsches Ärzteblatt, 02.12.2025</div>
+    </div>
+
+    <div class="fall-card">
+      <div class="fall-jahr">Dezember 2025</div>
+      <div class="fall-titel">„Rede des Jahres" — Kommentarfunktion deaktiviert</div>
+      <p>Die Universität Tübingen zeichnet Drosten für seine Rede „Wissenschaft ist Freiheit und Pflicht" aus. Drosten informiert darüber auf X — mit deaktivierter Kommentarfunktion. Zwischen 2020 und Dezember 2025 erhält er insgesamt 17 Auszeichnungen, darunter das Bundesverdienstkreuz.</p>
+      <div class="fall-quelle">Quelle: Universität Tübingen, Dezember 2025</div>
+    </div>
+
+    <div class="fall-card">
+      <div class="fall-jahr">Mai 2026</div>
+      <div class="fall-titel">Drosten fordert „berufsständische Qualitätssicherung" für Medien</div>
+      <p>In einem Interview spricht sich Drosten für eine „berufsständische Qualitätssicherung" für Presse, Film und Podcasts aus. Ein Wissenschaftler, der über Jahre vom ÖRR ohne journalistische Gegenkontrolle verbreitet wurde, fordert nun strukturelle Kontrolle über die Medien, die ihn kritisieren.</p>
+      <div class="fall-quelle">Quelle: NIUS, Mai 2026</div>
+    </div>
+
+  </div>
+
+  <h2>Das strukturelle Problem</h2>
+
+  <p>
+    Die einzelnen Punkte dieser Chronik sind für sich genommen unterschiedlich zu gewichten. Was sie verbindet, ist kein persönliches Fehlverhalten — es ist ein <span class="highlight">redaktionelles Muster des NDR</span>: Ein Sender mit Milliarden-Budget und Bildungsauftrag entschied sich, die komplexeste Gesundheitskrise seit Jahrzehnten durch einen einzigen Wissenschaftler erklären zu lassen.
+  </p>
+
+  <p>
+    Korrekturen, die im Verlauf notwendig wurden, wurden nicht journalistisch aufgearbeitet. Gegenstimmen aus der Wissenschaft, die sich teils als valider erwiesen, erhielten keinen gleichwertigen Raum. MDR und BR übernahmen Drosten-Aussagen in eigene Faktenchecks — ohne unabhängige Prüfung. Das ist kein Einzelfall: Es ist Haltungsjournalismus, der sich als Wissenschaftsjournalismus verkleidet.
+  </p>
+
+  <blockquote>
+    „Während der Pandemie und auch jetzt in der Aufarbeitung werden Grundprinzipien des methodischen Weges von Datenwissen nicht angewendet."
+    <cite>— Prof. Dr. Gerd Antes, Mathematiker und Medizinstatistiker, Enquete-Kommission, Dezember 2025</cite>
+  </blockquote>
+
+  <p>
+    Der ÖRR hatte die Mittel, die Reichweite und den Auftrag, diese Grundprinzipien durchzusetzen. Er tat es nicht. Stattdessen schuf er ein Format, das Wissenschaft mit Autorität verwechselte — und das Vertrauen in Institutionen, das er zu stärken vorgab, langfristig beschädigte.
+  </p>
+
+  <div class="fazit-box">
+    <h3>Was dieser Fall dokumentiert</h3>
+    <p>Der NDR traf die redaktionelle Entscheidung, einen einzelnen Wissenschaftler als privilegierte Stimme zu installieren — ohne Transparenz über Auswahlkriterien, ohne Raum für wissenschaftliche Gegenpositionen, ohne journalistische Aufarbeitung dokumentierter Korrekturen.</p>
+    <p>Der Rundfunkbeitrag finanziert einen Bildungsauftrag. Dieser Auftrag verlangt die Abbildung des wissenschaftlichen Diskurses — nicht die Reduktion auf eine einzige Stimme, unabhängig davon, wie kompetent diese Stimme in ihrem Kernfach ist.</p>
+    <p>Die Frage, die der NDR bis heute nicht öffentlich beantwortet hat: Nach welchen Kriterien wurde entschieden, wer spricht — und wer nicht?</p>
+  </div>
+
+  <div class="weiterfuehrend">
+    <h3>Weiterführende Analysen</h3>
+    <ul>
+      <li><a href="wissensressort-ard.html">ARD löst Wissensressort auf — Haltungsjournalismus bleibt, Wissenschaftsjournalismus fällt</a></li>
+      <li><a href="zdf-fakten-drei-faelle.html">ZDF Magazin Royale: Gerichtsurteil, Unterlassungserklärung, MDR-Leerlauf</a></li>
+      <li><a href="oerr-aufreger-liste.html">Alle dokumentierten Fälle — die Aufreger-Liste</a></li>
+    </ul>
+  </div>
+
+</main>
+</body>
+</html>

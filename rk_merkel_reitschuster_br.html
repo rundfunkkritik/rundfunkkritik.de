@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Die Ausblendung – Rundfunkkritik.de</title>
+<style>
+  :root {
+    --navy: #1a2e4a;
+    --gold: #b8963e;
+    --cream: #f5f0e8;
+    --text: #2a2a2a;
+    --rot: #8b1a1a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Georgia', serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 18px;
+  }
+
+  .artikel-header {
+    background: var(--navy);
+    color: white;
+    padding: 60px 40px 50px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .rubrik {
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 2.6em;
+    line-height: 1.2;
+    font-weight: normal;
+    margin-bottom: 16px;
+  }
+
+  .untertitel {
+    font-size: 1.1em;
+    color: #aabbd0;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .meta {
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    color: #7a9ab5;
+    margin-top: 24px;
+    letter-spacing: 1px;
+  }
+
+  .artikel-body {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 50px 40px 80px;
+  }
+
+  .lead {
+    font-size: 1.2em;
+    color: var(--navy);
+    border-left: 4px solid var(--gold);
+    padding-left: 24px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+
+  p { margin-bottom: 22px; }
+
+  h2 {
+    font-size: 1.3em;
+    color: var(--navy);
+    font-weight: normal;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 8px;
+    margin: 44px 0 20px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    margin: 40px 0;
+    padding-left: 32px;
+    border-left: 3px solid var(--gold);
+  }
+
+  .timeline-item {
+    margin-bottom: 36px;
+    position: relative;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 3px solid var(--cream);
+    outline: 2px solid var(--gold);
+  }
+
+  .timeline-datum {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .timeline-titel {
+    font-size: 1.05em;
+    color: var(--navy);
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .timeline-text {
+    font-size: 0.95em;
+    line-height: 1.65;
+    color: #444;
+  }
+
+  /* Zitat */
+  .zitat {
+    background: white;
+    border-left: 5px solid var(--gold);
+    padding: 24px 28px;
+    margin: 36px 0;
+    font-style: italic;
+    font-size: 1.05em;
+    line-height: 1.65;
+    color: var(--navy);
+  }
+
+  .zitat .quelle {
+    display: block;
+    margin-top: 12px;
+    font-style: normal;
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #888;
+    text-transform: uppercase;
+  }
+
+  /* Faktenbox */
+  .faktenbox {
+    background: var(--navy);
+    color: white;
+    padding: 28px 32px;
+    margin: 36px 0;
+    border-left: 5px solid var(--gold);
+  }
+
+  .faktenbox .box-titel {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .faktenbox p {
+    margin-bottom: 12px;
+    font-size: 0.95em;
+    line-height: 1.65;
+    color: #d0dce8;
+  }
+
+  .faktenbox p:last-child { margin-bottom: 0; }
+  .faktenbox strong { color: white; }
+
+  /* Vergleich */
+  .vergleich-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 36px 0;
+    border: 1px solid #c8bfad;
+  }
+
+  .vergleich-grid .col-header {
+    background: var(--navy);
+    color: white;
+    padding: 14px 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .vergleich-grid .col-header.gold {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  .vergleich-grid .col-content {
+    padding: 18px 20px;
+    background: white;
+    border-top: 1px solid #e0d8ca;
+    font-size: 0.93em;
+    line-height: 1.6;
+  }
+
+  .vergleich-grid .col-content:nth-child(even) {
+    border-left: 1px solid #e0d8ca;
+  }
+
+  /* Schluss */
+  .schluss {
+    background: white;
+    border-top: 3px solid var(--gold);
+    padding: 28px 32px;
+    margin-top: 50px;
+    font-size: 1.05em;
+    color: var(--navy);
+    line-height: 1.7;
+  }
+
+  /* Quellen */
+  .quellen {
+    margin-top: 50px;
+    padding-top: 24px;
+    border-top: 1px solid #c8bfad;
+  }
+
+  .quellen h3 {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 16px;
+  }
+
+  .quellen ol {
+    padding-left: 20px;
+    font-size: 0.85em;
+    color: #666;
+    line-height: 1.9;
+  }
+
+  .quellen a { color: var(--navy); }
+
+  .hinweis {
+    background: #f0ebe0;
+    border: 1px solid #c8bfad;
+    padding: 20px 24px;
+    margin: 36px 0;
+    font-size: 0.9em;
+    font-family: 'Arial', sans-serif;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .hinweis strong { color: var(--navy); }
+
+  @media (max-width: 640px) {
+    h1 { font-size: 1.8em; }
+    .artikel-header, .artikel-body { padding: 32px 20px; }
+    .vergleich-grid { grid-template-columns: 1fr; }
+    .timeline { padding-left: 24px; }
+    .timeline-item::before { left: -32px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="artikel-header">
+  <div class="rubrik">Rundfunkkritik · Kontrollversagen</div>
+  <h1>Die Ausblendung</h1>
+  <div class="untertitel">
+    Eine Kanzlerin räumt ein, dass Corona-Maßnahmen politische Entscheidungen waren.
+    Die Tagesschau blendet die Frage ab. Der Journalist fliegt raus.
+    Der BR empfiehlt: nur Geimpfte vor die Kamera.
+    Ein Fraktionschef sagt: gut so.
+    Vier Vorgänge. Vier Quellen. Ein Muster.
+  </div>
+  <div class="meta">Rundfunkkritik.de · Analyse · Juni 2026</div>
+</div>
+
+<div class="artikel-body">
+
+  <div class="lead">
+    Demokratischer Journalismus lebt von einer Grundbedingung: Wer regiert, muss sich unbequemen
+    Fragen stellen. Und wer diese Fragen stellt, muss das tun dürfen — ohne abgeblendet,
+    ausgeschlossen oder wegempfohlen zu werden. Was in den Corona-Jahren passierte, ist
+    dokumentiert. Hier sind die Dokumente.
+  </div>
+
+  <h2>Vier Vorgänge — chronologisch</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-datum">Januar 2021 · Bundespressekonferenz</div>
+      <div class="timeline-titel">Merkel räumt ein: politische Entscheidung, nicht Wissenschaft</div>
+      <div class="timeline-text">
+        Ein Journalist fragt die Bundeskanzlerin auf der Bundespressekonferenz nach der wissenschaftlichen
+        Grundlage für den harten Lockdown-Kurs. Merkel antwortet — und sagt dabei etwas, das
+        als Eingeständnis in die Geschichte eingehen wird:
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-datum">Selber Tag · ARD-Tagesschau</div>
+      <div class="timeline-titel">Die Kamera geht weg — vier Minuten zu früh</div>
+      <div class="timeline-text">
+        Zuschauer berichten direkt nach der Pressekonferenz: Die Tagesschau hat ihre
+        Direktübertragung während der kritischen Frage beendet. Begründung: Die
+        12-Uhr-Ausgabe nähere sich. Auf dem Mitschnitt ist die Zeitmarke oben links
+        erkennbar: 11:56 Uhr.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-datum">Dezember 2021 · Bayerischer Rundfunk</div>
+      <div class="timeline-titel">Interne Empfehlung: möglichst nur Geimpfte vor die Kamera</div>
+      <div class="timeline-text">
+        Eine interne E-Mail der Hauptabteilung Produktionsservice des BR vom 1. Dezember 2021
+        wird öffentlich. Inhalt: „Dringende Empfehlung: Möglichst nur Wahl von Protagonisten,
+        die geimpft sind." Der BR-Pressesprecher bestätigt die Echtheit des Dokuments —
+        nennt es eine „Handlungsempfehlung" zum Infektionsschutz der Mitarbeitenden.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-datum">Januar 2021 · Bayerischer Landtag</div>
+      <div class="timeline-titel">CSU-Fraktionschef: nicht nach außen tragen ist gut</div>
+      <div class="timeline-text">
+        CSU-Fraktionsvorsitzender Thomas Kreuzer äußert sich öffentlich: Er finde es gut,
+        wenn regierungskritische Abgeordnete vom BR in der Parlamentsübertragung nicht
+        nach „außen" getragen werden. Der betreffende Redebeitrag eines Landtagsabgeordneten
+        wurde vom BR nicht übertragen. Der Journalist Markus Langemann dokumentiert den
+        Vorgang und veröffentlicht den nicht gesendeten Redebeitrag.
+        BR-Intendant Ulrich Wilhelm antwortet schriftlich.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-datum">Dezember 2021 / März 2022 · Bundespressekonferenz</div>
+      <div class="timeline-titel">Der Journalist darf nicht mehr fragen</div>
+      <div class="timeline-text">
+        Der Journalist, der Merkel die unangenehme Frage gestellt hatte, wird aus der
+        Bundespressekonferenz ausgeschlossen. Erste Begründung: eine Firmenadresse in Montenegro
+        im Impressum. Endgültige Begründung: Er erfülle „die Erfordernisse eines deutschen
+        Parlamentskorrespondenten" nicht, weil sein Wohnsitz im Ausland liege.
+        Sein Widerspruch wird zurückgewiesen.
+      </div>
+    </div>
+
+  </div>
+
+  <h2>Das Eingeständnis — im Wortlaut</h2>
+
+  <div class="zitat">
+    „Es gibt in dem Ganzen auch politische Grundsatzentscheidungen, die haben mit
+    Wissenschaft nichts zu tun. […] Mit der Einladung von bestimmten Wissenschaftlern
+    wollen wir auf bestimmte Fragen, die uns interessieren und die nicht politischer
+    Natur sind, Antworten bekommen."
+    <span class="quelle">Angela Merkel · Bundespressekonferenz, Januar 2021<br>
+    Wortprotokoll: reitschuster.de — Stenogramm von Fragen und Antworten</span>
+  </div>
+
+  <p>Mit anderen Worten: Man hat sich ganz bewusst nur mit solchen Experten umgeben,
+  die die politisch gewünschten Ratschläge erteilen würden. Das ist keine Interpretation —
+  das ist die Aussage der Kanzlerin selbst. Fragen dazu konnten nur gestellt werden,
+  weil das Format der Bundespressekonferenz das damals noch ermöglichte.</p>
+
+  <p>Bemerkenswert ist auch, was Merkel drei Monate später im Bundestag sagte:
+  Sie warb für globale Impfprogramme mit dem Argument, wenn es nicht gelinge,
+  weltweit zu impfen, könnten sich weitere Mutanten entwickeln, gegen die
+  bestehende Impfstoffe womöglich nicht mehr wirkten. Und bereits im Februar 2021
+  hatte sie auf einer Pressekonferenz nach dem G7-Gipfel formuliert, die Pandemie
+  sei „erst besiegt, wenn alle Menschen auf der Welt geimpft sind."</p>
+
+  <div class="faktenbox">
+    <div class="box-titel">Die drei Merkel-Aussagen — alle primärquellenfähig</div>
+    <p><strong>Januar 2021, BPK:</strong> „Es gibt politische Grundsatzentscheidungen,
+    die haben mit Wissenschaft nichts zu tun." — Wortprotokoll, Bundespressekonferenz.</p>
+    <p><strong>19. Februar 2021, G7-PK:</strong> Die Pandemie sei „erst besiegt, wenn alle
+    Menschen auf der Welt geimpft sind." — Bundesregierung.de, Originallink in
+    Bundestagsdrucksache 20/4657 dokumentiert.</p>
+    <p><strong>25. März 2021, Bundestag:</strong> Wenn es nicht gelinge, weltweit zu impfen,
+    könnten sich weitere Mutanten entwickeln, gegen die Impfstoffe womöglich nicht mehr wirkten.
+    — Bundestagsarchiv, kw12-de-regierungserklaerung.</p>
+  </div>
+
+  <h2>Die Ausblendung — was die ARD dokumentiert</h2>
+
+  <p>Die Tagesschau übertrug die Bundespressekonferenz live. Als die kritische Frage
+  an die Kanzlerin gestellt wurde, endete die Übertragung. Die angegebene Begründung:
+  Die 12-Uhr-Ausgabe der Tagesschau nähere sich. Die dokumentierte Uhrzeit auf dem
+  Mitschnitt: 11:56.</p>
+
+  <p>Zwei Erklärungen stehen im Raum — eine technisch-zufällige, eine andere.
+  Was sich nicht wegdiskutieren lässt: Das Timing war unglücklich. Und die Tagesschau
+  hat dazu keine öffentliche Erklärung abgegeben.</p>
+
+  <h2>Der BR, die Empfehlung und der Landtag</h2>
+
+  <p>Das BR-Dokument vom 1. Dezember 2021 ist in seinem Wortlaut eindeutig:
+  „Dringende Empfehlung: Möglichst nur Wahl von Protagonisten, die geimpft sind."
+  Der Pressesprecher des BR bestätigte die Echtheit — sprach von einer
+  Handlungsempfehlung für den Infektionsschutz der Mitarbeitenden im Außeneinsatz,
+  nicht von Redaktionspolitik.</p>
+
+  <div class="vergleich-grid">
+    <div class="col-header">BR-Erklärung</div>
+    <div class="col-header gold">Was das Dokument sagt</div>
+    <div class="col-content">Infektionsschutz für Mitarbeitende im Außeneinsatz.</div>
+    <div class="col-content">„Möglichst nur Wahl von Protagonisten, die geimpft sind" —
+    gilt für alle Außenproduktionen, nicht nur für körpernahe Drehs.</div>
+    <div class="col-content">Redaktionelle Entscheidung liegt allein bei den Redaktionen.</div>
+    <div class="col-content">„Dringende Empfehlung" aus der Hauptabteilung Produktionsservice —
+    an wen richtet sich eine dringende Empfehlung, wenn nicht an die, die entscheiden?</div>
+    <div class="col-content">Ungeimpfte werden interviewt — als Belege werden fünf Beispiele genannt.</div>
+    <div class="col-content">Eines der genannten Beispiele entstand vor dem Datum der Empfehlung.
+    Eine Krankenschwester darf nur am Telefon sprechen — nicht vor der Kamera.</div>
+  </div>
+
+  <p>Parallel dazu: Bayerischer Landtag, Januar 2021. Ein Abgeordneter hält einen
+  Redebeitrag zur Corona-Politik — kritisch, maßnahmenskeptisch. Der BR überträgt
+  ihn nicht. CSU-Fraktionsvorsitzender Thomas Kreuzer kommentiert das öffentlich:
+  Er finde es gut, wenn regierungskritische Redebeiträge nicht nach außen getragen werden.</p>
+
+  <p>Das ist kein privates Meinungsbild. Das ist der Fraktionsvorsitzende der Regierungspartei,
+  der öffentlich billigt, dass der öffentlich-rechtliche Rundfunk parlamentarische Opposition
+  aus seiner Übertragung herausfiltert.</p>
+
+  <h2>Was das bedeutet — und was es nicht bedeutet</h2>
+
+  <div class="hinweis">
+    <strong>Zur Einordnung:</strong> Keiner der hier beschriebenen Vorgänge beweist
+    eine zentrale Steuerung oder einen abgestimmten Plan. Was sie zeigen, ist struktureller
+    Natur: Mechanismen, die unbequeme Stimmen aus dem Sendebetrieb heraushalten — durch
+    Empfehlungen, Abblenden, Ausschlüsse, öffentliches Lob dafür. Das lässt sich
+    mit Quellen belegen. Die Bewertung liegt beim Leser.
+  </div>
+
+  <h2>Was der Rundfunkbeitrag finanziert</h2>
+
+  <p>ARD und BR werden durch Pflichtbeiträge finanziert — 18,36 Euro monatlich pro Haushalt.
+  Der gesetzliche Auftrag: unabhängige, dem Gemeinwohl verpflichtete Berichterstattung.
+  Dieser Auftrag schließt ausdrücklich die Kontrolle der Regierung ein.</p>
+
+  <p>Ein Redakteur, der eine kritische Frage abwendet, ist das Gegenteil dieses Auftrags.
+  Ein Sender, der empfiehlt, nur Geimpfte vor die Kamera zu lassen, schränkt den
+  Meinungskorridor seiner Berichterstattung ein — unabhängig von der Begründung.
+  Ein Fraktionschef, der das öffentlich gut findet, sagt damit, wie er den
+  öffentlich-rechtlichen Rundfunk versteht: als verlängerten Arm der Regierung.</p>
+
+  <div class="schluss">
+    Angela Merkel hat auf Nachfrage eingeräumt, dass Corona-Maßnahmen politische
+    Entscheidungen waren. Das ist dokumentiert. Was danach passierte — mit der Übertragung,
+    mit dem Journalisten, mit dem Abgeordneten im Landtag — ist ebenfalls dokumentiert.
+    Die Frage, die sich stellt, ist keine politische. Sie ist eine journalistische:
+    Wäre das alles bekannter, wenn die Tagesschau weitergesendet hätte?
+  </div>
+
+  <div class="quellen">
+    <h3>Quellen</h3>
+    <ol>
+      <li>Merkel: „Politische Grundsatzentscheidungen, die haben mit Wissenschaft nichts zu tun" —
+        Wortprotokoll BPK Januar 2021:
+        <a href="https://reitschuster.de/post/merkel-harter-corona-kurs-ist-politische-entscheidung/">reitschuster.de</a></li>
+      <li>Tagesschau blendet Reitschuster-Frage ab — Mitschnitt mit Zeitmarke 11:56:
+        <a href="https://reitschuster.de/post/wie-mich-die-tagesschau-bei-meiner-merkel-frage-ausblendete/">reitschuster.de</a></li>
+      <li>Merkel: Pandemie „erst besiegt, wenn alle Menschen auf der Welt geimpft sind",
+        19.02.2021 — dokumentiert in Bundestagsdrucksache 20/4657:
+        <a href="https://dserver.bundestag.de/btd/20/046/2004657.pdf">dserver.bundestag.de</a></li>
+      <li>Merkel im Bundestag, 25.03.2021: Ohne weltweite Impfung entstehen Mutanten —
+        <a href="https://www.bundestag.de/dokumente/textarchiv/2021/kw12-de-regierungserklaerung-829804">bundestag.de</a></li>
+      <li>BR-interne Empfehlung „nur Geimpfte vor Kamera", 01.12.2021 — Echtheit bestätigt
+        durch BR-Pressesprecher Markus Huber:
+        <a href="https://www.rheinische-anzeigenblaetter.de/c-ratgeber/der-bayerische-rundfunk-berichtet-auch-ueber-ungeimpfte_a240242">Correctiv-Auswertung mit BR-Stellungnahme</a></li>
+      <li>Langemann: CSU-Fraktionschef Kreuzer findet BR-Nichtübertragung „gut",
+        Januar 2021 — inkl. Intendanten-Antwort:
+        <a href="https://clubderklarenworte.de/aus-dem-rueuer-laufen/">clubderklarenworte.de</a></li>
+      <li>Reitschuster-Ausschluss aus Bundespressekonferenz, Dezember 2021 / März 2022:
+        <a href="https://reitschuster.de/post/bundespressekonferenz-beseitigt-gefahr-fuer-ihre-gute-beziehung-zur-regierung-nicht-deutsch-genug-zum-fragen-stellen/">reitschuster.de</a></li>
+      <li>Reitschuster: „Wie Boris Reitschuster auf der BPK zum Störsender wurde",
+        August 2024:
+        <a href="https://reitschuster.de/post/wie-boris-reitschuster-auf-der-bundespressekonferenz-zum-stoersender-wurde/">reitschuster.de</a></li>
+    </ol>
+  </div>
+
+</div>
+</body>
+</html>

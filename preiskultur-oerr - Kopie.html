@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wer verleiht, gewinnt – Die Preiskultur des ÖRR | Rundfunkkritik.de</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #faf7f2;
+    color: #1c1c1c;
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1.18rem;
+    line-height: 1.75;
+  }
+
+  /* NAV */
+  nav {
+    background: #1a2744;
+    padding: 0.75rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  nav a {
+    color: #f5f0e8;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: #c9a84c; }
+  nav .site-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f5f0e8;
+    margin-right: auto;
+  }
+
+  /* HEADER */
+  header {
+    max-width: 780px;
+    margin: 3.5rem auto 0;
+    padding: 0 1.5rem;
+  }
+
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c9a84c;
+    border-left: 3px solid #c9a84c;
+    padding-left: 0.75rem;
+    margin-bottom: 1.1rem;
+    display: block;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+    color: #1a2744;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #444;
+    margin-bottom: 1.8rem;
+    line-height: 1.5;
+  }
+
+  .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: #888;
+    letter-spacing: 0.06em;
+    border-top: 1px solid #e0d9cc;
+    padding-top: 0.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* ARTICLE */
+  article {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+  }
+
+  article p {
+    margin-bottom: 1.4rem;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #1a2744;
+    margin: 2.8rem 0 1rem;
+    border-bottom: 2px solid #c9a84c;
+    padding-bottom: 0.4rem;
+  }
+
+  /* FALL-BOX */
+  .fall-box {
+    background: #f5edda;
+    border-left: 4px solid #c9a84c;
+    padding: 1.2rem 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .fall-box .fall-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5f1a;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .fall-box p {
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+  }
+
+  .fall-box p:last-child { margin-bottom: 0; }
+
+  /* HIGHLIGHT */
+  .highlight {
+    color: #7a5200;
+    font-weight: 600;
+  }
+
+  /* STRUKTURBOX */
+  .struktur-box {
+    background: #f5edda;
+    border: 1px solid #c9a84c;
+    padding: 1.4rem 1.6rem;
+    margin: 2.5rem 0;
+    border-radius: 4px;
+  }
+
+  .struktur-box h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #7a5f1a;
+    margin-bottom: 0.8rem;
+  }
+
+  .struktur-box ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .struktur-box ul li {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #e5d9bc;
+    font-size: 1.05rem;
+  }
+
+  .struktur-box ul li:last-child { border-bottom: none; }
+
+  .struktur-box ul li::before {
+    content: "→ ";
+    color: #c9a84c;
+    font-weight: 700;
+  }
+
+  /* QUELLEN */
+  .quellen {
+    border-top: 1px solid #e0d9cc;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+  }
+
+  .quellen h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888;
+    margin-bottom: 1rem;
+  }
+
+  .quellen ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .quellen ul li {
+    font-size: 0.9rem;
+    color: #555;
+    padding: 0.2rem 0;
+    line-height: 1.5;
+  }
+
+  .quellen ul li a {
+    color: #7a5200;
+    text-decoration: none;
+  }
+
+  .quellen ul li a:hover { text-decoration: underline; }
+
+  /* WEITERFUHREND */
+  .weiterfuhrend {
+    background: #1a2744;
+    color: #f5f0e8;
+    padding: 1.8rem 2rem;
+    margin-top: 3rem;
+    border-radius: 4px;
+  }
+
+  .weiterfuhrend h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #c9a84c;
+    margin-bottom: 1.2rem;
+  }
+
+  .weiterfuhrend ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .weiterfuhrend ul li a {
+    color: #f5f0e8;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s;
+  }
+
+  .weiterfuhrend ul li a:hover { color: #c9a84c; }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 1.8rem; }
+    nav { flex-wrap: wrap; gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="site-name">Rundfunkkritik.de</span>
+  <a href="index.html">Startseite</a>
+  <a href="oerr-aufreger-liste.html">Aufreger-Liste</a>
+  <a href="oerr-geschichte.html">Geschichte</a>
+</nav>
+
+<header>
+  <span class="kicker">Strukturanalyse · Preissystem</span>
+  <h1>Wer verleiht, gewinnt</h1>
+  <p class="subtitle">Wie ARD und ZDF ein Preissystem mitfinanzieren, das sie regelmäßig auszeichnet — und was das über redaktionelle Unabhängigkeit aussagt.</p>
+  <p class="meta">Rundfunkkritik.de · Juni 2026 · Dokumentierter Fall</p>
+</header>
+
+<article>
+
+  <p>In Deutschland gilt der Grimme-Preis als renommierteste Auszeichnung für Fernsehsendungen. Er wird jährlich vom Grimme-Institut verliehen, das seinen Sitz in Marl hat. Was Preisträger, Laudatoren und Berichterstattung in der Regel unerwähnt lassen: Zu den Gesellschaftern des Grimme-Instituts gehören der WDR und das ZDF — jene Anstalten, deren Produktionen am häufigsten ausgezeichnet werden.</p>
+
+  <p>Dieser Artikel dokumentiert die strukturellen Verflechtungen im deutschen Fernsehpreissystem. Es geht nicht um Einzelpersonen, sondern um ein institutionelles Konstrukt, das systematisch Interessenkonflikte erzeugt — und in dem dieselben Akteure Preisstifter, Jurymitglieder und Gewinner in einer Person sein können.</p>
+
+  <h2>Fall 1: Das Grimme-Institut — Gesellschafter zeichnen sich selbst aus</h2>
+
+  <p>Das Grimme-Institut ist eine gemeinnützige GmbH. Gesellschafter sind nach eigenen Angaben: der Deutsche Volkshochschul-Verband (DVV), die Film- und Medienstiftung NRW, <span class="highlight">der WDR, das ZDF</span>, die Landesanstalt für Medien NRW, die Stadt Marl und das Land Nordrhein-Westfalen.</p>
+
+  <div class="struktur-box">
+    <h3>Grimme-Institut: Gesellschafter (Auswahl)</h3>
+    <ul>
+      <li>WDR (Gesellschafter + regelmäßiger Preisträger)</li>
+      <li>ZDF (Gesellschafter + regelmäßiger Preisträger)</li>
+      <li>Land NRW (80 % des Jahresetats von ca. 3,3 Mio. Euro)</li>
+      <li>Film- und Medienstiftung NRW (teilfinanziert durch Rundfunkbeitrag)</li>
+      <li>Landesanstalt für Medien NRW (Regulierungsbehörde)</li>
+    </ul>
+  </div>
+
+  <p>Das Ergebnis dieser Struktur ist messbar: Bei der 60. Grimme-Preis-Verleihung 2024 gingen bis auf zwei Auszeichnungen alle Preise an Produktionen öffentlich-rechtlicher Sender. Eine unabhängige Fachjury entscheidet formal über die Vergabe — ihre institutionelle Einbettung in ein Institut, das von denselben Sendern mitgegründet wurde und mitfinanziert wird, bleibt dabei strukturell unaufgelöst.</p>
+
+  <div class="fall-box">
+    <span class="fall-label">Dokumentierter Befund</span>
+    <p>WDR und ZDF sind Gesellschafter des Grimme-Instituts. Bei der 60. Verleihung (2024) gingen bis auf zwei Preise alle Auszeichnungen an ÖRR-Produktionen. Eine Offenlegung dieser Verflechtung gegenüber dem Publikum findet bei Preisverleihungen und in der Berichterstattung regelmäßig nicht statt.</p>
+    <p><em>Quellen: Grimme-Institut (Gesellschafterliste, Wikipedia); Evangelische Zeitung, 28.04.2024</em></p>
+  </div>
+
+  <h2>Fall 2: Der Deutsche Fernsehpreis — Stifter und Gewinner in einem</h2>
+
+  <p>Noch direkter ist die Konstruktion beim Deutschen Fernsehpreis. Dieser Preis wird laut eigener Darstellung von ARD, ZDF, RTL, SAT.1 und MagentaTV gestiftet. Träger ist die Deutsche Fernsehpreis GmbH, deren Geschäftsführung beim WDR liegt.</p>
+
+  <p>Im Beirat des Deutschen Fernsehpreises sitzen nach aktuellen Angaben unter anderem: der Direktor Audience des ZDF sowie die Leiterin des Programmbereichs Unterhaltung, Familie und Kinder des WDR. Die Stifter sind gleichzeitig die größten Abnehmer der Auszeichnungen.</p>
+
+  <div class="struktur-box">
+    <h3>Deutscher Fernsehpreis: Struktur 2025/2026</h3>
+    <ul>
+      <li>Stifter: ARD, ZDF, RTL, SAT.1, MagentaTV</li>
+      <li>Geschäftsführung der Fernsehpreis GmbH: Dirk Jander (WDR)</li>
+      <li>Beirat 2025: ZDF-Direktor Audience, WDR-Leiterin Unterhaltung u. a.</li>
+      <li>Übertragung der Gala: turnusgemäß durch Stifter-Sender (2025: ZDF)</li>
+    </ul>
+  </div>
+
+  <p>Die Vergabe der Preise erfolgt durch eine als unabhängig bezeichnete Fachjury. Die institutionelle Rahmung — Stifterschaft, Beiratssitze, Geschäftsführung durch WDR-Personal — wird in der Kommunikation des Preises nicht als Interessenkonflikt thematisiert.</p>
+
+  <div class="fall-box">
+    <span class="fall-label">Dokumentierter Befund</span>
+    <p>Die Geschäftsführung der Deutschen Fernsehpreis GmbH liegt beim WDR. ARD und ZDF sind gleichzeitig Stifter des Preises und seine häufigsten Preisträger. Im Beirat sitzen aktive Führungskräfte der Stiftersender. Eine strukturelle Unabhängigkeit vom ÖRR ist nicht gegeben.</p>
+    <p><em>Quellen: Deutscher Fernsehpreis (FAQ, Pressemitteilungen 2025/2026)</em></p>
+  </div>
+
+  <h2>Fall 3: Jan Böhmermann — Grimme-Preis trotz Richterrüge</h2>
+
+  <p>Jan Böhmermann moderiert das ZDF Magazin Royale beim ZDF — einem der Gesellschafter des Grimme-Instituts. 2023 erhielt er für dieses Format den Grimme-Preis in der Kategorie Unterhaltung. Die Jury begründete dies unter anderem damit, seine Sendung verbinde eigene Rechercheleistungen mit satirischer Aufbereitung für ein breiteres Publikum.</p>
+
+  <p>Zum Zeitpunkt dieser Auszeichnung lief bereits ein Gerichtsverfahren gegen Böhmermann. Am 16. April 2026 berichtete Welt über das Urteil: Ein Richter rügte eine Recherche des ZDF Magazin Royale als <span class="highlight">„bestenfalls schlampig"</span>. Betroffen war die Berichterstattung über den damaligen BSI-Präsidenten Arne Schönbohm, die zu dessen Entlassung beigetragen hatte. Das Gericht gab Schönbohm Recht.</p>
+
+  <div class="fall-box">
+    <span class="fall-label">Dokumentierter Befund</span>
+    <p>Böhmermann ist ZDF-Mitarbeiter. Das ZDF ist Gesellschafter des Grimme-Instituts. Böhmermann erhält den Grimme-Preis für eine ZDF-Produktion. Ein Richter bezeichnet die Recherche einer seiner preisgekrönten Sendungen nachträglich als „bestenfalls schlampig" und gibt dem Betroffenen Recht. Eine Revision der Auszeichnung findet nicht statt. Eine Offenlegung der institutionellen Verbindung (ZDF → Grimme-Institut → Preisträger ZDF-Magazin) erfolgt in keiner der beteiligten Kommunikationen.</p>
+    <p><em>Quellen: Grimme-Institut (Pressemitteilung 21.03.2023); Welt, 16.04.2026 (Dirk Banse, „Eine bestenfalls schlampige Recherche")</em></p>
+  </div>
+
+  <h2>Fall 4: Grimme Online Award für AfD-Verbotswebsite</h2>
+
+  <p>Im Jahr 2025 vergab das Grimme-Institut den Publikumspreis des Grimme Online Award an die Website afd-verbot.de. Diese Website wird vom Zentrum für Politische Schönheit betrieben und fordert offen ein Parteiverbot der AfD. Das Grimme-Institut wird zu rund 85 Prozent aus öffentlichen Mitteln des Landes NRW und der Stadt Marl finanziert.</p>
+
+  <p>Die staatlichen Geldgeber verteidigten die Preisverleihung mit Verweis auf die Unabhängigkeit der Juryentscheidungen. Das Bundesverfassungsgericht hat in ständiger Rechtsprechung festgehalten, dass der Staat zur parteipolitischen Neutralität verpflichtet ist — insbesondere beim Einsatz öffentlicher Mittel.</p>
+
+  <div class="fall-box">
+    <span class="fall-label">Dokumentierter Befund</span>
+    <p>Ein zu ca. 85 Prozent aus öffentlichen Mitteln finanziertes Institut zeichnet eine Kampagne für das Verbot einer im Bundestag vertretenen Oppositionspartei aus. Die Vereinbarkeit dieser Preisvergabe mit dem verfassungsrechtlichen Neutralitätsgebot des Staates wurde weder durch die fördernde Landesregierung noch durch die Stadt Marl geprüft oder öffentlich thematisiert.</p>
+    <p><em>Quelle: Junge Freiheit, 10.10.2025 (mit Verweis auf Stellungnahmen der NRW-Staatskanzlei und der Stadt Marl)</em></p>
+  </div>
+
+  <h2>Fall 5: Sarah Bosetti — ZDF zeichnet ZDF aus</h2>
+
+  <p>Sarah Bosetti moderiert „Bosetti Late Night" beim ZDF, produziert in Zusammenarbeit mit 3sat. Bei der 60. Grimme-Preis-Verleihung 2024 erhielt die Sendung eine Auszeichnung in der Kategorie Unterhaltung. Das ZDF ist Gesellschafter des Grimme-Instituts.</p>
+
+  <div class="fall-box">
+    <span class="fall-label">Dokumentierter Befund</span>
+    <p>Eine ZDF-Produktion wird von einem Institut ausgezeichnet, an dem das ZDF Gesellschaftsanteile hält. Diese Verbindung wird weder in der Pressemitteilung des Grimme-Instituts noch in der ZDF-eigenen Berichterstattung über den Preis offengelegt.</p>
+    <p><em>Quelle: Grimme-Institut, Pressemitteilung 60. Grimme-Preis 2024</em></p>
+  </div>
+
+  <h2>Fall 6: Carolin Kebekus — WDR-Produktion, WDR führt die Preis-GmbH</h2>
+
+  <p>Die Sendung #KINDERstören mit Carolin Kebekus ist eine Produktion von ARD und WDR. Sie erhielt beim Deutschen Fernsehpreis 2025 eine Auszeichnung. Die Geschäftsführung der Deutschen Fernsehpreis GmbH liegt beim WDR. Im Beirat des Preises saß 2025 die Leiterin des WDR-Programmbereichs Unterhaltung, Familie und Kinder.</p>
+
+  <div class="fall-box">
+    <span class="fall-label">Dokumentierter Befund</span>
+    <p>Eine WDR-Produktion wird durch einen Preis ausgezeichnet, dessen ausführende GmbH vom WDR geführt wird und dessen Beirat mit aktiven WDR-Führungskräften besetzt ist. Eine Offenlegung dieser Verbindung findet nicht statt.</p>
+    <p><em>Quelle: Deutscher Fernsehpreis, Pressemitteilung 2025 (Stifter- und Beiratsliste)</em></p>
+  </div>
+
+  <h2>Fall 7: Die Anstalt / Oliver Welke — ZDF stiftet Preis für ZDF-Sendung</h2>
+
+  <p>Die Anstalt ist eine ZDF-Produktion. Sie erhielt beim Deutschen Fernsehpreis 2025 eine Auszeichnung in der Kategorie Bestes Buch Unterhaltung. Das ZDF gehört zu den Stiftern des Deutschen Fernsehpreises. ZDF-Intendant Norbert Himmler war 2025 Teil des Stifterkreises.</p>
+
+  <div class="fall-box">
+    <span class="fall-label">Dokumentierter Befund</span>
+    <p>Eine ZDF-Produktion wird durch einen Preis ausgezeichnet, den das ZDF mitgegründet hat, mitfinanziert und dessen Stifterkreis der ZDF-Intendant persönlich angehört. Dieser Zusammenhang wird in der Preiskommunikation nicht erwähnt.</p>
+    <p><em>Quelle: Deutscher Fernsehpreis, Pressemitteilung 10.09.2025</em></p>
+  </div>
+
+  <h2>Einordnung</h2>
+
+  <p>Die hier dokumentierten sieben Fälle betreffen keine Einzelentscheidungen und keine Einzelpersonen. Ob Böhmermann, Bosetti, Kebekus oder Welke — die Strukturfrage ist dieselbe: ARD und ZDF finanzieren und steuern Institutionen mit, die Qualitätsurteile über ARD- und ZDF-Produktionen fällen. Die Jury-Entscheidungen mögen im Einzelfall sachlich gerechtfertigt sein. Die strukturelle Verflechtung zwischen Preisstiftern, Institutsträgern und Preisträgern wird dem Publikum gegenüber jedoch nicht offengelegt.</p>
+
+  <p>Zum Vergleich: Im deutschen Pressewesen würde eine Auszeichnung, bei der der Stifter des Preises gleichzeitig Gesellschafter der verleihenden Institution und Hauptpreisträger ist, als Interessenkonflikt eingestuft werden, der offengelegt werden müsste. Im ÖRR-Preissystem gilt diese Anforderung offenbar nicht.</p>
+
+  <div class="quellen">
+    <h3>Quellen</h3>
+    <ul>
+      <li>Grimme-Institut, Gesellschafterliste: <a href="https://de.wikipedia.org/wiki/Grimme-Institut" target="_blank">Wikipedia: Grimme-Institut</a></li>
+      <li>Evangelische Zeitung, 28.04.2024: Große Gesellschafter sichern Finanzierung des Grimme-Instituts zu</li>
+      <li>Grimme-Institut, Pressemitteilung 21.03.2023: Preisträger 59. Grimme-Preis</li>
+      <li>ZDFheute, 21.03.2023: Sieben Grimme-Preise für das ZDF</li>
+      <li>Welt (Dirk Banse), 16.04.2026: „Eine bestenfalls schlampige Recherche – Richter rügt Böhmermann"</li>
+      <li>Deutscher Fernsehpreis, FAQ: <a href="https://www.deutscher-fernsehpreis.de/cms/faq/" target="_blank">deutscher-fernsehpreis.de/faq</a></li>
+      <li>Deutscher Fernsehpreis, Pressemitteilung 2025/2026 (Stifter- und Beiratsliste)</li>
+      <li>Junge Freiheit, 10.10.2025: „Nordrhein-Westfalen verteidigt Grimme-Preis an Anti-AfD-Verein"</li>
+    </ul>
+  </div>
+
+  <div class="weiterfuhrend">
+    <h3>Weiterführende Analysen</h3>
+    <ul>
+      <li><a href="pressefreiheit-selektivitaet.html">Selektiver Pressefreiheitsschutz im ÖRR</a></li>
+      <li><a href="oerr-aufreger-liste.html">Aufreger-Liste: Dokumentierte Einzelfälle</a></li>
+      <li><a href="renz-phantom-unterzeichner.html">Phantom-Unterzeichner: Strukturversagen bei der Vollstreckung</a></li>
+    </ul>
+  </div>
+
+</article>
+
+</body>
+</html>

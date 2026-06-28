@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Die Aktion der Schauspieler · Rundfunkkritik.de</title>
+  <meta name="description" content="April 2021: Zwei Kampagnen, eine Branche, ein Monat. Wie ein ARD-Rundfunkrat Berufsverbote forderte — und warum fast die Hälfte der Beteiligten noch am selben Tag zurückruderte.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf7f2;
+      --bg-card: #f5f1e8;
+      --bg-card-hover: #f0ece2;
+      --gold: #c9a84c;
+      --gold-text: #7a5200;
+      --gold-dim: #7a5f1a;
+      --gold-bg: #f5edda;
+      --text: #1c1c1c;
+      --text-muted: #4a4640;
+      --text-dim: #7a7670;
+      --border: #e0d8c8;
+      --border-mid: #d0c8b0;
+      --border-gold: #c9a84c;
+      --nav-bg: #1a2744;
+      --nav-link: #f5f0e8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .site-header {
+      background: var(--nav-bg);
+      padding: 0.75rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-header nav {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .site-header a {
+      color: var(--nav-link);
+      text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+    .site-header a:hover { opacity: 1; }
+    .site-header .home { font-weight: 500; opacity: 1; }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+    }
+
+    .kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      border-left: 2px solid var(--gold);
+      padding-left: 0.75rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.3rem;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+    h1 em { color: var(--gold-text); font-style: italic; }
+
+    .standfirst {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      border-top: 1px solid var(--border-mid);
+      border-bottom: 1px solid var(--border-mid);
+      padding: 1.25rem 0;
+      margin: 1.5rem 0;
+    }
+
+    .meta-line {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--text);
+      margin: 3rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-mid);
+    }
+    h2 em { color: var(--gold-text); font-style: italic; }
+
+    p {
+      margin-bottom: 1.25rem;
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+    p strong { color: var(--text); }
+
+    .zitat {
+      border-left: 3px solid var(--gold);
+      padding: 1rem 1.5rem;
+      margin: 2rem 0;
+      background: var(--gold-bg);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--gold-text);
+      line-height: 1.7;
+    }
+    .zitat cite {
+      display: block;
+      font-style: normal;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--gold-dim);
+      margin-top: 0.6rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Fall-Karten */
+    .fall {
+      background: #fff;
+      border: 1px solid var(--border);
+      margin: 1.5rem 0;
+    }
+    .fall-header {
+      display: flex;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--border);
+    }
+    .fall-nummer {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--gold-dim);
+      background: var(--gold-bg);
+      border-right: 1px solid var(--border-mid);
+      padding: 1rem 0.875rem;
+      white-space: nowrap;
+      align-self: stretch;
+      display: flex;
+      align-items: flex-start;
+      padding-top: 1.1rem;
+    }
+    .fall-meta {
+      flex: 1;
+      padding: 0.875rem 1.25rem;
+    }
+    .fall-titel {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 0.25rem;
+    }
+    .fall-quelle {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.67rem;
+      color: var(--text-dim);
+      letter-spacing: 0.04em;
+    }
+    .fall-body {
+      padding: 1rem 1.25rem 1.1rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .fall-body strong { color: var(--text); }
+    .fall-body .highlight {
+      color: var(--gold-text);
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    /* Gegenüberstellung */
+    .vergleich {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border-mid);
+      margin: 2rem 0;
+      border: 1px solid var(--border-mid);
+    }
+    .vergleich-col {
+      background: #fff;
+      padding: 1.25rem;
+    }
+    .vergleich-col.links-col { background: var(--gold-bg); }
+    .vergleich-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .vergleich-col ul { list-style: none; padding: 0; }
+    .vergleich-col ul li {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.5;
+    }
+    .vergleich-col ul li:last-child { border-bottom: none; }
+    .vergleich-col ul li strong { color: var(--text); }
+
+    /* Fazit */
+    .fazit-box {
+      background: var(--gold-bg);
+      border: 1px solid var(--border-gold);
+      border-left: 3px solid var(--gold);
+      padding: 1.5rem 1.75rem;
+      margin: 3rem 0;
+    }
+    .fazit-box p { color: var(--text-muted); margin-bottom: 0.75rem; }
+    .fazit-box p:last-child { margin-bottom: 0; }
+    .fazit-box strong { color: var(--gold-text); }
+
+    /* Weiterführende Analysen */
+    .link-block {
+      display: flex;
+      gap: 1px;
+      background: var(--border-mid);
+      margin-top: 3rem;
+      border: 1px solid var(--border-mid);
+    }
+    .link-item {
+      flex: 1;
+      background: var(--gold-bg);
+      padding: 1rem 1.25rem;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .link-item:hover { background: var(--bg-card-hover); }
+    .link-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.67rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 0.4rem;
+    }
+    .link-title {
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .article-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 1.5rem 1.25rem 4rem; }
+      h1 { font-size: 1.7rem; }
+      .vergleich { grid-template-columns: 1fr; }
+      .link-block { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav>
+    <a href="index.html" class="home">Rundfunkkritik.de</a>
+    <a href="index.html#aktuell">Aktuell</a>
+    <a href="index.html#mechanismen">Mechanismen</a>
+    <a href="index.html#beweise">Beweise</a>
+    <a href="index.html#urteile">Urteile</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <span class="kicker">Pandemie-Berichterstattung · Mediendruck · April 2021</span>
+
+  <h1>Die Aktion der Schauspieler:<br><em>Zwei Kampagnen, ein Monat, eine Asymmetrie</em></h1>
+
+  <p class="standfirst">Im April 2021 forderte ein ARD-Rundfunkrat Berufsverbote für Schauspieler, die eine Satire-Aktion gestartet hatten. Staatlich finanzierte Kampagnen mit denselben Berufsgruppen liefen unkommentiert. Das Dokument dieser Asymmetrie.</p>
+
+  <p class="meta-line">Rundfunkkritik.de · Juni 2026 · Quellen: Berliner Zeitung, Cicero, t-online, WDR, Tagesspiegel, Süddeutsche Zeitung</p>
+
+  <h2>Aktion 1: <em>Der staatliche Auftrag</em></h2>
+
+  <p>März 2020. Das Bundesgesundheitsministerium koordiniert eine Kampagne unter dem Hashtag <strong>#WirBleibenZuhause</strong>. Schauspieler, Moderatoren und Musiker sprechen in die Kamera — entspannt, zuhause, einheitlich. Für Auftritte wird, wie das Ministerium auf Nachfrage des <em>stern</em> bestätigt, eine „marktübliche Aufwandsentschädigung" gezahlt.</p>
+
+  <p>April 2021: <strong>#ÄrmelHoch</strong>. Erneut prominente Gesichter, erneut finanziert, erneut koordiniert. Das Impfzentrum im Spot ist eine Kulisse — die eigentlichen Impftermine der Beteiligten fanden Wochen zuvor statt.</p>
+
+  <p>Reaktion der Rundfunkgremien: keine. Reaktion der Talkshows: keine. Reaktion des Feuilletons: keine.</p>
+
+  <h2>Aktion 2: <em>Die Satire ohne Auftrag</em></h2>
+
+  <p>Ebenfalls April 2021. Ohne staatlichen Auftrag, ohne Honorar, koordiniert in einer privaten Gruppe: Rund 50 Film- und Fernsehschauspieler veröffentlichen gleichzeitig ironisch-satirische Kurzvideos. Der Hashtag: <strong>#allesdichtmachen</strong>.</p>
+
+  <p>Beteiligt sind unter anderen Ulrich Tukur, Volker Bruch, Meret Becker, Ulrike Folkerts, Richy Müller, Heike Makatsch und Jan Josef Liefers. Liefers sagt darin, er danke den Medien dafür, dass „kein unnötiger kritischer Disput uns ablenken kann von der Zustimmung zu den sinnvollen und immer angemessenen Maßnahmen unserer Regierung."</p>
+
+  <p>Es ist Satire. Der Ton ist ironisch, die Form filmisch, die Botschaft: Kritik am Untertanengeist — aus dem Mund derer, die ihn sonst auf der Bühne verkörpern.</p>
+
+  <h2>Die nächsten 24 Stunden: <em>Dokumentiert</em></h2>
+
+  <div class="fall">
+    <div class="fall-header">
+      <div class="fall-nummer">01</div>
+      <div class="fall-meta">
+        <div class="fall-titel">Rundfunkrat fordert Berufsverbot — per Tweet</div>
+        <div class="fall-quelle">Quelle: Berliner Zeitung, 23. April 2021 · t-online, 23. April 2021</div>
+      </div>
+    </div>
+    <div class="fall-body">
+      WDR-Rundfunkrat Garrelt Duin (SPD), ehemaliger Landesvorsitzender und Minister, schreibt auf Twitter: <strong>„Jan Josef Liefers und Tukur u.a. verdienen sehr viel Geld bei der ARD, sind deren Aushängeschilder."</strong> Sie hätten sich „unmöglich gemacht". Die zuständigen Gremien müssten die Zusammenarbeit <span class="highlight">„auch aus Solidarität mit denen, die wirklich unter Corona leiden – schnellstens beenden."</span>
+      <br><br>
+      Ein Rundfunkrat — das Kontrollgremium, das die Unabhängigkeit des Senders sichern soll — fordert die Entlassung von Journalisten und Schauspielern wegen eines Satirevideos. Der Tweet wird nach einer Stunde gelöscht.
+    </div>
+  </div>
+
+  <div class="fall">
+    <div class="fall-header">
+      <div class="fall-nummer">02</div>
+      <div class="fall-meta">
+        <div class="fall-titel">Tagesspiegel: „Gefährlich" und „Unverschämtheit"</div>
+        <div class="fall-quelle">Quelle: Tagesspiegel, 23. April 2021</div>
+      </div>
+    </div>
+    <div class="fall-body">
+      Tagesspiegel-Autor Sebastian Leber bezeichnet #allesdichtmachen nicht nur für „gefährlich", sondern für eine <strong>„Unverschämtheit"</strong>. Derartige Argumente kenne man sonst nur von Querdenkern. Stefan Niggemeier (Übermedien) attestiert der Aktion den Status eines <span class="highlight">„Dammbruchs"</span> — sie sei der „größte Erfolg der Querdenkerszene".
+      <br><br>
+      Kein Autor beider Publikationen hatte zuvor die staatlich finanzierten Schauspieler-Kampagnen auf vergleichbare Kriterien geprüft.
+    </div>
+  </div>
+
+  <div class="fall">
+    <div class="fall-header">
+      <div class="fall-nummer">03</div>
+      <div class="fall-meta">
+        <div class="fall-titel">WDR-Interview: DDR-Vergleich</div>
+        <div class="fall-quelle">Quelle: WDR, April 2021 · Hotel Matze Podcast, 2025</div>
+      </div>
+    </div>
+    <div class="fall-body">
+      Ein WDR-Moderator fragt Liefers, ob er „naiv" sei und ob er nicht „exakt das Narrativ der rechtsextremen Lügenpresse-Schreihälse" bediene. Liefers antwortet: <strong>„Wissen Sie, wann das letzte Mal jemand zu mir gesagt hat: ‚Sind Sie so naiv?' Das war ein Mitarbeiter des Zentralkomitees in der DDR auf der Schauspielschule."</strong>
+      <br><br>
+      Vier Jahre später berichtet Liefers im Podcast Hotel Matze: Noch während die Videos online gingen, rief ein Bekannter — inzwischen bei Correctiv tätig — an und verlangte, das Video sofort zu löschen und eine Distanzierungserklärung abzugeben. Liefers nahm kein Video zurück.
+    </div>
+  </div>
+
+  <div class="fall">
+    <div class="fall-header">
+      <div class="fall-nummer">04</div>
+      <div class="fall-meta">
+        <div class="fall-titel">Die Kapitulation: Fast die Hälfte rudert zurück — am selben Tag</div>
+        <div class="fall-quelle">Quelle: Berliner Zeitung, 23. April 2021 · Cicero, April 2021</div>
+      </div>
+    </div>
+    <div class="fall-body">
+      Heike Makatsch erklärt, falls sie mit ihrer Satire „rechten Demagogen" in die Hände gespielt habe, bereue sie das <strong>„zutiefst"</strong>. Andere Beteiligte distanzieren sich noch am selben Tag oder lassen ihre Videos löschen. Die Website allesdichtmachen.de ist am nächsten Morgen nicht mehr erreichbar.
+      <br><br>
+      Der Grund ist strukturell, nicht moralisch: Schauspieler sind Freiberufler. Ihr nächstes Engagement hängt an Agenten, Redakteuren, Intendanten — an einem Netzwerk persönlicher Beziehungen. <span class="highlight">Wer öffentlich als „coronaleugnerisch" oder „rechts" markiert wird, verliert nicht ein Video. Er verliert die nächsten zwei Jahre.</span>
+    </div>
+  </div>
+
+  <h2>Die Asymmetrie: <em>Dokumentiert</em></h2>
+
+  <div class="vergleich">
+    <div class="vergleich-col links-col">
+      <span class="vergleich-label">Staatlich finanzierte Kampagnen (#WirBleibenZuhause / #ÄrmelHoch)</span>
+      <ul>
+        <li><strong>Finanzierung:</strong> Bundesministerium, marktübliche Entschädigung</li>
+        <li><strong>Koordination:</strong> staatlich</li>
+        <li><strong>Reaktion Rundfunkräte:</strong> keine</li>
+        <li><strong>Reaktion Feuilleton:</strong> Lob, Berichterstattung</li>
+        <li><strong>Reaktion Talkshows:</strong> keine Prüfung</li>
+        <li><strong>Folgen für Beteiligte:</strong> keine</li>
+      </ul>
+    </div>
+    <div class="vergleich-col">
+      <span class="vergleich-label">#allesdichtmachen (selbstorganisiert, ohne Honorar)</span>
+      <ul>
+        <li><strong>Finanzierung:</strong> keine</li>
+        <li><strong>Koordination:</strong> privat</li>
+        <li><strong>Reaktion Rundfunkräte:</strong> Forderung nach Berufsverboten</li>
+        <li><strong>Reaktion Feuilleton:</strong> „gefährlich", „Dammbruch", „Unverschämtheit"</li>
+        <li><strong>Reaktion Talkshows:</strong> Naivitätsvorwurf, DDR-Rhetorik</li>
+        <li><strong>Folgen für Beteiligte:</strong> Distanzierungsdruck, Engagementverlust</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="zitat">
+    „Vor 20 Jahren, als diese Gesellschaft noch ein Gefühl für politischen Anstand hatte, wäre solch ein Demokratiefeind selbst gegangen."
+    <cite>Cicero-Leserkommentar zu Garrelt Duin, April 2021 — gemeint ist der Rundfunkrat, nicht die Schauspieler</cite>
+  </div>
+
+  <h2>Was danach folgte: <em>Das Schweigen</em></h2>
+
+  <p>Eine Kabarettistin, über ein Jahrzehnt das Gesicht einer der meistgesehenen Polit-Satiresendungen im deutschen Fernsehen, verschwindet monatelang vom Bildschirm. Als sie zurückkommt, berichtet sie von Schlaflosigkeit, Herzrasen, Muskelzittern und depressiven Schüben — und verlässt die Sendung. Die <em>Süddeutsche Zeitung</em> berichtet darüber als Randnotiz.</p>
+
+  <p>Eine Dokumentation aus dem Jahr 2023 — produziert von Kulturschaffenden ohne Talkshow-Zugang — trägt den Titel <strong>„Hauptsache GEIMPFT"</strong>. Sie dokumentiert Engagements, die nicht zustande kamen; Proben, für die Nachweise verlangt wurden; Schweigen als Voraussetzung für Weiterbeschäftigung.</p>
+
+  <p>Jan Josef Liefers sagt 2025 im Podcast Hotel Matze: Er würde es wieder tun.</p>
+
+  <h2>Die strukturelle Frage</h2>
+
+  <p>Ein Rundfunkrat ist kein Parteiorgan. Er ist das Gremium, das die Unabhängigkeit des öffentlich-rechtlichen Rundfunks von politischen und wirtschaftlichen Interessen sichern soll. Sein Auftrag ist im jeweiligen Landesrundfunkgesetz verankert.</p>
+
+  <p>Garrelt Duin forderte die Entlassung von Schauspielern wegen einer Satire-Aktion — per Tweet, innerhalb von 24 Stunden, ohne Gremiumsbeschluss, ohne Verfahren. Sein Tweet wurde nach einer Stunde gelöscht. Eine förmliche Stellungnahme des WDR-Rundfunkrats zu dieser Handlung seines Mitglieds ist nicht dokumentiert.</p>
+
+  <div class="fazit-box">
+    <p><strong>Was dokumentiert ist:</strong></p>
+    <p>Zwei Kampagnen, eine Branche, ein Monat. Die staatlich finanzierte: kein Gremium reagiert. Die selbstorganisierte Satire: ein Rundfunkrat fordert Berufsverbote, führende Medien sprechen von „Dammbruch", Beteiligte verlieren Engagements.</p>
+    <p><strong>Der Unterschied lag nicht in der Qualität. Er lag in der Richtung der Kritik.</strong></p>
+    <p>Die Verträge, Betriebsvereinbarungen und internen Kommunikationen der betroffenen Theater und Sender sind zugänglich. Sie warten auf Anfragen nach dem Informationsfreiheitsgesetz.</p>
+  </div>
+
+  <div class="link-block">
+    <a href="pressefreiheit-selektivitaet.html" class="link-item">
+      <div class="link-label">Verwandte Analyse</div>
+      <div class="link-title">Doppelte Selektivität: Wenn ARD und ZDF über Pressefreiheit berichten</div>
+    </a>
+    <a href="renz-phantom-unterzeichner.html" class="link-item">
+      <div class="link-label">Strukturanalyse</div>
+      <div class="link-title">Der Geist, der vollstreckt: Wer kontrolliert die Rundfunkräte?</div>
+    </a>
+  </div>
+
+  <p class="article-meta">Rundfunkkritik.de · Pandemie-Berichterstattung · Juni 2026 · Primärquellen: Berliner Zeitung 23.04.2021, Cicero 23.04.2021, t-online 23.04.2021, Hotel Matze Podcast 2025, Süddeutsche Zeitung (Kabarettistin-Interview)</p>
+
+</main>
+
+</body>
+</html>

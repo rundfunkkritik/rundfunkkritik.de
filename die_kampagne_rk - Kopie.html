@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Die Kampagne – rundfunkkritik.de</title>
+<style>
+  :root {
+    --gold: #c9a84c;
+    --gold-text: #a07830;
+    --gold-bg: #fdf8ef;
+    --gold-dim: #b89a60;
+    --border-gold: #e8d5a0;
+    --bg: #f7f5f0;
+    --bg-card: #ffffff;
+    --nav-bg: #1a2744;
+    --text: #1a1a1a;
+    --text-muted: #3a3a3a;
+    --text-dim: #777;
+    --border: #e0ddd5;
+    --border-mid: #ccc;
+    --red-bg: #fff5f5;
+    --red-border: #f5c0c0;
+    --red-text: #b03030;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--nav-bg);
+    padding: 0.85rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  nav .logo {
+    font-family: Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+  nav a {
+    color: rgba(255,255,255,0.7);
+    font-family: Arial, sans-serif;
+    font-size: 0.8rem;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  nav a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    background: var(--nav-bg);
+    padding: 3.5rem 2rem 2.5rem;
+    text-align: center;
+  }
+  .hero-serie {
+    font-family: Arial, sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+  }
+  .hero-sub {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.65);
+    max-width: 640px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.5;
+  }
+  .hero-meta {
+    font-family: Arial, sans-serif;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* LAYOUT */
+  .wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+
+  /* ZAHLEN-BANNER */
+  .zahlen-banner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border-mid);
+    border: 1px solid var(--border-mid);
+    margin-bottom: 2.5rem;
+  }
+  .zahl-zelle {
+    background: var(--bg-card);
+    padding: 1.25rem 1rem;
+    text-align: center;
+  }
+  .zahl-zelle .zahl {
+    font-family: Arial, sans-serif;
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--gold-text);
+    line-height: 1;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  .zahl-zelle .label {
+    font-family: Arial, sans-serif;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  /* LEAD */
+  .lead {
+    font-size: 1.12rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* SECTION HEADER */
+  h2 {
+    font-family: Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  p {
+    margin-bottom: 1.1rem;
+    font-size: 0.98rem;
+    color: var(--text-muted);
+  }
+
+  /* DAMALS / HEUTE */
+  .vergleich {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border-mid);
+    border: 1px solid var(--border-mid);
+    margin: 2rem 0;
+  }
+  .vergleich-col {
+    background: var(--bg-card);
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+  .vergleich-col.damals { background: #f5f9ff; }
+  .vergleich-col.heute  { background: var(--gold-bg); }
+  .vergleich-label {
+    font-family: Arial, sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .vergleich-col p {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.6;
+  }
+  .vergleich-col p:last-child { margin-bottom: 0; }
+  .vergleich-col strong { color: var(--text); }
+
+  /* FALL CARDS */
+  .fall {
+    border: 1px solid var(--border);
+    margin: 1.5rem 0;
+    background: var(--bg-card);
+  }
+  .fall-header {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+  }
+  .fall-nr {
+    font-family: Arial, sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--gold-dim);
+    padding: 0.9rem 1rem;
+    border-right: 1px solid var(--border-mid);
+    min-width: 60px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .fall-meta {
+    padding: 0.75rem 1.25rem;
+    flex: 1;
+  }
+  .fall-titel {
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.2rem;
+  }
+  .fall-quelle {
+    font-family: Arial, sans-serif;
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+  }
+  .fall-body {
+    padding: 1rem 1.25rem 1.2rem;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  .fall-body strong { color: var(--text); }
+  .fall-body .highlight {
+    color: var(--gold-text);
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  /* ZITAT */
+  .zitat {
+    border-left: 3px solid var(--gold);
+    background: var(--gold-bg);
+    padding: 1.1rem 1.5rem;
+    margin: 1.75rem 0;
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 1.0rem;
+    line-height: 1.7;
+  }
+  .zitat .attribution {
+    display: block;
+    font-style: normal;
+    font-family: Arial, sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-top: 0.6rem;
+  }
+
+  /* MUSTER-BOX */
+  .muster-box {
+    background: var(--red-bg);
+    border: 1px solid var(--red-border);
+    border-left: 3px solid var(--red-text);
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+  }
+  .muster-box-title {
+    font-family: Arial, sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red-text);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .muster-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  .muster-box ul li {
+    font-size: 0.91rem;
+    color: var(--text-muted);
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--red-border);
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.5;
+  }
+  .muster-box ul li:last-child { border-bottom: none; }
+  .muster-box ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--red-text);
+    font-style: normal;
+  }
+
+  /* FAZIT */
+  .fazit-box {
+    background: var(--gold-bg);
+    border: 1px solid var(--border-gold);
+    border-left: 3px solid var(--gold);
+    padding: 1.5rem 1.75rem;
+    margin: 2.5rem 0;
+  }
+  .fazit-box-title {
+    font-family: Arial, sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 0.9rem;
+    display: block;
+  }
+  .fazit-box p {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-muted);
+  }
+  .fazit-box p:last-child { margin-bottom: 0; }
+
+  /* QUELLEN */
+  .quellen {
+    border-top: 1px solid var(--border);
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+  }
+  .quellen-title {
+    font-family: Arial, sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 0.75rem;
+  }
+  .quellen ul {
+    list-style: none;
+    padding: 0;
+  }
+  .quellen ul li {
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.5;
+  }
+  .quellen ul li:last-child { border-bottom: none; }
+  .quellen ul li a {
+    color: var(--gold-text);
+    text-decoration: none;
+  }
+  .quellen ul li a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .zahlen-banner { grid-template-columns: 1fr; }
+    .vergleich { grid-template-columns: 1fr; }
+    .vergleich-col.damals { border-bottom: 1px solid var(--border-mid); }
+    nav { gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="/">RUNDFUNKKRITIK</a>
+  <a href="/medienpolitik">Medienpolitik</a>
+  <a href="/analyse">Analyse</a>
+  <a href="/archiv">Archiv</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-serie">Analyse · Medienpolitik</div>
+  <h1>Die Kampagne</h1>
+  <p class="hero-sub">573 Millionen Euro Steuergelder, 200 Journalisten mit Regierungshonoraren, eine Agentur ohne Ausschreibung — und warum die Namen bis heute geheim sind</p>
+  <div class="hero-meta">Juni 2026 &nbsp;·&nbsp; Redaktion Rundfunkkritik</div>
+</div>
+
+<div class="wrap">
+
+  <!-- ZAHLEN BANNER -->
+  <div class="zahlen-banner">
+    <div class="zahl-zelle">
+      <span class="zahl">573 Mio.</span>
+      <span class="label">Euro für Corona-Kommunikation<br>2020–2022 (Bundeshaushalt)</span>
+    </div>
+    <div class="zahl-zelle">
+      <span class="zahl">200</span>
+      <span class="label">Journalisten mit<br>Regierungshonoraren</span>
+    </div>
+    <div class="zahl-zelle">
+      <span class="zahl">175 Mio.</span>
+      <span class="label">Euro an eine einzige<br>Medienagentur (2020–2021)</span>
+    </div>
+  </div>
+
+  <p class="lead">
+    Wer 2021 Zeitung las, Plakate sah oder das Radio einschaltete, begegnete ihr überall: der Botschaft, dass Impfen schützt, rettet, solidarisch ist. 150 Konzerne änderten gleichzeitig ihre Werbeslogan. ARD-Ärzte erklärten scheinbar unabhängig. Eine Impfkampagne nach der anderen rollte durch TV, Print und Social Media. Das wirkte wie eine gesellschaftliche Bewegung. Es war auch eine. Nur war sie in wesentlichen Teilen bezahlt — mit Steuergeldern, über Kanäle, die als unabhängig galten.
+  </p>
+
+  <h2>Was die Zahlen sagen</h2>
+
+  <p>
+    Aus der Antwort der Bundesregierung auf Bundestag-Drucksache 20/3253 geht hervor: In den Jahren 2020, 2021 und 2022 flossen 90, 295 und 188,9 Millionen Euro aus dem Bundeshaushalt in COVID-19-Kommunikation — insgesamt über 573 Millionen Euro. Zum Vergleich: In den Jahren 2015 bis 2019 gab die <em>gesamte</em> Bundesregierung durchschnittlich 58 Millionen Euro pro Jahr für alle Werbemaßnahmen aus. Das Gesundheitsministerium gab allein 2021 das Zweieinhalbfache dieses Betrages aus — für ein einziges Thema.
+  </p>
+
+  <p>
+    Die Verteilung des Jahres 2021: 64,2 Millionen Euro für Printanzeigen in Tageszeitungen, 45,9 Millionen für Plakate und digitale Screens, 15,8 Millionen für TV-Spots, 12,2 Millionen für Radio. An welche Verlage und Medienhäuser das Geld konkret floss — das, so das Ministerium auf Nachfrage, könne es nicht sagen.
+  </p>
+
+  <!-- FALL: CARAT -->
+  <div class="fall">
+    <div class="fall-header">
+      <div class="fall-nr">Akte 01</div>
+      <div class="fall-meta">
+        <div class="fall-titel">Carat Deutschland: 175 Millionen Euro — eine Agentur</div>
+        <div class="fall-quelle">Quelle: NZZ, 13.05.2023 · Bundestag-Drucksachen · Antwort der Bundesregierung auf AfD-Anfrage</div>
+      </div>
+    </div>
+    <div class="fall-body">
+      Eine einzige Medienagentur taucht in den Abrechnungsunterlagen der Bundesregierung über <strong>hundert Mal</strong> auf: Carat Deutschland. Allein für "Corona-Kommunikation" erhielt sie 2020 und 2021 über <strong>175 Millionen Euro</strong> an Schaltkosten — und das ohne die zusätzlichen Agenturhonorare. Die NZZ berichtete im Mai 2023 auf Basis der Regierungsantwort: Die Bundesregierung gab in diesen drei Jahren insgesamt über <strong>513 Millionen Euro</strong> für Werbe- und Informationsmaßnahmen aus.
+    </div>
+  </div>
+
+  <h2>Der goldene Maulkorb</h2>
+
+  <div class="vergleich">
+    <div class="vergleich-col damals">
+      <span class="vergleich-label">Damals — 2020 bis 2022</span>
+      <p>Zahlreiche Journalisten öffentlich-rechtlicher und privater Sender moderieren staatliche Veranstaltungen, erstellen Videobeiträge für Ministerien, halten Vorträge im Regierungsauftrag.</p>
+      <p>Ihre Berichterstattung über Pandemiemaßnahmen erscheint <strong>unabhängig, kritisch, journalistisch einwandfrei</strong>.</p>
+    </div>
+    <div class="vergleich-col heute">
+      <span class="vergleich-label">Heute — Bundestag-Drucksache 20/5822</span>
+      <p>Die Bundesregierung zahlte seit 2018 Honorare von <strong>1.471.828 Euro</strong> an 200 Journalisten — für Moderationen, Texte, Vorträge, Medientrainings.</p>
+      <p>Davon: <strong>875.000 Euro</strong> an ARD-, ZDF-, Deutschlandradio- und DW-Journalisten. <strong>596.000 Euro</strong> an Spiegel, Zeit, Tagesspiegel und andere.</p>
+      <p>Die Namen? <strong>Pseudonymisiert</strong>. Aus Datenschutzgründen.</p>
+    </div>
+  </div>
+
+  <!-- FALL: JOURNALIST -->
+  <div class="fall">
+    <div class="fall-header">
+      <div class="fall-nr">Akte 02</div>
+      <div class="fall-meta">
+        <div class="fall-titel">Der Journalist, der Pressesprecher auf Interviews vorbereitete — und sie dann interviewte</div>
+        <div class="fall-quelle">Quelle: Berliner Zeitung, 09.03.2023 · Bundesregierung Antwort 20/5822 · Bundestag 17.03.2023</div>
+      </div>
+    </div>
+    <div class="fall-body">
+      Aus der Antwort der Bundesregierung geht hervor: Mindestens ein Journalist schulte als <strong>bezahlter Regierungsauftragnehmer</strong> Pressesprecher auf Interviews vor — und interviewte dieselben Politiker später als <strong>Festangestellter eines öffentlich-rechtlichen Senders</strong>. Ein weiteres Detail: Nicht enthalten in der Aufstellung sind die Honorare des Bundesnachrichtendienstes an Journalisten. Diese Kooperationen seien <class="highlight">"besonders schützenswert"</class>, teilte die Bundesregierung mit.
+    </div>
+  </div>
+
+  <div class="zitat">
+    „Wer sich als Journalist regelmäßig und für wenig Aufwand fürstlich honorieren lässt, kann nicht mehr glaubhaft kritisch oder unabhängig berichten. Die vierte Gewalt bekommt so nach und nach einen goldenen Maulkorb."
+    <span class="attribution">Parlamentarische Erklärung, Bundestag-Protokoll 2023</span>
+  </div>
+
+  <h2>Der Arzt, der Arzt war</h2>
+
+  <div class="vergleich">
+    <div class="vergleich-col damals">
+      <span class="vergleich-label">Damals</span>
+      <p>Ein bekannter ARD-Medizinjournalist und Komiker erklärt als scheinbar unabhängige Stimme, warum die Impfung wichtig ist. Talkshows, Plakate, Zeitungsinterviews. Sein Wort gilt als das eines Arztes, nicht eines Lobbyisten.</p>
+    </div>
+    <div class="vergleich-col heute">
+      <span class="vergleich-label">Heute — dokumentiert</span>
+      <p>März 2021: Die Gates-Stiftung fördert seine im März 2020 gegründete Stiftung mit <strong>1.399.984 Dollar</strong> für 13 Monate.</p>
+      <p>Sozialministerium Baden-Württemberg bestätigt: <strong>71.400 Euro</strong> Steuergelder für "Beratung und Konzeption" einer staatlichen Impfkampagne.</p>
+      <p>Ärztezeitung: Er sowie zwei weitere Prominente erhielten Honorare vom BMG. Die Summen: <strong>geheim</strong>, auf Wunsch des Ministeriums.</p>
+    </div>
+  </div>
+
+  <h2>Die Agentur und die Partei</h2>
+
+  <div class="vergleich">
+    <div class="vergleich-col damals">
+      <span class="vergleich-label">Damals — Herbst 2022</span>
+      <p>84 Bürgerinnen und Bürger werben auf Plakaten und im Fernsehen für die Corona-Impfung. Die Kampagne "Ich schütze mich" wirkt bürgernah, unaufgeregt, vertrauenswürdig.</p>
+      <p>Budget: <strong>32 Millionen Euro</strong>. Zuzüglich 700.000 Euro für kreative Entwicklung.</p>
+    </div>
+    <div class="vergleich-col heute">
+      <span class="vergleich-label">Heute — BRH-Bericht 25.03.2024</span>
+      <p>Die Agentur BrinkertLück — die zuvor den Bundestagswahlkampf von Olaf Scholz organisiert hatte — erhielt den Auftrag <strong>ohne Ausschreibung</strong>.</p>
+      <p>Ab 140.000 Euro Auftragsvolumen schreibt EU-Vergaberecht öffentliche Ausschreibung vor.</p>
+      <p>Die Vertragsunterlagen: als <strong>"VS-vertraulich"</strong> eingestuft. Parlamentarier durften sie nur in einem abhörsicheren Saal einsehen.</p>
+    </div>
+  </div>
+
+  <!-- FALL: LAUTERBACH -->
+  <div class="fall">
+    <div class="fall-header">
+      <div class="fall-nr">Akte 03</div>
+      <div class="fall-meta">
+        <div class="fall-titel">Bundesrechnungshof: Lauterbach wollte Aufklärung „vorsätzlich behindern"</div>
+        <div class="fall-quelle">Quelle: Bundesrechnungshof, Prüfbericht 25.03.2024 · Tagesspiegel · ZDF · Welt</div>
+      </div>
+    </div>
+    <div class="fall-body">
+      Der Bundesrechnungshof stellte nach Auswertung der Unterlagen fest: Das BMG vergab den Auftrag an BrinkertLück unter Verstoß gegen das Vergaberecht. Die eigentlich zuständige Hausagentur <em>Scholz &amp; Friends</em> wurde übergangen. Die Einstufung der Dokumente als Verschlusssache war nach Ansicht des BRH <strong>nicht gerechtfertigt</strong> — ein "Schaden für die Interessen Deutschlands" durch Offenlegung einer Impfwerbekampagne sei nicht erkennbar. Der BRH attestierte dem Ministerium, die Aufklärung der Vorwürfe <span class="highlight">„vorsätzlich behindern"</span> zu wollen. Das Ministerium wies die Einschätzung "ausdrücklich" zurück.
+    </div>
+  </div>
+
+  <h2>Das Muster</h2>
+
+  <div class="muster-box">
+    <span class="muster-box-title">Drei Ebenen — gleichzeitig aktiv</span>
+    <ul>
+      <li>Eine staatliche Kommunikationsmaschinerie, die mehr Geld ausgab als je zuvor — mit einer einzigen Agentur als Hauptempfängerin (175 Mio. Euro, Carat Deutschland, 2020–2021).</li>
+      <li>Prominente Fürsprecher, deren finanzielle Verbindungen zu staatlichen Stellen und internationalen Stiftungen erst durch parlamentarische Anfragen bekannt wurden — oft Monate oder Jahre nach ihren öffentlichen Auftritten.</li>
+      <li>Journalisten mit staatlichen Honoraren, die über staatliche Pandemiemaßnahmen berichteten — deren Namen bis heute pseudonymisiert sind.</li>
+      <li>Eine Agentur, die zuerst den SPD-Wahlkampf organisierte und danach ohne Ausschreibung den wichtigsten Impfkampagnenauftrag erhielt.</li>
+    </ul>
+  </div>
+
+  <p>
+    Keiner dieser Vorgänge ist für sich genommen ein Beweis für Absprachen. Zusammen bilden sie eine Infrastruktur, in der es schwer wird, den Unterschied zwischen unabhängiger Berichterstattung und bezahlter Resonanz zu erkennen. Der Begriff dafür ist nicht Verschwörung — er ist <strong>Interessenkonflikt</strong>.
+  </p>
+
+  <h2>Was das bedeutet</h2>
+
+  <p>
+    All das ist dokumentiert. In Bundestag-Drucksachen, Bundesrechnungshof-Berichten, Ministeriumsantworten und Presseberichten von Tagesspiegel, Ärztezeitung, NZZ und Berliner Zeitung.
+  </p>
+
+  <div class="fazit-box">
+    <span class="fazit-box-title">Was Transparenz bedeuten würde</span>
+    <p>Offenlegungspflicht für staatliche Werbeausgaben nach Medienhaus — damit Verlage, die von Regierungskampagnen profitieren, als solche erkennbar sind.</p>
+    <p>Transparenzregeln für Moderations- und Vortragshonorare an Journalisten — mit Namensnennung, nicht mit Nummern.</p>
+    <p>Unabhängige, öffentliche Ausschreibungsverfahren für alle staatlichen Kommunikationskampagnen ab 50.000 Euro.</p>
+    <p>Das wäre der Unterschied zwischen einer Demokratie, die aus Fehlern lernt — und einer, die sie verwaltet.</p>
+  </div>
+
+  <!-- QUELLEN -->
+  <div class="quellen">
+    <div class="quellen-title">Primärquellen &amp; Belege</div>
+    <ul>
+      <li><a href="https://dserver.bundestag.de/btd/20/032/2003253.pdf" target="_blank">Bundestag-Drucksache 20/3253</a> — Antwort der Bundesregierung: COVID-19-Kommunikationsbudgets 2020–2022</li>
+      <li><a href="https://dserver.bundestag.de/btd/20/058/2005822.pdf" target="_blank">Bundestag-Drucksache 20/5822</a> — Honorarzahlungen an Journalisten</li>
+      <li>Bundesrechnungshof, Prüfbericht 25.03.2024 — Kampagnenvergabe "Ich schütze mich" (zitiert nach Tagesspiegel, Welt, ZDF)</li>
+      <li><a href="https://www.tagesspiegel.de/gesundheit/werbekampagne-zum-impfen-bundesrechnungshof-rugt-lauterbachs-ministerium-fur-vergabe-an-spd-nahe-agentur-11424800.html" target="_blank">Tagesspiegel, 28.03.2024</a> — BRH rügt Lauterbachs Ministerium</li>
+      <li><a href="https://www.nzz.ch/international/influencer-und-pr-bundesregierung-gab-halbe-milliarde-euro-aus-ld.1737871" target="_blank">NZZ, 22.04.2023</a> — Bundesregierung gab halbe Milliarde Euro aus</li>
+      <li><a href="https://www.berliner-zeitung.de/politik-gesellschaft/journalismus-der-fall-linda-zervakis-ueppige-verguetungen-fuer-reporter-von-ard-und-zdf-regierungszahlungen-an-oeffentlich-rechtliche-journalisten-das-ist-die-liste-der-honorare-li.325671" target="_blank">Berliner Zeitung, 09.03.2023</a> — Liste der Regierungshonorare</li>
+      <li><a href="https://www.aerztezeitung.de/Politik/Hirschhausen-Glas-und-Carpendale-bekamen-Honorar-fuer-Corona-Impfkampagne-440153.html" target="_blank">Ärztezeitung</a> — Prominente erhielten Honorar für Impfkampagne</li>
+      <li><a href="https://kress.de/news/beitrag/143432-ueberraschender-geldsegen-fuer-die-medien.html" target="_blank">kress.de</a> — Verteilung der BMG-Werbeausgaben 2021</li>
+    </ul>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wie viele Nürnbergs? — dunkelfeld.report</title>
+<style>
+  :root {
+    --bg: #09090b;
+    --surface: #111113;
+    --border: #222228;
+    --text: #e8e8f0;
+    --muted: #888899;
+    --accent: #e8c547;
+    --accent-dim: rgba(232,197,71,0.12);
+    --red: #e85447;
+    --red-dim: rgba(232,84,71,0.10);
+    --green: #47e8a0;
+    --green-dim: rgba(71,232,160,0.10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  /* HEADER */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 100;
+  }
+  .dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
+  .header-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+  .header-right {
+    margin-left: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+  }
+
+  /* LAYOUT */
+  .container {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 5rem 0 3.5rem;
+  }
+  .kicker {
+    font-family: 'Courier New', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    margin-bottom: 1.8rem;
+  }
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.08;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+  h1 span { color: var(--muted); }
+  .subtitle {
+    font-size: 1.15rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 1.5rem 0 2.5rem;
+    max-width: 600px;
+  }
+
+  /* STAT CARDS */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    margin-bottom: 0;
+  }
+  .stat {
+    background: var(--surface);
+    padding: 1.4rem 1.2rem;
+  }
+  .stat-num {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+  .stat-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.4rem;
+  }
+  .stat-sub {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.3rem;
+    line-height: 1.4;
+  }
+
+  /* DIVIDER */
+  .divider { border-top: 1px solid var(--border); margin: 3.5rem 0; }
+
+  /* SECTION LABELS */
+  .section-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1.2rem;
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 2rem 0 0.8rem;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.82rem;
+  }
+
+  p { margin-bottom: 1.3rem; color: var(--text); }
+
+  /* SOURCE BOX */
+  .source-box {
+    background: #0e0e14;
+    border-left: 3px solid var(--accent);
+    padding: 1rem 1.2rem;
+    margin: 1.8rem 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .source-box strong { color: var(--accent); display: block; margin-bottom: 0.3rem; }
+
+  /* PROTOKOLL BOX */
+  .protokoll {
+    background: var(--accent-dim);
+    border: 1px solid rgba(232,197,71,0.25);
+    padding: 1.4rem 1.6rem;
+    margin: 2rem 0;
+    border-radius: 2px;
+  }
+  .protokoll-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.68rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.8rem;
+  }
+  .protokoll p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+  .protokoll p:last-child { margin-bottom: 0; }
+
+  /* WARN BOX */
+  .warn-box {
+    background: var(--red-dim);
+    border-left: 3px solid var(--red);
+    padding: 1rem 1.2rem;
+    margin: 1.8rem 0;
+    font-size: 0.92rem;
+    color: var(--text);
+    line-height: 1.65;
+  }
+
+  /* TABLE */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.8rem 0;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--surface);
+    color: var(--muted);
+    font-family: 'Courier New', monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.7rem 0.9rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  td {
+    padding: 0.75rem 0.9rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  tr:last-child td { border-bottom: none; }
+  .tag {
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    font-size: 0.65rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .tag-confirmed { background: var(--green-dim); color: var(--green); border: 1px solid rgba(71,232,160,0.3); }
+  .tag-partial { background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(232,197,71,0.3); }
+  .tag-open { background: var(--red-dim); color: var(--red); border: 1px solid rgba(232,84,71,0.3); }
+
+  /* AUSTRIA BOX */
+  .austria {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.8rem;
+    margin: 2.5rem 0;
+  }
+  .austria-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .austria-label::before { content: '◆'; color: var(--accent); font-size: 0.5rem; }
+
+  /* COMPARISON TABLE */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+  }
+  .compare-cell {
+    background: var(--surface);
+    padding: 1.2rem;
+  }
+  .compare-country {
+    font-family: 'Courier New', monospace;
+    font-size: 0.65rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.8rem;
+  }
+  .compare-item {
+    font-size: 0.82rem;
+    color: var(--text);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    padding-left: 0.8rem;
+    border-left: 2px solid var(--border);
+  }
+  .compare-item.done { border-left-color: var(--green); }
+  .compare-item.partial { border-left-color: var(--accent); }
+  .compare-item.missing { border-left-color: var(--red); }
+
+  /* CLOSING QUESTION */
+  .closing {
+    background: var(--surface);
+    border-top: 3px solid var(--accent);
+    padding: 2.5rem 2rem;
+    margin: 3rem 0;
+    text-align: center;
+  }
+  .closing p {
+    font-size: 1.15rem;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .closing strong { color: var(--text); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 3rem 0 2.5rem;
+    margin-top: 3rem;
+  }
+  .footer-note {
+    font-family: 'Courier New', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  .footer-brand {
+    font-family: 'Courier New', monospace;
+    font-size: 0.78rem;
+    color: var(--accent);
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .compare-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    h1 { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="dot"></div>
+  <span class="header-label">dunkelfeld.report — Dokumentation · Fakten · Quellen</span>
+  <span class="header-right">Stand: Juni 2026</span>
+</header>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="kicker">Artikel — Sexualgewalt &amp; institutionelles Schweigen</div>
+    <h1>Wie viele Nürnbergs?<br><span>Sexualgewalt, Statistik und das Schweigen der Institutionen</span></h1>
+    <p class="subtitle">Eine quellenbasierte Dokumentation dokumentierter Fälle, amtlicher Statistiken und parlamentarischer Protokolle — in Deutschland, Österreich und im Vergleich mit Großbritannien.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">+72%</div>
+        <div class="stat-label">Vergewaltigungen D</div>
+        <div class="stat-sub">Anstieg seit 2018 (BKA PKS 2025)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">1.355</div>
+        <div class="stat-label">Anzeigen Österreich</div>
+        <div class="stat-sub">Vergewaltigungen 2024 — ø 4 pro Tag</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">10</div>
+        <div class="stat-label">EKO Kajal Nürnberg</div>
+        <div class="stat-sub">Identifizierte Tatverdächtige, Mai 2026</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Tagesschau-Berichte</div>
+        <div class="stat-sub">Zum Nürnberger Fall (recherchierbar)</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- BLOCK 1: NÜRNBERG -->
+  <section>
+    <div class="section-label">Block 01 — Der dokumentierte Fall</div>
+    <h2>Nürnberg, Mai 2026: Was die Polizei veröffentlichte</h2>
+
+    <p>Am 21. Mai 2026 veröffentlichte das Polizeipräsidium Mittelfranken eine Pressemitteilung, die in ihrem bürokratischen Ton das Ausmaß dessen, was sie beschreibt, kaum fassen kann. Am Nelson-Mandela-Platz und im Umfeld des Nürnberger Hauptbahnhofs haben Männer — überwiegend syrischer, pakistanischer und nordafrikanischer Herkunft — gezielt minderjährige Mädchen aus schwierigen Verhältnissen angesprochen.</p>
+
+    <p>Die dokumentierte Methode: Zuneigung vortäuschen, Vertrauen aufbauen, Mädchen mit Geschenken wie Kleidung und Kosmetika umwerben — um sie anschließend mit Crystal Meth abhängig zu machen und zur Prostitution zu zwingen.</p>
+
+    <div class="source-box">
+      <strong>Primärquelle</strong>
+      Polizeipräsidium Mittelfranken, Pressemitteilung vom 21. Mai 2026:<br>
+      Gründung der Ermittlungskommission „EKO Kajal". Zehn Personen identifiziert, vier davon in Ermittlungen wegen Drogenhandels, Abgabe von Drogen an Minderjährige und Sexualdelikten. Ein 23-jähriger Syrer in Untersuchungshaft. Zwei weitere Tatverdächtige flüchtig.
+    </div>
+
+    <p>Der Name der Ermittlungskommission — „Kajal" — verweist auf ein dokumentiertes Detail: Kajal-Stifte galten als typisches Lockmittel der Täter gegenüber der Zielgruppe. Ein Zeichen dafür, dass das Muster den Ermittlern bekannt war, bevor die Öffentlichkeit davon erfuhr.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- BLOCK 2: BUNDESTAG -->
+  <section>
+    <div class="section-label">Block 02 — Die Reaktion im Bundestag</div>
+    <h2>12. Juni 2026: Was das Protokoll dokumentiert</h2>
+
+    <p>Drei Wochen nach der Polizeipressemitteilung, am 12. Juni 2026, sprach AfD-Chefin Alice Weidel im Bundestag auf die Regierungserklärung von Bundeskanzler Friedrich Merz. Im Rahmen ihrer Rede schilderte sie den Nürnberger Fall.</p>
+
+    <div class="protokoll">
+      <div class="protokoll-label">Bundestagsprotokoll — Plenarsitzung 12. Juni 2026</div>
+      <p>Alice Weidel (AfD): <em>„Am Hauptbahnhof von Nürnberg, der Heimat des CSU-Vorsitzenden Markus Söder, machen Migrantenbanden minderjährige, deutsche Mädchen mit Drogen gefügig, um sie als Sexsklaven zu missbrauchen."</em></p>
+      <p>Protokollvermerk an dieser Stelle: <strong>[Lachen der Abgeordneten Katrin Fey (Die Linke)]</strong></p>
+      <p>Weidel fortgesetzt: <em>„Ich frage Sie: Wie viele Nürnbergs gibt es in Deutschland?"</em></p>
+      <p>Weitere protokollierte Reaktionen: Zwischenruf von Linken-Abgeordnetem Ulrich Thoden; Kommentar des Grünen-Abgeordneten Harald Ebner: <em>„Eijeijei!"</em></p>
+    </div>
+
+    <p>Die lachende Abgeordnete Katrin Fey bekleidet in ihrer Fraktion folgende Funktionen — dokumentiert über das offizielle Bundestagsprofil:</p>
+
+    <table>
+      <thead>
+        <tr><th>Funktion</th><th>Gremium</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sprecherin</td>
+          <td>Bürger- und Menschenrechte</td>
+          <td><span class="tag tag-confirmed">Dokumentiert</span></td>
+        </tr>
+        <tr>
+          <td>Obfrau</td>
+          <td>Ausschuss für Menschenrechte und humanitäre Hilfe</td>
+          <td><span class="tag tag-confirmed">Dokumentiert</span></td>
+        </tr>
+        <tr>
+          <td>Mitglied</td>
+          <td>Innenausschuss</td>
+          <td><span class="tag tag-confirmed">Dokumentiert</span></td>
+        </tr>
+        <tr>
+          <td>Beruflicher Hintergrund (1995–2025)</td>
+          <td>Sozialpädagogin, Kinder- und Jugendpsychiatrie</td>
+          <td><span class="tag tag-confirmed">Dokumentiert</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Was das Protokoll dokumentiert, ist dokumentiert. Eine Interpretation erübrigt sich.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- BLOCK 3: BKA STATISTIK -->
+  <section>
+    <div class="section-label">Block 03 — Die amtliche Statistik</div>
+    <h2>BKA Polizeiliche Kriminalstatistik 2024 &amp; 2025</h2>
+
+    <p>Die Polizeiliche Kriminalstatistik (PKS) des Bundeskriminalamts ist die maßgebliche amtliche Grundlage zur Einschätzung der Kriminalitätsentwicklung in Deutschland. Ihre Zahlen zur Sexualgewalt zeigen einen anhaltenden Trend:</p>
+
+    <table>
+      <thead>
+        <tr><th>Kennzahl</th><th>Wert</th><th>Quelle</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vergewaltigungen 2024</td>
+          <td>ca. 13.300 Fälle — 6. Jahr in Folge Höchststand</td>
+          <td><span class="tag tag-confirmed">BKA PKS 2024</span></td>
+        </tr>
+        <tr>
+          <td>Anstieg Vergewaltigungen 2025</td>
+          <td>+9,0 % gegenüber Vorjahr</td>
+          <td><span class="tag tag-confirmed">BKA PKS 2025</span></td>
+        </tr>
+        <tr>
+          <td>Anstieg seit 2018</td>
+          <td>+72 % in diesem Deliktbereich</td>
+          <td><span class="tag tag-confirmed">BMI Pressemitteilung April 2026</span></td>
+        </tr>
+        <tr>
+          <td>Anteil nichtdeutscher Tatverdächtiger</td>
+          <td>38,5 % (Vergewaltigung 2025)</td>
+          <td><span class="tag tag-confirmed">BKA PKS 2025</span></td>
+        </tr>
+        <tr>
+          <td>Tatverdächtige Zuwanderer (Sexualdelikte gesamt)</td>
+          <td>7,9 % aller TV; bei Vergewaltigung: 11,6 %</td>
+          <td><span class="tag tag-confirmed">BKA PKS 2024 / bpb</span></td>
+        </tr>
+        <tr>
+          <td>Kinderpornografie-Fälle 2025</td>
+          <td>41.677 Fälle — hohes Niveau, leicht rückläufig</td>
+          <td><span class="tag tag-confirmed">BKA PKS 2025</span></td>
+        </tr>
+        <tr>
+          <td>Jugendpornografie 2025</td>
+          <td>+19,9 % auf 11.515 Fälle</td>
+          <td><span class="tag tag-confirmed">BKA PKS 2025</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Die offizielle Erklärung des BKA</h3>
+
+    <p>Das Bundeskriminalamt selbst erklärt den Anstieg mit mehreren Faktoren, die hier vollständig und unkommentiert wiedergegeben werden:</p>
+
+    <div class="protokoll">
+      <div class="protokoll-label">BKA — Erklärung zum Anstieg der Sexualdelikte (PKS 2025)</div>
+      <p>1. Gesetzesänderungen 2016 (sexuelle Selbstbestimmung) und 2021 (sexualisierte Gewalt gegen Kinder) haben den Tatbestandskatalog erweitert.</p>
+      <p>2. Gestiegene gesellschaftliche Sensibilisierung und damit verbundene höhere Anzeigebereitschaft.</p>
+      <p>3. Höhere Mobilität der Bevölkerung und stärkere Präsenz im öffentlichen Raum als Erklärungsfaktor für Kontaktdelikte.</p>
+    </div>
+
+    <p>Beide Datenstränge — die Zahlen und ihre offizielle Einordnung — sind dokumentiert. Der Leser zieht seine Schlüsse.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- BLOCK 4: ÖSTERREICH -->
+  <section>
+    <div class="section-label">Block 04 — Österreich</div>
+    <h2>Wien, 2023–2025: Dokumentierte Fälle und Urteile</h2>
+
+    <div class="austria">
+      <div class="austria-label">Fallakte Österreich — Quellenbasierte Dokumentation</div>
+
+      <h3>Fall „Anna" / Wien — Gruppenvergewaltigung einer 12-Jährigen</h3>
+
+      <p>Eine 12-jährige Wienerin wurde 2023 über Monate von einer Gruppe Jugendlicher missbraucht, gefilmt, gedemütigt und erpresst. Auf beschlagnahmten Telefonen fanden Ermittler Fotos von Waffen und Videos von Gruppenschlägereien.</p>
+
+      <p><strong>Erstes Teilurteil, Jänner 2025:</strong> Freispruch eines 17-jährigen Syrers. Begründung der Richterin laut Medienberichten: <em>„Es passiert oft, dass man zuerst Nein sagt und sich dann durch Zärtlichkeiten überzeugen lässt."</em> Nachdem der Satz öffentlich wurde und internationale Reaktionen auslöste — darunter ein Kommentar von Elon Musk auf X — erklärte sich die Richterin für den weiteren Prozess befangen.</p>
+
+      <p><strong>Hauptverfahren, September 2025:</strong> Am Landesgericht Wien sprach Richter Daniel Schmitzberger zehn Angeklagte — Syrer, Nordmazedonier, Türken und Bulgaren im Alter von 16 bis 21 Jahren — nach einstündiger Beratung frei. Begründung: <em>„Eine Einschüchterung hat sich in der Polizeivernehmung der Geschädigten nicht gefunden. Das Mädchen hat nie von einer Gruppenvergewaltigung gesprochen."</em></p>
+
+      <div class="source-box">
+        <strong>Primärquellen</strong>
+        profil.at, 26. September 2025: „Von der ‚Gruppenvergewaltigung' zum glatten Freispruch. Was ist da passiert?"<br>
+        Österreichisches Parlament, Antrag XVIII/A/399, eingereicht 2026: Dokumentiert den Fall mit Verweis auf Gerichtsprotokolle.
+      </div>
+
+      <h3>Fall Teichtmeister — Kindesmissbrauchsmaterial</h3>
+
+      <p>Schauspieler Florian Teichtmeister wurde trotz Besitzes von rund 76.000 Dateien mit Kindesmissbrauchsmaterial — darunter über 47.500 Darstellungen von Kindern unter 14 Jahren — zu zwei Jahren bedingter Haft verurteilt. Kein einziger Tag Gefängnis.</p>
+
+      <p>Ein österreichischer Parlamentsantrag vom 18. Juni 2025 hält dazu fest: Die Diskrepanz zum Strafmaß bei Wirtschaftsdelikten sei „frappant". Die sogenannte „Lex Teichtmeister" habe zwar Strafdrohungen erhöht, sei aber für eine „Trendumkehr nicht geeignet".</p>
+
+      <div class="source-box">
+        <strong>Primärquelle</strong>
+        Österreichisches Parlament, Antrag XXVIII/A/349, eingebracht 18. Juni 2025 — öffentlich abrufbar auf parlament.gv.at
+      </div>
+
+      <h3>Amtliche Zahlen</h3>
+
+      <p>Die österreichische Polizeiliche Kriminalstatistik 2024 verzeichnet 1.355 Vergewaltigungsanzeigen — im Schnitt knapp vier pro Tag. Laut einem Parlamentsantrag von 2026 findet in offiziellen Berichten des Bundesministeriums für Inneres keine statistische Aufarbeitung von Gruppenvergewaltigungen statt. Herkunft und Nationalität der Tatverdächtigen werden systematisch nicht erfasst.</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- BLOCK 5: VERGLEICH UK -->
+  <section>
+    <div class="section-label">Block 05 — Vergleich</div>
+    <h2>Was aufgearbeitet wird — und was nicht</h2>
+
+    <p>Großbritannien begann die institutionelle Aufarbeitung seiner Grooming-Gang-Skandale mit dem Jay Report 2014. Zwölf Jahre später läuft eine staatliche Pflichtuntersuchung mit £65 Millionen Budget und dreijähriger Laufzeit. Was wurde dort aufgearbeitet — was passiert in Deutschland und Österreich?</p>
+
+    <div class="compare-grid">
+      <div class="compare-cell">
+        <div class="compare-country">🇬🇧 Großbritannien</div>
+        <div class="compare-item done">Jay Report 2014 — 1.400 Opfer Rotherham dokumentiert</div>
+        <div class="compare-item done">Parlamentsdebatten und Untersuchungsausschüsse ab 2013</div>
+        <div class="compare-item done">Independent Inquiry into Grooming Gangs — läuft seit April 2026</div>
+        <div class="compare-item partial">Casey Audit 2025: Ethnizität der Täter wurde „shied away from"</div>
+        <div class="compare-item partial">Mehrere Verurteilungen — aber auch Polizeibeamte als Täter ermittelt (Juli 2025)</div>
+      </div>
+      <div class="compare-cell">
+        <div class="compare-country">🇩🇪 Deutschland</div>
+        <div class="compare-item done">BKA PKS dokumentiert Anstieg — Zahlen öffentlich</div>
+        <div class="compare-item partial">Polizeipressemitteilung Nürnberg Mai 2026 — EKO Kajal gegründet</div>
+        <div class="compare-item missing">Kein nationaler Untersuchungsausschuss zu Grooming-Strukturen</div>
+        <div class="compare-item missing">Keine systematische Erfassung von Täter-Herkunft bei Gruppendelikten</div>
+        <div class="compare-item missing">Keine öffentlich-rechtliche Hauptberichterstattung zum Nürnberger Fall (recherchierbar)</div>
+      </div>
+      <div class="compare-cell">
+        <div class="compare-country">🇦🇹 Österreich</div>
+        <div class="compare-item partial">PKS 2024 dokumentiert 1.355 Vergewaltigungsanzeigen</div>
+        <div class="compare-item missing">Laut Parlamentsantrag: keine statistische Aufarbeitung von Gruppenvergewaltigungen</div>
+        <div class="compare-item missing">Keine Pflicht zur Erfassung von Nationalität bei Verdachtsfällen</div>
+        <div class="compare-item missing">Fall Anna: Freispruch für 10 Angeklagte nach einstündiger Beratung</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- BLOCK 6: ÖRR SCHWEIGEN -->
+  <section>
+    <div class="section-label">Block 06 — Das dokumentierte Schweigen</div>
+    <h2>Was öffentlich-rechtliche Medien berichten — und was nicht</h2>
+
+    <p>Die Polizeipressemitteilung aus Nürnberg datiert vom 21. Mai 2026. Die Bundestagsdebatte mit dem protokollierten Lachen fand am 12. Juni 2026 statt. Der Vergleich mit der UK-Aufarbeitung liegt seit dem Rupert-Lowe-Report vom 16. Juni 2026 in einer 219-seitigen Dokumentation vor.</p>
+
+    <p>Was in dieser Zeit bei ARD und ZDF zur Primetime gelaufen ist, lässt sich über deren Mediatheken und Programmarchive recherchieren. Die Abwesenheit eines Themas ist kein Vorwurf — sie ist ein dokumentierbares Faktum.</p>
+
+    <div class="warn-box">
+      <strong>Dokumentierter Kontrast:</strong> Zum Vergleich: Die Süddeutsche Zeitung berichtete über den britischen Grooming-Gang-Skandal im Januar 2025 zweimal — einmal unter dem Titel „Wie es gerade passt", einmal im Wirtschaftsteil auf Seite 30 als Randnotiz zu einem Artikel über Elon Musk. Der systematische Kindesmissbrauch an tausenden Mädchen über Jahrzehnte kam in beiden Beiträgen nicht als eigenständiges Thema vor.
+    </div>
+
+    <p>Ein ehemaliger ZDF-Redakteur, Thorsten Alsleben, erhob im Juni 2026 öffentlich schwere Vorwürfe gegen seinen früheren Sender. Er dokumentiert auf seinem X-Kanal ein Muster: Schwerwiegende Darstellungen werden zunächst verteidigt, erst nach außeninstitutionellem Druck zurückgezogen — ohne Richtigstellung im Programm selbst.</p>
+
+    <div class="source-box">
+      <strong>Belegbar</strong>
+      ZDF, Februar 2026: KI-generierte Bilder in „heute journal"-Beitrag verwendet — nach Kritik zurückgezogen, Entschuldigung des Intendanten zwei Monate nach Ausstrahlung. Bundestagsdebatte dazu: 25. Februar 2026 (Bundestag.de, Dokumentenarchiv). Thorsten Alsleben, ehem. ZDF-Redakteur: Öffentliche Vorwürfe, Juni 2026 (Haintz.Media).
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- OFFENE FRAGE -->
+  <div class="closing">
+    <p>Großbritannien hat 2014 begonnen, Rotherham aufzuarbeiten — nach Jahrzehnten des institutionellen Schweigens. Die staatliche Untersuchungskommission läuft heute, zwölf Jahre später.<br><br>
+    <strong>Was braucht eine Gesellschaft, damit sie hinschaut — bevor das Schweigen selbst zum Thema wird?</strong></p>
+  </div>
+
+  <!-- QUELLENVERZEICHNIS -->
+  <section>
+    <div class="section-label">Quellenverzeichnis</div>
+    <h2>Primärquellen</h2>
+
+    <table>
+      <thead>
+        <tr><th>Quelle</th><th>Inhalt</th><th>Abrufbar</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Polizeipräsidium Mittelfranken</td>
+          <td>Pressemitteilung 21. Mai 2026 — EKO Kajal, Nürnberg</td>
+          <td><span class="tag tag-confirmed">Öffentlich</span></td>
+        </tr>
+        <tr>
+          <td>Deutscher Bundestag</td>
+          <td>Plenarprotokoll 12. Juni 2026 — Weidel-Rede, Fey-Protokollvermerk</td>
+          <td><span class="tag tag-confirmed">Bundestag.de</span></td>
+        </tr>
+        <tr>
+          <td>BKA — PKS 2024</td>
+          <td>Vergewaltigung, sexuelle Nötigung, Tatverdächtige nach Herkunft</td>
+          <td><span class="tag tag-confirmed">BKA.de</span></td>
+        </tr>
+        <tr>
+          <td>BMI — PKS 2025</td>
+          <td>Pressemitteilung April 2026, +9% Vergewaltigungen, +72% seit 2018</td>
+          <td><span class="tag tag-confirmed">BMI.bund.de</span></td>
+        </tr>
+        <tr>
+          <td>Österr. Parlament — Antrag XXVIII/A/349</td>
+          <td>Teichtmeister-Fall, Strafmaß-Kritik, Forderungskatalog — 18. Juni 2025</td>
+          <td><span class="tag tag-confirmed">Parlament.gv.at</span></td>
+        </tr>
+        <tr>
+          <td>Österr. Parlament — Antrag XXVIII/A/399</td>
+          <td>Gruppenvergewaltigungen, PKS Österreich 2024, Fall Anna</td>
+          <td><span class="tag tag-confirmed">Parlament.gv.at</span></td>
+        </tr>
+        <tr>
+          <td>profil.at — 26. September 2025</td>
+          <td>„Von der Gruppenvergewaltigung zum glatten Freispruch"</td>
+          <td><span class="tag tag-confirmed">Profil.at</span></td>
+        </tr>
+        <tr>
+          <td>Bundestag.de — 25. Februar 2026</td>
+          <td>Aktuelle Stunde: Fehler im ÖRR — ZDF/KI-Beitrag</td>
+          <td><span class="tag tag-confirmed">Bundestag.de</span></td>
+        </tr>
+        <tr>
+          <td>House of Commons Library — CBP-10613</td>
+          <td>Independent Inquiry into Grooming Gangs — Laufzeit, Budget, Terms of Reference</td>
+          <td><span class="tag tag-confirmed">Commonslibrary.parliament.uk</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="source-box">
+      <strong>Hinweis zur Methodik</strong>
+      Alle Angaben basieren auf öffentlich zugänglichen Primärquellen: Polizeipressemitteilungen, Bundestagsprotokollen, amtlichen Kriminalstatistiken und parlamentarischen Anträgen. Urteile werden aus dokumentierten Medienberichten zitiert, die das Gerichtsverfahren direkt nachweisen. Nicht belegte Behauptungen wurden nicht aufgenommen. Die Bewertung liegt beim Leser.
+    </div>
+  </section>
+
+  <footer>
+    <p class="footer-note">Alle dargestellten Informationen basieren auf öffentlich zugänglichen Primärquellen. Kein Beitrag erhebt Anspruch auf Vollständigkeit. Leser werden ausdrücklich zur eigenständigen Überprüfung der genannten Quellen eingeladen.</p>
+    <p class="footer-brand">dunkelfeld.report — Fakten, die das Licht nicht scheuen.</p>
+  </footer>
+
+</div>
+</body>
+</html>

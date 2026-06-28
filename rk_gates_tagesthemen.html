@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Der Gast – Rundfunkkritik.de</title>
+<style>
+  :root {
+    --navy: #1a2e4a;
+    --gold: #b8963e;
+    --cream: #f5f0e8;
+    --text: #2a2a2a;
+    --light: #e8e2d6;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Georgia', serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 18px;
+  }
+
+  .artikel-header {
+    background: var(--navy);
+    color: white;
+    padding: 60px 40px 50px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .rubrik {
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 2.6em;
+    line-height: 1.2;
+    font-weight: normal;
+    margin-bottom: 16px;
+  }
+
+  .untertitel {
+    font-size: 1.1em;
+    color: #aabbd0;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .meta {
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    color: #7a9ab5;
+    margin-top: 24px;
+    letter-spacing: 1px;
+  }
+
+  .artikel-body {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 50px 40px 80px;
+  }
+
+  .lead {
+    font-size: 1.2em;
+    color: var(--navy);
+    border-left: 4px solid var(--gold);
+    padding-left: 24px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+
+  p {
+    margin-bottom: 22px;
+  }
+
+  h2 {
+    font-size: 1.3em;
+    color: var(--navy);
+    font-weight: normal;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 8px;
+    margin: 40px 0 20px;
+    letter-spacing: 0.5px;
+  }
+
+  .vergleich-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 36px 0;
+    border: 1px solid #c8bfad;
+  }
+
+  .vergleich-grid .col-header {
+    background: var(--navy);
+    color: white;
+    padding: 14px 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .vergleich-grid .col-header.gold {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  .vergleich-grid .col-content {
+    padding: 20px;
+    background: white;
+    border-top: 1px solid #e0d8ca;
+    font-size: 0.95em;
+    vertical-align: top;
+  }
+
+  .vergleich-grid .col-content:nth-child(even) {
+    border-left: 1px solid #e0d8ca;
+  }
+
+  .faktenbox {
+    background: var(--navy);
+    color: white;
+    padding: 28px 32px;
+    margin: 36px 0;
+    border-left: 5px solid var(--gold);
+  }
+
+  .faktenbox .box-titel {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .faktenbox p {
+    margin-bottom: 12px;
+    font-size: 0.95em;
+    line-height: 1.65;
+    color: #d0dce8;
+  }
+
+  .faktenbox p:last-child { margin-bottom: 0; }
+
+  .faktenbox strong {
+    color: white;
+  }
+
+  .zitat {
+    background: white;
+    border-left: 5px solid var(--gold);
+    padding: 24px 28px;
+    margin: 36px 0;
+    font-style: italic;
+    font-size: 1.05em;
+    line-height: 1.65;
+    color: var(--navy);
+  }
+
+  .zitat .quelle {
+    display: block;
+    margin-top: 12px;
+    font-style: normal;
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #888;
+    text-transform: uppercase;
+  }
+
+  .zahlen-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 36px 0;
+  }
+
+  .zahl-karte {
+    background: white;
+    border: 1px solid #c8bfad;
+    padding: 24px 16px;
+    text-align: center;
+  }
+
+  .zahl-karte .zahl {
+    font-size: 2.2em;
+    color: var(--navy);
+    font-weight: bold;
+    display: block;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .zahl-karte .zahl-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    color: #666;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  .hinweis {
+    background: #f0ebe0;
+    border: 1px solid #c8bfad;
+    padding: 20px 24px;
+    margin: 36px 0;
+    font-size: 0.9em;
+    font-family: 'Arial', sans-serif;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .hinweis strong { color: var(--navy); }
+
+  .schluss {
+    background: white;
+    border-top: 3px solid var(--gold);
+    padding: 28px 32px;
+    margin-top: 50px;
+    font-size: 1.05em;
+    color: var(--navy);
+    line-height: 1.7;
+  }
+
+  .quellen {
+    margin-top: 50px;
+    padding-top: 24px;
+    border-top: 1px solid #c8bfad;
+  }
+
+  .quellen h3 {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 16px;
+  }
+
+  .quellen ol {
+    padding-left: 20px;
+    font-size: 0.85em;
+    color: #666;
+    line-height: 1.8;
+  }
+
+  .quellen a {
+    color: var(--navy);
+  }
+
+  @media (max-width: 640px) {
+    h1 { font-size: 1.8em; }
+    .artikel-header, .artikel-body { padding: 32px 20px; }
+    .vergleich-grid { grid-template-columns: 1fr; }
+    .zahlen-block { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="artikel-header">
+  <div class="rubrik">Rundfunkkritik · Sendezeit</div>
+  <h1>Der Gast</h1>
+  <div class="untertitel">
+    Ostersonntag 2020. Bill Gates erscheint in den Tagesthemen — als Gesundheitsexperte,
+    zur besten Sendezeit, ohne Gegenstimme. Was damals niemand fragte, lässt sich heute nachlesen.
+  </div>
+  <div class="meta">Rundfunkkritik.de · Analyse · Juni 2026</div>
+</div>
+
+<div class="artikel-body">
+
+  <div class="lead">
+    Ein privater Stiftungsgründer ohne Wählerauftrag, ohne medizinische Ausbildung, ohne demokratische
+    Legitimation erklärt der deutschen Öffentlichkeit, wie die Weltbevölkerung geimpft werden soll.
+    Die Tagesthemen geben ihm dafür ausführlich Raum — zur besten Sendezeit, am Ostersonntag.
+    5,6 Millionen Zuschauer. Keine kritische Gegenfrage. Ein Interview, das Fragen aufwirft —
+    die erst heute gestellt werden.
+  </div>
+
+  <h2>12. April 2020 — Was gesendet wurde</h2>
+
+  <p>Moderator Ingo Zamperoni interviewt Bill Gates in den Tagesthemen. Das Interview ist, wie der
+  <em>Tagesspiegel</em> damals schreibt, „bemerkenswert und zeitlich sehr ausführlich." Gates spricht
+  über Impfstoffe, über Zeitpläne, über globale Koordination. Er sagt, man werde den Impfstoff
+  „letztlich sieben Milliarden Menschen verabreichen." Er sagt, die Entwicklung dauere normalerweise
+  fünf Jahre — jetzt versuche man, diesen Zeitraum zu komprimieren.</p>
+
+  <p>Was er außerdem sagt, fällt im Sendefluss kaum auf. Im zeitgleich veröffentlichten CNBC-Interview
+  rechnet er vor: Bei einer von 10.000 Impfungen könne es zu Nebenwirkungen kommen. Bei sieben
+  Milliarden Geimpften wären das <strong>700.000 Menschen</strong>. Wörtlich: „Seven hundred thousand
+  people who will suffer from that." Und weiter: Regierungen müssten involviert sein — „because there
+  will be some risk and indemnification needed."</p>
+
+  <div class="zitat">
+    „Wir werden den zu entwickelnden Impfstoff letztendlich sieben Milliarden Menschen verabreichen.
+    Da können wir uns keine Probleme mit bedrohlichen Nebenwirkungen leisten. Und doch werden wir
+    die Entscheidung über einen Impfstoff auf einer geringeren Datengrundlage als sonst fällen,
+    damit wir schnellere Fortschritte erzielen."
+    <span class="quelle">Bill Gates · Tagesthemen, 12. April 2020</span>
+  </div>
+
+  <p>Zamperoni fragt ihn, wie er den Umgang seiner Regierung mit der Pandemie bewertet. Gates lächelt
+  und weicht aus. Das Interview endet ohne Widerspruch, ohne Einordnung, ohne die Frage, welche Rolle
+  seine Stiftung bei der Finanzierung von Impfstoffentwicklern spielt.</p>
+
+  <h2>Was hätte gefragt werden können</h2>
+
+  <div class="vergleich-grid">
+    <div class="col-header">Gesendet wurde</div>
+    <div class="col-header gold">Nicht gefragt wurde</div>
+    <div class="col-content">Gates erklärt den Zeitplan für einen Impfstoff.</div>
+    <div class="col-content">Gates' Stiftung ist gleichzeitig Investor bei mehreren Impfstoffherstellern. Interessenkonflikt?</div>
+    <div class="col-content">Gates spricht von globaler Koordination „unserer Stiftung."</div>
+    <div class="col-content">Wer hat ihn eingeladen? Mit welchem Mandat spricht er für die Weltbevölkerung?</div>
+    <div class="col-content">Gates rechnet 700.000 mögliche Betroffene als kalkuliertes Risiko.</div>
+    <div class="col-content">Wer haftet? Wer entscheidet? Was passiert mit denen, die Schäden erleiden?</div>
+    <div class="col-content">Gates' Stiftung fördert unter anderem BioNTech, Moderna-Vorläufer, GAVI, WHO.</div>
+    <div class="col-content">Welche Medien erhielten Förderung der Gates-Stiftung? Auch ARD-nahe Formate?</div>
+  </div>
+
+  <h2>Wie das Interview zustande kam — die IFG-Antwort</h2>
+
+  <p>Ein Bürger stellte im Mai 2020 über FragDenStaat eine IFG-Anfrage an ARD-aktuell:
+  Wie kam das Interview zustande? Gibt es Verträge, Regieanweisungen, Absprachen mit Gates oder
+  seiner Stiftung?</p>
+
+  <p>Die ARD-Antwort, dokumentiert auf FragDenStaat: Der Kontakt entstand über das ARD-Studio
+  New York. Die Redaktion habe Gates „in mehreren US-Sendungen gesehen und über seine Arbeit
+  gelesen." Für Interviews gebe es „grundsätzlich keine Verträge oder Regieanweisungen."</p>
+
+  <div class="faktenbox">
+    <div class="box-titel">Was die Gates-Stiftung an Medien zahlte</div>
+    <p>Laut Auswertung des US-Medienportals MintPress spendete die Bill & Melinda Gates Foundation
+    <strong>über 319 Millionen Dollar</strong> an internationale Medienhäuser.</p>
+    <p>Auf der Liste: BBC, Guardian, Financial Times, Daily Telegraph (UK), CNN, NBC, NPR, PBS (USA),
+    Al-Jazeera, Le Monde (Frankreich), <strong>Der Spiegel</strong> (Deutschland), El País (Spanien).</p>
+    <p>Der Spiegel bestätigt die Förderung für das Ressort „Globale Gesellschaft" und versichert
+    redaktionelle Unabhängigkeit — räumt aber ein: Die Stiftung definiert die Themenfelder.</p>
+    <p>Die Tagesthemen selbst tauchen in der bekannten Spendenliste nicht auf.
+    Was bekannt ist: Das ARD-nahe Jugendformat „Kurzgesagt" erhielt eine Großspende der Gates-Stiftung.
+    Die Ständige Publikumskonferenz der öffentlich-rechtlichen Medien fragte die ARD danach — und
+    erhielt keine substanzielle Antwort.</p>
+  </div>
+
+  <h2>Was inzwischen bekannt ist — die Zahlen aus Deutschland</h2>
+
+  <p>Gates kalkulierte 700.000 Betroffene weltweit als akzeptables Risiko. Was sagen die deutschen
+  Behördendaten dazu?</p>
+
+  <div class="zahlen-block">
+    <div class="zahl-karte">
+      <span class="zahl">63.909</span>
+      <div class="zahl-label">schwerwiegende Verdachtsfälle nach COVID-Impfung in Deutschland<br>(PEI, Stand 31.12.2024)</div>
+    </div>
+    <div class="zahl-karte">
+      <span class="zahl">21×</span>
+      <div class="zahl-label">mehr Nebenwirkungs-Meldungen als bei allen anderen Impfungen zusammen<br>(Bundesregierung, Okt. 2024)</div>
+    </div>
+    <div class="zahl-karte">
+      <span class="zahl">~1 Mio.</span>
+      <div class="zahl-label">Verdachtsmeldungen, still auf PEI-Website veröffentlicht<br>am 28. November 2024 — ohne Pressemitteilung</div>
+    </div>
+  </div>
+
+  <div class="hinweis">
+    <strong>Methodische Einordnung:</strong> Verdachtsfallmeldungen sind keine bestätigten Impfschäden.
+    Das PEI betont, ein kausaler Zusammenhang sei in vielen Fällen nicht belegt. Der 21-fache Unterschied
+    zu anderen Impfungen ist dennoch eine behördlich dokumentierte Auffälligkeit — und als solche
+    berichterstattungswürdig. Quellen: PEI-Sicherheitsbericht 31.12.2024; Bundesregierung auf Anfrage
+    BSW-MdB Jessica Tatti, Oktober 2024.
+  </div>
+
+  <h2>Die Frage, die bleibt</h2>
+
+  <p>Es geht nicht darum, ob Bill Gates böse ist. Es geht um eine einfachere Frage:
+  Nach welchen Kriterien entscheidet eine öffentlich-rechtliche Redaktion, wem sie zur besten
+  Sendezeit ein ausführliches, unkritisches Interview gibt?</p>
+
+  <p>Ein gewählter Politiker muss sich Fragen stellen lassen. Ein Wissenschaftler muss seine
+  Interessenkonflikte offenlegen. Ein Stiftungsgründer, der gleichzeitig in Impfstoffhersteller
+  investiert und globale Impfkampagnen mitfinanziert, sitzt in den Tagesthemen — und wird nicht
+  gefragt, was er daran verdient.</p>
+
+  <p>Dieses Interview wurde nicht von einem Algorithmus empfohlen. Es wurde von einer Redaktion
+  entschieden, vorbereitet, gesendet. 5,6 Millionen Menschen haben es gesehen.</p>
+
+  <div class="schluss">
+    Öffentlich-rechtlicher Rundfunk wird durch Pflichtbeiträge finanziert — nicht damit
+    Stiftungsgründer ohne Gegenfrage erklären dürfen, wie sieben Milliarden Menschen geimpft
+    werden sollen. Die Tagesthemen hatten die Aufgabe, kritisch zu fragen. Sie haben sie nicht
+    wahrgenommen. Das ist dokumentiert. Das reicht.
+  </div>
+
+  <div class="quellen">
+    <h3>Quellen</h3>
+    <ol>
+      <li>ARD/Tagesschau: Tagesthemen-Interview mit Bill Gates, 12.04.2020 —
+        <a href="https://www.tagesschau.de/multimedia/video/video-687765.html">tagesschau.de</a></li>
+      <li>Tagesspiegel: „Tagesthemen gehen in die Verlängerung", August 2022 —
+        <a href="https://www.tagesspiegel.de/gesellschaft/medien/tagesthemen-gehen-in-die-verlangerung-5360836.html">tagesspiegel.de</a></li>
+      <li>FragDenStaat: IFG-Anfrage zur Organisation des Gates-Interviews, Mai 2020 —
+        <a href="https://fragdenstaat.de/anfrage/informationen-und-dokumente-zur-organisation-des-interviews-mit-bill-gates-in-den-tagesthemen-am-12042020/">fragdenstaat.de</a></li>
+      <li>Paul-Ehrlich-Institut: Pharmakovigilanzbericht COVID-19-Impfstoffe, Stand 31.12.2024 —
+        <a href="https://www.pei.de/DE/newsroom/dossier/coronavirus/sicherheitsbericht-covid-19-impfstoffe-aktuell.html">pei.de</a></li>
+      <li>Bundesregierung (Antwort auf Anfrage BSW-MdB Jessica Tatti), Oktober 2024 — zitiert nach:
+        <a href="https://www.cicero.de/innenpolitik/corona-imfpschaden-britta-muller-nebenwirkungen">cicero.de</a></li>
+      <li>PEI: Excel-Rohdaten Verdachtsfallmeldungen COVID-19-Impfstoffe, veröffentlicht 28.11.2024 —
+        <a href="https://www.pei.de/SharedDocs/Downloads/DE/newsroom/dossiers/rohdaten-sicherheitsberichte/">pei.de</a></li>
+      <li>taz: „Stiftungsfinanzierter Journalismus", Februar 2020 —
+        <a href="https://taz.de/Stiftungsfinanzierter-Journalismus/!5656369/">taz.de</a></li>
+      <li>Infosperber: „Gates-Stiftung: eine potente Medienförderin", April 2022 —
+        <a href="https://www.infosperber.ch/medien/gates-stiftung-eine-potente-medienfoerderin/">infosperber.ch</a></li>
+      <li>Europäisches Parlament: Parlamentarische Anfrage P-002990/2024, Dezember 2024 —
+        <a href="https://www.europarl.europa.eu/doceo/document/P-10-2024-002990_DE.html">europarl.europa.eu</a></li>
+    </ol>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Die offene Tür | rundfunkkritik.de</title>
+<style>
+  :root {
+    --navy: #1a2e4a;
+    --navy-deep: #111e30;
+    --gold: #b8963e;
+    --gold-light: #d4a84b;
+    --cream: #f4f1ea;
+    --text: #1a1a1a;
+    --muted: #5a6270;
+    --border: #d0ccc4;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Serif 4', 'Georgia', serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.75;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: var(--navy-deep);
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--gold);
+  }
+  .site-logo {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--cream);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .site-logo span { color: var(--gold); }
+  .site-nav a {
+    color: #9aa5b4;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-left: 2rem;
+    transition: color 0.2s;
+  }
+  .site-nav a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    padding: 4rem 2rem 3.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .series-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 0.3rem 0.9rem;
+    margin-bottom: 1.8rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    max-width: 820px;
+    margin: 0 auto 1.2rem;
+  }
+  .hero-sub {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.1rem;
+    color: #9aa5b4;
+    max-width: 600px;
+    margin: 0 auto 2.4rem;
+    font-style: italic;
+  }
+  .hero-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: #5a6a7a;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ARTICLE */
+  .article-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  .article-wrap p {
+    font-size: 1.08rem;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+  }
+
+  .article-wrap h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 3rem 0 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  /* GEGENÜBERSTELLUNG */
+  .showdown {
+    margin: 2.5rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--border);
+  }
+  @media (max-width: 600px) {
+    .showdown { grid-template-columns: 1fr; }
+    .site-nav { display: none; }
+  }
+  .showdown-label {
+    grid-column: 1 / -1;
+    background: var(--navy);
+    padding: 0.6rem 1.2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-align: center;
+  }
+  .showdown-left {
+    background: #fff;
+    padding: 1.5rem 1.4rem;
+    border-right: 1px solid var(--border);
+  }
+  .showdown-right {
+    background: #f8f6f2;
+    padding: 1.5rem 1.4rem;
+  }
+  .showdown-source {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.7rem;
+    display: block;
+  }
+  .showdown-left .showdown-source { color: #c0392b; }
+  .showdown-right .showdown-source { color: #1a7a3f; }
+  .showdown-left blockquote,
+  .showdown-right blockquote {
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.97rem;
+    line-height: 1.65;
+    font-style: italic;
+    color: var(--text);
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  .showdown-left blockquote { color: #5a0a00; }
+  .showdown-right blockquote { color: #0a3a1a; }
+
+  /* FAKTENBOX */
+  .fact-box {
+    background: var(--navy);
+    color: #fff;
+    padding: 2rem 2rem;
+    margin: 2.5rem 0;
+    position: relative;
+    border-left: 4px solid var(--gold);
+  }
+  .fact-box .fact-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+  .fact-box p {
+    color: #d0d8e4;
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  .fact-box strong { color: #fff; }
+
+  /* PENDEL-GRAFIK */
+  .pendel-wrap {
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 2rem;
+    margin: 2.5rem 0;
+    text-align: center;
+  }
+  .pendel-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+  .pendel-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .pendel-side {
+    padding: 1rem;
+    border-radius: 2px;
+  }
+  .pendel-nein {
+    background: #fdf0f0;
+    border: 2px solid #e74c3c;
+  }
+  .pendel-ja {
+    background: #f0fdf4;
+    border: 2px solid #27ae60;
+  }
+  .pendel-side .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .pendel-nein .label { color: #c0392b; }
+  .pendel-ja .label { color: #1a7a3f; }
+  .pendel-side p {
+    font-size: 0.82rem;
+    line-height: 1.4;
+    margin: 0;
+    color: var(--text);
+  }
+  .pendel-center {
+    font-size: 1.8rem;
+    color: var(--navy);
+  }
+
+  /* PARADOX */
+  .paradox {
+    border: 2px solid var(--gold);
+    padding: 1.8rem;
+    margin: 2.5rem 0;
+    background: #fffdf5;
+  }
+  .paradox-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+  .paradox p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+    color: #3a2800;
+  }
+
+  /* FRAGE */
+  .the-question {
+    background: var(--navy-deep);
+    color: #fff;
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+    text-align: center;
+  }
+  .the-question p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--cream);
+    max-width: 560px;
+    margin: 0 auto 1.2rem;
+    line-height: 1.6;
+  }
+  .the-question .attribution {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* SCHLUSS */
+  .closing {
+    border-top: 3px double var(--border);
+    margin-top: 3rem;
+    padding-top: 2rem;
+  }
+  .closing p {
+    font-size: 1.05rem;
+    color: var(--muted);
+  }
+  .closing strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  /* FOOTER */
+  .site-footer {
+    background: var(--navy-deep);
+    color: #5a6a7a;
+    text-align: center;
+    padding: 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-top: 1px solid #2a3e5a;
+  }
+  .site-footer a { color: var(--gold); text-decoration: none; }
+
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:ital,wght@0,400;1,400&family=JetBrains+Mono:wght@400&display=swap');
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-logo" href="/">Rundfunk<span>kritik</span></a>
+  <nav class="site-nav">
+    <a href="#">Analyse</a>
+    <a href="#">Chronik</a>
+    <a href="#">Quellen</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="series-tag">Zweierlei Maß</div>
+  <h1>Die offene Tür</h1>
+  <p class="hero-sub">Ein BGH-Urteil, 800 Geschädigte — und die Frage, wessen Anwälte der Staat eigentlich bezahlt</p>
+  <div class="hero-meta">Juni 2026 &nbsp;·&nbsp; BGH VI ZR 335/24 &nbsp;·&nbsp; Impfschadensrecht</div>
+</section>
+
+<article class="article-wrap">
+
+  <p>Am 9. März 2026 öffnete der Bundesgerichtshof eine Tür. Seither steht sie sperrangelweit offen. Niemand geht hindurch.</p>
+
+  <p>Was sich hinter dieser Tür befindet: Schadenersatz und Schmerzensgeld für Menschen, die nach einer Corona-Impfung dauerhaft geschädigt wurden. Was sie daran hindert, hindurchzugehen: nicht das Recht. Das Recht ist eindeutig. Es sind die Menschen, die das Recht anwenden sollen.</p>
+
+  <h2>Was der BGH entschieden hat</h2>
+
+  <p>Stellen Sie sich vor, Sie erleiden nach einer Impfung einen Schlaganfall. Sie sind überzeugt, dass die Impfung die Ursache war. Aber wie beweisen Sie das? Die klinischen Studiendaten liegen beim Hersteller. Die internen Sicherheitsberichte liegen beim Hersteller. Die Rohdaten liegen beim Hersteller.</p>
+
+  <p>Sie, der Geschädigte, stehen vor Gericht und sollen etwas beweisen, das nur der Gegner wissen kann.</p>
+
+  <div class="fact-box">
+    <span class="fact-label">Rechtsprinzip § 84a AMG · BGH VI ZR 335/24</span>
+    <p>Das Zivilprozessrecht kennt genau diese Situation: Wenn eine Partei Tatsachen nicht kennen kann, die nur der Gegner kennt, muss der Gegner Auskunft erteilen. <strong>Erteilt er keine vollständige Auskunft, gelten die strittigen Tatsachen als zugestanden</strong> — ohne jede weitere Beweisaufnahme (§ 138 Abs. 2 und 3 ZPO).</p>
+  </div>
+
+  <p>Am 9. März 2026 stellte der Bundesgerichtshof klar: Auskunftsanspruch und Schadenersatzanspruch sind <em>unmittelbar miteinander verzahnt</em>. Der Hersteller muss sich erklären. Oder er verliert — ohne je vor Gericht erschienen zu sein.</p>
+
+  <h2>Das schweigende Gelenk — eine Mechanik</h2>
+
+  <div class="pendel-wrap">
+    <p class="pendel-title">Die zwei Wege — Verzahnung von Auskunft und Hauptanspruch</p>
+    <div class="pendel-grid">
+      <div class="pendel-side pendel-nein">
+        <span class="label">Auskunft verweigert</span>
+        <p>Tatsachen gelten als zugestanden. Pendel schlägt um. Fingierte vorsätzliche Schädigung. <strong>Schadenersatz ohne Beweisaufnahme.</strong></p>
+      </div>
+      <div class="pendel-center">⚖</div>
+      <div class="pendel-side pendel-ja">
+        <span class="label">Auskunft erteilt</span>
+        <p>Sachverständigengutachten. Kausalitätsprüfung. Normales Verfahren mit Beweisaufnahme.</p>
+      </div>
+    </div>
+  </div>
+
+  <p>Der Hersteller steckt in einer Zwickmühle: Vollständige Auskunft über interne Sicherheitsdaten würde Straftaten einräumen. Keine Auskunft bedeutet automatisch Niederlage. Das ist die Logik, die der BGH im März 2026 bestätigt hat.</p>
+
+  <h2>Das Déjà-vu: Dieselmotor und Impfspritze</h2>
+
+  <p>Diese Mechanik ist nicht neu. Man hat sie schon einmal gesehen — beim Abgasskandal.</p>
+
+  <p>Kläger behaupteten, eine illegale Abschaltvorrichtung sei verbaut. Der Hersteller schwieg. Das Schweigen wurde zum Geständnis: Die Abschaltvorrichtung galt als zugestanden. Der Hersteller zahlte.</p>
+
+  <p>Gleiches Recht. Gleiche Logik. Nur das Produkt ist ein anderes.</p>
+
+  <h2>Was der ÖRR berichtete — und was der BGH dazu sagt</h2>
+
+  <div class="showdown">
+    <div class="showdown-label">Gegenüberstellung — Framing vs. Rechtslage</div>
+    <div class="showdown-left">
+      <span class="showdown-source">Öffentlich-rechtliche Berichterstattung · 2023</span>
+      <blockquote>Der Anwalt, der Impfgeschädigte vertritt, „verbreitet Verschwörungserzählungen" und werde „von einer bestimmten Szene gefeiert". Quellen: tagesschau/Kontraste, SWR2.</blockquote>
+    </div>
+    <div class="showdown-right">
+      <span class="showdown-source">Bundesgerichtshof · 9. März 2026 · VI ZR 335/24</span>
+      <blockquote>Der Auskunftsanspruch nach § 84a AMG ist unmittelbar mit dem Hauptanspruch verzahnt. Die sekundäre Darlegungsobliegenheit des Herstellers entspricht der gefestigten Rechtsprechung des BGH.</blockquote>
+    </div>
+  </div>
+
+  <p>Wer einen Anwalt als Verschwörungstheoretiker rahmt, muss sich heute fragen lassen: Was genau an seiner Rechtsauffassung war unzutreffend — wenn das höchste Zivilgericht Deutschlands sie drei Jahre später bestätigt?</p>
+
+  <p>Über seine Mandanten — Menschen mit Herzmuskelentzündungen, Lähmungen, dauerhaften neurologischen Schäden — erfuhr das Publikum wenig. Über seine Rechtsargumente noch weniger.</p>
+
+  <h2>Das Paradox: Wessen Anwälte bezahlt der Staat?</h2>
+
+  <div class="paradox">
+    <span class="paradox-label">Dokumentierter Sachverhalt</span>
+    <p>Die Bundesregierung schloss Verträge mit Impfstoffherstellern, die diese von zivilrechtlicher Haftung freistellten. Das Schadensrisiko wurde auf die Allgemeinheit übertragen. Jeder anerkannte Impfschaden belastet seither nicht den Hersteller — sondern den Staatshaushalt. Derselbe Staat finanziert über den Rundfunkbeitrag Medien, die denjenigen delegitimierten, der die Geschädigten vor eben diesem Staat und eben diesen Herstellern vertrat.</p>
+  </div>
+
+  <p>Ob das ein System ist oder ein Zufall, muss jeder selbst beurteilen. Die Struktur ist dokumentiert.</p>
+
+  <h2>Wo das Recht endet und die Angst beginnt</h2>
+
+  <p>In Italien und Griechenland gibt es bereits Urteile aus der Berufungsinstanz: Impfgeschädigte erhalten Schadenersatz und Schmerzensgeld. Deutschland wartet.</p>
+
+  <p>Jeder Jurist, der das BGH-Urteil liest, versteht sofort, was es bedeutet. Dennoch warten Landgerichte ab. Der Grund, den kein offizielles Dokument je bestätigen wird: Richter, die gegen Impfstoffhersteller urteilen, könnten berufliche Konsequenzen fürchten. Versetzungen. Unattraktive Zuweisungen. Artikel 97 des Grundgesetzes garantiert richterliche Unabhängigkeit. Die Praxis, so beschreiben es Beobachter innerhalb des Justizsystems, sieht mitunter anders aus.</p>
+
+  <p>Mindestens 450 Klagen wurden durch eine Rechtsprechung des OLG Koblenz abgewiesen, die — nach Einschätzung von Fachkritikern — dem EU-Recht (Art. 15, 17, 76, 83 Abs. 7 VO (EG) 726/2004) widersprach. Die Gerichte, die diese Vorlage übernahmen, waren froh, sich hinter einer höherinstanzlichen Entscheidung verstecken zu können. Das ist keine Spekulation — das ist Zivilprozesslogik.</p>
+
+  <div class="the-question">
+    <p>„Werden Richterinnen und Richter sanktioniert, wenn sie nach der Linie des BGH zugunsten von Impfgeschädigten entscheiden?"</p>
+    <div class="attribution">Eine Frage — an jede Justizverwaltung in Deutschland</div>
+  </div>
+
+  <p>Die Antwort sollte eine Selbstverständlichkeit sein. Dass sie noch niemand öffentlich eingefordert hat, ist bemerkenswert.</p>
+
+  <div class="closing">
+    <p>Für die schätzungsweise <strong>800 Menschen</strong>, die derzeit noch aktive Klagen haben, ist die offene Tür des BGH keine Metapher. Es ist ihr letzter rechtlicher Weg.</p>
+    <p>Das Zivilprozessrecht ist fertig. Die Tür steht offen. <strong>Was noch fehlt, sind Richter, die hindurchgehen — und Journalisten, die fragen, warum sie es nicht tun.</strong></p>
+  </div>
+
+</article>
+
+<footer class="site-footer">
+  <p>rundfunkkritik.de &nbsp;·&nbsp; <a href="#">Quellen</a> &nbsp;·&nbsp; <a href="#">Impressum</a></p>
+</footer>
+
+</body>
+</html>

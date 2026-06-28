@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>„Kein Skandal" — Rundfunkkritik</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:   #1a2e4a;
+    --gold:   #b8963e;
+    --cream:  #f5f0e8;
+    --mid:    #e8e0d0;
+    --ink:    #1c1c1c;
+    --muted:  #5a5a5a;
+    --red:    #8b2020;
+    --green:  #1a4a2e;
+  }
+
+  html { font-size: 100%; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--navy);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .site-header .logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--gold);
+    letter-spacing: .05em;
+    text-decoration: none;
+  }
+  .site-header .sep {
+    color: #4a6080;
+    font-size: .8rem;
+  }
+  .site-header .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .7rem;
+    color: #8aafcc;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    border-bottom: 3px solid var(--gold);
+  }
+  .hero .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .7rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    color: #fff;
+    line-height: 1.15;
+    max-width: 820px;
+    margin: 0 auto 1.5rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .hero .sub {
+    font-size: 1.05rem;
+    color: #c0cede;
+    max-width: 620px;
+    margin: 0 auto 2.5rem;
+    font-weight: 300;
+  }
+  .hero .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .65rem;
+    color: #6a8aaa;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+  .container.wide {
+    max-width: 1080px;
+  }
+
+  /* ── INTRO ── */
+  .intro-text {
+    font-size: 1.15rem;
+    max-width: 680px;
+    margin: 0 auto 4rem;
+    text-align: center;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+
+  /* ── SECTION TITLE ── */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .section-head .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .65rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .section-head hr {
+    flex: 1;
+    border: none;
+    border-top: 1px solid var(--mid);
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 4rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: .65rem;
+    top: .5rem;
+    bottom: .5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), var(--navy));
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: .45rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--cream);
+    box-shadow: 0 0 0 2px var(--gold);
+  }
+  .timeline-item .date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .65rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: .3rem;
+  }
+  .timeline-item .who {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: .4rem;
+  }
+  .timeline-item p {
+    font-size: .95rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+  .timeline-item .quote-inline {
+    display: block;
+    margin-top: .6rem;
+    padding: .6rem 1rem;
+    border-left: 3px solid var(--gold);
+    background: #ede8dd;
+    font-style: italic;
+    font-size: .9rem;
+    color: var(--ink);
+  }
+  .timeline-item .tag {
+    display: inline-block;
+    margin-top: .5rem;
+    padding: .15rem .5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .6rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+  .tag.red   { background: #f4dede; color: var(--red); }
+  .tag.green { background: #d8ead3; color: var(--green); }
+  .tag.grey  { background: #ddd; color: #555; }
+
+  /* ── VERGLEICH-GRID ── */
+  .vergleich-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--mid);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 4rem;
+  }
+  @media (max-width: 640px) {
+    .vergleich-grid { grid-template-columns: 1fr; }
+  }
+  .vergleich-col {
+    padding: 1.8rem;
+  }
+  .vergleich-col.links {
+    background: #edf2f8;
+    border-right: 1px solid var(--mid);
+  }
+  .vergleich-col.rechts {
+    background: #edf5ec;
+  }
+  .vergleich-col .col-head {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .65rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+  }
+  .vergleich-col.links .col-head { color: #3a5a80; }
+  .vergleich-col.rechts .col-head { color: #2a6a3a; }
+  .vergleich-col .behauptung {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: .8rem;
+  }
+  .vergleich-col .quelle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .6rem;
+    letter-spacing: .1em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: .6rem;
+  }
+  .vergleich-col blockquote {
+    margin-top: .8rem;
+    padding: .7rem 1rem;
+    font-style: italic;
+    font-size: .88rem;
+    line-height: 1.7;
+    border-left: 3px solid;
+  }
+  .vergleich-col.links blockquote { border-color: #3a5a80; background: #dde8f5; }
+  .vergleich-col.rechts blockquote { border-color: #2a6a3a; background: #c8e8c8; }
+
+  /* ── FAKTENBOX ── */
+  .faktenbox {
+    background: var(--navy);
+    color: #fff;
+    border-radius: 4px;
+    padding: 2.5rem;
+    margin-bottom: 4rem;
+  }
+  .faktenbox .fb-head {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .65rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .faktenbox h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+  }
+  .faktenbox ol {
+    padding-left: 0;
+    list-style: none;
+    counter-reset: fragen;
+  }
+  .faktenbox ol li {
+    counter-increment: fragen;
+    display: grid;
+    grid-template-columns: 2.2rem 1fr;
+    gap: .5rem;
+    margin-bottom: 1.2rem;
+    font-size: .95rem;
+    line-height: 1.7;
+    color: #c8d8e8;
+  }
+  .faktenbox ol li::before {
+    content: counter(fragen, decimal-leading-zero);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .7rem;
+    color: var(--gold);
+    padding-top: .25rem;
+  }
+  .faktenbox ol li strong {
+    color: #fff;
+    font-weight: 400;
+  }
+
+  /* ── ZITAT-BOX gross ── */
+  .zitat-gross {
+    padding: 3rem 2.5rem;
+    border-top: 3px solid var(--gold);
+    border-bottom: 3px solid var(--gold);
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+  .zitat-gross blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.15rem, 3vw, 1.6rem);
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--navy);
+    margin-bottom: 1rem;
+  }
+  .zitat-gross .attrib {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .65rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ── FALL-KARTEN ── */
+  .fall-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  .fall {
+    background: #fff;
+    border: 1px solid var(--mid);
+    border-radius: 4px;
+    padding: 1.5rem;
+    border-top: 3px solid var(--gold);
+  }
+  .fall .fall-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .6rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: .6rem;
+  }
+  .fall h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: .6rem;
+    line-height: 1.3;
+  }
+  .fall p {
+    font-size: .88rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .fall .fall-quelle {
+    margin-top: .8rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .58rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #9a9a9a;
+  }
+
+  /* ── NETZWERK-KARTE ── */
+  .netzwerk {
+    background: #fff;
+    border: 1px solid var(--mid);
+    border-radius: 4px;
+    padding: 2rem;
+    margin-bottom: 4rem;
+  }
+  .netzwerk .nw-head {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .65rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .netzwerk-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: .8rem 0;
+    border-bottom: 1px solid var(--mid);
+  }
+  .netzwerk-row:last-child { border-bottom: none; }
+  .nw-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .65rem;
+    flex-shrink: 0;
+    margin-top: .15rem;
+  }
+  .nw-text strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: .2rem;
+  }
+  .nw-text p {
+    font-size: .85rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* ── FAZIT ── */
+  .fazit-box {
+    background: var(--gold);
+    color: var(--navy);
+    border-radius: 4px;
+    padding: 2.5rem;
+    margin-bottom: 4rem;
+  }
+  .fazit-box .fb-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .65rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    opacity: .7;
+  }
+  .fazit-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+  .fazit-box p {
+    font-size: .95rem;
+    line-height: 1.8;
+  }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: var(--navy);
+    color: #6a8aaa;
+    padding: 2rem;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .65rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .site-footer a { color: var(--gold); text-decoration: none; }
+
+  /* ── DIVIDER ── */
+  hr.section-rule {
+    border: none;
+    border-top: 1px solid var(--mid);
+    margin: 3rem 0;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="logo" href="#">Rundfunkkritik.de</a>
+  <span class="sep">·</span>
+  <span class="section-label">Medienkompetenz / Werkzeugkunde</span>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="eyebrow">Analyse · RKI-Files · 2024</p>
+  <h1>„Kein Skandal" —<br><em>und dann?</em></h1>
+  <p class="sub">ARD, ZDF und Volksverpetzer erklärten die RKI-Files für unspektakulär. Vier Monate später widerlegten die eigenen Protokolle des RKI eine der zentralen Botschaften der Pandemie.</p>
+  <p class="meta">Rundfunkkritik.de · Analyse · 2024</p>
+</section>
+
+<!-- INTRO -->
+<div class="container">
+  <p class="intro-text">
+    Ein Dokument, zwei Lesarten — und eine Frage, die niemand stellen wollte. Diese Analyse zeigt anhand der RKI-Files, wie der ÖRR und sein privater Faktenchecker-Verbündeter einen Sachverhalt einordneten, bevor die entscheidenden Seiten zugänglich waren. Und was danach passierte.
+  </p>
+</div>
+
+<!-- CHRONOLOGIE -->
+<div class="container wide">
+  <div class="section-head">
+    <span class="label">Chronologie</span><hr>
+  </div>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="date">20. März 2024</div>
+      <div class="who">Multipolar veröffentlicht die RKI-Protokolle</div>
+      <p>Das Magazin erstreitet nach langem Rechtsstreit die Herausgabe von rund 2.000 Seiten RKI-Krisenstabsprotokollen — teilweise geschwärzt. Die Redaktion lädt alle Journalisten zur Mitrecherche ein.</p>
+      <span class="tag grey">Primärdokument · teilweise geschwärzt</span>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">25. März 2024 — ARD-Faktenfinder</div>
+      <div class="who">Pascal Siggelkow: „Die RKI-Files und der Skandal, der keiner ist"</div>
+      <p>Fünf Tage nach Veröffentlichung des rund 2.000-seitigen Konvoluts erklärt der ARD-Faktenfinder: Die Inhalte seien laut Experten weit weniger brisant als von Querdenkern behauptet. Hauptzeuge: Epidemiologe Hajo Zeeb.</p>
+      <span class="quote-inline">„Die Inhalte sind laut Experten weit weniger brisant, als es vor allem in ‚Querdenker'-Kreisen behauptet wird."<br>— ARD-Faktenfinder, 25.03.2024</span>
+      <span class="tag red">Kleines Detail: Zeeb ist Kommissionsmitglied am RKI</span>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">28. März 2024 — Volksverpetzer</div>
+      <div class="who">Thomas Laschyk &amp; Sophie Scheingraber: „Wie Medien auf die Querdenker-Inszenierung hereinfielen"</div>
+      <p>Der meistgelesene deutsche Faktenchecker-Blog schließt sich an: Das RKI habe sorgfältig und evidenzbasiert gearbeitet. Wer Skandale sehe, reißt Sätze aus dem Kontext. Netzwerkpartner Chan-jo Jun, der Haus-Anwalt des Blogs, hatte zuvor in gemeinsamen Auftritten querdenkerische Rechtspositionen kommentiert.</p>
+      <span class="quote-inline">„Das RKI hat in der Pandemie Maßnahmen sorgfältig und evidenzbasiert abgewogen. Das zeigen auch die sog. RKI-Files."<br>— Volksverpetzer, 28.03.2024</span>
+      <span class="tag grey">Zum Zeitpunkt der Veröffentlichung: Dokumente noch teilweise geschwärzt</span>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">28. März 2024 — Tagesschau (Twitter/X)</div>
+      <div class="who">Offizieller Tagesschau-Account teilt: „Die RKI-Files und der Skandal, der keiner ist"</div>
+      <p>Der ARD-Faktenfinder-Artikel wird über den offiziellen Tagesschau-Account verbreitet — ohne eigene redaktionelle Prüfung der 2.000 Seiten.</p>
+      <span class="tag red">Reichweite: mehrere Millionen Follower</span>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">1. Juni 2024 — ZDF</div>
+      <div class="who">Nils Metzger: Protokolle weisen auf „keine neuen politischen Skandale" hin</div>
+      <p>Auch das ZDF findet nach Sichtung der (noch nicht vollständig entschwärzten) Protokolle keine skandalösen Befunde. Das Bild des RKI als wissenschaftlich fundiert arbeitende Behörde bleibt stabil.</p>
+      <span class="tag grey">Basis: teilweise geschwärzte Fassung</span>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">23. Juli 2024</div>
+      <div class="who">Whistleblower-Leak: 4.000 Seiten, vollständig entschwärzt</div>
+      <p>Eine Journalistin veröffentlicht den kompletten Datensatz aller RKI-Krisenstabsprototokolle — rund 4.000 Seiten plus zehn Gigabyte Zusatzmaterial, vollständig und ungeschwärzt. Bestätigt und ausgewertet u.a. von Berliner Zeitung, NZZ und Deutschem Ärzteblatt.</p>
+      <span class="tag green">Primärdokument · vollständig · ungeschwärzt</span>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">24. Juli 2024 — SZ</div>
+      <div class="who">Christina Berndt: „Und wo ist jetzt der Skandal?"</div>
+      <p>Die Süddeutsche Zeitung fragt — einen Tag nach Veröffentlichung der 4.000 Seiten — wo der Skandal sei. Die Überschrift wird kurz darauf still geändert, nachdem in sozialen Netzwerken Dutzende brisanter Protokollpassagen aufgelistet werden.</p>
+      <span class="tag red">Überschrift nachträglich geändert</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- DAS SCHLÜSSEL-DOKUMENT -->
+<div class="container">
+  <div class="section-head">
+    <span class="label">Das Schlüsseldokument</span><hr>
+  </div>
+
+  <div class="zitat-gross">
+    <blockquote>
+      „In den Medien wird von einer Pandemie der Ungeimpften gesprochen.<br>
+      Aus fachlicher Sicht <em>nicht korrekt</em>, Gesamtbevölkerung trägt bei.<br>
+      […] Sagt Minister bei jeder Pressekonferenz,<br>
+      <em>vermutlich bewusst</em>, kann eher nicht korrigiert werden."
+    </blockquote>
+    <p class="attrib">RKI-Krisenstabsprotokoll · 5. November 2021 · Punkt: Wissenschaftskommunikation<br>
+    Bestätigt durch: Berliner Zeitung (23.07.2024) · NZZ (24.07.2024) · Deutsches Ärzteblatt (24.07.2024)</p>
+  </div>
+
+  <p style="max-width:680px;margin:0 auto 2rem;text-align:center;color:var(--muted);font-size:.95rem;">
+    Der Begriff „Pandemie der Ungeimpften" war nicht Volksverpetzers Erfindung — er kam vom damaligen Bundesgesundheitsminister Jens Spahn, der ihn auf Pressekonferenzen wiederholte. Das RKI hatte ihn intern als fachlich falsch eingestuft. Auch Christian Drosten hatte ihn öffentlich kritisiert. Keine dieser Informationen stand in der geschwärzten Fassung vom März.
+  </p>
+</div>
+
+<!-- VERGLEICH-GRID -->
+<div class="container wide">
+  <div class="section-head">
+    <span class="label">Damals — Heute</span><hr>
+  </div>
+
+  <div class="vergleich-grid">
+    <div class="vergleich-col links">
+      <div class="col-head">März 2024 · Faktenchecker-Konsens</div>
+      <div class="behauptung">„Kein Skandal. Querdenker-Inszenierung. RKI hat sorgfältig gearbeitet."</div>
+      <p style="font-size:.88rem;color:var(--muted);line-height:1.7;">ARD, ZDF, Volksverpetzer, SZ — übereinstimmend. Gestützt auf: Experten-Einschätzungen, teilweise geschwärzte Dokumente, 5 Tage Recherche.</p>
+      <blockquote>„Die RKI-Files und der Skandal, der keiner ist."<br><span style="font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.08em;">— ARD-Faktenfinder, Tagesschau, 25.03.2024</span></blockquote>
+    </div>
+    <div class="vergleich-col rechts">
+      <div class="col-head">Juli 2024 · RKI-Protokoll (ungeschwärzt)</div>
+      <div class="behauptung">„Pandemie der Ungeimpften — aus fachlicher Sicht nicht korrekt. Sagt Minister vermutlich bewusst."</div>
+      <p style="font-size:.88rem;color:var(--muted);line-height:1.7;">Protokoll der RKI-Krisenstabssitzung vom 05.11.2021. Bestätigt und zitiert durch Berliner Zeitung, NZZ, Deutsches Ärzteblatt.</p>
+      <blockquote>„Aus fachlicher Sicht nicht korrekt, Gesamtbevölkerung trägt bei."<br><span style="font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.08em;">— RKI-Krisenstabsprotokoll, 05.11.2021</span></blockquote>
+    </div>
+  </div>
+</div>
+
+<!-- FALL-KARTEN: Die drei Faktenchecker im Detail -->
+<div class="container wide">
+  <div class="section-head">
+    <span class="label">Drei Faktenchecker · Ein Muster</span><hr>
+  </div>
+
+  <div class="fall-grid">
+    <div class="fall">
+      <div class="fall-label">ARD-Faktenfinder</div>
+      <h4>5 Tage, 2.000 Seiten, ein Experte</h4>
+      <p>Pascal Siggelkow stützt seinen Befund „kein Skandal" nicht auf eigene Auswertung des Gesamtdokuments, sondern auf Experten-Einschätzungen. Hauptzeuge Hajo Zeeb ist Professor für Epidemiologie — und gleichzeitig Kommissionsmitglied am RKI. Dieser Interessenkonflikt wird im Artikel nicht erwähnt.</p>
+      <div class="fall-quelle">Quelle: ARD-Faktenfinder, 25.03.2024 · connections.news, Sep 2025</div>
+    </div>
+
+    <div class="fall">
+      <div class="fall-label">Volksverpetzer + Chan-jo Jun</div>
+      <h4>Netzwerk als Kontext</h4>
+      <p>Volksverpetzer-Gründer Thomas Laschyk und IT-Anwalt Chan-jo Jun traten in der Pandemie regelmäßig gemeinsam auf — Jun kommentierte juristische Querdenker-Positionen für das Blog. Kein Vorwurf, aber ein Kontext: Wer mit wem denkt, formt Perspektiven. Der Artikel erwähnt keine Gegenstimme aus der Wissenschaft.</p>
+      <div class="fall-quelle">Quelle: Volksverpetzer-Archiv · Anwaltsblatt-Porträt Chan-jo Jun</div>
+    </div>
+
+    <div class="fall">
+      <div class="fall-label">SZ / Berndt</div>
+      <h4>Die nachträglich geänderte Überschrift</h4>
+      <p>„Und wo ist jetzt der Skandal?" — die Überschrift des SZ-Artikels vom 24. Juli 2024 (einen Tag nach dem vollständigen Leak) wurde nach öffentlichem Druck still verändert. Was in den 4.000 Seiten stand, hatte die Autorin offenkundig noch nicht vollständig gelesen.</p>
+      <div class="fall-quelle">Quelle: norberthaering.de · reitschuster.de · 26.07.2024</div>
+    </div>
+  </div>
+</div>
+
+<!-- NETZWERK -->
+<div class="container">
+  <div class="section-head">
+    <span class="label">Wer spricht mit wem</span><hr>
+  </div>
+  <div class="netzwerk">
+    <div class="nw-head">Das Faktenchecker-Netzwerk rund um die RKI-Files-Berichterstattung</div>
+
+    <div class="netzwerk-row">
+      <div class="nw-icon">VV</div>
+      <div class="nw-text">
+        <strong>Volksverpetzer</strong>
+        <p>Faktenchecker-Blog, gegründet von Thomas Laschyk. Gemeinnützigkeit 2024 entzogen (Finanzamt Augsburg: „zu journalistisch"). Finanziert sich über Spenden. Regelmäßige Kooperation mit Chan-jo Jun.</p>
+      </div>
+    </div>
+
+    <div class="netzwerk-row">
+      <div class="nw-icon">CJ</div>
+      <div class="nw-text">
+        <strong>Chan-jo Jun — stellv. Mitglied, Bayerischer Verfassungsgerichtshof</strong>
+        <p>IT- und Medienrechtler (Würzburg). Hat Facebook und Twitter vor deutschen Gerichten erfolgreich verklagt. 2024: Bayerischer Verfassungsorden von Landtagspräsidentin Ilse Aigner — <em>„für besondere Verdienste um die bayerische Verfassung."</em> Seit November 2022 auf Vorschlag der Grünen-Fraktion stellvertretendes Mitglied des Bayerischen Verfassungsgerichtshofs. Diese Würdigung hat er sich verdient.</p>
+        <p style="margin-top:.6rem;">September 2025, Hart aber Fair: Jun bezeichnete die Meinungsfreiheit als <em>„Strohmann, der immer wieder aufgestellt wird"</em> und sprach sich für Löschung von Inhalten unterhalb der Strafbarkeitsschwelle aus. CDU-Politikerin Kristina Schröder: <em>„Wollen Sie eine neue Kategorie aufmachen — nicht rechtswidrig, aber trotzdem verboten?"</em></p>
+      </div>
+    </div>
+
+    <div class="netzwerk-row">
+      <div class="nw-icon">ARD</div>
+      <div class="nw-text">
+        <strong>ARD-Faktenfinder (Pascal Siggelkow)</strong>
+        <p>Öffentlich-rechtlich finanzierter Faktencheck. Stützte RKI-Files-Einordnung auf Experte Hajo Zeeb — RKI-Kommissionsmitglied. Selbstverständnis: unabhängig. Frage: Wessen Experten?</p>
+      </div>
+    </div>
+
+    <div class="netzwerk-row">
+      <div class="nw-icon">RKI</div>
+      <div class="nw-text">
+        <strong>Robert-Koch-Institut</strong>
+        <p>Bundesoberbehörde. Protokollierte intern: „Pandemie der Ungeimpften — aus fachlicher Sicht nicht korrekt." Kommunizierte es extern nicht. Das ist der dokumentierte Kern.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WERKZEUGKASTEN -->
+<div class="container">
+  <div class="faktenbox">
+    <div class="fb-head">Werkzeugkasten · Medienkompetenz</div>
+    <h3>Fünf Fragen, die man jedem Faktencheck stellen sollte</h3>
+    <ol>
+      <li><strong>Welche Behauptung wird geprüft?</strong> Oft ist das, was widerlegt wird, nicht das, was ursprünglich zur Debatte stand. Ein Faktencheck kann korrekt und trotzdem an der Frage vorbeigehen.</li>
+      <li><strong>Wie alt sind die Quellen — und waren sie vollständig?</strong> Im März 2024 waren die RKI-Protokolle zu weiten Teilen geschwärzt. Wer mit geschwärzten Dokumenten arbeitet, kann keine vollständige Einordnung liefern.</li>
+      <li><strong>Wer sind die Experten — und welche Interessen haben sie?</strong> Ein Epidemiologe, der gleichzeitig Kommissionsmitglied am RKI ist, hat eine institutionelle Nähe zu dem Dokument, das er bewertet.</li>
+      <li><strong>Was steht nicht drin?</strong> Das Fehlen eines Befunds ist kein Befund. Was ein Faktencheck nicht prüft, widerlegt er auch nicht.</li>
+      <li><strong>Wurde der Artikel nach neuen Erkenntnissen aktualisiert?</strong> Seriöser Journalismus korrigiert sich. Ein Datum am Artikelanfang reicht nicht, wenn das Primärdokument vier Monate später anders aussieht.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- FAZIT -->
+<div class="container">
+  <div class="fazit-box">
+    <div class="fb-label">Fazit</div>
+    <h3>Dokumente altern nicht. Schwärzungen schon.</h3>
+    <p>ARD, ZDF, Volksverpetzer und SZ haben im Frühjahr 2024 mit geschwärztem Material gearbeitet und trotzdem Endurteile gefällt. Als die vollständigen Protokolle im Juli 2024 vorlagen, enthielten sie eine Passage, die genau jene Fragen als berechtigt auswies, die zuvor als Querdenker-Inszenierung abgetan worden waren. Das ist kein Beweis für bösen Willen. Es ist ein Lehrstück dafür, warum Faktenchecks Zwischenstände sind — und warum die Fähigkeit, sie als solche zu lesen, keine Frage der politischen Haltung ist, sondern des Handwerks.</p>
+  </div>
+</div>
+
+<!-- QUELLEN -->
+<div class="container">
+  <div class="section-head">
+    <span class="label">Primärquellen</span><hr>
+  </div>
+  <ul style="font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.06em;color:var(--muted);line-height:2.2;list-style:none;padding:0;margin-bottom:3rem;">
+    <li>· RKI-Krisenstabsprotokolle, ungeschwärzt, Juli 2024 (rki-transparenzbericht.de)</li>
+    <li>· Berliner Zeitung: „RKI-Files komplett entschwärzt: Pandemie der Ungeimpften aus fachlicher Sicht nicht korrekt", 23.07.2024</li>
+    <li>· NZZ: „Neue RKI-Files: Pandemie der Ungeimpften gab es nicht", 24.07.2024</li>
+    <li>· Deutsches Ärzteblatt: „RKI-Krisenstabsprotokolle: Momentaufnahmen der Coronapandemie", 24.07.2024</li>
+    <li>· ARD-Faktenfinder (Pascal Siggelkow): „Die RKI-Files und der Skandal, der keiner ist", 25.03.2024</li>
+    <li>· Volksverpetzer: „RKI-Files: Wie Medien auf die Querdenker-Inszenierung hereinfielen", 28.03.2024</li>
+    <li>· Süddeutsche Zeitung (Christina Berndt): „Und wo ist jetzt der Skandal?", 24.07.2024</li>
+    <li>· Telepolis: „RKI-Protokolle: Große Medien meiden Corona-Aufarbeitung", April 2025</li>
+    <li>· connections.news: „Parteiische Faktenchecker?", September 2025</li>
+    <li>· Drosten in Zeit-Interview, November 2021: „Wir haben keine Pandemie der Ungeimpften"</li>
+  </ul>
+</div>
+
+<footer class="site-footer">
+  <p>Rundfunkkritik.de · Medienkompetenz · <a href="#">rundfunkkritik.de</a></p>
+</footer>
+
+</body>
+</html>
