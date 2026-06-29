@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Der Wächter und sein Auftraggeber – rundfunkkritik.de</title>
+  <meta name="description" content="Faktenchecker sollten Macht kontrollieren. Stattdessen werden sie von ihr finanziert. Eine Strukturanalyse — mit Quellen, die jeder nachschlagen kann.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;600&display=swap');
+
+    :root {
+      --navy: #1a2e4a;
+      --gold: #b8963e;
+      --red: #8b1a1a;
+      --green: #1a5c2e;
+      --light-bg: #f9f7f4;
+      --border: #d4c9b8;
+      --text: #2a2a2a;
+      --muted: #6b6458;
+      --mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 300;
+      color: var(--text);
+      background: var(--light-bg);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .site-header {
+      background: var(--navy);
+      padding: 16px 0;
+      border-bottom: 3px solid var(--gold);
+    }
+    .site-header .inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem;
+      color: #fff;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+    .site-name span { color: var(--gold); }
+    .site-nav a {
+      color: rgba(255,255,255,0.75);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-left: 24px;
+    }
+
+    .hero {
+      background: var(--navy);
+      padding: 60px 24px 48px;
+      text-align: center;
+    }
+    .hero .rubrik {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: #fff;
+      line-height: 1.2;
+      max-width: 720px;
+      margin: 0 auto 20px;
+    }
+    .hero .deck {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 600px;
+      margin: 0 auto 32px;
+      font-style: italic;
+    }
+    .hero .meta {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .article-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.55rem;
+      color: var(--navy);
+      margin: 48px 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--gold);
+      line-height: 1.3;
+    }
+    p { margin-bottom: 1.3em; }
+    strong { font-weight: 600; color: var(--navy); }
+    em { font-style: italic; }
+
+    .lead {
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--navy);
+      border-left: 4px solid var(--gold);
+      padding-left: 20px;
+      margin-bottom: 40px;
+      line-height: 1.65;
+    }
+
+    .zitat {
+      background: #fff;
+      border-left: 5px solid var(--navy);
+      padding: 20px 24px;
+      margin: 28px 0;
+      font-style: italic;
+      font-size: 1.0rem;
+    }
+    .zitat .quelle {
+      font-style: normal;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* GELDFLUSS-DIAGRAMM */
+    .geldfluss {
+      margin: 36px 0;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .geldfluss-titel {
+      background: var(--navy);
+      color: var(--gold);
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 12px 20px;
+    }
+    .geldfluss-body {
+      padding: 24px 20px;
+    }
+    .fluss-ebene {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px dashed var(--border);
+    }
+    .fluss-ebene:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .fluss-nr {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--navy);
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-top: 2px;
+    }
+    .fluss-inhalt strong {
+      display: block;
+      font-family: 'Source Serif 4', serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .fluss-inhalt p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+    .fluss-pfeil {
+      text-align: center;
+      color: var(--gold);
+      font-size: 1.2rem;
+      margin: -8px 0 12px 44px;
+    }
+
+    /* DREI-SÄULEN */
+    .drei-saeulen {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 36px 0;
+    }
+    .saeule {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--navy);
+      padding: 20px 16px;
+    }
+    .saeule-nr {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .saeule h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.0rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+      font-style: normal;
+      line-height: 1.3;
+    }
+    .saeule p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.55;
+    }
+    @media (max-width: 600px) {
+      .drei-saeulen { grid-template-columns: 1fr; }
+    }
+
+    /* VERGLEICH */
+    .vergleich-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin: 36px 0;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .vergleich-grid .col { padding: 24px; }
+    .vergleich-grid .col-left { background: #fff; border-right: 1px solid var(--border); }
+    .vergleich-grid .col-right { background: #f0f4f0; }
+    .vergleich-grid .col-header {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .col-left .col-header { color: var(--red); }
+    .col-right .col-header { color: var(--green); }
+    .vergleich-grid .col p {
+      font-size: 0.88rem;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    .vergleich-grid .col p:last-child { margin-bottom: 0; }
+    @media (max-width: 580px) {
+      .vergleich-grid { grid-template-columns: 1fr; }
+      .vergleich-grid .col-left { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    /* FAKTENBOX */
+    .faktenbox {
+      background: var(--navy);
+      color: #fff;
+      padding: 28px 32px;
+      margin: 36px 0;
+      border-radius: 2px;
+    }
+    .faktenbox .faktenbox-titel {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .faktenbox ul { list-style: none; padding: 0; margin: 0; }
+    .faktenbox li {
+      font-size: 0.88rem;
+      padding: 8px 0 8px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      line-height: 1.55;
+      position: relative;
+    }
+    .faktenbox li:last-child { border-bottom: none; }
+    .faktenbox li::before { content: '→'; position: absolute; left: 0; color: var(--gold); }
+    .faktenbox li strong { color: #fff; }
+
+    .hinweis {
+      background: #fff8f0;
+      border: 1px solid #e8c87a;
+      border-left: 4px solid var(--gold);
+      padding: 18px 22px;
+      margin: 28px 0;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+    .hinweis .hinweis-label {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .schluss {
+      background: var(--navy);
+      color: rgba(255,255,255,0.9);
+      padding: 32px 36px;
+      margin: 48px 0 0;
+      border-radius: 2px;
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.7;
+    }
+    .schluss strong { color: var(--gold); font-style: normal; }
+
+    .quellen {
+      margin-top: 56px;
+      border-top: 2px solid var(--border);
+      padding-top: 28px;
+    }
+    .quellen-titel {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .quellen ol { padding-left: 20px; margin: 0; }
+    .quellen li {
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-family: var(--mono);
+    }
+    .quellen a { color: var(--navy); text-decoration: underline; text-underline-offset: 2px; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="site-name" href="/">rundfunk<span>kritik</span>.de</a>
+    <nav class="site-nav">
+      <a href="/">Start</a>
+      <a href="/archiv.html">Archiv</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="rubrik">Strukturanalyse · Medien · Faktenchecking</div>
+  <h1>Der Wächter und sein Auftraggeber</h1>
+  <p class="deck">Faktenchecker sollten Macht kontrollieren. Stattdessen werden sie von ihr finanziert — und zertifiziert, um Aufträge zu bekommen. Keine Verschwörung. Ein Systemfehler.</p>
+  <div class="meta">23. Juni 2026</div>
+</div>
+
+<main class="article-body">
+
+  <p class="lead">
+    Wer überprüft, wer Recht hat, muss unabhängig sein von denen, über die er urteilt. Das ist kein Qualitätsmerkmal — es ist die Grundvoraussetzung. Die Frage ist deshalb nicht, ob Faktenchecker manchmal falsch liegen. Die Frage ist: Wie ist das System gebaut, das entscheidet, was als wahr gilt?
+  </p>
+
+  <h2>Wie Faktenchecker funktionieren — und wer das Zertifikat ausstellt</h2>
+
+  <p>
+    Um als offizieller Faktenchecker für Facebook, Instagram oder Google tätig zu sein, benötigt eine Organisation ein Zertifikat. Das Zertifikat stellt das <strong>International Fact-Checking Network (IFCN)</strong> aus — eine Abteilung des Poynter Institute for Media Studies in Florida.
+  </p>
+
+  <p>
+    In Deutschland ist <strong>Correctiv</strong> der IFCN-zertifizierte Partner. ARD-Faktenfinder und ZDF-Faktencheck arbeiten als Teil des öffentlich-rechtlichen Systems, das während der Pandemie eng mit der Bundesregierung und dem RKI koordiniert war.
+  </p>
+
+  <p>
+    Das IFCN selbst veröffentlicht auf seiner eigenen Transparenzseite, wer es finanziert.
+  </p>
+
+  <div class="faktenbox">
+    <div class="faktenbox-titel">IFCN-Geldgeber — Quelle: IFCN Transparency Statement, poynter.org (eigene Angaben)</div>
+    <ul>
+      <li><strong>Bill &amp; Melinda Gates Foundation</strong></li>
+      <li><strong>Google</strong></li>
+      <li><strong>Facebook / Meta</strong></li>
+      <li><strong>US-Außenministerium (State Department)</strong></li>
+      <li><strong>National Endowment for Democracy</strong> — vom US-Kongress finanzierte NGO zur Außenpolitik</li>
+      <li><strong>Open Society Foundations</strong> (George Soros)</li>
+      <li><strong>Omidyar Network / Luminate</strong> (eBay-Gründer Pierre Omidyar)</li>
+    </ul>
+  </div>
+
+  <p>
+    Das sind keine Gerüchte aus Alternativmedien. Das sind die eigenen Angaben des Netzwerks, das die Zertifikate ausstellt, ohne die Faktenchecker keine Facebook-Aufträge erhalten.
+  </p>
+
+  <h2>Was das für Correctiv bedeutet</h2>
+
+  <p>
+    Correctiv listet seine Geldgeber ebenfalls transparent — auf der eigenen Website. Das Bild ist ähnlich:
+  </p>
+
+  <div class="geldfluss">
+    <div class="geldfluss-titel">Correctiv — Ausgewählte Finanzierungsquellen (dokumentiert)</div>
+    <div class="geldfluss-body">
+      <div class="fluss-ebene">
+        <div class="fluss-nr">1</div>
+        <div class="fluss-inhalt">
+          <strong>Omidyar Network / Luminate</strong>
+          <p>Größter Einzelgeldgeber. 2018: über 640.000 Euro. 2020 und 2021 je über 400.000 Euro. Pierre Omidyar ist Gründer von eBay — und gilt als einer der einflussreichsten Medienfinanzierer weltweit.</p>
+        </div>
+      </div>
+      <div class="fluss-pfeil">↓</div>
+      <div class="fluss-ebene">
+        <div class="fluss-nr">2</div>
+        <div class="fluss-inhalt">
+          <strong>Open Society Foundations (George Soros)</strong>
+          <p>Mehrfache Zuwendungen, u. a. explizit für die Facebook-Faktencheck-Tätigkeit. 2017: 100.000 Euro, dokumentiert durch Handelsblatt und Correctiv selbst.</p>
+        </div>
+      </div>
+      <div class="fluss-pfeil">↓</div>
+      <div class="fluss-ebene">
+        <div class="fluss-nr">3</div>
+        <div class="fluss-inhalt">
+          <strong>Staatliche und staatsnahe Stellen</strong>
+          <p>Bundeszentrale für politische Bildung, NRW-Staatskanzlei, Landesanstalt für Medien NRW, Deutsche Telekom. Im Jahr 2022 stellte der deutsche Steuerzahler laut Recherchen den zweitgrößten Einzelposten.</p>
+        </div>
+      </div>
+      <div class="fluss-pfeil">↓</div>
+      <div class="fluss-ebene">
+        <div class="fluss-nr">4</div>
+        <div class="fluss-inhalt">
+          <strong>Facebook / Google</strong>
+          <p>Direkte Zahlungen für die Faktencheck-Tätigkeit auf den Plattformen. Das IFCN-Zertifikat ist Voraussetzung für diese Aufträge — und wird von denselben Akteuren mitfinanziert.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Der strukturelle Widerspruch</h2>
+
+  <p>
+    Wenn jemand eine Uhr verkauft und gleichzeitig entscheidet, wann sie richtig geht — ist das kein Qualitätsproblem. Es ist ein Konstruktionsfehler.
+  </p>
+
+  <div class="drei-saeulen">
+    <div class="saeule">
+      <div class="saeule-nr">Problem 01</div>
+      <h3>Wer zahlt, formt den Rahmen</h3>
+      <p>Keine direkte Weisung nötig. Wer von einer Institution abhängt, internalisiert deren Erwartungen — das ist Sozialpsychologie, kein Komplott. Journalisten, die kritisch über Gates berichten, beißen in die Hand, die sie füttert.</p>
+    </div>
+    <div class="saeule">
+      <div class="saeule-nr">Problem 02</div>
+      <h3>Das Expertenproblem</h3>
+      <p>Faktenchecker sind keine Fachleute. Sie überprüfen Aussagen, indem sie Experten befragen. Welche? Die institutionell anerkannten. In der Pandemie: RKI, WHO, Drosten. Genau jene, deren Aussagen inzwischen durch Akten relativiert wurden.</p>
+    </div>
+    <div class="saeule">
+      <div class="saeule-nr">Problem 03</div>
+      <h3>Das Korrekturfenster schließt sich</h3>
+      <p>Je öfter man etwas als „Falschinformation" abgestempelt hat, desto größer wird die Korrektur — und desto stärker der Anreiz, sie zu vermeiden. Das Schweigen nach dem BND-Bericht 2025 folgte diesem Muster.</p>
+    </div>
+  </div>
+
+  <h2>Was während der Pandemie geschah — konkret</h2>
+
+  <div class="vergleich-grid">
+    <div class="col col-left">
+      <div class="col-header">Was Faktenchecker als falsch einstuften</div>
+      <p>„Das Virus könnte aus einem Labor stammen" — als Verschwörungstheorie markiert, Reichweite auf Facebook eingeschränkt (2020–2022)</p>
+      <p>„Masken bieten keinen nachgewiesenen Schutz" — als Falschinformation klassifiziert, obwohl die Cochrane-Studie bereits in Arbeit war</p>
+      <p>„Die 6-Fuß-Abstandsregel hat keine wissenschaftliche Grundlage" — als Desinformation behandelt</p>
+    </div>
+    <div class="col col-right">
+      <div class="col-header">Was sich später als dokumentiert herausstellte</div>
+      <p>BND: Laborursprung zu 80–95 % wahrscheinlich — bereits 2020. ODNI-Freigabe Juni 2026 bestätigt Finanzierungsspur.</p>
+      <p>Cochrane-Review 2023: Keine ausreichende Evidenz für Maskenwirksamkeit bei Infektionskrankheiten. Autor: jahrelang zurückgehalten.</p>
+      <p>Fauci vor dem US-Kongress 2024: Die 6-Fuß-Regel sei „einfach aufgetaucht" — ohne wissenschaftliche Grundlage.</p>
+    </div>
+  </div>
+
+  <h2>Das Label als Mechanismus</h2>
+
+  <p>
+    „Verschwörungstheorie" ist kein analytischer Begriff. Er ist ein Abschluss-Signal: Diese Frage muss nicht mehr gestellt werden.
+  </p>
+
+  <p>
+    Das ist praktisch. Es spart Recherchezeit. Es schützt die Redaktion vor Beschwerden. Und es wurde — das zeigen die ODNI-Dokumente vom 18. Juni 2026 explizit — von Fauci und seinem Netzwerk als bewusste Kommunikationsstrategie eingesetzt: Handverlesene Wissenschaftler lieferten den Konsens, der Konsens wurde zur Wahrheit, die Wahrheit schützte die Forschungsfinanzierung.
+  </p>
+
+  <div class="zitat">
+    „Das Poynter-Institut macht die Vorgabe, dass sich das Bestimmen von Fake News massgeblich an behördlichen Informationen orientiert."
+    <div class="quelle">infosperber.ch, Dezember 2022 — mit Verweis auf NZZ-Recherche</div>
+  </div>
+
+  <p>
+    Behördliche Information als Standard für Wahrheit. Das funktioniert gut, solange Behörden die Wahrheit sagen. Wenn sie es nicht tun, prüft der Faktenchecker genau das nicht nach.
+  </p>
+
+  <h2>Was das nicht bedeutet</h2>
+
+  <div class="hinweis">
+    <div class="hinweis-label">Einordnung</div>
+    Dieser Artikel behauptet nicht, dass alle Faktenchecker korrupt sind, alle Mitarbeiter wissen, was sie tun, oder alle Faktencheck-Ergebnisse falsch sind. Viele Falschmeldungen werden korrekt identifiziert. Der Punkt ist ein anderer: Ein System, das strukturell von denselben Akteuren abhängt, über die es urteilt, kann keine unabhängige Kontrollfunktion ausüben — egal wie integer die einzelnen Journalisten sind. Das ist kein moralisches Urteil. Es ist eine institutionelle Analyse.
+  </div>
+
+  <h2>Die eigentliche Frage</h2>
+
+  <p>
+    Wer kontrolliert die Kontrolleure?
+  </p>
+
+  <p>
+    In einer funktionierenden Demokratie: der Wettbewerb der Ideen, die Pressefreiheit, das Publikum. Das setzt voraus, dass alternative Einschätzungen überhaupt gehört werden können — ohne algorithmische Reichweiteneinschränkung durch Plattformen, die denselben Faktenchecker finanzieren, der gerade die Einschränkung empfohlen hat.
+  </p>
+
+  <p>
+    Das ist der Kreis, um den es geht. Nicht böse Menschen. Ein System, das sich selbst schützt.
+  </p>
+
+  <div class="schluss">
+    Die gute Nachricht: Systeme, die sich selbst schützen, hinterlassen Akten. <strong>Die Akten liegen jetzt auf dem Tisch.</strong> Die Frage ist nicht mehr, ob Fragen gestellt werden durften. Die Frage ist, welche Redaktion als erste den Mut aufbringt, sich selbst zu korrigieren.
+  </div>
+
+  <div class="quellen">
+    <div class="quellen-titel">Quellen und Belege</div>
+    <ol>
+      <li>IFCN Transparency Statement — eigene Angaben zu Geldgebern: <a href="https://www.poynter.org/international-fact-checking-network-transparency-statement/" target="_blank">poynter.org/ifcn-transparency</a></li>
+      <li>Correctiv, Finanzen &amp; Förderer — eigene Angaben: <a href="https://correctiv.org/ueber-uns/finanzen/" target="_blank">correctiv.org/ueber-uns/finanzen</a></li>
+      <li>Handelsblatt, 4. April 2017: „Soros spendet für Kampf gegen Fake-News" — Bestätigung der Open-Society-Zahlung an Correctiv</li>
+      <li>Wikipedia EN: Correctiv — „The funding comes largely from establishment foundations and corporations, such as the Open Society Foundations, Google Germany GmbH, and German Telekom": <a href="https://en.wikipedia.org/wiki/Correctiv" target="_blank">en.wikipedia.org/wiki/Correctiv</a></li>
+      <li>infosperber.ch, Dezember 2022: „Grosse Medien sind mit einäugigen Faktencheckern verbandelt" — mit NZZ-Verweis auf IFCN/Poynter-Vorgaben</li>
+      <li>Fauci vor dem US-Kongress, Januar 2024: 6-Fuß-Regel sei „einfach aufgetaucht" — NY Post, 10. Januar 2024</li>
+      <li>Cochrane Review 2023: Keine ausreichende Evidenz für Maskenwirksamkeit — Jefferson et al., Cochrane Library</li>
+      <li>ODNI Press Release No. 11-26, 18. Juni 2026: Beschreibung des „circular reporting loop" zwischen Fauci und Geheimdiensten: <a href="https://www.odni.gov/index.php/newsroom/press-releases/press-releases-2026/4166-pr-11-26" target="_blank">odni.gov</a></li>
+    </ol>
+  </div>
+
+</main>
+
+</body>
+</html>
