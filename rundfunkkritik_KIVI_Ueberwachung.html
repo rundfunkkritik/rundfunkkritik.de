@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIVI: Wie der Rundfunkbeitrag die Überwachung des Internets finanziert | rundfunkkritik.de</title>
+<meta name="description" content="Die Landesmedienanstalten durchsuchen mit einer KI-Software täglich über 10.000 Webseiten und soziale Profile – finanziert durch den Rundfunkbeitrag. Was als Hassrede-Bekämpfung beginnt, endet beim BKA. Eine Analyse.">
+<meta name="keywords" content="KIVI, Landesmedienanstalten, KI-Überwachung, Rundfunkbeitrag, BKA, Hassrede, Meinungsfreiheit, Medienaufsicht, LFM NRW, Überwachungsstaat">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Syne:wght@400;700;800&family=Inter:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root {
+    --bg: #0d0d0d;
+    --surface: #141414;
+    --border: #222;
+    --accent: #c8ff00;
+    --accent-dim: rgba(200,255,0,0.08);
+    --danger: #ff3b3b;
+    --danger-dim: rgba(255,59,59,0.08);
+    --muted: #555;
+    --text: #d8d8d0;
+    --text-bright: #f0f0e8;
+    --mono: 'IBM Plex Mono', monospace;
+    --display: 'Syne', sans-serif;
+    --body: 'Inter', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── HEADER ─── */
+  .site-header {
+    border-bottom: 1px solid var(--border);
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: rgba(13,13,13,0.95);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+  }
+  .site-logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .site-tagline {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  /* ─── ARTICLE CONTAINER ─── */
+  .article-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 24px 100px;
+  }
+
+  /* ─── EYEBROW ─── */
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.6;
+  }
+
+  /* ─── HEADLINE ─── */
+  h1 {
+    font-family: var(--display);
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 800;
+    color: var(--text-bright);
+    line-height: 1.1;
+    margin-bottom: 28px;
+    letter-spacing: -0.02em;
+  }
+  h1 em {
+    color: var(--accent);
+    font-style: normal;
+  }
+
+  /* ─── LEAD ─── */
+  .lead {
+    font-size: 19px;
+    line-height: 1.65;
+    color: #a8a89e;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ─── META ─── */
+  .meta {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 56px;
+    flex-wrap: wrap;
+  }
+  .meta-item {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+  .meta-item span {
+    color: #666;
+  }
+
+  /* ─── BODY TEXT ─── */
+  p {
+    margin-bottom: 24px;
+    color: var(--text);
+  }
+
+  h2 {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-bright);
+    margin: 56px 0 20px;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 40px 0 16px;
+  }
+
+  /* ─── PULL QUOTE ─── */
+  .pull-quote {
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 40px 0;
+    background: var(--accent-dim);
+  }
+  .pull-quote p {
+    font-family: var(--display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-bright);
+    line-height: 1.4;
+    margin: 0;
+    font-style: italic;
+  }
+
+  /* ─── DANGER BOX ─── */
+  .danger-box {
+    border: 1px solid var(--danger);
+    background: var(--danger-dim);
+    padding: 24px 28px;
+    margin: 40px 0;
+  }
+  .danger-box .danger-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--danger);
+    margin-bottom: 12px;
+  }
+  .danger-box p {
+    color: #e0e0d8;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  /* ─── FACT BOX ─── */
+  .fact-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 28px;
+    margin: 40px 0;
+  }
+  .fact-box .fact-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .fact-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  .fact-box ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: var(--text);
+    padding-left: 16px;
+    position: relative;
+  }
+  .fact-box ul li:last-child { border-bottom: none; }
+  .fact-box ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 10px;
+    top: 12px;
+  }
+
+  /* ─── STAT BLOCK ─── */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin: 40px 0;
+  }
+  .stat-cell {
+    background: var(--surface);
+    padding: 24px 20px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: var(--display);
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--accent);
+    display: block;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ─── INLINE CODE ─── */
+  code {
+    font-family: var(--mono);
+    font-size: 14px;
+    background: #1a1a1a;
+    color: var(--accent);
+    padding: 2px 6px;
+    border-radius: 2px;
+  }
+
+  /* ─── SOURCE NOTE ─── */
+  .source-note {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+    margin-top: -8px;
+    margin-bottom: 32px;
+  }
+
+  /* ─── FOOTER ─── */
+  .article-footer {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+  }
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .tag:hover { border-color: var(--accent); color: var(--accent); }
+
+  .ai-note {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: #3a3a3a;
+    line-height: 1.6;
+  }
+  .ai-note span { color: #555; }
+
+  @media (max-width: 600px) {
+    .site-header { padding: 14px 16px; }
+    .article-wrap { padding: 40px 16px 80px; }
+    .stat-row { grid-template-columns: 1fr; gap: 2px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-logo" href="/">rundfunkkritik.de</a>
+  <span class="site-tagline">Medien. Macht. Analyse.</span>
+</header>
+
+<main class="article-wrap">
+
+  <div class="eyebrow">Medienaufsicht &amp; Überwachung</div>
+
+  <h1>KIVI: Wie der Rundfunkbeitrag die <em>Überwachung des Internets</em> finanziert</h1>
+
+  <p class="lead">Die Landesmedienanstalten durchsuchen mit einer KI-Software täglich über 10.000 Webseiten und Social-Media-Profile nach strafbaren Inhalten. Was als Jugendschutz begann, ist heute ein bundesweites Überwachungsnetz — finanziert durch den Zwangsbeitrag, vernetzt mit dem BKA. Und die rechtliche Grundlage? Umstritten.</p>
+
+  <div class="meta">
+    <div class="meta-item">Veröffentlicht <span>29. Juni 2026</span></div>
+    <div class="meta-item">Ressort <span>Medienaufsicht</span></div>
+    <div class="meta-item">Lesedauer <span>ca. 7 Min.</span></div>
+  </div>
+
+  <p>Es klingt zunächst harmlos. Fast schon bürokratisch. Die Landesanstalt für Medien Nordrhein-Westfalen — offiziell zuständig für private Rundfunkanbieter und Telemedien — hat eine Software entwickeln lassen. Die Software heißt KIVI. Das Kürzel steht für „Künstliche Intelligenz" und <em>vigilare</em>, lateinisch für „wachsam sein". Oder, je nach Perspektive: überwachen.</p>
+
+  <p>Seit Ende 2020 ist KIVI im Einsatz, seit 2022 nutzen <strong>alle 14 deutschen Landesmedienanstalten</strong> das System. Täglich werden damit über 10.000 öffentliche Webseiten, YouTube-Kanäle, TikTok-Profile, X-Accounts und Telegram-Gruppen automatisiert durchforstet. Und wer nicht gefunden werden will, lernt: Man muss schon vorsichtig sein, was man schreibt.</p>
+
+  <div class="pull-quote">
+    <p>„Ab sofort können alle Medienanstalten in Deutschland Verdachtsfälle von strafrechtlich relevanter Hassrede an die ZMI BKA melden."</p>
+  </div>
+  <div class="source-note">— Pressemitteilung LFM NRW, Mai 2023</div>
+
+  <h2>Von der Rundfunkaufsicht zur Internetpolizei</h2>
+
+  <p>Die Landesmedienanstalten wurden gegründet, um private Radio- und Fernsehsender zu regulieren. Werbezeitenüberschreitungen, Impressumspflichten, Jugendschutz im linearen Programm — das war ihr originäres Terrain. Dieser Auftrag ist überschaubar und nachvollziehbar. Was aus ihm geworden ist, ist es nicht mehr.</p>
+
+  <p>Heute beschreibt die LFM NRW ihre Strategie als „Verfolgen statt nur löschen". KIVI identifiziert nicht mehr nur Inhalte, die gelöscht werden sollen — es identifiziert <em>Menschen</em>, die verfolgt werden sollen. Wer als mutmaßlicher Verfasser eines als strafbar eingestuften Beitrags erkannt wird, landet als Datensatz beim Bundeskriminalamt.</p>
+
+  <div class="stat-row">
+    <div class="stat-cell">
+      <span class="stat-num">10.000+</span>
+      <span class="stat-label">Profile täglich</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">2.741</span>
+      <span class="stat-label">BKA-Meldungen (NRW, bis 2023)</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">14</span>
+      <span class="stat-label">Medienanstalten bundesweit</span>
+    </div>
+  </div>
+
+  <h2>Das BKA als Endpunkt</h2>
+
+  <p>Seit Mai 2023 können alle Landesmedienanstalten Fälle direkt an die Zentrale Meldestelle für strafbare Inhalte im Internet beim Bundeskriminalamt (ZMI BKA) übermitteln. Das BKA prüft die Funde auf strafrechtliche Relevanz, stellt wenn möglich den Verfasser fest und leitet die Fälle an die zuständigen Staatsanwaltschaften weiter.</p>
+
+  <p>Allein die NRW-Anstalt hatte bis dahin fast 700 Meldungen zugeliefert. Das BKA-Präsidium kommentierte dies als Umsetzung des „Aktionsplans gegen Rechtsextremismus" des damaligen Bundesinnenministeriums. Eine Medienaufsichtsbehörde als verlängerter Arm der Innenpolitik.</p>
+
+  <div class="danger-box">
+    <div class="danger-label">⚠ Strukturproblem</div>
+    <p>Die Landesmedienanstalten sind per Verfassung als <strong>staatsferne</strong> Einrichtungen konstruiert. Ihre direkte, institutionalisierte Zusammenarbeit mit dem BKA auf Basis politischer Aktionspläne stellt diese Staatsferne grundsätzlich in Frage — unabhängig von der inhaltlichen Bewertung einzelner Meldungen.</p>
+  </div>
+
+  <h2>Wer bestimmt, was „Hassrede" ist?</h2>
+
+  <p>Das ist die eigentliche Frage. Und sie bleibt im Dunkel. Schon ein NRW-Landtagsdokument von Mai 2025 hielt fest, was Kritiker seit Jahren beanstanden: Die Kriterien, nach denen KIVI Inhalte als verdächtig einstuft, sind nicht öffentlich. Die Algorithmen sind nicht offengelegt. Eine Datenschutz-Folgenabschätzung existierte laut netzpolitik.org lange Zeit nicht — oder war zumindest nicht öffentlich bekannt.</p>
+
+  <p>Der Landtag NRW stellte 2025 fest, dass KIVI in einem „rechtsfreien Raum" operieren könnte: keine klare gesetzliche Grundlage für das Ausmaß des Einsatzes, keine Transparenz über Whitelists und Blacklists, keine öffentliche Kontrolle der Zugriffsrechte. Die mögliche Folge: <em>Selbstzensur</em>, weil Nutzer schlicht nicht wissen, was die Behörde wie bewertet.</p>
+
+  <div class="fact-box">
+    <div class="fact-label">Offene Fragen — Stand 2025</div>
+    <ul>
+      <li>Welche Kriterien und Algorithmen bestimmen, was KIVI als verdächtig einstuft?</li>
+      <li>Wer entscheidet über Whitelists und Blacklists — und nach welchen Maßstäben?</li>
+      <li>Gibt es eine vollständige Datenschutz-Folgenabschätzung gemäß DSGVO?</li>
+      <li>Wer kontrolliert die bei externen Dienstleistern (Condat AG) gespeicherten Personendaten?</li>
+      <li>Wie wird verhindert, dass politische Meinungsäußerungen als Hassrede klassifiziert werden?</li>
+    </ul>
+  </div>
+
+  <h2>Bezahlt vom Bürger — kontrolliert vom Staat</h2>
+
+  <p>Das Pikante an der Konstruktion: Finanziert wird das gesamte System durch den Rundfunkbeitrag. Jeder Haushalt, der monatlich 18,36 Euro an die Beitragseinzugszentrale überweist, finanziert damit auch eine KI, die öffentliche Online-Profile scannt und Verdachtsfälle an das BKA weiterleitet. Das steht nirgendwo in der Beschreibung des Beitrags — und dürfte den meisten Zahlenden unbekannt sein.</p>
+
+  <p>Der Tweet des Accounts <code>@unblogd</code>, der diese Zusammenhänge jüngst auf Twitter/X zuspitzte — „Normalste BRD" — traf einen Nerv: 443 Likes, über 4.000 Impressionen allein auf einem Einzelposting. Das Unbehagen in der Bevölkerung ist da. Die öffentliche Debatte kaum.</p>
+
+  <h2>„Staubsaugen am Strand" — oder mehr?</h2>
+
+  <p>Sebastian Meineck von netzpolitik.org, der das interne KIVI-Handbuch analysiert hatte, brachte einen treffenden Vergleich: Die KIVI-Methode sei angesichts der schieren Masse an Internetinhalten wie „Staubsaugen am Strand". Die großen Plattformen beschäftigen zehntausende Moderatoren — KIVI ist dagegen ein Kleinstinstrument mit großem symbolischem Anspruch.</p>
+
+  <p>LFM-Direktor Tobias Schmid verweist auf „Generalprävention": Es soll bekannt sein, dass Überwachung stattfindet. Wer weiß, beobachtet zu werden, pöbelt vorsichtiger. Das ist eine ehrliche Argumentation — und zugleich eine, die das eigentliche Problem benennt: Das Ziel ist Verhaltenssteuerung. Nicht nur Strafverfolgung.</p>
+
+  <div class="pull-quote">
+    <p>Wer weiß, beobachtet zu werden, verhält sich anders. Netzpolitisch nennt man das einen Chilling Effect. Juristisch ist er grundrechtsrelevant.</p>
+  </div>
+
+  <h2>Ausweitung geplant</h2>
+
+  <p>KIVI kann mittlerweile auch Englisch und Arabisch. Die Erweiterung wurde vom Land NRW mit 160.000 Euro finanziert. Islamwissenschaftler sollen künftig die Juristen bei der Bewertung arabischsprachiger Posts unterstützen. Das System wächst — und soll laut Medienstaatsvertrag-Novelle 2025 eine explizite gesetzliche Grundlage erhalten, um „rechtssicher" zu werden.</p>
+
+  <p>Ob eine klare Gesetzesgrundlage die eigentlichen Fragen beantwortet — Transparenz der Algorithmen, demokratische Kontrolle, Schutz vor politischer Instrumentalisierung — steht auf einem anderen Blatt. Bisherige Erfahrung mit ähnlichen Regulierungsinstrumenten legt nahe: eher nicht.</p>
+
+  <h2>Fazit: Eine Behörde, die sich neu erfunden hat</h2>
+
+  <p>Die Landesmedienanstalten sind nicht mehr das, was sie bei ihrer Gründung sein sollten. Aus Rundfunkaufsehern sind Internetüberwacher geworden. Das mag im Einzelfall legitime Ziele verfolgen — Kinderpornografie, Holocaust-Leugnung, handfeste Volksverhetzung sind echte Rechtsgüter, die schutzwürdig sind.</p>
+
+  <p>Aber die Architektur des Systems gibt zu denken: eine KI ohne transparente Kriterien, eine Behörde ohne ausreichende parlamentarische Kontrolle, eine direkte Verbindung zum Bundeskriminalamt — finanziert durch einen Pflichtbeitrag, über dessen Verwendung niemand abstimmen durfte. Das ist kein Skandal im dramatischen Sinne. Es ist etwas Schlimmeres: normalisierte Kontrollinfrastruktur.</p>
+
+  <p>Und <code>KIVI</code> — lateinisch für „wachsam" — schaut zu.</p>
+
+  <div class="article-footer">
+    <div class="tag-row">
+      <span class="tag">KIVI</span>
+      <span class="tag">Landesmedienanstalten</span>
+      <span class="tag">KI-Überwachung</span>
+      <span class="tag">BKA</span>
+      <span class="tag">Rundfunkbeitrag</span>
+      <span class="tag">Meinungsfreiheit</span>
+      <span class="tag">LFM NRW</span>
+      <span class="tag">Medienaufsicht</span>
+      <span class="tag">Hassrede</span>
+      <span class="tag">Chilling Effect</span>
+    </div>
+
+    <div class="ai-note">
+      <span>Redaktionshinweis:</span> Dieser Artikel wurde unter Verwendung von KI-Assistenz (Claude, Anthropic) recherchiert und verfasst. Alle zitierten Fakten basieren auf öffentlich zugänglichen Quellen: Pressemitteilungen der LFM NRW, Landtag NRW Drucksache 18/14033 (Mai 2025), BKA-Website, netzpolitik.org, beck-aktuell.de, verdi mmm. Wir halten KI-Transparenz für eine journalistische Selbstverständlichkeit.
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>

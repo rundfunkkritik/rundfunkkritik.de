@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Die staatliche Schlussredaktion: LFM NRW gegen „Ben ungeskriptet" | rundfunkkritik.de</title>
+<meta name="description" content="Die Landesmedienanstalt NRW forderte Podcaster Ben Berndt auf, sein Höcke-Interview nachträglich zu überarbeiten. Heute lief die Frist ab. Berndt weigert sich. Was das für die Pressefreiheit bedeutet — und warum Steinhöfels Antwort verfassungsrechtlich brennt.">
+<meta name="keywords" content="Ben Berndt, ungeskriptet, LFM NRW, Landesmedienanstalt, Steinhöfel, Staatsferne, Pressefreiheit, Meinungsfreiheit, Höcke, Podcast, Zensur, Medienaufsicht">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Syne:wght@400;700;800&family=Inter:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root {
+    --bg: #0d0d0d;
+    --surface: #141414;
+    --border: #222;
+    --accent: #c8ff00;
+    --accent-dim: rgba(200,255,0,0.08);
+    --danger: #ff3b3b;
+    --danger-dim: rgba(255,59,59,0.08);
+    --amber: #ffaa00;
+    --amber-dim: rgba(255,170,0,0.08);
+    --muted: #555;
+    --text: #d8d8d0;
+    --text-bright: #f0f0e8;
+    --mono: 'IBM Plex Mono', monospace;
+    --display: 'Syne', sans-serif;
+    --body: 'Inter', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .site-header {
+    border-bottom: 1px solid var(--border);
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: rgba(13,13,13,0.95);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+  }
+  .site-logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .site-tagline {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  .article-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 24px 100px;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.6;
+  }
+
+  /* Breaking badge */
+  .breaking-badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: var(--danger);
+    color: #fff;
+    padding: 3px 8px;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-size: clamp(28px, 5vw, 46px);
+    font-weight: 800;
+    color: var(--text-bright);
+    line-height: 1.1;
+    margin-bottom: 28px;
+    letter-spacing: -0.02em;
+  }
+  h1 em {
+    color: var(--accent);
+    font-style: normal;
+  }
+
+  .lead {
+    font-size: 19px;
+    line-height: 1.65;
+    color: #a8a89e;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .meta {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 56px;
+    flex-wrap: wrap;
+  }
+  .meta-item {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+  .meta-item span { color: #666; }
+
+  p { margin-bottom: 24px; color: var(--text); }
+
+  h2 {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-bright);
+    margin: 56px 0 20px;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 40px 0 16px;
+  }
+
+  .pull-quote {
+    border-left: 3px solid var(--accent);
+    padding: 20px 28px;
+    margin: 40px 0;
+    background: var(--accent-dim);
+  }
+  .pull-quote p {
+    font-family: var(--display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-bright);
+    line-height: 1.4;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .amber-quote {
+    border-left: 3px solid var(--amber);
+    padding: 20px 28px;
+    margin: 40px 0;
+    background: var(--amber-dim);
+  }
+  .amber-quote .quote-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 10px;
+  }
+  .amber-quote p {
+    font-size: 17px;
+    color: var(--text-bright);
+    margin: 0;
+    font-style: italic;
+    line-height: 1.6;
+  }
+  .amber-quote .attribution {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 10px;
+    font-style: normal;
+  }
+
+  .danger-box {
+    border: 1px solid var(--danger);
+    background: var(--danger-dim);
+    padding: 24px 28px;
+    margin: 40px 0;
+  }
+  .danger-box .danger-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--danger);
+    margin-bottom: 12px;
+  }
+  .danger-box p {
+    color: #e0e0d8;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .fact-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 28px;
+    margin: 40px 0;
+  }
+  .fact-box .fact-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .fact-box ul { list-style: none; padding: 0; }
+  .fact-box ul li {
+    padding: 10px 0 10px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: var(--text);
+    position: relative;
+  }
+  .fact-box ul li:last-child { border-bottom: none; }
+  .fact-box ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 10px;
+    top: 12px;
+  }
+
+  /* Timeline */
+  .timeline {
+    margin: 40px 0;
+    padding: 0;
+    list-style: none;
+    border-left: 2px solid var(--border);
+    padding-left: 28px;
+  }
+  .timeline li {
+    position: relative;
+    padding-bottom: 28px;
+    font-size: 15px;
+    color: var(--text);
+  }
+  .timeline li:last-child { padding-bottom: 0; }
+  .timeline li::before {
+    content: '';
+    position: absolute;
+    left: -35px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  .timeline .tl-date {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .timeline .tl-text { color: var(--text); }
+
+  code {
+    font-family: var(--mono);
+    font-size: 14px;
+    background: #1a1a1a;
+    color: var(--accent);
+    padding: 2px 6px;
+    border-radius: 2px;
+  }
+
+  .source-note {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+    margin-top: -12px;
+    margin-bottom: 32px;
+  }
+
+  .article-footer {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+  }
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    cursor: default;
+  }
+  .ai-note {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: #3a3a3a;
+    line-height: 1.6;
+  }
+  .ai-note span { color: #555; }
+
+  /* Related box */
+  .related-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--muted);
+    padding: 20px 24px;
+    margin: 48px 0;
+  }
+  .related-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .related-box p {
+    font-size: 15px;
+    margin: 0;
+    color: #888;
+  }
+  .related-box a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  @media (max-width: 600px) {
+    .site-header { padding: 14px 16px; }
+    .article-wrap { padding: 40px 16px 80px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-logo" href="/">rundfunkkritik.de</a>
+  <span class="site-tagline">Medien. Macht. Analyse.</span>
+</header>
+
+<main class="article-wrap">
+
+  <div class="breaking-badge">⬤ Aktuell · Frist heute abgelaufen</div>
+
+  <div class="eyebrow">Pressefreiheit &amp; Medienaufsicht</div>
+
+  <h1>Die <em>staatliche Schlussredaktion</em>: LFM NRW gegen „Ben ungeskriptet"</h1>
+
+  <p class="lead">Die Landesanstalt für Medien NRW forderte Podcaster Ben Berndt auf, sein sechsmillionenfach geklicktes Höcke-Interview nachträglich zu überarbeiten. Heute lief die Frist ab. Berndt weigert sich — gestützt auf ein Anwaltsschreiben von Joachim Steinhöfel, das die verfassungsrechtliche Kernfrage stellt: Darf eine Medienbehörde Journalisten vorschreiben, was „journalistische Sorgfalt" bedeutet?</p>
+
+  <div class="meta">
+    <div class="meta-item">Veröffentlicht <span>29. Juni 2026</span></div>
+    <div class="meta-item">Ressort <span>Pressefreiheit</span></div>
+    <div class="meta-item">Lesedauer <span>ca. 6 Min.</span></div>
+  </div>
+
+  <p>Es begann mit einem Brief. Am 15. Juni 2026 landete in der Inbox der ungeskriptet media GmbH in Köln eine E-Mail der Rechtsabteilung der Landesanstalt für Medien Nordrhein-Westfalen — jener Behörde, die ihr eigenes Logo mit dem Satz schmückt: <em>„Der Meinungsfreiheit verpflichtet."</em></p>
+
+  <p>Inhalt der E-Mail: Podcaster Benjamin Berndt solle sein über vierstündiges Gespräch mit AfD-Politiker Björn Höcke auf allen Plattformen nachträglich bearbeiten und um eine Erläuterung ergänzen. Frist: 30. Juni. Und: Er solle <em>sein gesamtes Angebot</em> — 300 Folgen, hunderte Stunden — auf journalistische Sorgfalt prüfen.</p>
+
+  <p>Berndt machte das Schreiben publik. Heute ist der 30. Juni. Er hat nichts geändert.</p>
+
+  <h2>Was die Behörde bemängelt</h2>
+
+  <p>Der konkrete Auslöser ist eine Passage gegen Ende der Höcke-Folge, die Ende April erschien und seitdem über sechs Millionen Aufrufe auf YouTube erzielt hat. Höcke äußerte dort seine Sicht auf seine eigene Verurteilung wegen des Satzes „Alles für Deutschland" — und behauptete dabei, die SA habe kein Motto gehabt.</p>
+
+  <p>Die LFM NRW wertet das als eine „Tatsachenbehauptung, die dem Beweis zugänglich ist" — und sieht den Verdacht einer Verletzung journalistischer Sorgfaltspflicht, weil Berndt der Aussage nicht widersprach. Die Behörde betonte, es handle sich zunächst nur um einen „Hinweis" — das mildeste Mittel, bevor ein formales Verwaltungsverfahren eröffnet wird.</p>
+
+  <div class="amber-quote">
+    <div class="quote-label">LFM NRW — Schreiben vom 15. Juni 2026</div>
+    <p>„Wir bitten Sie, Ihre gesamten Angebote auf die Einhaltung der journalistischen Sorgfalt hin zu prüfen und diese bei zukünftigen Beiträgen zu beachten."</p>
+    <div class="attribution">— zitiert durch Ben Berndt in seinem Instagram-Video, bestätigt durch mehrere Medien</div>
+  </div>
+
+  <p>Berndt kommentierte das Schreiben auf X knapp: „Der Staat will mich zensieren. Da habt ihr euch den Falschen ausgesucht." Er änderte die Beschreibung seines Formats daraufhin — mit bitterer Ironie — in eben den Satz, den die Behörde in ihrem eigenen Logo führt: <em>„Der Meinungsfreiheit verpflichtet."</em></p>
+
+  <h2>Steinhöfels Antwort: Eine Verfassungsfrage</h2>
+
+  <p>Berndt ließ sich durch Medienanwalt Joachim Steinhöfel vertreten, der in den letzten Monaten zur zentralen Figur in Auseinandersetzungen zwischen Medienbehörden und unabhängigen Formaten geworden ist. Steinhöfel vertritt parallel auch Nius/Reichelt im ähnlich gelagerten Verfahren gegen die Medienanstalt Berlin-Brandenburg (MABB).</p>
+
+  <p>Steinhöfels Antwortschreiben, das der Welt vorlag, formuliert die Kernkritik verfassungsrechtlich präzise:</p>
+
+  <div class="amber-quote">
+    <div class="quote-label">RA Joachim Steinhöfel — Antwortschreiben an LFM NRW</div>
+    <p>„Die Landesanstalt für Medien NRW ist keine staatliche Schlussredaktion für mediale Inhalte. Sie maßen sich eine Prüfungs-, Bewertungs- und Korrekturkompetenz für politische Interviews an, die Ihnen von Verfassungs wegen nicht zusteht. Der Staat hat der Presse nicht die Kriterien für das zu diktieren, was er für ‚journalistische Sorgfalt' hält."</p>
+    <div class="attribution">— Steinhöfel gegenüber LFM NRW, berichtet durch WELT und Apollo News, Juni 2026</div>
+  </div>
+
+  <p>Steinhöfel warf der Behörde zudem vor, „reine Einschüchterungssemantik" einzusetzen — allein die Aufforderung, 300 Folgen rückwirkend zu prüfen, sei erkennbar nicht als ernsthafter Regulierungsauftrag gemeint, sondern als Signal.</p>
+
+  <h2>Chronologie: Von der Folge zur Frist</h2>
+
+  <ul class="timeline">
+    <li>
+      <span class="tl-date">Ende April 2026</span>
+      <span class="tl-text">Berndt veröffentlicht viereinhalbstündiges Gespräch mit Höcke. Über sechs Millionen Aufrufe auf YouTube.</span>
+    </li>
+    <li>
+      <span class="tl-date">15. Juni 2026</span>
+      <span class="tl-text">LFM NRW schreibt ungeskriptet media GmbH an. Nachträgliche Überarbeitung gefordert, Frist 30. Juni. Die Behörde gibt an, nach einem externen Hinweis tätig geworden zu sein.</span>
+    </li>
+    <li>
+      <span class="tl-date">27.–28. Juni 2026</span>
+      <span class="tl-text">Berndt macht den Fall publik (Instagram-Video, X). Steinhöfel übernimmt Vertretung und antwortet schriftlich: „keinerlei rechtliche Relevanz".</span>
+    </li>
+    <li>
+      <span class="tl-date">30. Juni 2026 — heute</span>
+      <span class="tl-text">Frist abgelaufen. Berndt hat nicht angepasst, nicht ergänzt. Was als nächstes kommt, entscheidet die LFM — formales Verwaltungsverfahren möglich.</span>
+    </li>
+  </ul>
+
+  <h2>Das Strukturproblem: Wer ist Journalist — und wer entscheidet das?</h2>
+
+  <p>Berndt betont ausdrücklich, er sei kein Journalist. Sein Format heißt nicht zufällig „ungeskriptet" — lange, rohe Gespräche ohne nachträgliche Bearbeitung, bei denen Zuschauer sich selbst ein Bild machen sollen. Die LFM hält dagegen: Wer Themen auswählt, Gespräche führt und Inhalte veröffentlicht, gestalte ein Angebot „journalistisch-redaktionell" — unabhängig von der Selbstbeschreibung.</p>
+
+  <p>Das ist keine Kleinigkeit. Denn wenn die Medienbehörde definiert, was ein journalistisches Format ist — und damit, wer journalistische Sorgfaltspflichten einhalten muss — hat sie de facto eine Definitionsmacht über den Begriff der Presse. Das Grundgesetz weist diese Kompetenz nicht Verwaltungsbehörden zu.</p>
+
+  <div class="danger-box">
+    <div class="danger-label">⚠ Strukturproblem</div>
+    <p>Die LFM NRW ist eine staatsferne Anstalt des öffentlichen Rechts — konstruiert genau deshalb, um politische Einflussnahme auf Medien zu verhindern. Dass sie nach einem <strong>externen Hinweis</strong> tätig wurde, ihre Kriterien für „journalistische Sorgfalt" nicht öffentlich definiert sind, und dass ausgerechnet das reichweitenstärkste Höcke-Interview aller Zeiten ins Visier geriet, wirft eine Frage auf, die auch der Medienjournalist Stefan Niggemeier (Übermedien) formuliert hat: Was passiert mit der Glaubwürdigkeit der Medienaufsicht, wenn der Eindruck entsteht, sie gehe vorrangig gegen regierungskritische Formate vor?</p>
+  </div>
+
+  <h2>Der Parallelfall: Nius gegen MABB</h2>
+
+  <p>Der Fall Berndt/LFM ist kein Einzelfall. Parallel läuft ein strukturell ähnliches Verfahren: Nius — das Portal des ehemaligen Bild-Chefredakteurs Julian Reichelt — wehrt sich gegen einen Bescheid der Medienanstalt Berlin-Brandenburg (MABB) vor dem Verwaltungsgericht Berlin. Verhandlung: Ende 2026 oder Anfang 2027. Auch hier: Steinhöfel als Anwalt. Auch hier: grundsätzliche Bedeutung für das Verhältnis von Medienaufsicht und freier Presse.</p>
+
+  <p>Zwei Verfahren, zwei Anwälte — ein Muster.</p>
+
+  <div class="related-box">
+    <div class="related-label">Thematisch verwandt auf rundfunkkritik.de</div>
+    <p>→ <a href="#">KIVI: Wie der Rundfunkbeitrag die Überwachung des Internets finanziert</a> — dieselbe Behördenlogik, systemisch betrachtet.</p>
+  </div>
+
+  <h2>Was jetzt kommt</h2>
+
+  <p>Die LFM hat drei Optionen: das Verfahren einstellen, ein formales Verwaltungsverfahren eröffnen — oder stillschweigend nichts tun. Letzteres wäre politisch bequem, aber würde die Glaubwürdigkeit der eigenen Frist untergraben. Ein Verwaltungsverfahren gegen Berndt würde den Fall in eine andere Dimension heben: Klagen, Instanzen, Grundsatzurteile.</p>
+
+  <p>Berndt selbst hat angekündigt, seinem nächsten Beitrag das Thema zu widmen. Sechs Millionen Aufrufe als Ausgangspunkt — die Öffentlichkeit für diese Debatte ist da. Die Frage ist, ob die Institutionen bereit sind, sie zu führen.</p>
+
+  <div class="pull-quote">
+    <p>Eine Behörde, die „der Meinungsfreiheit verpflichtet" ist und gleichzeitig Podcaster auffordert, Gespräche nachträglich umzuschreiben: Das ist nicht Widerspruch — das ist Programm.</p>
+  </div>
+
+  <div class="article-footer">
+    <div class="tag-row">
+      <span class="tag">Ben Berndt</span>
+      <span class="tag">Ungeskriptet</span>
+      <span class="tag">LFM NRW</span>
+      <span class="tag">Steinhöfel</span>
+      <span class="tag">Pressefreiheit</span>
+      <span class="tag">Meinungsfreiheit</span>
+      <span class="tag">Staatsferne</span>
+      <span class="tag">Medienaufsicht</span>
+      <span class="tag">Nius</span>
+      <span class="tag">MABB</span>
+      <span class="tag">Podcast</span>
+      <span class="tag">Zensur</span>
+    </div>
+
+    <div class="ai-note">
+      <span>Redaktionshinweis:</span> Dieser Artikel wurde unter Verwendung von KI-Assistenz (Claude, Anthropic) recherchiert und verfasst. Alle zitierten Fakten basieren auf öffentlich zugänglichen Quellen: WELT, t-online, Apollo News, Junge Freiheit, Übermedien/Niggemeier, öffentliche Statements von Ben Berndt auf X und Instagram. Das Steinhöfel-Schreiben lag der WELT vor; Zitate daraus wurden durch mehrere Medien unabhängig bestätigt. Wir halten KI-Transparenz für eine journalistische Selbstverständlichkeit.
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>
