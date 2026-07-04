@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drei Stufen – Rundfunkkritik.de</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Crimson+Pro:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #faf7f2;
+    color: #1c1c1c;
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1.125rem;
+    line-height: 1.75;
+  }
+
+  /* NAV */
+  nav {
+    background: #1a2744;
+    padding: 0.85rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #f5f0e8;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  nav .nav-links a {
+    color: #c9a84c;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    margin-left: 1.5rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  nav .nav-links a:hover { color: #f5f0e8; }
+
+  /* HEADER */
+  header {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem 2rem;
+    border-bottom: 1px solid #d9d0bc;
+  }
+  .rubrik {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c9a84c;
+    margin-bottom: 1rem;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1a2744;
+    margin-bottom: 1rem;
+  }
+  .deck {
+    font-size: 1.2rem;
+    color: #3a3a3a;
+    line-height: 1.65;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+  .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: #888;
+    letter-spacing: 0.06em;
+  }
+
+  /* BODY */
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 4rem;
+  }
+
+  p { margin-bottom: 1.4rem; }
+
+  /* STUFEN-KARTEN */
+  .stufen-block {
+    margin: 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .stufe {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 0 1.5rem;
+    padding: 1.6rem 0;
+    border-top: 1px solid #d9d0bc;
+  }
+  .stufe:last-child { border-bottom: 1px solid #d9d0bc; }
+  .stufe-nr {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #c9a84c;
+    line-height: 1;
+    padding-top: 0.15rem;
+  }
+  .stufe-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #1a2744;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  .stufe-body p {
+    margin-bottom: 0.6rem;
+    font-size: 1.05rem;
+  }
+  .stufe-quelle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: #999;
+    letter-spacing: 0.05em;
+    margin-top: 0.4rem;
+    margin-bottom: 0;
+  }
+
+  /* ZITAT-BOX */
+  .zitat-box {
+    background: #f5edda;
+    border-left: 3px solid #c9a84c;
+    padding: 1.2rem 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .zitat-box p {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #3a3a3a;
+    margin-bottom: 0.4rem;
+  }
+  .zitat-attr {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: #7a5f1a;
+    letter-spacing: 0.05em;
+    margin: 0;
+  }
+
+  /* BEFUND-BOX */
+  .befund {
+    background: #f5edda;
+    border: 1px solid #d9c89a;
+    border-radius: 4px;
+    padding: 1.4rem 1.6rem;
+    margin: 2.5rem 0;
+  }
+  .befund-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a5f1a;
+    margin-bottom: 0.7rem;
+  }
+  .befund p {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    color: #2a2a2a;
+  }
+  .befund p:last-child { margin-bottom: 0; }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    color: #1a2744;
+    margin: 2.5rem 0 1rem;
+    font-weight: 700;
+  }
+
+  strong { color: #7a5200; }
+
+  /* WEITERFÜHRENDE */
+  .weiterfuehrend {
+    border-top: 1px solid #d9d0bc;
+    margin-top: 3rem;
+    padding-top: 2rem;
+  }
+  .weiterfuehrend h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #888;
+    margin: 0 0 1.2rem;
+  }
+  .weiterfuehrend ul { list-style: none; }
+  .weiterfuehrend ul li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #ede8dc;
+    font-size: 1rem;
+  }
+  .weiterfuehrend ul li:last-child { border-bottom: none; }
+  .weiterfuehrend a {
+    color: #1a2744;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .weiterfuehrend a:hover { color: #c9a84c; }
+  .weiterfuehrend .link-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    color: #aaa;
+    letter-spacing: 0.04em;
+    margin-left: 0.5rem;
+  }
+
+  @media (max-width: 600px) {
+    header, main { padding-left: 1.2rem; padding-right: 1.2rem; }
+    nav { padding: 0.75rem 1.2rem; }
+    nav .nav-links { display: none; }
+    .stufe { grid-template-columns: 2.2rem 1fr; gap: 0 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/index.html" class="logo">Rundfunkkritik.de</a>
+  <div class="nav-links">
+    <a href="/oerr-aufreger-liste.html">Aufreger-Liste</a>
+    <a href="/index.html">Startseite</a>
+  </div>
+</nav>
+
+<header>
+  <div class="rubrik">Medienfreiheit · Juni 2026</div>
+  <h1>Drei Stufen</h1>
+  <p class="deck">Wie ein unabhängiger Podcaster nach einem viralen Interview systematisch unter Druck gesetzt wurde — medial, politisch und behördlich.</p>
+  <div class="meta">Rundfunkkritik.de · Stand: 27. Juni 2026 · Quellen: Apollo News, t-online, Junge Freiheit, Wikipedia</div>
+</header>
+
+<main>
+
+  <p>Ende April 2026 veröffentlichte Benjamin Berndt auf seinem YouTube-Kanal <em>ungeskriptet</em> ein viereinhalbstündiges Gespräch mit dem thüringischen AfD-Politiker Björn Höcke. Das Video wurde in wenigen Tagen mehrere Millionen Mal aufgerufen. Was danach folgte, ist dokumentiert.</p>
+
+  <p>Der Reihe nach.</p>
+
+  <div class="stufen-block">
+
+    <div class="stufe">
+      <div class="stufe-nr">I</div>
+      <div class="stufe-body">
+        <h3>Medialer Druck</h3>
+        <p>Spiegel, Frankfurter Rundschau und etablierte Redaktionen reagierten mit Empörung. Das Format wurde als journalistisches Versagen eingestuft — ein Gespräch ohne permanente Unterbrechungen, ohne NS-Vorwürfe, ohne Einordnung durch den Gastgeber.</p>
+        <p>Florian Schroeder, ARD-Moderator und WDR2-Kolumnist, veröffentlichte auf seinem privaten YouTube-Kanal zwei Videos: <strong>„Das größte Podcast-Versagen: Björn Höcke x Ben ungeskriptet"</strong> (125.519 Aufrufe) und <strong>„Ben und Höcke! Die braune Kloake tobt!"</strong> (44.961 Aufrufe). Die Kommentarspalten unter Schroeders Videos zeigten das Niveau, das er anderswo kritisiert.</p>
+        <p class="stufe-quelle">Quelle: YouTube-Kanal Florian Schroeder, abgerufen 27.06.2026 · Cicero, 03.05.2026</p>
+      </div>
+    </div>
+
+    <div class="stufe">
+      <div class="stufe-nr">II</div>
+      <div class="stufe-body">
+        <h3>Politischer Angriff — monetär und existenziell</h3>
+        <p>Die ehemalige SPD-Vorsitzende Saskia Esken veröffentlichte via Instagram ein Video aus dem Bundestag. Darin forderte sie Werbepartner explizit auf, ihre Buchungen beim Podcast zu überprüfen.</p>
+        <div class="zitat-box" style="margin: 1rem 0;">
+          <p>„Unternehmen, deren Werbung in einem solchen Podcast ausgespielt wird, sollten mal schauen, wie sich das abstellen lässt. Ich sag mal: Blacklisting hilft."</p>
+          <div class="zitat-attr">Saskia Esken (SPD), Instagram-Video, Mai 2026</div>
+        </div>
+        <p>Berndt kommentierte: <em>„Wenn ich mich unterwerfe, zensieren sich Tausende andere Podcaster potenziell selbst."</em> Er identifizierte die Botschaft als strukturelle Warnung an alle unabhängigen Medienmacher: Wer mit unerwünschten Gästen spricht, riskiert seine Finanzierungsgrundlage.</p>
+        <p class="stufe-quelle">Quelle: Junge Freiheit, 06./07.05.2026 · t-online, 26.06.2026</p>
+      </div>
+    </div>
+
+    <div class="stufe">
+      <div class="stufe-nr">III</div>
+      <div class="stufe-body">
+        <h3>Behördlicher Eingriff</h3>
+        <p>Am 15. Juni 2026 erhielt die ungeskriptet media GmbH in Köln eine E-Mail der Abteilung Recht der Landesanstalt für Medien NRW (LfM). Frist: 30. Juni. Berndt solle mitteilen, ob er den Höcke-Beitrag auf allen Plattformen angepasst und um eine Erläuterung ergänzt hat.</p>
+        <p>Auslöser war eine Passage, in der Höcke erklärte, die SA habe kein Motto gehabt. Die LfM sieht darin eine wissenschaftlich widerlegte Tatsachenbehauptung, der Berndt nicht widersprochen habe — und damit eine mögliche Verletzung journalistischer Grundsätze.</p>
+        <p>Berndt lehnte eine Änderung ab. Er machte den Vorgang öffentlich und wies darauf hin, dass der Slogan der LfM NRW lautet: <em>„Der Meinungsfreiheit verpflichtet."</em></p>
+        <p class="stufe-quelle">Quelle: Apollo News, 26.06.2026 · t-online, 26.06.2026 · Junge Freiheit, 27.06.2026</p>
+      </div>
+    </div>
+
+  </div>
+
+  <h2>Was der ÖRR tat</h2>
+
+  <p>Das öffentlich-rechtliche Rundfunksystem schwieg weitgehend über den viralen Erfolg des Gesprächs. Sechs Millionen Aufrufe auf YouTube, Platz sieben der deutschen Spotify-Podcast-Charts — diese Zahlen wurden im ÖRR nicht als medienpolitisches Signal thematisiert, sondern allenfalls als Bedrohung gerahmt.</p>
+
+  <p>Eine Ausnahme: Das ZDF hatte Berndt bereits im Februar 2026 in das Diskussionsformat <em>13 Fragen</em> zum Thema Meinungsfreiheit eingeladen. NIUS beschrieb die Sendung als Situation, in der sich Berndt einem Tribunal stellen musste, statt eine Debatte zu führen.</p>
+
+  <div class="befund">
+    <div class="befund-label">Strukturbefund</div>
+    <p>Die Landesmedienanstalten wurden ursprünglich gegründet, um private Rundfunksender zu kontrollieren. Mit dem Medienstaatsvertrag 2020 erhielten sie Zuständigkeit auch für Internetangebote. Seit 2020 hat die LfM NRW nach eigenen Angaben 38 solcher Hinweise an Kanal-Betreiber verschickt. In den meisten Fällen folgten Anpassungen.</p>
+    <p>Berndts Weigerung ist damit die Ausnahme — und sein öffentliches Bekanntmachen des Vorgangs der Grund, warum der Fall dokumentiert ist.</p>
+  </div>
+
+  <h2>Die Asymmetrie</h2>
+
+  <p>Florian Schroeder ist seit mehr als zwanzig Jahren als ARD-Moderator tätig und regelmäßig als Kolumnist bei WDR2 zu hören. Er betreibt parallel einen privaten YouTube-Kanal, auf dem er das Höcke-Gespräch mit Begriffen wie „braune Kloake" kommentierte.</p>
+
+  <p>Die Reichweite: Schroeders Videos zu diesem Thema erzielten zusammen rund <strong>170.000 Aufrufe</strong>. Bens Höcke-Folge: <strong>über sechs Millionen</strong>.</p>
+
+  <p>Die Frage, die dieser Befund aufwirft, ist keine inhaltliche. Sie ist struktureller Natur: Ein durch Rundfunkgebühren finanzierter Akteur nutzt seine öffentliche Sichtbarkeit, um Stimmung gegen einen unabhängigen Mitbewerber zu erzeugen — während der unabhängige Mitbewerber gleichzeitig von einer Politikerin mit wirtschaftlichem Druck belegt und von einer Behörde zur Nachbearbeitung aufgefordert wird.</p>
+
+  <div class="befund">
+    <div class="befund-label">Chronologie</div>
+    <p><strong>Ende April 2026</strong> — Höcke-Folge erscheint, binnen Tagen mehrere Millionen Aufrufe.</p>
+    <p><strong>Mai 2026</strong> — Mediale Empörungswelle; Esken fordert öffentlich Werbeboykott und „Blacklisting".</p>
+    <p><strong>15. Juni 2026</strong> — LfM NRW sendet Fristsetzung an ungeskriptet media GmbH.</p>
+    <p><strong>27. Juni 2026</strong> — Berndt macht den Behördenvorgang öffentlich. Frist läuft am 30. Juni ab.</p>
+  </div>
+
+  <div class="weiterfuehrend">
+    <h2>Weiterführende Analysen</h2>
+    <ul>
+      <li>
+        <a href="/pressefreiheit-selektivitaet.html">Selektive Pressefreiheit</a>
+        <span class="link-meta">— Vier dokumentierte Fälle</span>
+      </li>
+      <li>
+        <a href="/oerr-aufreger-liste.html">Die Aufreger-Liste</a>
+        <span class="link-meta">— 21 dokumentierte Fälle</span>
+      </li>
+      <li>
+        <a href="/karlsruhe-als-deckung.html">Karlsruhe als Deckung</a>
+        <span class="link-meta">— BVerfG-Verfahren zum Rundfunkbeitrag</span>
+      </li>
+    </ul>
+  </div>
+
+</main>
+
+</body>
+</html>

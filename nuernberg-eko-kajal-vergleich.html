@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nürnberg, EKO „Kajal": Polizeimeldung, BR24-Berichterstattung und Bundestagsdebatte im Vergleich | Rundfunkkritik.de</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Crimson+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf7f2;
+    --text:#1c1c1c;
+    --navy:#1a2744;
+    --navy-text:#f5f0e8;
+    --gold:#c9a84c;
+    --badge-bg:#f5edda;
+    --badge-text:#7a5f1a;
+    --highlight:#7a5200;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Crimson Pro', serif;
+    font-size:19px;
+    line-height:1.7;
+  }
+  nav{
+    position:sticky;
+    top:0;
+    background:var(--navy);
+    padding:16px 24px;
+    display:flex;
+    gap:28px;
+    z-index:100;
+    font-family:'JetBrains Mono', monospace;
+    font-size:14px;
+  }
+  nav a{
+    color:var(--navy-text);
+    text-decoration:none;
+  }
+  nav a:hover{
+    color:var(--gold);
+  }
+  main{
+    max-width:760px;
+    margin:0 auto;
+    padding:48px 24px 80px;
+  }
+  .kicker{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--badge-text);
+    background:var(--badge-bg);
+    display:inline-block;
+    padding:4px 12px;
+    border-radius:3px;
+    margin-bottom:18px;
+  }
+  h1{
+    font-family:'Playfair Display', serif;
+    font-weight:800;
+    font-size:2.3em;
+    line-height:1.25;
+    margin:0 0 8px;
+  }
+  .meta{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    color:#5a5a5a;
+    margin-bottom:36px;
+  }
+  h2{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:1.5em;
+    border-bottom:1px solid var(--gold);
+    padding-bottom:8px;
+    margin-top:52px;
+  }
+  h3{
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    font-size:1.15em;
+    margin-top:34px;
+    color:var(--highlight);
+  }
+  p{margin:18px 0;}
+  strong{color:var(--highlight);}
+  .quellenbox{
+    background:var(--badge-bg);
+    border-left:3px solid var(--gold);
+    padding:14px 18px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:13.5px;
+    color:var(--badge-text);
+    margin:20px 0;
+  }
+  .quellenbox a{color:var(--badge-text);}
+  .vergleich{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:0;
+    margin:22px 0;
+    border:1px solid #e2dccb;
+  }
+  .vergleich-zeile{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    border-top:1px solid #e2dccb;
+  }
+  .vergleich-zeile:first-child{border-top:none;}
+  .vergleich-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    background:var(--badge-bg);
+    color:var(--badge-text);
+    padding:14px 12px;
+    display:flex;
+    align-items:flex-start;
+  }
+  .vergleich-inhalt{
+    padding:14px 16px;
+    font-size:0.96em;
+  }
+  .timeline{
+    border-left:2px solid var(--gold);
+    padding-left:20px;
+    margin:24px 0;
+  }
+  .timeline-eintrag{
+    margin-bottom:20px;
+  }
+  .timeline-datum{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    color:var(--highlight);
+    font-weight:600;
+  }
+  blockquote{
+    font-style:italic;
+    border-left:3px solid var(--gold);
+    padding-left:16px;
+    margin:20px 0;
+    color:#3a3a3a;
+  }
+  .weiterfuehrend{
+    margin-top:64px;
+    padding-top:24px;
+    border-top:2px solid var(--navy);
+  }
+  .weiterfuehrend h2{
+    border-bottom:none;
+    margin-top:0;
+  }
+  .weiterfuehrend ul{
+    list-style:none;
+    padding:0;
+  }
+  .weiterfuehrend li{
+    margin:10px 0;
+  }
+  .weiterfuehrend a{
+    color:var(--highlight);
+    text-decoration:none;
+    font-weight:600;
+  }
+  .weiterfuehrend a:hover{
+    text-decoration:underline;
+  }
+  footer{
+    text-align:center;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    color:#8a8a8a;
+    padding:32px 24px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Startseite</a>
+  <a href="oerr-aufreger-liste.html">Fallliste</a>
+  <a href="ueber-uns.html">Über uns</a>
+</nav>
+
+<main>
+  <span class="kicker">Fall · Bayerischer Rundfunk · Bundestag</span>
+  <h1>Nürnberg, EKO „Kajal": Polizeimeldung, BR24-Berichterstattung und Bundestagsdebatte im Vergleich</h1>
+  <div class="meta">Rundfunkkritik.de — Dokumentation, Stand: Juli 2026</div>
+
+  <p>Am 18. Mai 2026 richtete die Kriminalpolizei Nürnberg die Ermittlungskommission „EKO Kajal" ein. Anlass waren Hinweise auf sexuelle Ausbeutung minderjähriger Mädchen im Umfeld des Nürnberger Hauptbahnhofs. Der Fall wurde in den folgenden Wochen von der bayerischen Polizei mehrfach in Pressemitteilungen dokumentiert, vom Bayerischen Rundfunk in zwei Beiträgen aufgegriffen und am 11. Juni 2026 Gegenstand einer Bundestagsdebatte. Die folgende Gegenüberstellung stützt sich ausschließlich auf die Originaltexte der Polizei Bayern, die beiden BR24-Artikel im Wortlaut sowie Presseberichte zur Bundestagssitzung.</p>
+
+  <h2>Der Fall laut Polizeipräsidium Mittelfranken</h2>
+
+  <div class="timeline">
+    <div class="timeline-eintrag">
+      <div class="timeline-datum">18.05.2026</div>
+      Die Kriminalpolizei Nürnberg gründet die Ermittlungskommission „EKO Kajal". Grundlage sind Strukturermittlungen, wonach Männer aus der Betäubungsmittelszene am Nelson-Mandela-Platz gezielt Kontakt zu jungen Mädchen aus prekären Verhältnissen suchen, sie mit Geschenken umwerben, mit Crystal Meth abhängig machen und die Drogen anschließend nur noch gegen sexuelle Handlungen abgeben.
+    </div>
+    <div class="timeline-eintrag">
+      <div class="timeline-datum">21.05.2026</div>
+      Das Polizeipräsidium Mittelfranken benennt die Herkunft der Tatverdächtigen erstmals konkret: überwiegend Männer „syrischer, pakistanischer und nordafrikanischer Herkunft". Zehn Personen sind zu diesem Zeitpunkt identifiziert, gegen vier wird wegen Drogenhandels und Sexualdelikten ermittelt.
+    </div>
+    <div class="timeline-eintrag">
+      <div class="timeline-datum">27.05.2026</div>
+      Zwei weitere Festnahmen, ein Untersuchungshaftbefehl gegen einen 22-jährigen Syrer wegen Vergewaltigung einer Minderjährigen.
+    </div>
+    <div class="timeline-eintrag">
+      <div class="timeline-datum">bis 27.06.2026</div>
+      Insgesamt acht Festnahmen. Die Ermittlungen richten sich laut Polizei gegen Männer aus Syrien, Pakistan, Serbien und dem Gazastreifen im Alter von 18 bis 35 Jahren.
+    </div>
+  </div>
+
+  <div class="quellenbox">
+    Quellen: Polizei Bayern, Pressemitteilungen 492 (21.05.2026) und 522 (29.05.2026), polizei.bayern.de
+  </div>
+
+  <h2>Die BR24-Berichterstattung im Wortvergleich</h2>
+
+  <p>Der Bayerische Rundfunk berichtete am 4. Juni und am 24. Juni 2026 über den Fall. Beide Artikel bestätigen die polizeilichen Kernfakten — Tatmuster, Fallzahlen, Haftbefehle. In der Einordnung setzen sie jedoch andere Akzente als die Polizeimeldungen selbst.</p>
+
+  <h3>Sprachliche Distanzierung vom Begriff</h3>
+  <div class="vergleich">
+    <div class="vergleich-zeile">
+      <div class="vergleich-label">Polizei</div>
+      <div class="vergleich-inhalt">Verwendet in ihren Mitteilungen durchgehend die sachliche Bezeichnung „sexuelle Ausbeutung Minderjähriger" bzw. „Sexual- und Betäubungsmitteldelikte" — ohne den Begriff „Grooming".</div>
+    </div>
+    <div class="vergleich-zeile">
+      <div class="vergleich-label">BR24</div>
+      <div class="vergleich-inhalt">Setzt den Begriff „Grooming" in beiden Artikeln durchgehend in Anführungszeichen und spricht wörtlich von „sogenanntem 'Grooming'". Die Überschrift des ersten Beitrags lautet: „Grooming" am Nürnberger Hauptbahnhof: Zwei weitere Festnahmen.</div>
+    </div>
+  </div>
+
+  <h3>Beschreibung der Tatverdächtigen</h3>
+  <div class="vergleich">
+    <div class="vergleich-zeile">
+      <div class="vergleich-label">Polizei</div>
+      <div class="vergleich-inhalt">Beschreibt die Tatverdächtigen nach Herkunft: „überwiegend Personen mit syrischer, pakistanischer und nordafrikanischer Herkunft".</div>
+    </div>
+    <div class="vergleich-zeile">
+      <div class="vergleich-label">BR24</div>
+      <div class="vergleich-inhalt">Übernimmt die Nennung der Herkunftsländer (Syrien, Pakistan, Serbien, Gazastreifen), ergänzt jedoch den Status: Die Ermittlungen richteten sich gegen „geflüchtete Männer" — ein Zusatz, der in den zitierten Polizeimitteilungen nicht enthalten ist.</div>
+    </div>
+  </div>
+
+  <h3>Deutung der Opferseite</h3>
+  <p>Der ausführlichere BR-Beitrag vom 4. Juni räumt der Einordnung durch eine Sozialpädagogin des Vereins Lilith e.V. breiten Raum ein. Zentrale Aussagen daraus, paraphrasiert:</p>
+  <ul>
+    <li>Die Opfer stammten nicht nur aus prekären, sondern auch aus „stabilen Familienverhältnissen".</li>
+    <li>Als möglicher Grund, warum sich die Mädchen auf die Männer einließen, wird der Wunsch nach einer „gelingenden, zärtlichen, schönen Beziehung" genannt, begünstigt durch Einsamkeit der Generation Z und Nachwirkungen der Corona-Lockdowns.</li>
+    <li>Das Phänomen sei laut der zitierten Expertin nicht an eine bestimmte Nationalität gebunden: Täter stammten „meistens aus dem sozialen Umfeld" der Opfer.</li>
+  </ul>
+  <p>Diese Einordnung steht neben den Polizeiangaben im selben Artikel, wonach die aktuell identifizierte Tätergruppe ausschließlich aus geflüchteten Männern aus Syrien, Pakistan, Serbien und dem Gazastreifen besteht. Der Bericht enthält beide Aussagen, ohne den Widerspruch zwischen der Einzelfall-Statistik und der allgemeinen Einordnung aufzulösen.</p>
+
+  <div class="quellenbox">
+    Quellen: BR24, „Grooming" am Nürnberger Hauptbahnhof: Zwei weitere Festnahmen (24.06.2026); BR24, Nürnberger Hauptbahnhof: Drei Männer wegen Grooming festgenommen (04.06.2026, aktualisiert 05.06.2026)
+  </div>
+
+  <h2>Die Bundestagsdebatte am 11. Juni 2026</h2>
+
+  <p>In der Debatte zur Regierungserklärung von Bundeskanzler Friedrich Merz sprach AfD-Fraktionsvorsitzende Alice Weidel den Fall an. Sie schilderte, dass am Nürnberger Hauptbahnhof „Migrantenbanden minderjährige deutsche Mädchen mit Drogen gefügig" machten, und stellte die Frage: „Wie viele Nürnbergs gibt es in Deutschland?"</p>
+
+  <p>Laut mehreren Presseberichten unter Berufung auf das Plenarprotokoll kam es während dieser Passage zu einem Lachen im Plenum. Das Protokoll ordnet es der Linken-Abgeordneten Katrin Fey zu, die in ihrer Fraktion als Sprecherin für Bürger- und Menschenrechte sowie als Obfrau im Menschenrechtsausschuss fungiert. Zusätzlich gab es Zwischenrufe von SPD- und Grünen-Abgeordneten. Eine öffentliche Stellungnahme der Linksfraktion zu dem Vorfall liegt nach Recherchestand nicht vor.</p>
+
+  <p>Am selben Tag stand im Bundestag erstmals ein Antrag der AfD-Fraktion zur „gruppenbasierten sexuellen Ausbeutung Minderjähriger durch sogenannte Grooming Gangs" auf der Tagesordnung, der unter Bezug auf den Nürnberger Fall eine bundesweite Erfassung vergleichbarer Fälle fordert. CDU-Abgeordneter Frederik Bouffier bezeichnete den Antrag in der Debatte als „Schaufensterpolitik" und warf der AfD vor, das Thema politisch zu instrumentalisieren.</p>
+
+  <div class="quellenbox">
+    Quellen: Deutscher Bundestag, hib-Kurzmeldung 1192362; NIUS, Bundestag diskutiert über Vergewaltigungs-Gangs; Berichte zum Plenarprotokoll vom 11.06.2026
+  </div>
+
+  <h2>Offene Punkte</h2>
+  <p>Zur Berichterstattung des Bayerischen Rundfunks über die Bundestagsdebatte selbst — insbesondere über den Zwischenfall um Katrin Fey — liegt bislang keine eigene BR-Quelle vor. Sollte sich das im Zuge weiterer Recherche ändern, wird dieser Artikel entsprechend ergänzt.</p>
+
+  <div class="weiterfuehrend">
+    <h2>Weiterführende Analysen</h2>
+    <ul>
+      <li><a href="asymmetrie-oerr-kritik.html">→ Kommunikative Asymmetrie: Wie der ÖRR mit Kritik umgeht</a></li>
+      <li><a href="pressefreiheit-selektivitaet.html">→ Selektive Pressefreiheit: Wann Berichterstattung Einordnung wird</a></li>
+      <li><a href="oerr-aufreger-liste.html">→ Die Gesamtübersicht: Alle dokumentierten Fälle</a></li>
+    </ul>
+  </div>
+
+</main>
+
+<footer>
+  Rundfunkkritik.de — Kein Kommentar. Keine Meinung. Nur Fälle.
+</footer>
+
+</body>
+</html>

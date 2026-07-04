@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Die Stammgäste – Rundfunkkritik.de</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #faf7f2;
+    color: #1c1c1c;
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.75;
+  }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #1a2744;
+    padding: 0 2rem;
+  }
+  .site-header nav {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+  }
+  .site-header .logo {
+    color: #f5f0e8;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .site-header .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  .site-header .nav-links a {
+    color: #f5f0e8;
+    text-decoration: none;
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.95rem;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+  .site-header .nav-links a:hover { opacity: 1; }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .article-header {
+    padding: 3.5rem 0 2rem;
+    border-bottom: 2px solid #c9a84c;
+    margin-bottom: 2.5rem;
+  }
+  .rubrik {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: #c9a84c;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .article-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 900;
+    line-height: 1.18;
+    margin-bottom: 1.1rem;
+  }
+  .article-header .standfirst {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #3a3a3a;
+    font-style: italic;
+    border-left: 3px solid #c9a84c;
+    padding-left: 1rem;
+  }
+  .meta {
+    margin-top: 1.2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: #888;
+    letter-spacing: 0.06em;
+  }
+
+  .disclaimer {
+    background: #f5edda;
+    border: 1px solid #c9a84c;
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.92rem;
+    color: #7a5f1a;
+    line-height: 1.55;
+  }
+
+  .article-body p {
+    margin-bottom: 1.4rem;
+  }
+  .article-body strong {
+    color: #7a5200;
+    font-weight: 600;
+  }
+  .article-body h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 2.5rem 0 1rem;
+    color: #1c1c1c;
+  }
+  .article-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.6rem;
+    color: #1a2744;
+  }
+
+  /* KENNZAHLEN-BOX */
+  .kennzahlen {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  .kz-item {
+    background: #f5edda;
+    border: 1px solid #c9a84c;
+    border-radius: 4px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .kz-zahl {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #7a5200;
+    line-height: 1;
+    display: block;
+  }
+  .kz-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: #888;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 0.4rem;
+    display: block;
+  }
+
+  /* PERSONEN-KARTEN */
+  .person-card {
+    border-left: 4px solid #c9a84c;
+    padding: 1.2rem 1.4rem;
+    margin: 1.8rem 0;
+    background: #fdfaf5;
+    border-radius: 0 4px 4px 0;
+  }
+  .person-card .person-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1c1c1c;
+    margin-bottom: 0.2rem;
+  }
+  .person-card .person-rolle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: #c9a84c;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .person-card p {
+    margin-bottom: 0.7rem;
+    font-size: 1rem;
+  }
+  .person-card p:last-child { margin-bottom: 0; }
+  .person-card .quelle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: #aaa;
+    margin-top: 0.6rem;
+  }
+
+  /* ZITAT */
+  .zitat-block {
+    border-left: 4px solid #c9a84c;
+    padding: 0.8rem 1.2rem;
+    margin: 1.8rem 0;
+    background: #f5edda;
+    border-radius: 0 4px 4px 0;
+  }
+  .zitat-block p {
+    font-style: italic;
+    color: #3a2a00;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem !important;
+  }
+  .zitat-block .zitat-quelle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: #888;
+    font-style: normal;
+  }
+
+  /* MECHANISMUS-STUFEN */
+  .stufen {
+    counter-reset: stufe;
+    margin: 1.5rem 0;
+  }
+  .stufe {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    align-items: flex-start;
+  }
+  .stufe-nr {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    background: #1a2744;
+    color: #f5f0e8;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    margin-top: 0.15rem;
+  }
+  .stufe-text {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  .stufe-text strong {
+    color: #7a5200;
+    font-weight: 600;
+  }
+
+  /* STRUKTUR-BOX */
+  .struktur-box {
+    background: #f5edda;
+    border-radius: 4px;
+    padding: 1.4rem 1.5rem;
+    margin: 2rem 0;
+  }
+  .struktur-box h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #7a5200;
+    margin-bottom: 0.7rem;
+  }
+  .struktur-box p {
+    font-size: 1rem;
+    color: #3a3a3a;
+    margin-bottom: 0;
+  }
+
+  /* WEITERFUEHREND */
+  .weiterfuehrend {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d8ceb8;
+  }
+  .weiterfuehrend h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c9a84c;
+    margin-bottom: 1rem;
+  }
+  .weiterfuehrend ul {
+    list-style: none;
+    padding: 0;
+  }
+  .weiterfuehrend ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ede5d0;
+    font-size: 0.98rem;
+  }
+  .weiterfuehrend ul li:last-child { border-bottom: none; }
+  .weiterfuehrend a {
+    color: #1a2744;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .weiterfuehrend a:hover { color: #c9a84c; }
+
+  footer {
+    margin-top: 4rem;
+    padding: 2rem 1.5rem;
+    background: #1a2744;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: #8899bb;
+    letter-spacing: 0.06em;
+  }
+
+  @media (max-width: 600px) {
+    .article-header h1 { font-size: 1.75rem; }
+    .kennzahlen { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav>
+    <a class="logo" href="index.html">Rundfunkkritik.de</a>
+    <ul class="nav-links">
+      <li><a href="oerr-aufreger-liste.html">Aufreger-Liste</a></li>
+      <li><a href="oerr-geschichte.html">Geschichte</a></li>
+      <li><a href="oerr-international.html">International</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<div class="container">
+
+  <header class="article-header">
+    <div class="rubrik">Ideologie &amp; Haltung · Geld &amp; Macht</div>
+    <h1>Die Stammgäste</h1>
+    <p class="standfirst">Wie der ÖRR eine kleine Gruppe von Klimaexperten über Jahre zur öffentlichen Autorität aufbaut — und warum das strukturell problematisch ist.</p>
+    <div class="meta">JUNI 2026 · RUNDFUNKKRITIK.DE</div>
+  </header>
+
+  <div class="disclaimer">
+    <strong>Hinweis:</strong> Dieser Artikel bewertet keine klimawissenschaftlichen Positionen. Dokumentiert werden ausschließlich redaktionelle Entscheidungen: Wen lädt der ÖRR ein, wie oft, und welche Interessen haben diese Personen? Diese Fragen sind mit Rundfunkbeitrag finanziert und daher öffentlich rechenschaftspflichtig.
+  </div>
+
+  <div class="article-body">
+
+    <p>Der öffentlich-rechtliche Rundfunk arbeitet beim Thema Klima mit einem überschaubaren Personenkreis. Dieselben Gesichter tauchen in Talkshows auf, in Nachrichtensendungen, in Dokumentationen und in Faktenchecks. Wer diese Personen sind, welche institutionellen Verbindungen sie haben und wie ihre Medienpräsenz aufgebaut wurde, ist dokumentierbar. Das ist die Aufgabe dieses Artikels.</p>
+
+    <h2>Die Zahlen</h2>
+
+    <p>Das Magazin Cicero hat die ZDF-Mediathek ausgewertet. Das Ergebnis ist präzise:</p>
+
+  </div>
+
+  <div class="kennzahlen">
+    <div class="kz-item">
+      <span class="kz-zahl">78</span>
+      <span class="kz-label">Kemfert<br>ZDF-Mediathek</span>
+    </div>
+    <div class="kz-item">
+      <span class="kz-zahl">47</span>
+      <span class="kz-label">Fuest (Ifo)<br>ZDF-Mediathek</span>
+    </div>
+    <div class="kz-item">
+      <span class="kz-zahl">22</span>
+      <span class="kz-label">Hans-Werner Sinn<br>ZDF-Mediathek</span>
+    </div>
+  </div>
+
+  <div class="article-body">
+
+    <p>Clemens Fuest leitet das Ifo-Institut. Hans-Werner Sinn ist sein langjähriger Vorgänger — und hat das Scheitern der Energiewende in zentralen Punkten korrekt vorausgesagt. Claudia Kemfert hat es bestritten. Im ZDF erscheint Kemfert dreieinhalb Mal so oft wie Sinn. Eine Erklärung für diese Asymmetrie hat der Sender nie gegeben.</p>
+
+    <h2>Die Stammgäste</h2>
+
+  </div>
+
+  <div class="person-card">
+    <div class="person-name">Claudia Kemfert</div>
+    <div class="person-rolle">DIW Berlin · Energieökonomin · seit 2004 im ÖRR präsent</div>
+    <p>Leiterin der Abteilung Energie, Verkehr, Umwelt am Deutschen Institut für Wirtschaftsforschung (DIW). Mitglied im Club of Rome, Ko-Vorsitzende im Sachverständigenrat für Umweltfragen. Betrieb bis 2025 einen eigenen Klimapodcast beim MDR — nach eigenen Angaben mit bis zu 40.000 Hörerinnen und Hörern pro Folge, konstant unter den Top-15-Angeboten des Senders.</p>
+    <p>Cicero dokumentiert: In über zwanzig Jahren ÖRR-Präsenz wurde Kemfert in keinem öffentlich-rechtlichen Interview mit gescheiterten Prognosen konfrontiert. Die Strompreise stiegen; die Energiewende blieb teurer als von ihr prognostiziert. Diese Diskrepanz fand im ÖRR nicht statt.</p>
+    <div class="quelle">Quellen: Cicero (Kemfert-Analyse, 2022); MDR/CORRECTIV (Podcast-Einstellung, Juli 2025)</div>
+  </div>
+
+  <div class="person-card">
+    <div class="person-name">Eckart von Hirschhausen</div>
+    <div class="person-rolle">Arzt · Kabarettist · ARD-Stammgast</div>
+    <p>Hirschhausen ist ausgebildeter Mediziner und Kabarettist — kein Klimawissenschaftler. Der ÖRR platzierte ihn dennoch als Klimastimme in den relevantesten Formaten: eigene wöchentliche ARD-Sendung <em>„Wissen vor acht — Erde"</em> direkt im Vorabendprogramm vor der Tagesschau, regelmäßige Auftritte bei Maybrit Illner (ZDF) und anderen Talkshows als Klimakommentator.</p>
+    <p>Bei Maybrit Illner am 15. Juli 2021 sagte Hirschhausen: <em>„Wenn man ein Ei in ein heißes Wasserbad tut mit 42 Grad, dann ist es irgendwann hart. Wenn das Wasser abkühlt, wird's nicht mehr weich. Wir bestehen auch wie ein Ei aus Wasser und aus Proteinen. Unser Hirn ist bei 42 Grad im Arsch."</em> Die Aussage, dass menschliche Anpassung an Wärme irreversibel ausgeschlossen sei, ist medizinisch nicht korrekt. Das ZDF sendete sie ohne Einordnung.</p>
+    <p>Hirschhausens Stiftung <em>„Gesunde Erde – Gesunde Menschen gGmbH"</em> erhielt ab März 2021 rund 1,4 Millionen US-Dollar von der Bill &amp; Melinda Gates Foundation sowie im Mai 2022 weitere rund 400.000 US-Dollar. Die Zahlungen sind in der öffentlichen Spendenliste der Gates Foundation dokumentiert und von Hirschhausen selbst bestätigt. Einen Interessenkonflikt sieht er nicht: Als geschäftsführender Gesellschafter beziehe er kein Gehalt. Die Stiftung finanzierte Kampagnen, Videos und Öffentlichkeitsarbeit — mit inhaltlicher Ausrichtung, die deckungsgleich mit Hirschhausens ÖRR-Auftritten ist.</p>
+    <p>Der ÖRR hat diese Finanzierungsstruktur in keinem Format transparent gemacht.</p>
+    <div class="quelle">Quellen: ZDF Maybrit Illner, 15.07.2021 (Transkript); Gates Foundation Committed Grants Database (INV-025918, INV-044726); Tichys Einblick, 28.06.2023; kress.de (Hirschhausen-Interview)</div>
+  </div>
+
+  <div class="person-card">
+    <div class="person-name">Volker Quaschning</div>
+    <div class="person-rolle">HTW Berlin · Professor für Regenerative Energiesysteme</div>
+    <p>Quaschning ist Elektroingenieur und Professor an der Hochschule für Technik und Wirtschaft Berlin. Seine eigene Website dokumentiert hunderte Auftritte bei ARD, ZDF, 3sat, WDR, RBB und Deutschlandradio. Er bezeichnet sich selbst als Klimaaktivisten und ist vernetzt mit Fridays for Future.</p>
+    <p>Im März 2026 schaltete die Tagesschau Quaschning gegen die EU-Kehrtwende zur Atomkraft. Er bezeichnete Kernenergie als „dreimal so teuer wie Solar- und Windenergie" und „technologisch vollkommen falsche Anlage". Der Ingenieur Thomas Eisenhuth wies öffentlich und im Detail nach, dass diese Aussagen technisch nicht haltbar sind. Eine Richtigstellung im ÖRR erfolgte nicht.</p>
+    <div class="quelle">Quellen: volker-quaschning.de/publis/medien (eigene Medienliste); Journalistenwatch, 14.03.2026</div>
+  </div>
+
+  <div class="person-card">
+    <div class="person-name">Stefan Rahmstorf</div>
+    <div class="person-rolle">PIK Potsdam · Ozeanograph</div>
+    <p>Rahmstorf ist Ozeanograph am Potsdam-Institut für Klimafolgenforschung, kein Meteorologe. Der ARD widmete ihm ein Porträt in den Tagesthemen. Das ZDF setzte ihn in der Sendung <em>„ZDF heute"</em> als Kronzeugen ein, um eine Prognose von 3 Grad Erwärmung bis 2050 zu stützen — eine Prognose, die der IPCC-Autor Zeke Hausfather auf X als „weit hergeholt" bezeichnete. Rahmstorf korrigierte Hayali nicht. Er hielt den Deutungsraum offen.</p>
+    <div class="quelle">Quellen: klimanachrichten.de (Analyse, 30.09.2025); ZDF heute (Interview Hayali/Rahmstorf)</div>
+  </div>
+
+  <div class="person-card">
+    <div class="person-name">Mojib Latif</div>
+    <div class="person-rolle">Max-Planck-Institut Hamburg · Klimaforscher · Dauergast seit den 1990ern</div>
+    <p>Im April 2000 erschien im Spiegel das Zitat: <em>„Winter mit starkem Frost und viel Schnee wie noch vor zwanzig Jahren wird es in unseren Breiten nicht mehr geben."</em> Latif sagte später, er sei falsch zitiert worden — der Zeithorizont sei 2050–2100 gewesen, nicht 2010. Unabhängig von der Frage, wer recht hat: Der ÖRR hat Latif in den folgenden zwei Jahrzehnten regelmäßig als führende Klimastimme präsentiert, ohne die Prognose und ihre Einlösung je transparent zu machen.</p>
+    <div class="quelle">Quelle: Der Spiegel, April 2000; ZEIT Online (Latif-Interview, 2012)</div>
+  </div>
+
+  <div class="person-card">
+    <div class="person-name">Dirk Steffens</div>
+    <div class="person-rolle">ZDF Terra X · Wissenschaftsjournalist</div>
+    <p>Steffens ist Moderator der ZDF-Dokumentationsreihe Terra X. In einem dokumentierten Interview sagte er, er lade „Klimaskeptiker" grundsätzlich nicht ein — er halte es für falsch, „Kauderwelsch zu veröffentlichen". Damit hat ein ZDF-Redakteur öffentlich erklärt, bestimmte Positionen strukturell aus seinem Format auszuschließen. Das ist sein gutes Recht. Es ist aber nicht vereinbar mit dem Ausgewogenheitsgebot, das der Rundfunkstaatsvertrag dem ÖRR auferlegt.</p>
+    <div class="quelle">Quelle: promimedien.com (Steffens-Interview, dokumentiert)</div>
+  </div>
+
+  <div class="person-card">
+    <div class="person-name">Özden Terli</div>
+    <div class="person-rolle">ZDF-Wettermoderator · Vorwort Klimajournalismus-Kodex</div>
+    <p>Terli präsentiert täglich die ZDF-Wetterkarte — jene Karte, deren veränderte Farbgebung seit Jahren öffentlich diskutiert wird. Gleichzeitig verfasste er das Vorwort für den Leitfaden des Netzwerks Klimajournalismus, der vorschreibt, wie externe Redaktionen über Klimathemen berichten sollen: Klimakrise als „dringlichste Krise" priorisieren, bei „Bebilderung und Wortwahl dem Ausmaß der Klimakrise gerecht werden." Ein ZDF-Mitarbeiter kodifiziert Berichterstattungsregeln für die gesamte Branche — während sein Sender dieselben Gestaltungsprinzipien in seinen eigenen Sendungen anwendet.</p>
+    <div class="quelle">Quelle: norberthaering.de (Netzwerk Klimajournalismus, 23.08.2023)</div>
+  </div>
+
+  <div class="article-body">
+
+    <h2>Wie Experten aufgebaut werden — der Mechanismus</h2>
+
+    <p>Die Präsenz dieser Personen im ÖRR ist kein Zufall. Sie folgt einem dokumentierbaren Muster, das am Beispiel Kemfert über mehr als zwanzig Jahre nachvollziehbar ist.</p>
+
+  </div>
+
+  <div class="stufen">
+    <div class="stufe">
+      <div class="stufe-nr">01</div>
+      <div class="stufe-text"><strong>Erstplatzierung:</strong> Die Person liefert klare, politisch anschlussfähige Aussagen zu einem Sendungsthema. Der ÖRR lädt sie ein. Das erste Auftreten schafft die Referenz für das zweite.</div>
+    </div>
+    <div class="stufe">
+      <div class="stufe-nr">02</div>
+      <div class="stufe-text"><strong>Titelakkumulation:</strong> Institutionelle Positionen (Abteilungsleitung, Professur, Beiratsmitgliedschaft) werden im Laufe der Karriere erworben. Der ÖRR nennt sie bei jeder Einblendung vollständig. Die Medienpräsenz erhöht das institutionelle Gewicht; das institutionelle Gewicht rechtfertigt weitere Medienpräsenz.</div>
+    </div>
+    <div class="stufe">
+      <div class="stufe-nr">03</div>
+      <div class="stufe-text"><strong>Formatisierung:</strong> Die Person erhält ein eigenes Format oder eine feste Rubrik. Bei Kemfert: MDR-Podcast. Bei Hirschhausen: ARD-Vorabendsendung. Damit wird aus dem Gast eine institutionelle Stimme.</div>
+    </div>
+    <div class="stufe">
+      <div class="stufe-nr">04</div>
+      <div class="stufe-text"><strong>Immunisierung:</strong> Fehlprognosen und kritische Gegenpositionen werden im ÖRR nicht thematisiert. Die Person wird nie in der Sendung konfrontiert, die sie zum Experten gemacht hat. Das schützt die aufgebaute Autorität vor Erosion.</div>
+    </div>
+    <div class="stufe">
+      <div class="stufe-nr">05</div>
+      <div class="stufe-text"><strong>Verteidigung beim Angriff:</strong> Wenn externe Kritik die Person erreicht, springt das ÖRR-nahe Ökosystem ein. Im Fall Kemfert: Als der MDR den Podcast einstellte, rahmte CORRECTIV den Vorgang sofort als „vorauseilenden Gehorsam vor konservativen Kräften." Die Schutzstruktur ist Teil des Systems.</div>
+    </div>
+  </div>
+
+  <div class="artikel-body" style="margin-top:1.5rem;">
+  </div>
+
+  <div class="zitat-block">
+    <p>„Ihre Omnipräsenz in den Talkshows von ARD und ZDF beweist klar, wie diese Medien ihre Zuschauer manipulieren."</p>
+    <div class="zitat-quelle">Cicero-Leserkommentar zur Kemfert-Analyse — zitiert als Beispiel für die öffentliche Wahrnehmung, nicht als redaktionelle Position von Cicero</div>
+  </div>
+
+  <div class="article-body">
+
+    <h2>Was der ÖRR nicht zeigt</h2>
+
+    <p>Zur dokumentierten Klimaberichterstattung des ÖRR gehört auch, was fehlt. Hans-Werner Sinn — 22 ZDF-Mediathek-Treffer gegenüber 78 bei Kemfert — hatte zentrale Einwände gegen die Energiewende formuliert, die sich als zutreffend erwiesen haben. Der Ökonom Fritz Vahrenholt, vom ARD-Faktenfinder 2023 als „Klimapopulist" eingeordnet, hatte Positionen vertreten, die im ÖRR nicht als gleichwertig diskutiert wurden. Dirk Steffens hat erklärt, warum: Er lade Skeptiker nicht ein.</p>
+
+    <p>Das Ergebnis ist ein Informationsangebot, das bestimmte Positionen sichtbar macht und andere strukturell unsichtbar hält. Das ist eine redaktionelle Entscheidung. Sie wird mit Rundfunkbeiträgen finanziert. Und sie steht im Widerspruch zu dem Ausgewogenheitsgebot, das die rechtliche Grundlage für diese Finanzierung darstellt.</p>
+
+  </div>
+
+  <div class="struktur-box">
+    <h4>Das Strukturargument</h4>
+    <p>Der ÖRR konstruiert keine Meinungsvielfalt zum Klima. Er konstruiert Autoritäten — durch Wiederholung, institutionelle Titelzuweisung und Schutz vor Konfrontation. Externe Finanzierungsstrukturen einzelner Stammgäste werden nicht offengelegt. Fehlprognosen werden nicht nachverfolgt. Gegenpositionen werden strukturell ausgeschlossen — teils durch explizite redaktionelle Entscheidung. Dieser Befund ist mit dem Grundversorgungsauftrag nicht vereinbar.</p>
+  </div>
+
+  <div class="weiterfuehrend">
+    <h4>Weiterführende Analysen</h4>
+    <ul>
+      <li><a href="klima-panik-oerr.html">Wenn jeder Sommer untergeht — Klimasprache im ÖRR</a></li>
+      <li><a href="wissensressort-ard.html">ARD löst Wissensressort auf — Haltungsjournalismus bleibt</a></li>
+      <li><a href="oerr-aufreger-liste.html">Zur vollständigen Aufreger-Liste</a></li>
+    </ul>
+  </div>
+
+</div>
+</main>
+
+<footer>
+  © Rundfunkkritik.de · Kein Kommentar. Keine Meinung. Nur Fälle. · Alle Angaben mit Quellenangabe dokumentiert.
+</footer>
+
+</body>
+</html>

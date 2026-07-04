@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bildung abgeschaltet – ARD streicht Wissensressort | Rundfunkkritik.de</title>
+<meta name="description" content="ARD-aktuell baut das 2022 als 'Investition in die Zukunft' gegründete Wissensressort ab. Was das über die tatsächlichen Prioritäten des öffentlich-rechtlichen Rundfunks aussagt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #faf7f2;
+    color: #1c1c1c;
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.75;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #1a2744;
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  nav a {
+    color: #f5f0e8;
+    text-decoration: none;
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+  }
+  nav a:hover { color: #c9a84c; }
+  nav .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #f5f0e8;
+    margin-right: auto;
+  }
+
+  /* LAYOUT */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  /* HEADER */
+  .artikel-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: #7a5f1a;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+  .artikel-meta span {
+    background: #f5edda;
+    color: #7a5f1a;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1c1c1c;
+    margin-bottom: 1rem;
+  }
+
+  .untertitel {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #3a3a3a;
+    border-left: 3px solid #c9a84c;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+
+  .datum {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: #888;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e0d8c8;
+  }
+
+  /* BODY */
+  p { margin-bottom: 1.3rem; }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1c1c1c;
+    margin: 2.5rem 0 0.8rem;
+  }
+
+  /* ZITAT-BLOCK */
+  .zitat {
+    border-left: 3px solid #c9a84c;
+    padding: 0.8rem 1.2rem;
+    margin: 1.8rem 0;
+    background: #f5edda;
+    border-radius: 0 4px 4px 0;
+  }
+  .zitat p {
+    font-style: italic;
+    color: #3a3a3a;
+    margin-bottom: 0.4rem;
+  }
+  .zitat .quelle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: #7a5f1a;
+    font-style: normal;
+    margin-bottom: 0;
+  }
+
+  /* HIGHLIGHT */
+  .highlight {
+    color: #7a5200;
+    font-weight: 600;
+  }
+
+  /* FALL-KÄSTCHEN */
+  .fall-box {
+    background: #f5edda;
+    border: 1px solid #c9a84c;
+    border-radius: 6px;
+    padding: 1.2rem 1.5rem;
+    margin: 2rem 0;
+  }
+  .fall-box .fall-titel {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #7a5f1a;
+    margin-bottom: 0.6rem;
+  }
+  .fall-box p { margin-bottom: 0.5rem; }
+  .fall-box p:last-child { margin-bottom: 0; }
+
+  /* WEITERFÜHRENDE ANALYSEN */
+  .weiterfuehrend {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e0d8c8;
+  }
+  .weiterfuehrend h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #7a5f1a;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+  }
+  .weiterfuehrend ul {
+    list-style: none;
+    padding: 0;
+  }
+  .weiterfuehrend ul li {
+    margin-bottom: 0.7rem;
+    padding-left: 1rem;
+    border-left: 2px solid #c9a84c;
+  }
+  .weiterfuehrend ul li a {
+    color: #1a2744;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  .weiterfuehrend ul li a:hover { color: #c9a84c; }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 1.7rem; }
+    .container { padding: 2rem 1.1rem 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="logo">Rundfunkkritik.de</span>
+  <a href="/index.html">Start</a>
+  <a href="/oerr-aufreger-liste.html">Fallliste</a>
+  <a href="/oerr-geschichte.html">Geschichte</a>
+</nav>
+
+<div class="container">
+
+  <div class="artikel-meta">
+    <span>Ideologie &amp; Haltung</span>
+    <span>ARD</span>
+    Juni 2026
+  </div>
+
+  <h1>Bildung abgeschaltet</h1>
+
+  <div class="untertitel">
+    ARD-aktuell baut das Wissensressort ab — vier Jahre nach seiner Gründung als „Investition in die Zukunft". Was bleibt: Unterhaltung, Sport, Haltung.
+  </div>
+
+  <div class="datum">Veröffentlicht: Juni 2026 · Quellen: Tagesspiegel (Holger Wormer, 15.06.2026), NDR-Stellungnahme via Tagesspiegel</div>
+
+  <p>Im September 2022 klang es nach einem Aufbruch. Die Chefredaktion von ARD-aktuell, damals Juliane Leopold und Marcus Bornheim, kündigte den Start eines eigenen Wissensressorts an. Man reagiere damit „auf ein Bedürfnis unseres Publikums nach mehr Hintergrundinformationen und Einordnung von Nachrichten", erklärte Leopold. Das habe man aus der Corona-Zeit und dem Feedback der Community gelernt. Das neue Ressort galt als „Investition in die Zukunft".</p>
+
+  <p>Diese Investition dauerte knapp vier Jahre. Laut einem Gastbeitrag des Kommunikationswissenschaftlers Holger Wormer (Professor für Wissenschaftsjournalismus an der TU Dortmund) im Tagesspiegel vom 15. Juni 2026 plant die Chefredaktion von ARD-aktuell, das Wissensressort aufzulösen. Die Entscheidung soll, so Wormer, <span class="highlight">möglichst unsichtbar</span> vollzogen werden.</p>
+
+  <h2>Die Begründung: Umbau statt Abbau</h2>
+
+  <p>Die NDR-Unternehmenskommunikation reagierte mit einer Stellungnahme, die der Tagesspiegel unkommentiert abdruckte. Darin heißt es, ARD-aktuell werde „jetzt und in Zukunft über Themen aus dem Bereich Wissenschaft" berichten. Der Reiter „Wissen" auf tagesschau.de bleibe bestehen. Was sich ändere, sei lediglich die „interne Organisationsstruktur".</p>
+
+  <div class="zitat">
+    <p>„Die Zulieferung von Themen und Inhalten aus den Bereichen Wissen und Wissenschaft wird zukünftig aus dem ARD Kompetenzcenter Wissen kommen, dessen Federführung sich BR, SWR und WDR teilen."</p>
+    <span class="quelle">NDR-Unternehmenskommunikation, Stellungnahme via Tagesspiegel, 15.06.2026</span>
+  </div>
+
+  <p>Was als Neuorganisation beschrieben wird, bedeutet in der Praxis: Eine eigenständige Wissenschaftsredaktion in der Tagesschau-Zentrale wird aufgelöst und durch eine dezentrale Zulieferstruktur ersetzt. Eigene wissenschaftsjournalistische Kompetenz im Kernbetrieb entfällt.</p>
+
+  <h2>Das strukturelle Problem</h2>
+
+  <p>Wormer, der das Rhine Ruhr Center for Science Communication Research leitet, benennt das Muster: Es sei nicht das erste Mal, dass die Leitungsebene eines öffentlich-rechtlichen Senders in Zeiten von Sparzwängen die Wissenschaftsredaktion als vermeintlich schwächstes Glied in der Redaktionshierarchie als leicht zu opferndes Sparschwein betrachte — womöglich in Ermangelung eines echten Reformkonzepts.</p>
+
+  <p>Dabei ist das Einsparpotenzial überschaubar. Ein kleines Fachressort kostet einen Bruchteil dessen, was ARD und ZDF jährlich für Sportrechte ausgeben. Allein die Übertragungsrechte für die Fußball-Bundesliga, Olympia oder Formel 1 binden dreistellige Millionenbeträge. Das Wissensressort fällt dagegen kaum ins Gewicht — was die Entscheidung umso aufschlussreicher macht.</p>
+
+  <div class="fall-box">
+    <div class="fall-titel">Dokumentierter Widerspruch</div>
+    <p>2022: ARD-aktuell gründet Wissensressort als „Investition in die Zukunft" und Reaktion auf Publikumsbedürfnisse nach der Corona-Pandemie.</p>
+    <p>2026: Dasselbe Ressort wird aufgelöst. Die Entscheidung soll nach Angaben des Tagesspiegel-Gastautors Wormer möglichst ohne öffentliche Aufmerksamkeit vollzogen werden.</p>
+    <p>Zeitraum zwischen Ankündigung und Abschaffung: weniger als vier Jahre.</p>
+  </div>
+
+  <h2>Wer zahlt, bekommt was?</h2>
+
+  <p>Der öffentlich-rechtliche Rundfunk rechtfertigt seine Pflichtfinanzierung durch den Beitragsservice mit einem gesetzlichen Auftrag: Information, Bildung, Kultur. Unterhaltung ist ausdrücklich nachrangig — sie ist das Metier der privaten Sender, die sich über Werbung finanzieren und deshalb Quoten brauchen.</p>
+
+  <p>Der tatsächliche Programmmix zeigt ein anderes Bild. Sportsendungen, Krimiserien, Spielshows und Unterhaltungsformate nehmen im ARD- und ZDF-Programm erheblichen Raum ein. Was unter Spardruck als erstes fällt, ist nicht Unterhaltung — sondern das, was den Bildungsauftrag inhaltlich füllt.</p>
+
+  <p>Das Wissensressort ist dabei kein Einzelfall. Es steht für ein Muster: <span class="highlight">Haltungsjournalismus bleibt, Wissenschaftsjournalismus fällt.</span> Meinungsformate, Einordnungsstücke und politische Kommentare sind strukturell geschützt. Sachthemen mit methodischem Anspruch — Medizin, Klimaforschung, Technologie, KI — gelten offenbar als verzichtbar.</p>
+
+  <h2>Die Antwort des Publikums</h2>
+
+  <p>Unter dem Tagesspiegel-Beitrag erschien ein Leserkommentar, der den Kern der öffentlichen Wahrnehmung trifft: „Sinn der Öffis sollte es ja sein, über das fundiert zu berichten, das die Privaten aus Gründen der Profitmaximierung ignorieren. Die Kernkompetenzen absägen, aber Milliarden für Sportrechte ausgeben. So macht man es denen leicht, die das System komplett abschaffen wollen."</p>
+
+  <p>Diese Einschätzung ist keine Randmeinung. Sie beschreibt eine strukturelle Inkonsistenz, die der ÖRR selbst erzeugt: Je mehr er das tut, was RTL, Sat.1 und ProSieben ebenfalls tun, desto schwächer wird die Rechtfertigung für eine beitragsfinanzierte Sonderstellung.</p>
+
+  <h2>Was der Vorgang zeigt</h2>
+
+  <p>Die Auflösung des Wissensressorts ist keine isolierte Verwaltungsentscheidung. Sie ist ein Indikator dafür, welche Inhalte im internen Prioritätengefüge des öffentlich-rechtlichen Rundfunks als schützenswert gelten — und welche nicht. Wissenschaft, Technik und Medizin sind keine Nischen. Sie sind die Kernthemen einer Industriegesellschaft im technologischen Wandel. Wer daran spart, während Unterhaltungsbudgets unangetastet bleiben, trifft eine inhaltliche Entscheidung — keine rein organisatorische.</p>
+
+  <div class="weiterfuehrend">
+    <h3>Weiterführende Analysen</h3>
+    <ul>
+      <li><a href="/preiskultur-oerr.html">Preiskultur im ÖRR: Strukturelle Befangenheit bei Grimme-Preis und Deutschem Fernsehpreis</a></li>
+      <li><a href="/pressefreiheit-selektivitaet.html">Selektive Empörung: Wie der ÖRR über Pressefreiheit berichtet — und was er verschweigt</a></li>
+      <li><a href="/oerr-aufreger-liste.html">Fallliste: Dokumentierte Fälle redaktioneller Doppelstandards</a></li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>

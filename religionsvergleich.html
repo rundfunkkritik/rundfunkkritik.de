@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zwei Maßstäbe, eine Kasse: Wie der ÖRR Christentum und Islam unterschiedlich bewertet | rundfunkkritik.de</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2744;
+    --pergament: #f5f0e8;
+    --rot: #c0392b;
+    --gold: #c9a84c;
+    --ocean: #1a5276;
+    --text-dark: #1c1c1c;
+    --text-mid: #3a3a3a;
+    --text-light: #6b6b6b;
+    --border: #d4c9b0;
+    --bg-warm: #faf7f2;
+    --warn-bg: #fdf6ec;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; scroll-behavior: smooth; }
+  body {
+    background: var(--bg-warm);
+    color: var(--text-dark);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-weight: 300;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .site-header {
+    background: var(--navy);
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .site-header a {
+    color: var(--pergament);
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    opacity: 0.85;
+  }
+  .site-header a:hover { opacity: 1; }
+  .site-header span { color: var(--gold); opacity: 0.5; }
+
+  .article-hero {
+    background: var(--navy);
+    padding: 4rem 2rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .article-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 40px,
+      rgba(201,168,76,0.04) 40px,
+      rgba(201,168,76,0.04) 41px
+    );
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .rubrik {
+    display: inline-block;
+    background: var(--rot);
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .article-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    color: var(--pergament);
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.01em;
+  }
+  .article-hero h1 em { color: var(--gold); font-style: italic; }
+  .article-hero .deck {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.2rem;
+    color: rgba(245,240,232,0.78);
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-bottom: 2rem;
+  }
+  .meta-bar {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: rgba(245,240,232,0.45);
+    text-transform: uppercase;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(201,168,76,0.25);
+  }
+  .meta-bar strong { color: var(--gold); }
+
+  .article-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem 5rem;
+  }
+
+  .disclaimer {
+    background: var(--warn-bg);
+    border-left: 4px solid var(--gold);
+    padding: 1.4rem 1.75rem;
+    margin-bottom: 3rem;
+    font-size: 0.92rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+  }
+  .disclaimer strong {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 3rem 0 1rem;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  h2::before { content: '§ '; color: var(--gold); font-style: italic; }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--ocean);
+    margin: 2rem 0 0.75rem;
+    font-style: italic;
+  }
+  p { margin-bottom: 1.3rem; font-size: 1rem; color: var(--text-dark); }
+  a { color: var(--ocean); text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: var(--rot); }
+  strong { font-weight: 600; color: var(--text-dark); }
+
+  /* VERGLEICHSTABELLE */
+  .vergleich-tabelle {
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    background: white;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .vergleich-tabelle thead {
+    background: var(--navy);
+  }
+  .vergleich-tabelle thead th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 0.75rem 1.25rem;
+    text-align: left;
+  }
+  .vergleich-tabelle tbody tr {
+    border-bottom: 1px solid var(--border);
+  }
+  .vergleich-tabelle tbody tr:last-child { border-bottom: none; }
+  .vergleich-tabelle td {
+    padding: 0.85rem 1.25rem;
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  .vergleich-tabelle td:first-child {
+    background: var(--pergament);
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 0.82rem;
+    width: 120px;
+    border-right: 1px solid var(--border);
+  }
+  .tag-warn {
+    display: inline-block;
+    background: #fde8e8;
+    color: var(--rot);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    margin-bottom: 0.3rem;
+  }
+  .tag-pos {
+    display: inline-block;
+    background: #e8f5e8;
+    color: #2d7a2d;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  /* FALLKASTEN */
+  .fall-kasten {
+    background: white;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--navy);
+    padding: 1.75rem;
+    margin: 2.5rem 0;
+  }
+  .fall-kasten .fall-nr {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .fall-kasten .fall-titel {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .fall-kasten p {
+    font-size: 0.92rem;
+    color: var(--text-mid);
+    margin-bottom: 0.75rem;
+  }
+  .fall-kasten p:last-child { margin-bottom: 0; }
+
+  blockquote {
+    margin: 2.5rem 0;
+    padding: 1.5rem 2rem;
+    border-left: 3px solid var(--gold);
+    background: rgba(201,168,76,0.06);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--navy);
+    line-height: 1.55;
+  }
+  blockquote cite {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    font-style: normal;
+  }
+
+  .nicht-box {
+    background: #f0f4f8;
+    border-left: 4px solid var(--rot);
+    padding: 1.5rem 1.75rem;
+    margin: 3rem 0;
+  }
+  .nicht-box .nb-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rot);
+    margin-bottom: 0.85rem;
+  }
+  .nicht-box ul { list-style: none; padding: 0; }
+  .nicht-box ul li {
+    font-size: 0.92rem;
+    color: var(--text-mid);
+    padding: 0.3rem 0 0.3rem 1.5rem;
+    position: relative;
+    line-height: 1.55;
+  }
+  .nicht-box ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--rot);
+    font-style: normal;
+  }
+
+  /* WEITERFUEHRENDE */
+  .weiterfuehrende {
+    margin-top: 4rem;
+    padding: 2rem;
+    background: var(--navy);
+  }
+  .weiterfuehrende .wf-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+  .weiterfuehrende ul { list-style: none; padding: 0; }
+  .weiterfuehrende ul li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .weiterfuehrende ul li:last-child { border-bottom: none; }
+  .weiterfuehrende ul li a {
+    color: var(--pergament);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-family: 'Crimson Pro', serif;
+    opacity: 0.85;
+  }
+  .weiterfuehrende ul li a:hover { opacity: 1; color: var(--gold); }
+
+  .quellen {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border);
+  }
+  .quellen h2 { font-size: 1.2rem; }
+  .quellen ol { padding-left: 1.4rem; margin-top: 1rem; }
+  .quellen ol li {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .quellen ol li a { color: var(--ocean); word-break: break-all; }
+
+  footer {
+    background: var(--navy);
+    padding: 2rem;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: rgba(245,240,232,0.35);
+    text-transform: uppercase;
+  }
+
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 600px) {
+    .vergleich-tabelle td:first-child { width: 90px; }
+    .article-hero h1 { font-size: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html">rundfunkkritik.de</a>
+  <span>›</span>
+  <a href="index.html#aufreger">Aufreger</a>
+</header>
+
+<div class="article-hero">
+  <div class="hero-inner">
+    <div class="rubrik">Aufreger · Religionsberichterstattung</div>
+    <h1>Zwei Maßstäbe,<br><em>eine Kasse</em></h1>
+    <p class="deck">
+      Christliche Fußballer werden vom ARD-Faktenfinder als Risiko behandelt. Islamische Verhüllungsmode
+      wird vom BR ohne kritische Einordnung beworben. Beide Beiträge wurden mit Rundfunkbeiträgen
+      finanziert. Eine Dokumentation.
+    </p>
+    <div class="meta-bar">
+      <div><strong>Veröffentlicht:</strong> Juni 2026</div>
+      <div><strong>Kategorie:</strong> Religiöse Berichterstattung · Redaktionelle Standards</div>
+      <div><strong>Sender:</strong> ARD · Deutschlandfunk · BR · Funk</div>
+    </div>
+  </div>
+</div>
+
+<main class="article-wrap">
+
+  <div class="disclaimer reveal">
+    <strong>Redaktioneller Hinweis</strong>
+    Dieser Artikel dokumentiert konkrete Sendebeiträge des öffentlich-rechtlichen Rundfunks und stellt
+    sie einander gegenüber. Er bewertet weder Religionen noch nimmt er zu theologischen Fragen Stellung.
+    Die Frage, die hier gestellt wird, ist ausschließlich eine journalistische: Gelten für verschiedene
+    Religionen dieselben redaktionellen Maßstäbe — und wenn nicht, warum nicht?
+  </div>
+
+  <p class="reveal">
+    Der öffentlich-rechtliche Rundfunk versteht sich als weltanschaulich neutral. Der Rundfunkstaatsvertrag
+    verpflichtet ARD, ZDF und Deutschlandradio zu ausgewogener Berichterstattung — auch in Fragen
+    der Religion. Was in der Praxis passiert, lässt sich an konkreten Beiträgen ablesen. Drei davon
+    sind besonders aufschlussreich.
+  </p>
+
+  <h2 class="reveal">Fall 1: ARD warnt vor christlichen Fußballern</h2>
+
+  <p class="reveal">
+    Im Mai 2025 veröffentlichte der ARD-Faktenfinder einen Beitrag über christliche Fußballprofis.
+    Im Mittelpunkt: Davie Selke (HSV) und Felix Nmecha (Borussia Dortmund), die mit Shirts der Aufschrift
+    „Jesus is King" aufgetreten waren und Verbindungen zu evangelikalen Organisationen pflegten.
+  </p>
+
+  <blockquote class="reveal">
+    „Manche Fußballprofis leben ihren Glauben ganz offen. Auf den ersten Blick vielleicht harmlos.
+    Kritikerinnen und Kritiker sagen aber: Achtung, in manchen Fällen könnte dahinter auch gezielte
+    Missionsarbeit stecken."
+    <cite>— ARD-Faktenfinder, Mai 2025</cite>
+  </blockquote>
+
+  <p class="reveal">
+    Der Beitrag warf den Spielern vor, ein „problematisches Weltbild" zu verbreiten und junge Menschen
+    zu prägen. Nmecha wurde namentlich und scharf kritisiert. Der Deutsche Fußball-Bund erklärte,
+    man respektiere die Überzeugungen der Spieler — der Sender ließ das nicht unkommentiert stehen.
+  </p>
+
+  <p class="reveal">
+    Nach einer formellen Programmbeschwerde eines CDU-Bundestagsabgeordneten musste die ARD
+    den Artikel nachträglich korrigieren und das zugehörige Video aus der Mediathek löschen.
+    Die Zwischenüberschrift „Kritik an Profi Felix Nmecha" wurde gestrichen.
+  </p>
+
+  <div class="fall-kasten reveal">
+    <div class="fall-nr">Nachklang · Juni 2026</div>
+    <div class="fall-titel">Nmecha betet nach dem 7:1 gegen Curaçao — weltweit Zuspruch, beim Deutschlandfunk: Warnung</div>
+    <p>
+      Beim WM-Auftakt am 14. Juni 2026 schoss Felix Nmecha das erste Tor für Deutschland.
+      Nach Abpfiff versammelte er sich mit Jonathan Tah und Spielern Curaçaos im Mittelkreis
+      zum gemeinsamen Gebet. Nmecha sagte am ARD-Mikrofon: <em>„Im Spiel sind wir Gegner,
+      aber nach dem Spiel sind wir alle Christen und Brüder."</em> Die Szene wurde weltweit
+      geteilt und gefeiert — auch von Ex-Nationalspieler Bastian Schweinsteiger, der
+      schlicht „Amen" kommentierte.
+    </p>
+    <p>
+      Am selben Sonntag, noch vor dem Anpfiff, widmete der öffentlich-rechtliche
+      Deutschlandfunk Kultur dem Thema „Christen im Fußball" einen eigenen Beitrag —
+      mit warnendem Tenor. Der Zeitpunkt war kein Zufall: Der Sender war informiert,
+      dass Nmecha mit seiner Bibel in der Hand aus dem Mannschaftsbus gestiegen war.
+    </p>
+  </div>
+
+  <h2 class="reveal">Fall 2: Funk feiert den Hijab als Feminismus</h2>
+
+  <p class="reveal">
+    Funk, das gemeinsame Jugendangebot von ARD und ZDF, veröffentlichte im Format „Die Datteltäter"
+    ein Video unter dem Titel „Mein Kopftuch, meine Wahl". Darin wurde der islamische Hijab
+    als „Würde", „Antirassismus", „Schutz" und „Feminismus" präsentiert — ohne kritische Einordnung,
+    ohne Gegenstimmen von Frauen, die in islamisch geprägten Gesellschaften für das Recht kämpfen,
+    ihn abzulegen.
+  </p>
+
+  <blockquote class="reveal">
+    „Mein Hijab ist Feminismus, der für Freiheit und Würde steht."
+    <cite>— Funk / Die Datteltäter, „Mein Kopftuch, meine Wahl"</cite>
+  </blockquote>
+
+  <p class="reveal">
+    Der Zentralrat der Ex-Muslime organisierte daraufhin eine Protestdemonstration in Köln.
+    Kritiker wiesen darauf hin, dass dieselbe Redaktion, die christliche Glaubensbezeugungen
+    von Fußballern als potenziell problematisch behandelte, islamische Verschleierungssymbolik
+    unkritisch als progressives Modegespräch inszenierte.
+  </p>
+
+  <h2 class="reveal">Fall 3: BR bewirbt islamische Verhüllungsmode — Frauenbild inklusive</h2>
+
+  <p class="reveal">
+    Am 15. Juni 2026 — einen Tag nach dem deutschen WM-Auftakt — sendete der Bayerische Rundfunk
+    einen Beitrag über einen Nürnberger Laden für „Modest Fashion", islamische Verhüllungsmode.
+    Der Beitrag wurde mit den Worten eingeleitet: <em>„Ein Gegentrend: Modest Fashion. Mode,
+    die weniger Haut zeigt, und den Körper größtenteils bedeckt."</em>
+  </p>
+
+  <p class="reveal">
+    Im Verlauf des Beitrags kam der Ehemann der Ladeninhaberin zu Wort. Er erklärte dem
+    Publikum, warum Frauen sich im Islam verhüllen müssen:
+  </p>
+
+  <blockquote class="reveal">
+    „Im islamischen Glauben müssen Frauen sich bedeckt anziehen. Was wichtig ist, sollte auch
+    geschützt werden. Wie ein Handy, das mit einer Hülle geschützt wird. Eine Frau ist auch
+    sehr wichtig, mit allen Körperteilen, und deswegen sollte eine Frau auch geschützt werden.
+    Sie sollte kein Objekt für andere Männer sein."
+    <cite>— Ehemann der Inhaberin, unkommentiert im BR-Beitrag, 15. Juni 2026</cite>
+  </blockquote>
+
+  <p class="reveal">
+    Der Sprecher des Beitrags ließ diese Aussage vollständig ohne journalistische Einordnung stehen.
+    Das Frauenbild, das hier formuliert wird — Frauen als schutzbedürftige Objekte, die durch
+    Kleidung vor männlichen Blicken zu sichern sind — wurde nicht hinterfragt, nicht kontextualisiert,
+    nicht mit einer Gegenstimme versehen. Der BR präsentierte es als Lifestyle-Beitrag.
+  </p>
+
+  <h2 class="reveal">Die Gegenüberstellung</h2>
+
+  <p class="reveal">
+    Drei Beiträge, drei Sender, ein Muster. Zur Übersicht:
+  </p>
+
+  <table class="vergleich-tabelle reveal">
+    <thead>
+      <tr>
+        <th>Sender</th>
+        <th>Religion</th>
+        <th>Inhalt</th>
+        <th>Redaktionelle Haltung</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ARD Faktenfinder</td>
+        <td>Christentum</td>
+        <td>Fußballprofis tragen „Jesus is King"-Shirts, beten öffentlich</td>
+        <td><span class="tag-warn">Warnung</span><br>„Verdeckte Missionsarbeit", „problematisches Weltbild" — Video nach Beschwerde gelöscht</td>
+      </tr>
+      <tr>
+        <td>Deutschlandfunk</td>
+        <td>Christentum</td>
+        <td>Christliche Spieler bei der WM 2026</td>
+        <td><span class="tag-warn">Warnung</span><br>Beitrag mit warnendem Tenor am selben Tag wie Nmechas weltweit gefeiertes Gebet</td>
+      </tr>
+      <tr>
+        <td>Funk (ARD/ZDF)</td>
+        <td>Islam</td>
+        <td>Hijab als Modeaccessoire und Symbol</td>
+        <td><span class="tag-pos">Feier</span><br>„Feminismus", „Würde", „Freiheit" — ohne Gegenstimme</td>
+      </tr>
+      <tr>
+        <td>BR</td>
+        <td>Islam</td>
+        <td>Modest Fashion-Laden, Frauenverhüllung als islamische Pflicht</td>
+        <td><span class="tag-pos">Werbung</span><br>Frauenbild „wie ein Handy" unkommentiert übernommen</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="reveal">Was nicht behauptet wird</h2>
+
+  <div class="nicht-box reveal">
+    <div class="nb-title">Klarstellung</div>
+    <ul>
+      <li>Dieser Artikel bewertet keine der genannten Religionen.</li>
+      <li>Es wird nicht behauptet, dass der ÖRR eine bewusste Kampagne gegen das Christentum führt.</li>
+      <li>Es wird nicht behauptet, dass islamische Glaubensbekundungen grundsätzlich kritisch berichtet werden müssen.</li>
+      <li>Was dokumentiert wird: ein strukturell wiederkehrendes Ungleichgewicht in der redaktionellen
+      Behandlung — christliche Glaubenspraxis als Warnung, islamische Praxis als positives Lifestyle-Thema.</li>
+    </ul>
+  </div>
+
+  <h2 class="reveal">Die journalistische Frage</h2>
+
+  <p class="reveal">
+    Der öffentlich-rechtliche Rundfunk ist durch den Rundfunkstaatsvertrag zu Ausgewogenheit
+    und Überparteilichkeit verpflichtet — explizit auch in weltanschaulichen und religiösen Fragen.
+    Das ist kein Detail, sondern Kernbegründung für die Pflichtfinanzierung durch alle Haushalte,
+    unabhängig von deren Religionszugehörigkeit.
+  </p>
+
+  <p class="reveal">
+    Wenn Spieler, die sich öffentlich zu Jesus bekennen, als mögliche Missionare eingeordnet werden,
+    während ein Sender einem Mann unwidersprochen zuhört, der Frauen mit Handys vergleicht —
+    dann ist das kein redaktioneller Zufall. Es ist ein Muster, das dokumentiert und benannt
+    werden muss.
+  </p>
+
+  <p class="reveal">
+    Der Rundfunkbeitrag wird von Menschen aller Religionen bezahlt. Der Anspruch auf gleiche
+    Behandlung ist damit nicht nur ein journalistisches Ideal, sondern eine institutionelle
+    Verpflichtung.
+  </p>
+
+  <div class="weiterfuehrende reveal">
+    <div class="wf-title">Weiterführende Analysen</div>
+    <ul>
+      <li><a href="kirchhof-konflikt.html">Die Kirchhof-Brüder: Gutachten, Verfassungsgericht und ein undiskutiertes Honorar</a></li>
+      <li><a href="hateaid-fernandes-artikel.html">Die orchestrierte Kampagne: HateAid, Fernandes und das ZDF</a></li>
+      <li><a href="beitragsservice-vollstreckung.html">Vollstreckung ohne Kontrolle: Wie der Beitragsservice Bescheide produziert, die vor Gericht scheitern</a></li>
+    </ul>
+  </div>
+
+  <div class="quellen reveal">
+    <h2>Quellen</h2>
+    <ol>
+      <li>ARD-Faktenfinder, Mai 2025: Beitrag über christliche Fußballprofis — nach Programmbeschwerde korrigiert und Video gelöscht. <a href="https://apollo-news.net/ultrakonservatives-weltbild-tagesschau-loescht-beitrag-ueber-christliche-fussballer/" target="_blank">apollo-news.net</a></li>
+      <li>EWTN.de, 3. Juni 2025: ARD-Faktenfinder warnt vor öffentlich gelebtem Glauben christlicher Fußballprofis. <a href="https://ewtn.de/2025/06/03/ard-faktenfinder-warnt-vor-oeffentlich-gelebtem-glauben-christlicher-fussballprofis/" target="_blank">ewtn.de</a></li>
+      <li>Apollo News, 15. Juni 2026: Nationalspieler Nmecha sorgt mit christlichem Gebet weltweit für Zuspruch — Deutschlandfunk warnt vor ihm. <a href="https://apollo-news.net/nationalspieler-nmecha-sorgt-mit-christlichem-gebet-weltweit-fuer-zuspruch-deutschlandfunk-warnt-vor-ihm/" target="_blank">apollo-news.net</a></li>
+      <li>Ruhrbarone, Februar 2022: Hijab-Propaganda — Protest-Demo gegen ARD/ZDF-Jugendkanal Funk. <a href="https://www.ruhrbarone.de/hijab-propaganda-protest-demo-gegen-ard-zdf-jugendkanal-funk/205436/" target="_blank">ruhrbarone.de</a></li>
+      <li>NIUS, 15. Juni 2026: Bayerischer Rundfunk bewirbt Islamisten-Verhüllung — „Eine Frau ist wertvoll wie ein Handy". <a href="https://nius.de/gesellschaft/bayerischer-rundfunk-bewirbt-islamisten-verhuellung" target="_blank">nius.de</a></li>
+      <li>Kirche-und-Leben.de, 15. Juni 2026: Nach DFB-Sieg: Gebet von Nmecha sorgt für Aufsehen. <a href="https://www.kirche-und-leben.de/artikel/fussball-wm-dfb-team-sieg-curacao-houston-gebet-felix-nmecha-bvb-mit-gegnern-kirchen-meinungen" target="_blank">kirche-und-leben.de</a></li>
+    </ol>
+  </div>
+
+</main>
+
+<footer>
+  rundfunkkritik.de · Unabhängige Medienkritik · Keine Werbung · Keine Förderung
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

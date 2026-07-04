@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ÖRR und Islam: Das System des blinden Flecks | Rundfunkkritik.de</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #faf7f2;
+      color: #1c1c1c;
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.15rem;
+      line-height: 1.75;
+    }
+
+    /* NAV */
+    nav {
+      background: #1a2744;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 2rem;
+    }
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0.75rem 0;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #f5f0e8;
+      text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    nav a:hover { color: #c9a84c; }
+
+    /* LAYOUT */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* KICKER */
+    .kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7a5f1a;
+      background: #f5edda;
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      border-radius: 2px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: #1c1c1c;
+      margin-bottom: 0.75rem;
+    }
+
+    .subtitle {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #4a4a4a;
+      margin-bottom: 1.5rem;
+      border-left: 3px solid #c9a84c;
+      padding-left: 1rem;
+    }
+
+    .meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: #888;
+      letter-spacing: 0.05em;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #e0d8c8;
+    }
+
+    /* DISCLAIMER */
+    .disclaimer {
+      background: #f5edda;
+      border: 1px solid #c9a84c;
+      border-left: 4px solid #c9a84c;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2.5rem;
+      font-size: 0.95rem;
+    }
+    .disclaimer strong {
+      color: #7a5200;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #1c1c1c;
+      margin: 2.5rem 0 0.75rem;
+    }
+
+    p { margin-bottom: 1.2rem; }
+
+    /* FALLBOX */
+    .fall-box {
+      background: #f5edda;
+      border-left: 4px solid #c9a84c;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .fall-box .fall-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #7a5f1a;
+      margin-bottom: 0.5rem;
+    }
+    .fall-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1c1c1c;
+      margin-bottom: 0.5rem;
+    }
+    .fall-box p { margin-bottom: 0.6rem; font-size: 1.05rem; }
+    .fall-box p:last-child { margin-bottom: 0; }
+
+    /* ZITAT */
+    blockquote {
+      border-left: 3px solid #c9a84c;
+      margin: 1.5rem 0;
+      padding: 0.5rem 1.25rem;
+      color: #3a3a3a;
+      font-style: italic;
+    }
+    blockquote cite {
+      display: block;
+      margin-top: 0.4rem;
+      font-size: 0.88rem;
+      font-style: normal;
+      color: #7a5f1a;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* HIGHLIGHT */
+    .hl { color: #7a5200; font-weight: 600; }
+
+    /* QUELLEN */
+    .quellen {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e0d8c8;
+      font-size: 0.9rem;
+    }
+    .quellen h2 {
+      font-size: 1.1rem;
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+    .quellen ul {
+      list-style: none;
+      padding: 0;
+    }
+    .quellen li {
+      padding: 0.3rem 0;
+      border-bottom: 1px solid #ede6d6;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: #555;
+    }
+    .quellen li:last-child { border-bottom: none; }
+    .quellen a { color: #7a5200; text-decoration: underline; }
+
+    /* WEITERFÜHRENDE ANALYSEN */
+    .weitere {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      background: #f5edda;
+      border: 1px solid #e0d0a8;
+    }
+    .weitere h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #7a5f1a;
+      margin-bottom: 1rem;
+    }
+    .weitere ul { list-style: none; padding: 0; }
+    .weitere li { margin-bottom: 0.6rem; }
+    .weitere a {
+      color: #1a2744;
+      text-decoration: none;
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.05rem;
+    }
+    .weitere a:hover { color: #c9a84c; }
+    .weitere a::before {
+      content: "→ ";
+      color: #c9a84c;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="oerr-aufreger-liste.html">Aufreger-Liste</a></li>
+    <li><a href="oerr-geschichte.html">Geschichte</a></li>
+    <li><a href="oerr-international-v2.html">International</a></li>
+    <li><a href="pressefreiheit-selektivitaet.html">Pressefreiheit</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+
+  <span class="kicker">Analyse · Redaktionelle Maßstäbe</span>
+
+  <h1>ÖRR und Islam: Das System des blinden Flecks</h1>
+
+  <p class="subtitle">Drei dokumentierte Fälle zeigen ein Muster: Islamisch-konservative Positionen werden im öffentlich-rechtlichen Rundfunk anders behandelt als vergleichbare Positionen anderer Religionen.</p>
+
+  <div class="meta">Rundfunkkritik.de &nbsp;·&nbsp; Stand: Juni 2026 &nbsp;·&nbsp; Kategorie: Ideologie &amp; Haltung</div>
+
+  <div class="disclaimer">
+    <strong>Redaktioneller Hinweis</strong>
+    Diese Seite bewertet keine Religion. Dokumentiert werden ausschließlich redaktionelle Entscheidungen des öffentlich-rechtlichen Rundfunks: Welche Aussagen bleiben unkommentiert? Welche Interessenkonflikte werden nicht offengelegt? Der Maßstab ist derselbe, der an jeden anderen gesellschaftlichen Bereich angelegt wird.
+  </div>
+
+  <p>Die drei nachfolgenden Fälle sind unabhängig voneinander dokumentiert. Sie verbindet eine gemeinsame Frage: Würden dieselben redaktionellen Entscheidungen getroffen, wenn es sich nicht um islamisch-konservative, sondern um christlich-konservative oder säkular-traditionelle Positionen gehandelt hätte?</p>
+
+  <div class="fall-box">
+    <div class="fall-label">Fall 1 &nbsp;·&nbsp; Bayerischer Rundfunk &nbsp;·&nbsp; Juni 2026</div>
+    <h3>„Bedeckte Mode boomt" — Scharia-Kleidung als Lifestyle-Trend</h3>
+    <p>Der BR strahlte einen rund fünfminütigen Beitrag über „Modest Fashion" aus. Vorgestellt wurde ein Nürnberger Laden für scharia-konforme Kleidung. Der Beitrag rahmte das Thema als Gegentrend zu freizügiger Sommermode — positiv, ohne kritische Einordnung.</p>
+    <p>Besondere Aufmerksamkeit erhielt eine Aussage des Ladeninhabers Ahmed, der Frauen mit Mobiltelefonen verglich: <span class="hl">„Was wichtig ist, muss auch geschützt werden. Eine Frau ist auch sehr wichtig mit allen Körperteilen."</span> Diese Aussage blieb im Beitrag unkommentiert und unwidersprochen.</p>
+    <p>Der Beitrag enthielt keinen Hinweis auf Länder, in denen Verschleierung staatlich erzwungen wird, und keine Gegenstimme von Frauen, die Verschleierungsdruck kritisieren. Die CSU bezeichnete den Bericht als einseitig; Bayerns Vizepremier Hubert Aiwanger (Freie Wähler) warnte vor „knallhartem Islamismus" hinter dem Trend.</p>
+    <p><em>Doppelstandard-Frage:</em> Würde der BR einen Laden für traditionelle Dirndl-Mode mit dem Satz „Eine Frau muss bescheiden auftreten" unkommentiert als Lifestyle-Trend präsentieren?</p>
+  </div>
+
+  <div class="fall-box">
+    <div class="fall-label">Fall 2 &nbsp;·&nbsp; ZDF Markus Lanz &nbsp;·&nbsp; 16. Juni 2026</div>
+    <h3>Rundfunkrätin als neutrale Gästin — Interessenkonflikt unerwähnt</h3>
+    <p>Khola Maryam Hübsch trat in der ZDF-Sendung „Markus Lanz" als Publizistin auf. <span class="hl">Nicht erwähnt wurde: Hübsch ist seit 2021 Mitglied des Rundfunkrats des Hessischen Rundfunks</span> — entsandt von den muslimischen Glaubensgemeinschaften in Hessen.</p>
+    <p>In der Sendung positionierte sie sich gegen ein Kopftuchverbot für Kinder und bezeichnete islamische Verbände als notwendige „Partner" im Kampf gegen Islamismus. Auf die direkte Frage, ob sich Homosexualität mit ihrem Religionsverständnis vertrage, antwortete sie: „Es ist aus religiöser Sicht als Muslim nicht gottgefällig, Homosexualität zu praktizieren."</p>
+    <p>Dies ist kein redaktioneller Einzelfall. Dieselbe Konstellation — Hübsch als Talkgast, Rundfunkratsmandat unerwähnt — war bereits im ARD-Format „Hart aber fair" dokumentiert worden. Der HR-Rundfunkratsvorsitzende Harald Freiling bestätigte gegenüber Medien, dass weder der Sender noch das Gremium Einfluss auf die Benennung von Gästen in anderen ÖRR-Formaten habe.</p>
+    <p><em>Doppelstandard-Frage:</em> Würde ein evangelikaler Rundfunkrat als Gast in einer ZDF-Sendung auftreten, ohne dass seine Funktion genannt wird?</p>
+  </div>
+
+  <div class="fall-box">
+    <div class="fall-label">Fall 3 &nbsp;·&nbsp; ARD &nbsp;·&nbsp; 6. Juni 2018</div>
+    <h3>„Unterwerfung" — der Film und seine defensive Einrahmung</h3>
+    <p>Die ARD strahlte eine Verfilmung von Michel Houellebecqs Roman „Unterwerfung" aus — produziert vom RBB. Der Roman beschreibt eine islamisch geprägte Machtübernahme in Frankreich und erschien am Tag des Anschlags auf die Redaktion von Charlie Hebdo. Die ARD begleitete die Ausstrahlung unmittelbar mit einer Maischberger-Talkshow.</p>
+
+    <blockquote>
+      „Sind wir zu tolerant gegenüber dem Islam?"
+      <cite>— Titel der ARD-Talkshow im Anschluss an die Ausstrahlung von „Unterwerfung", 6. Juni 2018</cite>
+    </blockquote>
+
+    <p>Diese Fragestellung wurde im Vorfeld von Medienkritikern als „lupenreines AfD-Wording" kritisiert. Der Effekt war eine doppelte Rahmung: Der Film als Warnung wurde durch die Talkshow sofort als politisch angreifbares Terrain markiert — und damit geschwächt.</p>
+    <p>Kein vergleichbares Einrahmungsverfahren ist für ARD-Produktionen dokumentiert, die islamkritische Inhalte mit explizit verteidigenden Talkformaten flankiert hätten.</p>
+  </div>
+
+  <h2>Was die drei Fälle verbindet</h2>
+
+  <p>Alle drei Fälle betreffen unterschiedliche ÖRR-Anstalten (BR, ZDF, ARD/RBB) und unterschiedliche Formate (Magazinbeitrag, Talkshow, Spielfilm). Das verbindende Muster ist redaktioneller Natur:</p>
+
+  <p><span class="hl">Kritische Einordnung unterbleibt dort, wo sie bei anderen Gruppen selbstverständlich wäre.</span> Islamisch-konservative Aussagen zu Frauenbild und Kleidungszwang werden im BR nicht kontextualisiert. Eine Rundfunkrätin mit institutionellem Interessenkonflikt wird im ZDF nicht als solche vorgestellt. Ein dystopischer Film über Islamisierung wird in der ARD durch eine Talkshow mit relativierendem Framing flankiert.</p>
+
+  <p>Redaktionelle Asymmetrien dieser Art sind keine Aussage über eine Religion. Sie sind eine Aussage über den Zustand des journalistischen Handwerks in beitragsfinanzierten Sendern.</p>
+
+  <h2>Strukturelle Ursache: Rundfunkräte als Einfallstor</h2>
+
+  <p>Der Fall Hübsch wirft eine über den Einzelfall hinausgehende Frage auf. Das hessische Rundfunkgesetz ermöglicht seit einer Änderung im Jahr 2016 — eingebracht von CDU und Grünen — die Entsendung von Vertretern muslimischer Glaubensgemeinschaften in den HR-Rundfunkrat. Hübsch wurde von der Ahmadiyya Muslim Jamaat entsandt, einer Gemeinschaft, die von einem weltweiten Kalifen geführt wird.</p>
+
+  <p>Das HR-Rundfunkgesetz schreibt als Grundvoraussetzung für die Mitgliedschaft die Achtung der Grundrechtswerte des Grundgesetzes vor — ausdrücklich die in Artikel 5 verankerte Meinungs- und Rundfunkfreiheit. Ob diese Voraussetzung geprüft wird und wer sie prüft, ist im Gesetz nicht eindeutig geregelt. Der Rundfunkratsvorsitzende Harald Freiling erklärte, <span class="hl">der HR habe auf die Entsendung und Abberufung von Mitgliedern keinen Einfluss</span> — dies liege allein bei den entsendenden Organisationen.</p>
+
+  <p>Das ist der strukturelle Kern: Wer in den Rundfunkrat entsandt wird, entscheidet nicht der Sender, sondern die Organisation. Wessen Interessen ein Rundfunkratsmitglied in Talkshows vertritt, ist dem Sender redaktionell nicht zurechenbar. Dass beides — Rundfunkratsmandat und Talkshow-Auftritt — kombiniert vorkommt, ohne dass die Zuschauer davon erfahren, ist eine dokumentierbare redaktionelle Entscheidung.</p>
+
+  <div class="quellen">
+    <h2>Quellen</h2>
+    <ul>
+      <li>Heute.at, „Bedeckte Mode boomt — ARD feiert Scharia-Kleidung", ca. Juni 2026</li>
+      <li>Exxpress.at, „Verhüllung als Modetrend? Islamistische Modest Fashion erobert den Mainstream", 18. Juni 2026</li>
+      <li>T-Online, „Mit Thema Homosexualität bringt Lanz muslimische Publizistin in Erklärungsnot", 17. Juni 2026</li>
+      <li>Tichys Einblick, „Alle durcheinander: Islam-Clash bei Lanz", 17. Juni 2026</li>
+      <li>Tichys Einblick, „Auf zwei Stühlen: Scharia-Verteidigerin aus der Talkshow sitzt auch im HR-Rundfunkrat", 30. April 2024</li>
+      <li>T-Online, „Ihre Gemeinschaft hat einen Kalifen: HR-Rundfunkrätin sorgt für Wirbel", 2. Mai 2024</li>
+      <li>Apollo News, „Rundfunkrätin relativierte Kalifat und Scharia: Rücktritt gefordert", 2. Mai 2024</li>
+      <li>Kmhuebsch.de, Selbstdarstellung Khola Maryam Hübsch (Rundfunkratsmandat seit 2021 bestätigt)</li>
+      <li>Wikipedia, „Unterwerfung (Film)", Erstausstrahlung ARD 6. Juni 2018</li>
+      <li>Nachtkritik.de, Besprechung „Unterwerfung" inkl. Maischberger-Rahmung, 8. Juni 2018</li>
+      <li>ÖRR Denkfabrik R21, „Fundamentalisten im Rundfunkrat?", 21. Mai 2024</li>
+    </ul>
+  </div>
+
+  <div class="weitere">
+    <h3>Weiterführende Analysen</h3>
+    <ul>
+      <li><a href="pressefreiheit-selektivitaet.html">Pressefreiheit: Selektive Empörung im ÖRR</a></li>
+      <li><a href="oerr-aufreger-liste.html">Die laufende Aufreger-Liste: Dokumentierte Fälle</a></li>
+      <li><a href="oerr-geschichte.html">Geschichte des öffentlich-rechtlichen Rundfunks</a></li>
+    </ul>
+  </div>
+
+</div>
+</body>
+</html>
