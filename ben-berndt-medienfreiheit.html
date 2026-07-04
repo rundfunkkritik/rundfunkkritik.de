@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Die staatliche Schlussredaktion: LFM NRW gegen „Ben ungeskriptet" | rundfunkkritik.de</title>
+<meta name="description" content="Die Landesanstalt für Medien NRW forderte Podcaster Ben Berndt auf, sein Höcke-Interview nachträglich zu überarbeiten. Berndt weigert sich. Was das für die Pressefreiheit bedeutet.">
+<meta name="keywords" content="Ben Berndt, ungeskriptet, LFM NRW, Landesmedienanstalt, Steinhöfel, Staatsferne, Pressefreiheit, Meinungsfreiheit, Höcke, Podcast, Medienaufsicht">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2744;
+    --pergament: #f5f0e8;
+    --rot: #c0392b;
+    --gold: #c9a84c;
+    --ocean: #1a5276;
+    --text-dark: #1c1c1c;
+    --text-mid: #3a3a3a;
+    --text-light: #6b6b6b;
+    --border: #d4c9b0;
+    --bg-warm: #faf7f2;
+    --warn-bg: #fdf6ec;
+    --badge-bg: #f5edda;
+    --badge-text: #7a5f1a;
+    --highlight: #7a5200;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg-warm);
+    color: var(--text-dark);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-weight: 300;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── HEADER ─── */
+  .site-header {
+    background: var(--navy);
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .site-header a {
+    color: var(--pergament);
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    opacity: 0.85;
+  }
+  .site-header a:hover { opacity: 1; }
+  .site-header span { color: var(--gold); opacity: 0.5; }
+
+  /* ─── HERO ─── */
+  .article-hero {
+    background: var(--navy);
+    padding: 4rem 2rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .article-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 40px,
+      rgba(201,168,76,0.04) 40px,
+      rgba(201,168,76,0.04) 41px
+    );
+  }
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .rubrik {
+    display: inline-block;
+    background: var(--rot);
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .article-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    color: var(--pergament);
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.01em;
+  }
+  .hero-lead {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.15rem;
+    color: rgba(245,240,232,0.75);
+    line-height: 1.65;
+    max-width: 680px;
+    margin-bottom: 2rem;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .hero-meta span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: rgba(201,168,76,0.7);
+    text-transform: uppercase;
+  }
+
+  /* ─── CONTENT ─── */
+  .article-body {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem 5rem;
+  }
+
+  .article-body p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .article-body h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 3rem 0 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  /* ─── BLOCKQUOTE ─── */
+  blockquote {
+    border-left: 3px solid var(--gold);
+    padding: 1.25rem 1.75rem;
+    margin: 2rem 0;
+    background: var(--badge-bg);
+  }
+  blockquote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text-mid);
+    margin-bottom: 0.5rem;
+  }
+  blockquote cite {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--text-light);
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  /* ─── CHRONOLOGIE ─── */
+  .chronologie {
+    margin: 2.5rem 0;
+    border-left: 2px solid var(--border);
+    padding-left: 1.75rem;
+  }
+  .chron-item {
+    position: relative;
+    padding-bottom: 1.75rem;
+  }
+  .chron-item:last-child { padding-bottom: 0; }
+  .chron-item::before {
+    content: '';
+    position: absolute;
+    left: -2.1rem;
+    top: 0.4rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--bg-warm);
+    outline: 1px solid var(--gold);
+  }
+  .chron-datum {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--highlight);
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+  .chron-text {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+  }
+
+  /* ─── STRUKTURBOX ─── */
+  .struktur-box {
+    border: 1px solid var(--gold);
+    background: var(--badge-bg);
+    padding: 1.5rem 1.75rem;
+    margin: 2.5rem 0;
+  }
+  .struktur-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--badge-text);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+  .struktur-box p {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    margin-bottom: 0;
+  }
+
+  /* ─── FOOTER LINKS ─── */
+  .artikel-footer {
+    border-top: 1px solid var(--border);
+    margin-top: 4rem;
+    padding-top: 2rem;
+  }
+  .artikel-footer h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+  .weiter-links {
+    list-style: none;
+    padding: 0;
+  }
+  .weiter-links li {
+    border-bottom: 1px solid var(--border);
+    padding: 0.65rem 0;
+  }
+  .weiter-links li:last-child { border-bottom: none; }
+  .weiter-links a {
+    color: var(--navy);
+    text-decoration: none;
+    font-family: 'Crimson Pro', serif;
+    font-size: 1rem;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+  }
+  .weiter-links a:hover { border-color: var(--gold); }
+
+  /* ─── REDAKTIONSHINWEIS ─── */
+  .redakt-hinweis {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+    color: var(--text-light);
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    margin-top: 2rem;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 640px) {
+    .article-hero { padding: 2.5rem 1.25rem 2rem; }
+    .article-body { padding: 2.5rem 1.25rem 3rem; }
+    .site-header { padding: 0.75rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/index.html">rundfunkkritik.de</a>
+  <span>·</span>
+  <a href="/index.html" style="opacity:0.6; font-size:0.85rem;">Medien. Macht. Analyse.</a>
+</header>
+
+<div class="article-hero">
+  <div class="hero-inner">
+    <div class="rubrik">Pressefreiheit &amp; Medienaufsicht</div>
+    <h1>Die staatliche Schlussredaktion: LFM NRW gegen „Ben ungeskriptet"</h1>
+    <p class="hero-lead">Die Landesanstalt für Medien NRW forderte Podcaster Ben Berndt auf, sein sechsmillionenfach geklicktes Höcke-Interview nachträglich zu überarbeiten. Berndt weigerte sich — gestützt auf ein Anwaltsschreiben von Joachim Steinhöfel, das die verfassungsrechtliche Kernfrage stellt: Darf eine Medienbehörde Journalisten vorschreiben, was „journalistische Sorgfalt" bedeutet?</p>
+    <div class="hero-meta">
+      <span>Veröffentlicht: 29. Juni 2026</span>
+      <span>Ressort: Pressefreiheit</span>
+      <span>Lesedauer: ca. 6 Min.</span>
+    </div>
+  </div>
+</div>
+
+<main class="article-body">
+
+  <p>Es begann mit einem Brief. Am 15. Juni 2026 landete in der Inbox der ungeskriptet media GmbH in Köln eine E-Mail der Rechtsabteilung der Landesanstalt für Medien Nordrhein-Westfalen — jener Behörde, die ihr eigenes Logo mit dem Satz schmückt: „Der Meinungsfreiheit verpflichtet."</p>
+
+  <p>Inhalt der E-Mail: Podcaster Benjamin Berndt solle sein über vierstündiges Gespräch mit AfD-Politiker Björn Höcke auf allen Plattformen nachträglich bearbeiten und um eine Erläuterung ergänzen. Frist: 30. Juni. Und: Er solle sein gesamtes Angebot — 300 Folgen, hunderte Stunden — auf journalistische Sorgfalt prüfen.</p>
+
+  <p>Berndt machte das Schreiben publik. Die Frist verstrich. Er änderte nichts.</p>
+
+  <h2>Was die Behörde bemängelte</h2>
+
+  <p>Der konkrete Auslöser war eine Passage gegen Ende der Höcke-Folge, die Ende April erschien und seitdem über sechs Millionen Aufrufe auf YouTube erzielt hat. Höcke äußerte dort seine Sicht auf seine eigene Verurteilung wegen des Satzes „Alles für Deutschland" — und behauptete dabei, die SA habe kein Motto gehabt.</p>
+
+  <p>Die LFM NRW wertete das als eine „Tatsachenbehauptung, die dem Beweis zugänglich ist" — und sah den Verdacht einer Verletzung journalistischer Sorgfaltspflicht, weil Berndt der Aussage nicht widersprach. Die Behörde betonte, es handle sich zunächst nur um einen „Hinweis" — das mildeste Mittel, bevor ein formales Verwaltungsverfahren eröffnet wird.</p>
+
+  <blockquote>
+    <p>„Wir bitten Sie, Ihre gesamten Angebote auf die Einhaltung der journalistischen Sorgfalt hin zu prüfen und diese bei zukünftigen Beiträgen zu beachten."</p>
+    <cite>LFM NRW — Schreiben vom 15. Juni 2026, zitiert durch Ben Berndt in seinem Instagram-Video, bestätigt durch mehrere Medien</cite>
+  </blockquote>
+
+  <p>Berndt kommentierte das Schreiben auf X: „Der Staat will mich zensieren. Da habt ihr euch den Falschen ausgesucht." Er änderte die Beschreibung seines Formats daraufhin — mit bitterer Ironie — in eben den Satz, den die Behörde in ihrem eigenen Logo führt: „Der Meinungsfreiheit verpflichtet."</p>
+
+  <h2>Steinhöfels Antwort: Eine Verfassungsfrage</h2>
+
+  <p>Berndt ließ sich durch Medienanwalt Joachim Steinhöfel vertreten, der in den vergangenen Monaten zur zentralen Figur in Auseinandersetzungen zwischen Medienbehörden und unabhängigen Formaten geworden ist. Steinhöfel vertritt parallel auch Nius/Reichelt im ähnlich gelagerten Verfahren gegen die Medienanstalt Berlin-Brandenburg (MABB).</p>
+
+  <blockquote>
+    <p>„Die Landesanstalt für Medien NRW ist keine staatliche Schlussredaktion für mediale Inhalte. Sie maßen sich eine Prüfungs-, Bewertungs- und Korrekturkompetenz für politische Interviews an, die Ihnen von Verfassungs wegen nicht zusteht. Der Staat hat der Presse nicht die Kriterien für das zu diktieren, was er für ‚journalistische Sorgfalt' hält."</p>
+    <cite>RA Joachim Steinhöfel — Antwortschreiben an LFM NRW, berichtet durch Welt und Apollo News, Juni 2026</cite>
+  </blockquote>
+
+  <p>Steinhöfel warf der Behörde zudem vor, „reine Einschüchterungssemantik" einzusetzen — allein die Aufforderung, 300 Folgen rückwirkend zu prüfen, sei erkennbar nicht als ernsthafter Regulierungsauftrag gemeint, sondern als Signal.</p>
+
+  <h2>Chronologie: Von der Folge zur Frist</h2>
+
+  <div class="chronologie">
+    <div class="chron-item">
+      <div class="chron-datum">Ende April 2026</div>
+      <div class="chron-text">Berndt veröffentlicht viereinhalbstündiges Gespräch mit Höcke. Über sechs Millionen Aufrufe auf YouTube.</div>
+    </div>
+    <div class="chron-item">
+      <div class="chron-datum">15. Juni 2026</div>
+      <div class="chron-text">LFM NRW schreibt ungeskriptet media GmbH an. Nachträgliche Überarbeitung gefordert, Frist 30. Juni. Die Behörde gibt an, nach einem externen Hinweis tätig geworden zu sein.</div>
+    </div>
+    <div class="chron-item">
+      <div class="chron-datum">27.–28. Juni 2026</div>
+      <div class="chron-text">Berndt macht den Fall publik (Instagram-Video, X). Steinhöfel übernimmt Vertretung und antwortet schriftlich: „keinerlei rechtliche Relevanz".</div>
+    </div>
+    <div class="chron-item">
+      <div class="chron-datum">30. Juni 2026</div>
+      <div class="chron-text">Frist abgelaufen. Berndt hat nicht angepasst, nicht ergänzt. Was als nächstes kommt, entscheidet die LFM — formales Verwaltungsverfahren möglich.</div>
+    </div>
+  </div>
+
+  <h2>Das Strukturproblem: Wer ist Journalist — und wer entscheidet das?</h2>
+
+  <p>Berndt betont ausdrücklich, er sei kein Journalist. Sein Format heißt nicht zufällig „ungeskriptet" — lange, rohe Gespräche ohne nachträgliche Bearbeitung, bei denen Zuschauer sich selbst ein Bild machen sollen. Die LFM hält dagegen: Wer Themen auswählt, Gespräche führt und Inhalte veröffentlicht, gestalte ein Angebot „journalistisch-redaktionell" — unabhängig von der Selbstbeschreibung.</p>
+
+  <p>Das ist keine Kleinigkeit. Denn wenn die Medienbehörde definiert, was ein journalistisches Format ist — und damit, wer journalistische Sorgfaltspflichten einhalten muss — hat sie de facto eine Definitionsmacht über den Begriff der Presse. Das Grundgesetz weist diese Kompetenz nicht Verwaltungsbehörden zu.</p>
+
+  <div class="struktur-box">
+    <div class="struktur-label">Strukturproblem</div>
+    <p>Die LFM NRW ist eine staatsferne Anstalt des öffentlichen Rechts — konstruiert genau deshalb, um politische Einflussnahme auf Medien zu verhindern. Dass sie nach einem externen Hinweis tätig wurde, ihre Kriterien für „journalistische Sorgfalt" nicht öffentlich definiert sind, und dass ausgerechnet das reichweitenstärkste Höcke-Interview aller Zeiten ins Visier geriet, wirft eine Frage auf: Was passiert mit der Glaubwürdigkeit der Medienaufsicht, wenn der Eindruck entsteht, sie gehe vorrangig gegen regierungskritische Formate vor?</p>
+  </div>
+
+  <h2>Der Parallelfall: Nius gegen MABB</h2>
+
+  <p>Der Fall Berndt/LFM ist kein Einzelfall. Parallel läuft ein strukturell ähnliches Verfahren: Nius — das Portal des ehemaligen Bild-Chefredakteurs Julian Reichelt — wehrt sich gegen einen Bescheid der Medienanstalt Berlin-Brandenburg (MABB) vor dem Verwaltungsgericht Berlin. Verhandlung: Ende 2026 oder Anfang 2027. Auch hier: Steinhöfel als Anwalt. Auch hier: grundsätzliche Bedeutung für das Verhältnis von Medienaufsicht und freier Presse. Zwei Verfahren, zwei Anwälte — ein Muster.</p>
+
+  <h2>Was jetzt kommt</h2>
+
+  <p>Die LFM hat drei Optionen: das Verfahren einstellen, ein formales Verwaltungsverfahren eröffnen — oder stillschweigend nichts tun. Letzteres wäre politisch bequem, würde aber die Glaubwürdigkeit der eigenen Frist untergraben. Ein Verwaltungsverfahren gegen Berndt würde den Fall in eine andere Dimension heben: Klagen, Instanzen, Grundsatzurteile.</p>
+
+  <p>Berndt selbst hat angekündigt, seinem nächsten Beitrag das Thema zu widmen. Sechs Millionen Aufrufe als Ausgangspunkt — die Öffentlichkeit für diese Debatte ist da. Die Frage ist, ob die Institutionen bereit sind, sie zu führen.</p>
+
+  <p>Eine Behörde, die „der Meinungsfreiheit verpflichtet" ist und gleichzeitig Podcaster auffordert, Gespräche nachträglich umzuschreiben: Das ist kein Widerspruch. Das ist Programm.</p>
+
+  <footer class="artikel-footer">
+    <h3>Weiterführende Analysen</h3>
+    <ul class="weiter-links">
+      <li><a href="pressefreiheit-selektivitaet.html">Selektive Pressefreiheit: Welche Angriffe auf Medien der ÖRR meldet — und welche nicht</a></li>
+      <li><a href="asymmetrie-oerr-kritik.html">Die kommunikative Asymmetrie: Wie ÖRR-Kritik delegitimiert statt beantwortet wird</a></li>
+      <li><a href="ben-berndt-medienfreiheit.html">Ben Berndt / ungeskriptet: Drei Eskalationsstufen der Medienbehörde</a></li>
+    </ul>
+
+    <div class="redakt-hinweis">
+      Redaktionshinweis: Alle zitierten Fakten basieren auf öffentlich zugänglichen Quellen: Welt, t-online, Apollo News, Übermedien, öffentliche Statements von Ben Berndt auf X und Instagram. Das Steinhöfel-Schreiben lag der Welt vor; Zitate daraus wurden durch mehrere Medien bestätigt. Stand: 30. Juni 2026.
+    </div>
+  </footer>
+
+</main>
+
+</body>
+</html>
