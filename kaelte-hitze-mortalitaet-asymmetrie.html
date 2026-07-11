@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kälte vs. Hitze: Die verschwiegene Mortalitätsstatistik | Rundfunkkritik.de</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Pro:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf7f2;
+    --text: #1c1c1c;
+    --nav: #1a2744;
+    --navtext: #f5f0e8;
+    --accent: #c9a84c;
+    --boxbg: #f5edda;
+    --boxtext: #7a5f1a;
+    --highlight: #7a5200;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+  }
+  nav {
+    position: sticky;
+    top: 0;
+    background: var(--nav);
+    padding: 1rem 2rem;
+    z-index: 100;
+  }
+  nav a {
+    color: var(--navtext);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    margin-right: 1.5rem;
+  }
+  main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 0.4rem;
+    color: var(--text);
+  }
+  .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: #6b6b6b;
+    margin-bottom: 2rem;
+  }
+  .lead {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+  .box {
+    background: var(--boxbg);
+    color: var(--boxtext);
+    border-left: 3px solid var(--accent);
+    padding: 1rem 1.3rem;
+    margin: 1.5rem 0;
+    font-size: 1.02rem;
+  }
+  .box strong { color: var(--boxtext); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 1rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid #d9cfb8;
+  }
+  th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--highlight);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight { color: var(--highlight); font-weight: 600; }
+  .source-tier {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: #8a7a4a;
+    display: block;
+    margin-top: 0.3rem;
+  }
+  a { color: var(--highlight); }
+  .quellen {
+    font-size: 0.92rem;
+    background: var(--boxbg);
+    padding: 1.3rem 1.5rem;
+    border-radius: 4px;
+    margin-top: 2.5rem;
+  }
+  .quellen h2 { border: none; margin-top: 0; font-size: 1.2rem; }
+  .quellen ul { padding-left: 1.2rem; }
+  .quellen li { margin-bottom: 0.5rem; }
+  .weiterfuehrend {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--accent);
+  }
+  .weiterfuehrend h2 { border: none; margin-top: 0; }
+  .weiterfuehrend ul { list-style: none; padding: 0; }
+  .weiterfuehrend li { margin-bottom: 0.6rem; }
+  .weiterfuehrend a { font-weight: 600; }
+  footer {
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #8a8a8a;
+    padding: 2rem 0;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Startseite</a>
+  <a href="oerr-aufreger-liste.html">Fälle</a>
+  <a href="oerr-decoder.html">Decoder</a>
+</nav>
+
+<main>
+  <h1>Kälte vs. Hitze: Die verschwiegene Mortalitätsstatistik</h1>
+  <div class="meta">Rundfunkkritik.de · Fall-Dokumentation</div>
+
+  <p class="lead">Wissenschaftliche Studien und eine Antwort der Bundesregierung belegen: Kälte ist für ein Vielfaches mehr Todesfälle verantwortlich als Hitze. Während Hitzetote regelmäßig durch RKI-Schätzungen und ÖRR-Berichterstattung öffentlich gemacht werden, existiert für Kältetote weder eine systematische amtliche Erfassung noch eine vergleichbare mediale Präsenz.</p>
+
+  <h2>Dokumentierte Fakten</h2>
+  <p>Die bislang größte Studie zum Zusammenhang zwischen Temperatur und Sterblichkeit (Gasparrini et al., <em>The Lancet</em>, 2015) wertete 74 Millionen Todesfälle in 13 Ländern über den Zeitraum 1985–2012 aus. Ergebnis: Kälte war für <span class="highlight">7,29 Prozent</span> aller Todesfälle verantwortlich, Hitze für <span class="highlight">0,42 Prozent</span> – ein Verhältnis von etwa 20 zu 1.</p>
+
+  <p>Eine globale Folgestudie (43 Länder, Zeitraum 2000–2019, veröffentlicht in <em>The Lancet Planetary Health</em>) bestätigte den Befund: Kälte ist demnach um den Faktor 10 gefährlicher als Hitze. Jährlich sterben weltweit rund 5 Millionen Menschen an temperaturbedingten Ursachen, der weit überwiegende Teil an Kälte.</p>
+
+  <div class="box">
+    <strong>Primärquelle – Bundestagsdrucksache:</strong> Auf eine parlamentarische Anfrage antwortete die Bundesregierung wörtlich: <em>„Kälte ist bezüglich der auf Extremtemperaturen zurückzuführenden Todesfälle 10-mal gefährlicher als Hitze."</em> Zugleich erklärte sie: <em>„Analysen zu kältebedingten Sterbefällen liegen der Bundesregierung nicht vor."</em>
+    <span class="source-tier">Quelle: Deutscher Bundestag, Drucksache 20/8063, Antwort der Bundesregierung (Fragen 3–4)</span>
+  </div>
+
+  <table>
+    <tr><th>Kategorie</th><th>Anteil / Verhältnis</th><th>Quelle</th></tr>
+    <tr><td>Kältebedingte Todesfälle (global)</td><td>7,29 % aller Todesfälle</td><td>Lancet 2015</td></tr>
+    <tr><td>Hitzebedingte Todesfälle (global)</td><td>0,42 % aller Todesfälle</td><td>Lancet 2015</td></tr>
+    <tr><td>Verhältnis Kälte : Hitze (Mortalität)</td><td>ca. 10:1 bis 20:1</td><td>Lancet 2015 / Lancet Planetary Health 2021</td></tr>
+    <tr><td>Systematische RKI-Erfassung Hitzetote</td><td>vorhanden (laufende Schätzungen)</td><td>RKI / ZDFheute</td></tr>
+    <tr><td>Systematische Bundeserfassung Kältetote</td><td>nicht vorhanden</td><td>Bundestagsdrucksache 20/8063</td></tr>
+  </table>
+
+  <h2>Erfasste Kältetote in Deutschland (Teilbereich Obdachlosigkeit)</h2>
+  <p>Eine bundesweite amtliche Gesamtstatistik zu kältebedingten Todesfällen existiert nicht. Für den Teilbereich obdachloser Menschen erfasst die Bundesarbeitsgemeinschaft Wohnungslosenhilfe (BAGW) Fälle auf Basis von Medienauswertung – nach eigener Angabe eine Mindestzahl:</p>
+
+  <table>
+    <tr><th>Winter</th><th>Erfasste Kältetote (Obdachlose)</th></tr>
+    <tr><td>2024/2025</td><td>mindestens 7</td></tr>
+    <tr><td>2023/2024 &amp; 2022/2023</td><td>je 6 (laut BAGW-Reihe)</td></tr>
+  </table>
+  <span class="source-tier">Quelle: BAG Wohnungslosenhilfe, zitiert nach Statista, Stand Mai 2025</span>
+
+  <h2>Wissenschaftlich dokumentierter Kontext: Angstkommunikation</h2>
+  <p>Unabhängig von der Frage, welches Medium wie über welche Temperaturextreme berichtet, ist die Wirkung angstbetonter Gesundheitskommunikation eigenständig erforscht. Eine im Rahmen der Risikokommunikationsforschung während der Corona-Pandemie durchgeführte Studie (Monitor Versorgungsforschung, Befragung psychisch vorerkrankter Menschen, drei Erhebungswellen 2020–2021) kommt zu dem Ergebnis, dass <span class="highlight">Unzufriedenheit mit verfügbaren Informationen mit höheren Stress-, Angst- und Depressionswerten korreliert</span> und Objektivität der Berichterstattung als zentraler Faktor benannt wird.</p>
+
+  <div class="box">
+    Kommunikationswissenschaftliche Forschung zur allgemeinen „Angstkommunikation" in Massenmedien (u. a. Altheide 1997/2006) beschreibt zudem ein sogenanntes „Problem Frame": Medien griffen zunehmend Themen wie Kriminalität, Krankheit, Umweltkatastrophen und Terror unter dem Aspekt der Bedrohung auf – mit dem in der Forschung diskutierten Risiko, dass öffentlicher Diskurs „in eine Panik verfällt, so dass die Angst lähmend wird".
+    <span class="source-tier">Quelle: Universität Münster, Institut für Kommunikationswissenschaft, Forschungsprojekt „Das Verhältnis von Angst und Medienberichterstattung"</span>
+  </div>
+
+  <p>Diese Forschungslage stellt keinen Bewertungsmaßstab für einzelne ÖRR-Beiträge dar, sondern dokumentiert den wissenschaftlichen Diskussionsstand zur Wirkung angstbasierter Kommunikationsformen als eigenständigen Fakt.</p>
+
+  <h2>Named-Source: Unbestätigte Kritik (Kategorie 3)</h2>
+  <p>Der SWR-Beitrag mit dem Titel „Nach Hitzewelle: Bestatter sind im Dauereinsatz" wurde von der Meinungsseite ansage.org als Beispiel für ein aus deren Sicht unausgewogenes Framing kritisiert, das Kältetote im Vergleich medial nicht in ähnlicher Form aufgreife. Diese Einordnung stammt von einer einzelnen, klar erkennbaren Meinungsquelle und ist als solche nicht unabhängig verifiziert; der SWR-Beitrag selbst konnte im Rahmen dieser Recherche nicht im Volltext eingesehen werden.</p>
+
+  <div class="quellen">
+    <h2>Quellenlage im Überblick</h2>
+    <ul>
+      <li><strong>Dokumentierte Fakten:</strong> Lancet-Studien 2015 &amp; 2021, Bundestagsdrucksache 20/8063, BAGW-Statistik</li>
+      <li><strong>Qualitätsquellen-bestätigt:</strong> Forschung zu Angstkommunikation (Uni Münster), Studie zu Risikokommunikation (Monitor Versorgungsforschung)</li>
+      <li><strong>Named-Source, unbestätigt:</strong> Framing-Kritik am SWR-Beitrag durch ansage.org (Betroffenenstatus/Meinungsseite, Primärbeitrag nicht eingesehen)</li>
+    </ul>
+  </div>
+
+  <div class="weiterfuehrend">
+    <h2>Weiterführende Analysen</h2>
+    <ul>
+      <li><a href="klima-panik-oerr.html">→ Alarmistische Klimaberichterstattung: Muster und Wiederholung</a></li>
+      <li><a href="oerr-klimaexperten.html">→ Der wiederkehrende Expertenkreis in der Klimaberichterstattung</a></li>
+      <li><a href="asymmetrie-oerr-kritik.html">→ Kommunikative Asymmetrie im öffentlich-rechtlichen Rundfunk</a></li>
+    </ul>
+  </div>
+</main>
+
+<footer>Rundfunkkritik.de — Kein Kommentar. Keine Meinung. Nur Fälle.</footer>
+
+</body>
+</html>
