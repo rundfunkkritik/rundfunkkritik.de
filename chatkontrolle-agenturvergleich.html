@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>"Chatkontrolle": Eine Agenturmeldung, drei Fassungen | Rundfunkkritik.de</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Crimson+Pro:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf7f2;
+    --text: #1c1c1c;
+    --nav: #1a2744;
+    --nav-text: #f5f0e8;
+    --accent: #c9a84c;
+    --badge-bg: #f5edda;
+    --badge-text: #7a5f1a;
+    --highlight: #7a5200;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Crimson Pro', serif;
+    font-size: 19px;
+    line-height: 1.65;
+  }
+  nav {
+    position: sticky;
+    top: 0;
+    background: var(--nav);
+    color: var(--nav-text);
+    padding: 14px 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    z-index: 10;
+  }
+  nav a { color: var(--nav-text); text-decoration: none; }
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 60px;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2.1em;
+    line-height: 1.25;
+    margin-bottom: 6px;
+    color: var(--text);
+  }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--highlight);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+  }
+  .dateline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #6b6b6b;
+    margin-bottom: 28px;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 1.4em;
+    margin-top: 2.2em;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 6px;
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 1.15em;
+    margin-top: 1.6em;
+    color: var(--text);
+  }
+  .badge {
+    display: inline-block;
+    background: var(--badge-bg);
+    color: var(--badge-text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    padding: 3px 9px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+  }
+  strong { color: var(--highlight); }
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 1.2em 0;
+    padding: 4px 0 4px 18px;
+    font-style: italic;
+    color: #333;
+  }
+  .source-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #6b6b6b;
+    margin-top: 4px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: 0.92em;
+  }
+  th, td {
+    border: 1px solid #ddd0b8;
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: var(--badge-bg);
+    color: var(--badge-text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .cell-missing { color: #a33; font-weight: 600; }
+  .cell-present { color: #2a6b3a; }
+  hr {
+    border: none;
+    border-top: 1px solid #e3d9c2;
+    margin: 2.4em 0;
+  }
+  .weiterfuehrend {
+    margin-top: 3em;
+    padding-top: 1.2em;
+    border-top: 2px solid var(--accent);
+  }
+  .weiterfuehrend h3 {
+    font-size: 1em;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--highlight);
+  }
+  .weiterfuehrend ul {
+    list-style: none;
+    padding: 0;
+  }
+  .weiterfuehrend li {
+    margin-bottom: 8px;
+  }
+  .weiterfuehrend a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+  }
+  a { color: inherit; }
+  footer {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+
+<nav><a href="index.html">Rundfunkkritik.de</a> — Kein Kommentar. Keine Meinung. Nur Fälle.</nav>
+
+<main>
+
+  <div class="kicker">Fallanalyse · Agenturvergleich</div>
+  <h1>"Chatkontrolle": Eine Agenturmeldung, drei Fassungen</h1>
+  <div class="dateline">Fall dokumentiert am 11.07.2026 · Ereigniszeitraum: 07.–09.07.2026</div>
+
+  <span class="badge">Kategorie 1 — Primärvergleich mehrerer Volltextquellen</span>
+
+  <p>Am 9. Juli 2026 stimmte das EU-Parlament nach einem umstrittenen Eilverfahren grundsätzlich für die Wiedereinführung einer befristeten Ausnahme von EU-Datenschutzregeln (sog. "Chatkontrolle"). Die Nachrichtenagentur dpa verbreitete dazu eine Meldung, die von zahlreichen deutschen Medien wortgleich übernommen wurde. ARD (tagesschau.de) und ZDF (zdfheute.de) berichteten ebenfalls — auf unterschiedliche Weise. Dieser Fall dokumentiert die Unterschiede anhand der Originaltexte, ohne sie zu bewerten.</p>
+
+  <h2>Die dpa-Ausgangsmeldung</h2>
+  <p>Die dpa-Meldung liegt in identischem Wortlaut u. a. bei t-online, Tagesspiegel, Handelsblatt und der Westdeutschen Zeitung vor. Sie enthält folgende Kernelemente:</p>
+  <ul>
+    <li>Namentliche Nennung von EU-Parlamentspräsidentin <strong>Roberta Metsola</strong> als Initiatorin des ungewöhnlichen Verfahrens ("brachte das Thema durch ein unübliches Vorgehen aber wieder zurück auf die Agenda").</li>
+    <li>Das genaue Abstimmungsergebnis: <strong>276 Stimmen für einen Stopp, 286 dagegen, 30 Enthaltungen</strong>, von insgesamt 592 abstimmenden Abgeordneten (bei 719 Mandaten).</li>
+    <li>Drei namentlich zugeordnete Kritiker-Zitate:
+      <blockquote>AfD-Europaabgeordnete Mary Khan sprach von einem "demokratischen Skandal".<div class="source-note">Kategorie 3 — benannte Politikeräußerung</div></blockquote>
+      <blockquote>Der Grünen-Delegationsleiter Erik Marquardt: Metsola habe "ihre Rolle massiv überschritten".<div class="source-note">Kategorie 3 — benannte Politikeräußerung</div></blockquote>
+      <blockquote>Die Europaabgeordneten Martin Sonneborn und Sibylle Berg (Die Partei) hatten das Eilverfahren schriftlich als "unzulässig" kritisiert.<div class="source-note">Kategorie 3 — benannte Politikeräußerung</div></blockquote>
+    </li>
+  </ul>
+
+  <h2>Die ZDF-Fassung</h2>
+  <p>zdfheute.de veröffentlichte am 09.07.2026 einen Artikel mit der Quellenangabe "Quelle: dpa". Der Text folgt der Agenturmeldung, endet jedoch nach den Zitaten von Mary Khan (AfD) und der Grünen-Fraktion. Die Zitate von Erik Marquardt ("massiv überschritten") und von Sonneborn/Berg ("unzulässig") sind in der veröffentlichten Fassung nicht enthalten.</p>
+  <p>Der Artikel bettet zudem prominent, direkt nach der Einleitung, ein Video-Zitat der Missbrauchsbeauftragten der Bundesregierung, Kerstin Claus, ein: Ein Aus der Chatkontrolle nehme den Ermittlungsbehörden "ein gravierendes Instrument im Kampf gegen sexuelle Gewalt". Eine Gegenposition (Chaos Computer Club: die Regelung würde "eine Überwachungsinfrastruktur ausrollen, die es so noch nie gegeben hat") ist im Artikel ebenfalls verlinkt, jedoch weiter unten platziert.</p>
+
+  <h2>Die tagesschau.de-Fassung</h2>
+  <p>Der tagesschau.de-Artikel ("Scan-Erlaubnis nimmt Hürde im EU-Parlament", Stand 09.07.2026, 17:44 Uhr) trägt die Autorenzeile "Von Kathrin Schmid, ARD Brüssel" und ist — anders als der ZDF-Artikel — ein eigenständig formulierter Text, keine gekürzte Agenturübernahme.</p>
+  <p>Im Vergleich zur dpa-Meldung und zur ZDF-Fassung fehlen in diesem Text:</p>
+  <ul>
+    <li>Die namentliche Nennung von Roberta Metsola als Initiatorin des Verfahrens (stattdessen: "Nach Druck von den Mitgliedsstaaten und der Kommission stimmte es nun ... ab").</li>
+    <li>Jede konkrete Abstimmungszahl.</li>
+    <li>Alle drei Kritiker-Zitate (Khan, Marquardt, Sonneborn/Berg) — keines davon ist im Text enthalten.</li>
+  </ul>
+  <p>Stattdessen verwendet der Artikel den Begriff <strong>"Chatkontrolle light"</strong> — eine Formulierung, die in keiner der anderen geprüften Quellen (dpa, ZDF, t-online, Tagesspiegel, Handelsblatt, WZ, ORF) auftaucht. Kritik wird in einer anonymisierten Pro-Contra-Struktur ("Befürworter … Gegner …") ohne einzelne Namensnennung wiedergegeben.</p>
+  <p>Positiv zu vermerken: Der Artikel verlinkt intern auf die vorausgegangene Meldung vom 26.03.2026 ("EU-Parlament stoppt freiwillige Chatkontrollen") und bildet damit den zeitlichen Vorlauf ab.</p>
+
+  <h2>Gegenüberstellung</h2>
+  <table>
+    <tr>
+      <th>Element</th>
+      <th>dpa-Original</th>
+      <th>ZDF</th>
+      <th>tagesschau.de</th>
+    </tr>
+    <tr>
+      <td>Textart</td>
+      <td>Agenturmeldung</td>
+      <td>gekürzte Agenturübernahme</td>
+      <td>eigener Text</td>
+    </tr>
+    <tr>
+      <td>Metsola namentlich als Initiatorin</td>
+      <td class="cell-present">enthalten</td>
+      <td class="cell-present">enthalten</td>
+      <td class="cell-missing">fehlt</td>
+    </tr>
+    <tr>
+      <td>Abstimmungszahlen</td>
+      <td class="cell-present">enthalten</td>
+      <td class="cell-present">enthalten</td>
+      <td class="cell-missing">fehlt</td>
+    </tr>
+    <tr>
+      <td>Zitat Mary Khan (AfD)</td>
+      <td class="cell-present">enthalten</td>
+      <td class="cell-present">enthalten</td>
+      <td class="cell-missing">fehlt</td>
+    </tr>
+    <tr>
+      <td>Zitat Erik Marquardt (Grüne)</td>
+      <td class="cell-present">enthalten</td>
+      <td class="cell-missing">fehlt</td>
+      <td class="cell-missing">fehlt</td>
+    </tr>
+    <tr>
+      <td>Zitat Sonneborn/Berg</td>
+      <td class="cell-present">enthalten</td>
+      <td class="cell-missing">fehlt</td>
+      <td class="cell-missing">fehlt</td>
+    </tr>
+    <tr>
+      <td>Begriff "Chatkontrolle light"</td>
+      <td class="cell-missing">nicht vorhanden</td>
+      <td class="cell-missing">nicht vorhanden</td>
+      <td class="cell-present">eigene Wortschöpfung</td>
+    </tr>
+  </table>
+
+  <h2>Öffentliche Reaktion</h2>
+  <p>Unter dem offiziellen Mastodon-Post von @tagesschau zum Artikel kommentierte der Nutzer @mxk@hachyderm.io am 09.07.2026: "ihr habt massive und breitflächige Privatsphäreeingriffe ohne nachgewiesenen Nutzen falsch geschrieben."<span class="source-note"> Kategorie 3 — Nutzerkommentar unter dem offiziellen Kanal, als Einzelmeinung gekennzeichnet.</span></p>
+
+  <h2>Einordnung</h2>
+  <p>Alle drei Texte berichten über denselben Vorgang und leugnen ihn nicht. Der Unterschied liegt in der Konkretisierung: Wer das Verfahren angestoßen hat, wie knapp die Abstimmung ausfiel und welche Abgeordneten mit Namen widersprochen haben, ist bei dpa und (teilweise) bei ZDF nachlesbar, im tagesschau.de-Text jedoch durchgängig nicht. Ob das journalistischer Absicht, redaktioneller Kürzung aus Platzgründen oder anderen Ursachen entspringt, lässt sich aus den Texten allein nicht ableiten — dokumentiert wird hier nur der Befund selbst.</p>
+
+  <div class="weiterfuehrend">
+    <h3>Weiterführende Analysen</h3>
+    <ul>
+      <li><a href="asymmetrie-oerr-kritik.html">Asymmetrie in der ÖRR-Kritik: Muster und Gegenbeispiele</a></li>
+      <li><a href="oerr-netzwerke-verflechtungen.html">Netzwerke und Verflechtungen im öffentlich-rechtlichen System</a></li>
+      <li><a href="oerr-aufreger-liste.html">Übersicht: Alle dokumentierten Fälle</a></li>
+    </ul>
+  </div>
+
+</main>
+
+<footer>Rundfunkkritik.de — Dokumentation, keine Meinung.</footer>
+
+</body>
+</html>
