@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARD und das Zentrum für Politische Schönheit: Zahlen, loben, gestört werden | Rundfunkkritik.de</title>
+<meta name="description" content="Drei dokumentierte Fälle zeigen eine bemerkenswerte Nähe zwischen ARD/WDR und dem Aktivistenkollektiv Zentrum für Politische Schönheit: eine Lizenzzahlung, ein wohlwollender Fernsehbeitrag und eine Störaktion beim ARD-Sommerinterview mit Alice Weidel.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Crimson+Pro:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf7f2;
+    --text: #1c1c1c;
+    --nav-bg: #1a2744;
+    --nav-text: #f5f0e8;
+    --accent: #c9a84c;
+    --box-bg: #f5edda;
+    --box-text: #7a5f1a;
+    --highlight: #7a5200;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Crimson Pro', serif;
+    font-size: 19px;
+    line-height: 1.7;
+  }
+  nav {
+    background: var(--nav-bg);
+    padding: 18px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  nav a {
+    color: var(--nav-text);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    margin-right: 20px;
+    letter-spacing: 0.3px;
+  }
+  nav a:hover { color: var(--accent); }
+  .nav-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--nav-text) !important;
+  }
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 50px 24px 80px;
+  }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--highlight);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 38px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+  .subtitle {
+    font-size: 21px;
+    color: #444;
+    font-style: italic;
+    margin-bottom: 28px;
+    border-left: 3px solid var(--accent);
+    padding-left: 16px;
+  }
+  .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #6a6a6a;
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e0d8c8;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 26px;
+    margin-top: 48px;
+    margin-bottom: 18px;
+    color: var(--text);
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 28px;
+    margin-bottom: 12px;
+    color: var(--highlight);
+  }
+  p { margin-bottom: 18px; }
+  strong { color: var(--highlight); font-weight: 700; }
+  .case-block {
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    padding: 24px 26px;
+    margin: 24px 0 32px;
+    background: rgba(201, 168, 76, 0.04);
+  }
+  .case-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--highlight);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--box-bg);
+    color: var(--box-text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin-left: 8px;
+    letter-spacing: 0.3px;
+  }
+  .source-line {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #6a6a6a;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed #d8cdb0;
+  }
+  .fairness-box {
+    background: var(--box-bg);
+    border-left: 4px solid var(--highlight);
+    padding: 22px 26px;
+    margin: 36px 0;
+    border-radius: 3px;
+  }
+  .fairness-box h3 {
+    margin-top: 0;
+    color: var(--highlight);
+  }
+  .gap-note {
+    font-size: 16px;
+    font-style: italic;
+    color: #6a6a6a;
+    border-left: 3px solid #c8bda0;
+    padding-left: 14px;
+    margin: 20px 0;
+  }
+  footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+    border-top: 2px solid var(--accent);
+  }
+  footer h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+  footer ul { list-style: none; }
+  footer li { margin-bottom: 10px; }
+  footer a {
+    color: var(--highlight);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    border-bottom: 1px solid var(--accent);
+  }
+  footer a:hover { color: var(--text); }
+  .principle {
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #8a8a8a;
+    margin-top: 30px;
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div>
+    <a href="index.html" class="nav-brand">Rundfunkkritik.de</a>
+  </div>
+  <div>
+    <a href="index.html">Start</a>
+    <a href="oerr-aufreger-liste.html">Aufreger-Liste</a>
+    <a href="oerr-netzwerke-verflechtungen.html">Verflechtungen</a>
+  </div>
+</nav>
+
+<main>
+  <div class="kicker">Verflechtungen &amp; Doppelrollen</div>
+  <h1>ARD und das Zentrum für Politische Schönheit: Zahlen, loben, gestört werden</h1>
+  <p class="subtitle">Drei voneinander unabhängige Fälle zeigen eine bemerkenswerte Nähe zwischen ARD/WDR und dem Aktivistenkollektiv „Zentrum für Politische Schönheit" (ZPS) — als Lizenzgeber, als Berichtsgegenstand und als Störer einer eigenen Sendung.</p>
+  <div class="meta">Rundfunkkritik.de · Fall-Dokumentation · Kein Kommentar. Keine Meinung. Nur Fälle.</div>
+
+  <p>Das „Zentrum für Politische Schönheit" (ZPS) ist ein 2008/2009 gegründetes Aktionskünstler-Kollektiv unter Leitung von Philipp Ruch, das sich seit Jahren vor allem mit Anti-AfD-Aktionen einen Namen macht. Drei Vorgänge aus unterschiedlichen Jahren zeigen, dass die Beziehung zwischen dem Kollektiv und der ARD-Senderfamilie komplexer ist, als es die jeweiligen Einzelmeldungen vermuten lassen.</p>
+
+  <h2>Fall 1: Die Lizenzzahlung</h2>
+  <div class="case-block">
+    <div class="case-number">BELEG-BAUSTEIN 1 <span class="badge">Kategorie 1</span></div>
+    <p>Im ARD-Produzentenbericht 2016 taucht ein „Kunstwerk Menschheit" als WDR-Lizenzgeber auf — in einer Liste von Firmen, Organisationen und Einzelpersonen, bei denen ARD-Anstalten Lizenzeinkäufe für Film- oder Tonmaterial getätigt haben. Nach Angaben von Apollo News handelt es sich dabei um den Verein hinter dem „Zentrum für Politische Schönheit". Auf Nachfrage bestätigte der WDR den Vorgang: Es habe sich um eine <strong>„Lizenzzahlung in mittlerer dreistelliger Höhe"</strong> gehandelt. Zu weiteren Details der Geschäftsbeziehung äußere man sich „grundsätzlich nicht". Das ZPS selbst reagierte nach Angaben von Apollo News nicht auf eine Anfrage zu dem Vorgang.</p>
+    <div class="source-line">Quelle: Apollo News, Recherche zum Finanzierungsnetzwerk des ZPS (2026)</div>
+  </div>
+
+  <h2>Fall 2: Der wohlwollende Beitrag</h2>
+  <div class="case-block">
+    <div class="case-number">BELEG-BAUSTEIN 2 <span class="badge">Kategorie 1/2</span></div>
+    <p>Die WDR-Sendung „Lokalzeit aus Dortmund" berichtete über den Besuch von ZPS-Aktivisten mit ihrem Anti-AfD-Bus „Adenauer SRP+" an einer Gesamtschule in Hamm. Der Beitrag stellte die Schulaktion durchweg lobend dar. Auf Nachfrage von Apollo News, ob eine „ausschließlich positive Darstellung einseitiger politischer Agitation" mit dem Objektivitätsgebot des WDR vereinbar sei, antwortete die Pressestelle, im Beitrag werde „erwähnt und eingeordnet, dass das Zentrum zum Teil umstrittene Aktionen macht". Eine Durchsicht des Beitrags durch Apollo News ergab, dass diese Einordnung an keiner Stelle stattfindet. Auch eine im Bus gezeigte Alice-Weidel-Figur in einer nachgestellten Gefängniszelle blieb im Beitrag unerwähnt — der WDR erklärte dazu, die Figur habe „in der Unterrichtseinheit keine Rolle" gespielt.</p>
+    <div class="source-line">Quelle: Apollo News, Recherche und WDR-Presseanfrage (2026)</div>
+  </div>
+
+  <h2>Fall 3: Die Störaktion</h2>
+  <div class="case-block">
+    <div class="case-number">BELEG-BAUSTEIN 3 <span class="badge">Kategorie 1</span></div>
+    <p>Beim ARD-„Sommerinterview" mit AfD-Co-Chefin Alice Weidel am 20. Juli 2025 im Berliner Regierungsviertel wurde das live übertragene Gespräch durch Trillerpfeifen, Hupen, Sprechchöre und laute Musik aus einem Lautsprecherbus gestört, sodass Weidels Antworten für Interviewer Markus Preiß streckenweise kaum verständlich waren. Die Polizei beendete die nicht angemeldete Begleit-Demonstration erst gegen Ende des Gesprächs; sie erklärte später, das Spannungsfeld zwischen Versammlungsfreiheit und öffentlicher Ordnung „sorgfältig abgewogen" zu haben. Nach eigenen Angaben stand das ZPS hinter der Aktion. Die ARD kündigte an, „aus der Sendung Schlüsse zu ziehen und in Zukunft Vorkehrungen zu treffen".</p>
+    <p>ZPS-Gründer Philipp Ruch sagte im Podcast von Bild-Redakteur Paul Ronzheimer, die Aktion habe „in enger Absprache" mit der Berliner Polizei stattgefunden: <strong>„Wir konnten dort eigentlich machen, was wir vorhatten."</strong> Man habe den „Fernsehmoment des Jahres" „in Kooperation" mit ARD und AfD geschaffen.</p>
+    <div class="source-line">Quellen: t-online, NZZ, Monopol Magazin, Handelsblatt (Juli 2025)</div>
+  </div>
+
+  <h2>Das Muster</h2>
+  <p>Die drei Fälle stehen für sich und wurden von unterschiedlichen Redaktionen zu unterschiedlichen Zeitpunkten dokumentiert. In der Zusammenschau ergibt sich ein Bild, in dem dieselbe Senderfamilie mit derselben Aktivistengruppe drei sehr unterschiedliche Rollen verbindet: als zahlender Lizenznehmer, als wohlwollend berichtendes Medium und als Ziel einer Störaktion, ohne dass die erste Beziehung in der Berichterstattung über die dritte je erwähnt wurde.</p>
+
+  <div class="fairness-box">
+    <h3>Fairness-Hinweis: Die Gegenposition</h3>
+    <p>Philipp Ruch verteidigte die Störaktion beim Sommerinterview offensiv als legitime politische Kunst gegen eine nach eigener Einschätzung erstarkende AfD, die zum Zeitpunkt der Aktion in Umfragen bei rund 25 Prozent lag: „Diese Partei braucht nicht die politische Kunst, um richtig 'groß' zu werden." Er bezeichnete Weidel als „Wortführerin des politischen Rechtsextremismus in Deutschland" und wies den Vorwurf zurück, die Störung habe der AfD mehr genutzt als geschadet. Ruch betonte zudem, das ZPS erhalte „nicht einen Cent" staatliche Förderung — eine Aussage, die sich nach Baustein 1 auf Fördermittel bezieht und die dort dokumentierte Lizenzzahlung (keine Förderung im engeren Sinne) nicht ausschließt.</p>
+  </div>
+
+  <div class="gap-note">Transparenter Hinweis: Alle drei Fälle stützen sich überwiegend auf Recherchen einzelner Medien (v. a. Apollo News für Fall 1 und 2). Eine zweite, unabhängige Bestätigung der WDR-Zitate liegt nicht vor. Für Fall 3 existieren mehrere unabhängige Quellen (t-online, NZZ, Monopol, Handelsblatt), die im Kern übereinstimmen.</div>
+
+  <p class="principle">Kein Kommentar. Keine Meinung. Nur Fälle.</p>
+</main>
+
+<footer>
+  <h3>Weiterführende Analysen</h3>
+  <ul>
+    <li><a href="oerr-netzwerke-verflechtungen.html">ÖRR-Netzwerke und Verflechtungen</a></li>
+    <li><a href="asymmetrie-oerr-kritik.html">Asymmetrie in der ÖRR-Kritik</a></li>
+    <li><a href="oerr-aufreger-liste.html">Die Aufreger-Liste: Weitere dokumentierte Fälle</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
