@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wenn jeder Sommer untergeht – Rundfunkkritik.de</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #faf7f2;
+    color: #1c1c1c;
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.75;
+  }
+
+  /* NAV */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #1a2744;
+    padding: 0 2rem;
+  }
+  .site-header nav {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+  }
+  .site-header .logo {
+    color: #f5f0e8;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .site-header .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  .site-header .nav-links a {
+    color: #f5f0e8;
+    text-decoration: none;
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.95rem;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+  .site-header .nav-links a:hover { opacity: 1; }
+
+  /* LAYOUT */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* HEADER */
+  .article-header {
+    padding: 3.5rem 0 2rem;
+    border-bottom: 2px solid #c9a84c;
+    margin-bottom: 2.5rem;
+  }
+  .rubrik {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: #c9a84c;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .article-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 900;
+    line-height: 1.18;
+    margin-bottom: 1.1rem;
+    color: #1c1c1c;
+  }
+  .article-header .standfirst {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #3a3a3a;
+    font-style: italic;
+    border-left: 3px solid #c9a84c;
+    padding-left: 1rem;
+  }
+  .meta {
+    margin-top: 1.2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: #888;
+    letter-spacing: 0.06em;
+  }
+
+  /* DISCLAIMER */
+  .disclaimer {
+    background: #f5edda;
+    border: 1px solid #c9a84c;
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.92rem;
+    color: #7a5f1a;
+    line-height: 1.55;
+  }
+
+  /* FLIESSTEXT */
+  .article-body p {
+    margin-bottom: 1.4rem;
+  }
+  .article-body strong {
+    color: #7a5200;
+    font-weight: 600;
+  }
+
+  /* FALL-KARTEN */
+  .fall-container {
+    margin: 2.5rem 0;
+  }
+  .fall-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #c9a84c;
+    margin-bottom: 0.5rem;
+  }
+  .fall-card {
+    border: 1px solid #c9a84c;
+    border-radius: 4px;
+    padding: 1.4rem 1.5rem;
+    margin-bottom: 1.5rem;
+    background: #fdfaf5;
+  }
+  .fall-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: #1c1c1c;
+  }
+  .fall-card .quelle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: #888;
+    margin-top: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* ZITAT-BLOCK */
+  .zitat-block {
+    border-left: 4px solid #c9a84c;
+    padding: 0.8rem 1.2rem;
+    margin: 1.8rem 0;
+    background: #f5edda;
+    border-radius: 0 4px 4px 0;
+  }
+  .zitat-block p {
+    font-style: italic;
+    color: #3a2a00;
+    margin-bottom: 0.3rem !important;
+  }
+  .zitat-block .zitat-quelle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: #888;
+    font-style: normal;
+  }
+
+  /* STRUKTURARGUMENT */
+  .struktur-box {
+    background: #f5edda;
+    border-radius: 4px;
+    padding: 1.4rem 1.5rem;
+    margin: 2rem 0;
+  }
+  .struktur-box h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #7a5200;
+    margin-bottom: 0.7rem;
+  }
+  .struktur-box p {
+    font-size: 1rem;
+    color: #3a3a3a;
+    margin-bottom: 0 !important;
+  }
+
+  /* WEITERFÜHRENDE ANALYSEN */
+  .weiterfuehrend {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #d8ceb8;
+  }
+  .weiterfuehrend h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c9a84c;
+    margin-bottom: 1rem;
+  }
+  .weiterfuehrend ul {
+    list-style: none;
+    padding: 0;
+  }
+  .weiterfuehrend ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ede5d0;
+    font-size: 0.98rem;
+  }
+  .weiterfuehrend ul li:last-child { border-bottom: none; }
+  .weiterfuehrend a {
+    color: #1a2744;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .weiterfuehrend a:hover { color: #c9a84c; }
+
+  footer {
+    margin-top: 4rem;
+    padding: 2rem 1.5rem;
+    background: #1a2744;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: #8899bb;
+    letter-spacing: 0.06em;
+  }
+
+  @media (max-width: 600px) {
+    .article-header h1 { font-size: 1.75rem; }
+    .site-header .nav-links { gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav>
+    <a class="logo" href="index.html">Rundfunkkritik.de</a>
+    <ul class="nav-links">
+      <li><a href="oerr-aufreger-liste.html">Aufreger-Liste</a></li>
+      <li><a href="oerr-geschichte.html">Geschichte</a></li>
+      <li><a href="oerr-international-v2.html">International</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<div class="container">
+
+  <header class="article-header">
+    <div class="rubrik">Sprache als Waffe · Ideologie &amp; Haltung</div>
+    <h1>Wenn jeder Sommer untergeht</h1>
+    <p class="standfirst">Der ÖRR nennt Kritiker „Klimaleugner", finanziert Faktenchecks mit staatlich geförderter Infrastruktur und färbt seine Wetterkarten in Alarmrot. Eine Dokumentation redaktioneller Muster.</p>
+    <div class="meta">JUNI 2026 · RUNDFUNKKRITIK.DE</div>
+  </header>
+
+  <div class="disclaimer">
+    <strong>Hinweis:</strong> Dieser Artikel bewertet keine klimawissenschaftlichen Positionen. Dokumentiert werden ausschließlich redaktionelle Entscheidungen des öffentlich-rechtlichen Rundfunks: die Wahl von Kampfbegriffen, die Auswahl von Gesprächspartnern und die visuelle Gestaltung der Berichterstattung. Diese Entscheidungen sind mit Rundfunkbeiträgen finanziert und damit öffentlich rechenschaftspflichtig.
+  </div>
+
+  <div class="article-body">
+
+    <p>Jede Hitzewelle folgt demselben Drehbuch. ARD-Tagesschau und ZDF greifen auf denselben Wortschatz zurück, dieselben Experten, dieselbe Bildsprache. Wer der offiziellen Deutung widerspricht oder auch nur nachfragt, dem wird ein Name gegeben: <strong>Klimaleugner</strong>. Das Wort ist keine wissenschaftliche Kategorie. Es ist ein Ausschlussterm — entlehnt aus dem Vokabular der Holocaustleugnung, funktional als Stigma eingesetzt.</p>
+
+    <p>Was der ÖRR hier betreibt, ist dokumentierbar. Drei Fälle zeigen das Muster.</p>
+
+  </div>
+
+  <!-- FALL 1 -->
+  <div class="fall-container">
+    <div class="fall-label">Fall 1 · Tagesschau-Faktenfinder, 25. Juni 2026</div>
+    <div class="fall-card">
+      <h3>„Leugner des menschengemachten Klimawandels"</h3>
+      <p>Während Deutschland eine historische Hitzewelle erlebt, veröffentlicht der ARD-Faktenfinder einen Beitrag unter dem Titel „Fakes relativieren Hitzewelle". Der Einstiegssatz: <em>„Die aktuelle Hitzewelle ruft Leugner des menschengemachten Klimawandels hervor."</em></p>
+      <p>Der Begriff „Leugner" ist semantisch präzise gewählt. Er kriminalisiert nicht eine wissenschaftliche Position, sondern die Person, die sie vertritt. Wer „leugnet", lügt bewusst. Das Wort schließt Debatte aus, bevor sie beginnt. Für einen mit Pflichtgebühren finanzierten Sender, dem Meinungsvielfalt per Rundfunkstaatsvertrag aufgetragen ist, ist das eine dokumentierbare redaktionelle Entscheidung.</p>
+      <div class="quelle">Quelle: ARD-Faktenfinder, tagesschau.de, 25.06.2026 (Screenshot dokumentiert)</div>
+    </div>
+  </div>
+
+  <!-- FALL 2 -->
+  <div class="fall-container">
+    <div class="fall-label">Fall 2 · ARD-Faktenfinder, 16. August 2023</div>
+    <div class="fall-card">
+      <h3>NIUS als „Klimapopulismus" — mit externem Gutachter</h3>
+      <p>Der Faktenfinder untersucht das Onlinemedium NIUS und die dort verbreiteten klimapolitischen Positionen. Als Analyse-Grundlage dient ein Beitrag von Albert Denk vom „Arbeitsbereich Umwelt- und Klimapolitik" — einer sozialwissenschaftlichen, nicht meteorologischen Perspektive. Dekonstruiert werden Aussagen des Autors Fritz Vahrenholt, der als SPD-Politiker und ehemaliger Shell- und RWE-Manager vorgestellt wird. Die Verbindung zur Industrie gilt als Diskreditierungsmerkmal.</p>
+      <p>Die redaktionelle Frage, die der Faktenfinder nicht stellt: Nach welchem Kriterium wird ein Journalist eines privaten Nachrichtenportals als „Klimapopulist" klassifiziert — und wer entscheidet das mit Gebührengeldern?</p>
+      <div class="quelle">Quelle: ARD-Faktenfinder / tagesschau.de, 16.08.2023 (Screenshot dokumentiert)</div>
+    </div>
+  </div>
+
+  <!-- FALL 3 -->
+  <div class="fall-container">
+    <div class="fall-label">Fall 3 · rbb24 Inforadio — Strukturfrage</div>
+    <div class="fall-card">
+      <h3>Die Lieferkette: rbb greift auf dpa zurück — dpa erhält Staatsgelder</h3>
+      <p>Der rbb24 Inforadio betreibt einen eigenen „Faktencheck Klima". Wie viele Regionalformate bezieht er Material der Deutschen Presse-Agentur (dpa). Die dpa wiederum hat seit 2021 mehr als 1,3 Millionen Euro Fördergeld der Bundesregierung erhalten — dokumentiert durch eine parlamentarische Anfrage des FDP-Abgeordneten Wolfgang Kubicki und berichtet von der <em>Bild</em>-Zeitung.</p>
+      <p>Darunter: 750.000 Euro für das Projekt „Drive Me", 321.000 Euro für einen „Democracy Newsroom", 240.000 Euro für ein KI-Schulungsprogramm sowie eine Million Euro für das „Jahr der Nachricht 2024" — letzteres koordiniert vom Bundesinnenministerium. Die dpa hatte gegenüber dem International Fact Checking Network (IFCN) bis zuletzt angegeben, keine staatlichen Mittel zu erhalten.</p>
+      <p>Kubicki kommentierte: <em>„Eigentlich dürfte eine solche singuläre finanzielle Unterstützung an verfassungsrechtliche Grenzen stoßen."</em></p>
+      <div class="quelle">Quellen: Bild-Zeitung (parlamentarische Anfrage Kubicki); newsroom.de; norberthaering.de; taz.de</div>
+    </div>
+  </div>
+
+  <div class="article-body">
+
+    <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;margin:2rem 0 1rem;">Die Wetterkarte als Gestaltungsmittel</h2>
+
+    <p>Wer Sendungen von vor fünfzehn Jahren mit aktuellen Wetterberichten vergleicht, stellt eine Verschiebung der Farbskala fest. Temperaturen, die früher in Grün- oder Gelbtönen erschienen, werden heute in kräftigem Rot dargestellt. ARD und ZDF begründen die Änderung mit einer Umstellung der Grafiksoftware im Jahr 2020. Technische Erklärungen sind möglich — und sie schließen gestalterische Entscheidungen nicht aus. Beides kann gleichzeitig wahr sein.</p>
+
+    <p>Was dokumentierbar ist: Die visuelle Wirkung auf den Zuschauer ist eine andere geworden. Ob das gewollt, unbewusst oder technisch erzwungen war, ist eine Frage, die der ÖRR bisher nicht transparent beantwortet hat. Der Rundfunkstaatsvertrag verpflichtet zur sachlichen Information — nicht zur optischen Dramatisierung von Wetterlagen.</p>
+
+  </div>
+
+  <!-- FALL 4 -->
+  <div class="fall-container">
+    <div class="fall-label">Fall 4 · ARD-Faktenfinder, 14. Mai 2021</div>
+    <div class="fall-card">
+      <h3>Kritik an Wetterkarten wird selbst zum „Klimawandel-Fake" erklärt</h3>
+      <p>Unter dem Titel „Manipulierte Karten und Wikinger-Wein?" behandelt der ARD-Faktenfinder die Frage, ob die Tagesschau ihre Temperaturkarten dramatisiert habe. Das Format ordnet die Kritik daran als „irreführende Behauptung zum Klimawandel" ein — und stellt sie damit in eine Reihe mit bewusster Desinformation.</p>
+      <p>Der Befund ist strukturell bedeutsam: Ein Sender betreibt ein Format, das Kritik an der eigenen Bildsprache unter die Kategorie „Klimawandel-Fakes" subsumiert. Wer die veränderte Farbgebung der Wetterkarten öffentlich thematisiert, wird im selben Atemzug mit Klimawandelskepsis assoziiert. Damit entzieht sich der ÖRR der öffentlichen Kontrolle durch genau das Instrument, das er zur öffentlichen Kontrolle einsetzt.</p>
+      <div class="quelle">Quelle: ARD-Faktenfinder / tagesschau.de, 14.05.2021 (Screenshot dokumentiert)</div>
+    </div>
+  </div>
+
+  <!-- FALL 5 -->
+  <div class="fall-container">
+    <div class="fall-label">Fall 5 · Özden Terli / Netzwerk Klimajournalismus</div>
+    <div class="fall-card">
+      <h3>ZDF-Wettermoderator schreibt Vorwort für branchenweiten Journalisten-Kodex</h3>
+      <p>Özden Terli ist ZDF-Wettermoderator — und präsentiert damit täglich jene Temperaturkarten, deren Farbgebung öffentlich diskutiert wird. Gleichzeitig verfasste er das Vorwort für einen „Leitfaden für Medien" des Netzwerks Klimajournalismus Deutschland/Österreich, der vorschreibt, wie Redaktionen über Klimathemen berichten sollen.</p>
+      <p>Der Kodex verpflichtet unterzeichnende Redaktionen, die Klimakrise als „dringlichste Krise" zu priorisieren und bei „Bebilderung und Wortwahl dem Ausmaß und den Folgen der Klimakrise gerecht zu werden". Ein mit Rundfunkbeitrag finanzierter ZDF-Mitarbeiter gibt damit Leitlinien für externe Redaktionen — während sein eigener Sender dieselben Gestaltungsprinzipien in seiner Wetterberichterstattung umsetzt.</p>
+      <p>Norbert Häring dokumentiert, dass der Übergang vom Klimajournalismus zum Aktivismus im Netzwerk als fließend gilt: Ein Mitbegründer, Raphael Thelen, verließ den Journalismus und schloss sich der „Letzten Generation" an.</p>
+      <div class="quelle">Quellen: norberthaering.de (23.08.2023); Netzwerk Klimajournalismus; Netzwerk Klimajournalismus Österreich (Klima-Kodex)</div>
+    </div>
+  </div>
+
+  <div class="struktur-box">
+    <h4>Das Strukturargument</h4>
+    <p>Der ÖRR ist durch den Rundfunkbeitrag verpflichtet, ausgewogen und sachlich zu informieren. Die Verwendung von Stigmabegriffen wie „Leugner" für abweichende Positionen, die Beauftragung parteiisch positionierter externer Gutachter, die Nutzung einer staatlich geförderten Nachrichtenagentur als Quellengrundlage und die Mitgestaltung eines branchenweiten Redaktionskodex durch eigene Mitarbeiter — all das sind dokumentierbare redaktionelle Entscheidungen. Sie wurden mit Rundfunkbeiträgen ermöglicht. Sie sind deshalb öffentlich rechenschaftspflichtig.</p>
+  </div>
+
+  <div class="article-body">
+    <p>Das Muster ist bekannt aus anderen Themenbereichen dieser Seite: Nicht jede einzelne Entscheidung ist als gezielte Manipulation nachweisbar. Die Summe der Entscheidungen — Wortauswahl, Gesprächspartnerwahl, visuelle Gestaltung, Quellenstruktur — ergibt ein konsistentes Bild. Dieses Bild hat einen Namen: <strong>Haltungsjournalismus</strong>. Und Haltungsjournalismus ist keine Informationsleistung, für die ein Pflichtbeitrag zu entrichten ist.</p>
+  </div>
+
+  <div class="weiterfuehrend">
+    <h4>Weiterführende Analysen</h4>
+    <ul>
+      <li><a href="wissensressort-ard.html">ARD löst Wissensressort auf — Haltungsjournalismus bleibt</a></li>
+      <li><a href="pressefreiheit-selektivitaet.html">Selektive Pressefreiheit: Was der ÖRR verschweigt</a></li>
+      <li><a href="oerr-aufreger-liste.html">Zur vollständigen Aufreger-Liste</a></li>
+    </ul>
+  </div>
+
+</div>
+</main>
+
+<footer>
+  © Rundfunkkritik.de · Kein Kommentar. Keine Meinung. Nur Fälle. · Alle Angaben mit Quellenangabe dokumentiert.
+</footer>
+
+<footer style="text-align:center;padding:32px 16px;margin-top:48px;border-top:1px solid #d4c9b0;font-family:Georgia,'Crimson Pro',serif;font-size:14px;color:#6b6b6b">
+  <a href="/themen.html" style="color:inherit;text-decoration:none">Themen</a> &middot; <a href="/impressum.html" style="color:#6b6b6b;text-decoration:none">Impressum</a> &middot; <a href="/datenschutz.html" style="color:#6b6b6b;text-decoration:none">Datenschutz</a> &middot; <a href="mailto:kontakt@rundfunkkritik.de" style="color:#6b6b6b;text-decoration:none">Kontakt</a>
+</footer>
+</body>
+</html>

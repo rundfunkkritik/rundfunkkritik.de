@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>220 Millionen. Keine Daten. Kriegen wir hin. — rundfunkkritik.de</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2e4a;
+    --navy-deep: #111f33;
+    --navy-mid: #243d5e;
+    --gold: #b8963e;
+    --gold-light: #d4ae5a;
+    --cream: #f7f4ef;
+    --warm-white: #fdfbf8;
+    --text: #1c1c1c;
+    --text-muted: #5a5a5a;
+    --red-alert: #8b1a1a;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 100%; scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--navy-deep);
+    border-bottom: 2px solid var(--gold);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .site-header .logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .site-header .logo span { color: var(--gold); }
+  .rubrik-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy-deep);
+    background: var(--gold);
+    padding: 0.2em 0.7em;
+    border-radius: 2px;
+    margin-left: auto;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 5rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold-light) 70%, transparent);
+  }
+  .hero-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .eyebrow::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 60px;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+    color: var(--warm-white);
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .hero-lead {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: rgba(247,244,239,0.8);
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+  }
+  .meta-row {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: rgba(247,244,239,0.45);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-top: 1px solid rgba(184,150,62,0.2);
+    padding-top: 1.5rem;
+  }
+  .meta-row span { color: rgba(247,244,239,0.65); }
+
+  /* ── ARTICLE BODY ── */
+  .article-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem;
+  }
+
+  .article-body p {
+    font-size: 1.08rem;
+    margin-bottom: 1.5rem;
+    color: #1c1c1c;
+  }
+
+  .article-body h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 3rem 0 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .drop-cap::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: var(--navy);
+    float: left;
+    line-height: 0.75;
+    margin: 0.1em 0.12em 0 0;
+  }
+
+  /* ── DATUM-MARKER ── */
+  .datum-marker {
+    background: var(--navy);
+    color: var(--gold);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    padding: 0.4em 0.9em;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    clip-path: polygon(0 0, 100% 0, 96% 100%, 0 100%);
+  }
+
+  /* ── HINTER/VOR DER KAMERA — SPLIT ── */
+  .kamera-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 3rem 0;
+    border: 1px solid rgba(26,46,74,0.15);
+    overflow: hidden;
+  }
+  @media (max-width: 640px) {
+    .kamera-split { grid-template-columns: 1fr; }
+  }
+
+  .kamera-panel {
+    padding: 2rem 1.8rem;
+  }
+  .kamera-panel.hinter {
+    background: var(--navy-deep);
+    color: var(--cream);
+    border-right: 3px solid var(--gold);
+    position: relative;
+  }
+  .kamera-panel.vor {
+    background: var(--warm-white);
+    color: var(--text);
+  }
+
+  .kamera-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .kamera-panel.hinter .kamera-label { color: var(--gold); }
+  .kamera-panel.vor .kamera-label { color: var(--navy); }
+
+  .kamera-label .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  .hinter .dot { background: var(--red-alert); box-shadow: 0 0 6px var(--red-alert); animation: blink 1.4s infinite; }
+  .vor .dot { background: #2a7a2a; }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .kamera-exchange {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  .kamera-panel.hinter .kamera-exchange { color: rgba(247,244,239,0.88); }
+
+  .sprecher {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+    opacity: 0.6;
+  }
+  .kamera-panel.hinter .sprecher { color: var(--gold-light); }
+  .kamera-panel.vor .sprecher { color: var(--navy); }
+
+  .rede { margin-bottom: 0.3rem; }
+  .kamera-panel.hinter .rede { color: rgba(247,244,239,0.9); }
+
+  .rede.highlight {
+    background: rgba(184,150,62,0.18);
+    border-left: 2px solid var(--gold);
+    padding: 0.4em 0.8em;
+    margin-top: 0.5rem;
+    font-style: italic;
+  }
+  .vor .rede.highlight {
+    background: rgba(26,46,74,0.06);
+    border-left: 2px solid var(--navy);
+  }
+
+  .kamera-divider {
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    margin: 0 1.8rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    grid-column: 1 / -1;
+    background: #f0ece5;
+  }
+
+  /* ── KOSTENUHR ── */
+  .kosten-block {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 2.5rem 2rem;
+    margin: 3rem 0;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .kosten-zahl {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .kosten-beschriftung {
+    padding-top: 0.5rem;
+  }
+  .kosten-beschriftung strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--warm-white);
+    margin-bottom: 0.5rem;
+  }
+  .kosten-beschriftung p {
+    font-size: 0.92rem;
+    color: rgba(247,244,239,0.7);
+    margin: 0;
+    line-height: 1.5;
+  }
+  .kosten-block::after {
+    content: 'STEUERGELD';
+    position: absolute;
+    bottom: 0.8rem;
+    right: 1.2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: rgba(184,150,62,0.25);
+  }
+
+  /* ── MUSTER-BLOCK ── */
+  .muster-block {
+    border: 1px solid rgba(26,46,74,0.2);
+    padding: 0;
+    margin: 3rem 0;
+    overflow: hidden;
+  }
+  .muster-header {
+    background: var(--navy);
+    color: var(--gold);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.7rem 1.5rem;
+  }
+  .muster-steps {
+    list-style: none;
+    counter-reset: muster;
+  }
+  .muster-steps li {
+    counter-increment: muster;
+    padding: 1.2rem 1.5rem 1.2rem 4.5rem;
+    position: relative;
+    border-bottom: 1px solid rgba(26,46,74,0.08);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .muster-steps li:last-child { border-bottom: none; }
+  .muster-steps li::before {
+    content: counter(muster);
+    position: absolute;
+    left: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: rgba(26,46,74,0.1);
+    line-height: 1;
+  }
+  .muster-steps li strong {
+    display: block;
+    font-family: 'Source Serif 4', serif;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 0.2rem;
+  }
+  .muster-steps li span {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  /* ── QUELLE-BADGE ── */
+  .quelle-badge {
+    background: rgba(26,46,74,0.05);
+    border: 1px solid rgba(26,46,74,0.15);
+    border-left: 4px solid var(--gold);
+    padding: 1.2rem 1.5rem;
+    margin: 3rem 0 1rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+  .quelle-badge strong {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── FAZIT ── */
+  .fazit {
+    background: var(--navy-deep);
+    color: var(--cream);
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+    text-align: center;
+    position: relative;
+  }
+  .fazit::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%; transform: translateX(-50%);
+    width: 60px; height: 3px;
+    background: var(--gold);
+  }
+  .fazit p {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--cream);
+    max-width: 560px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.5;
+  }
+  .fazit .sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: rgba(247,244,239,0.4);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: var(--navy-deep);
+    border-top: 1px solid rgba(184,150,62,0.2);
+    padding: 2rem;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: rgba(247,244,239,0.3);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── UTILITY ── */
+  hr.section-rule {
+    border: none;
+    border-top: 1px solid rgba(26,46,74,0.12);
+    margin: 2.5rem 0;
+  }
+
+  @media (max-width: 640px) {
+    .article-body { padding: 2rem 1.2rem; }
+    .hero { padding: 3rem 1.2rem 2.5rem; }
+    .kosten-block { flex-direction: column; gap: 1rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hinter .dot { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a class="logo" href="#">Rundfunk<span>kritik</span>.de</a>
+  <span class="rubrik-pill">Medienkritik</span>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Damals Schwurbelei &mdash; heute Akte</div>
+    <h1>220 Millionen.<br><em>Keine Daten.</em><br>Kriegen&nbsp;wir&nbsp;hin.</h1>
+    <p class="hero-lead">Ein Mikrofon läuft zu früh. Eine Moderatorin und eine Ministerin einigen sich hinter der Kamera. Was dann gesendet wird, ist dokumentiert &mdash; und was nicht gesendet wird, auch.</p>
+    <div class="meta-row">
+      <div>Quelle: <span>BR-Leak, 10. Juli 2020</span></div>
+      <div>Veröffentlicht: <span>Februar 2025</span></div>
+      <div>Serie: <span>Wächter ohne Wache</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<article class="article-body">
+
+  <div class="datum-marker">10. Juli 2020 &mdash; München, Bayerischer Rundfunk</div>
+
+  <p class="drop-cap">Bayern befindet sich mitten in einem lokalen Ausbruchsgeschehen. Die sogenannte „Memmingen-Kette" hält die Gesundheitsbehörden in Atem. In wenigen Minuten wird die bayerische Gesundheitsministerin in der ARD-»Rundschau« interviewt werden. Doch bevor die Kameras offiziell laufen, laufen sie bereits.</p>
+
+  <p>Was das Mikrofon aufzeichnet, ist kein Skandal im klassischen Sinne. Es ist etwas Ruhigeres. Und vielleicht deshalb Beunruhigenderes.</p>
+
+  <h2>Hinter der Kamera</h2>
+
+  <p>Die Moderatorin hat eine Bitte. Ihr sei vorab mitgeteilt worden, die Corona-Warn-App im Interview <em>nicht</em> anzusprechen. Doch das, sagt sie, würde sie „ehrlich gesagt total unglaubwürdig machen". Die App gehöre einfach dazu. Und es sei ja, fügt sie hinzu, „eigentlich auch in Ihrem Sinne, dass die Leute das nutzen."</p>
+
+  <p>Die Ministerin nickt. Das Problem, erklärt sie, sei eigentlich simpel: Sie hätten „in dem Sinne keine Zahlen". Die App sei freiwillig. Was der Bund wisse, wisse sie nicht.</p>
+
+  <!-- SPLIT: HINTER / VOR DER KAMERA -->
+  <div class="kamera-split">
+
+    <div class="kamera-panel hinter">
+      <div class="kamera-label">
+        <span class="dot"></span>
+        Aufgezeichnet &mdash; nicht gesendet
+      </div>
+      <div class="kamera-exchange">
+        <div class="sprecher">Moderatorin</div>
+        <div class="rede">„Ich wurde gebeten, die Warn-App nicht anzusprechen. Aber das macht mich total unglaubwürdig."</div>
+
+        <div class="sprecher">Ministerin</div>
+        <div class="rede">„Wir haben in dem Sinne keine Zahlen. Die App ist freiwillig."</div>
+
+        <div class="sprecher">Moderatorin</div>
+        <div class="rede highlight">„Man könnte sich ja irgendwie rausreden &mdash; grundsätzlich ist das eine gute Hilfe, und in diesem Fall haben, was weiß ich, die Gesundheitsämter …"</div>
+
+        <div class="sprecher">Ministerin</div>
+        <div class="rede highlight">„Kriegen wir hin."</div>
+
+        <div class="sprecher">Moderatorin</div>
+        <div class="rede">„Klasse, wunderbar!"</div>
+      </div>
+    </div>
+
+    <div class="kamera-panel vor">
+      <div class="kamera-label">
+        <span class="dot"></span>
+        Gesendet &mdash; ARD Rundschau
+      </div>
+      <div class="kamera-exchange">
+        <div class="sprecher">Moderatorin</div>
+        <div class="rede">„Wie hat denn die Nachverfolgung, das Tracking der Infektionsketten funktioniert? Hat da auch die Corona-Warn-App geholfen?"</div>
+
+        <div class="sprecher">Ministerin</div>
+        <div class="rede highlight">„In meinen Augen ist es wichtig, diese Nachverfolgung … und die Warn-App hilft insgesamt natürlich, das Ausbruchsgeschehen ein Stückweit mehr zu erkennen …"</div>
+      </div>
+    </div>
+
+    <div class="kamera-divider">↑ Realität &nbsp;/&nbsp; Sendung ↓</div>
+
+  </div>
+
+  <p>Keine Erwähnung fehlender Daten. Keine Erwähnung fehlender Zahlen. Keine Einräumung von Unsicherheit. Das, was hinter der Kamera als Problem benannt wurde, wurde vor der Kamera zum Vorteil umgedeutet.</p>
+
+  <h2>Was die App war &mdash; und was sie kostete</h2>
+
+  <div class="kosten-block">
+    <div class="kosten-zahl">220&nbsp;Mio.</div>
+    <div class="kosten-beschriftung">
+      <strong>Euro Steuergeld &mdash; für eine App ohne belegbare Wirkung</strong>
+      <p>Herausgeber: Robert Koch-Institut. Entwickler: SAP und Deutsche Telekom, beteiligt rund 25 weitere Unternehmen. Seit 1. Juni 2023 im Ruhemodus. Eine Wirkung auf das Infektionsgeschehen ließ sich nie belegen. Das Projekt gilt heute als gescheitert.</p>
+    </div>
+  </div>
+
+  <p>Das wusste man &mdash; zumindest in Teilen &mdash; bereits im Sommer 2020. Genau dann, als Moderatorin und Ministerin hinter der Kamera einräumten: Die Datenlage fehlt. Und sich dann einigten, das nicht zu sagen.</p>
+
+  <h2>Das Muster</h2>
+
+  <p>Was dieses Video dokumentiert, ist keine Einzelpanne. Es ist eine Arbeitsweise. Sichtbar gemacht durch einen Moment, in dem das Mikrofon zu früh lief.</p>
+
+  <div class="muster-block">
+    <div class="muster-header">Das Muster &mdash; in vier Schritten</div>
+    <ol class="muster-steps">
+      <li>
+        <strong>Informationslücke existiert</strong>
+        <span>Intern bekannt: Es gibt keine belastbaren Daten zur Wirkung der App.</span>
+      </li>
+      <li>
+        <strong>Lücke wird intern benannt</strong>
+        <span>Hinter der Kamera: „Wir haben in dem Sinne keine Zahlen."</span>
+      </li>
+      <li>
+        <strong>Kommunikationsstrategie wird abgestimmt</strong>
+        <span>Gemeinsam: Man einigt sich auf eine Botschaft, die die Lücke überbrückt.</span>
+      </li>
+      <li>
+        <strong>Öffentlichkeit erfährt die Lücke nicht</strong>
+        <span>Gesendet: „Die Warn-App hilft insgesamt natürlich …"</span>
+      </li>
+    </ol>
+  </div>
+
+  <p>Öffentlich-rechtliche Medien haben einen gesetzlichen Auftrag: unabhängig zu informieren, Leerstellen zu benennen, Unsicherheiten sichtbar zu machen. Was das Mikrofon an diesem Juliabend aufzeichnete, ist das Gegenteil davon.</p>
+
+  <p>Eine Journalistin und eine Politikerin sitzen zusammen &mdash; nicht als Kontrolle und Kontrollierte, sondern als zwei Menschen mit demselben Ziel. Dass man dafür keine Belege hatte, war das kleinere Problem. Das größere wäre gewesen, es zuzugeben.</p>
+
+  <hr class="section-rule">
+
+  <div class="fazit">
+    <p>„Die 220 Millionen Euro sind Geschichte. Die App ist Geschichte. Das Gespräch hinter den Kulissen ist jetzt Akte."</p>
+    <div class="sub">richtig-erinnern.de / rundfunkkritik.de</div>
+  </div>
+
+  <div class="quelle-badge">
+    <strong>Primärquelle</strong>
+    BR-Leak, aufgezeichnet am 10. Juli 2020, veröffentlicht Februar 2025. Bayerischer Rundfunk, Moderatorin Ursula Heller, bayerische Gesundheitsministerin Melanie Huml. Originalvideo: „Follow the Science im Bayerischen Rundfunk", YouTube, 01.02.2025.
+  </div>
+
+</article>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  rundfunkkritik.de &mdash; Medienkritik mit Belegen &mdash; kein Impressum ersetzt Quellenlage
+</footer>
+
+</body>
+</html>

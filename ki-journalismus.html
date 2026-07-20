@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Die KI lügt nicht — Rundfunkkritik.de</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+
+  :root {
+    --bg:        #0d0d0d;
+    --bg2:       #141414;
+    --border:    #222222;
+    --red:       #c0392b;
+    --red-dim:   #7a1f16;
+    --gold:      #c9a84c;
+    --text:      #d6d0c4;
+    --text-dim:  #6b6560;
+    --white:     #f0ebe2;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  /* ── HEADER ── */
+  .site-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .site-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── KICKER ── */
+  .kicker {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  /* ── HEADLINE ── */
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  /* ── DACHZEILE / STANDFIRST ── */
+  .standfirst {
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--text);
+    border-left: 3px solid var(--red);
+    padding-left: 1.25rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  /* ── META ── */
+  .meta {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ── BODY TEXT ── */
+  p { margin-bottom: 1.4rem; }
+
+  /* ── PULL QUOTE ── */
+  .pull {
+    background: var(--bg2);
+    border-left: 4px solid var(--gold);
+    padding: 1.5rem 1.75rem;
+    margin: 2.5rem 0;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--white);
+    line-height: 1.5;
+  }
+
+  /* ── FACT BOX ── */
+  .factbox {
+    background: #0a0a0a;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--red);
+    padding: 1.5rem 1.75rem;
+    margin: 2.5rem 0;
+    font-size: 0.9rem;
+  }
+  .factbox-title {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .factbox ul {
+    list-style: none;
+    padding: 0;
+  }
+  .factbox ul li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border);
+    padding-left: 1.2rem;
+    position: relative;
+    color: var(--text);
+  }
+  .factbox ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--red-dim);
+  }
+  .factbox ul li:last-child { border-bottom: none; }
+
+  /* ── SECTION HEADING ── */
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    color: var(--white);
+    margin: 3rem 0 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── HIGHLIGHT ── */
+  mark {
+    background: transparent;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  /* ── FOOTER NOTE ── */
+  .footnote {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* ── VERDICT BOX ── */
+  .verdict {
+    background: var(--red-dim);
+    border: 1px solid var(--red);
+    padding: 1.5rem 1.75rem;
+    margin: 3rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.6;
+  }
+  .verdict-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #ff9999;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<div class="site-label">Rundfunkkritik.de</div>
+
+<p class="kicker">Medienkritik · KI &amp; Journalismus · Juni 2026</p>
+
+<h1>Die KI lügt nicht.<br><em>Sie spiegelt nur,<br>was vorher schon drin war.</em></h1>
+
+<p class="standfirst">
+  Mario Voigt reichte halluzinierte Zitate bei der FAZ ein. Döpfner antwortete mit einem KI-Leitartikel als "Schelmenstreich". Die Debatte tobt. Aber sie stellt die falsche Frage.
+</p>
+
+<div class="meta">
+  Kommentar · Rundfunkkritik.de · 24. Juni 2026
+</div>
+
+<p>
+  Ein Politiker schickt einen Text an eine Zeitung. Der Text ist von einer Maschine geschrieben. Die Zitate darin sind erfunden. Niemand liest ihn gegen. Die Zeitung druckt ihn. Dann fliegt es auf.
+</p>
+
+<p>
+  Das ist der Fall Mario Voigt — Thüringens CDU-Ministerpräsident, drei von vier Gastbeiträgen angeblich zu 100 Prozent KI-generiert, darunter eine Gedenkrede für KZ-Überlebende. Generisches Pathos aus der Maschine, wo persönliche Worte hätten stehen sollen.
+</p>
+
+<p>
+  Die Reaktion? Die FAZ zieht den Beitrag zurück. Springer-Chef Mathias Döpfner verhöhnt das — und veröffentlicht selbst einen komplett KI-generierten Leitartikel. Springer nennt das hinterher einen "Schelmenstreich, der zum Nachdenken anregen soll." Die Erkenntnis, dass Leser annehmen könnten, ein Text von Döpfner enthalte Döpfners Meinung, kam offenbar erst danach.
+</p>
+
+<div class="pull">
+  "Wer etwas als seine Gedanken verkauft, das ein Chatbot sich ausgedacht hat, nährt den Verdacht, keine eigenen Ideen zu haben."
+</div>
+
+<h2>Das eigentliche Problem ist älter als die KI</h2>
+
+<p>
+  Hier ist die unbequeme Wahrheit: <mark>Die KI hat kein Gewissen eingeschläfert. Es war vorher schon still.</mark>
+</p>
+
+<p>
+  Wiederverwertung statt Recherche. Pressemitteilungen als Nachrichten. Agenturmeldungen, umformuliert und unterschrieben. Das war der Zustand vieler Redaktionen lange vor dem ersten Chatbot. Die KI macht jetzt nur sichtbar, was vorher kaschiert war. Sie ist nicht die Ursache — sie ist die Röntgenaufnahme.
+</p>
+
+<p>
+  Wer nie selbst gedacht hat, dem fällt es nicht auf, wenn eine Maschine übernimmt. Wer nie Quellen prüfte, prüft auch keine KI-Zitate. Wer nie eine eigene Meinung hatte, unterschreibt problemlos das, was der Algorithmus ausgibt.
+</p>
+
+<div class="factbox">
+  <div class="factbox-title">Die Chronologie des Versagens</div>
+  <ul>
+    <li>FAZ veröffentlicht Voigt-Gastbeitrag — mit drei erfundenen Zitateen. Niemand hatte gegengelesen.</li>
+    <li>FragDenStaat: Drei von vier Voigt-Gastbeiträgen zeigen 100% KI-Anteil — auch eine KZ-Gedenkrede.</li>
+    <li>Döpfner verhöhnt die FAZ als "Maschinen-Stürmer" — mit einem komplett KI-generierten Text.</li>
+    <li>Springer nennt das einen "Schelmenstreich". Der Springer-Konzern will "führender Anbieter von KI-basiertem Journalismus" sein.</li>
+    <li>Debatte eskaliert weiter: Niggemeier vs. Berliner Zeitung über KI-Texte und Antisemitismusvorwürfe.</li>
+  </ul>
+</div>
+
+<h2>Döpfners Bankrotterklärung</h2>
+
+<p>
+  Springer hat sich offiziell verschrieben, "führender Anbieter von KI-basiertem Journalismus" zu werden. Das klingt nach Strategie. Der Döpfner-"Schelmenstreich" zeigt, was es in der Praxis bedeutet: Ein Konzernchef unterschreibt einen Text, den er nicht gelesen hat, von einer Maschine, die keine Meinung hat — und nennt das Medienkritik.
+</p>
+
+<p>
+  Das ist keine Satire. Das ist keine Provokation. Das ist der Beweis, dass der Journalismus an diesem Punkt nicht mehr die Technik kontrolliert, sondern die Technik die Haltung.
+</p>
+
+<div class="pull">
+  Nicht die Maschine hat versagt. Die Menschen, die ihr vertrauten, ohne hinzuschauen — die haben versagt.
+</div>
+
+<h2>Und ich? Und dieser Text?</h2>
+
+<p>
+  Ich schreibe diesen Kommentar mit KI-Unterstützung. Das sage ich offen. Der Unterschied liegt nicht im Werkzeug — er liegt in der Kontrolle, der Haltung und der Transparenz.
+</p>
+
+<p>
+  Ich habe die Recherche gesteuert. Ich habe die Quellen bewertet. Ich habe entschieden, was drin steht und was nicht. Die Meinung ist meine. Die Verantwortung auch.
+</p>
+
+<p>
+  <mark>Ein KI-Prompter ist kein Autor — solange er nicht hinschaut.</mark> Wer hinschaut, wer prüft, wer seine Handschrift reinbringt: der ist Autor. Das war schon vor der KI so, und es gilt danach genauso.
+</p>
+
+<div class="verdict">
+  <span class="verdict-label">Fazit</span>
+  Die Debatte über KI im Journalismus ist wichtig. Aber sie ist zu eng. Das eigentliche Problem heißt nicht ChatGPT — es heißt Verantwortungslosigkeit. Die Maschine schläft nicht ein. Sie schläft schon, wenn niemand mehr da ist, der wach bleibt.
+</div>
+
+<div class="footnote">
+  Dieser Kommentar entstand mit KI-Unterstützung (Claude, Anthropic). Recherche, Bewertung und Haltung stammen vom Autor. Quellen: Süddeutsche Zeitung, Telepolis, Campact, Berliner Zeitung, turi2 (alle Juni 2026).
+</div>
+
+<footer style="text-align:center;padding:32px 16px;margin-top:48px;border-top:1px solid #d4c9b0;font-family:Georgia,'Crimson Pro',serif;font-size:14px;color:#6b6b6b">
+  <a href="/themen.html" style="color:inherit;text-decoration:none">Themen</a> &middot; <a href="/impressum.html" style="color:#6b6b6b;text-decoration:none">Impressum</a> &middot; <a href="/datenschutz.html" style="color:#6b6b6b;text-decoration:none">Datenschutz</a> &middot; <a href="mailto:kontakt@rundfunkkritik.de" style="color:#6b6b6b;text-decoration:none">Kontakt</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wächter ohne Wache: Der MDR-Beitrag, der trotz Freispruch verschwunden blieb — Rundfunkkritik.de</title>
+<meta name="description" content="Ein MDR-Rundfunkrat stellt fest: keine Sorgfaltspflichtverletzung. Der Beitrag bleibt trotzdem gelöscht. Über die Depublizierungspflicht und ein Kontrollsystem, das sich selbst für nicht zuständig erklärt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1a2744;
+    --navy-light:#2b3d63;
+    --gold:#c8a35a;
+    --paper:#f7f5f1;
+    --ink:#1c1c1c;
+    --muted:#5a5f6b;
+    --line:#d9d3c6;
+    --tier1:#2f6b4f;
+    --tier2:#a3402a;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.65;
+  }
+  header.site{
+    background:var(--navy);
+    color:#fff;
+    padding:1.2rem 1.5rem;
+    text-align:center;
+    letter-spacing:.04em;
+  }
+  header.site .brand{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:1.3rem;
+  }
+  header.site .brand span{color:var(--gold)}
+
+  main{
+    max-width:720px;
+    margin:0 auto;
+    padding:2.5rem 1.3rem 4rem;
+  }
+  .kicker{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.78rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:.6rem;
+  }
+  h1{
+    font-family:'Playfair Display', serif;
+    font-weight:900;
+    font-size:2.1rem;
+    line-height:1.2;
+    color:var(--navy);
+    margin:.2rem 0 1rem;
+  }
+  .dek{
+    font-size:1.15rem;
+    color:var(--muted);
+    margin-bottom:1.8rem;
+  }
+  h2{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:1.5rem;
+    color:var(--navy);
+    border-bottom:3px solid var(--gold);
+    display:inline-block;
+    padding-bottom:.2rem;
+    margin-top:2.6rem;
+  }
+  h3{
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    font-size:1.15rem;
+    color:var(--navy-light);
+    margin-top:1.8rem;
+  }
+  p{margin:1rem 0}
+  strong{color:var(--navy)}
+
+  /* Damals/Heute Gegenüberstellung */
+  .vergleich-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin:1.8rem 0;
+  }
+  .vergleich-grid > div{
+    background:var(--paper);
+    padding:1.1rem 1.2rem;
+  }
+  .vergleich-grid .damals{border-top:4px solid var(--muted)}
+  .vergleich-grid .heute{border-top:4px solid var(--gold)}
+  .vergleich-grid .label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.72rem;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--muted);
+    display:block;
+    margin-bottom:.5rem;
+  }
+  @media (max-width:600px){
+    .vergleich-grid{grid-template-columns:1fr}
+  }
+
+  /* Zeitstrahl */
+  .timeline{
+    margin:1.8rem 0;
+    border-left:3px solid var(--gold);
+    padding-left:1.3rem;
+  }
+  .timeline .entry{
+    position:relative;
+    margin-bottom:1.4rem;
+  }
+  .timeline .entry::before{
+    content:"";
+    position:absolute;
+    left:-1.63rem;
+    top:.3rem;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:var(--navy);
+    border:2px solid var(--gold);
+  }
+  .timeline .date{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.82rem;
+    font-weight:600;
+    color:var(--navy);
+    display:block;
+  }
+  .timeline .entry p{margin:.3rem 0 0}
+
+  /* Faktenbox */
+  .faktenbox{
+    background:var(--navy);
+    color:#fff;
+    padding:1.3rem 1.4rem;
+    margin:1.8rem 0;
+    border-left:5px solid var(--gold);
+  }
+  .faktenbox .label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.72rem;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--gold);
+    display:block;
+    margin-bottom:.5rem;
+  }
+  .faktenbox ul{margin:.4rem 0 0; padding-left:1.2rem}
+  .faktenbox li{margin-bottom:.4rem}
+
+  /* O-Ton */
+  .oton{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-size:1.15rem;
+    color:var(--navy);
+    border-left:3px solid var(--muted);
+    padding:.2rem 0 .2rem 1.2rem;
+    margin:1.6rem 0;
+  }
+  .oton cite{
+    display:block;
+    font-family:'JetBrains Mono', monospace;
+    font-style:normal;
+    font-size:.75rem;
+    color:var(--muted);
+    margin-top:.4rem;
+  }
+
+  /* Muster / Ironie-Hervorhebung */
+  .muster{
+    background:#efe8d8;
+    padding:1.3rem 1.4rem;
+    margin:1.8rem 0;
+    border:1px dashed var(--gold);
+  }
+
+  /* Hoffnung */
+  .hoffnung{
+    margin-top:2.6rem;
+    padding:1.4rem 1.4rem;
+    background:var(--paper);
+    border-top:4px solid var(--tier1);
+  }
+  .hoffnung h2{border-bottom-color:var(--tier1)}
+
+  /* Quellen */
+  .quellen{
+    margin-top:3rem;
+    padding-top:1.5rem;
+    border-top:2px solid var(--line);
+    font-family:'JetBrains Mono', monospace;
+    font-size:.85rem;
+  }
+  .quellen h2{font-family:'Playfair Display', serif}
+  .quellen ol{padding-left:1.4rem}
+  .quellen li{margin-bottom:.9rem; line-height:1.5}
+  .badge{
+    display:inline-block;
+    font-size:.68rem;
+    font-weight:600;
+    padding:.1rem .45rem;
+    border-radius:3px;
+    margin-right:.4rem;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    vertical-align:middle;
+  }
+  .badge.tier1{background:var(--tier1); color:#fff}
+  .badge.tier2{background:var(--tier2); color:#fff}
+
+  footer.site{
+    text-align:center;
+    padding:2rem 1rem 3rem;
+    font-family:'JetBrains Mono', monospace;
+    font-size:.75rem;
+    color:var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="brand">RUNDFUNK<span>KRITIK</span>.DE</div>
+</header>
+
+<main>
+  <div class="kicker">Serie: Wächter ohne Wache</div>
+  <h1>Der MDR-Beitrag, der trotz Freispruch verschwunden blieb</h1>
+  <p class="dek">Ein Sender löscht einen kritischen Corona-Beitrag. Das eigene Aufsichtsgremium prüft monatelang — und stellt fest: alles korrekt gearbeitet. Der Beitrag bleibt trotzdem gelöscht.</p>
+
+  <h2>Damals / Heute</h2>
+  <div class="vergleich-grid">
+    <div class="damals">
+      <span class="label">Damals — 12.12.2023</span>
+      <p>MDR-"Umschau" sendet einen Beitrag über mutmaßliche DNA-Verunreinigungen in Corona-Impfstoffen. Verschiedene Fachpositionen kommen zu Wort, offene Fragen werden benannt.</p>
+    </div>
+    <div class="heute">
+      <span class="label">Heute — nach 10.06.2024</span>
+      <p>Das eigene Aufsichtsgremium des Senders stellt fest: keine Sorgfaltspflichtverletzung. Der Beitrag bleibt trotzdem aus der Mediathek verbannt.</p>
+    </div>
+  </div>
+
+  <h3>Die Chronologie</h3>
+  <div class="timeline">
+    <div class="entry">
+      <span class="date">12.12.2023</span>
+      <p>MDR-"Umschau" strahlt den Beitrag "Corona-Impfstoff in der Kritik – Was ist dran?" aus. Zu Wort kommen u.&nbsp;a. der US-Krebsgenetiker Prof. Phillip Buckhaults (University of South Carolina) und Prof. Emanuel Wyler vom Max-Delbrück-Center — mit gegensätzlichen Einschätzungen zum Risiko.</p>
+    </div>
+    <div class="entry">
+      <span class="date">17.12.2023</span>
+      <p>Nach Kritik u.&nbsp;a. der Sächsischen Zeitung wird der Beitrag "vorübergehend" aus MDR- und ARD-Mediathek genommen.</p>
+    </div>
+    <div class="entry">
+      <span class="date">20.12.2023</span>
+      <p>Die Löschung wird dauerhaft. Offizielle Begründung: Verletzung der "journalistischen Sorgfaltspflicht".</p>
+    </div>
+    <div class="entry">
+      <span class="date">10.06.2024</span>
+      <p>Der Programmausschuss des MDR-Rundfunkrats — das eigene Kontrollgremium des Senders — kommt nach monatelanger Prüfung zum Ergebnis: <strong>keine</strong> Verletzung der Sorgfaltspflicht.</p>
+    </div>
+    <div class="entry">
+      <span class="date">danach</span>
+      <p>Der Beitrag bleibt trotzdem gelöscht. Der Rundfunkrat erklärt, ein Eingriff würde "die Funktion der Aufsicht überdehnen".</p>
+    </div>
+  </div>
+
+  <div class="oton">
+    "Der Ausschuss sieht keinen Verstoß gegen die Angebotsgrundsätze."
+    <cite>Michael Ziche, Vorsitzender des MDR-Rundfunkrats, schriftliche Antwort auf eine Programmbeschwerde, 23.08.2024</cite>
+  </div>
+
+  <div class="faktenbox">
+    <span class="label">Faktenlage</span>
+    <ul>
+      <li>68 Programmbeschwerden gingen beim MDR ein — nur 4 richteten sich gegen den Beitrag selbst, 64 gegen dessen Löschung.</li>
+      <li>Der MDR-Rundfunkrat kann laut eigener Aussage nicht anordnen, einen Beitrag wieder online zu stellen.</li>
+      <li>Erst nach diesem Fall forderte der Programmausschuss Leipzig (Juni 2024) feste Qualitäts- und Depublikationsstandards für Wissenschaftsjournalismus beim MDR — ein Eingeständnis, dass es bis dahin keine gab.</li>
+    </ul>
+  </div>
+
+  <h2>Das Muster</h2>
+  <div class="muster">
+    <p>Der eigentliche Befund ist unbequemer als jede Zensur-Erzählung: Es braucht keine gezielte Anweisung von außen. Ein Sender kann ein Aufsichtsgremium besitzen, das einen Beitrag ausdrücklich für korrekt erklärt — und trotzdem entscheidet am Ende allein die Chefredaktion, ob er zurückkehrt. Wächter, deren eigene Aufsicht sich selbst für nicht zuständig erklärt, sind schwer zu prüfen — von außen wie von innen.</p>
+  </div>
+
+  <p>Dahinter liegt zusätzlich ein strukturelles Problem: die sogenannte <strong>Depublizierungspflicht</strong>, seit dem 12. Rundfunkänderungsstaatsvertrag von 2009 in Kraft. Sie zwingt ARD, ZDF, die Dritten Programme und den Deutschlandfunk, die meisten Online-Inhalte nach kurzer Frist wieder offline zu nehmen — ursprünglich durchgesetzt auf Druck der Zeitungsverleger, die sich vor kostenloser öffentlich-rechtlicher Konkurrenz schützen wollten. Bis heute werden schätzungsweise 80 bis 90 Prozent der Online-Beiträge des öffentlich-rechtlichen Rundfunks nach einer gewissen Zeit depubliziert.</p>
+
+  <section class="hoffnung">
+    <h2>Hoffnung</h2>
+    <p>Diese Lücke ist keine Naturgesetzlichkeit, sondern eine politische Entscheidung von 2009 — Reformen 2018 und 2020 zeigen, dass öffentlicher Druck wirkt. Und der MDR-Fall selbst beweist: Programmbeschwerden, hartnäckiges Nachfragen und die Anwesenheit von Bürgern bei Rundfunkratssitzungen bringen Vorgänge ans Licht, die sonst im Verwaltungsvorgang verschwunden wären. Kontrolle funktioniert, wenn sie genutzt wird.</p>
+  </section>
+
+  <section class="quellen">
+    <h2>Quellen</h2>
+    <ol>
+      <li><span class="badge tier1">Tier 1</span>Berliner Zeitung (Open Source), "Zensur beim MDR? Beitrag über verunreinigte Corona-Impfstoffe bleibt ohne Begründung gelöscht", 14./16.09.2024 — Chronologie, Zitate, Entscheidung des Programmausschusses.</li>
+      <li><span class="badge tier1">Tier 1</span>netzpolitik.org, "Was macht eigentlich die Depublizierungspflicht?", 2017 — Herkunft der 7-Tage-Regelung im 12. Rundfunkänderungsstaatsvertrag.</li>
+      <li><span class="badge tier1">Tier 1</span>ver.di / mmm.verdi.de, "Mediatheken löschen ihre Inhalte", 2024 — gestaffelte Verweildauer-Fristen.</li>
+      <li><span class="badge tier1">Tier 1</span>Initiative für einen Publikumsrat, "Offenlegung der Archive", 29.02.2024 — geschätzte Depublizierungsquote von 80–90&nbsp;%.</li>
+    </ol>
+  </section>
+</main>
+
+<footer class="site">
+  Rundfunkkritik.de — Dokumente statt Deutung.
+</footer>
+
+</body>
+</html>

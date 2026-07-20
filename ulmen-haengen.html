@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Es bleibt immer was hängen | rundfunkkritik.de</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:       #1a1a1a;
+    --paper:     #f5f2ec;
+    --rule:      #c8bfb0;
+    --accent:    #b03a2e;
+    --muted:     #6b6259;
+    --stamp-bg:  #1a1a1a;
+    --stamp-fg:  #f5f2ec;
+    --gap:       clamp(1rem, 3vw, 2rem);
+  }
+
+  html { font-size: 18px; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    line-height: 1.7;
+    padding: 0;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    border-bottom: 3px double var(--ink);
+    padding: 1.2rem var(--gap) 0.8rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .masthead-brand {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
+    padding: 0.25em 0.6em;
+    text-decoration: none;
+  }
+  .masthead-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    margin-left: auto;
+  }
+
+  /* ── LAYOUT ── */
+  .wrapper {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 0 var(--gap);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: clamp(2rem, 6vw, 4rem) 0 1.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .kicker {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 6vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.08;
+    color: var(--ink);
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.01em;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .deck {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.5;
+    max-width: 580px;
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .byline {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  /* ── STAMP (Urteilsbox) ── */
+  .verdict-stamp {
+    background: var(--stamp-bg);
+    color: var(--stamp-fg);
+    padding: 1.4rem 1.6rem;
+    margin: 2rem 0;
+    position: relative;
+  }
+  .verdict-stamp::before {
+    content: "OLG HAMBURG · 22.06.2026 · Az. 7 W 72/26";
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.7rem;
+  }
+  .verdict-stamp p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-style: italic;
+  }
+  .verdict-stamp strong {
+    color: #e8e0d5;
+    font-style: normal;
+  }
+
+  /* ── ARTICLE BODY ── */
+  .article-body {
+    padding: 2rem 0 3rem;
+  }
+
+  .article-body p {
+    margin-bottom: 1.4rem;
+    font-size: 1rem;
+  }
+
+  .article-body h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin: 2.5rem 0 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    line-height: 1.25;
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    margin: 2rem -1rem;
+    padding: 1.4rem 1.6rem;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-style: italic;
+    line-height: 1.35;
+    color: var(--ink);
+    text-align: center;
+  }
+  .pullquote cite {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    font-style: normal;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 0.7rem;
+  }
+
+  /* ── FACTBOX ── */
+  .factbox {
+    background: white;
+    border-left: 4px solid var(--accent);
+    padding: 1.2rem 1.4rem;
+    margin: 2rem 0;
+    font-size: 0.9rem;
+  }
+  .factbox-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.7rem;
+  }
+  .factbox ul {
+    list-style: none;
+    padding: 0;
+  }
+  .factbox li {
+    padding: 0.3rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.5;
+    border-bottom: 1px solid #eee;
+  }
+  .factbox li:last-child { border-bottom: none; }
+  .factbox li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.8rem;
+  }
+
+  /* ── ENGLAND-KASTEN ── */
+  .contrast-box {
+    background: var(--accent);
+    color: white;
+    padding: 1.4rem 1.6rem;
+    margin: 2rem 0;
+  }
+  .contrast-box-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 0.7rem;
+  }
+  .contrast-box p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.7rem;
+  }
+  .contrast-box p:last-child { margin-bottom: 0; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 3px double var(--ink);
+    padding: 1.5rem var(--gap);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 500px) {
+    .pullquote { margin: 2rem 0; }
+    h1 { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <a class="masthead-brand" href="https://rundfunkkritik.de">rundfunkkritik.de</a>
+  <span class="masthead-date">24. Juni 2026 &nbsp;·&nbsp; Medienversagen</span>
+</header>
+
+<main class="wrapper">
+
+  <article>
+    <div class="hero">
+      <p class="kicker">Fall Ulmen / Fernandes &nbsp;·&nbsp; OLG Hamburg &nbsp;·&nbsp; Deutungsmacht der Medien</p>
+      <h1>Es bleibt immer<br><em>was hängen.</em></h1>
+      <p class="deck">Das OLG Hamburg hat dem Spiegel verboten, den Deepfake-Video-Verdacht gegen Christian Ulmen weiter zu verbreiten. Die Kampagne läuft trotzdem. Das war schon beim Correctiv-Fall nicht anders.</p>
+      <div class="byline">
+        <span>rundfunkkritik.de</span>
+        <span>Kommentar &amp; Analyse</span>
+        <span>Juni 2026</span>
+      </div>
+    </div>
+
+    <div class="verdict-stamp">
+      <p>Der 7. Zivilsenat des OLG Hamburg hat festgestellt: Es fehlte an einem <strong>„Mindestbestand an Beweistatsachen"</strong> für den Verdacht, Ulmen habe Deepfake-Videos hergestellt oder verbreitet. Die Redaktion habe einzelne Passagen so miteinander verknüpft, dass Leserinnen und Leser den Verdacht <strong>„zwingend"</strong> als naheliegend verstehen mussten — obwohl selbst die eidesstattliche Versicherung von Fernandes nicht eindeutig ergab, dass sie Ulmen überhaupt diesen Verdacht anlastete.</p>
+    </div>
+
+    <div class="article-body">
+
+      <p>Am 22. Juni 2026 entschied das Hanseatische Oberlandesgericht Hamburg: Der Spiegel durfte den Verdacht der Deepfake-Video-Produktion und -Verbreitung durch Christian Ulmen nicht erwecken. Keine ausreichende Tatsachengrundlage. Kein Mindestbestand an Beweisen. Presserechtlich unzulässig.</p>
+
+      <p>Einen Tag später erscheint auf welt.de ein Artikel über Collien Fernandes und NGOs — gleicher Tenor, gleiche Stoßrichtung, gleiches Framing. Die Kampagne geht weiter. Ungeniert. Als wäre nichts gewesen.</p>
+
+      <h2>Was das Gericht tatsächlich festgestellt hat</h2>
+
+      <p>Wichtig zur Einordnung: Das Urteil ist kein Freispruch für Ulmen. Unstreitig ist, dass er Deepfake-<em>Fotos</em> von Fernandes verbreitet, Fakeprofile unter ihrem Namen angelegt und Männer über diese Profile kontaktiert hat. Das OLG bestätigte außerdem, dass der Spiegel über Gewaltvorwürfe weiter berichten darf — gestützt auf einen glaubhaft gemachten Vorfall in Mallorca 2023.</p>
+
+      <p>Worum es dem Gericht geht: Der <em>spezifische</em> Verdacht, Ulmen habe <em>Videos</em> — nicht Fotos — hergestellt und verbreitet, war ohne ausreichende Belege in die Welt gesetzt worden. Und das ist ein Unterschied, den das OLG bewusst betont: Ein Video zeige mehrere Handlungen, erzähle eine „Geschichte", die Erniedrigung wiege schwerer. Der Vorwurf braucht deshalb eine eigene Beweisgrundlage — die fehlte.</p>
+
+      <div class="pullquote">
+        „Der Deepfake-Video-Verdacht hatte eine an Hysterie grenzende Folgeberichterstattung in sämtlichen Medien sowie eine undifferenzierte öffentliche Diskussion zur Folge."
+        — Kanzlei Schertz-Bergmann, im Anschluss an das OLG-Urteil
+      </div>
+
+      <h2>Der Mechanismus: So entsteht ein Narrativ</h2>
+
+      <p>Der Spiegel bestreitet bis heute, den Deepfake-Video-Verdacht überhaupt erweckt zu haben. Das Magazin bestand darauf, lediglich über Fotos und ähnlich aussehende Videos berichtet zu haben. Das OLG sah das anders: Durch das Zusammenspiel konkreter Textstellen habe der Durchschnittsleser den Verdacht „zwingend" als naheliegend verstehen müssen.</p>
+
+      <p>Das ist Lehrbuchjournalismus für schlechte Gründe. Man formuliert nie direkt. Man verknüpft. Man lässt offen. Und dann — wenn das Narrativ erst in der Welt ist — sagt man: Wir haben das nie behauptet.</p>
+
+      <p>Besonders pikant: Fernandes selbst hatte kurz nach Erscheinen des Artikels klargestellt, sie verdächtige Ulmen <em>nicht</em> der Verbreitung von Deepfake-Pornos. Ein Umstand, den der Spiegel in seiner Titelgeschichte nicht erwähnte.</p>
+
+      <div class="factbox">
+        <div class="factbox-label">Chronologie</div>
+        <ul>
+          <li><strong>21. März 2026:</strong> Spiegel-Titelgeschichte „Du hast mich virtuell vergewaltigt" erscheint — bundesweite Empörung, Demonstrationen, politische Reaktionen</li>
+          <li><strong>April 2026:</strong> Fernandes erklärt öffentlich, sie verdächtige Ulmen nicht der Deepfake-Video-Verbreitung — kaum Berichterstattung</li>
+          <li><strong>Frühjahr 2026:</strong> Schweizer Grüne fordern härtere KI-Gesetze; Bundesjustizministerin Hubig kündigt Strafrechtsverschärfung gegen „digitale Gewalt" an</li>
+          <li><strong>7. Mai 2026:</strong> LG Hamburg: Spiegel-Berichterstattung überwiegend zulässig — Ulmen scheitert in vier von fünf Punkten</li>
+          <li><strong>22. Juni 2026:</strong> OLG Hamburg kippt die Kernaussage: Deepfake-Video-Verdacht war nicht ausreichend belegt — Verbreitungsverbot</li>
+          <li><strong>23. Juni 2026:</strong> Welt.de berichtet weiter in bekanntem Framing</li>
+        </ul>
+      </div>
+
+      <h2>Correctiv lässt grüßen</h2>
+
+      <p>Ulmens Kanzlei Schertz-Bergmann hielt nach dem Urteil fest, der Deepfake-Video-Verdacht habe eine „an Hysterie grenzende Folgeberichterstattung in sämtlichen Medien sowie eine undifferenzierte öffentliche Diskussion" ausgelöst. Auf Twitter brachte es @MuellerOnyx knapper: „Sämtliche Medien haben mitgemacht. Keiner ist unschuldig. Nach der Correctivlüge sollte man das eigentlich gelernt haben."</p>
+
+      <p>Gelernt hat man es nicht. Das Muster ist dasselbe: Ein zunächst dramatisch aufgebauter Vorwurf, ein Mediensturm, politische Reaktionen — und dann, wenn ein Gericht die Grundlage einkassiert, ein kollektives Schulterzucken. Der ursprüngliche Schaden ist längst angerichtet. Das Narrativ sitzt. Es bleibt was hängen.</p>
+
+      <p>Beim Correctiv-Fall rund um das sogenannte „Geheimtreffen" in Potsdam war der Mechanismus identisch: Dramatische Erstberichterstattung, Massenproteste, politische Verwertung — und dann schleichende juristische und faktische Relativierungen, die im öffentlichen Bewusstsein kaum ankamen.</p>
+
+      <div class="contrast-box">
+        <div class="contrast-box-label">Zum Vergleich: England</div>
+        <p>Strukturelle Gewalt durch organisierte Männergruppen — die Rotherham-Skandale, die Grooming-Gangs in Rochdale, Telford, Oxford — hat in deutschen Leitmedien jahrelang kaum Platz gefunden.</p>
+        <p>Dort wäre das Framing „männliche Gewalt" sachlich naheliegend gewesen. Stattdessen: systematisches Wegschauen wegen befürchteter Zuschreibungen. Die Selektivität des Medien-Empörungsreflexes ist kein Zufall. Sie folgt einer Logik.</p>
+      </div>
+
+      <h2>Was das mit Medienvertrauen macht</h2>
+
+      <p>Der Spiegel sieht sich nach dem OLG-Beschluss trotzdem „weitgehend bestätigt". Der „Kern der Berichterstattung" bleibe „unberührt". Das Magazin habe die beanstandeten Stellen mit Hinweisen versehen und prüfe weiteres juristisches Vorgehen.</p>
+
+      <p>Das ist keine Selbstkritik. Das ist Schadensminimierung durch Neuformatierung.</p>
+
+      <p>Wenn ein Leitmedium einen zentralen Vorwurf ohne ausreichende Beweisgrundlage setzt, damit bundesweite Hysterie auslöst, und nach gerichtlicher Korrektur erklärt, der Kern sei ja unberührt — dann hat das eine klare Konsequenz für alle, die noch überlegen, ob Misstrauen gegenüber Leitmedien Paranoia ist oder vernünftige Schlussfolgerung.</p>
+
+      <p>Es ist vernünftige Schlussfolgerung.</p>
+
+    </div>
+  </article>
+
+</main>
+
+<footer>
+  <span>rundfunkkritik.de &nbsp;·&nbsp; Medienkritik seit Tag 1</span>
+  <span>Quellen: OLG Hamburg (Az. 7 W 72/26) · LTO · beck-aktuell · Spiegel (zit. n. Urteils-PMs)</span>
+</footer>
+
+<footer style="text-align:center;padding:32px 16px;margin-top:48px;border-top:1px solid #d4c9b0;font-family:Georgia,'Crimson Pro',serif;font-size:14px;color:#6b6b6b">
+  <a href="/themen.html" style="color:inherit;text-decoration:none">Themen</a> &middot; <a href="/impressum.html" style="color:#6b6b6b;text-decoration:none">Impressum</a> &middot; <a href="/datenschutz.html" style="color:#6b6b6b;text-decoration:none">Datenschutz</a> &middot; <a href="mailto:kontakt@rundfunkkritik.de" style="color:#6b6b6b;text-decoration:none">Kontakt</a>
+</footer>
+</body>
+</html>
