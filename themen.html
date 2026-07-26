@@ -148,7 +148,7 @@ footer a{color:var(--light);text-decoration:none}
   <p class="empty" id="nohit" style="display:none;text-align:center">Kein Treffer – anderer Suchbegriff?</p>
 </div>
 <footer>
-  <a href="/impressum.html">Impressum</a> &middot; <a href="/datenschutz.html">Datenschutz</a> &middot; <a href="mailto:kontakt@rundfunkkritik.de">Kontakt</a>
+  <a href="/impressum.html">Impressum</a> &middot; <a href="/datenschutz.html">Datenschutz</a> &middot; <span class="e-mail" data-n="tkatnok" data-d="ed.kitirkknufdnur" data-t="Kontakt"><noscript>kontakt (at) rundfunkkritik.de</noscript></span>
 </footer>
 <script>
 const q=document.getElementById('q'),noh=document.getElementById('nohit');
@@ -165,5 +165,6 @@ q.addEventListener('input',()=>{
   noh.style.display=any?'none':'block';
 });
 </script>
+  <script src="/mail.js" defer></script>
 </body>
 </html>
