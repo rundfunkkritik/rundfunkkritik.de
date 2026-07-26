@@ -152,12 +152,34 @@ footer a{color:var(--light);text-decoration:none}
 </footer>
 <script>
 const q=document.getElementById('q'),noh=document.getElementById('nohit');
+
+// Volltext-Index (asynchron nachgeladen). Die Suche funktioniert sofort über
+// die Titel; sobald der Index geladen ist, findet sie zusätzlich Treffer im
+// Artikeltext — gleiche Technik wie auf dunkelfeld.report.
+function norm(s){return (s||'').toLowerCase().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss').replace(/[„“–]/g,'');}
+var fullText={},indexReady=false;
+function keyFromHref(href){return (href||'').replace(/^\//,'').replace(/\.html$/,'');}
+fetch('search-index.json',{cache:'no-cache'}).then(function(r){
+  if(!r.ok) throw new Error('index nicht verfuegbar');
+  return r.json();
+}).then(function(data){
+  data.forEach(function(e){
+    fullText[keyFromHref(e.url)]=norm((e.title||'')+' '+(e.excerpt||'')+' '+(e.content||''));
+  });
+  indexReady=true;
+  if(q.value.trim()) q.dispatchEvent(new Event('input'));
+}).catch(function(){/* Suche bleibt auf Titel beschränkt */});
+
 q.addEventListener('input',()=>{
-  const t=q.value.trim().toLowerCase();let any=false;
+  const t=q.value.trim().toLowerCase(),tn=norm(t);let any=false;
   document.querySelectorAll('.cat').forEach(sec=>{
     let vis=0;
     sec.querySelectorAll('.art').forEach(li=>{
-      const m=li.textContent.toLowerCase().includes(t);
+      let m=li.textContent.toLowerCase().includes(t);
+      if(!m&&indexReady&&tn){
+        const a=li.querySelector('a'),k=a?keyFromHref(a.getAttribute('href')):'';
+        if(k&&fullText[k]&&fullText[k].includes(tn))m=true;
+      }
       li.style.display=m?'':'none';if(m)vis++;
     });
     sec.style.display=vis?'':'none';if(vis)any=true;
