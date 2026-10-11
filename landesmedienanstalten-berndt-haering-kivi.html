@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<link rel="stylesheet" href="/fonts.css">
+<meta charset="UTF-8">
+<title>Zwei Fälle, ein Muster: Landesmedienanstalten unter Druck | Rundfunkkritik.de</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Der Podcaster Ben Berndt und der Blogger Norbert Häring geraten unabhängig voneinander ins Visier von Landesmedienanstalten. Eine dokumentierte Fallanalyse mit Primärquellen.">
+<meta name="rubrik" content="Aufsicht, Personen &amp; Formate">
+<meta name="kachel-titel" content="Zwei Fälle, ein Muster: Landesmedienanstalten unter Druck">
+<link rel="canonical" href="https://www.rundfunkkritik.de/landesmedienanstalten-berndt-haering-kivi.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zwei Fälle, ein Muster: Landesmedienanstalten unter Druck">
+<meta property="og:description" content="Der Podcaster Ben Berndt und der Blogger Norbert Häring geraten unabhängig voneinander ins Visier von Landesmedienanstalten. Eine dokumentierte Fallanalyse mit Primärquellen.">
+<meta property="og:url" content="https://www.rundfunkkritik.de/landesmedienanstalten-berndt-haering-kivi.html">
+<meta property="og:site_name" content="Rundfunkkritik.de">
+<style>
+  body {
+    background: #faf7f2;
+    color: #1c1c1c;
+    font-family: 'Crimson Pro', Georgia, serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+  }
+  nav {
+    background: #1a2744;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav a {
+    color: #f5f0e8;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #7a5f1a;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.8rem;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.1rem;
+    line-height: 1.25;
+    margin: 0 0 1.2rem;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-top: 2.4rem;
+    border-bottom: 1px solid #c9a84c;
+    padding-bottom: 0.4rem;
+  }
+  .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #6a6a6a;
+    margin-bottom: 2rem;
+  }
+  .lead { font-size: 1.15rem; color: #333; margin-bottom: 2rem; }
+  p { margin: 1rem 0; }
+  blockquote {
+    background: #f5edda;
+    border-left: 3px solid #c9a84c;
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    font-style: italic;
+  }
+  .highlight { color: #7a5200; font-weight: 700; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 0.5rem 0.7rem;
+    text-align: left;
+  }
+  th {
+    background: #f5edda;
+    color: #7a5f1a;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+  .disclosure {
+    background: #f5edda;
+    border: 1px solid #c9a84c;
+    padding: 1rem 1.2rem;
+    font-size: 0.9rem;
+    margin: 1.5rem 0;
+    border-radius: 3px;
+  }
+  .disclosure strong { color: #7a5f1a; }
+  .caveat {
+    border: 1px solid #b0764a;
+    background: #f7ede0;
+    padding: 1rem 1.2rem;
+    font-size: 0.9rem;
+    margin: 1.5rem 0;
+    border-radius: 3px;
+  }
+  .caveat strong { color: #8a4a1a; }
+  .sources {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #ddd;
+    font-size: 0.9rem;
+  }
+  .further {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: #f5edda;
+    border-radius: 4px;
+  }
+  .further h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #7a5f1a;
+    margin-top: 0;
+  }
+  .further ul { margin: 0; padding-left: 1.2rem; }
+  .further a { color: #1a2744; text-decoration: none; font-weight: 600; }
+  .further a:hover { text-decoration: underline; }
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #999;
+  }
+
+  a { color: #1a2744; }
+  main img, main svg { max-width: 100%; height: auto; }
+  .subtitle, .hero-sub, .subhead, .teaser { font-size: 1.15rem; color: #444; margin: -0.4rem 0 1.4rem; font-style: italic; }
+  .kicker, .hero-eyebrow, .kategorie, .site-name { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #7a5f1a; text-transform: uppercase; letter-spacing: 0.08em; }
+  .badge, .status-badge, .kategorie-badge, .tag, .label, .source-tier, .box-label, .rk-box-label, .weiter-label, .case-number {
+    display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; text-transform: uppercase;
+    letter-spacing: 0.06em; color: #7a5f1a; background: #f5edda; border: 1px solid #c9a84c; border-radius: 3px; padding: 0.1rem 0.45rem; margin: 0 0.3rem 0.3rem 0; }
+  .status-offen { color: #9b2c2c; border-color: #c0392b; background: #fbeaea; }
+  .status-ok, .beschlossen { color: #2f5d34; border-color: #6a9a6f; background: #eaf3ea; }
+  .box, .fact-box, .faktenbox, .factbox, .factcard, .infobox, .kasten, .rk-box, .case-box, .case-block, .fairness-box, .fairnessbox,
+  .gap-box, .gap-note, .timestamp-box, .transparenz, .hinweis, .ki-hinweis, .methodennote, .quellenhinweis, .source-note, .impressum-note, .fazit, .hoffnung, .studie, .card {
+    background: #f5edda; border-left: 3px solid #c9a84c; padding: 1rem 1.3rem; margin: 1.5rem 0; border-radius: 3px; font-size: 0.97rem; }
+  .fairness-box, .fairnessbox, .transparenz, .methodennote, .ki-hinweis { border-left-color: #1a2744; background: #eef0f5; }
+  .gap-box, .gap-note { border-left-color: #c0392b; background: #faf0ee; }
+  .box-title, .case-title, .card-head, .quellen-title { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.1rem; margin: 0 0 0.5rem; }
+  .pullquote, .zitat, .oton { background: #f5edda; border-left: 3px solid #c9a84c; margin: 1.5rem 0; padding: 1rem 1.5rem; font-style: italic; font-size: 1.1rem; }
+  .quellen, .quelle, .source, .source-list, .rk-source-list, .sources { font-size: 0.88rem; color: #444; }
+  ul.quellen, ol.quellen, .source-list, .rk-source-list { padding-left: 1.2rem; }
+  .timeline { border-left: 2px solid #c9a84c; margin: 1.5rem 0 1.5rem 0.4rem; padding-left: 1.2rem; }
+  .tl-item, .timeline-item, .entry, .eintrag { margin: 0 0 1.1rem; }
+  .tl-date, .timeline-date, .date, .jahr, .timestamp { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #7a5f1a; font-weight: 700; display: block; }
+  .vergleich-grid, .compare, .getrennt { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .compare-col, .spalte { background: #fff; border: 1px solid #e3dccb; border-radius: 3px; padding: 1rem; }
+  .zahl { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: #c0392b; }
+  .weiterfuehrend, .weiter { margin-top: 3rem; padding: 1.5rem; background: #f5edda; border-radius: 4px; }
+  .footnote { font-size: 0.85rem; color: #444; } .footnote hr { display: none; } sup a { text-decoration: none; color: #7a5f1a; }
+  .mechanik-liste li { margin-bottom: 0.4rem; }
+  .highlight { color: #7a5200; font-weight: 700; }
+  main { overflow-wrap: break-word; }
+  @media (max-width: 600px) { table { display: block; overflow-x: auto; } h1 { font-size: 1.7rem; } main { padding: 2rem 1rem 4rem; } table { font-size: 0.85rem; } }
+</style>
+</head>
+<body>
+
+<nav><a href="index.html">Rundfunkkritik.de</a></nav>
+
+<main>
+<span class="kicker">Fallanalyse · Medienaufsicht</span>
+<h1>Zwei Fälle, ein Muster: Landesmedienanstalten unter Druck</h1>
+<p class="dek">Ein Podcaster in Nordrhein-Westfalen, ein Blogger in Hessen: Zwei unabhängig voneinander entstandene Konflikte werfen die gleiche Frage auf – wie weit reicht die Aufsicht der Landesmedienanstalten über private Medienangebote, und was macht ihr KI-Überwachungstool KIVI mit den gefundenen Daten?</p>
+<div class="meta">Stand: 27.09.2026 · Kein Kommentar. Keine Meinung. Nur Fälle.</div>
+<p>Die Landesmedienanstalten sind in Deutschland für die Aufsicht über privaten Rundfunk und journalistisch-redaktionelle Telemedien zuständig (§ 19 Medienstaatsvertrag, MStV). Seit 2021 setzt zunächst die Landesanstalt für Medien NRW (LfM NRW), inzwischen bundesweit alle 14 Landesmedienanstalten, dafür das KI-Tool KIVI ein. Zwei aktuelle Fälle – einer in NRW, einer in Hessen – zeigen, wie diese Aufsicht in der Praxis wirkt.</p>
+<h2>Fall 1 — Ben Berndt und die LfM NRW</h2>
+<div class="case-block">
+<span class="case-number">Fall-Nr. 1</span>
+<h3 class="case-title">Hinweisschreiben nach § 19 MStV wegen eines Höcke-Interviews</h3>
+<p>Im April 2026 veröffentlichte der Kölner Podcaster Ben Berndt (Format „ungeskriptet", betrieben über seine Firma ungeskriptet media) ein mehr als vierstündiges Gespräch mit dem thüringischen AfD-Landes- und Fraktionsvorsitzenden Björn Höcke. Das Video erreichte auf YouTube über 6,1 Millionen Aufrufe.</p>
+<p>Im Gespräch blieb unwidersprochen, dass Höcke die Behauptung aufstellte, die Sturmabteilung (SA) der NSDAP habe gar keine Parole gehabt — obwohl Höcke zuvor zweimal rechtskräftig wegen Verwendung der SA-Parole „Alles für Deutschland" verurteilt worden war.</p>
+<p>Die LfM NRW schickte Berndt daraufhin ein Hinweisschreiben nach § 19 Abs. 1 MStV: Sie sah journalistische Sorgfaltspflichten verletzt, weil eine erkennbar falsche Aussage ohne Einordnung stehen blieb, und setzte eine Frist bis zum 30. Juni 2026 zur nachträglichen Überarbeitung der Folge.</p>
+<p>Berndt lehnte eine Überarbeitung ab. Sein Argument: „ungeskriptet" sei kein journalistisches Angebot, er selbst kein Journalist, sondern „freundlicher Gastgeber" — Gespräche „wie bei einem Kaffee". Er warf der Behörde Zensur vor und kündigte an, „sämtliche juristischen Möglichkeiten" auszuschöpfen, notfalls bis zum Bundesgerichtshof — nach eigener Aussage „stellvertretend für alle Podcaster und YouTuber".</p>
+<p>Der Medienrechtler Prof. Dr. Wolfgang Schulz ordnete den Fall bei LTO rechtlich ein: Ob ein Angebot journalistisch-redaktionell gestaltet ist, entscheide nicht die Selbstbeschreibung des Anbieters, sondern eine funktionale Betrachtung — bei einer auf Dauer angelegten, über eine GmbH betriebenen Tätigkeit mit Millionenreichweite sei die „Geschäftsmäßigkeit" im Sinne des MStV „zweifelsfrei gegeben". Das Hinweisschreiben selbst habe laut Behörde ausdrücklich keine unmittelbaren Rechtsfolgen.</p>
+<p>Die Berliner Zeitung und die Ostdeutsche Allgemeine Zeitung stellten der LfM NRW einen 72 Punkte umfassenden Fragenkatalog zu Auftrag, Kompetenzen und Arbeitsweise der Behörde. Diese antwortete in einem zwölfseitigen Dokument und verteidigte ihr Vorgehen als „mildestes Mittel".</p>
+<p>Die AfD-Fraktion im nordrhein-westfälischen Landtag griff den Fall am 7. Juli 2026 in einem Antrag auf (Drucksache 18/20426, „Der Meinungsfreiheit verpflichtet? Staatliche Zensurversuche durch die Landesmedienanstalt NRW stoppen") — als Parteiquelle unabhängig von der inhaltlichen Richtigkeit nur eingeschränkt belastbar (siehe Quellenverzeichnis).</p>
+<p>Mehrere Redaktionen (Süddeutsche Zeitung, Berliner Zeitung, t-online.de, FAZ) berichten inhaltlich übereinstimmend über den aktuellen Stand: Für Berndt ist die Auseinandersetzung demnach nicht beendet. Er wolle zunächst Akteneinsicht nehmen und prüfen, was bei der Medienanstalt passiert sei, und die Sache „bis ganz zum Ende" durchziehen — auch stellvertretend für kleinere Anbieter, die sich Widerstand gegen eine Medienanstalt seiner Einschätzung nach eher nicht leisten könnten. t-online und FAZ ordnen den Vorgang dabei jeweils in eigener redaktioneller Aufbereitung und mit pointierterem Ton ein, was gegen eine bloße Wortlaut-Übernahme von einer gemeinsamen Agenturmeldung spricht — die vier Redaktionen sind hier als redaktionell unabhängige Quellen zu werten.</p>
+<p><strong>Update:</strong> Laut wortgleicher Veröffentlichung bei t-online.de und FAZ (eine Quelle, keine zwei unabhängigen Bestätigungen) teilte die Landesmedienanstalt NRW Berndt an einem Mittwoch (genaues Datum nicht zweifelsfrei bestimmbar, zeitlich unmittelbar vor Veröffentlichung dieses Artikels) mit, dass sie <strong>kein Verfahren</strong> gegen ihn einleitet. Der Fall sei für die Behörde erledigt; Berndt müsse die betreffende Folge auch nicht nachträglich anpassen — die ursprüngliche Aufforderung, den Höcke-Beitrag um eine Erläuterung zu ergänzen, ist damit vom Tisch. Das YouTube-Video hatte zu diesem Zeitpunkt bereits 6,6 Millionen Aufrufe erreicht (zuvor 6,1 Millionen).</p>
+<p>Die Behörde begründete den Schritt damit, dass sich ihr eigentliches Ziel bereits erfüllt habe: Weil Berndt den Hinweis selbst öffentlich gemacht und als „Zäsur für freie deutsche Medien" skandalisiert hatte, sei „die im Interview selbst unterbliebene Einordnung der Falschaussage inzwischen öffentlich erfolgt" — nach Einschätzung der Behörde sogar wirksamer, als es eine nachträgliche Korrektur im Video selbst vermocht hätte. Weitere medienaufsichtsrechtliche Maßnahmen seien deshalb nicht nötig.</p>
+<p>Zur öffentlichen Auseinandersetzung gehörte auch ein von Berndt in Auftrag gegebenes KI-generiertes Video, das ihn als Gladiator im Kampf gegen ein die Landesmedienanstalt symbolisierendes „Zensurkeule"-Monster zeigte und über X (Twitter) verbreitet wurde — eine von Berndt selbst gewählte visuelle Zuspitzung des Konflikts, keine Behördendarstellung.</p>
+<p>Michael Hanfeld, Leiter des Medienressorts und stellvertretender Feuilletonchef der FAZ, bezeichnete das Vorgehen der Behörde in einem Meinungsbeitrag als „sehr klug" — eine attribuierte Einzelmeinung, keine Tatsachenfeststellung.</p>
+<p>Die Berliner Zeitung veröffentlichte im Anschluss ein Statement Berndts zum Ausgang des Verfahrens. Die folgenden Angaben stammen ausschließlich aus Berndts eigener Schilderung und sind als seine Darstellung zu lesen, nicht als unabhängig bestätigter Sachverhalt: Berndt zufolge habe er von der Verfahrenseinstellung zunächst aus den Medien erfahren, nicht direkt von der Behörde. Zu Beginn der Prüfung habe die Medienanstalt ihn nach seiner Erinnerung sinngemäß darauf hingewiesen, dass ein Gast bei ihm die Unwahrheit gesagt habe, die Behörde „verantwortlich für die Wahrheit" sei und er als Journalist ihrer Aufsicht unterliege; zudem sei ihm empfohlen worden, rund 330 Stunden Podcast-Material auf mögliche falsche Tatsachenbehauptungen von Gästen zu überprüfen. Berndt bezeichnete dies als Zensurversuch, ließ sich anwaltlich von Joachim Steinhöfel vertreten und nannte den Behörden-Slogan „Meinungsfreiheit verpflichtet" angesichts des Vorgehens „an Ironie nicht zu überbieten". Trotz der Verfahrenseinstellung sieht Berndt den Fall für sich nicht als beendet an: Er kündigte erneut eine Akteneinsicht an und bewertete das ursprüngliche Vorgehen der Behörde als „Bedrohung". Er äußerte zudem die eigene, unabhängig noch nicht verifizierte Einschätzung, ein geplanter neuer Medienstaatsvertrag könnte künftig eine Kategorie „staatlich geprüfter YouTuber" einführen und kleinere Anbieter stärker unter Druck setzen.</p>
+</div>
+<h2>Fall 2 — Norbert Häring und die Medienanstalt Hessen</h2>
+<div class="case-block">
+<span class="case-number">Fall-Nr. 2</span>
+<h3 class="case-title">Eine DSGVO-Auskunft gibt Einblick in die KIVI-Praxis</h3>
+<p>Der Blogger und Wirtschaftsjournalist Norbert Häring (Blog „Geld und mehr") stellte am 2. Juli 2026 bei der für ihn zuständigen Medienanstalt Hessen ein Auskunftsersuchen nach Art. 15 DSGVO: Welche personenbezogenen Daten wurden im Rahmen von KIVI bzw. der Aufsicht nach § 19 MStV über ihn und seinen Blog verarbeitet?</p>
+<p>Die Antwort datiert vom 28. August 2026. Sie listet rund 50 Social-Media-Beiträge von Häring und Dritten auf, die im Zeitraum vom 29. April bis 24. Juli 2026 per KIVI erfasst, geprüft und gespeichert wurden — jeweils mit einem Löschdatum drei Monate nach Erfassung.</p>
+<p>Als Verarbeitungszweck nannte die Behörde: „kontinuierliche Beobachtung von Telemedienangeboten, zur Prüfung und Bewertung der erfassten Inhalte im Hinblick auf mögliche Rechtsverstöße, sowie zur Evaluation des eingesetzten Verfahrens." Einen tatsächlichen Rechtsverstoß Härings stellte die Behörde nach eigener Auskunft in keinem der rund 50 Fälle fest.</p>
+<p>Häring hat die aufgeführten Beiträge nach Themen sortiert:</p>
+<ul>
+<li><strong>23 Einträge</strong> zu „Zensur und Meinungskontrolle" (davon 13 zu seinem Buch „Der Wahrheitskomplex" und dazugehörigen Interviews)</li>
+<li><strong>7 Einträge</strong> zu Bargeld, Geldwesen, digitalem Euro und digitaler Identität</li>
+<li><strong>4 Einträge</strong> zu Klima- und Impfthemen</li>
+<li><strong>2 Einträge</strong> zu Nato und Krieg</li>
+<li><strong>4 weitere</strong> zu sonstigen Themen</li>
+</ul>
+<p>Nach Härings eigener Einschätzung ist nur in einem der rund 50 erfassten Fälle nachvollziehbar, warum ein auf mögliche Rechtsverstöße trainiertes KI-Programm angeschlagen haben könnte — ein Nutzerkommentar unter einem fremden Beitrag, der die Regierung beschimpfte.</p>
+<p>Am 18. September 2026 verlangte Häring per Brief von der Medienanstalt Hessen eine Erläuterung, warum so viele Beiträge ohne erkennbaren Anlass verarbeitet wurden. Eine Antwort stand zum Zeitpunkt der Veröffentlichung seines Artikels (19. September 2026) noch aus.</p>
+<blockquote>Als vorläufige, von Häring selbst so bezeichnete Hypothese formuliert er: Die Themenverteilung und die Zulieferrolle der Medienanstalten für Polizei- und Verfassungsschutzbehörden deuteten darauf hin, dass KIVI nicht nur nach rechtswidrigen, sondern auch nach für den Verfassungsschutz potenziell interessanten Beiträgen suche — etwa zu Themen wie „Delegitimierung des Staates" oder „Desinformation".</blockquote>
+</div>
+<h2>Einordnung: Was ist KIVI?</h2>
+<p>KIVI (Kunstwort aus „KI" und lateinisch <em>vigilare</em>, „wachen") wurde ab August 2020 von der Landesanstalt für Medien NRW gemeinsam mit der Condat AG entwickelt und ist seit 2021 im Einsatz, seit 2022 bundesweit bei allen Landesmedienanstalten. Laut einem Interview des LfM-NRW-Direktors Tobias Schmid mit der Bundeszentrale für politische Bildung durchsucht die Software automatisiert soziale Netzwerke und Webseiten nach mutmaßlich rechtswidrigen Inhalten; Treffer werden von Juristinnen und Juristen geprüft und im Verstoßfall an die Landeskriminalämter gemeldet, eine Ausweitung der Kooperation auf das Bundeskriminalamt war laut diesem Interview in Planung.</p>
+<p>Eine Kleine Anfrage der AfD-Fraktion im nordrhein-westfälischen Landtag (Drucksache 18/20787, 3. August 2026) beruft sich auf eine Recherche der „Welt", wonach seit 2022 rund 130.840 potenzielle Rechtsverstöße bundesweit identifiziert wurden und Ergebnisse auch an Verfassungsschutzbehörden weitergegeben würden — laut Welt-Recherche ohne ausdrückliche gesetzliche Grundlage. Die Arbeitsgemeinschaft der Medienanstalten habe dies gegenüber der Zeitung nicht ausdrücklich dementiert, sondern von einer Zusammenarbeit „mit den für die Aufklärung zuständigen Behörden" gesprochen.</p>
+<div class="fairness-box">
+<span class="box-label">Fairness-Box</span>
+<p>Die LfM NRW hat öffentlich klargestellt, dass ihr Hinweisschreiben an Ben Berndt nach eigener Darstellung keine unmittelbaren Rechtsfolgen hat und lediglich der Sachverhaltsklärung dient. Sie bezeichnet ihr Vorgehen als „mildestes Mittel" innerhalb eines gestuften Aufsichtsverfahrens und verweist auf ihren gesetzlichen Auftrag zur Sicherung eines demokratischen Mediensystems (§ 1 LMG NRW). Im Fall Berndt hat sie das Verfahren nach eigener Begründung eingestellt, ohne dass es zu einer förmlichen Anordnung, einer Anpassungspflicht oder Konsequenzen für den Podcaster kam — ein Ergebnis, das gegen die These spricht, es habe sich um einen gezielten Einschüchterungsversuch mit Erzwingungsabsicht gehandelt. Die Medienanstalt Hessen hat in ihrer DSGVO-Auskunft an Norbert Häring in keinem der rund 50 dokumentierten Fälle einen tatsächlichen Rechtsverstoß festgestellt — die Speicherung erfolgte nach eigener Angabe auch zur „Evaluation des eingesetzten Verfahrens", nicht ausschließlich zur Verdachtsprüfung gegen die betroffene Person.</p>
+</div>
+<div class="gap-box">
+<span class="box-label">Beleglücken-Box</span>
+<ul>
+<li>Die t-online- und FAZ-Fassungen zum aktuellen Verfahrensstand konnten redaktionsseitig nicht im Volltext eingesehen werden; die Einschätzung zur eigenständigen Tonalität stützt sich auf Angaben aus der Redaktion, nicht auf eigene Volltextprüfung durch Claude.</li>
+<li>Das genaue Datum der Verfahrenseinstellung durch die LfM NRW („am Mittwoch") ließ sich aus dem vorliegenden t-online/FAZ-Text nicht zweifelsfrei bestimmen — vor Veröffentlichung sollte das Datum anhand der Original-URL nachgetragen werden.</li>
+<li>Berndts Schilderung, wie die Behörde ihn zu Beginn des Verfahrens angesprochen habe (u. a. Aufforderung, 330 Stunden Material zu überprüfen), stammt ausschließlich von ihm selbst und liegt nicht als Behörden-O-Ton vor — die Redaktion konnte diese Darstellung nicht gegen ein Originaldokument der LfM NRW prüfen.</li>
+<li>Berndts Behauptung, ein neuer Medienstaatsvertrag werde künftig eine Kategorie „staatlich geprüfter YouTuber" einführen, ist unabhängig nicht verifiziert und sollte vor Veröffentlichung gegen den tatsächlichen MStV-Reformstand geprüft werden.</li>
+<li>Das genaue Datum des 72-Fragen-Antwortdokuments der LfM NRW an Berliner Zeitung/Ostdeutsche Allgemeine Zeitung ließ sich aus den verfügbaren Quellen nicht zweifelsfrei bestimmen.</li>
+<li>Härings zentrale Deutung — KIVI diene auch der Verfassungsschutz-Zulieferung unabhängig von konkreten Rechtsverstößen — ist ausdrücklich seine eigene, als vorläufig bezeichnete Hypothese, keine bestätigte Tatsache. Häring ist als Antragsteller der DSGVO-Auskunft zugleich betroffene und schreibende Partei (Interessenkonflikt).</li>
+<li>Die Zahl von ca. 130.840 identifizierten Rechtsverstößen und die Aussage zur Verfassungsschutz-Weitergabe stammen aus einer AfD-Kleinen-Anfrage, die sich auf eine „Welt"-Recherche beruft; der Original-Welt-Artikel selbst konnte nicht direkt eingesehen werden.</li>
+<li>Härings Antwort auf sein Schreiben vom 18. September 2026 an die Medienanstalt Hessen steht nach Redaktionsschluss dieses Artikels noch aus.</li>
+</ul>
+</div>
+<div class="sources">
+<h2>Quellenverzeichnis</h2>
+<ol>
+<li><span class="badge">Kategorie 1</span> Landtag NRW, Drucksache 18/20426, 07.07.2026 (AfD-Antrag) — <span class="badge">Kategorie 3 (Parteiquelle)</span> inhaltlich, formal als Primärdokument einsehbar.</li>
+<li><span class="badge">Kategorie 1</span> Landtag NRW, Drucksache 18/20787, 03.08.2026 (Kleine Anfrage AfD, Abg. Markus Wagner) — <span class="badge">Kategorie 3 (Parteiquelle)</span> inhaltlich.</li>
+<li><span class="badge">Kategorie 1</span> Norbert Häring: „Wonach suchen Landesmedienanstalten mit dem Internet-Ausforschungsprogramm KIVI tatsächlich?", norberthaering.de, 19.09.2026 — Primärdokument (eigene DSGVO-Auskunft), betroffene Partei, Interessenkonflikt offengelegt.</li>
+<li><span class="badge">Kategorie 2</span> LTO, Prof. Dr. Wolfgang Schulz: „‚Ben Unscripted' und die Landesmedienanstalt NRW", 06.07.2026.</li>
+<li><span class="badge">Kategorie 2</span> Berliner Zeitung / Ostdeutsche Allgemeine Zeitung: „Landesmedienanstalt NRW bestätigt Schreiben an Ben Berndt" und „72 Antworten zum Fall Ben Berndt und ‚Ungeskriptet'".</li>
+<li><span class="badge">Kategorie 2</span> Berliner Zeitung/dpa: „‚ungeskriptet': Wie Ben Berndt seine Rolle sieht".</li>
+<li><span class="badge">Kategorie 2</span> dpa (Sven Gösmann, Stella Venohr), verbreitet u. a. über Volksstimme, Rheinpfalz: „Ein deutsches Medienphänomen: Podcaster Ben Berndt", 06.07.2026.</li>
+<li><span class="badge">Kategorie 2</span> turi2-Meldung zur LfM-NRW-Frist (30.06.2026), mit Verweis auf t-online.de und welt.de.</li>
+<li><span class="badge">Kategorie 2</span> Süddeutsche Zeitung, Berliner Zeitung, t-online.de, FAZ: inhaltlich übereinstimmende Berichte zum aktuellen Verfahrensstand („Akteneinsicht"/„bis ganz zum Ende"), jeweils eigenständige redaktionelle Aufbereitung (t-online/FAZ mit pointierterer Tonalität) — vier unabhängige Kategorie-2-Quellen, keine reine Agenturübernahme.</li>
+<li><span class="badge">Kategorie 2</span> t-online.de / FAZ: wortgleiche Veröffentlichung zur Verfahrenseinstellung durch die LfM NRW (Zweitverwertung bzw. Content-Kooperation zwischen beiden Häusern, keine zwei unabhängigen Quellen), inkl. Wortlaut-Zitat der Behörde und Erwähnung des KI-Gladiator-Videos; Datum des Berichts nicht zweifelsfrei rekonstruierbar (siehe Beleglücken-Box).</li>
+<li><span class="badge">Kategorie 3</span> Michael Hanfeld (FAZ, Ressortleitung Medien/stellv. Feuilletonchef): Meinungsbeitrag, wertet das Vorgehen der LfM NRW als „sehr klug" — attribuierte Einzelmeinung eines Journalisten, keine unabhängige Tatsachenfeststellung.</li>
+<li><span class="badge">Kategorie 2</span> Berliner Zeitung: Statement Ben Berndts zum Verfahrensausgang (wörtliche Zitate, betroffene Partei — als Eigendarstellung Berndts gekennzeichnet, nicht als unabhängig geprüfter Sachverhalt).</li>
+<li><span class="badge">Kategorie 1/2</span> Bundeszentrale für politische Bildung (bpb): „KI in der Medienaufsicht — was leistet das Tool KIVI?", Interview mit LfM-NRW-Direktor Tobias Schmid.</li>
+</ol>
+</div>
+<div class="further">
+<h2>Weiterführende Analysen</h2>
+<ul>
+<li><a href="#">[Slug bitte manuell einsetzen — bestehender KIVI-Artikel]</a></li>
+<li><a href="#">[Slug bitte manuell einsetzen — Legitimationsverlust/Selbstkritik ÖRR]</a></li>
+<li><a href="#">[Slug bitte manuell einsetzen — Böhmermann/Schönbohm-Fall, sofern thematisch zu MStV-Aufsicht passend]</a></li>
+</ul>
+</div>
+</main>
+
+<footer>Rundfunkkritik.de &middot; Kein Kommentar. Keine Meinung. Nur Fälle.</footer>
+
+
+<footer style="text-align:center;padding:32px 16px;margin-top:48px;border-top:1px solid #d4c9b0;font-family:Georgia,'Crimson Pro',serif;font-size:14px;color:#6b6b6b">
+  <a href="/themen.html" style="color:inherit;text-decoration:none">Themen</a> &middot; <a href="/impressum.html" style="color:#6b6b6b;text-decoration:none">Impressum</a> &middot; <a href="/datenschutz.html" style="color:#6b6b6b;text-decoration:none">Datenschutz</a> &middot; <span class="e-mail" data-n="tkatnok" data-d="ed.kitirkknufdnur" data-t="Kontakt" style="color:#6b6b6b;text-decoration:none"><noscript>kontakt (at) rundfunkkritik.de</noscript></span>
+</footer>
+  <script src="/mail.js" defer></script>
+</body>
+</html>
