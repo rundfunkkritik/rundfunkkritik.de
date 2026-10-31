@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medienaufsicht & Macht – Serie II · rundfunkkritik.de</title>
+<meta name="rubrik" content="Aufsicht, Personen &amp; Formate">
+<meta name="kachel-titel" content="Medienaufsicht &amp; Macht: Serie II">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#181210;--paper:#f4efe5;--red:#b52a1c;--gold:#9a7320;--blue:#1a3a5c;--mid:#4a3322;--light:#e5ddd0;--border:#8a6a4a;--white:#fff;--max:880px}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:16px;line-height:1.7}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 1.2rem}
+.masthead{background:var(--ink);color:var(--white);text-align:center;padding:2.5rem 1rem 2rem;border-bottom:4px solid var(--red)}
+.masthead .site-name{font-family:'Playfair Display',serif;font-size:clamp(1rem,2vw,1.3rem);letter-spacing:.35em;text-transform:uppercase;color:#ccc;margin-bottom:.3rem}
+.masthead .serie-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,3rem);font-weight:900;line-height:1.05;color:var(--white)}
+.masthead .serie-title em{color:var(--red);font-style:normal}
+.masthead .serie-sub{font-size:.88rem;color:#aaa;margin-top:.5rem;font-style:italic;max-width:580px;margin-left:auto;margin-right:auto}
+.masthead .serie-date{margin-top:.9rem;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:#555}
+.serie-intro{background:var(--white);border-bottom:1px solid var(--light);padding:2.2rem 1.2rem}
+.serie-intro .wrap{display:grid;grid-template-columns:3px 1fr;gap:1.4rem}
+.serie-intro .accent-line{background:var(--red);min-height:70px}
+.serie-intro-text h2{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:.6rem}
+.serie-intro-text p{font-size:.87rem;color:var(--mid);line-height:1.75;max-width:700px}
+.serie-intro-text p+p{margin-top:.5rem}
+.toc-bar{background:var(--ink);padding:.65rem 1.2rem;position:sticky;top:0;z-index:100;border-bottom:2px solid var(--red)}
+.toc-bar ul{max-width:var(--max);margin:0 auto;list-style:none;display:flex;flex-wrap:wrap}
+.toc-bar li{border-right:1px solid #333}
+.toc-bar li:last-child{border-right:none}
+.toc-bar a{display:block;padding:.28rem .9rem;color:#bbb;text-decoration:none;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}
+.toc-bar a:hover{color:var(--white)}
+.toc-bar a span{color:var(--red);font-weight:700;margin-right:.25rem}
+.article{padding:4rem 0 3rem;border-bottom:3px double var(--border)}
+.article:last-of-type{border-bottom:none}
+.art-head{text-align:center;margin-bottom:2.2rem;padding-bottom:1.4rem;border-bottom:1px solid var(--light)}
+.art-num{display:inline-block;background:var(--red);color:var(--white);font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.22rem .65rem;margin-bottom:.65rem}
+.art-head h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,4vw,2.6rem);font-weight:900;line-height:1.1;margin-bottom:.35rem}
+.art-head .deck{font-size:.97rem;color:var(--mid);font-style:italic;max-width:600px;margin:.2rem auto .7rem;line-height:1.55}
+.art-head .byline{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--border)}
+.art-body{max-width:680px;margin:0 auto}
+.art-body p{margin-bottom:1.05rem;font-size:.96rem;color:var(--mid);line-height:1.8}
+.art-body p:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;line-height:.85;float:left;margin-right:.1rem;margin-top:.15rem;color:var(--ink)}
+.art-body h3{font-family:'Playfair Display',serif;font-size:1.12rem;font-weight:700;color:var(--ink);margin:2rem 0 .55rem;padding-top:.9rem;border-top:1px solid var(--light)}
+.art-body strong{color:var(--ink);font-weight:600}
+.pq{border-left:4px solid var(--red);padding:.75rem 1.2rem;background:var(--white);margin:1.7rem 0}
+.pq p{font-family:'Playfair Display',serif;font-size:.97rem;font-style:italic;line-height:1.65;color:var(--ink);margin-bottom:0!important}
+.pq p::first-letter{all:unset}
+.pq cite{display:block;font-size:.63rem;color:var(--border);margin-top:.38rem;font-style:normal;text-transform:uppercase;letter-spacing:.1em}
+.book-box{border:1px solid var(--border);padding:1rem 1.2rem;background:var(--white);margin:1.5rem 0;display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start}
+.book-icon{font-size:2.2rem;line-height:1}
+.book-box h4{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;margin-bottom:.3rem}
+.book-box p{font-size:.76rem;color:var(--mid);line-height:1.55;margin-bottom:.4rem!important}
+.book-box a{font-size:.72rem;color:var(--red);font-weight:700;text-decoration:none}
+.case-box{background:var(--ink);color:var(--white);padding:1.1rem 1.3rem;margin:1.5rem 0}
+.case-box .case-label{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#888;margin-bottom:.3rem}
+.case-box h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;margin-bottom:.4rem;line-height:1.3}
+.case-box p{font-size:.75rem;color:#bbb;line-height:1.55}
+.infographic{background:var(--paper);border:1px solid var(--light);padding:1.8rem 1.4rem;margin:2.5rem 0}
+.infographic-title{font-family:'Playfair Display',serif;font-size:1.08rem;font-weight:700;margin-bottom:.25rem}
+.infographic-sub{font-size:.71rem;color:var(--border);margin-bottom:1.4rem;font-style:italic}
+.sec-lbl{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--border);border-bottom:1px solid var(--light);padding-bottom:.3rem;margin:1.8rem 0 .9rem}
+.sec-lbl:first-child{margin-top:0}
+.info-note{font-size:.65rem;color:var(--border);margin-top:.4rem;font-style:italic}
+.tl{position:relative;padding-left:1.5rem}
+.tl::before{content:'';position:absolute;left:.35rem;top:.4rem;bottom:.4rem;width:2px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:.9rem;padding-bottom:.9rem;border-bottom:1px dashed var(--light)}
+.tl-item:last-child{border-bottom:none;margin-bottom:0}
+.tl-item::before{content:'';position:absolute;left:-1.18rem;top:.3rem;width:9px;height:9px;border-radius:50%;background:var(--red);border:2px solid var(--paper);box-shadow:0 0 0 1px var(--red)}
+.tl-date{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:.15rem}
+.tl-text{font-size:.76rem;color:var(--mid);line-height:1.55}
+.tl-text strong{color:var(--ink)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.g3-auto{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--light);border:1px solid var(--light)}
+.card{border:1px solid var(--border);background:var(--white);padding:.9rem}
+.card h4{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;margin-bottom:.4rem;padding-bottom:.4rem;border-bottom:1px solid var(--light)}
+.card p{font-size:.73rem;color:var(--mid);line-height:1.55}
+.card.card-red{border-color:var(--red)}
+.card.card-red h4{color:var(--red)}
+.card-dark{background:var(--ink);color:var(--white);padding:.85rem}
+.card-dark h4{font-family:'Playfair Display',serif;font-size:.82rem;font-weight:700;margin-bottom:.3rem;color:var(--white);border-bottom:1px solid #333;padding-bottom:.3rem}
+.card-dark p{font-size:.71rem;color:#bbb;line-height:1.5}
+.cell{background:var(--white);padding:.85rem .85rem .75rem}
+.cell .ico{font-size:1.2rem;display:block;margin-bottom:.25rem}
+.cell h4{font-family:'Playfair Display',serif;font-size:.78rem;font-weight:700;margin-bottom:.2rem}
+.cell p{font-size:.69rem;color:var(--mid);line-height:1.5}
+.cell.cwarn{background:#fdf5f4}
+.cell.cwarn h4{color:var(--red)}
+.bar-grid{display:flex;flex-direction:column;gap:.8rem}
+.bar-row{display:grid;grid-template-columns:160px 1fr 80px;align-items:center;gap:.65rem}
+.bar-lbl{font-size:.74rem;color:var(--mid);text-align:right;line-height:1.3}
+.bar-out{background:var(--light);height:18px;border-radius:2px;overflow:hidden}
+.bar-in{height:100%;border-radius:2px}
+.c-r{background:var(--red)}.c-g{background:var(--gold)}.c-b{background:var(--blue)}.c-m{background:var(--mid)}.c-gr{background:#999}
+.bar-v{font-size:.73rem;font-weight:700;color:var(--ink);white-space:nowrap}
+.img-brief{background:#f0ebe0;border:1px dashed var(--border);padding:.65rem .9rem;font-size:.73rem;color:var(--border);margin:1.4rem 0}
+.img-brief strong{color:var(--mid)}
+.sources{margin-top:1.8rem;padding-top:.65rem;border-top:1px solid var(--light);font-size:.66rem;color:var(--border);font-style:italic}
+.site-footer{background:var(--ink);color:#555;text-align:center;padding:1.8rem 1rem;font-size:.68rem;line-height:1.7}
+.site-footer strong{color:#888}
+@media(max-width:600px){.g2,.g3-auto{grid-template-columns:1fr}.bar-row{grid-template-columns:90px 1fr 60px}.book-box{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="site-name">rundfunkkritik.de</div>
+  <h1 class="serie-title">Medienaufsicht &amp; <em>Macht</em> — Serie II</h1>
+  <p class="serie-sub">Zensurkomplex · Beitragsstopper vor Gericht · Indoktrination · Jonas Tögel</p>
+  <div class="serie-date">Mai 2026</div>
+</header>
+
+<nav class="toc-bar">
+  <ul>
+    <li><a href="#teil1"><span>I</span> Zensurkomplex</a></li>
+    <li><a href="#teil2"><span>II</span> Beitragsstopper</a></li>
+    <li><a href="#teil3"><span>III</span> Indoktrination</a></li>
+    <li><a href="#teil4"><span>IV</span> Jonas Tögel</a></li>
+  </ul>
+</nav>
+
+<section class="serie-intro">
+  <div class="wrap">
+    <div class="accent-line"></div>
+    <div class="serie-intro-text">
+      <h2>Zur Serie II</h2>
+      <p>Die erste Serie legte die Strukturen frei: Landesmedienanstalten, Rundfunkräte, Beanstandungsverfahren gegen freie Journalisten. Diese zweite Serie geht tiefer. Sie fragt nach dem Netzwerk hinter den Strukturen — dem, was Norbert Häring den „Wahrheitskomplex" nennt. Sie fragt, wie Kinder und Erwachsene durch Rundfunk und Schule systematisch auf Konsens getrimmt werden. Und sie stellt einen Wissenschaftler vor, der das alles akademisch belegt hat: Jonas Tögel, Propagandaforscher an der Universität Regensburg.</p>
+      <p>Dazwischen: ein Destillat aus dem Vorgutachten der Beitragsstopper — dem bisher juristisch saubersten Angriff auf den Rundfunkbeitrag vor deutschen Gerichten.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ARTIKEL I -->
+<article id="teil1" class="article">
+<div class="wrap">
+  <header class="art-head">
+    <div class="art-num">Teil I</div>
+    <h2>Der Zensurkomplex</h2>
+    <p class="deck">Wie ein staatlich gefördertes Netzwerk tut, was der Staat selbst nicht darf — und wie es funktioniert</p>
+    <div class="byline">rundfunkkritik.de · Mai 2026</div>
+  </header>
+  <div class="art-body">
+    <p>Artikel 5 Grundgesetz ist klar: „Eine Zensur findet nicht statt." Vier Wörter. Absolut formuliert. Kein Vorbehalt, keine Ausnahme, kein „es sei denn". Der Verfassungsgeber kannte die Geschichte und zog daraus die radikalste Konsequenz.</p>
+    <p>Und doch gibt es ihn: einen Zensurkomplex, der nicht so heißt, der nicht als Behörde erscheint, der keine uniformierten Beamten beschäftigt — und der dennoch systematisch Inhalte bewertet, Journalisten unter Druck setzt und Plattformen zur Entfernung von Beiträgen bewegt. Der Unterschied zur historischen Zensur ist nur die Architektur. Das Ergebnis ist dasselbe.</p>
+    <h3>Die Architektur des Komplexes</h3>
+    <p>Der Zensurkomplex besteht aus mehreren Schichten, die einzeln harmlos wirken und zusammen ein System ergeben. Die erste Schicht sind die <strong>staatlich geförderten Faktenchecker</strong>: Correctiv, Volksverpetzer, ARD-Faktenfinder, ZDF-Faktencheck. Sie empfangen direkte oder indirekte Förderung — durch Subventionen, öffentlich-rechtliche Auftragsarbeiten, EU-Projektmittel oder steuerlich begünstigte Stiftungsgelder. Ihre Bewertungen sind keine Rechtsentscheidungen. Aber sie entfalten Rechtswirkung: Plattformen wie Meta nutzen sie als Grundlage für algorithmische Reichweitenreduktion, Beitragsmarkierungen und Konteneinschränkungen.</p>
+    <p>Die zweite Schicht sind die <strong>Landesmedienanstalten</strong> als Behördenarm: Hinweisschreiben, Beanstandungen, Untersagungen — wie in Serie I ausführlich dargelegt. 94 Verfahren seit 2020, zunehmend mit KI-gestützter Überwachung.</p>
+    <p>Die dritte Schicht ist subtiler: <strong>soziale und berufliche Sanktionierung</strong>. Journalisten, die unliebsame Fragen stellen, werden nicht immer vor Gericht gezerrt. Sie verlieren Aufträge, werden aus Gesprächsrunden ausgeladen, auf sozialen Netzwerken als „rechts" markiert — eine informelle Exkommunikation, die keine Rechtsgrundlage braucht und kaum juristisch angreifbar ist.</p>
+    <h3>Correctiv als Fallstudie</h3>
+    <p>Correctiv ist das prominenteste Beispiel. Das Recherchezentrum erhält Gelder von der Bundeszentrale für politische Bildung, der EU-Kommission, der Open Society Foundation und weiteren Stiftungen mit politischer Färbung. Es tritt als unabhängig auf, ist aber strukturell von denselben Institutionen abhängig, deren Agenda es faktisch unterstützt.</p>
+    <p>Besondere Brisanz entfaltete im Januar 2024 ein Bericht über ein angebliches „Geheimtreffen" in Potsdam, bei dem Deportationspläne besprochen worden sein sollten. Die Berichterstattung stellte sich in zentralen Punkten als übertrieben oder faktisch unbelegt heraus. Dennoch löste sie bundesweite Demonstrationen aus, wurde von ARD, ZDF und allen großen Tageszeitungen unkritisch verstärkt — und von den Landesmedienanstalten nie einer inhaltlichen Sorgfaltsprüfung unterworfen. Der Mechanismus zeigt sich: Was Correctiv schreibt, ist geschützt. Was ein Alexander Wallasch schreibt, wird beanstandet.</p>
+    <div class="pq">
+      <p>„Ein größtenteils staatlich finanziertes, zentral gesteuertes und digital hochgerüstetes Netzwerk betreibt das, was der demokratische Staat selbst nicht darf: Zensur, Propaganda, Diffamierung und Wahlbeeinflussung."</p>
+      Norbert Häring: „Der Wahrheitskomplex", 2025
+    </div>
+    <h3>Der Norbert-Häring-Fall: Wenn Kritik systemische Kosten hat</h3>
+    <p>Norbert Häring ist seit 2002 Redakteur beim Handelsblatt — einer der renommiertesten Wirtschaftsjournalisten Deutschlands, Preisträger der Keynes-Gesellschaft, Gründer des EZB-Schattenrats. Kein Blogger. Kein Querdenker. Ein Mann des Establishments. Und genau deshalb ist sein Fall so erhellend.</p>
+    <p>Häring betreibt seit Jahren den Blog „Geld und mehr", auf dem er zu Geldsystem, Bargeldabschaffung, WHO-Finanzierung und Medienversagen schreibt — stets mit akademischer Präzision, Quellenangaben, Belegen. Er klagte gegen den Hessischen Rundfunk auf das Recht zur Barzahlung des Rundfunkbeitrags — ein Fall, der bis zum Europäischen Gerichtshof ging. Er erhielt dafür nicht den Respekt eines streitbaren Kollegen, sondern das Etikett des Außenseiters.</p>
+    <p>Sein jüngstes Buch „Der Wahrheitskomplex" dokumentiert ein größtenteils staatlich finanziertes, zentral gesteuertes und digital hochgerüstetes Netzwerk, das das betreibt, was der demokratische Staat selbst nicht darf: Zensur, Propaganda, Diffamierung und Wahlbeeinflussung. Das Buch erschien 2025. Der Mainstream schwieg.</p>
+    <div class="book-box">
+      <div class="book-icon">📘</div>
+      <div>
+        <h4>Norbert Häring – Der Wahrheitskomplex</h4>
+        <p>Dokumentation eines staatlich geförderten Netzwerks, das Zensur, Propaganda und Diffamierung betreibt — während Artikel 5 GG das verbietet. Investigativ, mit Belegen, unangenehm präzise.</p>
+        <a href="https://www.amazon.de/dp/3864897432?tag=sichererhafen-21" target="_blank">📘 Jetzt bei Amazon ansehen →</a>
+      </div>
+    </div>
+    <h3>Die EU-Ebene: DSA als Zensurhebel</h3>
+    <p>Was national durch Landesmedienanstalten und Faktenchecker geschieht, wird europäisch durch den Digital Services Act institutionalisiert. Der DSA verpflichtet sehr große Plattformen zur Entfernung „illegaler Inhalte" — wobei die Definition von Illegalität durch nationale Behörden erfolgt, die wiederum über Trusted-Flagger-Netzwerke agieren. Deutschland hat die Landesmedienanstalten als solche Trusted Flagger nominiert. Der Kreis schließt sich: Die Anstalt beanstandet, die Plattform entfernt, der Journalist ist unsichtbar — kein Gerichtsverfahren, keine formelle Zensur, kein Verstoß gegen Artikel 5.</p>
+    <p>Der Zensurkomplex ist kein Geheimplan. Er ist emergent: Aus vielen einzelnen, formal rechtmäßigen Bausteinen entsteht eine Gesamtarchitektur, die dasselbe leistet wie Zensur — nur ohne den Namen zu tragen und ohne die verfassungsrechtliche Angreifbarkeit zu bieten.</p>
+    <div class="img-brief"><strong>Bildvorschlag Unsplash:</strong> <code>network web connections dark</code> oder <code>surveillance camera city</code> → <a href="https://unsplash.com/de" target="_blank">unsplash.com/de</a></div>
+  </div>
+  <div class="infographic">
+    <div class="infographic-title">Infografik: Der Zensurkomplex</div>
+    <div class="infographic-sub">Schichten, Akteure und Mechanismen indirekter Inhaltskontrolle in Deutschland</div>
+    <div class="sec-lbl">§ Die vier Schichten des Komplexes</div>
+    <div class="g3-auto">
+      <div class="cell cwarn"><span class="ico">🔍</span><h4>Staatsgeförderte Faktenchecker</h4><p>Correctiv, ARD Faktenfinder, ZDF Faktencheck. Förderung durch Bund, EU, Stiftungen. Keine Zulassung des Betroffenen, algorithmische Wirkung auf Plattformen.</p></div>
+      <div class="cell cwarn"><span class="ico">🏛️</span><h4>Landesmedienanstalten</h4><p>94 Hinweisschreiben seit 2020. KI-Überwachung (KIVI). Beanstandung, Untersagung, Gebühr — ohne Gerichtsverfahren.</p></div>
+      <div class="cell cwarn"><span class="ico">🤫</span><h4>Informelle Sanktionierung</h4><p>Auftragsverlust, Ausladung, soziale Ächtung, Plattform-Markierung. Keine Rechtsgrundlage — keine juristische Angreifbarkeit.</p></div>
+      <div class="cell cwarn"><span class="ico">🇪🇺</span><h4>DSA Trusted Flagger</h4><p>Landesmedienanstalten als EU-nominierte Melder. Plattformen entfernen auf Zuruf — ohne Gerichtsurteil.</p></div>
+    </div>
+    <div class="sec-lbl">§ Förderströme Correctiv (exemplarisch, öffentlich bekannte Quellen)</div>
+    <div class="bar-grid">
+      <div class="bar-row"><div class="bar-lbl">EU-Kommission (Projekte)</div><div class="bar-out"><div class="bar-in c-b" style="width:85%"></div></div><div class="bar-v">~600.000 €</div></div>
+      <div class="bar-row"><div class="bar-lbl">Bundeszentrale polit. Bildung</div><div class="bar-out"><div class="bar-in c-r" style="width:55%"></div></div><div class="bar-v">~380.000 €</div></div>
+      <div class="bar-row"><div class="bar-lbl">Open Society Foundation</div><div class="bar-out"><div class="bar-in c-m" style="width:42%"></div></div><div class="bar-v">~290.000 €</div></div>
+      <div class="bar-row"><div class="bar-lbl">Weitere Stiftungen / Medien</div><div class="bar-out"><div class="bar-in c-gr" style="width:30%"></div></div><div class="bar-v">variabel</div></div>
+    </div>
+    <div class="info-note">Angaben auf Basis öffentlicher Förderberichte und Recherchen (NIUS, apollo-news.net, Multipolar 2023–2025). Kein Anspruch auf Vollständigkeit.</div>
+    <div class="sec-lbl">§ Mechanismus: Wie indirekte Zensur funktioniert</div>
+    <div class="tl">
+      <div class="tl-item"><div class="tl-date">Schritt 1</div><div class="tl-text"><strong>Faktenchecker bewertet</strong> Artikel als „falsch" — ohne Anhörung des Autors, ohne formelles Verfahren.</div></div>
+      <div class="tl-item"><div class="tl-date">Schritt 2</div><div class="tl-text"><strong>Plattform reduziert Reichweite</strong> algorithmisch oder fügt Warnhinweis ein — auf Basis der Faktenchecker-Bewertung.</div></div>
+      <div class="tl-item"><div class="tl-date">Schritt 3</div><div class="tl-text"><strong>Landesmedienanstalt prüft</strong> auf Sorgfaltspflichtverletzung — mögliches Beanstandungsverfahren mit Gebühr.</div></div>
+      <div class="tl-item"><div class="tl-date">Schritt 4</div><div class="tl-text"><strong>DSA-Trusted-Flagger</strong> meldet an Plattform. Plattform entfernt Inhalt — ohne Gerichtsurteil.</div></div>
+      <div class="tl-item"><div class="tl-date">Ergebnis</div><div class="tl-text"><strong>Artikel 5 GG formal unberührt.</strong> Der Journalist schrieb. Er wurde nur unsichtbar gemacht. Das ist das faktische Äquivalent zur Zensur.</div></div>
+    </div>
+    <div class="info-note" style="margin-top:.8rem">Quellen: Norbert Häring: Der Wahrheitskomplex (2025), NIUS.de, multipolar-magazin.de, apollo-news.net, euractiv.de · Mai 2026</div>
+  </div>
+  <div class="sources">Quellen: Norbert Häring: Der Wahrheitskomplex (Westend 2025), NIUS.de (März 2024), apollo-news.net (Jan. 2024), multipolar-magazin.de, euractiv.de (DSA), norberthaering.de</div>
+</div>
+</article>
+
+<!-- ARTIKEL II -->
+<article id="teil2" class="article">
+<div class="wrap">
+  <header class="art-head">
+    <div class="art-num">Teil II</div>
+    <h2>Die Festung bekommt Risse</h2>
+    <p class="deck">Warum die Beitragsstopper-Strategie vor Gericht eine neue Phase erreicht hat — und was das für 50.000 Verfahren bedeutet</p>
+    <div class="byline">rundfunkkritik.de · Mai 2026 · Analyse auf Basis des Vorgutachtens der Freiheitskanzlei (Markus Bönig)</div>
+  </header>
+  <div class="art-body">
+    <p>Lange sah es so aus, als sei der Rundfunkbeitrag juristisch eine Festung. Wer klagte, verlor meistens. Wer mit Unausgewogenheit argumentierte, wurde auf Programmbeschwerden verwiesen. Wer nicht zahlte, bekam Bescheide, Mahnungen, Vollstreckung, Gerichtsvollzieher, Vermögensauskunft. Das System wirkte wie Beton. Doch inzwischen zeigen die Verfahren rund um die Beitragsstopper etwas Neues: Beton bekommt Risse — wenn man an den richtigen Stellen bohrt.</p>
+    <p>Knapp 50.000 Beitragsstopper treten aktuell in eine grundlegend veränderte juristische Phase ein. Das Vorgutachten der Freiheitskanzlei, das Rechtsanwalt Markus Bönig im Mai 2026 vorgestellt hat, markiert den entscheidenden strategischen Wechsel: weg von moralischer Empörung, hin zu rechtsstaatlicher Infrastrukturarbeit.</p>
+    <h3>Der Wendepunkt: BVerwG vom 15. Oktober 2025</h3>
+    <p>Das Bundesverwaltungsgericht hat am 15. Oktober 2025 (Az. 6 C 5.24) ein Urteil gefällt, das die gesamte Rechtslage neu sortiert. Die alte Linie lautete: Programmkritik spielt für die Beitragspflicht keine Rolle. Die neue Linie lautet differenzierter: Die Beitragspflicht kann verfassungsrechtlich problematisch werden, wenn das Gesamtprogrammangebot <strong>aller</strong> öffentlich-rechtlichen Rundfunkanstalten über längere Zeit gröblich gegen Vielfalt und Ausgewogenheit verstößt.</p>
+    <p>Die Tür ist nicht offen. Aber sie ist auch nicht mehr zugemauert. Sie ist mit einem wissenschaftlichen Tresor verriegelt — und das ist sowohl das Problem als auch die neue Chance.</p>
+    <h3>Die Formel der Gerichte — und ihre Falle</h3>
+    <p>Bundesweit übernehmen Verwaltungsgerichte nun dieselbe Formel: Gesamtprogramm, alle öffentlich-rechtlichen Rundfunkanstalten, Fernsehen, Hörfunk und Telemedien, mindestens zwei Jahre, wissenschaftliche Methodik, geeignete Indikatoren — keine bloßen Einzelbeispiele. Corona allein reicht nicht. Ukraine-Krieg allein reicht nicht. Einzelne Talkshows, einzelne Moderatoren, einzelne Skandale reichen nicht.</p>
+    <p>Wer den Beitrag angreifen will, muss das System angreifen — wissenschaftlich. Das enthält einen Widerspruch, den die Beitragsstopper-Strategie jetzt zielgenau angreift.</p>
+    <div class="case-box">
+      <div class="case-label">Kernargumentation des Vorgutachtens</div>
+      <h4>„Beweise alles — aber bekomme keine Daten."</h4>
+      <p>Das VG Saarland (1 K 1878/25) macht den Widerspruch sichtbar: Das Gericht verlangt ein wissenschaftliches Gutachten, lehnt aber Datenherausgabe als „Ausforschung" ab. Der Bürger soll ein Systemversagen nachweisen, zu dessen Rohdaten er keinen Zugang hat. Das ist nicht mehr Programmkritik — das ist ein verfassungsrechtliches Rechtsschutzproblem.</p>
+    </div>
+    <h3>Das Rechtsschutzargument: Der entscheidende Shift</h3>
+    <p>Die Argumentationskette des Vorgutachtens: Das BVerwG erlaubt den Einwand struktureller Programmdefizite. Es verlangt dafür wissenschaftlich fundierte Darlegung. Die notwendigen Daten liegen wesentlich bei den Rundfunkanstalten. Der Bürger hat keinen gleichwertigen Zugang. Verweigert der Rundfunk die Daten, entsteht eine strukturelle Beweisnot. Dann muss das Gericht nach § 86 VwGO aufklären. Andernfalls wird Art. 19 Abs. 4 GG ausgehöhlt.</p>
+    <p>Ein BGH-Beschluss vom 9. März 2026 (Az. VI ZR 335/24) verstärkt diese Linie: Wenn nur eine Partei Zugang zu entscheidenden Informationen hat, darf die andere Partei nicht an ihrer Beweisnot scheitern. Der Rundfunk kontrolliert Archive, Auswahlmechanismen, interne Qualitätskontrolle — und behauptet: „Das ausgestrahlte Programm ist öffentlich zugänglich, beweise du mal das Gesamtversagen."</p>
+    <div class="pq">
+      <p>„Öffentlich ausgestrahlt ist nicht gleich dauerhaft archiviert, vollständig rekonstruierbar und wissenschaftlich auswertbar. Hierzu ist die Mitarbeit der Rundfunkanstalten zwingend erforderlich."</p>
+      Markus Bönig / Freiheitskanzlei: Vorgutachten Beitragsstopper, Mai 2026
+    </div>
+    <h3>Die zweite Front: Vollstreckung</h3>
+    <p>Parallel zur Programmfrage öffnet sich eine zweite juristische Front. Der BGH-Beschluss vom 25. Februar 2026 (Az. VII ZB 29/24) ist der zentrale Hebel: Ein elektronisches Vollstreckungsersuchen muss erkennen lassen, welche konkrete natürliche Person Verantwortung für den Inhalt übernommen hat. Die bloße Benennung einer Intendantin oder Organbezeichnung genügt nicht.</p>
+    <p>Das AG Passau hat diese Linie am 8. Mai 2026 erstmals praktisch umgesetzt: Das Vollstreckungsersuchen wurde wegen fehlender konkreter verantwortlicher Person für formunwirksam erklärt — Vermögensauskunft und Eintragungsanordnung wurden aufgehoben. Aus einer abstrakten Rechtsfrage wurde operative Vollstreckungsrealität.</p>
+    <h3>Die Doppelstrategie: Klein und groß zugleich</h3>
+    <p>Massenverfahren müssen klein gehalten werden: nur Bescheidsaufhebung, niedriger Streitwert, keine überladenen Systemanträge. Musterverfahren müssen bewusst groß geführt werden: mit Gutachten, Datenzugang, Beweisanträgen, sekundärer Darlegungslast und dem vollen Instrumentarium des Verfassungsrechts.</p>
+    <p>Die Rundfunkanstalten verstehen das. Der NDR widerspricht jedem Ruhen von Verfahren. Der SWR nutzt neue VGH-Entscheidungen als psychologischen Druck zur Klagerücknahme. Der RBB bestreitet jede Informationsasymmetrie. Alle verfolgen dasselbe Ziel: isolierte Einzelverfahren, keine bundesweite Aufklärungsdynamik, kein Musterverfahren mit Datenoffenlegung.</p>
+    <div class="img-brief"><strong>Bildvorschlag Unsplash:</strong> <code>courtroom justice scales</code> oder <code>law books gavel</code> → <a href="https://unsplash.com/de" target="_blank">unsplash.com/de</a></div>
+  </div>
+  <div class="infographic">
+    <div class="infographic-title">Infografik: Die Festung bekommt Risse</div>
+    <div class="infographic-sub">Zwei juristische Fronten, Schlüsselurteile und die neue Doppelstrategie der Beitragsstopper</div>
+    <div class="sec-lbl">§ Chronologie der Schlüsselentscheidungen</div>
+    <div class="tl">
+      <div class="tl-item"><div class="tl-date">15. Oktober 2025 · BVerwG 6 C 5.24</div><div class="tl-text"><strong>Dreh- und Angelpunkt:</strong> Beitragspflicht kann verfassungsrechtlich problematisch werden bei gröblichem Gesamtprogrammversagen aller ÖRR-Anstalten über längere Zeit — aber nur mit wissenschaftlichem Gutachten nachweisbar.</div></div>
+      <div class="tl-item"><div class="tl-date">25. Februar 2026 · BGH VII ZB 29/24</div><div class="tl-text"><strong>Vollstreckungswende:</strong> Elektronisches Vollstreckungsersuchen braucht konkrete verantwortliche natürliche Person. Bloße Namensnennung der Intendantin genügt nicht. Vollautomatisierung entbindet nicht von rechtsstaatlichen Verantwortlichkeiten.</div></div>
+      <div class="tl-item"><div class="tl-date">9. März 2026 · BGH VI ZR 335/24</div><div class="tl-text"><strong>Beweisnotverstärker:</strong> Wenn nur eine Partei Zugang zu entscheidenden Informationen hat, darf die andere nicht an der Beweisnot scheitern. Strategisch auf Rundfunkdaten übertragbar.</div></div>
+      <div class="tl-item"><div class="tl-date">8. Mai 2026 · AG Passau 4 M 5863/25</div><div class="tl-text"><strong>Erste operative Umsetzung:</strong> Vollstreckungsersuchen wegen fehlender verantwortlicher Person für formunwirksam erklärt. Vermögensauskunft und Eintragungsanordnung aufgehoben.</div></div>
+    </div>
+    <div class="sec-lbl">§ Das zentrale Rechtsschutzdilemma</div>
+    <div class="g2">
+      <div class="card card-red">
+        <h4>Was Gerichte verlangen</h4>
+        <p>Gesamtprogramm aller ÖRR-Anstalten · Fernsehen, Hörfunk, Telemedien · Mind. 2 Jahre · Wissenschaftliche Methodik · Geeignete Indikatoren · Kein Einzelbeispiel</p>
+      </div>
+      <div class="card">
+        <h4>Was der Bürger dafür braucht</h4>
+        <p>Archive · Rohdaten · Transkripte · Metadaten · Depublizierungsdaten · Interne Qualitätsberichte · Gästelisten</p>
+        <p style="margin-top:.5rem;font-size:.7rem;color:var(--border)">Problem: Diese Daten liegen ausschließlich beim Rundfunk.</p>
+      </div>
+    </div>
+    <div class="sec-lbl">§ Die Doppelstrategie der Freiheitskanzlei</div>
+    <div class="g2">
+      <div class="card-dark"><h4>Massenverfahren: Klein halten</h4><p>Nur Bescheidsaufhebung · Niedriger Streitwert · Keine überladenen Systemanträge · Schnell und kostengünstig</p></div>
+      <div class="card-dark" style="border-left:3px solid var(--red)"><h4>Musterverfahren: Groß führen</h4><p>Gutachten · Datenzugang · Beweisanträge · Sekundäre Darlegungslast · Art. 19 Abs. 4 GG · § 86 VwGO</p></div>
+    </div>
+    <div class="info-note" style="margin-top:.8rem">Quelle: Markus Bönig / Freiheitskanzlei: Vorgutachten Beitragsstopper (Mai 2026) · beitragsstopper.de · freiheitskanzlei.de · substack.com/@markusboenig</div>
+  </div>
+  <div class="sources">Quelle: Markus Bönig / Freiheitskanzlei: Vorgutachten Beitragsstopper, Mai 2026 · beitragsstopper.de · freiheitskanzlei.de</div>
+</div>
+</article>
+
+<!-- ARTIKEL III -->
+<article id="teil3" class="article">
+<div class="wrap">
+  <header class="art-head">
+    <div class="art-num">Teil III</div>
+    <h2>Von Anfang an</h2>
+    <p class="deck">Wie Kinder durch Rundfunk, Schule und Onlinedienste auf Konsens getrimmt werden — und warum das kein Versehen ist</p>
+    <div class="byline">rundfunkkritik.de · Mai 2026</div>
+  </header>
+  <div class="art-body">
+    <p>Es beginnt mit der Sendung mit der Maus. Es setzt sich fort mit Logo!, dem Kindernachrichtenformat des ZDF, das Klimawandel, Migration und Genderthemen in einer Sprache erklärt, die Widerspruch gar nicht erst einlädt. Es läuft durch die Schulbücher, die seit Jahren von denselben Verlagen produziert werden, deren Lektorinnen und Lektoren in denselben politischen Netzwerken sozialisiert wurden wie die Redakteurinnen und Redakteure des öffentlich-rechtlichen Rundfunks. Und es endet mit dem Erwachsenen, der seine Meinungsbildung für autonom hält — weil er nie etwas anderes kennengelernt hat.</p>
+    <p>Das ist keine Verschwörungstheorie. Es ist das erwartbare Ergebnis einer Medienlandschaft, in der ein Sender wie der WDR jährlich über vier Milliarden Euro ausgibt, eine eigene Kinderredaktion betreibt, Schulprogramme finanziert und seine Inhalte in die Bildungsplattformen der Länder einspeist.</p>
+    <h3>Die Kinder-Plattform als Meinungsschule</h3>
+    <p>Logo! ist seit 1988 auf Sendung — als erstes Kindernachrichtenformat im deutschen Fernsehen. Heute produziert es täglich Inhalte, die auf der ZDF-Kindermediathek und über Schulplattformen bundesweit verbreitet werden. Eine Inhaltsanalyse von Logo!-Beiträgen zwischen 2020 und 2024, die Medienwissenschaftler der Universität Mainz 2025 vorlegten, zeigte ein deutliches Muster: Bei polarisierenden Themen wie Klimapolitik, Migration oder Genderfragen wurden fast ausnahmslos institutionelle Stimmen — Politiker, NGOs, Wissenschaftler im politischen Auftrag — als einzige Deutungsrahmen präsentiert. Gegenpositionen kamen in 94 Prozent der untersuchten Beiträge nicht vor.</p>
+    <p>Das ist kein Vorwurf an einzelne Redakteurinnen und Redakteure. Es ist die strukturelle Konsequenz einer Redaktion, die in einem System operiert, das Ausgewogenheit bei Kinderthemen als pädagogisch unangemessen betrachtet. Das Problem: Kinder lernen dabei nicht, zwischen Meinung und Faktum zu unterscheiden. Sie lernen, dass es bei bestimmten Themen keine Gegenposition gibt.</p>
+    <h3>Erwachsene: Die tägliche Dosis Framing</h3>
+    <p>Was bei Kindern durch Vereinfachung geschieht, geschieht bei Erwachsenen durch Framing. Die ARD-Tagesschau gilt als meistgesehene Nachrichtensendung Deutschlands — täglich rund acht Millionen Zuschauerinnen und Zuschauer. Eine Studie des Instituts für Kommunikationswissenschaft der LMU München (2024) untersuchte die Gästeauswahl politischer Talkshows von ARD und ZDF zwischen 2021 und 2023. Ergebnis: Über 70 Prozent der eingeladenen Expertinnen und Experten standen in institutioneller Nähe zu Bundesbehörden, öffentlich geförderten Instituten oder etablierten Parteien. Wissenschaftlerinnen und Wissenschaftler, die Gegenpositionen zu Regierungshandeln vertraten, kamen auf unter fünf Prozent der Beiträge.</p>
+    <div class="pq">
+      <p>„Wer die Medien kontrolliert, kontrolliert nicht, was Menschen denken. Er kontrolliert, worüber sie nachdenken — und was sie für selbstverständlich halten."</p>
+      Sinngemäß nach Noam Chomsky, Manufacturing Consent (1988)
+    </div>
+    <h3>Der ÖRR in der Schule: Crossmediale Verstärkung</h3>
+    <p>Besonders wirksam wird das System durch seine crossmediale Verzahnung mit dem Bildungssektor. ARD und ZDF betreiben gemeinsam die Plattform „funk" — formal für 14- bis 29-Jährige konzipiert, auf YouTube mit Millionenreichweite. Funk-Formate wie MrWissen2go oder Y-Kollektiv werden in zahlreichen Bundesländern als Unterrichtsmaterial empfohlen oder eingesetzt. Was dabei inhaltlich vermittelt wird, unterliegt keiner externen redaktionellen Kontrolle. Die Rundfunkräte, die das beaufsichtigen sollten, sind — wie in Serie I gezeigt — politisch besetzt und strukturell zur Selbstzufriedenheit neigend.</p>
+    <h3>Nudging statt Bildung</h3>
+    <p>Jonas Tögel beschreibt in seinen Arbeiten zur kognitiven Kriegsführung einen Mechanismus, der weit über klassische Propaganda hinausgeht: <strong>Nudging</strong> — das sanfte Anstupsen in die gewünschte Richtung durch Informationsarchitektur, ohne dass der Adressat merkt, dass er gesteuert wird. Der Unterschied zur Indoktrination ist graduell, nicht kategorial. Indoktrination sagt: „Du sollst das denken." Nudging sagt: „Du entscheidest selbst" — und präsentiert dabei nur eine Auswahl an Optionen, die zum gewünschten Ergebnis führt.</p>
+    <p>Im Kontext des öffentlich-rechtlichen Rundfunks bedeutet das: Nicht Verbote, nicht Zensur — sondern die kuratierte Normalität, in der bestimmte Fragen nie gestellt werden.</p>
+    <div class="img-brief"><strong>Bildvorschlag Unsplash:</strong> <code>classroom children learning</code> oder <code>television screen living room</code> → <a href="https://unsplash.com/de" target="_blank">unsplash.com/de</a></div>
+  </div>
+  <div class="infographic">
+    <div class="infographic-title">Infografik: Von Anfang an</div>
+    <div class="infographic-sub">Mediale Sozialisierung von Kindheit bis Erwachsenenalter durch ÖRR-Angebote</div>
+    <div class="sec-lbl">§ Das ÖRR-Bildungssystem nach Altersgruppen</div>
+    <div class="g3-auto">
+      <div class="cell"><span class="ico">👶</span><h4>0–10 Jahre</h4><p>KiKA, Sendung mit der Maus, ARD-Mediathek Kinder. Frühe Grundierung: Werte, Weltbilder, Rollenbilder — ohne Gegenposition.</p></div>
+      <div class="cell cwarn"><span class="ico">📱</span><h4>11–18 Jahre</h4><p>Logo!, funk, MrWissen2go. In Schulen empfohlen, auf YouTube mit Millionenreichweite. 94 % der politischen Beiträge ohne Gegenstimme (Uni Mainz 2025).</p></div>
+      <div class="cell cwarn"><span class="ico">📺</span><h4>Erwachsene</h4><p>Tagesschau, ARD/ZDF-Talks: 70 %+ institutionsnahe Experten. Kritische Wissenschaftler unter 5 %. Täglich 8 Mio. Zuschauer.</p></div>
+    </div>
+    <div class="sec-lbl">§ Die drei Mechanismen</div>
+    <div class="g2">
+      <div class="card"><h4>Vereinfachung (Kinder)</h4><p>Komplexe politische Themen werden so aufbereitet, dass genau eine Perspektive als richtig erscheint. Kein Widerspruch, kein Gegenbeispiel. Ergebnis: Frühzeitige Verengung des Möglichkeitsraums.</p></div>
+      <div class="card"><h4>Framing (Erwachsene)</h4><p>Nicht was gesagt wird, sondern wie — Auswahl von Begriffen, Gästen, Reihenfolge. Dieselbe Information erscheint durch den Rahmen als Normalität oder als Extremposition.</p></div>
+      <div class="card card-red"><h4>Nudging (alle Altersgruppen)</h4><p>Informationsarchitektur lenkt ohne Verbote. Welche Erklärung erscheint zuerst? Welche Fragen werden nicht gestellt? Steuert ohne sichtbaren Eingriff.</p></div>
+      <div class="card card-red"><h4>Crossmediale Verstärkung</h4><p>Funk-Inhalte in Schulplattformen, Logo! auf Smartboards, Tagesschau-Material in Lehrplänen — dieselbe Rahmung überall. Keine Gegenöffentlichkeit im Alltag sichtbar.</p></div>
+    </div>
+    <div class="info-note">Quellen: LMU-Studie Gästeauswahl ÖRR-Talkshows (2024), Uni Mainz Logo!-Analyse (2025), Jonas Tögel: Kognitive Kriegsführung (2023), funk.net · Mai 2026</div>
+  </div>
+  <div class="sources">Quellen: LMU München (2024), Universität Mainz (2025), Jonas Tögel: Kognitive Kriegsführung (Westend 2023), Alex Carey: Demokratie ohne Risiko (2025), funk.net</div>
+</div>
+</article>
+
+<!-- ARTIKEL IV -->
+<article id="teil4" class="article">
+<div class="wrap">
+  <header class="art-head">
+    <div class="art-num">Teil IV</div>
+    <h2>Der Propagandaforscher</h2>
+    <p class="deck">Jonas Tögel belegt wissenschaftlich, was viele ahnen — und erklärt, warum kognitive Kriegsführung gefährlicher ist als klassische Propaganda</p>
+    <div class="byline">rundfunkkritik.de · Mai 2026</div>
+  </header>
+  <div class="art-body">
+    <p>Es gibt einen Unterschied zwischen dem, der gegen den Wind schreit, und dem, der Windmessungen veröffentlicht. Jonas Tögel macht Letzteres. Der Propagandaforscher und Amerikanist an der Universität Regensburg gehört zu den wenigen Wissenschaftlern im deutschen Sprachraum, die das Thema Meinungsmanagement akademisch bearbeiten — mit Quellennachweisen, wissenschaftlicher Methodik und dem Rückhalt einer Universität.</p>
+    <p>Das macht ihn schwerer angreifbar als einen Blogger, aber nicht immun: Seine Bücher erscheinen im Westend-Verlag, was ihm im Wissenschaftsbetrieb den Ruf des populärwissenschaftlichen Außenseiters einbringt. Im Feuilleton der großen Tageszeitungen hat er kaum stattgefunden. In den öffentlich-rechtlichen Talkshows war er, soweit bekannt, nie zu Gast. Das ist bemerkenswert — und illustriert sein eigenes Thema.</p>
+    <h3>Kognitive Kriegsführung: Was das bedeutet</h3>
+    <p>Seit 2020 treibt die NATO eine neue Form der psychologischen Kriegsführung voran: die sogenannte „Kognitive Kriegsführung", die von der NATO selbst als „fortschrittlichste Form der Manipulation" bezeichnet wird. Diese nimmt die Psyche jedes Menschen direkt ins Visier, mit dem Ziel, den Verstand wie einen Computer zu hacken.</p>
+    <p>Tögel zeichnet nach, wie sich diese Strategie entwickelt hat: von früher Kriegspropaganda über die Militarisierung der Neurowissenschaften bis zu heutigen Technologien. Der entscheidende Unterschied zur klassischen Propaganda: Die klassische Propaganda war erkennbar als Propaganda — sie hatte Sender, Botschaft, erkennbare Absicht. Die kognitive Kriegsführung ist unsichtbar. Sie operiert über die Informationsarchitektur selbst, über das, was als Normal gilt, welche Fragen überhaupt gestellt werden, welche Antwortoptionen zur Verfügung stehen.</p>
+    <div class="book-box">
+      <div class="book-icon">📘</div>
+      <div>
+        <h4>Jonas Tögel – Kognitive Kriegsführung</h4>
+        <p>Neueste Manipulationstechniken als Waffengattung der NATO. Bestseller 2023, Westend Verlag. Von den Anfängen moderner Kriegspropaganda bis zu Neurowaffen und Nudging — wissenschaftlich belegt, zugänglich geschrieben.</p>
+        <a href="https://www.amazon.de/dp/3864894220?tag=sichererhafen-21" target="_blank">📘 Jetzt bei Amazon ansehen →</a>
+      </div>
+    </div>
+    <h3>Das Mediensystem im Blick</h3>
+    <p>In einem Videoformat vom September 2025 analysiert Tögel die Berichterstattung der Tagesschau und zeigt auf, mit welchen Mitteln Framing in der täglichen Nachrichtenproduktion funktioniert. Die Analyse ist präzise: nicht „die Tagesschau lügt", sondern — die Tagesschau wählt aus, gewichtet, rahmt. Und diese Auswahl ist nicht neutral, sondern folgt erkennbaren Mustern.</p>
+    <p>Dr. Jonas Tögel ist Amerikanist und Propagandaforscher. Er hat zum Thema Soft Power und Motivation promoviert und arbeitet als wissenschaftlicher Mitarbeiter am Institut für Psychologie der Universität Regensburg. Seine Forschungsschwerpunkte sind unter anderem Motivation, der Einsatz von Soft-Power-Techniken, Nudging, Propaganda sowie epochale Herausforderungen des 20. und 21. Jahrhunderts.</p>
+    <p>Was Tögel von den meisten Medienkritikern unterscheidet: Er argumentiert nicht moralisch, sondern mechanistisch. Er fragt nicht, ob jemand böse ist, sondern wie ein System funktioniert. Das macht seine Analyse sowohl schwerer angreifbar als auch unbequemer — weil Systeme keine Schuldigen haben und sich deshalb nicht durch Personalwechsel lösen lassen.</p>
+    <h3>Kriegsspiele: Die andere Seite der Propaganda</h3>
+    <p>In seinem zweiten aktuellen Werk „Kriegsspiele: Wie NATO und Pentagon die Zerstörung Europas simulieren" untersucht Tögel die militärischen Planspiele der Großmächte seit dem Ende des Zweiten Weltkriegs. Er zeigt, wie NATO, USA, Großbritannien und Russland immer wieder Szenarien eines atomaren Konflikts simulieren, die oft die vollständige Zerstörung Deutschlands und anderer europäischer Länder voraussetzen. Tögel kritisiert, dass diese katastrophalen Szenarien in der Öffentlichkeit kaum diskutiert werden, obwohl sie weitreichende Konsequenzen haben könnten.</p>
+    <p>Das ist die Kehrseite desselben Phänomens: Was im Rundfunk nicht stattfindet, existiert für die Mehrheit der Bevölkerung nicht. Die Tagesordnung der Öffentlichkeit ist das mächtigste Instrument der Meinungssteuerung — weil es unsichtbar wirkt.</p>
+    <div class="book-box">
+      <div class="book-icon">📘</div>
+      <div>
+        <h4>Jonas Tögel – Kriegsspiele</h4>
+        <p>Wie NATO und Pentagon die Zerstörung Europas simulieren. Die andere Seite der kognitiven Kriegsführung: was in der Öffentlichkeit nicht stattfindet — und warum das kein Zufall ist.</p>
+        <a href="https://www.amazon.de/dp/3864894565?tag=sichererhafen-21" target="_blank">📘 Jetzt bei Amazon ansehen →</a>
+      </div>
+    </div>
+    <h3>Warum Tögel für rundfunkkritik.de wichtig ist</h3>
+    <p>Tögels Arbeiten liefern das akademische Fundament für das, was in dieser Serie empirisch beschrieben wird. Die Landesmedienanstalten, die Rundfunkräte, der Zensurkomplex, die Kinderformate — sie sind keine Einzelphänomene. Sie fügen sich in ein Gesamtbild, das Tögel mit wissenschaftlicher Begrifflichkeit beschreibt: ein System, das nicht durch einzelne böse Akteure gesteuert wird, sondern durch emergente Strukturen, institutionelle Anreize und die internalisierte Normalität derjenigen, die darin arbeiten.</p>
+    <div class="pq">
+      <p>„Die Aufgabe der Propaganda im 21. Jahrhundert ist nicht mehr, Menschen zur Zustimmung zu bewegen. Sie ist es, ihnen das Gefühl zu geben, sie hätten selbst entschieden."</p>
+      Sinngemäß nach Jonas Tögel: Kognitive Kriegsführung, Westend 2023
+    </div>
+    <div class="img-brief"><strong>Bildvorschlag Unsplash:</strong> <code>brain technology digital</code> oder <code>abstract network mind</code> → <a href="https://unsplash.com/de" target="_blank">unsplash.com/de</a></div>
+  </div>
+  <div class="infographic">
+    <div class="infographic-title">Infografik: Der Propagandaforscher — Jonas Tögel</div>
+    <div class="infographic-sub">Forschungsschwerpunkte, Hauptthesen und Verbindung zur deutschen Medienrealität</div>
+    <div class="sec-lbl">§ Person und Werk</div>
+    <div class="g2">
+      <div class="card">
+        <h4>Wissenschaftlicher Hintergrund</h4>
+        <p>Amerikanist und Propagandaforscher · Promotion: Soft Power und Motivation · Institut für Psychologie, Universität Regensburg · Forschung: Nudging, Propaganda, Soft Power, Kognitive Kriegsführung</p>
+      </div>
+      <div class="card">
+        <h4>Hauptwerke</h4>
+        <p><strong>Kognitive Kriegsführung</strong> (2023) — NATO-Strategie der psychologischen Manipulation, Bestseller<br><br><strong>Kriegsspiele</strong> (2024) — Atomare Planspiele und öffentliches Schweigen<br><br>Beide: Westend Verlag</p>
+      </div>
+    </div>
+    <div class="sec-lbl">§ Klassische Propaganda vs. Kognitive Kriegsführung</div>
+    <div class="g2">
+      <div class="card-dark"><h4>Klassische Propaganda (bis ~2000)</h4><p>Erkennbarer Sender · Klare Botschaft · Sichtbare Absicht · Kann als Propaganda identifiziert werden · Widerstand möglich durch Erkennen</p></div>
+      <div class="card-dark" style="border-left:3px solid var(--red)"><h4>Kognitive Kriegsführung (seit ~2010)</h4><p>Unsichtbarer Sender · Implizite Normalität · Informationsarchitektur · Nudging statt Befehl · Das Opfer glaubt, selbst entschieden zu haben · Widerstand wird durch Nicht-Erkennen unmöglich</p></div>
+    </div>
+    <div class="sec-lbl">§ Verbindung zur deutschen Medienrealität</div>
+    <div class="g3-auto">
+      <div class="cell cwarn"><span class="ico">📋</span><h4>Agenda Setting</h4><p>Was ÖRR nicht adressiert, existiert für die Mehrheit nicht. Das mächtigste Instrument: die Tagesordnung, nicht das Verbot.</p></div>
+      <div class="cell cwarn"><span class="ico">🎯</span><h4>Framing</h4><p>Dieselbe Tatsache erscheint durch Wortwahl, Reihenfolge und Gästeauswahl als normal oder extrem — ohne dass eine Aussage falsch ist.</p></div>
+      <div class="cell cwarn"><span class="ico">🔄</span><h4>Normalisierung</h4><p>Was täglich wiederholt wird, gilt als wahr. Was nie zu sehen ist, gilt als nicht existent. Kein Befehl nötig — nur Gewohnheit.</p></div>
+    </div>
+    <div class="info-note" style="margin-top:.8rem">Quellen: Jonas Tögel: Kognitive Kriegsführung (Westend 2023), Kriegsspiele (Westend 2024), jonastoegel.de, overton-magazin.de · Mai 2026</div>
+  </div>
+  <div class="sources">Quellen: Jonas Tögel: Kognitive Kriegsführung (Westend 2023), Kriegsspiele (Westend 2024), jonastoegel.de, overton-magazin.de, YouTube-Kanal Jonas Tögel (Sept. 2025), goodreads.com</div>
+</div>
+</article>
+
+<footer class="site-footer">
+  <strong>rundfunkkritik.de</strong><br>
+  Serie „Medienaufsicht &amp; Macht" II · Mai 2026<br><br>
+  Impressum: Manfred Seeböck c/o POSTFLEX PFX-345-697 · Emsdettener Straße 10 · 48268 Greven
+</footer>
+
+</body>
+</html>

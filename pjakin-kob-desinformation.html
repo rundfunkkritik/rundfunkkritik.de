@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Der "Globale Prädiktor" — Pjakin, KOB und das Sechs-Ebenen-Modell | rundfunkkritik.de</title>
+<meta name="rubrik" content="Struktur &amp; Meinungsmache">
+<meta name="kachel-titel" content="Der „Globale Prädiktor“: Pjakin, KOB und das Sechs-Ebenen-Modell">
+<style>
+  :root {
+    --bg: #0a0a0b;
+    --surface: #111114;
+    --surface2: #16161a;
+    --border: #1e1e24;
+    --border2: #333340;
+    --text: #e8e8ec;
+    --muted: #6b6b7a;
+    --muted2: #9a9aa8;
+    --accent: #e8c547;
+    --accent-dim: #7a6a2e;
+    --red: #c85a4a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    margin: 0;
+    line-height: 1.6;
+  }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 100;
+  }
+  .dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
+  .eyebrow {
+    font-size: 0.75rem; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .stamp { margin-left: auto; font-size: 0.7rem; color: var(--muted); font-family: sans-serif; }
+
+  main { max-width: 780px; margin: 0 auto; padding: 0 2rem; }
+
+  .hero { padding: 4.5rem 0 3rem; }
+  .hero .kicker {
+    font-size: 0.75rem; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.15em; margin-bottom: 1.8rem;
+  }
+  h1 {
+    font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+    font-weight: 700; line-height: 1.12; margin: 0 0 1.3rem;
+  }
+  h1 .sub { display: block; color: var(--muted2); font-size: 0.6em; font-weight: 400; margin-top: 0.6rem; }
+  .lede { font-size: 1.08rem; color: var(--muted2); line-height: 1.75; max-width: 620px; }
+
+  .divider { border-top: 1px solid var(--border); margin: 0; }
+
+  section.block { padding: 3rem 0; }
+  section.block .label {
+    font-size: 0.72rem; color: var(--accent); text-transform: uppercase;
+    letter-spacing: 0.12em; margin-bottom: 1.1rem; font-family: sans-serif; font-weight: 600;
+  }
+  section.block h2 {
+    font-size: 1.6rem; font-weight: 700; margin: 0 0 1.2rem; line-height: 1.3;
+  }
+  section.block p { color: var(--text); margin: 0 0 1.1rem; }
+  section.block p.small { color: var(--muted2); font-size: 0.92rem; }
+
+  .correction {
+    background: var(--surface); border: 1px solid var(--border2); border-left: 3px solid var(--red);
+    padding: 1.4rem 1.6rem; margin: 1.6rem 0; border-radius: 2px;
+  }
+  .correction .ctitle {
+    font-family: sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--red); margin-bottom: 0.6rem; font-weight: 700;
+  }
+  .correction p { color: var(--muted2); font-size: 0.92rem; margin: 0; }
+
+  blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 1.6rem 0; padding: 0.3rem 0 0.3rem 1.4rem;
+    font-style: italic; color: var(--text); font-size: 1.05rem;
+  }
+  blockquote cite {
+    display: block; font-style: normal; font-size: 0.75rem; color: var(--muted);
+    margin-top: 0.5rem; font-family: sans-serif; letter-spacing: 0.02em;
+  }
+
+  .tag {
+    display: inline-block; font-family: sans-serif; font-size: 0.68rem;
+    letter-spacing: 0.08em; text-transform: uppercase; padding: 0.15rem 0.55rem;
+    border-radius: 2px; font-weight: 700; margin-left: 0.5rem; vertical-align: middle;
+  }
+  .tag.belegt { background: rgba(232,197,71,0.12); color: var(--accent); border: 1px solid var(--accent-dim); }
+  .tag.offen { background: rgba(107,107,122,0.15); color: var(--muted2); border: 1px solid var(--border2); }
+  .tag.vt { background: rgba(200,90,74,0.12); color: var(--red); border: 1px solid #6b3a32; }
+  .tag.extra { background: rgba(154,154,168,0.1); color: var(--muted2); border: 1px solid var(--border2); }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.5rem; margin: 1.6rem 0; }
+  .stat-grid .stat { border-left: 3px solid var(--accent); padding-left: 1.1rem; }
+  .stat-grid .stat .val { font-size: 1.7rem; font-weight: 700; color: var(--accent); line-height: 1; }
+  .stat-grid .stat .lbl { font-size: 0.8rem; color: var(--muted2); margin-top: 0.4rem; }
+  .stat-grid .stat .src { font-size: 0.68rem; color: var(--muted); margin-top: 0.3rem; font-family: sans-serif; }
+
+  ul.plain { padding-left: 1.3rem; margin: 0 0 1.1rem; }
+  ul.plain li { margin-bottom: 0.5rem; color: var(--text); }
+
+  .open-questions {
+    padding: 3rem 0 4rem;
+    border-top: 1px solid var(--border);
+  }
+  .open-questions .label {
+    font-size: 0.72rem; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.12em; margin-bottom: 1.3rem; font-family: sans-serif; font-weight: 600;
+  }
+  .open-questions p {
+    font-style: italic; color: var(--muted2); font-size: 1.05rem;
+    margin: 0 0 1rem; line-height: 1.7;
+  }
+
+  details { margin-top: 2.5rem; border-top: 1px solid var(--border); padding-top: 1.6rem; }
+  summary {
+    cursor: pointer; font-family: sans-serif; font-size: 0.8rem;
+    color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em;
+    padding: 0.6rem 0; list-style: none; user-select: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "→ "; color: var(--accent); }
+  details[open] summary::before { content: "↓ "; }
+  .sources-list { display: grid; gap: 0.6rem; margin-top: 1rem; padding-bottom: 1rem; }
+  .sources-list .src-item { display: flex; gap: 0.9rem; align-items: baseline; }
+  .sources-list .arrow { color: var(--accent); font-size: 0.75rem; flex-shrink: 0; }
+  .sources-list .src-text { font-size: 0.85rem; color: var(--muted2); font-family: sans-serif; line-height: 1.5; }
+  .sources-list .caveat { color: var(--red); font-size: 0.72rem; margin-left: 1.8rem; font-family: sans-serif; }
+
+  footer {
+    border-top: 1px solid var(--border); padding: 3rem 0 3.5rem;
+    font-family: sans-serif;
+  }
+  footer p { font-size: 0.78rem; color: var(--muted); line-height: 1.8; margin: 0 0 0.6rem; }
+  footer .part-nav { margin-top: 1.6rem; padding-top: 1.6rem; border-top: 1px solid var(--border); }
+  footer .part-nav a { color: var(--accent); text-decoration: none; font-size: 0.82rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="dot"></div>
+  <span class="eyebrow">Medienkritik · Desinformationsanalyse</span>
+  <div class="stamp">Teil 2/2 · Stand: 22. September 2026</div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="kicker">Desinformationsanalyse — Wer steckt hinter dem "Sechs-Ebenen-Modell"?</div>
+    <h1>Der „Globale Prädiktor"<span class="sub">Pjakin, KOB und das Sechs-Ebenen-Modell der Steuerung — eine Einordnung</span></h1>
+    <p class="lede">Ein Schaubild kursiert im deutschsprachigen Raum: „Die sechs Ebenen der Steuerung nach Pjotr Piakin." Wer ist dieser Pjakin — und was steckt hinter der Ideologie, die er seit über einem Jahrzehnt verbreitet? Eine Spurensuche, inklusive einer wichtigen Namenskorrektur.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="block">
+    <div class="label">01 — Die Namenskorrektur</div>
+    <h2>Nicht Pjotr, sondern Valery <span class="tag vt">Korrektur</span></h2>
+    <div class="correction">
+      <div class="ctitle">Faktencheck</div>
+      <p>In dem kursierenden Schaubild wird die Quelle als „Pjotr Piakin" benannt. Die Recherche findet dafür keinen Beleg. Die reale Person hinter dem KOB-Format „Вопрос-Ответ" (Frage-Antwort) heißt <strong>Valery Viktorovich Pyakin</strong> (Валерий Викторович Пякин). Ein „Pjotr Piakin" als KOB-Ideologe ist nicht auffindbar — es handelt sich vermutlich um eine fehlerhafte Übertragung des Vornamens, möglicherweise durch die Grafik-Produktion selbst.</p>
+    </div>
+    <p>Diese Art von Fehlattribution ist im Desinformationsökosystem nicht ungewöhnlich: Namen, Titel und Urheberschaften werden bei der Weiterverbreitung von Schaubildern häufig verändert oder verwechselt, was die Rückverfolgung zur Originalquelle erschwert.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="block">
+    <div class="label">02 — Herkunft der Ideologie</div>
+    <h2>KOB und „Мёртвая вода" <span class="tag belegt">Belegt</span></h2>
+    <p>Die "Konzeption der gesellschaftlichen Sicherheit" (КОБ) geht zurück auf das sowjetische Grundlagentext-Werk <em>„Мёртвая вода"</em> ("Totes Wasser"), verfasst Ende der 1980er Jahre von einem Autorenkollektiv, das sich selbst „Innerer Prädiktor der UdSSR" (Внутренний Предиктор СССР, VP-UdSSR) nannte. Zentrale Figur der Gründungsgeneration war Konstantin Petrow; nach dem Tod des langjährigen KOB-Vordenkers Vladimir Zaznobin im Jahr 2018 übernahm Valery Pyakin die Präsidentschaft des „Fonds für Konzeptionelle Technologien" und wurde damit zur führenden öffentlichen Figur der Bewegung.</p>
+    <p class="small">Kernbegriff der Lehre ist der „Globale Prädiktor" (Глобальный Предиктор) — eine postulierte, strukturlos agierende Steuerungsinstanz, die angeblich hinter Globalisierung, Weltpolitik und den sechs Ebenen des Schaubilds steht. Die Existenz dieser Instanz wird in der KOB als gegeben vorausgesetzt, nicht belegt.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="block">
+    <div class="label">03 — Reichweite</div>
+    <h2>Wie groß ist Pyakins Publikum? <span class="tag belegt">Belegt</span></h2>
+    <div class="stat-grid">
+      <div class="stat"><div class="val">~168.000</div><div class="lbl">Abonnenten, größter YouTube-Kanal (FKT)</div><div class="src">Quelle: Neolurk-Wiki, Stand 2023 — mit Vorsicht zu behandeln*</div></div>
+      <div class="stat"><div class="val">~12.900</div><div class="lbl">Abonnenten Telegram-Kanal</div><div class="src">Quelle: Telemetr/TGStat, 2026</div></div>
+      <div class="stat"><div class="val">100.000–200.000</div><div class="lbl">Aufrufe pro Video im Schnitt</div><div class="src">Quelle: Kanalbeschreibung Rutube/FKT</div></div>
+      <div class="stat"><div class="val">seit 2010/11</div><div class="lbl">wöchentliches Format „Вопрос-Ответ"</div><div class="src">Quelle: Podcast-Archive, Wiki-KOB</div></div>
+    </div>
+    <p class="small">*Die Abonnentenzahl zum YouTube-Hauptkanal stammt aus einem nutzergenerierten Wiki (Neolurk/Lurkmore) und ist nicht mit einer formalen Quelle verifiziert — sie dient hier als grobe Größenordnung, nicht als belastbare Zahl.</p>
+    <p>Damit bewegt sich Pyakin im mittleren Segment russischsprachiger Polit-Blogger: deutlich kleiner als etwa staatliche Propagandaformate, aber mit einer stabilen, seit über zehn Jahren aktiven Kernzielgruppe.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="block">
+    <div class="label">04 — Selbstbeschreibung</div>
+    <h2>„Krieg auf allen sechs Prioritäten" <span class="tag belegt">Belegt</span></h2>
+    <p>Der offizielle Kanaltext des „Fonds für Konzeptionelle Technologien" bestätigt das Sechs-Ebenen-Modell als Kernrahmen der gesamten Bewegung — nicht nur als eine Grafik unter vielen, sondern als Selbstverständnis:</p>
+    <blockquote>
+      „Gegen uns wird ein Krieg auf allen 6 Prioritäten der verallgemeinerten Steuerungs-/Kriegsmittel geführt. Wenn im gewöhnlichen Krieg derjenige gewinnt, der über die stärkere Waffe verfügt und sie besser beherrscht, so gewinnt im Informationskrieg derjenige, der über die stärkere Information verfügt und sie besser beherrscht."
+      Kanalbeschreibung, Fonds für Konzeptionelle Technologien (FKT), Rutube
+    </blockquote>
+    <p class="small">Diese Selbstbeschreibung ordnet das Schaubild, das eingangs kursierte, unmittelbar in ein geschlossenes weltanschauliches System ein: Die sechs Ebenen sind demnach kein neutrales Analyseraster, sondern die Grundlage einer Kriegsmetapher, in der „wir" (das russische/eurasische Volk) gegen einen unsichtbaren Gegner verteidigt werden müssen.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="block">
+    <div class="label">05 — Kein einfacher Kreml-Lautsprecher</div>
+    <h2>Kritik auch aus dem pro-russischen Spektrum <span class="tag belegt">Belegt</span></h2>
+    <p>Bemerkenswert: Pyakin wird nicht nur von westlicher Seite kritisiert. Die russische Medienbeobachtungs-Plattform „Медиамера" wirft ihm vor, mit wiederholter Kritik am russischen Generalstab in die Nähe einer Diskreditierung der russischen Streitkräfte zu geraten — ein Tatbestand, der in Russland selbst strafbewehrt ist (Art. 280.3 StGB RF).</p>
+    <p class="small">Das relativiert ein zu einfaches Bild: Pyakin ist kein uniformer Regierungssprecher, sondern Vertreter einer eigenständigen, teils auch innerhalb des pro-russischen Spektrums umstrittenen Ideologie mit eigener Agenda — was ihn als Akteur komplexer macht als eine reine „Kreml-Propaganda"-Einordnung nahelegen würde.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="block">
+    <div class="label">06 — Die offenen Punkte</div>
+    <h2>Was (noch) nicht belegt ist <span class="tag offen">Offen</span></h2>
+    <ul class="plain">
+      <li><strong>Bezug zu Leipzig/EU-NATO-Rhetorik (Teil 1):</strong> Keine konkrete, dokumentierte Aussage Pyakins zum Leipzig-Vorfall oder zur Rede von der Leyens vom 16. September 2026 auffindbar. Bleibt offen, ob und wie sein Kanal das aufgreift.</li>
+      <li><strong>Formale Einstufung durch EU-Desinformationsmonitore:</strong> Kein spezifischer, namentlicher EUvsDisinfo-Fall zu Pyakin gefunden. EUvsDisinfo dokumentiert pro-Kreml-Desinformation allgemein, aber ohne hier auffindbaren Einzelfall zu dieser Person.</li>
+      <li><strong>Antisemitische Wurzeln des Ursprungstextes:</strong> In der Forschungsliteratur zu postsowjetischen Verschwörungsideologien wird „Мёртвая вода" mit Motiven einer verborgenen, elitären Weltsteuerung in Verbindung gebracht, die strukturell an ältere antisemitische Verschwörungserzählungen erinnert. Eine belastbare Einzelquelle mit wörtlichem Zitat aus dem Originaltext konnte in dieser Recherche nicht herangezogen werden — hier ist vertiefte Recherche nötig, bevor diese Einordnung als BELEGT gilt.</li>
+    </ul>
+  </section>
+
+  <div class="open-questions">
+    <div class="label">Offene Fragen</div>
+    <p>Woher stammt die Fehlbenennung „Pjotr Piakin" in der kursierenden Grafik — Übersetzungsfehler, KI-generierte Fehlattribution, oder bewusste Verschleierung der Quelle?</p>
+    <p>In welchem Umfang erreichen KOB-Inhalte über Übersetzungen, Reels oder Screenshot-Weiterverbreitung ein deutschsprachiges Publikum, das den russischen Ursprung nicht mehr erkennt?</p>
+    <p>Wie verhält sich die KOB-Erzählung vom „Globalen Prädiktor" zu älteren, historisch belasteten Verschwörungsmustern — und wo genau verläuft die Grenze zwischen Systemkritik und Verschwörungsideologie?</p>
+  </div>
+
+  <details>
+    <summary>Quellen & Belege anzeigen</summary>
+    <div class="sources-list">
+      <div class="src-item"><span class="arrow">→</span><span class="src-text">Wiki-KOB — Хронометраж: Пякин В. В. Вопрос-Ответ (offizielles KOB-Wiki)</span></div>
+      <div class="src-item"><span class="arrow">→</span><span class="src-text">Fonds für Konzeptionelle Technologien (FKT) — Kanalbeschreibung, Rutube</span></div>
+      <div class="src-item"><span class="arrow">→</span><span class="src-text">Telemetr.me / TGStat — Kanalstatistik Telegram „ФКТ Пякин Валерий Викторович КОБ ДОТУ"</span></div>
+      <div class="src-item"><span class="arrow">→</span><span class="src-text">Neolurk (Lurkmore-Nachfolger) — Eintrag „Валерий Викторович Пякин"</span></div>
+      <div class="src-item"><span class="caveat">⚠ Nutzergeneriertes Satire-/Community-Wiki — nur als grobe Orientierung, nicht als Primärquelle verwendet</span></div>
+      <div class="src-item"><span class="arrow">→</span><span class="src-text">Медиамера — Zyklus „Концепция общественной безопасности (КОБ)", Eintrag 25.11.2024</span></div>
+      <div class="src-item"><span class="arrow">→</span><span class="src-text">EUvsDisinfo (East StratCom Task Force, EEAS) — allgemeine Methodik, kein spezifischer Pyakin-Fall gefunden</span></div>
+    </div>
+  </details>
+
+  <footer>
+    <p>Diese Recherche folgt dem Beleg-vor-Motiv-Prinzip: Fakten werden dokumentiert, Motive nicht unterstellt. Wo die Quellenlage nicht ausreicht, ist das im Text als OFFEN gekennzeichnet — Lücken werden benannt, nicht stillschweigend gefüllt.</p>
+    <p>Diese Seite erhebt keinen Anspruch auf Vollständigkeit. Ergänzungen und Korrekturen sind willkommen.</p>
+    <div class="part-nav">
+      <a href="/eskalation-eu-nato-rhetorik-2026.html">← Teil 1 — Rhetorik und Realität der EU-NATO-Eskalation</a>
+    </div>
+  </footer>
+
+</main>
+
+<footer style="text-align:center;padding:32px 16px;margin-top:48px;border-top:1px solid #d4c9b0;font-family:Georgia,'Crimson Pro',serif;font-size:14px;color:#6b6b6b">
+  <a href="/themen.html" style="color:inherit;text-decoration:none">Themen</a> &middot; <a href="/impressum.html" style="color:#6b6b6b;text-decoration:none">Impressum</a> &middot; <a href="/datenschutz.html" style="color:#6b6b6b;text-decoration:none">Datenschutz</a> &middot; <a href="mailto:kontakt@rundfunkkritik.de" style="color:#6b6b6b;text-decoration:none">Kontakt</a>
+</footer>
+</body>
+</html>

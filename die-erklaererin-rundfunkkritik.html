@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Die Erklärerin – Rundfunkkritik.de</title>
+<meta name="rubrik" content="Aufsicht, Personen &amp; Formate">
+<meta name="kachel-titel" content="Die Erklärerin: Sechs Millionen Klicks, ein Bundesverdienstkreuz und eine Fußnote">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #c9a84c;
+    --gold-dim: #a07c30;
+    --gold-bg: #fdf8ee;
+    --gold-text: #8a6520;
+    --border-gold: #e8d49a;
+    --nav-bg: #1a2744;
+    --bg: #f7f5f0;
+    --bg-card: #ffffff;
+    --text: #1a1a1a;
+    --text-muted: #3a3a3a;
+    --text-dim: #777;
+    --border: #e8e4dc;
+    --border-mid: #d0ccc4;
+    --red-bg: #fff5f5;
+    --red-border: #f5c6c6;
+    --red-text: #8b1a1a;
+    --green-bg: #f0f7f0;
+    --green-border: #b8d8b8;
+    --green-text: #1a4f1a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--nav-bg);
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  nav a {
+    color: #a0b4cc;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  nav a.brand { color: #e8c97a; font-weight: 500; }
+  nav a:hover { color: #fff; }
+
+  /* HEADER */
+  .artikel-header {
+    background: var(--nav-bg);
+    padding: 3rem 2rem 2.5rem;
+    color: #fff;
+  }
+  .artikel-header .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .artikel-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+  }
+  .artikel-header .untertitel {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.1rem;
+    color: #b8c8d8;
+    font-style: italic;
+    max-width: 680px;
+    line-height: 1.5;
+  }
+  .artikel-header .meta {
+    margin-top: 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.67rem;
+    color: #7a8fa0;
+    letter-spacing: 0.06em;
+  }
+
+  /* MAIN LAYOUT */
+  .main-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+
+  /* INTRO */
+  .intro {
+    font-size: 1.07rem;
+    color: var(--text-muted);
+    line-height: 1.85;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .intro strong { color: var(--text); }
+
+  /* SECTION HEADING */
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 2.5rem 0 1.25rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--gold);
+    display: inline-block;
+  }
+
+  p {
+    color: var(--text-muted);
+    margin-bottom: 1.1rem;
+    font-size: 0.98rem;
+  }
+  p strong { color: var(--text); }
+
+  /* KARRIERE-TIMELINE */
+  .timeline {
+    margin: 1.5rem 0 2rem;
+    border-left: 2px solid var(--border-mid);
+    padding-left: 0;
+    list-style: none;
+  }
+  .timeline li {
+    position: relative;
+    padding: 0 0 1.5rem 2rem;
+  }
+  .timeline li:last-child { padding-bottom: 0; }
+  .timeline li::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 0 1px var(--gold);
+  }
+  .tl-datum {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.67rem;
+    letter-spacing: 0.1em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+  }
+  .tl-titel {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.97rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+  }
+  .tl-body {
+    font-size: 0.91rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+  .tl-zitat {
+    background: var(--gold-bg);
+    border-left: 3px solid var(--gold);
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--gold-text);
+    border-radius: 0 3px 3px 0;
+  }
+
+  /* INTERESSENKONFLIKT-BOX */
+  .konflikt-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-mid);
+    border-top: 3px solid var(--nav-bg);
+    margin: 2rem 0;
+    overflow: hidden;
+  }
+  .konflikt-header {
+    background: var(--nav-bg);
+    padding: 0.75rem 1.25rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.67rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .konflikt-body {
+    padding: 1.25rem;
+  }
+  .konflikt-kette {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 0.75rem 0 1.25rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+  }
+  .k-node {
+    background: var(--nav-bg);
+    color: #e8c97a;
+    padding: 0.3rem 0.75rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .k-arrow {
+    color: var(--gold-dim);
+    font-weight: bold;
+  }
+  .konflikt-quelle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.67rem;
+    color: var(--text-dim);
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* GEGENÜBERSTELLUNG */
+  .vergleich {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border-mid);
+    margin: 2rem 0;
+    border: 1px solid var(--border-mid);
+  }
+  .vergleich-col {
+    background: var(--bg-card);
+    padding: 1.25rem;
+  }
+  .vergleich-col.damals { background: var(--red-bg); }
+  .vergleich-col.heute { background: var(--green-bg); }
+  .vergleich-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.63rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.85rem;
+    display: block;
+  }
+  .damals .vergleich-label { color: var(--red-text); }
+  .heute .vergleich-label { color: var(--green-text); }
+  .vergleich-col ul { list-style: none; }
+  .vergleich-col ul li {
+    font-size: 0.89rem;
+    color: var(--text-muted);
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.55;
+  }
+  .vergleich-col ul li:last-child { border-bottom: none; }
+  .vergleich-col ul li strong { color: var(--text); }
+
+  /* ZITAT gross */
+  .zitat {
+    border-left: 3px solid var(--gold);
+    background: var(--gold-bg);
+    padding: 1rem 1.25rem;
+    margin: 1.75rem 0;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--gold-text);
+    line-height: 1.7;
+  }
+  .zitat cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+  }
+
+  /* FAZIT */
+  .fazit-box {
+    background: var(--gold-bg);
+    border: 1px solid var(--border-gold);
+    border-left: 3px solid var(--gold);
+    padding: 1.5rem 1.5rem 1.25rem;
+    margin: 2.5rem 0 1.5rem;
+  }
+  .fazit-box .fazit-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 0.75rem;
+  }
+  .fazit-box p {
+    font-size: 0.97rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+  .fazit-box p:last-child { margin-bottom: 0; }
+  .fazit-box p strong { color: var(--text); }
+
+  /* QUELLEN */
+  .quellen {
+    border-top: 1px solid var(--border-mid);
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+  }
+  .quellen-titel {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+  }
+  .quellen ul { list-style: none; }
+  .quellen ul li {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 0.75rem;
+    align-items: baseline;
+  }
+  .quellen ul li:last-child { border-bottom: none; }
+  .q-typ {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.4rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .q-typ.primaer { background: var(--nav-bg); color: var(--gold); }
+  .q-typ.mainstream { background: #e8eef5; color: #2a4a6e; }
+  .q-typ.behoerde { background: #f0f5e8; color: #3a5a20; }
+
+  /* DISCLAIMER */
+  .disclaimer {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #f5f3ef;
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    font-style: italic;
+  }
+
+  @media (max-width: 600px) {
+    .vergleich { grid-template-columns: 1fr; }
+    .konflikt-kette { font-size: 0.72rem; }
+    .artikel-header { padding: 2rem 1.25rem 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="brand">Rundfunkkritik.de</a>
+  <a href="/analysen">Analysen</a>
+  <a href="/chronik">Chronik</a>
+  <a href="/ueber">Über</a>
+</nav>
+
+<header class="artikel-header">
+  <div class="eyebrow">Analyse · Wissenschaftskommunikation · ÖRR</div>
+  <h1>Die Erklärerin</h1>
+  <p class="untertitel">Sechs Millionen Klicks, ein Bundesverdienstkreuz — und eine Fußnote, die niemand erwähnte</p>
+  <div class="meta">Rundfunkkritik.de &nbsp;·&nbsp; Juni 2026 &nbsp;·&nbsp; Lesezeit ca. 7 Min.</div>
+</header>
+
+<main class="main-wrap">
+
+  <div class="intro">
+    Es war April 2020. Deutschland im ersten Lockdown. Ein YouTube-Video einer promovierten Chemikerin erzielte in vier Tagen über <strong>vier Millionen Aufrufe</strong> — und wurde zum meistgesehenen deutschen YouTube-Video des Jahres 2020. Der Titel: <em>„Corona geht gerade erst los."</em><br><br>
+    Was folgte, war eine Medienkarriere mit einer Geschwindigkeit, die in Deutschland ihresgleichen sucht. Was in keinem der Videos stand: <strong>Ihr Ehemann war Associate Director bei jenem Pharmaunternehmen, das BioNTechs wichtigsten Rohstoff lieferte.</strong>
+  </div>
+
+  <h2>Die Karriere im Zeitraffer</h2>
+
+  <ul class="timeline">
+    <li>
+      <div class="tl-datum">April 2020</div>
+      <div class="tl-titel">„Corona geht gerade erst los"</div>
+      <div class="tl-body">Das Video erscheint auf maiLab (finanziert durch ARD/ZDF via funk), erzielt in 4 Tagen 4 Mio. Aufrufe, wird meistgesehenes deutsches YouTube-Video 2020. Kommentatorin in den ARD Tagesthemen.</div>
+    </li>
+    <li>
+      <div class="tl-datum">1. Oktober 2020</div>
+      <div class="tl-titel">Bundesverdienstkreuz — vor Beginn der Impfkampagne</div>
+      <div class="tl-body">Verliehen durch Bundespräsident Frank-Walter Steinmeier, gemeinsam mit Christian Drosten. Begründung des Bundespräsidialamts:</div>
+      <div class="tl-zitat">„Bei Mai Thi Nguyen-Kim lernen schon die Jüngsten: Wissenschaft kann begeistern — und gemeinsam vernünftig zu handeln, bringt eine Gesellschaft voran."</div>
+    </li>
+    <li>
+      <div class="tl-datum">Januar 2021</div>
+      <div class="tl-titel">„So endet Corona" — 3 Mio. Aufrufe</div>
+      <div class="tl-body">Der Ausweg aus der Pandemie führe über Herdenimmunität, die Herdenimmunität über die Impfung. Warnung vor einem „Scheinende der Pandemie" bei zu frühen Lockerungen.</div>
+    </li>
+    <li>
+      <div class="tl-datum">Februar 2021</div>
+      <div class="tl-titel">AstraZeneca: „Ich würde nicht zögern"</div>
+      <div class="tl-body">Gegenüber der Deutschen Presse-Agentur:</div>
+      <div class="tl-zitat">„Wenn es heißt: Keine Impfung oder AstraZeneca, dann ist das überhaupt keine Frage. Ich würde nicht zögern." — DPA, Tagesspiegel März 2021</div>
+    </li>
+    <li>
+      <div class="tl-datum">Oktober 2021</div>
+      <div class="tl-titel">Eigene ZDF-Show: MAITHINK X</div>
+      <div class="tl-body">Wöchentliche Wissenschaftsshow auf ZDFneo. Zusätzlich: Grimme-Preis 2021 für Corona-Wissensvermittlung, Journalistin des Jahres 2020.</div>
+    </li>
+    <li>
+      <div class="tl-datum">November 2021</div>
+      <div class="tl-titel">Positionswechsel: „Impfpflicht ist okay"</div>
+      <div class="tl-body">Nachdem sie die Position zuvor öffentlich abgelehnt hatte. Begründung: Die Ungeimpften brächten die Geimpften „an die Grenzen ihrer Fähigkeit zu Empathie und Solidarität".</div>
+    </li>
+  </ul>
+
+  <h2>Die Fußnote</h2>
+
+  <p>Ihr bürgerlicher Name ist Mai Thi Leiendecker. Ihr Ehemann Matthias Leiendecker ist Chemiker und Associate Director bei der Merck KGaA — Darmstadt.</p>
+
+  <div class="konflikt-box">
+    <div class="konflikt-header">Dokumentierter Interessenkonflikt — Kette</div>
+    <div class="konflikt-body">
+      <div class="konflikt-kette">
+        <span class="k-node">Matthias Leiendecker</span>
+        <span class="k-arrow">→</span>
+        <span class="k-node">Merck KGaA (Associate Director)</span>
+        <span class="k-arrow">→</span>
+        <span class="k-node">Lipid-Zulieferer BioNTech</span>
+        <span class="k-arrow">→</span>
+        <span class="k-node">Comirnaty (Pfizer/BioNTech)</span>
+      </div>
+      <p style="font-size:0.91rem; margin-bottom:0.75rem;">Lipide sind der essentielle Träger des mRNA-Wirkstoffs. Ohne sie kann die RNA im Körper nicht in die Zellen transportiert werden. Merck KGaA war laut eigenem Geschäftsbericht 2021 einer von weltweit nur wenigen Anbietern, die diese Spezialchemie in der erforderlichen Menge und Qualität liefern konnten.</p>
+      <p style="font-size:0.91rem; margin-bottom:0;">Im Februar 2021 — parallel zu den öffentlichen Impfempfehlungen — gaben Merck und BioNTech per Pressemitteilung bekannt, ihre strategische Partnerschaft auszubauen und die Liefermenge bis Ende 2021 erheblich zu steigern.</p>
+      <div class="konflikt-quelle">
+        Quellen: Merck KGaA Geschäftsbericht 2021, S. — (merckgroup.com) · Merck/BioNTech Pressemitteilung 05.02.2021 · Finanzen.net 06.02.2021 (DPA)
+      </div>
+    </div>
+  </div>
+
+  <p>In keinem ihrer Videos findet sich eine entsprechende Disclosure. Kein Hinweis, keine Fußnote, kein Abbinder.</p>
+
+  <h2>Damals gesagt — heute bekannt</h2>
+
+  <div class="vergleich">
+    <div class="vergleich-col damals">
+      <span class="vergleich-label">Damals — Aussage</span>
+      <ul>
+        <li><strong>Feb. 2021:</strong> „AstraZeneca? Keine Frage. Ich würde nicht zögern." (DPA)</li>
+        <li><strong>Jan. 2021:</strong> Impfung als einziger Weg zur Herdenimmunität dargestellt</li>
+        <li><strong>Nov. 2021:</strong> Impfpflicht „ist okay" — Ungeimpfte als gesellschaftliches Problem</li>
+        <li><strong>2020–2022:</strong> Kein Hinweis auf Ehemanns Arbeitgeber und dessen BioNTech-Lieferbeziehung</li>
+      </ul>
+    </div>
+    <div class="vergleich-col heute">
+      <span class="vergleich-label">Heute — Faktenlage</span>
+      <ul>
+        <li><strong>2024:</strong> AstraZeneca zieht EU-Zulassung freiwillig zurück; räumt in britischem Gerichtsverfahren thrombotische Nebenwirkungen ein</li>
+        <li>Herdenimmunität durch Impfung nicht erreicht; Übertragung nie primäres Testziel (Pfizer vor EU-Parlament 2022)</li>
+        <li>Impfpflicht wurde nicht eingeführt; gesellschaftliche Spaltung gilt als dokumentiertes Pandemie-Erbe</li>
+        <li>Merck-Geschäftsbericht 2021 öffentlich verfügbar: strategische BioNTech-Partnerschaft explizit beschrieben</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Was das bedeutet — und was nicht</h2>
+
+  <p>Ein Interessenkonflikt ist keine Absichtserklärung. Es gibt keinen Beleg dafür, dass Mai Thi Nguyen-Kim bewusst falsch informiert hat. Viele ihrer Aussagen entsprachen dem damaligen Konsens staatlicher Gesundheitsbehörden.</p>
+
+  <div class="zitat">
+    Wer in einem öffentlich-rechtlich finanzierten Format erklärt, warum ein bestimmtes Produkt sicher ist, und dessen Ehepartner bei einem der zentralen Zulieferer dieses Produkts arbeitet, schuldet seinem Publikum einen Hinweis. Das ist der Standard, den der Deutsche Presserat einfordert — und der in peer-reviewten Journalen als verpflichtende Fußnote gilt, egal wie klein die Verbindung ist.
+    Rundfunkkritik.de — Analyse
+  </div>
+
+  <p>Der öffentlich-rechtliche Rundfunk, der maiLab finanzierte und ihr später eine eigene ZDF-Show gab, hat diese Frage zu keinem Zeitpunkt gestellt. Kein Redaktionsstatut, kein Disclosure-Protokoll, keine Nachfrage.</p>
+
+  <p>Das ist das eigentliche Medienproblem. Nicht eine einzelne Person — sondern ein System, das genau das nicht hinterfragt hat, was es hätte hinterfragen müssen.</p>
+
+  <div class="fazit-box">
+    <div class="fazit-label">Befund</div>
+    <p><strong>Was dokumentiert ist:</strong> Eine der reichweitenstärksten Wissenschaftsjournalistinnen Deutschlands warb auf einem staatlich finanzierten Kanal für Impfstoffe, ohne offenzulegen, dass ihr Ehemann Associate Director beim wichtigsten Zulieferer des Herstellers war. Belegt durch: Merck-Geschäftsbericht 2021, öffentliche Pressemitteilungen beider Unternehmen.</p>
+    <p><strong>Was offen bleibt:</strong> Ob und in welchem Umfang dieser Umstand ihre redaktionellen Entscheidungen beeinflusst hat. Dazu gibt es keine Belege in die eine oder andere Richtung.</p>
+    <p><strong>Was daraus folgt:</strong> Öffentlich-rechtliche Wissenschaftsformate brauchen verbindliche Disclosure-Regeln — analog zu den Standards wissenschaftlicher Fachzeitschriften. Das ist keine politische Forderung. Es ist journalistisches Handwerk.</p>
+  </div>
+
+  <div class="quellen">
+    <div class="quellen-titel">Primärquellen</div>
+    <ul>
+      <li>
+        <span class="q-typ primaer">Primär</span>
+        Merck KGaA: Geschäftsbericht 2021 — Kapitel Covid-19-Engagement, Lipid-Partnerschaft BioNTech (merckgroup.com/de/geschaeftsbericht/2021)
+      </li>
+      <li>
+        <span class="q-typ primaer">Primär</span>
+        Merck KGaA / BioNTech: Gemeinsame Pressemitteilung zur Erweiterung der strategischen Partnerschaft, 05.02.2021
+      </li>
+      <li>
+        <span class="q-typ behoerde">Behörde</span>
+        Bundespräsidialamt: Begründung Bundesverdienstkreuz für Mai Thi Nguyen-Kim und Christian Drosten, 1. Oktober 2020
+      </li>
+      <li>
+        <span class="q-typ mainstream">Mainstream</span>
+        Tagesspiegel: „Mai Thi Nguyen-Kim wirbt für Impfstoff: Astrazeneca? Keine Frage. Ich würde nicht zögern." (DPA-Interview), März 2021
+      </li>
+      <li>
+        <span class="q-typ mainstream">Mainstream</span>
+        ZDF Presseportal: Offizielle Biografie Dr. Mai Thi Nguyen-Kim (presseportal.zdf.de)
+      </li>
+      <li>
+        <span class="q-typ mainstream">Mainstream</span>
+        finanzen.net / DPA: „Merck will BioNTech schneller mit Lipiden für Corona-Vakzin beliefern", 06.02.2021
+      </li>
+    </ul>
+  </div>
+
+  <div class="disclaimer">
+    Die Einschätzungen geben die analytische Position von Rundfunkkritik.de wieder. Dieser Artikel erhebt keinen Anspruch auf Vollständigkeit und ersetzt keine rechtliche Bewertung. Widersprüche und Ergänzungen werden gerne entgegengenommen.
+  </div>
+
+</main>
+
+<footer style="text-align:center;padding:32px 16px;margin-top:48px;border-top:1px solid #d4c9b0;font-family:Georgia,'Crimson Pro',serif;font-size:14px;color:#6b6b6b">
+  <a href="/themen.html" style="color:inherit;text-decoration:none">Themen</a> &middot; <a href="/impressum.html" style="color:#6b6b6b;text-decoration:none">Impressum</a> &middot; <a href="/datenschutz.html" style="color:#6b6b6b;text-decoration:none">Datenschutz</a> &middot; <a href="mailto:kontakt@rundfunkkritik.de" style="color:#6b6b6b;text-decoration:none">Kontakt</a>
+</footer>
+</body>
+</html>

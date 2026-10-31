@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fallbericht: Eilverfahren M 26b S 26.3752 — Verwaltungsgericht München | rundfunkkritik.de</title>
+<meta name="rubrik" content="Recht &amp; Beitrag">
+<meta name="kachel-titel" content="Eilverfahren eingestellt — zentrales Argument bleibt unbehandelt">
+<meta name="description" content="Dokumentation: Eilverfahren Seeböck ./. Bayerischer Rundfunk. Das Gericht stellt ein — ohne auf den zentralen Klagegrund einzugehen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:     #1a2744;
+    --navy-mid: #243460;
+    --gold:     #b8962e;
+    --gold-lt:  #d4af50;
+    --perg:     #f5f0e8;
+    --perg-dk:  #ede7d8;
+    --rot:      #8b1a1a;
+    --text:     #1c1c1c;
+    --muted:    #5a5a5a;
+    --border:   #d0c8b8;
+    --mono:     'JetBrains Mono', monospace;
+    --serif:    'Crimson Pro', Georgia, serif;
+    --display:  'Playfair Display', Georgia, serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--perg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 1.125rem;
+    line-height: 1.75;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--navy);
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 3px solid var(--gold);
+  }
+  .site-header a {
+    color: var(--gold-lt);
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+  }
+  .site-header a:hover { color: #fff; }
+  .header-sep { color: var(--gold); opacity: 0.5; }
+
+  /* ── ARTICLE HERO ── */
+  .hero {
+    background: var(--navy);
+    color: #fff;
+    padding: 3.5rem 2rem 3rem;
+    border-bottom: 4px solid var(--gold);
+  }
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    color: var(--gold-lt);
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .hero-eyebrow .tag {
+    background: var(--rot);
+    color: #fff;
+    padding: 0.15em 0.6em;
+    border-radius: 2px;
+    font-size: 0.68rem;
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-size: clamp(1.7rem, 4vw, 2.6rem);
+    line-height: 1.2;
+    max-width: 820px;
+    margin-bottom: 1.1rem;
+  }
+  .hero-sub {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: #c8c0b0;
+    max-width: 720px;
+    line-height: 1.6;
+  }
+
+  /* ── LAYOUT ── */
+  .article-wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  h2 {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    color: var(--navy);
+    margin: 2.8rem 0 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--gold);
+  }
+  h3 {
+    font-family: var(--display);
+    font-size: 1.15rem;
+    color: var(--navy-mid);
+    margin: 2rem 0 0.6rem;
+  }
+  p { margin-bottom: 1.2rem; }
+  strong { color: var(--navy); }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    border-left: 3px solid var(--gold);
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 1.6rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .tl-item.visible { opacity: 1; transform: none; }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -1.95rem;
+    top: 0.4rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--perg);
+  }
+  .tl-date {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+  .tl-text { font-size: 1rem; line-height: 1.6; }
+
+  /* ── BESCHLUSS-BOX ── */
+  .beschluss {
+    background: var(--navy);
+    color: #e8e0d0;
+    border-left: 5px solid var(--rot);
+    padding: 1.5rem 1.8rem;
+    margin: 2rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .beschluss .label {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    color: var(--gold-lt);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .beschluss ol {
+    padding-left: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .beschluss li { margin-bottom: 0.4rem; }
+  .beschluss li strong { color: var(--gold-lt); }
+
+  /* ── ANALYSE-KARTEN ── */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--navy-mid);
+    padding: 1.2rem 1.4rem;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+  }
+  .card.visible { opacity: 1; transform: none; }
+  .card-head {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .card p { font-size: 0.95rem; margin: 0; }
+
+  /* ── PULL QUOTE ── */
+  .pullquote {
+    border-left: 4px solid var(--gold);
+    background: var(--perg-dk);
+    padding: 1.2rem 1.6rem;
+    margin: 2.2rem 0;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--navy-mid);
+  }
+  .pullquote cite {
+    display: block;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--muted);
+    margin-top: 0.6rem;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── RECHTSLAGE-TABELLE ── */
+  .recht-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.8rem 0;
+    font-size: 0.95rem;
+  }
+  .recht-table th {
+    background: var(--navy);
+    color: var(--gold-lt);
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.7rem 1rem;
+    text-align: left;
+  }
+  .recht-table td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .recht-table tr:nth-child(even) td { background: #faf7f2; }
+  .recht-table .status-offen {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--rot);
+    font-weight: 500;
+  }
+  .recht-table .status-ok {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: #2a6e2a;
+    font-weight: 500;
+  }
+
+  /* ── HINWEIS-BOX ── */
+  .hinweis {
+    background: #fffbf0;
+    border: 1px solid var(--gold);
+    border-left: 4px solid var(--gold);
+    padding: 1.1rem 1.4rem;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+  }
+  .hinweis strong { color: var(--navy); }
+
+  /* ── QUELLEN ── */
+  .quellen {
+    border-top: 2px solid var(--border);
+    margin-top: 3rem;
+    padding-top: 1.2rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: var(--navy);
+    color: #8899bb;
+    text-align: center;
+    padding: 2rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    border-top: 3px solid var(--gold);
+    line-height: 2;
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 2.5rem 1.2rem 2rem; }
+    .article-wrap { padding: 2rem 1.2rem 4rem; }
+    .recht-table { font-size: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/">rundfunkkritik.de</a>
+  <span class="header-sep">›</span>
+  <a href="#">Fallberichte</a>
+  <span class="header-sep">›</span>
+  <a href="#">Eilverfahren M 26b S 26.3752</a>
+</header>
+
+<div class="hero">
+  <div class="hero-eyebrow">
+    <span class="tag">Fallbericht</span>
+    <span>Az. M 26b S 26.3752 · Verwaltungsgericht München</span>
+    <span>August 2026</span>
+  </div>
+  <h1>Eilverfahren eingestellt — zentrales Argument bleibt unbehandelt</h1>
+  <p class="hero-sub">Das Verwaltungsgericht München stellt das Eilverfahren Seeböck ./. Bayerischer Rundfunk ein und legt die Kosten dem Kläger auf. Der vorgetragene Haushalt-Einwand nach § 2 Abs. 1 RBStV wird im Beschluss nicht erwähnt.</p>
+</div>
+
+<div class="article-wrap">
+
+  <h2>Ausgangslage</h2>
+  <p>Der Kläger lebt seit November 2023 in einem Haushalt, in dem der Rundfunkbeitrag bereits durch den Hauptmieter entrichtet wird. Gemäß § 2 Abs. 1 RBStV ist pro Haushalt nur ein Beitrag geschuldet. Dieser Sachverhalt wurde in der ursprünglichen Klageschrift ausdrücklich vorgetragen.</p>
+  <p>Parallel dazu lief seit August 2021 ein Widerspruchsverfahren gegen einen Festsetzungsbescheid des Bayerischen Rundfunks. Der Widerspruchsbescheid erging erst im Februar 2025 — rund dreieinhalb Jahre später, obwohl die Adresse des Klägers dem Beitragsservice nachweislich bekannt war.</p>
+
+  <h2>Chronologie des Eilverfahrens</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <span class="tl-date">August 2021</span>
+      <div class="tl-text">Festsetzungsbescheid des BR. Kläger erhebt Widerspruch, stellt Zahlungen ein.</div>
+    </div>
+    <div class="tl-item">
+      <span class="tl-date">November 2023</span>
+      <div class="tl-text">Kläger zieht in den Haushalt seines Bruders. Bruder zahlt Rundfunkbeitrag. Laut § 2 Abs. 1 RBStV entfällt damit eine weitere Beitragspflicht des Klägers.</div>
+    </div>
+    <div class="tl-item">
+      <span class="tl-date">Februar 2025</span>
+      <div class="tl-text">Widerspruchsbescheid des BR — nach 3,5 Jahren Untätigkeit.</div>
+    </div>
+    <div class="tl-item">
+      <span class="tl-date">Mai 2025</span>
+      <div class="tl-text">Klage beim Verwaltungsgericht München (Az. M 26b K 25.1841). Haushalt-Sachverhalt wird in der Klageschrift ausdrücklich vorgetragen.</div>
+    </div>
+    <div class="tl-item">
+      <span class="tl-date">September 2025</span>
+      <div class="tl-text">Erste Zwangsvollstreckung durch Gerichtsvollzieherin. Kläger leistet Zahlungen unter ausdrücklichem Vorbehalt (§ 812 BGB).</div>
+    </div>
+    <div class="tl-item">
+      <span class="tl-date">November 2025</span>
+      <div class="tl-text">Klageerwiderung des BR beim Gericht. Inhalt dem Kläger bis heute unbekannt — Akteneinsicht wurde nie gewährt.</div>
+    </div>
+    <div class="tl-item">
+      <span class="tl-date">Mai 2026</span>
+      <div class="tl-text">BR zieht Vollstreckungsersuchen zurück, vermerkt Mahnstufenaussetzung. Kläger erklärt Eilverfahren für erledigt.</div>
+    </div>
+    <div class="tl-item">
+      <span class="tl-date">14. Juli 2026</span>
+      <div class="tl-text">Beschluss des Verwaltungsgerichts München: Verfahren eingestellt, Kosten dem Kläger auferlegt, Streitwert 29,35 €.</div>
+    </div>
+    <div class="tl-item">
+      <span class="tl-date">August 2026</span>
+      <div class="tl-text">Kläger beantragt Akteneinsicht und weist das Gericht auf den übergangenen Haushalt-Klagegrund hin.</div>
+    </div>
+  </div>
+
+  <h2>Der Beschluss vom 14. Juli 2026</h2>
+
+  <div class="beschluss">
+    <div class="label">Tenor — Az. M 26b S 26.3752</div>
+    <ol>
+      <li><strong>Das Verfahren wird eingestellt.</strong></li>
+      <li><strong>Der Antragsteller trägt die Kosten des Verfahrens.</strong></li>
+      <li>Der Streitwert wird auf EUR 29,35 festgesetzt.</li>
+    </ol>
+  </div>
+
+  <p>Das Gericht begründet die Kostenlast mit einer summarischen Erfolgsprognose: Der Eilantrag nach § 80 Abs. 5 VwGO sei zwar zulässig, aber voraussichtlich unbegründet gewesen, weil der Kläger mit der Anfechtungsklage im Hauptsacheverfahren voraussichtlich unterlegen wäre. Zur Begründung verweist das Gericht auf die fehlende Verjährung der Beitragsforderung (§ 7 Abs. 4 RBStV, Art. 53 BayVwVfG).</p>
+
+  <h2>Was der Beschluss nicht enthält</h2>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-head">Haushalt § 2 Abs. 1 RBStV</div>
+      <p>Der Kläger lebt seit November 2023 in einem bereits beitragspflichtigen Haushalt. Dieser in der Klageschrift vorgetragene Sachverhalt wird im Beschluss nicht erwähnt.</p>
+    </div>
+    <div class="card">
+      <div class="card-head">Verwirkung</div>
+      <p>Dreieinhalb Jahre Untätigkeit des BR trotz nachweislich bekannter Adresse. Das Verwirkungsargument (Zeit- und Umstandsmoment) bleibt im Eilbeschluss unbehandelt.</p>
+    </div>
+    <div class="card">
+      <div class="card-head">Akteneinsicht</div>
+      <p>Die Klageerwiderung des BR vom November 2025 ist dem Kläger bis heute nicht bekannt. Eine Stellungnahme zu unbekannten Gegenargumenten war strukturell ausgeschlossen.</p>
+    </div>
+    <div class="card">
+      <div class="card-head">DSGVO / Adressermittlung</div>
+      <p>Widersprüchliche Angaben zur Herkunft der Adressdaten werden im Beschluss nicht thematisiert.</p>
+    </div>
+  </div>
+
+  <div class="pullquote">
+    Das Eilverfahren nach § 80 Abs. 5 VwGO ist auf summarische Prüfung angelegt. Es ersetzt keine inhaltliche Auseinandersetzung mit dem Klagegrund — es verschiebt sie.
+    Strukturmerkmal des einstweiligen Rechtsschutzes im Verwaltungsrecht
+  </div>
+
+  <h2>Einordnung: Wie § 80 Abs. 5 VwGO strukturell funktioniert</h2>
+  <p>Das Eilverfahren ist kein Vorwegnahmeverfahren. Das Gericht prüft lediglich summarisch, ob die Klage im Hauptsacheverfahren wahrscheinlich Erfolg haben wird. Ist die Prognose negativ, trägt der Antragsteller die Kosten — unabhängig davon, wie stark seine inhaltlichen Argumente sind.</p>
+  <p>Die Konsequenz für Bürger in Rundfunkbeitragsstreitigkeiten: Eilanträge scheitern strukturell, weil das BVerfG den Beitrag 2018 grundsätzlich für verfassungskonform erklärt hat. Die Erfolgswahrscheinlichkeit im Hauptsacheverfahren gilt damit als gering — unabhängig vom konkreten Einzelsachverhalt des Klägers.</p>
+  <p>In diesem Fall bedeutet das: Ein Klagegrund, der bei inhaltlicher Prüfung möglicherweise entscheidend gewesen wäre (§ 2 Abs. 1 RBStV), wird im Eilverfahren nicht einmal erwähnt. Die Kostenpflicht entsteht auf Basis einer Prognose, die diesen Punkt nicht einbezieht.</p>
+
+  <h2>Aktuelle Verfahrenslage</h2>
+  <table class="recht-table">
+    <thead>
+      <tr>
+        <th>Verfahren</th>
+        <th>Aktenzeichen</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Eilverfahren § 80 Abs. 5 VwGO</td>
+        <td style="font-family:var(--mono);font-size:0.82rem">M 26b S 26.3752</td>
+        <td><span class="status-ok">Eingestellt (Juli 2026)</span></td>
+      </tr>
+      <tr>
+        <td>Hauptsacheverfahren (Anfechtungsklage)</td>
+        <td style="font-family:var(--mono);font-size:0.82rem">M 26b K 25.1841</td>
+        <td><span class="status-offen">Läuft</span></td>
+      </tr>
+      <tr>
+        <td>Akteneinsicht § 100 VwGO</td>
+        <td style="font-family:var(--mono);font-size:0.82rem">M 26b K 25.1841</td>
+        <td><span class="status-offen">Beantragt (August 2026)</span></td>
+      </tr>
+      <tr>
+        <td>BVerfG Rundfunkbeitrag (Beitragserhöhung)</td>
+        <td style="font-family:var(--mono);font-size:0.82rem">1 BvR 2524/24</td>
+        <td><span class="status-offen">Urteil erwartet Herbst 2026</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="hinweis">
+    <strong>Hinweis zur Einordnung:</strong> Das BVerfG-Verfahren (Az. 1 BvR 2524/24) betrifft die Frage, ob die Länder die empfohlene Beitragserhöhung verfassungswidrig blockiert haben. Es ist von ARD und ZDF initiiert und hat keinen direkten Bezug zur Beitragspflicht einzelner Haushalte.
+  </div>
+
+  <h2>Was dieser Fall dokumentiert</h2>
+  <p>Dieser Fallbericht illustriert ein strukturelles Muster: Bürger, die gegen Rundfunkbeitragsbescheide klagen, tragen im Eilverfahren das Kostenrisiko einer summarischen Prognose, die auf der allgemeinen verfassungsrechtlichen Bewertung des Beitrags beruht — nicht auf dem konkreten Einzelsachverhalt.</p>
+  <p>Inhaltliche Argumente — wie die Frage, ob im betroffenen Haushalt bereits ein Beitrag entrichtet wird — werden in das Hauptsacheverfahren verlagert, das deutlich länger dauert und höhere Kosten verursacht. Die Klageerwiderung der Gegenseite bleibt dem Kläger ohne eigene Initiative zur Akteneinsicht unbekannt.</p>
+  <p>Dieser Fall wird auf rundfunkkritik.de weiter dokumentiert.</p>
+
+  <div class="quellen">
+    <strong>Verfahrensdokumente:</strong><br>
+    Beschluss VG München vom 14.07.2026, Az. M 26b S 26.3752 · Schreiben BR Juristische Direktion vom 27.05.2026, Az. 338/26 · Akteneinsichtsantrag § 100 VwGO vom 26.08.2026<br><br>
+    <strong>Rechtliche Grundlagen:</strong><br>
+    § 80 Abs. 5 VwGO · § 92 Abs. 3 VwGO · § 161 Abs. 2 VwGO · § 100 VwGO · § 2 Abs. 1 RBStV · § 7 Abs. 4 RBStV · Art. 53 BayVwVfG<br><br>
+    Stand: August 2026 · rundfunkkritik.de
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <strong>rundfunkkritik.de</strong><br>
+  Strukturelle Medienkritik · Fallberichte · August 2026<br><br>
+  Impressum: Manfred Seeböck c/o POSTFLEX PFX-345-697 · Emsdettener Straße 10 · 48268 Greven
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.tl-item, .card').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

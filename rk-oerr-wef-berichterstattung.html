@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Das WEF im ÖRR: Harmlose Wohltäter, kritische Verschwörungstheoretiker | rundfunkkritik.de</title>
+<meta name="rubrik" content="Struktur &amp; Meinungsmache">
+<meta name="kachel-titel" content="Das WEF im ÖRR: Harmlose Wohltäter, kritische Verschwörungstheoretiker">
+  <meta name="description" content="Wie ARD und ZDF über das Weltwirtschaftsforum berichten — und was dabei systematisch wegfällt. Eine Dokumentation mit Primärquellen.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2744;
+      --navy-light: #2a3a5c;
+      --pergament: #f5f0e8;
+      --pergament-dark: #ede8dc;
+      --rot: #8b1a1a;
+      --text: #2c2c2c;
+      --muted: #666;
+      --border: #d4cfc4;
+    }
+
+    body {
+      background: var(--pergament);
+      color: var(--text);
+      font-family: Georgia, serif;
+      line-height: 1.78;
+      font-size: 1.05rem;
+    }
+
+    a { color: var(--navy); }
+    a:hover { color: var(--rot); }
+
+    .site-header {
+      background: var(--navy);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .site-header .logo {
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 0.02em;
+    }
+
+    .site-header nav a {
+      color: #a0b4d0;
+      text-decoration: none;
+      font-size: 0.82rem;
+      margin-left: 1.5rem;
+      font-family: monospace;
+    }
+
+    .site-header nav a:hover { color: white; }
+
+    .breadcrumb {
+      background: var(--navy-light);
+      padding: 0.5rem 2rem;
+      font-family: monospace;
+      font-size: 0.72rem;
+      color: #8090b0;
+    }
+
+    .breadcrumb a { color: #8090b0; text-decoration: none; }
+    .breadcrumb a:hover { color: white; }
+
+    .container {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    .category {
+      font-family: monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--rot);
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: 1.9rem;
+      font-weight: bold;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      border-left: 3px solid var(--rot);
+      padding-left: 1rem;
+    }
+
+    .meta {
+      font-family: monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 0.6rem 0;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-family: Georgia, serif;
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin: 2.5rem 0 0.75rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid var(--navy);
+    }
+
+    p { margin-bottom: 1.1rem; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.88rem;
+    }
+
+    th {
+      font-family: monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--navy);
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 2px solid var(--navy);
+      background: var(--pergament-dark);
+    }
+
+    td {
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    td:first-child {
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+      white-space: nowrap;
+      width: 130px;
+    }
+
+    blockquote {
+      border-left: 3px solid var(--rot);
+      margin: 1.5rem 0;
+      padding: 0.75rem 1.25rem;
+      background: var(--pergament-dark);
+      font-style: italic;
+      color: #444;
+    }
+
+    blockquote cite {
+      display: block;
+      margin-top: 0.5rem;
+      font-style: normal;
+      font-family: monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .gegenüber {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .gegenüber-box {
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+    }
+
+    .gegenüber-box.links {
+      background: var(--pergament-dark);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--navy);
+    }
+
+    .gegenüber-box.rechts {
+      background: #f0ebe0;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--rot);
+    }
+
+    .gegenüber-box .label {
+      font-family: monospace;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .gegenüber-box.links .label { color: var(--navy); }
+    .gegenüber-box.rechts .label { color: var(--rot); }
+
+    .fact-box {
+      background: var(--pergament-dark);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--navy);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .fact-box .label {
+      font-family: monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+      font-weight: bold;
+    }
+
+    .sources {
+      background: var(--pergament-dark);
+      border: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin: 2.5rem 0;
+      font-size: 0.85rem;
+    }
+
+    .sources .label {
+      font-family: monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+      font-weight: bold;
+    }
+
+    .sources ol {
+      padding-left: 1.25rem;
+      color: var(--muted);
+      line-height: 2;
+    }
+
+    .sources ol a { font-size: 0.8rem; word-break: break-all; }
+
+    .offene-fragen {
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--rot);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      background: var(--pergament-dark);
+    }
+
+    .offene-fragen .label {
+      font-family: monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--rot);
+      margin-bottom: 0.75rem;
+      font-weight: bold;
+    }
+
+    .offene-fragen ul {
+      padding-left: 1.25rem;
+      line-height: 2.1;
+      color: var(--text);
+    }
+
+    .methodik {
+      font-family: monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      margin-top: 2rem;
+      line-height: 1.7;
+    }
+
+    .site-footer {
+      background: var(--navy);
+      color: #8090b0;
+      text-align: center;
+      padding: 1.5rem;
+      font-family: monospace;
+      font-size: 0.72rem;
+      margin-top: 4rem;
+    }
+
+    .site-footer a { color: #8090b0; text-decoration: none; }
+    .site-footer a:hover { color: white; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.45rem; }
+      .container { padding: 2rem 1rem; }
+      .gegenüber { grid-template-columns: 1fr; }
+      td:first-child { width: 90px; font-size: 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">rundfunkkritik.de</a>
+  <nav>
+    <a href="/">Startseite</a>
+    <a href="/ueber.html">Über</a>
+  </nav>
+</header>
+
+<div class="breadcrumb">
+  <a href="/">rundfunkkritik.de</a> / <a href="/">Analysen</a> / WEF / ÖRR-Berichterstattung
+</div>
+
+<div class="container">
+
+  <div class="category">Analyse · ARD / ZDF · Weltwirtschaftsforum · Redaktionelle Rahmensetzung</div>
+
+  <h1>Das WEF im ÖRR: Harmlose Wohltäter — und wer das anzweifelt, ist Verschwörungstheoretiker</h1>
+
+  <div class="subtitle">ARD und ZDF berichten über das Weltwirtschaftsforum regelmäßig wohlwollend. Wer WEF-Positionen kritisch befragt, wird als Verschwörungstheoretiker eingestuft — vom selben Sender, dessen prominente Moderatorin als WEF Young Global Leader gelistet ist. Eine Dokumentation belegter Fakten.</div>
+
+  <div class="meta">
+    Veröffentlicht: Juni 2026 &nbsp;|&nbsp; Kategorie: Redaktionelle Rahmensetzung &nbsp;|&nbsp; Alle Angaben mit Primärquellen belegt
+  </div>
+
+  <!-- ABSCHNITT 1 -->
+  <div class="reveal">
+  <h2>1. Das WEF in eigenen Worten</h2>
+
+  <p>Das Weltwirtschaftsforum (WEF) beschreibt seine eigene Mission auf seiner Website als "Verbesserung des Weltzustands durch Einbindung von Wirtschaft, Politik, Wissenschaft und anderen gesellschaftlichen Führungskräften zur Gestaltung globaler, regionaler und branchenspezifischer Agenden." [1]</p>
+
+  <p>Folgende Positionen und Inhalte hat das WEF öffentlich auf seinen eigenen Plattformen verbreitet — jeweils mit direktem Quellenlink:</p>
+
+  <table>
+    <thead>
+      <tr><th>Jahr</th><th>WEF-Inhalt</th><th>Quelle</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2016</td>
+        <td>WEF veröffentlicht auf Facebook ein Video mit acht Vorhersagen für 2030. Eine davon lautet sinngemäß: "Du wirst nichts besitzen — und glücklich sein." Der Text stammt aus einem Essay der dänischen Politikerin Ida Auken, das auf der WEF-Website erschien. [2]</td>
+        <td><a href="https://www.weforum.org" target="_blank" rel="noopener">weforum.org</a></td>
+      </tr>
+      <tr>
+        <td>2020</td>
+        <td>WEF-Gründer Klaus Schwab veröffentlicht gemeinsam mit Thierry Malleret das Buch "Covid-19: Der große Umbruch", in dem die Pandemie als Chance für eine Neugestaltung globaler Wirtschafts- und Gesellschaftsstrukturen beschrieben wird. [3]</td>
+        <td>Schwab/Malleret, 2020</td>
+      </tr>
+      <tr>
+        <td>2020</td>
+        <td>WEF veröffentlicht Artikel mit dem Titel "The benefits of a cashless society" auf seiner Website, der die Vorteile bargeldloser Gesellschaften beschreibt. [4]</td>
+        <td><a href="https://www.weforum.org" target="_blank" rel="noopener">weforum.org</a></td>
+      </tr>
+      <tr>
+        <td>2022</td>
+        <td>WEF veröffentlicht auf seiner Website Artikel zum Konzept der 15-Minuten-Städte und stellt die Vorteile solcher Stadtmodelle für Bewohner, Umwelt und Wirtschaft dar. [5]</td>
+        <td><a href="https://www.weforum.org" target="_blank" rel="noopener">weforum.org</a></td>
+      </tr>
+      <tr>
+        <td>2023/24</td>
+        <td>Auf WEF-Panels sprechen sich Zentralbanker für digitale Zentralbankwährungen (CBDCs) als Ersatz für Bargeld aus. Der Gouverneur der Zentralbank Bahrains erklärt auf einem WEF-Panel, das Ziel sei es, "hundert Prozent digital" zu werden. [6]</td>
+        <td>WEF Special Meeting, April 2024</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Diese Inhalte sind auf weforum.org veröffentlicht oder auf WEF-Veranstaltungen dokumentiert. Sie stellen keine Interpretation dar.</p>
+  </div>
+
+  <!-- ABSCHNITT 2 -->
+  <div class="reveal">
+  <h2>2. ÖRR-Berichterstattung: Das WEF und seine Kritiker</h2>
+
+  <p>Der BR-Faktenfuchs hat sich mehrfach mit Kritik am WEF und dem "Great Reset" befasst. Das Muster der Berichterstattung ist dabei dokumentiert: Wer die Agenda des WEF kritisch befragt, wird als Verschwörungstheoretiker eingestuft.</p>
+
+  <div class="gegenüber">
+    <div class="gegenüber-box links">
+      <div class="label">WEF in eigenen Worten</div>
+      Klaus Schwab veröffentlicht 2020 ein Buch über die Pandemie als Chance für globale Umgestaltung. Das WEF promotet Bargeldlosigkeit und 15-Minuten-Städte auf seiner eigenen Plattform.
+    </div>
+    <div class="gegenüber-box rechts">
+      <div class="label">BR Faktenfuchs dazu</div>
+      Wer behauptet, die globale Finanzelite nutze die Pandemie zur Machtausdehnung, wird vom Faktenfuchs als Verbreiter von Verschwörungstheorien eingestuft. [7]
+    </div>
+  </div>
+
+  <p>Der Faktenfuchs verweist dabei auf das WEF selbst als Beleg dafür, dass kein derartiger Plan existiere — ohne die oben verlinkten WEF-Primärquellen zu berücksichtigen oder zu widerlegen.</p>
+
+  <p>Ähnlich bei BR quer: Am 30. Januar 2020 — dem Tag, an dem die WHO den internationalen Gesundheitsnotstand ausrief — sendete quer einen Beitrag, der Warnungen vor COVID-19 als Panikmache einordnete. Das Video wurde später kommentarlos gelöscht. Die Redaktion bestätigte die Löschung schriftlich mit der Begründung, "die Faktenlage habe sich geändert" — ohne öffentliche Korrektur gegenüber den Zuschauern. [8] (Ausführliche Dokumentation: <a href="rk-br-quer-corona-fruehwarner.html">BR quer — Corona-Video, WHO-Alarm und WEF-Kontext</a>)</p>
+  </div>
+
+  <!-- ABSCHNITT 3 -->
+  <div class="reveal">
+  <h2>3. Dokumentierte Verbindungen zwischen ÖRR und WEF</h2>
+
+  <p>Die folgende Tabelle listet belegte personelle Verbindungen zwischen ÖRR-Akteuren und dem Weltwirtschaftsforum. Keine Schlussfolgerungen — nur dokumentierte Fakten.</p>
+
+  <table>
+    <thead>
+      <tr><th>Person</th><th>ÖRR-Funktion</th><th>WEF-Verbindung</th><th>Beleg</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sandra Maischberger</td>
+        <td>Moderatorin, ZDF (ARD)</td>
+        <td>WEF Young Global Leader</td>
+        <td><a href="https://www.business-leaders.net/wef-young-global-leaders-die-liste-der-deutschen-teilnehmer/" target="_blank" rel="noopener">business-leaders.net</a></td>
+      </tr>
+      <tr>
+        <td>Pia Lamberty</td>
+        <td>CeMAS-Gründerin; berät Behörden und Medien zu "Desinformation"</td>
+        <td>WEF Agenda Contributor; veröffentlicht auf weforum.org</td>
+        <td><a href="https://www.weforum.org/stories/authors/pia-lamberty/" target="_blank" rel="noopener">weforum.org</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Das WEF Young Global Leaders Programm existiert seit 1993 (ursprünglich "Global Leaders for Tomorrow"). Es identifiziert und fördert nach eigener Aussage zukünftige Führungspersönlichkeiten aus Wirtschaft, Politik und Gesellschaft. [9]</p>
+
+  <p>Ob und in welchem Ausmaß diese Verbindungen die redaktionelle Berichterstattung beeinflussen, ist nicht dokumentiert und wird hier nicht behauptet. Die Verbindungen selbst sind öffentlich zugänglich und belegt.</p>
+  </div>
+
+  <!-- ABSCHNITT 4 -->
+  <div class="reveal">
+  <h2>4. Themen, die das WEF promotet — und wie der ÖRR sie rahmt</h2>
+
+  <p>Drei Themenbereiche, in denen WEF-Positionen und ÖRR-Berichterstattung nebeneinandergestellt werden können:</p>
+
+  <div class="fact-box">
+    <div class="label">Thema 1: Bargeldlose Gesellschaft / Digitale Zentralbankwährungen</div>
+    <p style="margin-bottom:0.5rem"><strong>WEF-Position (belegt):</strong> Das WEF hat Artikel zu den "Vorteilen einer bargeldlosen Gesellschaft" veröffentlicht. Auf WEF-Panels haben Zentralbanker CBDCs als vollständigen Bargeldersatz beschrieben. [4][6]</p>
+    <p style="margin-bottom:0"><strong>ÖRR-Rahmung:</strong> Warnungen vor Bargeldabschaffung werden im ÖRR regelmäßig als Verschwörungstheorie eingestuft. Eine Gegenüberstellung mit den WEF-Primärquellen findet in der Regel nicht statt.</p>
+  </div>
+
+  <div class="fact-box">
+    <div class="label">Thema 2: 15-Minuten-Städte</div>
+    <p style="margin-bottom:0.5rem"><strong>WEF-Position (belegt):</strong> Das WEF hat das Konzept der 15-Minuten-Städte auf seiner Website promotet und die Vorteile beschrieben. [5]</p>
+    <p style="margin-bottom:0"><strong>ÖRR-Rahmung:</strong> Das Konzept wird im ÖRR überwiegend positiv als Stadtentwicklungsidee dargestellt. Kritiker, die Einschränkungen der Bewegungsfreiheit befürchten, werden als Verschwörungstheoretiker eingestuft — ohne Auseinandersetzung mit konkreten Umsetzungsbeispielen wie den Verkehrsfiltern in Oxford (UK) 2022/23.</p>
+  </div>
+
+  <div class="fact-box">
+    <div class="label">Thema 3: Great Reset / Pandemie als Umbruch</div>
+    <p style="margin-bottom:0.5rem"><strong>WEF-Position (belegt):</strong> Klaus Schwab beschreibt in seinem 2020 erschienenen Buch die Pandemie als "seltenes, aber schmales Fenster der Gelegenheit, um die Welt neu zu denken und neu zu gestalten." [3]</p>
+    <p style="margin-bottom:0"><strong>ÖRR-Rahmung:</strong> Wer auf dieses Buch und seinen Inhalt hinweist und daraus Schlussfolgerungen zieht, wird vom Faktenfuchs als Verbreiter von Verschwörungstheorien eingestuft. Das Buch selbst wird in den Faktenchecks nicht inhaltlich widerlegt. [7]</p>
+  </div>
+  </div>
+
+  <!-- ABSCHNITT 5 -->
+  <div class="reveal">
+  <h2>5. Offene Fragen</h2>
+
+  <div class="offene-fragen">
+    <div class="label">Offene Fragen — auf Basis öffentlich zugänglicher Quellen nicht abschließend beantwortbar</div>
+    <ul>
+      <li>Welche weiteren ÖRR-Journalisten, Moderatoren oder Redakteure sind als WEF Young Global Leaders oder Agenda Contributors gelistet?</li>
+      <li>Gibt es redaktionelle Leitlinien bei ARD/ZDF für den Umgang mit WEF-Themen? Solche Leitlinien wären über IFG-Anfragen potenziell zugänglich.</li>
+      <li>Wie wird im ÖRR zwischen der Berichterstattung über WEF-Inhalte und der Einordnung von WEF-Kritik redaktionell getrennt?</li>
+      <li>Werden WEF-Primärquellen (Bücher, offizielle Artikel, Panel-Aussagen) in ÖRR-Faktenchecks zu WEF-Kritik systematisch berücksichtigt oder nicht?</li>
+      <li>Hat der ZDF-Rundfunkrat die YGL-Verbindung von Sandra Maischberger je öffentlich thematisiert?</li>
+    </ul>
+  </div>
+  </div>
+
+  <div class="sources reveal">
+    <div class="label">Quellen</div>
+    <ol>
+      <li>WEF-Mission, weforum.org — <a href="https://www.weforum.org/about/world-economic-forum/" target="_blank" rel="noopener">weforum.org/about/world-economic-forum/</a></li>
+      <li>Ida Auken, "Welcome to 2030", WEF-Website 2016; WEF Facebook-Video "8 Predictions for the World in 2030", November 2016 — dokumentiert u.a. via Wikipedia: <a href="https://en.wikipedia.org/wiki/You%27ll_own_nothing_and_be_happy" target="_blank" rel="noopener">en.wikipedia.org</a></li>
+      <li>Klaus Schwab / Thierry Malleret: "Covid-19: Der große Umbruch", WEF, Juli 2020</li>
+      <li>WEF: "The benefits of a cashless society" (2020) — dokumentiert via Full Fact: <a href="https://fullfact.org/online/world-economic-forum-cashless-15-minute-central-bank/" target="_blank" rel="noopener">fullfact.org</a></li>
+      <li>WEF-Artikel zu 15-Minuten-Städten — dokumentiert via business-leaders.net: <a href="https://www.business-leaders.net/15-minuten-staedte-15-minute-city-global-initiative-agenda-2030-des-weltwirtschaftsforum-wohnen-in-der-zukunft/" target="_blank" rel="noopener">business-leaders.net</a></li>
+      <li>WEF Special Meeting on Global Collaboration, April 2024: Zentralbank-Gouverneur Bahrains über CBDCs als Bargeldersatz — <a href="https://sociable.co/government-and-policy/cbdc-replace-cash-one-hundred-percent-digital-wef/" target="_blank" rel="noopener">sociable.co</a></li>
+      <li>BR Faktenfuchs zum Great Reset — dokumentiert via ruhrkultour.de: <a href="https://ruhrkultour.de/the-great-reset-des-wef-und-eine-verschwoerungstheorie-des-br/" target="_blank" rel="noopener">ruhrkultour.de</a></li>
+      <li>BR quer Corona-Video und Löschung — siehe Detailanalyse: <a href="rk-br-quer-corona-fruehwarner.html">rk-br-quer-corona-fruehwarner.html</a></li>
+      <li>WEF Young Global Leaders — Programmbeschreibung und deutsche Teilnehmer: <a href="https://www.business-leaders.net/wef-young-global-leaders-die-liste-der-deutschen-teilnehmer/" target="_blank" rel="noopener">business-leaders.net</a></li>
+    </ol>
+  </div>
+
+  <div class="methodik reveal">
+    Methodik: Dieser Artikel stellt ausschließlich öffentlich zugängliche, belegte Primärquellen nebeneinander. Schlussfolgerungen über Motive, Kausalzusammenhänge oder Absichten werden nicht gezogen. Alle Quellenlinks wurden zum Zeitpunkt der Veröffentlichung geprüft. Leser sind eingeladen, die Primärquellen eigenständig zu prüfen. Korrekturen und Ergänzungen werden unter Angabe der Quelle berücksichtigt.
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <a href="/">rundfunkkritik.de</a> &nbsp;·&nbsp; Sachlich. Belegt. Ohne Polemik.
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+<footer style="text-align:center;padding:32px 16px;margin-top:48px;border-top:1px solid #d4c9b0;font-family:Georgia,'Crimson Pro',serif;font-size:14px;color:#6b6b6b">
+  <a href="/themen.html" style="color:inherit;text-decoration:none">Themen</a> &middot; <a href="/impressum.html" style="color:#6b6b6b;text-decoration:none">Impressum</a> &middot; <a href="/datenschutz.html" style="color:#6b6b6b;text-decoration:none">Datenschutz</a> &middot; <a href="mailto:kontakt@rundfunkkritik.de" style="color:#6b6b6b;text-decoration:none">Kontakt</a>
+</footer>
+</body>
+</html>

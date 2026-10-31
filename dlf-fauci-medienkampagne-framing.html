@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deutschlandfunk und der Fauci-Fall: Framing statt Dokumente | Rundfunkkritik.de</title>
+<meta name="rubrik" content="Struktur &amp; Meinungsmache">
+<meta name="kachel-titel" content="Wenn die Kampagne wichtiger wird als die Akte: Der Deutschlandfunk und der Fall Fauci">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf7f2;
+    --text: #1c1c1c;
+    --navy: #1a2744;
+    --navy-text: #f5f0e8;
+    --accent: #c9a84c;
+    --badge-bg: #f5edda;
+    --badge-text: #7a5f1a;
+    --highlight: #7a5200;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.7;
+  }
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy);
+    padding: 14px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+  }
+  nav a {
+    color: var(--navy-text);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+  }
+  nav a:hover { text-decoration: underline; text-decoration-color: var(--accent); }
+  .nav-brand { font-weight: 700; letter-spacing: 0.08em; color: var(--accent); }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 22px 80px;
+  }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--highlight);
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 900;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    margin: 0 0 18px;
+    color: var(--text);
+  }
+  .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #555;
+    border-top: 1px solid #e0d8c8;
+    border-bottom: 1px solid #e0d8c8;
+    padding: 10px 0;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .lead {
+    font-size: 1.15rem;
+    font-style: italic;
+    color: #333;
+    border-left: 3px solid var(--accent);
+    padding-left: 18px;
+    margin-bottom: 34px;
+  }
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 1.55rem;
+    margin: 44px 0 16px;
+    color: var(--text);
+  }
+  h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 28px 0 12px;
+    color: var(--text);
+  }
+  p { margin: 0 0 16px; }
+  a { color: var(--highlight); }
+  strong { color: var(--highlight); }
+
+  .badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    background: var(--badge-bg);
+    color: var(--badge-text);
+    padding: 2px 8px;
+    border-radius: 3px;
+    border: 1px solid #e6d9b8;
+    margin-left: 6px;
+    white-space: nowrap;
+  }
+  .quelle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: #6b6b6b;
+    margin: -8px 0 20px;
+  }
+
+  blockquote {
+    margin: 20px 0;
+    padding: 16px 20px;
+    background: #f3ecdd;
+    border-left: 3px solid var(--accent);
+    font-style: italic;
+    font-size: 1.02rem;
+  }
+  blockquote cite {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #7a5f1a;
+  }
+
+  .box {
+    border: 1px solid #ddceac;
+    border-radius: 4px;
+    padding: 20px 22px;
+    margin: 32px 0;
+    background: #fffdf8;
+  }
+  .box-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--highlight);
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .fairness .box-title { color: #2c5a4a; }
+  .fairness { border-color: #bcd6c9; background: #f6fbf8; }
+  .beleg .box-title { color: #8a4a1c; }
+  .beleg { border-color: #e3c9a8; background: #fdf6ee; }
+
+  table.timeline {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95rem;
+  }
+  table.timeline td {
+    border-bottom: 1px solid #e6ddc9;
+    padding: 8px 10px;
+    vertical-align: top;
+  }
+  table.timeline td.date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: var(--highlight);
+    white-space: nowrap;
+    width: 100px;
+  }
+
+  ul { padding-left: 22px; margin-bottom: 16px; }
+  li { margin-bottom: 6px; }
+
+  footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 30px 22px 60px;
+    border-top: 1px solid #e0d8c8;
+  }
+  footer h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--highlight);
+  }
+  footer ul { list-style: none; padding: 0; }
+  footer li { margin-bottom: 8px; }
+  footer a { text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-brand">RUNDFUNKKRITIK.DE</span>
+  <a href="../index.html">Start</a>
+  <a href="../faelle.html">Fälle</a>
+  <a href="../methodik.html">Methodik</a>
+  <a href="../ueber-uns.html">Über uns</a>
+</nav>
+
+<main>
+
+  <div class="kicker">Fall · Framing &amp; Einordnung · USA / Deutschland</div>
+  <h1>Wenn die Kampagne wichtiger wird als die Akte: Der Deutschlandfunk und der Fall Fauci</h1>
+
+  <div class="meta">
+    <span>Veröffentlicht: 05.08.2026</span>
+    <span>Kategorien: 1 · 2 · 3</span>
+    <span>Lesezeit: ca. 7 Min.</span>
+  </div>
+
+  <p class="lead">
+    Während der ehemalige US-Chefimmunologe Anthony Fauci vor einem Senatsausschuss schweigt und sein eigenes
+    Tagebuch ihn belastet, ordnet der Deutschlandfunk die Vorwürfe gegen ihn vor allem als Produkt einer
+    „Medienkampagne" rechter US-Medien ein. Die Dokumente selbst kommen im Beitrag kaum vor. Ein Fall, der zeigt,
+    wie politische Rahmung und inhaltliche Prüfung bei einem ÖRR-Sender auseinanderfallen können &ndash; und wie
+    unübersichtlich die zugrundeliegende US-Faktenlage tatsächlich ist.
+  </p>
+
+  <h2>Was in den USA passiert ist</h2>
+  <p>
+    Im Zentrum steht eine mehrwöchige Eskalation der amerikanischen Aufarbeitung der Corona-Pandemie:
+  </p>
+
+  <table class="timeline">
+    <tr><td class="date">18.06.2026</td><td>Die scheidende Geheimdienstkoordinatorin Tulsi Gabbard veröffentlicht am Ende ihrer Amtszeit deklassifizierte Dokumente, die Fauci vorwerfen, gefährliche Gain-of-Function-Forschung am Wuhan-Institut mitfinanziert zu haben. <span class="badge">Kat. 1</span></td></tr>
+    <tr><td class="date">23.06.2026</td><td>CNN und das Fachportal Lawfare analysieren dieselben Dokumente und kommen zum Schluss: Die Unterlagen belegen die zugespitzte Kernbehauptung Gabbards nicht &ndash; der Ursprung des Virus bleibt ungeklärt. <span class="badge">Kat. 2</span></td></tr>
+    <tr><td class="date">26.–27.07.2026</td><td>Senator Rand Paul veröffentlicht über 1.100 Seiten aus Faucis privaten Tagebucheinträgen (Dezember 2019 bis 2022). <span class="badge">Kat. 1</span></td></tr>
+    <tr><td class="date">29.07.2026</td><td>Fauci sagt vor dem Senatsausschuss für Innere Sicherheit aus und beruft sich über 100-mal auf den 5. Verfassungszusatz. <span class="badge">Kat. 1</span></td></tr>
+    <tr><td class="date">03.08.2026</td><td>Das DLF-Medienmagazin „@mediasres" ordnet die Vorgänge im Gespräch mit Medienredakteurin Brigitte Baetz vor allem als „Medienkampagne" ein. <span class="badge">Kat. 1</span></td></tr>
+  </table>
+
+  <p class="quelle">Quellen: CBS News, NPR, Washington Post, The Hill, CNN, Lawfare, Axios (jeweils 22.–30.07.2026)</p>
+
+  <p>
+    Zwei Tagebucheinträge stechen dabei inhaltlich hervor: Am 15. März 2020 hielt Fauci fest, er habe den
+    New Yorker Bürgermeister Bill de Blasio zur Schließung von Schulen, Bars und Restaurants gedrängt &ndash;
+    öffentlich hatte er später erklärt, keine Schließungen empfohlen zu haben. Am 13. August 2022 beschrieb er
+    intern ein Ringen mit der CDC darum, eine öffentliche Aussage zur begrenzten Wirksamkeit der Impfstoffe gegen
+    Übertragung zu verhindern, unter anderem weil sie „die Bemühungen des Justizministeriums um Impfpflichten
+    untergraben" würde. <span class="badge">Kat. 3</span>
+  </p>
+  <p class="quelle">Quelle der Tagebuch-Zitate: NIUS-Wiedergabe der von Rand Paul veröffentlichten Dokumente; Originaldokumente selbst nicht unabhängig geprüft.</p>
+
+  <h2>Was der Deutschlandfunk daraus macht</h2>
+  <p>
+    Im DLF-Medienmagazin „@mediasres" vom 03.08.2026 ordnet Medienredakteurin Brigitte Baetz die aktuellen
+    Entwicklungen so ein:
+  </p>
+
+  <blockquote>
+    „Es ist quasi ein Zusammenspiel zwischen MAGA-Politik, also rechten Republikanern, und den rechten Medien
+    in den USA."
+    Brigitte Baetz, @mediasres, Deutschlandfunk, 03.08.2026
+  </blockquote>
+
+  <blockquote>
+    „Ja, diese Kampagne gibt es ja schon seit der ersten Präsidentschaft von Donald Trump."
+    Brigitte Baetz, @mediasres, Deutschlandfunk, 03.08.2026
+  </blockquote>
+
+  <p>
+    Die Sendung ordnet den Verdacht, Fauci könne an der Entstehung des Virus mitgewirkt haben, explizit als
+    „eine dieser Verschwörungstheorien" ein. Die konkreten Tagebucheinträge, die Gabbard-Dokumente oder die
+    über 100-fache Berufung auf den 5. Verfassungszusatz werden im Gespräch nicht inhaltlich geprüft. Am Ende
+    fasst die Moderation zusammen, es gehe „um die Macht der Bilder und die Macht des Narrativs und weniger um
+    die Macht der Evidenz". <span class="badge">Kat. 1</span>
+  </p>
+  <p class="quelle">Quelle: NIUS, 05.08.2026, unter Wiedergabe von Original-Audiozitaten aus der DLF-Sendung. Ein vollständiges Text-Manuskript der Sendung war zum Zeitpunkt der Recherche nicht auffindbar.</p>
+
+  <h2>Wie andere Medien berichten</h2>
+  <p>
+    Der Vergleich zeigt: Sachliche, beidseitige Berichterstattung war zum gleichen Zeitpunkt möglich, ohne
+    auf die Kampagnen-Rahmung zurückzugreifen.
+  </p>
+  <ul>
+    <li><strong>taz</strong> („Politisches Post-Pandemie-Theater"): referiert ausführlich Fauci-Zitate und
+    republikanische wie demokratische Positionen, zieht das Fazit, die Anhörung habe „keinerlei neue
+    Erkenntnisse" gebracht &ndash; kritisch gegenüber beiden Seiten, ohne Kampagnen-Framing. <span class="badge">Kat. 2</span></li>
+    <li><strong>Tagesspiegel</strong> (Titel: „Schauprozess"): zitiert sowohl Faucis Selbstverteidigung als
+    auch Rand Pauls Gegenposition zur Begnadigungsfrage. <span class="badge">Kat. 2</span></li>
+    <li><strong>Berliner Zeitung</strong>: mit Abstand am detailliertesten &ndash; nennt konkrete Fördersummen
+    (rund 94 Mio. US-Dollar an EcoHealth Alliance zwischen 2008 und 2024) und beschreibt den Anhörungsverlauf
+    im Detail. <span class="badge">Kat. 2</span></li>
+    <li><strong>ARD-Kurzmeldungen</strong> (u. a. ARD Aktuell, 30.07.2026): melden den Vorgang neutral und
+    knapp, ohne erkennbare Einordnung in eine Kampagnen-Erzählung.</li>
+  </ul>
+
+  <div class="box fairness">
+    <div class="box-title">Fairness-Box: Gegenposition</div>
+    <p>
+      Die DLF-Rahmung ist nicht aus der Luft gegriffen: Kritik an Fauci wird in den USA tatsächlich seit 2020
+      wiederkehrend von Trump-nahen Medien und Republikanern vorgetragen, und Demokraten im Ausschuss
+      bezeichneten die Anhörung selbst als „Schauprozess" bzw. „fishing expedition" mit vorab feststehendem
+      Ergebnis. Zudem wurden Gabbards eigene, zugespitzte Schlussfolgerungen aus den Geheimdienstdokumenten
+      von CNN und Lawfare selbst als nicht ausreichend belegt zurückgewiesen &ndash; der Laborursprung ist damit
+      weiterhin nicht bewiesen, sondern bleibt eine unter mehreren plausiblen Hypothesen. Eine Berichterstattung,
+      die ausschließlich die Dokumente ohne den politischen Kontext referiert, würde also ebenfalls ein
+      unvollständiges Bild liefern.
+    </p>
+  </div>
+
+  <div class="box beleg">
+    <div class="box-title">Beleglücken</div>
+    <p>
+      Für diesen Fall nicht abschließend geprüft: der genaue Wortlaut eines DLF-Textmanuskripts (nur
+      Audio-Originalzitate über Drittquelle verifiziert); eine eigenständige, inhaltlich vertiefte
+      Berichterstattung von NDR Info und ZDF heute zu den Tagebucheinträgen selbst konnte weder bestätigt noch
+      ausgeschlossen werden; MDR, WDR und BR zeigten in der Recherche keine eigenständige Berichterstattung,
+      was jedoch auch am zentralisierten ARD-Aktuell-Modell für US-Auslandsthemen liegen kann und nicht
+      zwangsläufig ein Einzelbefund dieser Anstalten ist.
+    </p>
+  </div>
+
+  <h2>Einordnung</h2>
+  <p>
+    Im direkten Vergleich mit taz, Tagesspiegel und Berliner Zeitung fällt der DLF-Beitrag dadurch auf, dass er
+    die politische Einordnung („Kampagne", „Narrativ") in den Vordergrund stellt, während die zugrundeliegenden
+    Dokumente &ndash; Tagebucheinträge, Anhörungsprotokoll, Gabbard-Unterlagen &ndash; im Beitrag selbst nicht
+    zitiert oder geprüft werden. Andere Medien mit vergleichbarer politischer Grundausrichtung wie die taz zeigen,
+    dass eine sachliche, faktenbasierte Einordnung im gleichen Zeitraum möglich war, ohne auf eine
+    Kampagnen-Erzählung zurückzugreifen.
+  </p>
+
+</main>
+
+<footer>
+  <h3>Weiterführende Analysen</h3>
+  <ul>
+    <li><a href="asymmetrie-oerr-kritik.html">Kommunikative Asymmetrie: Wie der ÖRR mit Selbstkritik umgeht</a></li>
+    <li><a href="legitimationsverlust-selbstkritik-oerr.html">Legitimationsverlust &amp; Selbstkritik im ÖRR</a></li>
+    <li><a href="oerr-international-v2.html">ÖRR im internationalen Vergleich</a></li>
+  </ul>
+</footer>
+
+<footer style="text-align:center;padding:32px 16px;margin-top:48px;border-top:1px solid #d4c9b0;font-family:Georgia,'Crimson Pro',serif;font-size:14px;color:#6b6b6b">
+  <a href="/themen.html" style="color:inherit;text-decoration:none">Themen</a> &middot; <a href="/impressum.html" style="color:#6b6b6b;text-decoration:none">Impressum</a> &middot; <a href="/datenschutz.html" style="color:#6b6b6b;text-decoration:none">Datenschutz</a> &middot; <a href="mailto:kontakt@rundfunkkritik.de" style="color:#6b6b6b;text-decoration:none">Kontakt</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>654.000 — rundfunkkritik.de</title>
+<meta name="rubrik" content="Faktenchecks &amp; Einzelfälle">
+<meta name="kachel-titel" content="654.000 Geburten: Die Frage, die niemand gestellt hat">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --navy: #1a2e4a;
+    --navy-deep: #111f33;
+    --navy-mid: #243d5e;
+    --gold: #b8963e;
+    --gold-light: #d4ae5a;
+    --cream: #f7f4ef;
+    --warm-white: #fdfbf8;
+    --text: #1c1c1c;
+    --text-muted: #5a5a5a;
+    --red: #8b1a1a;
+    --green: #1a5c2e;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 100%; scroll-behavior: smooth; }
+  body { font-family: 'Source Serif 4', Georgia, serif; background: var(--cream); color: var(--text); line-height: 1.75; }
+
+  /* HEADER */
+  .site-header {
+    background: var(--navy-deep);
+    border-bottom: 2px solid var(--gold);
+    padding: 1rem 2rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900; font-size: 1.1rem;
+    color: var(--cream); text-decoration: none;
+    letter-spacing: 0.04em; text-transform: uppercase;
+  }
+  .logo span { color: var(--gold); }
+  .rubrik-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy-deep); background: var(--gold);
+    padding: 0.25em 0.8em; border-radius: 2px; margin-left: auto;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 5rem 2rem 4rem;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold-light) 70%, transparent);
+  }
+  .hero-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 1; }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .eyebrow::before {
+    content: ''; display: block;
+    width: 32px; height: 1px; background: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900; font-size: clamp(2.4rem, 6vw, 4rem);
+    line-height: 1.1; margin-bottom: 0.4rem;
+    letter-spacing: -0.02em;
+  }
+  .hero h1 .num { color: var(--gold-light); }
+
+  .hero .subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic; font-size: 1.25rem;
+    color: rgba(247,244,239,0.7);
+    margin-bottom: 2rem; line-height: 1.5;
+  }
+
+  .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem; letter-spacing: 0.08em;
+    color: rgba(247,244,239,0.45);
+    display: flex; gap: 1.5rem; flex-wrap: wrap;
+  }
+
+  /* LEAD */
+  .lead-block {
+    background: var(--warm-white);
+    border-left: 4px solid var(--gold);
+    padding: 2rem 2.5rem;
+    margin: 3rem auto;
+    max-width: 780px;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    font-style: italic;
+    color: #2a2a2a;
+  }
+
+  /* MAIN */
+  .article-body { max-width: 780px; margin: 0 auto; padding: 0 2rem 4rem; }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700; font-size: 1.6rem;
+    margin: 3rem 0 1rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--gold);
+    line-height: 1.3;
+    color: var(--navy);
+  }
+
+  p { margin-bottom: 1.4rem; font-size: 1.05rem; }
+  strong { font-weight: 600; }
+
+  /* ZAHL HERO */
+  .zahl-hero {
+    background: var(--navy);
+    color: var(--cream);
+    border-radius: 4px;
+    padding: 2.5rem;
+    margin: 2.5rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .zahl-hero::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .zahl-hero .num-big {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 10vw, 5.5rem);
+    font-weight: 900; color: var(--gold-light);
+    line-height: 1;
+    display: block; margin-bottom: 0.5rem;
+  }
+  .zahl-hero .num-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: rgba(247,244,239,0.5);
+  }
+  .zahl-hero .num-context {
+    font-size: 1rem; color: rgba(247,244,239,0.8);
+    margin-top: 0.8rem; font-style: italic;
+  }
+
+  /* VERGLEICH GRID */
+  .vergleich-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0; margin: 2.5rem 0; border-radius: 4px; overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.1);
+  }
+  .vergleich-col {
+    padding: 2rem;
+  }
+  .vergleich-col.damals {
+    background: #1a3a2a; color: var(--cream);
+  }
+  .vergleich-col.heute {
+    background: #3a1a1a; color: var(--cream);
+  }
+  .vergleich-col .col-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .vergleich-col.damals .col-label { color: #7ec98a; }
+  .vergleich-col.heute .col-label { color: #e07070; }
+  .col-label::before {
+    content: ''; display: block;
+    width: 8px; height: 8px; border-radius: 50%;
+    background: currentColor;
+  }
+  .vergleich-col .zitat {
+    font-size: 1rem; line-height: 1.65;
+    font-style: italic;
+    border-left: 2px solid currentColor;
+    padding-left: 1rem;
+    opacity: 0.9;
+  }
+  .vergleich-col.damals .zitat { border-color: #7ec98a; }
+  .vergleich-col.heute .zitat { border-color: #e07070; }
+  .vergleich-col .source {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem; letter-spacing: 0.08em;
+    margin-top: 1rem; opacity: 0.5;
+  }
+  @media (max-width: 600px) {
+    .vergleich-grid { grid-template-columns: 1fr; }
+  }
+
+  /* KURVE */
+  .kurven-block {
+    background: var(--warm-white);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 2rem 2rem 1.5rem;
+    margin: 2.5rem 0;
+  }
+  .kurven-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .kurve-row {
+    display: flex; align-items: center;
+    margin-bottom: 1.1rem; gap: 1rem;
+  }
+  .kurve-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem; color: var(--text-muted);
+    width: 44px; flex-shrink: 0;
+  }
+  .kurve-bar-wrap {
+    flex: 1; background: #e8e4de; border-radius: 2px; height: 22px;
+    position: relative; overflow: hidden;
+  }
+  .kurve-bar {
+    height: 100%; border-radius: 2px;
+    background: var(--navy);
+    transition: width 0.3s;
+    position: relative;
+  }
+  .kurve-bar.red { background: var(--red); }
+  .kurve-bar.gold { background: var(--gold); }
+  .kurve-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem; width: 90px; text-align: right;
+    flex-shrink: 0; color: var(--text-muted);
+  }
+  .kurve-val strong { color: var(--text); }
+  .kurve-note {
+    font-size: 0.82rem; color: var(--text-muted);
+    font-style: italic; margin-top: 1rem;
+    border-top: 1px solid #ddd; padding-top: 0.8rem;
+  }
+
+  /* FAKTENBOX */
+  .faktenbox {
+    background: var(--navy-deep);
+    color: var(--cream);
+    border-radius: 4px;
+    padding: 2rem 2.5rem;
+    margin: 2.5rem 0;
+    position: relative;
+  }
+  .faktenbox::before {
+    content: attr(data-label);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gold);
+    display: block; margin-bottom: 1.2rem;
+  }
+  .faktenbox ul { list-style: none; }
+  .faktenbox li {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 0.98rem; line-height: 1.6;
+    display: flex; gap: 0.8rem;
+  }
+  .faktenbox li::before {
+    content: '→'; color: var(--gold); flex-shrink: 0;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .faktenbox li:last-child { border-bottom: none; }
+
+  /* SPLIT-SCREEN METHODIK */
+  .methodik-split {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1.5rem; margin: 2.5rem 0;
+  }
+  .methodik-card {
+    border-radius: 4px; padding: 1.8rem;
+    position: relative;
+  }
+  .methodik-card.studie { background: #eef5f0; border: 1px solid #b8d4be; }
+  .methodik-card.problem { background: #f5eeee; border: 1px solid #d4b8b8; }
+  .methodik-card .card-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem; letter-spacing: 0.14em;
+    text-transform: uppercase; margin-bottom: 1rem;
+  }
+  .methodik-card.studie .card-label { color: var(--green); }
+  .methodik-card.problem .card-label { color: var(--red); }
+  .methodik-card p { font-size: 0.95rem; margin-bottom: 0; }
+  @media (max-width: 600px) {
+    .methodik-split { grid-template-columns: 1fr; }
+  }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+    padding: 2rem 0;
+    margin: 3rem 0;
+    text-align: center;
+  }
+  .pull-quote blockquote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic; font-size: 1.5rem;
+    line-height: 1.5; color: var(--navy);
+    max-width: 600px; margin: 0 auto 1rem;
+  }
+  .pull-quote cite {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--text-muted);
+  }
+
+  /* MUSTER BLOCK */
+  .muster {
+    counter-reset: muster;
+    margin: 2.5rem 0;
+  }
+  .muster-item {
+    counter-increment: muster;
+    display: flex; gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #ddd;
+  }
+  .muster-item:last-child { border-bottom: none; }
+  .muster-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; font-weight: 900;
+    color: var(--gold); line-height: 1;
+    flex-shrink: 0; width: 2.5rem;
+  }
+  .muster-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 700;
+    margin-bottom: 0.4rem; color: var(--navy);
+  }
+  .muster-text p { font-size: 0.95rem; margin: 0; color: #3a3a3a; }
+
+  /* SCHLUSS */
+  .schluss {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 3rem 2.5rem;
+    border-radius: 4px;
+    margin: 3rem 0;
+    border-left: 4px solid var(--gold);
+  }
+  .schluss .schluss-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+  .schluss p { font-size: 1.05rem; line-height: 1.8; opacity: 0.9; margin-bottom: 1rem; }
+  .schluss p:last-child { margin-bottom: 0; }
+
+  /* QUELLEN */
+  .quellen {
+    border-top: 1px solid #ccc;
+    padding-top: 2rem; margin-top: 3rem;
+  }
+  .quellen-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--text-muted);
+    margin-bottom: 1.2rem;
+  }
+  .quellen ol {
+    list-style: none; counter-reset: quelle;
+  }
+  .quellen li {
+    counter-increment: quelle;
+    display: flex; gap: 0.8rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #e8e4de;
+    font-size: 0.88rem; line-height: 1.5;
+    color: var(--text-muted);
+  }
+  .quellen li::before {
+    content: counter(quelle);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem; color: var(--gold);
+    flex-shrink: 0; padding-top: 0.15rem;
+    width: 1.5rem;
+  }
+  .quelle-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 0.15em 0.5em;
+    border-radius: 2px; flex-shrink: 0; height: fit-content;
+    margin-top: 0.2rem;
+  }
+  .tag-primaer { background: var(--navy); color: var(--cream); }
+  .tag-mainstream { background: #5a5a5a; color: var(--cream); }
+  .tag-behoerde { background: var(--green); color: var(--cream); }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy-deep);
+    color: rgba(247,244,239,0.4);
+    text-align: center;
+    padding: 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.08em;
+  }
+  footer span { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="logo">Rundfunk<span>kritik</span>.de</a>
+  <span class="rubrik-pill">Datenjournalismus</span>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Geburten · Deutschland 2025</div>
+    <h1><span class="num">654.000</span></h1>
+    <p class="subtitle">Der niedrigste Wert seit 1946. Die Frage, die niemand gestellt hat.</p>
+    <div class="meta">
+      <span>Rundfunkkritik.de</span>
+      <span>Analyse · 2026</span>
+      <span>Quellen: Destatis · Eurostat · Swissmedic · CDC NEJM</span>
+    </div>
+  </div>
+</section>
+
+<div class="lead-block">
+  Es gibt Zahlen, die in jeder anderen Zeit Schlagzeilen gemacht hätten. 654.000 Geburten 2025 — weniger als je seit Kriegsende. Minus 8&nbsp;% in 2022, minus 7&nbsp;% in 2023, minus 3&nbsp;% in 2024. Vier Jahre in Folge. Kein Nachkriegsjahr kommt dem nah. Und die Leitfrage im Journalismus lautet: wirtschaftliche Unsicherheit?
+</div>
+
+<main class="article-body">
+
+  <h2>Die Kurve, die man nicht sehen wollte</h2>
+
+  <p>Destatis meldete es nüchtern: 2025 wurden in Deutschland rund 654.300 Kinder geboren. Den niedrigsten Wert seit 1946. Nicht seit 2013, nicht seit der Nachwendezeit — seit dem Ende des Zweiten Weltkriegs.</p>
+
+  <div class="kurven-block">
+    <div class="kurven-label">Geburtenziffer Deutschland (Kinder je Frau) · Destatis</div>
+    <div class="kurve-row">
+      <span class="kurve-year">2019</span>
+      <div class="kurve-bar-wrap"><div class="kurve-bar gold" style="width:91%"></div></div>
+      <span class="kurve-val"><strong>1,54</strong></span>
+    </div>
+    <div class="kurve-row">
+      <span class="kurve-year">2020</span>
+      <div class="kurve-bar-wrap"><div class="kurve-bar gold" style="width:89%"></div></div>
+      <span class="kurve-val"><strong>1,53</strong></span>
+    </div>
+    <div class="kurve-row">
+      <span class="kurve-year">2021</span>
+      <div class="kurve-bar-wrap"><div class="kurve-bar gold" style="width:92%"></div></div>
+      <span class="kurve-val"><strong>1,58</strong> ↑</span>
+    </div>
+    <div class="kurve-row">
+      <span class="kurve-year">2022</span>
+      <div class="kurve-bar-wrap"><div class="kurve-bar red" style="width:87%"></div></div>
+      <span class="kurve-val"><strong>1,49</strong> −8&nbsp;%</span>
+    </div>
+    <div class="kurve-row">
+      <span class="kurve-year">2023</span>
+      <div class="kurve-bar-wrap"><div class="kurve-bar red" style="width:80%"></div></div>
+      <span class="kurve-val"><strong>1,38</strong> −7&nbsp;%</span>
+    </div>
+    <div class="kurve-row">
+      <span class="kurve-year">2024</span>
+      <div class="kurve-bar-wrap"><div class="kurve-bar red" style="width:78%"></div></div>
+      <span class="kurve-val"><strong>1,35</strong> −2&nbsp;%</span>
+    </div>
+    <div class="kurve-row">
+      <span class="kurve-year">2025</span>
+      <div class="kurve-bar-wrap"><div class="kurve-bar red" style="width:75%"></div></div>
+      <span class="kurve-val"><strong>~1,30</strong> ↓</span>
+    </div>
+    <p class="kurve-note">2021 — das Jahr, in dem Deutschland massenhaft impfte — verzeichnete einen Anstieg. Ab 2022 folgte der stärkste Zwei-Jahres-Einbruch seit Jahrzehnten. Auffällig: Der Bruch liegt nicht graduell, sondern scharf.</p>
+  </div>
+
+  <p>Der scharfe Bruch ab 2022 fiel zusammen mit einem weiteren: In Deutschland, der Schweiz und Schweden hatte die Geburtenrate 2021 noch leicht zugelegt. Dann — in einem einzigen Kalenderjahr — knickte sie ab. Nicht um ein oder zwei Prozent. Um acht.</p>
+
+  <p>Zur Erklärung griffen die meisten Medien zur vertrauten Formel: wirtschaftliche Unsicherheit, Energiekrise, Ukraine. Plausibel. Aber: Diese Faktoren galten für ganz Europa. Und auch dort, wo es der Wirtschaft besser ging, sank die Geburtenrate. Und auch dort, wo der Krieg weit weg schien.</p>
+
+  <h2>Dieselbe Kurve. Zwanzig Länder.</h2>
+
+  <p>Im August 2022 veröffentlichten drei Datenanalysten — ohne Peer-Review, aber gestützt ausschließlich auf Eurostat und nationale Statistikämter — eine 91-seitige Analyse des Geburtenrückgangs in 19 europäischen Ländern. Das Ergebnis ließ sich auf einer Folie zusammenfassen:</p>
+
+  <div class="faktenbox" data-label="Hagemann / Lorré / Kremer — Analyse 2022 (Eurostat-Datenbasis)">
+    <ul>
+      <li>In allen 19 untersuchten Ländern sanken die Geburtenzahlen ab 2022 messbar.</li>
+      <li>In 14 von 18 auswertbaren Ländern fiel der Rückgang zeitlich mit der Impfaktivität bei den 18–49-Jährigen neun Monate zuvor zusammen.</li>
+      <li>In sieben Ländern — darunter Deutschland, Schweiz, Finnland, Niederlande — lagen die statistischen p-Werte unter 0,005.</li>
+      <li>In der Schweiz: der Geburtenrückgang korrelierte kantonsweise mit der Impfquote. Je höher die Quote, desto steiler der Einbruch.</li>
+    </ul>
+  </div>
+
+  <p>Korrelation ist keine Kausalität. Das ist keine Spitzfindigkeit — es ist der Kern des Problems. Niemand kann aus diesen Zahlen allein schließen, was sie verursacht hat. Aber Korrelation ist der Anlass, die Frage zu stellen. Und die Frage wurde nicht gestellt.</p>
+
+  <div class="pull-quote">
+    <blockquote>„In keinem der angefragten Länder wird ein Signal hinsichtlich der Covid-19-Impfungen und eines Geburtenrückgangs gesehen oder evaluiert."</blockquote>
+    Swissmedic, Stellungnahme September 2022
+  </div>
+
+  <p>Das ist keine Entwarnung. Das ist ein Geständnis. Kein Signal — weil niemand nachgeschaut hat.</p>
+
+  <h2>Was die Studie konnte. Und was nicht.</h2>
+
+  <p>Die entscheidende Grundlagenstudie zur Sicherheit der mRNA-Impfung in der Schwangerschaft erschien im Juni 2021 im <em>New England Journal of Medicine</em>. Ihre Aussage: keine auffällige Fehlgeburtsrate. Die Pressemitteilungen übersetzten das in: sicher.</p>
+
+  <p>Was sie nicht übersetzten:</p>
+
+  <div class="methodik-split">
+    <div class="methodik-card studie">
+      <div class="card-label">Was die Studie maß</div>
+      <p>Die Mehrzahl der erfassten Frauen wurde im <strong>dritten Trimenon</strong> geimpft — in der Phase, in der Fehlgeburten von Natur aus selten sind. Das Ergebnis „keine auffällige Rate" reflektiert diesen Zeitraum.</p>
+    </div>
+    <div class="methodik-card problem">
+      <div class="card-label">Was das bedeutet</div>
+      <p><strong>80&nbsp;% aller Fehlgeburten</strong> ereignen sich im ersten Trimenon. Wer dort nicht misst, findet dort nichts. Das ist kein Fehler — es ist ein blinder Fleck, der nicht kommuniziert wurde.</p>
+    </div>
+  </div>
+
+  <p>Drei der Hauptautorinnen dieser Studie gaben Interessenkonflikte an: institutionelle Forschungsförderung von Pfizer, Mitgliedschaft im Pfizer-Datensicherheitsausschuss. Das steht im Anhang. Nicht in den Pressemitteilungen.</p>
+
+  <p>Und: Die Phase-3-Studien, auf deren Basis die Zulassung erteilt wurde, schlossen Schwangere systematisch aus. Es gab keine kontrollierten klinischen Daten — nur Beobachtungsdaten aus einem freiwilligen Smartphone-Meldesystem, hauptsächlich aus dem dritten Trimenon.</p>
+
+  <h2>Die Gegenerklärung und ihre Lücken</h2>
+
+  <p>Das Bundesinstitut für Bevölkerungsforschung nannte als mögliche Ursache für den 2022er-Einbruch in Deutschland und der Schweiz: verschobene Kinderwünsche. Menschen hätten aus Unsicherheit über Impffolgen mit der Familienplanung gewartet. Das ist eine andere Kausalkette — aber sie setzt voraus, dass die Sorge nicht gänzlich unbegründet war.</p>
+
+  <div class="vergleich-grid">
+    <div class="vergleich-col damals">
+      <div class="col-label">Offizielle Lesart 2022</div>
+      <p class="zitat">„Wirtschaftliche Unsicherheit, Energiekrise, Pandemiefolgen — klassische Erklärungen für sinkende Geburtenraten."</p>
+      <p class="source">Berliner Zeitung / Tagesschau / DPA-Berichte 2023</p>
+    </div>
+    <div class="vergleich-col heute">
+      <div class="col-label">Was die Zahlen zeigen</div>
+      <p class="zitat">2021 — Impfpeak — verzeichnete Deutschland einen <em>Anstieg</em> der Geburtenziffer auf 1,58. 2022 folgte der steilste Einbruch seit Jahrzehnten. Wirtschaftliche Krisen verlaufen graduell. Das hier nicht.</p>
+      <p class="source">Destatis, Epidemiologisches Bulletin RKI 4/2026</p>
+    </div>
+  </div>
+
+  <h2>Das Muster, das nicht interessiert</h2>
+
+  <div class="muster">
+    <div class="muster-item">
+      <div class="muster-num">1</div>
+      <div class="muster-text">
+        <h3>Fehlende Basisdaten</h3>
+        <p>Schwangere wurden aus Phase-3-Studien ausgeschlossen. Eine Empfehlung für diese Gruppe erging trotzdem — auf Basis von Beobachtungsdaten aus dem Zeitraum, in dem Fehlgeburten ohnehin selten sind.</p>
+      </div>
+    </div>
+    <div class="muster-item">
+      <div class="muster-num">2</div>
+      <div class="muster-text">
+        <h3>Keine behördliche Untersuchung</h3>
+        <p>Swissmedic stellte 2022 fest: In keinem angefragten Land wurde das Signal untersucht. Das PEI kommt seiner gesetzlichen Pflicht zur Auswertung von Nebenwirkungsdaten seit Jahren nicht nach — bestätigt durch ARD/Plusminus 2024.</p>
+      </div>
+    </div>
+    <div class="muster-item">
+      <div class="muster-num">3</div>
+      <div class="muster-text">
+        <h3>Kein Journalismus</h3>
+        <p>Der Einbruch der Geburtenzahlen um 8&nbsp;% in einem einzigen Jahr — historisch ohne Parallele außerhalb von Kriegs- und Hungersjahren — wurde in keiner der großen Redaktionen systematisch mit der gleichzeitigen Impfkampagne in Zusammenhang gebracht.</p>
+      </div>
+    </div>
+    <div class="muster-item">
+      <div class="muster-num">4</div>
+      <div class="muster-text">
+        <h3>Die Empfehlung läuft weiter</h3>
+        <p>Stand Dezember 2025 empfiehlt die STIKO Schwangeren weiterhin mRNA-Impfstoffe — mit der Einschränkung, dass Spikevax (Moderna) wegen erhöhten Myokarditisrisikos nicht verwendet werden soll. Die Frage, ob dieses Risiko früher bekannt war, bleibt offen.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Was wäre, wenn man es wissen wollte?</h2>
+
+  <p>Die Antwort auf die Frage, ob die mRNA-Impfung kausal zum Geburtenrückgang beigetragen hat, ist nicht bekannt. Sie ist auch nicht nicht bekannt weil sie untersucht wurde. Sie ist nicht bekannt, weil sie nicht untersucht wurde.</p>
+
+  <p>Das ist das Kernproblem — und es ist journalistisch und wissenschaftsethisch eines. Ein Einbruch dieser Größenordnung, zeitlich korrelierend mit einer der größten Impfkampagnen der Nachkriegsgeschichte, in zwanzig Ländern gleichzeitig, ohne systematische Untersuchung — das ist nicht Vorsicht. Das ist Verweigerung.</p>
+
+  <p>Ein Facharzt, der 2022 anfing, Muster zu beschreiben — häufigere Aborte, veränderte Zyklen, Schwangerschaftskomplikationen bei kürzlich Geimpften — wurde nicht untersucht. Er wurde eingeordnet.</p>
+
+  <div class="schluss">
+    <div class="schluss-label">Fazit</div>
+    <p>654.000 Geburten. Der niedrigste Wert seit 1946. Die Frage nach dem Warum verdient mehr als eine Pressemitteilung über wirtschaftliche Unsicherheit. Sie verdient Daten, Untersuchungen, und Journalisten, die nachfragen — auch wenn die Antwort unbequem ist.</p>
+    <p>Eine offene Frage ist keine Verschwörungstheorie. Eine offene Frage, die niemand stellt, ist ein journalistisches Versagen.</p>
+  </div>
+
+  <div class="quellen">
+    <div class="quellen-label">Quellen</div>
+    <ol>
+      <li><span class="quelle-tag tag-behoerde">Behörde</span>Destatis: Geburtenziffer Deutschland 2019–2025, monatliche Geburtenzahlen — destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Geburten</li>
+      <li><span class="quelle-tag tag-behoerde">Behörde</span>Eurostat: Fertility Statistics EU 2024 — ec.europa.eu/eurostat/statistics-explained/index.php?title=Fertility_statistics</li>
+      <li><span class="quelle-tag tag-primaer">Primär</span>Hagemann R., Lorré U., Kremer H.-J.: Geburtenrückgang in Europa 2022 — 91-seitige Analyse auf Eurostat/Destatis-Basis, August 2022</li>
+      <li><span class="quelle-tag tag-behoerde">Behörde</span>Swissmedic: Stellungnahme zum Zusammenhang zwischen Fruchtbarkeit und Covid-19-Impfung, September 2022 — swissmedic.ch</li>
+      <li><span class="quelle-tag tag-primaer">Primär</span>CDC v-safe Pregnancy Registry: "Preliminary Findings of mRNA Covid-19 Vaccine Safety in Pregnant Persons", NEJM, 17.6.2021 — inkl. Interessenkonflikte der Autorinnen</li>
+      <li><span class="quelle-tag tag-mainstream">Mainstream</span>ARD/Plusminus, 25.11.2024: Das Paul-Ehrlich-Institut kommt seiner gesetzlichen Pflicht zur Auswertung von Nebenwirkungsdaten seit vier Jahren nicht nach</li>
+      <li><span class="quelle-tag tag-behoerde">Behörde</span>RKI: COVID-19-Impfempfehlung STIKO, Stand 12.12.2025 — Einschränkung Spikevax bei Schwangeren wegen Myokarditisrisiko</li>
+      <li><span class="quelle-tag tag-mainstream">Mainstream</span>Nordic Statistics: Record low fertility in the Nordics — nordicstatistics.org, Juli 2025</li>
+      <li><span class="quelle-tag tag-primaer">Primär</span>Bundesinstitut für Bevölkerungsforschung: Arbeitspapier Geburtenrückgang — verschobene Kinderwünsche als diskutierte Ursache für DE/CH, 2023</li>
+    </ol>
+  </div>
+
+</main>
+
+<footer>
+  <span>rundfunkkritik.de</span> · Medienkritik mit Primärquellen · Keine Werbung · Keine Parteinahme
+</footer>
+
+<footer style="text-align:center;padding:32px 16px;margin-top:48px;border-top:1px solid #d4c9b0;font-family:Georgia,'Crimson Pro',serif;font-size:14px;color:#6b6b6b">
+  <a href="/themen.html" style="color:inherit;text-decoration:none">Themen</a> &middot; <a href="/impressum.html" style="color:#6b6b6b;text-decoration:none">Impressum</a> &middot; <a href="/datenschutz.html" style="color:#6b6b6b;text-decoration:none">Datenschutz</a> &middot; <a href="mailto:kontakt@rundfunkkritik.de" style="color:#6b6b6b;text-decoration:none">Kontakt</a>
+</footer>
+</body>
+</html>

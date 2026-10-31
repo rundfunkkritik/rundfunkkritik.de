@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Der Mann, der es zuerst sagte – rundfunkkritik.de</title>
+<meta name="rubrik" content="Faktenchecks &amp; Einzelfälle">
+<meta name="kachel-titel" content="Der Mann, der es zuerst sagte: Wiesendanger und die Laborthese">
+  <meta name="description" content="Prof. Roland Wiesendanger veröffentlichte im Februar 2021 eine Studie zur Laborthese. ARD nannte es 'kaum Belege'. Der BND wusste es bereits seit 2020. Jetzt sind die Akten freigegeben.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;600&display=swap');
+
+    :root {
+      --navy: #1a2e4a;
+      --gold: #b8963e;
+      --red: #8b1a1a;
+      --green: #1a5c2e;
+      --light-bg: #f9f7f4;
+      --border: #d4c9b8;
+      --text: #2a2a2a;
+      --muted: #6b6458;
+      --mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 300;
+      color: var(--text);
+      background: var(--light-bg);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    /* HEADER */
+    .site-header {
+      background: var(--navy);
+      padding: 16px 0;
+      border-bottom: 3px solid var(--gold);
+    }
+    .site-header .inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem;
+      color: #fff;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+    .site-name span { color: var(--gold); }
+    .site-nav a {
+      color: rgba(255,255,255,0.75);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-left: 24px;
+    }
+    .site-nav a:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      background: var(--navy);
+      padding: 60px 24px 48px;
+      text-align: center;
+    }
+    .hero .rubrik {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: #fff;
+      line-height: 1.2;
+      max-width: 720px;
+      margin: 0 auto 20px;
+    }
+    .hero .deck {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 600px;
+      margin: 0 auto 32px;
+      font-style: italic;
+      font-weight: 300;
+    }
+    .hero .meta {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* MAIN LAYOUT */
+    .article-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* TYPOGRAPHY */
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.55rem;
+      color: var(--navy);
+      margin: 48px 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--gold);
+      line-height: 1.3;
+    }
+    h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin: 32px 0 12px;
+      font-style: italic;
+    }
+    p { margin-bottom: 1.3em; }
+    p:last-child { margin-bottom: 0; }
+    strong { font-weight: 600; color: var(--navy); }
+    em { font-style: italic; }
+
+    /* LEAD / INTRO */
+    .lead {
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--navy);
+      border-left: 4px solid var(--gold);
+      padding-left: 20px;
+      margin-bottom: 40px;
+      line-height: 1.65;
+    }
+
+    /* ZITAT */
+    .zitat {
+      background: #fff;
+      border-left: 5px solid var(--navy);
+      padding: 20px 24px;
+      margin: 28px 0;
+      font-style: italic;
+      font-size: 1.0rem;
+      color: #333;
+    }
+    .zitat .quelle {
+      font-style: normal;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* GEGENÜBERSTELLUNG */
+    .vergleich-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin: 36px 0;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .vergleich-grid .col {
+      padding: 24px;
+    }
+    .vergleich-grid .col-left {
+      background: #fff;
+      border-right: 1px solid var(--border);
+    }
+    .vergleich-grid .col-right {
+      background: #f0f4f0;
+    }
+    .vergleich-grid .col-header {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .col-left .col-header { color: var(--red); }
+    .col-right .col-header { color: var(--green); }
+    .vergleich-grid .col p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+    @media (max-width: 580px) {
+      .vergleich-grid { grid-template-columns: 1fr; }
+      .vergleich-grid .col-left { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    /* TIMELINE */
+    .timeline {
+      margin: 36px 0;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 72px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .timeline-item {
+      display: flex;
+      gap: 0;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .timeline-date {
+      flex-shrink: 0;
+      width: 72px;
+      padding-right: 16px;
+      text-align: right;
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      padding-top: 2px;
+    }
+    .timeline-dot {
+      flex-shrink: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--navy);
+      margin-top: 4px;
+      position: relative;
+      z-index: 1;
+      margin-right: 16px;
+    }
+    .timeline-dot.gold { background: var(--gold); }
+    .timeline-dot.red { background: var(--red); }
+    .timeline-content {
+      flex: 1;
+      padding-bottom: 4px;
+    }
+    .timeline-content strong {
+      display: block;
+      font-family: 'Source Serif 4', serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+    .timeline-content p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    /* FAKTENBOX */
+    .faktenbox {
+      background: var(--navy);
+      color: #fff;
+      padding: 28px 32px;
+      margin: 36px 0;
+      border-radius: 2px;
+    }
+    .faktenbox .faktenbox-titel {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .faktenbox ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .faktenbox li {
+      font-size: 0.9rem;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      line-height: 1.5;
+      padding-left: 20px;
+      position: relative;
+    }
+    .faktenbox li:last-child { border-bottom: none; }
+    .faktenbox li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+    .faktenbox li strong { color: #fff; }
+
+    /* WARNUNG / NOTE */
+    .hinweis {
+      background: #fff8f0;
+      border: 1px solid #e8c87a;
+      border-left: 4px solid var(--gold);
+      padding: 18px 22px;
+      margin: 28px 0;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+    .hinweis .hinweis-label {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    /* QUELLEN */
+    .quellen {
+      margin-top: 56px;
+      border-top: 2px solid var(--border);
+      padding-top: 28px;
+    }
+    .quellen-titel {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .quellen ol {
+      padding-left: 20px;
+      margin: 0;
+    }
+    .quellen li {
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-family: var(--mono);
+    }
+    .quellen a {
+      color: var(--navy);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="site-name" href="/">rundfunk<span>kritik</span>.de</a>
+    <nav class="site-nav">
+      <a href="/">Start</a>
+      <a href="/archiv.html">Archiv</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="rubrik">Dokumentation · Medienversagen · Pandemie-Ursprung</div>
+  <h1>Der Mann, der es zuerst sagte</h1>
+  <p class="deck">Ein Hamburger Professor veröffentlichte im Februar 2021, was der BND bereits wusste und die Bundesregierung verschwieg. ARD und ZDF nannten es Verschwörungstheorie. Jetzt sind die Akten freigegeben.</p>
+  <div class="meta">19. Juni 2026</div>
+</div>
+
+<main class="article-body">
+
+  <p class="lead">
+    Am 18. Juni 2026 veröffentlichte der US-amerikanische Geheimdienstkoordinator ODNI deklassifizierte Dokumente, die belegen: Amerikanische Steuergelder flossen in Gain-of-Function-Forschung an Fledermaus-Coronaviren am Wuhan Institute of Virology. Einen Tag zuvor hatte das ZDF Berichte über US-Biolabore als „alte Desinformation" eingestuft. Und fünf Jahre früher hatte ein Hamburger Physikprofessor genau das veröffentlicht, was Behörden und Redaktionen als Verschwörungstheorie bezeichneten.
+  </p>
+
+  <h2>Was Prof. Wiesendanger im Februar 2021 sagte</h2>
+
+  <p>
+    Am 19. Februar 2021 veröffentlichte Prof. Dr. Roland Wiesendanger, Nanowissenschaftler an der Universität Hamburg, eine Forschungsdokumentation. Sie basierte auf einem Jahr interdisziplinärer Recherche und kam zu einem Schluss, der damals als skandalös galt:
+  </p>
+
+  <div class="zitat">
+    „Sowohl die Zahl als auch die Qualität der Indizien sprechen für einen Laborunfall am virologischen Institut der Stadt Wuhan als Ursache der gegenwärtigen Pandemie."
+    <div class="quelle">Prof. Roland Wiesendanger, Universität Hamburg — Pressemitteilung der Uni Hamburg, 19. Februar 2021</div>
+  </div>
+
+  <p>
+    Wiesendanger wies auf einen Umstand hin, der bis heute nicht entkräftet ist: Auf dem Fischmarkt in Wuhan, den die WHO zunächst als wahrscheinlichen Ausgangspunkt identifizierte, wurden keine Fledermäuse angeboten. Das Wuhan Institute of Virology hingegen unterhielt eine der weltweit größten Sammlungen von Fledermaus-Coronaviren — gewonnen aus Höhlen in entlegenen Provinzen Südchinas.
+  </p>
+
+  <p>
+    Er betonte ausdrücklich: Er wolle mit der Studie eine öffentliche Debatte über Gain-of-Function-Forschung anstoßen — die wissenschaftliche Methode, Viren gezielt gefährlicher zu machen.
+  </p>
+
+  <h2>Was ARD und Tagesschau am selben Tag schrieben</h2>
+
+  <p>
+    Die Reaktion der öffentlich-rechtlichen Medien war schnell und eindeutig. Die Tagesschau veröffentlichte am 19. Februar 2021 einen Beitrag unter der Überschrift:
+  </p>
+
+  <div class="zitat">
+    „Kaum Belege für Labortheorie"
+    <div class="quelle">Tagesschau / ARD Faktenfinder, 19. Februar 2021</div>
+  </div>
+
+  <p>
+    Der Artikel des ARD-Faktenfinders diskreditierte Wiesendangers Arbeit. Ein ehemaliger Tagesschau-Redakteur schilderte später auf der Plattform X, wie er Wiesendanger 2021 zum Interview eingeladen hatte — und daraufhin intern auf Widerstand stieß. Die Einladung wurde nicht realisiert. Stattdessen erhielt der ARD-Faktenfinder den Auftrag, Wiesendangers Schlussfolgerungen zu widerlegen.
+  </p>
+
+  <h2>Was der BND zur selben Zeit wusste</h2>
+
+  <p>
+    Recherchen der Süddeutschen Zeitung und der ZEIT, veröffentlicht im März 2025, enthüllten: Der Bundesnachrichtendienst (BND) war bereits im Jahr 2020 zu einer Einschätzung gelangt.
+  </p>
+
+  <div class="faktenbox">
+    <div class="faktenbox-titel">BND-Einschätzung 2020 — dokumentiert durch SZ und ZEIT, März 2025</div>
+    <ul>
+      <li>Der BND beauftragt im Auftrag des Bundeskanzleramts mit der Untersuchung des Virus-Ursprungs</li>
+      <li>Operation mit dem Codenamen <strong>„Saaremaa"</strong> beschaffte wissenschaftliche Daten aus chinesischen Forschungseinrichtungen</li>
+      <li>Festgestellte Sicherheitsverstöße im Labor und riskante Experimente mit Viren</li>
+      <li>BND-Bewertung: Laborherkunft des Virus mit einer Wahrscheinlichkeit von <strong>80 bis 95 Prozent</strong></li>
+      <li>BND-Präsident Bruno Kahl informierte das Kanzleramt persönlich</li>
+      <li>Das Kanzleramt entschied: Die Einschätzung bleibt unter Verschluss</li>
+    </ul>
+  </div>
+
+  <p>
+    Im Jahr 2021, als Wiesendanger als Verschwörungstheoretiker bezeichnet wurde, lag dem deutschen Auslandsgeheimdienst also bereits eine eigene Analyse vor — mit einer Laborherkunft als weit überwiegendem Szenario. Die Öffentlichkeit erfuhr davon nichts.
+  </p>
+
+  <h2>Gegenüberstellung: Dann und jetzt</h2>
+
+  <div class="vergleich-grid">
+    <div class="col col-left">
+      <div class="col-header">Was man 2021 sagte</div>
+      <p>„Kaum Belege für Labortheorie" — ARD Faktenfinder, 19. Februar 2021</p>
+      <br>
+      <p>„Verschwörungstheorie" — Lancet-Statement, unterzeichnet u. a. von Beratern der Bundesregierung, Februar 2020</p>
+      <br>
+      <p>„Alte Desinformation" — ZDF Faktencheck zu US-Biolaboren, 15. Juni 2026</p>
+    </div>
+    <div class="col col-right">
+      <div class="col-header">Was Akten und Behörden sagen</div>
+      <p>BND: Laborherkunft zu 80–95 % wahrscheinlich — bereits 2020 (SZ/ZEIT, März 2025)</p>
+      <br>
+      <p>NIH bestätigt Gain-of-Function-Forschung in Wuhan — schriftlich an US-Kongress, Oktober 2021</p>
+      <br>
+      <p>ODNI veröffentlicht deklassifizierte Dokumente zur Fauci-Finanzierung — 18. Juni 2026</p>
+    </div>
+  </div>
+
+  <h2>Die Chronologie des Schweigens</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">Feb 2020</div>
+      <div class="timeline-dot red"></div>
+      <div class="timeline-content">
+        <strong>Lancet-Statement: Laborthese = Verschwörungstheorie</strong>
+        <p>27 Wissenschaftler verurteilen die Laborhypothese öffentlich — darunter Peter Daszak, der über EcoHealth Alliance selbst Forschung in Wuhan finanzierte. Das Dokument wird jahrelang als Referenz zitiert.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2020</div>
+      <div class="timeline-dot navy"></div>
+      <div class="timeline-content">
+        <strong>BND-Analyse: Laborunfall zu 80–95 % wahrscheinlich</strong>
+        <p>Der deutsche Auslandsgeheimdienst kommt im Auftrag des Kanzleramts zu seiner Einschätzung. BND-Chef Kahl informiert das Kanzleramt persönlich. Die Bewertung bleibt geheim.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">Feb 2021</div>
+      <div class="timeline-dot gold"></div>
+      <div class="timeline-content">
+        <strong>Wiesendanger veröffentlicht — und wird diffamiert</strong>
+        <p>Der Hamburger Physiker legt seine Indiziensammlung vor. Die Tagesschau antwortet mit „Kaum Belege", der ARD-Faktenfinder widerlegt statt zu befragen. Ein Interview-Angebot bleibt intern folgenlos.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">Okt 2021</div>
+      <div class="timeline-dot navy"></div>
+      <div class="timeline-content">
+        <strong>NIH korrigiert sich selbst</strong>
+        <p>In einem Brief an das US-Repräsentantenhaus bestätigt das NIH: EcoHealth Alliance hat über einen NIH-Grant Gain-of-Function-Forschung in Wuhan durchgeführt — und die Ergebnisse nicht pflichtgemäß gemeldet. Fauci hatte das Gegenteil unter Eid ausgesagt.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">März 2025</div>
+      <div class="timeline-dot navy"></div>
+      <div class="timeline-content">
+        <strong>SZ und ZEIT enthüllen BND-Bericht</strong>
+        <p>Erstmals öffentlich bekannt: Der BND wusste es seit 2020. Das Kanzleramt entschied sich für Schweigen. Weder Angela Merkel noch der damalige Kanzleramtsminister wollen sich äußern.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">15. Jun 2026</div>
+      <div class="timeline-dot red"></div>
+      <div class="timeline-content">
+        <strong>ZDF: „alte Desinformation"</strong>
+        <p>Ein ZDF-Faktencheck zu US-Biolaboren stuft die aktuell kursierenden Berichte als wenig spektakulär ein und sieht alte Desinformation am Werk.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">18. Jun 2026</div>
+      <div class="timeline-dot gold"></div>
+      <div class="timeline-content">
+        <strong>ODNI deklassifiziert: Fauci finanzierte Gain-of-Function in Wuhan</strong>
+        <p>Die ausscheidende US-Geheimdienstdirektorin veröffentlicht auf dem letzten Tag ihrer Amtszeit nie zuvor gezeigte Kommunikationsdokumente. Whistleblower berichten von systematischer Einschüchterung innerhalb der Geheimdienste.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Was die ODNI-Freigabe vom 18. Juni enthält</h2>
+
+  <p>
+    Die ODNI-Pressemitteilung Nr. 11-26 hält fest: Anthony Fauci habe als Leiter des NIAID Millionen US-Steuerdollars in Gain-of-Function-Forschung an Fledermaus-Coronaviren am Wuhan Institute of Virology gelenkt. Diese Forschung werde heute „weithin als Quelle des unbeabsichtigten Laborunfalls betrachtet", der die Pandemie auslöste.
+  </p>
+
+  <p>
+    Die freigegebenen Dokumente zeigen laut ODNI: Fauci arbeitete mit politisierten Führungskräften im US-Geheimdienstapparat zusammen, um die Wahrheit über die Laborherkunft zu unterdrücken. Geheimdienstanalysten, die die Laborthese vertraten, wurden demnach unter Druck gesetzt — Anonymitätsschutz bei Beschwerden wurde aufgehoben, ein Mitarbeiter wurde kurz nach einer Meldung an die ODNI entlassen.
+  </p>
+
+  <div class="hinweis">
+    <div class="hinweis-label">Zur Einordnung</div>
+    Die ODNI-Veröffentlichung ist ein offizielles US-Regierungsdokument — keine anonyme Quelle, kein Blog. Sie enthält jedoch politisch aufgeladene Sprache und stammt aus dem letzten Tag der Amtszeit einer scheidenden Beamtin. Was darin als gesichert gilt: die Finanzierungsspur (durch NIH-Briefe und Kongressanhörungen unabhängig bestätigt) und die Existenz von Whistleblower-Berichten (an den Geheimdienstinspektor übergeben). Die Kausalfrage — ob ein Laborunfall tatsächlich der Ursprung von SARS-CoV-2 war — ist wissenschaftlich weiterhin nicht abschließend beantwortet.
+  </div>
+
+  <h2>Die Frage, die bleibt</h2>
+
+  <p>
+    ARD-Faktenfinder und ZDF-Faktencheck haben beide Funktionen: Desinformation erkennen und benennen — und Fragen stellen, auch unbequeme. Die Dokumente, die jetzt vorliegen, waren 2021 nicht öffentlich. Faktencheck-Redaktionen arbeiten mit dem, was zugänglich ist.
+  </p>
+
+  <p>
+    Die eigentliche Frage ist eine andere: Welche Redaktion hat seither nachgefragt? Welche hat das NIH-Eingeständnis von Oktober 2021 prominent aufgegriffen? Welche hat nach dem BND-Bericht 2025 einen Rückblick auf die eigene Berichterstattung von 2021 gemacht?
+  </p>
+
+  <p>
+    Prof. Wiesendanger wartet nach eigener Aussage noch heute auf eine Entschuldigung der Tagesschau.
+  </p>
+
+  <div class="quellen">
+    <div class="quellen-titel">Quellen und Belege</div>
+    <ol>
+      <li>ODNI Press Release No. 11-26, 18. Juni 2026: „Fauci Funded Wuhan Lab Research That Sparked COVID" — <a href="https://www.odni.gov/index.php/newsroom/press-releases/press-releases-2026/4166-pr-11-26" target="_blank">odni.gov</a></li>
+      <li>Universität Hamburg, Pressemitteilung Nr. 8/2021, 19. Februar 2021: Wiesendanger-Studie zum Virus-Ursprung — <a href="https://www.uni-hamburg.de/newsroom/presse/2021/pm8/pm-8-21.pdf" target="_blank">uni-hamburg.de (PDF)</a></li>
+      <li>Süddeutsche Zeitung / ZEIT, März 2025: BND hält Laborunfall für wahrscheinlich — seit 2020 (paraphrasiert nach Tagesspiegel-Bericht)</li>
+      <li>Tagesspiegel, 12. März 2025: „BND hält Laborunfall als Auslöser für Corona-Pandemie für wahrscheinlich" — <a href="https://www.tagesspiegel.de/politik/brisante-bewertung-bisher-geheim-gehalten-bnd-halt-laborunfall-als-ausloser-fur-corona-pandemie-fur-wahrscheinlich-13353190.html" target="_blank">tagesspiegel.de</a></li>
+      <li>NIH, Brief an das US-Repräsentantenhaus, Oktober 2021: Bestätigung von Gain-of-Function-Forschung über EcoHealth Alliance (dokumentiert in Congressional Record)</li>
+      <li>The Intercept, 9. September 2021: „NIH Documents Provide New Evidence U.S. Funded Gain-of-Function Research in Wuhan" — <a href="https://theintercept.com/2021/09/09/covid-origins-gain-of-function-research/" target="_blank">theintercept.com</a></li>
+      <li>US House Committee on Oversight, Anhörungsprotokoll Dr. Lawrence Tabak, Mai 2024 — <a href="https://oversight.house.gov/" target="_blank">oversight.house.gov</a></li>
+      <li>Alexander Teske auf X (ehemaliger Tagesschau-Redakteur), 12. März 2025: Schilderung des internen Widerstands gegen Wiesendanger-Interview</li>
+      <li>ZDF heute, Faktencheck 15. Juni 2026: „Biolabore in der Ukraine: Was steckt hinter der Aufregung?" — zdfheute.de</li>
+    </ol>
+  </div>
+
+</main>
+
+<footer style="text-align:center;padding:32px 16px;margin-top:48px;border-top:1px solid #d4c9b0;font-family:Georgia,'Crimson Pro',serif;font-size:14px;color:#6b6b6b">
+  <a href="/themen.html" style="color:inherit;text-decoration:none">Themen</a> &middot; <a href="/impressum.html" style="color:#6b6b6b;text-decoration:none">Impressum</a> &middot; <a href="/datenschutz.html" style="color:#6b6b6b;text-decoration:none">Datenschutz</a> &middot; <a href="mailto:kontakt@rundfunkkritik.de" style="color:#6b6b6b;text-decoration:none">Kontakt</a>
+</footer>
+</body>
+</html>

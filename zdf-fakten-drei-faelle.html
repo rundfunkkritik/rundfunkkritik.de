@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZDF und die Fakten: Drei Fälle, ein Muster – Rundfunkkritik.de</title>
+<meta name="rubrik" content="Faktenchecks &amp; Einzelfälle">
+<meta name="kachel-titel" content="ZDF und die Fakten: Drei Fälle, ein Muster">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: #faf7f2;
+      color: #1c1c1c;
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.18rem;
+      line-height: 1.75;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: #1a2744;
+      padding: 0.75rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    nav a {
+      color: #f5f0e8;
+      text-decoration: none;
+      font-family: 'Crimson Pro', serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    nav a:hover { opacity: 1; }
+    nav .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      opacity: 1;
+      margin-right: auto;
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    /* RUBRIK */
+    .rubrik {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7a5f1a;
+      background-color: #f5edda;
+      border: 1px solid #c9a84c;
+      padding: 0.25rem 0.65rem;
+      border-radius: 2px;
+      margin-bottom: 1.4rem;
+    }
+
+    /* TITEL */
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      line-height: 1.2;
+      color: #1c1c1c;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: #3a3a3a;
+      margin-bottom: 1.8rem;
+      border-left: 3px solid #c9a84c;
+      padding-left: 1rem;
+    }
+
+    /* META */
+    .meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: #6b6b6b;
+      letter-spacing: 0.04em;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #ddd5c0;
+    }
+
+    /* FLIESSTEXT */
+    p {
+      margin-bottom: 1.4rem;
+    }
+
+    /* ZWISCHENTITEL */
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1c1c1c;
+      margin-top: 2.8rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid #c9a84c;
+    }
+
+    /* FALL-KARTE */
+    .fall-karte {
+      background-color: #f5edda;
+      border-left: 4px solid #c9a84c;
+      border-radius: 3px;
+      padding: 1.2rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .fall-karte .fall-nummer {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #7a5f1a;
+      margin-bottom: 0.4rem;
+    }
+    .fall-karte .fall-titel {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1c1c1c;
+      margin-bottom: 0.3rem;
+    }
+    .fall-karte .fall-datum {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: #7a5f1a;
+    }
+
+    /* HIGHLIGHT */
+    .highlight {
+      color: #7a5200;
+      font-weight: 600;
+    }
+
+    /* ZITAT-BLOCK */
+    blockquote {
+      border-left: 3px solid #c9a84c;
+      margin: 1.8rem 0;
+      padding: 0.8rem 1.4rem;
+      background-color: #f5edda;
+      font-style: italic;
+      color: #2c2c2c;
+    }
+    blockquote cite {
+      display: block;
+      margin-top: 0.6rem;
+      font-style: normal;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: #7a5f1a;
+      letter-spacing: 0.04em;
+    }
+
+    /* TRENNLINIE */
+    hr {
+      border: none;
+      border-top: 1px solid #ddd5c0;
+      margin: 3rem 0;
+    }
+
+    /* WEITERFÜHRENDE ANALYSEN */
+    .weiterfuehrend {
+      background-color: #f0ebe0;
+      border: 1px solid #c9a84c;
+      border-radius: 3px;
+      padding: 1.5rem 1.8rem;
+      margin-top: 3rem;
+    }
+    .weiterfuehrend h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a2744;
+      margin-bottom: 1rem;
+      letter-spacing: 0.01em;
+    }
+    .weiterfuehrend ul {
+      list-style: none;
+      padding: 0;
+    }
+    .weiterfuehrend ul li {
+      margin-bottom: 0.65rem;
+      padding-left: 1.1rem;
+      position: relative;
+      font-size: 1rem;
+    }
+    .weiterfuehrend ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #c9a84c;
+      font-style: normal;
+    }
+    .weiterfuehrend ul li a {
+      color: #1a2744;
+      text-decoration: none;
+      border-bottom: 1px solid #c9a84c;
+    }
+    .weiterfuehrend ul li a:hover {
+      color: #7a5200;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #1a2744;
+      color: #f5f0e8;
+      text-align: center;
+      padding: 1.8rem 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      margin-top: 4rem;
+    }
+    footer a {
+      color: #c9a84c;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8rem; }
+      .container { padding: 2rem 1.1rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Rundfunkkritik.de</a>
+  <a href="index.html">Startseite</a>
+  Beitragsservice
+  <a href="widerstand.html">Widerstand</a>
+</nav>
+
+<div class="container">
+
+  <span class="rubrik">Redaktionelles Versagen · ZDF</span>
+
+  <h1>ZDF und die Fakten: Drei Fälle, ein Muster</h1>
+
+  <p class="subtitle">Falsche Grafiken, eine Unterlassungserklärung, Mitarbeiter fürs Nichtstun — innerhalb weniger Wochen häufen sich die Belege für strukturelle Qualitätsprobleme im öffentlich-rechtlichen Rundfunk.</p>
+
+  <div class="meta">
+    Rundfunkkritik.de &nbsp;·&nbsp; Juni 2026 &nbsp;·&nbsp; Analyse
+  </div>
+
+  <p>Die Debatte um den öffentlich-rechtlichen Rundfunk ist, wie Medienwissenschaftlerin Beatrice Dernbach bereits 2019 dokumentierte, kein neues Phänomen. Seit den 1960er Jahren wiederholen sich Vorwürfe und Verteidigungen in nahezu identischer Struktur. Was sich verändert hat: Die Fälle sind konkreter geworden, die Belege dokumentierter — und die betroffenen Institutionen reagieren zunehmend mit dem, was Gerichte als unzureichend bewerten.</p>
+
+  <p>Im Frühjahr und Frühsommer 2026 traten innerhalb weniger Wochen drei Vorgänge öffentlich zutage, die für sich genommen bereits bemerkenswert wären. In ihrer Kombination beschreiben sie ein Muster: mangelnde Sorgfalt bei der Recherche, fehlende Selbstkorrektur und ein fragwürdiger Umgang mit Beitragsgeldern.</p>
+
+  <h2>Fall 1: Das Böhmermann-Urteil</h2>
+
+  <div class="fall-karte">
+    <div class="fall-nummer">Fall 01 · ZDF Magazin Royale</div>
+    <div class="fall-titel">Richter rügt „bestenfalls schlampige Recherche"</div>
+    <div class="fall-datum">Welt+, 16. April 2026</div>
+  </div>
+
+  <p>Ein Hamburger Gericht rügte im April 2026 eine Recherche des ZDF Magazin Royale unter Jan Böhmermann mit den Worten <span class="highlight">„bestenfalls schlampige Recherche"</span>. Der Vorgang ist nicht der erste dieser Art — bereits der Fall Arne Schönbohm hatte gezeigt, wie ein satirischer ZDF-Beitrag mit weitreichenden realen Folgen verbunden sein kann.</p>
+
+  <p>Im Fall Schönbohm hatte das ZDF Magazin Royale den damaligen Präsidenten des Bundesamts für Sicherheit in der Informationstechnik (BSI) in die Nähe russischer Geheimdienste gerückt. Schönbohm verlor daraufhin seinen Posten. Ein Gericht gab ihm später Recht. Die <em>Welt</em> kommentierte den Vorgang unter dem Titel „Wenn das ZDF die nationale Sicherheit gefährdet" — ein Befund, der über bloße Medienkritik hinausgeht.</p>
+
+  <p>Das Böhmermann-Urteil vom April 2026 steht in dieser Linie. Dass ein Gericht die journalistische Sorgfaltspflicht eines mit Rundfunkbeiträgen finanzierten Formats öffentlich als „schlampig" einordnen muss, ist kein Randproblem — es ist ein Qualitätsurteil über eine Sendung, die sich selbst als aufklärerisch versteht.</p>
+
+  <h2>Fall 2: Die Unterlassungserklärung</h2>
+
+  <div class="fall-karte">
+    <div class="fall-nummer">Fall 02 · ZDF heute live</div>
+    <div class="fall-titel">ZDF gibt Unterlassungserklärung zu Musk-Berichterstattung ab</div>
+    <div class="fall-datum">ZDF-Statement, 12. Juni 2026</div>
+  </div>
+
+  <p>Am 12. Juni 2026 bestätigte das ZDF in einem offiziellen Statement, dass Elon Musk über eine deutsche Anwaltskanzlei eine Unterlassungserklärung zur Anfangsmoderation der Sendung „ZDFheute live" gefordert hatte. Das ZDF gab diese ab und entfernte die beanstandete Passage.</p>
+
+  <p>Moderatorin Christina von Ungern-Sternberg hatte in der fraglichen Sendung Musk im Zusammenhang mit Ausschreitungen gegen Migranten in Nordirland mit den Worten zitiert: Ein rassistischer Mob habe auf Aufrufe des britischen Rechtsextremisten Tommy Robinson und des „Tech-Milliardärs Elon Musk" reagiert. Diese Formulierung — die eine direkte kausale Verknüpfung zwischen Musk und der Gewalt herstellte — hielt einer rechtlichen Prüfung nicht stand.</p>
+
+  <p>Bemerkenswert ist das Nachspiel: Der Instagram-Account der Moderatorin war nach dem Vorgang nicht mehr abrufbar. Das ZDF hatte bereits am Samstag vor dem Statement einen „korrigierenden Transparenzhinweis" veröffentlicht — eine Formulierung, die den Vorgang eher verschleiert als erklärt.</p>
+
+  <blockquote>
+    „Das ZDF hat diese abgegeben und die fragliche Passage in der Anmoderation entfernt."
+    ZDF-Statement vom 12. Juni 2026
+  </blockquote>
+
+  <p>Eine Unterlassungserklärung ist kein Bagatellvorgang. Sie bedeutet, dass der Sender eine Aussage als rechtlich nicht haltbar anerkannt hat. Dass es dazu einer außergerichtlichen Forderung durch Anwälte bedurfte — und nicht einer internen Qualitätskontrolle vor der Sendung — wirft Fragen über Redaktionsprozesse auf.</p>
+
+  <h2>Fall 3: Bezahlt für Nichtstun</h2>
+
+  <div class="fall-karte">
+    <div class="fall-nummer">Fall 03 · MDR</div>
+    <div class="fall-titel">ARD-Sender bezahlt Mitarbeiter fürs Nichtstun</div>
+    <div class="fall-datum">Bild, 16. Juni 2026</div>
+  </div>
+
+  <p>Am 16. Juni 2026 berichtete <em>Bild</em> unter dem Titel „ARD-Sender bezahlt Mitarbeiter fürs Nichtstun", dass der MDR-Intendant eine Praxis genehmigt habe, bei der Mitarbeiter regulär vergütet werden, ohne produktive Aufgaben zu erfüllen. Die MDR-Zentrale in Leipzig steht damit erneut im Fokus — ein Sender, der in der Vergangenheit bereits wegen interner Compliance-Probleme Schlagzeilen gemacht hatte.</p>
+
+  <p>Der Vorwurf ist strukturell: Nicht ein einzelner Fehler, sondern eine <span class="highlight">institutionell genehmigte Praxis</span> des Ressourceneinsatzes wird beschrieben. Gebühreneinnahmen — 2022 meldete die FAZ Rekorderlöse von 8,42 Milliarden Euro für ARD und ZDF zusammen — fließen demnach in Personalkosten ohne publizistischen Gegenwert.</p>
+
+  <p>Für Beitragszahler ist das keine abstrakte Haushaltsfrage. Der Rundfunkbeitrag ist eine Pflichtabgabe, deren Legitimation an den Auftrag der Grundversorgung geknüpft ist. Wer diesen Auftrag nicht erfüllt, stellt die Grundlage seiner Finanzierung in Frage.</p>
+
+  <hr>
+
+  <h2>Das Muster</h2>
+
+  <p>Drei Fälle, drei Sender der ARD-Familie und des ZDF, drei Wochen. Was sie verbindet, ist nicht Böswilligkeit — sondern etwas Nüchterneres: das Fehlen konsequenter interner Kontrollmechanismen.</p>
+
+  <p>Im Fall Böhmermann hätte eine sorgfältige Faktenprüfung vor der Ausstrahlung das Gerichtsurteil verhindert. Im Fall Ungern-Sternberg hätte eine Redaktionsleitung, die die Formulierung „Elon Musk rief zu Gewalt auf" vor dem Sendetermin prüft, die Unterlassungserklärung überflüssig gemacht. Im Fall MDR hätte ein funktionierendes Controlling eine Praxis, die öffentlich als Verschwendung wahrgenommen wird, gar nicht erst entstehen lassen.</p>
+
+  <p>Medienwissenschaftliche Forschung hat gezeigt, dass die öffentlich-rechtlichen Anstalten in medienpolitischen Debatten traditionell eine defensive Kommunikationsstrategie verfolgen — sie empfangen Kritik, ohne sie konstruktiv zu verarbeiten. Die hier dokumentierten Fälle sind keine Kampagnenbehauptungen. Es sind Gerichtsurteile, eigene Statements und veröffentlichte Berichte.</p>
+
+  <p>Der ÖRR ist nicht per se reformunfähig. Aber er braucht externe Kontrolle, die über Rundfunkräte mit parteipolitischer Besetzung hinausgeht — und eine Öffentlichkeit, die Einzelfälle als das benennt, was sie sind: <span class="highlight">Symptome eines strukturellen Problems.</span></p>
+
+  <div class="weiterfuehrend">
+    <h3>Weiterführende Analysen</h3>
+    <ul>
+      <li><a href="kirchhof_brueder_artikel.html">Der Kirchhof-Komplex: Wenn Gutachter und Richter Brüder sind</a></li>
+      <li>Beitragsservice und Vollstreckung: Was Beitragszahler wissen müssen</li>
+      <li><a href="oerr-reform-manifest.html">ÖRR Reform Manifest: Was sich strukturell ändern muss</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Rundfunkkritik.de &nbsp;·&nbsp; <a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="index.html">Startseite</a></p>
+</footer>
+
+</body>
+</html>
